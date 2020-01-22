@@ -13,10 +13,10 @@ This get's automatically added to our to-do list!
 ### Social Media
 You can follow each of our team members on instragram below, as well as The Hut's own page.
 
-[Jamie](www.instagram.com/jamie.blacknell_art)
+[Jamie](https://www.instagram.com/jamie.blacknell_art)
 
-[Billy](www.instagram.com/billyspendlove)
+[Billy](https://www.instagram.com/billyspendlove)
 
-[Alex](www.instagram.com/alexascended)
+[Alex](https://www.instagram.com/alexascended)
 
-[The Hut](www.instagram.com/thehut.gda)
+[The Hut](https://www.instagram.com/thehut.gda)
