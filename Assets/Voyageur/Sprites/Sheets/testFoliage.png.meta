@@ -1,0 +1,823 @@
+fileFormatVersion: 2
+guid: 2faf9f48fbfee473b9a955fe7c082140
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5929128436914322162
+    second: testFoliage_0
+  - first:
+      213: 6102967997181810070
+    second: testFoliage_1
+  - first:
+      213: 3392149638724670692
+    second: testFoliage_2
+  - first:
+      213: -8622695374730895889
+    second: testFoliage_3
+  - first:
+      213: -8541346566932342806
+    second: testFoliage_4
+  - first:
+      213: 7115757753759162587
+    second: testFoliage_5
+  - first:
+      213: 96310095592888457
+    second: testFoliage_6
+  - first:
+      213: 3215490921696848178
+    second: testFoliage_7
+  - first:
+      213: 6509213165032286724
+    second: testFoliage_8
+  - first:
+      213: -917575779876783645
+    second: testFoliage_9
+  - first:
+      213: 9126465715544045906
+    second: testFoliage_10
+  - first:
+      213: -9113546982210546758
+    second: testFoliage_11
+  - first:
+      213: 5322101603014300839
+    second: testFoliage_12
+  - first:
+      213: 7278443072022830584
+    second: testFoliage_13
+  - first:
+      213: -8550553511723496658
+    second: testFoliage_14
+  - first:
+      213: 2266492008259256147
+    second: testFoliage_15
+  - first:
+      213: 452049561598775891
+    second: testFoliage_16
+  - first:
+      213: 6704076808743480709
+    second: testFoliage_17
+  - first:
+      213: -8575185342525727030
+    second: testFoliage_18
+  - first:
+      213: -844645644010118230
+    second: testFoliage_19
+  - first:
+      213: 4531737053805010624
+    second: testFoliage_20
+  - first:
+      213: 8532272533885258178
+    second: testFoliage_21
+  - first:
+      213: 6104415357238995441
+    second: testFoliage_22
+  - first:
+      213: 4344338556261006257
+    second: testFoliage_23
+  - first:
+      213: -4156437608967612883
+    second: testFoliage_24
+  - first:
+      213: -8693551300371724106
+    second: testFoliage_25
+  - first:
+      213: -4178194728253380190
+    second: testFoliage_26
+  - first:
+      213: -2456714642784138965
+    second: testFoliage_27
+  - first:
+      213: 1315355146657642871
+    second: testFoliage_28
+  - first:
+      213: -639793978145364132
+    second: testFoliage_29
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: testFoliage_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 184
+        width: 13
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0583d35d38c4e1ba66d870018fc9ad
+      internalID: 5929128436914322162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 184
+        width: 13
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394564fd3cd4e452eaaa4ca86ad871d6
+      internalID: 6102967997181810070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 184
+        width: 15
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083a677e146b441f2a905450f6c4075c
+      internalID: 3392149638724670692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 184
+        width: 14
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7a19a959a564067aa883db825049aa
+      internalID: -8622695374730895889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 184
+        width: 15
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00795cd57b0bc4ef6a7ab826dac0f19a
+      internalID: -8541346566932342806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 136
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95966c7091614969821414b9eb36a7a
+      internalID: 7115757753759162587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_6
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 159
+        width: 53
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05fd7c485bd6541cca2602b31b11f189
+      internalID: 96310095592888457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_7
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 161
+        width: 26
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4e15c274b13460eb843ab832536abe
+      internalID: 3215490921696848178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 168
+        width: 13
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c07e11f8870343e8be1ea23f4584f92
+      internalID: 6509213165032286724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 168
+        width: 8
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b51da60d78a3a4aa3ab19d846c654b34
+      internalID: -917575779876783645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_10
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 168
+        width: 12
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a724469bd2ed34e0caa37d8d34aaf480
+      internalID: 9126465715544045906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 168
+        width: 16
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee73e770457144ca2a66f5b10b4d826f
+      internalID: -9113546982210546758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_12
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 168
+        width: 14
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac53058e25abb4eb8827bc4b811b2968
+      internalID: 5322101603014300839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 152
+        width: 30
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21fa687f960046ffa20d50f6c251918
+      internalID: 7278443072022830584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 120
+        width: 47
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ac8f09a90cc4e9bb45fd66b37deeb5
+      internalID: -8550553511723496658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_15
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 129
+        width: 42
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f036c75381e4ec796c418b7ed0e22a
+      internalID: 2266492008259256147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_16
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 139
+        width: 27
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8b4c8cb80f94c27b8d84e2a842b875
+      internalID: 452049561598775891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 122
+        width: 29
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057598c72568f48ceb0d973c649305ad
+      internalID: 6704076808743480709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_18
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 102
+        width: 46
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59b1fdf93d4c4f11a00ef04a3f5030a
+      internalID: -8575185342525727030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_19
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 127
+        width: 18
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1840d50725bdf4ce29d6191c1dd24487
+      internalID: -844645644010118230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 127
+        width: 6
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd3731cb1acc44fab5a5301cde12798
+      internalID: 4531737053805010624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 105
+        width: 30
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e6ad2f7c554419a8ccac2a598d140d
+      internalID: 8532272533885258178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_22
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 107
+        width: 9
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db53fe1686e44568a9df0da4665d13d
+      internalID: 6104415357238995441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_23
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 106
+        width: 19
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1710f76598c5647599d33cd47679422b
+      internalID: 4344338556261006257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_24
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 107
+        width: 12
+        height: 7
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd610ba5163747b88d27b842293643f
+      internalID: -4156437608967612883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_25
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 61
+        width: 52
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515fd553081da42be8b12b1d26eb2b34
+      internalID: -8693551300371724106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_26
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 73
+        width: 78
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9668c910a0c6748989799b05cd0197ec
+      internalID: -4178194728253380190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_27
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 42
+        width: 78
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b174f544a3947b6b08f1b24da8a272
+      internalID: -2456714642784138965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_28
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 30
+        width: 50
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e097195209af45f49c12445c1fb3a8f
+      internalID: 1315355146657642871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: testFoliage_29
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 14
+        width: 44
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f771d118566694f4aa0fa0708cb4fd18
+      internalID: -639793978145364132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
