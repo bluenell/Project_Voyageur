@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-	
 
+	#region Public Variables
 	[Header("Player Stats")]
 	public float stamina;
 	public float speed;
@@ -16,18 +16,24 @@ public class Player : MonoBehaviour
 	public bool hasStick;
 	public bool hasFish;
 	public bool hasCanoe;
-	
-	
+	#endregion
+
+	#region Private Variables
+
 	Rigidbody2D rb;
 	SpriteRenderer sprite;
+	Animator anim;
 
-    // Start is called before the first frame update
-    void Start()
+	#endregion
+
+	// Start is called before the first frame update
+	void Start()
     {
 		rb = GetComponent<Rigidbody2D>();
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+		anim = transform.GetChild(0).GetComponent<Animator>();
     }
-
+	
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -37,19 +43,14 @@ public class Player : MonoBehaviour
 	//Controls the player movment when not holding the canoe
 	void Move()
 	{
+
 		float moveX = Input.GetAxis("Horizontal");
 		float moveY = Input.GetAxis("Vertical");
+		
 
 		rb.velocity = new Vector2(moveX, moveY) * speed;
 
 		float yPos = transform.position.y;
-		float yScaleFactor = 10;
-		float scaleMax = 0.9f;
-
-		
-		
-
-
 
 		#region FlipCharacter
 		if (moveX < 0f)
@@ -61,6 +62,15 @@ public class Player : MonoBehaviour
 		 sprite.flipX = false;
 		}
 
+		if (moveX != 0 || moveY != 0)
+		{
+			anim.SetBool("isMoving", true);
+		}
+		else
+		{
+			anim.SetBool("isMoving", false);
+
+		}
 
 
 
