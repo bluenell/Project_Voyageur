@@ -7,6 +7,7 @@ TagManager:
   - Pathway
   - TriggerTop
   - TriggerBottom
+  - Canoe
   layers:
   - Default
   - TransparentFX

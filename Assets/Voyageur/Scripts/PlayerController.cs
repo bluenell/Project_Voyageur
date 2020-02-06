@@ -3,26 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 
 	#region Public Variables
 	[Header("Player Stats")]
 	public float stamina;
 	public float speed;
+	public bool isMoving;
 
 	[Header("Player Inventory")]
 	public bool hasWood;
 	public bool hasStick;
 	public bool hasFish;
-	public bool hasCanoe;
+	public bool hasCanoe, canPickUp;
+
+	[Header("Canoe")]
+	public GameObject canoe;
+	public GameObject canoeTarget;
+	public GameObject putDownTarget;
+
 	#endregion
+
+
 
 	#region Private Variables
 
 	Rigidbody2D rb;
 	SpriteRenderer sprite;
 	Animator anim;
+	
 
 	#endregion
 
@@ -32,6 +42,10 @@ public class Player : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
+
+
+		//canoe = GameObject.Find("Canoe");
+		//canoeTarget = GameObject.Find("canoeTarget");
     }
 	
     // Update is called once per frame
@@ -39,6 +53,12 @@ public class Player : MonoBehaviour
     {
 		Move();
     }
+
+	private void Update()
+	{
+		HandleCanoe();
+	}
+
 
 	//Controls the player movment when not holding the canoe
 	void Move()
@@ -62,26 +82,20 @@ public class Player : MonoBehaviour
 		 sprite.flipX = false;
 		}
 
+		#endregion
+
+
 		if (moveX != 0 || moveY != 0)
 		{
+			isMoving = true;
 			anim.SetBool("isMoving", true);
 		}
 		else
 		{
+			isMoving = false;
 			anim.SetBool("isMoving", false);
 
 		}
-
-
-
-		#endregion
-
-
-
-
-		
-
-
 	}
 	//Detects input and what interacted with
 	void Interact()
@@ -91,7 +105,28 @@ public class Player : MonoBehaviour
 	//Handles the picking up/placing down the canoe
 	void HandleCanoe()
 	{
+		if (Input.GetButtonDown("Joystick X") && canPickUp)
+		{
+			canoe.transform.position = canoeTarget.transform.position;
+			canoe.transform.SetParent(canoeTarget.transform);
+			hasCanoe = true;
+			canPickUp = false;
 
+		}
+
+		/*
+		if (Input.GetButtonDown("Joystick X") && hasCanoe)
+		{
+			canoe.transform.position = putDownTarget.transform.position;
+			canoe.transform.SetParent(null);
+			hasCanoe = false;
+			canPickUp = true;
+		}
+		*/
+
+		
 	}
+
+
 
 }

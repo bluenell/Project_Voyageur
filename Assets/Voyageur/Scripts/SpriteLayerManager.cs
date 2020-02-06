@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LayerController : MonoBehaviour
+public class SpriteLayerManager : MonoBehaviour
 {
 
 	

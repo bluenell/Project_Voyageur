@@ -113,10 +113,10 @@ TextureImporter:
       name: MontyWalk_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 660
-        width: 260
-        height: 200
+        x: 0
+        y: 600
+        width: 350
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,7 +124,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8276f8fb2130db24e9cd0d8dd6bb5aaa
+      spriteID: b3111b8f94f7f3e4ebd6322aee8249c3
       internalID: -7484032305825857223
       vertices: []
       indices: 
@@ -134,10 +134,10 @@ TextureImporter:
       name: MontyWalk_1
       rect:
         serializedVersion: 2
-        x: 390
-        y: 660
-        width: 270
-        height: 200
+        x: 350
+        y: 600
+        width: 350
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ea49d056c7108046b9fcb5946a09b09
+      spriteID: 8b0fd06f4cd09c14fadbad3c15c0f1a8
       internalID: 2590715891814473112
       vertices: []
       indices: 
@@ -155,10 +155,10 @@ TextureImporter:
       name: MontyWalk_2
       rect:
         serializedVersion: 2
-        x: 730
-        y: 660
-        width: 280
-        height: 190
+        x: 700
+        y: 600
+        width: 350
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,7 +166,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2a6f38c67aa7334597a6ce4aedc9f23
+      spriteID: b7ee6794f2ee78c47a653613a76a8e0a
       internalID: 9143385480799024698
       vertices: []
       indices: 
@@ -176,10 +176,10 @@ TextureImporter:
       name: MontyWalk_3
       rect:
         serializedVersion: 2
-        x: 30
-        y: 360
-        width: 280
-        height: 190
+        x: 0
+        y: 300
+        width: 350
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,7 +187,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff1273100dde48546ac6d4a3c6b1152d
+      spriteID: c2d2877a0799a174a873585ef0fdf381
       internalID: -5811352906066709671
       vertices: []
       indices: 
@@ -197,10 +197,10 @@ TextureImporter:
       name: MontyWalk_4
       rect:
         serializedVersion: 2
-        x: 380
-        y: 360
-        width: 280
-        height: 200
+        x: 350
+        y: 300
+        width: 350
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,7 +208,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38bc9c8d79b62844fbc0359f71356da3
+      spriteID: 6c4fa77fabbf6314c80d9cfe1992ded0
       internalID: -2188216736233103992
       vertices: []
       indices: 
@@ -218,10 +218,10 @@ TextureImporter:
       name: MontyWalk_5
       rect:
         serializedVersion: 2
-        x: 730
-        y: 360
-        width: 280
-        height: 200
+        x: 700
+        y: 300
+        width: 350
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,7 +229,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4628baf831b3be8489b02ffe7f5f9599
+      spriteID: dbcdcc01caa491947ac7dcb55dbdef39
       internalID: -7470840274586981983
       vertices: []
       indices: 
@@ -239,10 +239,10 @@ TextureImporter:
       name: MontyWalk_6
       rect:
         serializedVersion: 2
-        x: 50
-        y: 60
-        width: 260
-        height: 190
+        x: 0
+        y: 0
+        width: 350
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,7 +250,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57033a430ba2cc24d8e8bf8fcaab775e
+      spriteID: 1bc3a218c49c24244945300558f8275d
       internalID: 873346005626139746
       vertices: []
       indices: 
@@ -260,10 +260,10 @@ TextureImporter:
       name: MontyWalk_7
       rect:
         serializedVersion: 2
-        x: 410
-        y: 60
-        width: 250
-        height: 190
+        x: 350
+        y: 0
+        width: 350
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,7 +271,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25030397f851f6f48bfe5efdc4e8dea0
+      spriteID: 206ce7202831d6344a0259235cb0de4b
       internalID: -1032339831879303053
       vertices: []
       indices: 
