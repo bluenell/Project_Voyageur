@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Pathway
+  - TriggerTop
+  - TriggerBottom
+  - Canoe
   layers:
   - Default
   - TransparentFX
@@ -18,8 +22,8 @@ TagManager:
   - River
   - BackgroundStuff
   - 
-  - 
-  - 
+  - TriggerTop
+  - TriggerBottom
   - 
   - 
   - 
