@@ -5,9 +5,11 @@ using UnityEngine;
 public class MontyStateActions : MonoBehaviour
 {
 	Animator anim;
+	MontyStateVariables stateVariables;
 
 	private void Start()
 	{
+		stateVariables = GetComponent<MontyStateVariables>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
 	}
 
@@ -32,14 +34,18 @@ public class MontyStateActions : MonoBehaviour
 
 	public void Follow()
 	{
+		//StartCoroutine(stateVariables.DelayAnimation());
 		Debug.Log("Monty is following");
 		anim.SetBool("isMoving", true);
+		anim.SetBool("isSitting", false);
+
 
 
 	}
 
 	public void Sit()
 	{
+		anim.SetBool("isSitting", true);
 		Debug.Log("Monty is sitting");
 	}
 	public void Fetch()

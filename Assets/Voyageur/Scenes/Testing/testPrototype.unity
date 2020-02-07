@@ -320,6 +320,7 @@ MonoBehaviour:
   distFromPlayer: 0
   playerMoving: 0
   sitWaitTime: 5
+  animationDelay: 1
 --- !u!114 &287140836
 MonoBehaviour:
   m_ObjectHideFlags: 0

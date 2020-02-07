@@ -8,7 +8,7 @@ public class MontyStateVariables : MonoBehaviour
 	public float distFromPlayer;
 	public bool playerMoving;
 	public int sitWaitTime;
-
+	public float animationDelay;
 
 	GameObject player;
 
@@ -39,6 +39,14 @@ public class MontyStateVariables : MonoBehaviour
 			return false;
 		}
 	}
+
+	public IEnumerator DelayAnimation()
+	{
+		yield return new WaitForSeconds(animationDelay);
+	}
+
+
+
 
 
 }
