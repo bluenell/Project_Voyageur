@@ -38,9 +38,9 @@ public class MontyStateActions : MonoBehaviour
 
 	}
 
-	public void Dig()
+	public void Sit()
 	{
-		Debug.Log("Monty is digging");
+		Debug.Log("Monty is sitting");
 	}
 	public void Fetch()
 	{
