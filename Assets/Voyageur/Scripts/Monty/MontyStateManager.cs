@@ -10,6 +10,8 @@ public class MontyStateManager : MonoBehaviour
 	MontyStateActions stateActions;
 	MontyStateVariables stateVariables;
 
+	float counter;
+
 	private void Start()
 	{
 		stateActions = GetComponent<MontyStateActions>();
@@ -22,6 +24,7 @@ public class MontyStateManager : MonoBehaviour
 
 		if ((stateVariables.playerMoving && stateVariables.distFromPlayer >= stateVariables.distanceToFollow) || stateVariables.distFromPlayer >= stateVariables.distanceToFollow)
 		{
+			counter = 0;
 			currentState = "follow";
 			SwitchState();
 			counter = 0;
@@ -42,9 +45,8 @@ public class MontyStateManager : MonoBehaviour
 			}
 
 		}	   			 		
-		
-	}
 
+		
 	void SwitchState()
 	{
 		switch (currentState)
@@ -74,10 +76,6 @@ public class MontyStateManager : MonoBehaviour
 				stateActions.Fetch();
 				break;
 
-			
-
-
 		}
 	}
-
 }

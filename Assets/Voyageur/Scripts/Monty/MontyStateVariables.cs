@@ -8,11 +8,13 @@ public class MontyStateVariables : MonoBehaviour
 	public float distFromPlayer;
 	public bool playerMoving;
 	public int sitWaitTime;
+
 	public float animationDelay;
 
 	public float distanceToFollow;
 
 	public float montySpeed;
+
 
 
 	GameObject player;

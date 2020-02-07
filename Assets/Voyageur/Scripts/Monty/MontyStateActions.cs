@@ -43,10 +43,10 @@ public class MontyStateActions : MonoBehaviour
 
 		transform.position = Vector2.MoveTowards(transform.position, player.transform.position, stateVariables.montySpeed * Time.deltaTime);
 
-	}
 	public void Sit()
 	{
 		anim.SetBool("isSitting", true);
+
 		Debug.Log("Monty is sitting");
 	}
 	public void Fetch()
