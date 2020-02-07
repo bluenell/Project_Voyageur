@@ -6,11 +6,13 @@ public class MontyStateActions : MonoBehaviour
 {
 	Animator anim;
 	MontyStateVariables stateVariables;
+	GameObject player;
 
 	private void Start()
 	{
 		stateVariables = GetComponent<MontyStateVariables>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
+		player = GameObject.Find("Player");
 	}
 
 	public void Canoe()
@@ -39,10 +41,9 @@ public class MontyStateActions : MonoBehaviour
 		anim.SetBool("isMoving", true);
 		anim.SetBool("isSitting", false);
 
-
+		transform.position = Vector2.MoveTowards(transform.position, player.transform.position, stateVariables.montySpeed * Time.deltaTime);
 
 	}
-
 	public void Sit()
 	{
 		anim.SetBool("isSitting", true);

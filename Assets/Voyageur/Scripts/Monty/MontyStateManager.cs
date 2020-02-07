@@ -20,14 +20,14 @@ public class MontyStateManager : MonoBehaviour
 	private void Update()
 	{
 
-		if (stateVariables.playerMoving)
+		if ((stateVariables.playerMoving && stateVariables.distFromPlayer >= stateVariables.distanceToFollow) || stateVariables.distFromPlayer >= stateVariables.distanceToFollow)
 		{
 			currentState = "follow";
 			SwitchState();
 			counter = 0;
 		}
 
-		if (!stateVariables.playerMoving && counter < stateVariables.sitWaitTime)
+		if (!stateVariables.playerMoving && counter < stateVariables.sitWaitTime )
 		{
 			currentState = "idle";
 			SwitchState();

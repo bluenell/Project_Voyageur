@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 	#region Public Variables
 	[Header("Player Stats")]
 	public float stamina;
-	public float speed;
+	public float xSpeed, ySpeed;
 	public bool isMoving;
 
 	[Header("Player Inventory")]
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 	}
 
 
-	//Controls the player movment when not holding the canoe
+	//Controls the play  er movment when not holding the canoe
 	void Move()
 	{
 
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 		float moveY = Input.GetAxis("Vertical");
 		
 
-		rb.velocity = new Vector2(moveX, moveY) * speed;
+		rb.velocity = new Vector2(moveX * xSpeed, moveY* ySpeed);
 
 		float yPos = transform.position.y;
 

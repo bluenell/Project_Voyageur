@@ -10,6 +10,11 @@ public class MontyStateVariables : MonoBehaviour
 	public int sitWaitTime;
 	public float animationDelay;
 
+	public float distanceToFollow;
+
+	public float montySpeed;
+
+
 	GameObject player;
 
 	private void Start()
@@ -38,11 +43,6 @@ public class MontyStateVariables : MonoBehaviour
 		{
 			return false;
 		}
-	}
-
-	public IEnumerator DelayAnimation()
-	{
-		yield return new WaitForSeconds(animationDelay);
 	}
 
 
