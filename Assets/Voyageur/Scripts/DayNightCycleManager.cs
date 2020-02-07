@@ -95,7 +95,6 @@ public class DayNightCycleManager : MonoBehaviour
 
 		}
 
-
 		if (colourArrayIndex >= colours.Length-1)
 		{
 			colourArrayIndex = 0;
