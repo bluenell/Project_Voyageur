@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: 67cd498808b506940879c64637d78dd9
+guid: 0620fe193bfc6c749b7835cebc054862
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7484032305825857223
-    second: MontyWalk_0
+      213: -6802677280763642924
+    second: MontySit_0
   - first:
-      213: 2590715891814473112
-    second: MontyWalk_1
+      213: -2226528708885959107
+    second: MontySit_1
   - first:
-      213: 9143385480799024698
-    second: MontyWalk_2
+      213: 1857164429005902243
+    second: MontySit_2
   - first:
-      213: -5811352906066709671
-    second: MontyWalk_3
+      213: 9065757690758214460
+    second: MontySit_3
   - first:
-      213: -2188216736233103992
-    second: MontyWalk_4
+      213: 2959126632982843267
+    second: MontySit_4
   - first:
-      213: -7470840274586981983
-    second: MontyWalk_5
-  - first:
-      213: 873346005626139746
-    second: MontyWalk_6
-  - first:
-      213: -1032339831879303053
-    second: MontyWalk_7
+      213: 3110709661158955562
+    second: MontySit_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MontyWalk_0
+      name: MontySit_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 600
-        width: 350
-        height: 300
+        y: 210
+        width: 300
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3111b8f94f7f3e4ebd6322aee8249c3
-      internalID: -7484032305825857223
+      spriteID: 5f23184f6495c78488bb0b7e93bb1613
+      internalID: -6802677280763642924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MontyWalk_1
+      name: MontySit_1
       rect:
         serializedVersion: 2
-        x: 350
-        y: 600
-        width: 350
-        height: 300
+        x: 300
+        y: 210
+        width: 300
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b0fd06f4cd09c14fadbad3c15c0f1a8
-      internalID: 2590715891814473112
+      spriteID: f4f48bc670443ae4095ae3fc234e5712
+      internalID: -2226528708885959107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MontyWalk_2
+      name: MontySit_2
       rect:
         serializedVersion: 2
-        x: 700
-        y: 600
-        width: 350
-        height: 300
+        x: 600
+        y: 210
+        width: 300
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,83 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7ee6794f2ee78c47a653613a76a8e0a
-      internalID: 9143385480799024698
+      spriteID: 3aed20ed6316bef45b63fa99c95a6457
+      internalID: 1857164429005902243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MontyWalk_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 300
-        width: 350
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2d2877a0799a174a873585ef0fdf381
-      internalID: -5811352906066709671
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MontyWalk_4
-      rect:
-        serializedVersion: 2
-        x: 350
-        y: 300
-        width: 350
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c4fa77fabbf6314c80d9cfe1992ded0
-      internalID: -2188216736233103992
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MontyWalk_5
-      rect:
-        serializedVersion: 2
-        x: 700
-        y: 300
-        width: 350
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dbcdcc01caa491947ac7dcb55dbdef39
-      internalID: -7470840274586981983
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MontyWalk_6
+      name: MontySit_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 350
-        height: 300
+        width: 300
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bc3a218c49c24244945300558f8275d
-      internalID: 873346005626139746
+      spriteID: 6f9d206fe7012464aa030f3713271559
+      internalID: 9065757690758214460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MontyWalk_7
+      name: MontySit_4
       rect:
         serializedVersion: 2
-        x: 350
+        x: 300
         y: 0
-        width: 350
-        height: 300
+        width: 300
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +202,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 206ce7202831d6344a0259235cb0de4b
-      internalID: -1032339831879303053
+      spriteID: 4b99da8d93e9b364ab7fff811118db03
+      internalID: 2959126632982843267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MontySit_5
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 300
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205021a4478fa5b41844e35e8edc8be3
+      internalID: 3110709661158955562
       vertices: []
       indices: 
       edges: []

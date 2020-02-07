@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: eb4383c8ad4e8854db3d907f1a0fb275
+guid: 0b2ddcc08a40b3b4f9ea1477c96d554e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1009055212775525351
-    second: IdleTest_0
+      213: 3162867227909620846
+    second: MontyIdleSit_0
   - first:
-      213: 1292254943490726160
-    second: IdleTest_1
+      213: 8778864050673274504
+    second: MontyIdleSit_1
   - first:
-      213: 8026237429650168197
-    second: IdleTest_2
+      213: -1908620814189703318
+    second: MontyIdleSit_2
   - first:
-      213: 3562537838448306759
-    second: IdleTest_3
+      213: 2185762705598063843
+    second: MontyIdleSit_3
   - first:
-      213: 8587914259899613809
-    second: IdleTest_4
+      213: 39186140142426140
+    second: MontyIdleSit_4
   - first:
-      213: 862300698595321338
-    second: IdleTest_5
+      213: -5599409607995165906
+    second: MontyIdleSit_5
   - first:
-      213: -6222713406998723942
-    second: IdleTest_6
+      213: 1556781260162355913
+    second: MontyIdleSit_6
   - first:
-      213: -6689589764918837724
-    second: IdleTest_7
+      213: -8142591758736906211
+    second: MontyIdleSit_7
   - first:
-      213: 5441332839906746380
-    second: IdleTest_8
+      213: 762981027089082959
+    second: MontyIdleSit_8
   - first:
-      213: 2800595254170949468
-    second: IdleTest_9
+      213: 8867606337727521313
+    second: MontyIdleSit_9
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -93,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,7 +105,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IdleTest_0
+      name: MontyIdleSit_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc11ad60cdf3e644ca38edcfef30888d
-      internalID: 1009055212775525351
+      spriteID: 6adb9fd8183982242bd3b03ff3e9d731
+      internalID: 3162867227909620846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleTest_1
+      name: MontyIdleSit_1
       rect:
         serializedVersion: 2
         x: 300
@@ -151,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95792ec373dbeb84189150b8bc90fe4a
-      internalID: 1292254943490726160
+      spriteID: 65ede437993ec5a48b5b69882a168998
+      internalID: 8778864050673274504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleTest_2
+      name: MontyIdleSit_2
       rect:
         serializedVersion: 2
         x: 600
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fb1585f95d934346888f78829740818
-      internalID: 8026237429650168197
+      spriteID: 37de0c61c3bba8946b5beeba96e5fd49
+      internalID: -1908620814189703318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleTest_3
+      name: MontyIdleSit_3
       rect:
         serializedVersion: 2
         x: 900
@@ -193,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b944a1f5535d6a49b58ef3235bba54c
-      internalID: 3562537838448306759
+      spriteID: a11c17574e2465547bc72682a2b62c55
+      internalID: 2185762705598063843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleTest_4
+      name: MontyIdleSit_4
       rect:
         serializedVersion: 2
         x: 0
@@ -214,14 +214,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70580d0732f7b124f891faf1ab591e72
-      internalID: 8587914259899613809
+      spriteID: b1e07613e169b1b41b734d547ef1249f
+      internalID: 39186140142426140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleTest_5
+      name: MontyIdleSit_5
       rect:
         serializedVersion: 2
         x: 300
@@ -235,14 +235,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57d85a1d20b541b4f98e3536d8a76ad8
-      internalID: 862300698595321338
+      spriteID: d156a09c989a87d408c19ccd44c24f8d
+      internalID: -5599409607995165906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleTest_6
+      name: MontyIdleSit_6
       rect:
         serializedVersion: 2
         x: 600
@@ -256,14 +256,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 022f4be57677f2a4ea1652e881f0932d
-      internalID: -6222713406998723942
+      spriteID: ed9bab38e10e60c4a9a34c80b08a6dcd
+      internalID: 1556781260162355913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleTest_7
+      name: MontyIdleSit_7
       rect:
         serializedVersion: 2
         x: 900
@@ -277,14 +277,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02976c2b4df484240a902a8bd1241e80
-      internalID: -6689589764918837724
+      spriteID: 8c5883d68f3ed464ca4e5f6a8e613f08
+      internalID: -8142591758736906211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleTest_8
+      name: MontyIdleSit_8
       rect:
         serializedVersion: 2
         x: 0
@@ -298,14 +298,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed026610e90484a4e86b2eca73cfb928
-      internalID: 5441332839906746380
+      spriteID: f619d2161f4d3ec448aeb934e7bc3dec
+      internalID: 762981027089082959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleTest_9
+      name: MontyIdleSit_9
       rect:
         serializedVersion: 2
         x: 300
@@ -319,8 +319,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd7a4fa3127bb744ebdb38c8398898d0
-      internalID: 2800595254170949468
+      spriteID: c0a901a1681a1f940937e6bc979564c7
+      internalID: 8867606337727521313
       vertices: []
       indices: 
       edges: []

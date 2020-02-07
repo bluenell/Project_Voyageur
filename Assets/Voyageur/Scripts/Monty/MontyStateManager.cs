@@ -5,6 +5,7 @@ using UnityEngine;
 public class MontyStateManager : MonoBehaviour
 {
 	string currentState;
+	float counter;
 	
 	MontyStateActions stateActions;
 	MontyStateVariables stateVariables;
@@ -21,36 +22,30 @@ public class MontyStateManager : MonoBehaviour
 	private void Update()
 	{
 
-		if (stateVariables.playerMoving)
+		if ((stateVariables.playerMoving && stateVariables.distFromPlayer >= stateVariables.distanceToFollow) || stateVariables.distFromPlayer >= stateVariables.distanceToFollow)
 		{
 			counter = 0;
 			currentState = "follow";
 			SwitchState();
+			counter = 0;
 		}
 
-
-		if (!stateVariables.playerMoving)
+		if (!stateVariables.playerMoving && counter < stateVariables.sitWaitTime )
 		{
 			currentState = "idle";
+			SwitchState();
 
-			if (currentState == "idle")
-			{
-				counter += Time.deltaTime;
+			counter += Time.deltaTime;
 
-				if (counter >= stateVariables.sitWaitTime)
-				{
-					currentState = "sit";
-					counter = 0;
-					SwitchState();
-				}
-			}
-			if (currentState == "sit")
+			if (counter >= stateVariables.sitWaitTime)
 			{
 				currentState = "sit";
 				SwitchState();
+				
 			}
-		}
-	}	
+
+		}	   			 		
+
 		
 	void SwitchState()
 	{
