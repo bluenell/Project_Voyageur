@@ -13,6 +13,8 @@ public class MontyStateVariables : MonoBehaviour
 
 	public float distanceToFollow;
 
+	public bool playerFlipped;
+
 	public float montySpeed;
 
 
@@ -27,6 +29,8 @@ public class MontyStateVariables : MonoBehaviour
 	{
 		distFromPlayer = CalculateDistance();
 		playerMoving = GetPlayerMoving();
+		playerFlipped = GetPlayerDirectionPositive();
+		
 	}
 
 	float CalculateDistance()
@@ -45,6 +49,24 @@ public class MontyStateVariables : MonoBehaviour
 		{
 			return false;
 		}
+	}
+
+	bool GetPlayerDirectionPositive()
+	{
+		if (player.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX == true)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position, distanceToFollow);
 	}
 
 

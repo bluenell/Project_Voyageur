@@ -6,17 +6,16 @@ public class MontyStateManager : MonoBehaviour
 {
 	string currentState;
 	float counter;
-	
+
 	MontyStateActions stateActions;
 	MontyStateVariables stateVariables;
 
-	float counter;
 
 	private void Start()
 	{
 		stateActions = GetComponent<MontyStateActions>();
 		stateVariables = GetComponent<MontyStateVariables>();
-		
+
 	}
 
 	private void Update()
@@ -30,8 +29,12 @@ public class MontyStateManager : MonoBehaviour
 			counter = 0;
 		}
 
-		if (!stateVariables.playerMoving && counter < stateVariables.sitWaitTime )
+
+
+		if (!stateVariables.playerMoving && counter < stateVariables.sitWaitTime)
 		{
+
+
 			currentState = "idle";
 			SwitchState();
 
@@ -41,41 +44,42 @@ public class MontyStateManager : MonoBehaviour
 			{
 				currentState = "sit";
 				SwitchState();
-				
+
 			}
 
-		}	   			 		
+		}
 
-		
-	void SwitchState()
-	{
-		switch (currentState)
+
+		void SwitchState()
 		{
-			case "canoe":
-				stateActions.Canoe();
-				break;
+			switch (currentState)
+			{
+				case "canoe":
+					stateActions.Canoe();
+					break;
 
-			case "canoe fish":
-				stateActions.CanoeFish();
-				break;
+				case "canoe fish":
+					stateActions.CanoeFish();
+					break;
 
-			case "follow":
-				stateActions.Follow();
-				break;
+				case "follow":
+					stateActions.Follow();
+					break;
 
 
-			case "idle":
-				stateActions.Idle();
-				break;
+				case "idle":
+					stateActions.Idle();
+					break;
 
-			case "sit":
-				stateActions.Sit();
-				break;
+				case "sit":
+					stateActions.Sit();
+					break;
 
-			case "fetch":
-				stateActions.Fetch();
-				break;
+				case "fetch":
+					stateActions.Fetch();
+					break;
 
+			}
 		}
 	}
 }
