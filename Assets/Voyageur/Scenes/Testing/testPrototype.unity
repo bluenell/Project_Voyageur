@@ -493,7 +493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699cd152a9b0c8946836eb362daa2de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  riverSpeed: 1
   paddleForce: 0
 --- !u!1 &468340911
 GameObject:
@@ -1247,8 +1246,9 @@ GameObject:
   - component: {fileID: 1669798183}
   - component: {fileID: 1669798182}
   - component: {fileID: 1669798181}
+  - component: {fileID: 1669798184}
   m_Layer: 0
-  m_Name: River 0
+  m_Name: River [0]
   m_TagString: River
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1336,6 +1336,20 @@ Transform:
   m_Father: {fileID: 1759728961}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1669798184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669798180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd97b7b425a8a040933073b8fa4193a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  riverCurrent: 1
 --- !u!1 &1759728960
 GameObject:
   m_ObjectHideFlags: 0

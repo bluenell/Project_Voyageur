@@ -6,8 +6,8 @@ public class CanoePaddle : MonoBehaviour
 {
 
 	Rigidbody2D rb;
+	River river;
 
-	public float riverSpeed;
 	public float paddleForce;
 
     // Start is called before the first frame update
@@ -19,8 +19,14 @@ public class CanoePaddle : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-		rb.velocity = new Vector2(riverSpeed, 0);
-	
+		if (Input.GetAxis("Horizontal") > 0)
+		{
+			Paddle();
+		}
+		else
+		{
+			Float();
+		}
     }
 
 
@@ -32,6 +38,15 @@ public class CanoePaddle : MonoBehaviour
 
 	void Float()
 	{
-
+		rb.velocity = new Vector2(river.riverCurrent, 0);
 	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "River")
+		{
+			river = collision.gameObject.GetComponent<River>();
+		}
+	}
+
 }
