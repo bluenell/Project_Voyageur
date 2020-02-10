@@ -24,9 +24,6 @@ public class PlayerInventory : MonoBehaviour
 
 	
 
-	void Torch()
-	{
-
-	}
+	
 
 }

@@ -1034,7 +1034,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006615581}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bbd33761f0ba8a4f8723b16b405c752, type: 3}
   m_Name: 
@@ -1546,12 +1546,12 @@ GameObject:
   - component: {fileID: 1579544604}
   - component: {fileID: 1579544605}
   m_Layer: 0
-  m_Name: Point Light 2D
+  m_Name: torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1579544604
 Transform:
   m_ObjectHideFlags: 0
@@ -2237,6 +2237,11 @@ PrefabInstance:
       propertyPath: ySpeed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7945989854665336628, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: torch
+      value: 
+      objectReference: {fileID: 1579544603}
     - target: {fileID: 7945989854665336629, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.x

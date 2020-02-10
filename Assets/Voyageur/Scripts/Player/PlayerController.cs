@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
 	public GameObject putDownTarget;
 	public bool canPickUp;
 
+	[Header("Items)")]
+
+	public GameObject torch;
+
 	#endregion
 
 
@@ -28,7 +32,7 @@ public class PlayerController : MonoBehaviour
 	SpriteRenderer sprite;
 	Animator anim;
 	PlayerInventory inventory;
-
+	DayNightCycleManager nightCycle;
 
 	int currentInventoryIndex;
 
@@ -47,6 +51,8 @@ public class PlayerController : MonoBehaviour
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
 		inventory = GetComponent<PlayerInventory>();
+		nightCycle = GameObject.Find("Global Light (Sun)").GetComponent<DayNightCycleManager>();
+
 
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
@@ -61,6 +67,7 @@ public class PlayerController : MonoBehaviour
 	private void Update()
 	{
 		CycleInventory();
+		UseItem();
 	}
 
 
@@ -108,7 +115,23 @@ public class PlayerController : MonoBehaviour
 
 	void UseItem()
 	{
+		if ((nightCycle.colourArrayIndex >= 0 && nightCycle.colourArrayIndex <= 9) || (nightCycle.colourArrayIndex >= 18 && nightCycle.colourArrayIndex <= 23))
+		{
+			if (currentInventoryIndex == 3)
+			{
+				torch.SetActive(true);
+			}
+			else
+			{
+				torch.SetActive(false);
+			}
 
+			
+		}		
+		else
+		{
+			torch.SetActive(false);
+		}
 	}
 
 	/*
