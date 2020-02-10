@@ -35,7 +35,7 @@ public class PlayerDogLayerManager : MonoBehaviour
 			if (player.transform.position.y > dog.transform.position.y)
 			{
 				//dog infront player
-				Debug.Log("Dog in front");
+				//Debug.Log("Dog in front");
 
 				bottomLayer = (int)((Mathf.Floor(playerSprite.sortingOrder / 3) * 3) + 1);
 				topLayer = bottomLayer + 1;
@@ -47,7 +47,7 @@ public class PlayerDogLayerManager : MonoBehaviour
 			else
 			{
 				//player infront dog
-				Debug.Log("Player in front");
+				//Debug.Log("Player in front");
 
 				bottomLayer = (int)((Mathf.Floor(playerSprite.sortingOrder / 3) * 3) + 1);
 				topLayer = bottomLayer + 1;

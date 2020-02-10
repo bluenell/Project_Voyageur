@@ -6,23 +6,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-	
 	#region Public Variables
 	[Header("Player Stats")]
 	public float stamina;
 	public float xSpeed, ySpeed;
 	public bool isMoving;
 
-	[Header("Player Inventory")]
-	public bool hasWood;
-	public bool hasStick;
-	public bool hasFish;
-	public bool hasCanoe, canPickUp;
-
 	[Header("Canoe")]
 	public GameObject canoe;
 	public GameObject canoeTarget;
 	public GameObject putDownTarget;
+	public bool canPickUp;
 
 	#endregion
 
@@ -33,8 +27,10 @@ public class PlayerController : MonoBehaviour
 	Rigidbody2D rb;
 	SpriteRenderer sprite;
 	Animator anim;
+	PlayerInventory inventory;
 
 
+	int currentInventoryIndex;
 
 	#endregion
 
@@ -46,25 +42,29 @@ public class PlayerController : MonoBehaviour
 
 	// Start is called before the first frame update
 	void Start()
-    {
+	{
 		rb = GetComponent<Rigidbody2D>();
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
-
+		inventory = GetComponent<PlayerInventory>();
 
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
-    }
-	
-    // Update is called once per frame
-    void FixedUpdate()
-    {
+	}
+
+	// Update is called once per frame
+	void FixedUpdate()
+	{
 		Move();
-    }
+
+	}
 
 	private void Update()
 	{
-		HandleCanoe();
+		CycleInventory();
+
+
+
 	}
 
 
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
 		//Debug.Log("X Input " + moveX + " Y Input " + moveY);
 
-		rb.velocity = new Vector2(moveX * xSpeed, moveY* ySpeed);
+		rb.velocity = new Vector2(moveX * xSpeed, moveY * ySpeed);
 
 		float yPos = transform.position.y;
 
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
 		}
 		if (moveX > 0f)
 		{
-		 sprite.flipX = false;
+			sprite.flipX = false;
 		}
 
 		#endregion
@@ -110,6 +110,8 @@ public class PlayerController : MonoBehaviour
 	{
 
 	}
+
+	/*
 	//Handles the picking up/placing down the canoe
 	void HandleCanoe()
 	{
@@ -121,20 +123,50 @@ public class PlayerController : MonoBehaviour
 			canPickUp = false;
 
 		}
-
-		/*
-		if (Input.GetButtonDown("Joystick X") && hasCanoe)
-		{
-			canoe.transform.position = putDownTarget.transform.position;
-			canoe.transform.SetParent(null);
-			hasCanoe = false;
-			canPickUp = true;
-		}
 		*/
 
-		
+	/*
+	if (Input.GetButtonDown("Joystick X") && hasCanoe)
+	{
+		canoe.transform.position = putDownTarget.transform.position;
+		canoe.transform.SetParent(null);
+		hasCanoe = false;
+		canPickUp = true;
+	}
+	*/
+
+	void CycleInventory()
+	{
+
+
+		if (Input.GetButtonDown("InventoryRight"))
+		{
+			currentInventoryIndex++;
+
+			if (currentInventoryIndex == inventory.tools.Count)
+			{
+				currentInventoryIndex = 0;
+			}
+			Debug.Log(inventory.tools[currentInventoryIndex]);
+		}
+
+		if (Input.GetButtonDown("InventoryLeft"))
+		{
+			if (currentInventoryIndex == 0)
+			{
+				currentInventoryIndex = inventory.tools.Count;
+			}
+
+			currentInventoryIndex--;
+			Debug.Log(inventory.tools[currentInventoryIndex]);
+		}
 	}
 
-
-
 }
+
+		
+
+
+
+
+

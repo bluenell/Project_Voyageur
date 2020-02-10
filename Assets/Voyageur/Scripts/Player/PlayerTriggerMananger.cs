@@ -6,21 +6,16 @@ public class PlayerTriggerMananger : MonoBehaviour
 {
 
 	PlayerController playerController;
+	GameObject interactedObject;
 
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
+	// Start is called before the first frame update
+	void Start()
+	{
 		playerController = GetComponent<PlayerController>();
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	}
 
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -28,6 +23,11 @@ public class PlayerTriggerMananger : MonoBehaviour
 		if (other.gameObject.tag == "Canoe")
 		{
 			playerController.canPickUp = true;
+		}
+
+		if (other.gameObject.tag == "Observation")
+		{
+			interactedObject = other.gameObject; 
 		}
 	}
 
@@ -38,5 +38,9 @@ public class PlayerTriggerMananger : MonoBehaviour
 			playerController.canPickUp = false;
 		}
 	}
+
+	
+
+
 
 }
