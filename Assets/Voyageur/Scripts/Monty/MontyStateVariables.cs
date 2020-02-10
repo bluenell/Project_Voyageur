@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class MontyStateVariables : MonoBehaviour
 {
-
-	public float distFromPlayer;
+	[HideInInspector]
+	public bool playerFlipped;
+	[HideInInspector]
 	public bool playerMoving;
-	public int sitWaitTime;
 
-	public float animationDelay;
-
-	public float distanceToFollow;
-
+	[Header("Follow")]
+	public float distFromPlayer;
 	public float montySpeed;
 
+	
+	[Header("Idle")]
+	public float distanceToFollow;
 
+	[Header("Sit")]
+	public int sitWaitTime;
+	public Vector2 randomWaitRange;
 
 	GameObject player;
 
@@ -27,6 +31,8 @@ public class MontyStateVariables : MonoBehaviour
 	{
 		distFromPlayer = CalculateDistance();
 		playerMoving = GetPlayerMoving();
+		playerFlipped = GetPlayerDirectionPositive();
+		
 	}
 
 	float CalculateDistance()
@@ -34,7 +40,6 @@ public class MontyStateVariables : MonoBehaviour
 		distFromPlayer = Vector2.Distance(transform.position, player.transform.position);
 		return distFromPlayer;
 	}
-
 	bool GetPlayerMoving()
 	{
 		if (player.GetComponent<PlayerController>().isMoving)
@@ -45,6 +50,24 @@ public class MontyStateVariables : MonoBehaviour
 		{
 			return false;
 		}
+	}
+
+	bool GetPlayerDirectionPositive()
+	{
+		if (player.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX == true)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position, distanceToFollow);
 	}
 
 

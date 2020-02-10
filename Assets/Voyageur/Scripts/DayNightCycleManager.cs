@@ -5,73 +5,44 @@ using UnityEngine.UI;
 
 public class DayNightCycleManager : MonoBehaviour
 {
-	[Range(0, 24)]
-	public int colourArrayIndex;
-	public Camera camera;
+	[Range(0, 24)]// Using a range puts a slider in the inspector, making adjustments really easy and visual
+	public int colourArrayIndex; //stores the current index of the colour array (essentially is the time of day)
 
-	UnityEngine.Experimental.Rendering.Universal.Light2D globalLight;
-	public Color[] colours;
+	Camera camera;
+
+	UnityEngine.Experimental.Rendering.Universal.Light2D globalLight; //The global light for the scene
+	public Color[] colours; //the array of colours for the cycle. Using the Color data type allows for easy and visual colour customisation
 
 	//public float transitionSpeed = 50f;
 
-	public float timeScale = 0.8f;
+	public float timeScale = 0.8f; //how quickly it takes to transition from one hour to the next. A value of 1 is one change per second.
 	float lerpValue;
-	bool isChanging;
+	bool isChanging; //returns true when the cycle is changing. 
 
 	//public Text timeText;
 
 	
 
+
+
     // Start is called before the first frame update
-    void Start()
+ [ExecuteAlways]   
+ void Start()
     {
-		
+		camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		globalLight = GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
 		globalLight.color = colours[colourArrayIndex];
 		
     }
 
-    [ExecuteInEditMode]
+
 	// Update is called once per frame
-    void FixedUpdate()
-    {
-		/*
-		if (Input.GetKeyDown("space") && !isChanging)
-		{
-			isChanging = true;
-		}
-		if (isChanging)
-		{
-			ChangeColour();
-		}
-		*/
-
+	void FixedUpdate()
+	{
 		ChangeColour();
-
-		//timeText.text = (colourArrayIndex.ToString() + ":00");
-
-
-		//globalLight.color = Color.Lerp(colours[colourArrayIndex], colours[colourArrayIndex + 1], transitionSpeed * Time.deltaTime);
-		//colourArrayIndex++;
-
-		/*
-		for (int i = 0; i < colours.Length; i++)
-		{
-			if (Input.GetKeyDown(KeyCode.Space))
-			{
-				globalLight.color = Color.Lerp(colours[i], colours[i + 1], transitionSpeed * Time.deltaTime);
-
-			}
-
-			
-		}
-		*/
-	    	
-		//globalLight.color = colours[colourArrayIndex];
 	}
-
 	
-	
+	[ExecuteAlways]
 	void ChangeColour()
 	{
 		Debug.Log("Changing");

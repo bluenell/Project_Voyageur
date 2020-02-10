@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+	
 	#region Public Variables
 	[Header("Player Stats")]
 	public float stamina;
@@ -32,9 +33,16 @@ public class PlayerController : MonoBehaviour
 	Rigidbody2D rb;
 	SpriteRenderer sprite;
 	Animator anim;
-	
+
+
 
 	#endregion
+
+
+	void Awake()
+	{
+
+	}
 
 	// Start is called before the first frame update
 	void Start()
@@ -60,13 +68,14 @@ public class PlayerController : MonoBehaviour
 	}
 
 
-	//Controls the play  er movment when not holding the canoe
+	//Controls the player movment when not holding the canoe
 	void Move()
 	{
 
 		float moveX = Input.GetAxis("Horizontal");
 		float moveY = Input.GetAxis("Vertical");
-		
+
+		//Debug.Log("X Input " + moveX + " Y Input " + moveY);
 
 		rb.velocity = new Vector2(moveX * xSpeed, moveY* ySpeed);
 
@@ -83,7 +92,6 @@ public class PlayerController : MonoBehaviour
 		}
 
 		#endregion
-
 
 		if (moveX != 0 || moveY != 0)
 		{

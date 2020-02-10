@@ -8,6 +8,7 @@ public class MontyStateActions : MonoBehaviour
 	MontyStateVariables stateVariables;
 	GameObject player;
 
+
 	private void Start()
 	{
 		stateVariables = GetComponent<MontyStateVariables>();
@@ -29,19 +30,31 @@ public class MontyStateActions : MonoBehaviour
 	{
 	   	Debug.Log("Monty is Idle");
 		anim.SetBool("isMoving", false);
-
-
-
 	}
 
 	public void Follow()
 	{
+		SpriteRenderer sprite;
+		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+
+
 		//StartCoroutine(stateVariables.DelayAnimation());
 		Debug.Log("Monty is following");
 		anim.SetBool("isMoving", true);
 		anim.SetBool("isSitting", false);
 
+		if (player.transform.position.x < transform.position.x)
+		{
+			sprite.flipX = true;
+		}
+		if (player.transform.position.x > transform.position.x)
+		{
+			sprite.flipX = false;
+		}
+
+
 		transform.position = Vector2.MoveTowards(transform.position, player.transform.position, stateVariables.montySpeed * Time.deltaTime);
+	}
 
 	public void Sit()
 	{
