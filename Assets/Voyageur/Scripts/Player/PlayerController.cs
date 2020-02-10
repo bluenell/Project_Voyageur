@@ -56,22 +56,17 @@ public class PlayerController : MonoBehaviour
 	void FixedUpdate()
 	{
 		Move();
-
 	}
 
 	private void Update()
 	{
 		CycleInventory();
-
-
-
 	}
 
 
 	//Controls the player movment when not holding the canoe
 	void Move()
 	{
-
 		float moveX = Input.GetAxis("Horizontal");
 		float moveY = Input.GetAxis("Vertical");
 
@@ -111,6 +106,11 @@ public class PlayerController : MonoBehaviour
 
 	}
 
+	void UseItem()
+	{
+
+	}
+
 	/*
 	//Handles the picking up/placing down the canoe
 	void HandleCanoe()
@@ -137,8 +137,6 @@ public class PlayerController : MonoBehaviour
 
 	void CycleInventory()
 	{
-
-
 		if (Input.GetButtonDown("InventoryRight"))
 		{
 			currentInventoryIndex++;
