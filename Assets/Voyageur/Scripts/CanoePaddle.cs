@@ -8,11 +8,11 @@ public class CanoePaddle : MonoBehaviour
 	Rigidbody2D rb;
 	River river;
 
-	public float paddleForce;
-
 	Vector2 movement;
 	Vector2 momementum = new Vector2();
-	public float acceleration;
+
+	[Header("Canoe Speed Variables")]
+	public float decelerationRate;
 	public float friction;
 	public float stopValue;
 	public float maxSpeed;
@@ -20,21 +20,24 @@ public class CanoePaddle : MonoBehaviour
 
 
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
+	// Start is called before the first frame update
+	void Start()
+	{
 		rb = GetComponent<Rigidbody2D>();
-    }
+	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		Paddle();
+	}
+
+	void Paddle()
+	{
+		
 		float xDir = Input.GetAxis("Horizontal");
 
-
-		if (xDir <0)
+		if (xDir < 0)
 		{
 			xDir = 0;
 			brakingMultiplier = 3f;
@@ -48,14 +51,13 @@ public class CanoePaddle : MonoBehaviour
 
 		if (xDir <= 0)
 		{
-			momementum -= ((momementum.normalized * acceleration * Time.deltaTime * friction)*  brakingMultiplier);
+			momementum -= ((momementum.normalized * decelerationRate * Time.deltaTime * friction) * brakingMultiplier);
 			if (momementum.magnitude < stopValue)
 			{
 				momementum = new Vector2();
 				Float();
 			}
 		}
-	
 
 		momementum += movement;
 
@@ -65,19 +67,12 @@ public class CanoePaddle : MonoBehaviour
 		}
 
 		transform.Translate(momementum);
-
 	}
-
-
-	void Paddle()
-	{
-		
-	}
-
 
 	void Float()
 	{
 		rb.velocity = new Vector2(river.riverCurrent, 0);
+
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
