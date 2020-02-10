@@ -7,6 +7,9 @@ public class CanoePaddle : MonoBehaviour
 
 	Rigidbody2D rb;
 
+	public float riverSpeed;
+	public float paddleForce;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +18,20 @@ public class CanoePaddle : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+	{
+		rb.velocity = new Vector2(riverSpeed, 0);
+	
     }
+
+
+	void Paddle()
+	{
+
+	}
+
+
+	void Float()
+	{
+
+	}
 }
