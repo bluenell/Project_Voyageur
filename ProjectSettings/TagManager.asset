@@ -8,6 +8,7 @@ TagManager:
   - TriggerTop
   - TriggerBottom
   - Canoe
+  - River
   layers:
   - Default
   - TransparentFX
