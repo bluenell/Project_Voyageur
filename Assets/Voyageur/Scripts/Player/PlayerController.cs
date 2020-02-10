@@ -87,10 +87,12 @@ public class PlayerController : MonoBehaviour
 		if (moveX < 0f)
 		{
 			sprite.flipX = true;
+			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 		}
 		if (moveX > 0f)
 		{
 			sprite.flipX = false;
+			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 		}
 
 		#endregion
