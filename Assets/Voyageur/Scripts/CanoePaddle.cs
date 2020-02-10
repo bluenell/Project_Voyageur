@@ -7,6 +7,7 @@ public class CanoePaddle : MonoBehaviour
 
 	Rigidbody2D rb;
 	River river;
+	Animator anim;
 
 	Vector2 movement;
 	Vector2 momementum = new Vector2();
@@ -18,24 +19,44 @@ public class CanoePaddle : MonoBehaviour
 	public float maxSpeed;
 	public float brakingMultiplier;
 
+	float counter;
 
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		anim = transform.GetChild(0).GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		if (Input.GetAxis("Horizontal")>0)
+		{
+			anim.SetBool("isStopping", false);
+			anim.SetBool("isPaddling", true);
+		}
+
+		else if(Input.GetAxis("Horizontal") < 0)
+		{
+			anim.SetBool("isStopping", true);
+			anim.SetBool("isPaddling", false);
+		}
+		else
+		{
+			anim.SetBool("isStopping", false);
+			anim.SetBool("isPaddling", false);
+		}
+
+
 		Paddle();
 	}
 
 	void Paddle()
 	{
-		
 		float xDir = Input.GetAxis("Horizontal");
+
 
 		if (xDir < 0)
 		{
@@ -59,13 +80,29 @@ public class CanoePaddle : MonoBehaviour
 			}
 		}
 
-		momementum += movement;
-
-		if (momementum.magnitude > (maxSpeed * Time.deltaTime))
+		if (xDir > 0)
 		{
-			momementum = momementum.normalized * (maxSpeed * Time.deltaTime);
-		}
+			counter += Time.deltaTime;
+			Debug.Log(counter);
 
+			if (counter >= 3)
+			{
+				momementum = new Vector2();
+				counter = 0;
+			}
+
+			momementum += movement;
+
+			if (momementum.magnitude > (maxSpeed * Time.deltaTime))
+			{
+				momementum = momementum.normalized * (maxSpeed * Time.deltaTime);
+			}
+
+		}
+		
+		
+
+		
 		transform.Translate(momementum);
 	}
 
