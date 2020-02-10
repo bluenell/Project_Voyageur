@@ -32,7 +32,7 @@ public class CanoePaddle : MonoBehaviour
 
 	void Paddle()
 	{
-
+		rb.velocity = new Vector2(paddleForce, 0);
 	}
 
 
