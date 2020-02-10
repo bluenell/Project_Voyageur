@@ -16,6 +16,7 @@ public class CanoePaddle : MonoBehaviour
 	public float friction;
 	public float stopValue;
 	public float maxSpeed;
+	public float brakingMultiplier;
 
 
 
@@ -30,28 +31,35 @@ public class CanoePaddle : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
 		float xDir = Input.GetAxis("Horizontal");
+
+
+		if (xDir <0)
+		{
+			xDir = 0;
+			brakingMultiplier = 3f;
+		}
+		else
+		{
+			brakingMultiplier = 1f;
+		}
+
 		movement = new Vector2(xDir, 0);
-
-		momementum -= (momementum.normalized * acceleration * Time.deltaTime * friction);
-
-
 
 		if (xDir <= 0)
 		{
+			momementum -= ((momementum.normalized * acceleration * Time.deltaTime * friction)*  brakingMultiplier);
 			if (momementum.magnitude < stopValue)
 			{
-
 				momementum = new Vector2();
 				Float();
 			}
 		}
+	
 
 		momementum += movement;
 
-
-		if (momementum.magnitude > (maxSpeed * Time.deltaTime)) 
+		if (momementum.magnitude > (maxSpeed * Time.deltaTime))
 		{
 			momementum = momementum.normalized * (maxSpeed * Time.deltaTime);
 		}
@@ -63,7 +71,7 @@ public class CanoePaddle : MonoBehaviour
 
 	void Paddle()
 	{
-
+		
 	}
 
 
