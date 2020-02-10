@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class MontyStateVariables : MonoBehaviour
 {
-
-	public float distFromPlayer;
-	public bool playerMoving;
-	public int sitWaitTime;
-
-	public float animationDelay;
-
-	public float distanceToFollow;
-
+	[HideInInspector]
 	public bool playerFlipped;
+	[HideInInspector]
+	public bool playerMoving;
 
+	[Header("Follow")]
+	public float distFromPlayer;
 	public float montySpeed;
 
+	
+	[Header("Idle")]
+	public float distanceToFollow;
 
+	[Header("Sit")]
+	public int sitWaitTime;
+	public Vector2 randomWaitRange;
 
 	GameObject player;
 
@@ -38,7 +40,6 @@ public class MontyStateVariables : MonoBehaviour
 		distFromPlayer = Vector2.Distance(transform.position, player.transform.position);
 		return distFromPlayer;
 	}
-
 	bool GetPlayerMoving()
 	{
 		if (player.GetComponent<PlayerController>().isMoving)

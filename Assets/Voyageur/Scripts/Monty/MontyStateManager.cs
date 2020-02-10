@@ -6,6 +6,7 @@ public class MontyStateManager : MonoBehaviour
 {
 	string currentState;
 	float counter;
+	int rand;
 
 	MontyStateActions stateActions;
 	MontyStateVariables stateVariables;
@@ -20,26 +21,25 @@ public class MontyStateManager : MonoBehaviour
 
 	private void Update()
 	{
-
+		//When to switch to follow
 		if ((stateVariables.playerMoving && stateVariables.distFromPlayer >= stateVariables.distanceToFollow) || stateVariables.distFromPlayer >= stateVariables.distanceToFollow)
 		{
 			counter = 0;
 			currentState = "follow";
 			SwitchState();
 			counter = 0;
+			rand = (int)Random.Range(stateVariables.randomWaitRange.x, stateVariables.randomWaitRange.y);
 		}
 
-
-
-		if (!stateVariables.playerMoving && counter < stateVariables.sitWaitTime)
+		//when to switch to idle
+		if (!stateVariables.playerMoving && counter < rand)
 		{
-
-
 			currentState = "idle";
 			SwitchState();
-
+			
 			counter += Time.deltaTime;
-
+			
+			//when to switch to sit
 			if (counter >= stateVariables.sitWaitTime)
 			{
 				currentState = "sit";

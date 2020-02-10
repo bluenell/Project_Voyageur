@@ -28,15 +28,8 @@ public class MontyStateActions : MonoBehaviour
 
 	public void Idle()
 	{
-
-
 	   	Debug.Log("Monty is Idle");
 		anim.SetBool("isMoving", false);
-
-
-
-
-
 	}
 
 	public void Follow()
