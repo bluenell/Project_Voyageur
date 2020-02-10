@@ -19,6 +19,7 @@ public class CanoePaddle : MonoBehaviour
 	public float maxSpeed;
 	public float brakingMultiplier;
 
+	float counter;
 
 
 	// Start is called before the first frame update
@@ -31,11 +32,12 @@ public class CanoePaddle : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetAxis("Horizontal") > 0)
+		if (Input.GetAxis("Horizontal")>0)
 		{
-			anim.SetBool("isPaddling", true);
 			anim.SetBool("isStopping", false);
+			anim.SetBool("isPaddling", true);
 		}
+
 		else if(Input.GetAxis("Horizontal") < 0)
 		{
 			anim.SetBool("isStopping", true);
@@ -53,9 +55,8 @@ public class CanoePaddle : MonoBehaviour
 
 	void Paddle()
 	{
-
-		
 		float xDir = Input.GetAxis("Horizontal");
+
 
 		if (xDir < 0)
 		{
@@ -71,7 +72,6 @@ public class CanoePaddle : MonoBehaviour
 
 		if (xDir <= 0)
 		{
-
 			momementum -= ((momementum.normalized * decelerationRate * Time.deltaTime * friction) * brakingMultiplier);
 			if (momementum.magnitude < stopValue)
 			{
@@ -79,13 +79,28 @@ public class CanoePaddle : MonoBehaviour
 				Float();
 			}
 		}
-		
-		momementum += movement;
 
-		if (momementum.magnitude > (maxSpeed * Time.deltaTime))
+		if (xDir > 0)
 		{
-			momementum = momementum.normalized * (maxSpeed * Time.deltaTime);
+			counter += Time.deltaTime;
+			Debug.Log(counter);
+
+			if (counter >= 3)
+			{
+				momementum = new Vector2();
+				counter = 0;
+			}
+
+			momementum += movement;
+
+			if (momementum.magnitude > (maxSpeed * Time.deltaTime))
+			{
+				momementum = momementum.normalized * (maxSpeed * Time.deltaTime);
+			}
+
 		}
+		
+		
 
 		
 		transform.Translate(momementum);
