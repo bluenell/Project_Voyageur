@@ -458,7 +458,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -494,6 +494,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddleForce: 5
+  acceleration: 0.3
+  friction: 0.01
+  stopValue: 0.001
+  maxSpeed: 3
 --- !u!1 &468340911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,7 +1353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  riverCurrent: 1
+  riverCurrent: 0.7
 --- !u!1 &1759728960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,7 +1532,7 @@ PrefabInstance:
     - target: {fileID: 7945989854312112257, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.6
+      value: 2.38
       objectReference: {fileID: 0}
     - target: {fileID: 7945989854312112261, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
