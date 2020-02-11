@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class IndividualInteractions : MonoBehaviour
 {
+	InteractionsManager manager;
+
+	private void Start()
+	{
+		manager = GameObject.Find("Player").GetComponent<InteractionsManager>();
+	}
+
+	Animator anim;
 
 	#region InputInteractions
 	void Sleep()
@@ -75,7 +83,22 @@ public class IndividualInteractions : MonoBehaviour
 	public void Squirrel()
 	{
 		Debug.Log("Interation with Squirrel");
+
+		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>() ;
+		
+		anim.SetTrigger("Play");
+
+
+
 	}
+
+
+	public void Fetch()
+	{
+		Debug.Log("Interation with Fetch");
+	}
+
+
 
 
 }
