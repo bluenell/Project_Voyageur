@@ -9,6 +9,8 @@ TagManager:
   - TriggerBottom
   - Canoe
   - River
+  - Observation
+  - Interaction
   layers:
   - Default
   - TransparentFX
