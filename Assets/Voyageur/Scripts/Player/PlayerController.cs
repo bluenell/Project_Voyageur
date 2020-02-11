@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
 	public GameObject putDownTarget;
 	public bool canPickUp;
 
+	[Header("Items)")]
+
+	public GameObject torch;
+
 	#endregion
 
 
@@ -28,7 +32,7 @@ public class PlayerController : MonoBehaviour
 	SpriteRenderer sprite;
 	Animator anim;
 	PlayerInventory inventory;
-
+	DayNightCycleManager nightCycle;
 
 	int currentInventoryIndex;
 
@@ -47,6 +51,8 @@ public class PlayerController : MonoBehaviour
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
 		inventory = GetComponent<PlayerInventory>();
+		nightCycle = GameObject.Find("Global Light (Sun)").GetComponent<DayNightCycleManager>();
+
 
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
@@ -56,22 +62,18 @@ public class PlayerController : MonoBehaviour
 	void FixedUpdate()
 	{
 		Move();
-
 	}
 
 	private void Update()
 	{
 		CycleInventory();
-
-
-
+		UseItem();
 	}
 
 
 	//Controls the player movment when not holding the canoe
 	void Move()
 	{
-
 		float moveX = Input.GetAxis("Horizontal");
 		float moveY = Input.GetAxis("Vertical");
 
@@ -85,10 +87,12 @@ public class PlayerController : MonoBehaviour
 		if (moveX < 0f)
 		{
 			sprite.flipX = true;
+			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 		}
 		if (moveX > 0f)
 		{
 			sprite.flipX = false;
+			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 		}
 
 		#endregion
@@ -109,6 +113,27 @@ public class PlayerController : MonoBehaviour
 	void Interact()
 	{
 
+	}
+
+	void UseItem()
+	{
+		if ((nightCycle.colourArrayIndex >= 0 && nightCycle.colourArrayIndex <= 9) || (nightCycle.colourArrayIndex >= 18 && nightCycle.colourArrayIndex <= 23))
+		{
+			if (currentInventoryIndex == 3)
+			{
+				torch.SetActive(true);
+			}
+			else
+			{
+				torch.SetActive(false);
+			}
+
+			
+		}		
+		else
+		{
+			torch.SetActive(false);
+		}
 	}
 
 	/*
@@ -137,8 +162,6 @@ public class PlayerController : MonoBehaviour
 
 	void CycleInventory()
 	{
-
-
 		if (Input.GetButtonDown("InventoryRight"))
 		{
 			currentInventoryIndex++;
