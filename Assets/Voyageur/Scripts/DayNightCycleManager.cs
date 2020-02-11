@@ -45,7 +45,7 @@ public class DayNightCycleManager : MonoBehaviour
 	[ExecuteAlways]
 	void ChangeColour()
 	{
-		Debug.Log("Changing");
+		//Debug.Log("Changing");
 		//globalLight.color = Color.Lerp(colours[colourArrayIndex], colours[colourArrayIndex + 1], transitionSpeed * Time.deltaTime);
 
 		if (lerpValue >= 1f)

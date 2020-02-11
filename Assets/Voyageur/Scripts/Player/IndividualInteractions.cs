@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IndividualInteractions : Interactions
+public class IndividualInteractions : MonoBehaviour
 {
-	
 
-	static void Sleep()
+	#region InputInteractions
+	void Sleep()
 	{
 		//check time
 		//play animations
@@ -14,14 +14,14 @@ public class IndividualInteractions : Interactions
 		//advance time to 06:00
 	}
 
-	static void Eat()
+	void Eat()
 	{
 		 //check fish
 		 //play animation
 		 //stamina = max
 	}
 
-	static void Harmonica()
+	void Harmonica()
 	{
 		//play clip at index
 		//advance index
@@ -31,13 +31,13 @@ public class IndividualInteractions : Interactions
 
 	}
 
-	static void PetDog()
+	void PetDog()
 	{
 		//play animation
 		//play sound
 	}
 
-	static void Chop()
+	void Chop()
 	{
 		//play animation
 		//play sound
@@ -46,7 +46,7 @@ public class IndividualInteractions : Interactions
 
 	}
 
-	static void Collect()
+	void Collect()
 	{
 		//play animation
 		//play sound
@@ -56,7 +56,7 @@ public class IndividualInteractions : Interactions
 
 	}
 
-	static void LightFire()
+	void LightFire()
 	{
 		//check if wood
 		//play animation
@@ -65,8 +65,17 @@ public class IndividualInteractions : Interactions
 		
 	}
 
-	static void InvestigateMine()
+	void InvestigateMine()
 	{
 		//play animation
 	}
+
+	#endregion 
+
+	public void Squirrel()
+	{
+		Debug.Log("Interation with Squirrel");
+	}
+
+
 }
