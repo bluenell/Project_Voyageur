@@ -116,6 +116,7 @@ public class CanoePaddle : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "River")
 		{
+			Debug.Log("River");
 			river = collision.gameObject.GetComponent<River>();
 		}
 	}
