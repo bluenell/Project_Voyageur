@@ -17,7 +17,7 @@ public class InteractionsManager : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Interaction")
 		{
-			Debug.Log("Interact");
+			//Debug.Log("Interact");
 			interaction = collision.gameObject.GetComponent<Interaction>();
 		}
 

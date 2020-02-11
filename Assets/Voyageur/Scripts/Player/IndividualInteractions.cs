@@ -75,7 +75,12 @@ public class IndividualInteractions : MonoBehaviour
 	public void Squirrel()
 	{
 		Debug.Log("Interation with Squirrel");
+
+		//play animation
+
 	}
+
+
 
 
 }

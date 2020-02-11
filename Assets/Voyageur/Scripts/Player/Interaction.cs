@@ -10,7 +10,7 @@ public class Interaction : MonoBehaviour
 
 	public void MarkAsComplete()
 	{
-		Debug.Log(name + " is complete");
+		//Debug.Log(name + " is complete");
 		complete = true;
 
 	}
