@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class IndividualInteractions : MonoBehaviour
 {
-	
+	InteractionsManager manager;
+
+	private void Start()
+	{
+		manager = GameObject.Find("Player").GetComponent<InteractionsManager>();
+	}
+
+	Animator anim;
 
 	#region InputInteractions
 	void Sleep()
@@ -77,7 +84,11 @@ public class IndividualInteractions : MonoBehaviour
 	{
 		Debug.Log("Interation with Squirrel");
 
-		//play animation
+		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>() ;
+		
+		anim.SetTrigger("Play");
+
+
 
 	}
 

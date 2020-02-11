@@ -5,8 +5,9 @@ using UnityEngine;
 public class InteractionsManager : MonoBehaviour
 {
 
-	Interaction interaction;
+	public Interaction interaction;
 	IndividualInteractions indivInteractions;
+	
 
 	private void Start()
 	{
@@ -19,31 +20,34 @@ public class InteractionsManager : MonoBehaviour
 		{
 			//Debug.Log("Interact");
 			interaction = collision.gameObject.GetComponent<Interaction>();
-		}
 
 
-
-		if (!interaction.complete)
-		{
-			switch (interaction.interactionName)
+			if (!interaction.complete)
 			{
-				case "Squirrel":
-					indivInteractions.Squirrel();
-					interaction.MarkAsComplete();
-					break;
+				switch (interaction.interactionName)
+				{
+					case "Squirrel":
+						indivInteractions.Squirrel();
+						interaction.MarkAsComplete();
+						break;
 
-				case "Fetch":
-					indivInteractions.Fetch();
-					interaction.MarkAsComplete();
-					break;
+					case "Fetch":
+						indivInteractions.Fetch();
+						interaction.MarkAsComplete();
+						break;
+				}
 			}
 		}
 
-		}
 
 
+		
 
 	}
+
+
+
+	
 
 
 }
