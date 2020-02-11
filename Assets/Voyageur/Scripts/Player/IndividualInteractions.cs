@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IndividualInteractions : MonoBehaviour
 {
+	
 
 	#region InputInteractions
 	void Sleep()
@@ -78,6 +79,12 @@ public class IndividualInteractions : MonoBehaviour
 
 		//play animation
 
+	}
+
+
+	public void Fetch()
+	{
+		Debug.Log("Interation with Fetch");
 	}
 
 

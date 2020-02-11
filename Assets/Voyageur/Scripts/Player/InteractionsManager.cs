@@ -25,13 +25,19 @@ public class InteractionsManager : MonoBehaviour
 
 		if (!interaction.complete)
 		{
-			switch (interaction.iName)
+			switch (interaction.interactionName)
 			{
 				case "Squirrel":
 					indivInteractions.Squirrel();
 					interaction.MarkAsComplete();
 					break;
+
+				case "Fetch":
+					indivInteractions.Fetch();
+					interaction.MarkAsComplete();
+					break;
 			}
+		}
 
 		}
 

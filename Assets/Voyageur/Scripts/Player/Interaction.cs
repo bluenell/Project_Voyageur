@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
-	public int index;
-	public string iName;
+	public string interactionName;
 	public bool complete;
 
 	public void MarkAsComplete()
