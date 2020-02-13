@@ -1,5 +1,77 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1579544603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579544604}
+  - component: {fileID: 1579544605}
+  m_Layer: 0
+  m_Name: torch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1579544604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579544603}
+  m_LocalRotation: {x: -0, y: -0, z: -0.70199937, w: 0.7121776}
+  m_LocalPosition: {x: 0.3, y: 2.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7945989854665336629}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.573006}
+--- !u!114 &1579544605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579544603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.497
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 1
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 28.31
+  m_PointLightOuterAngle: 162.51
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 24.8217
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &7945989854312112282
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,7 +86,7 @@ GameObject:
   - component: {fileID: 7945989854312112260}
   - component: {fileID: 7945989854312112261}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Player Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +100,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7945989854312112282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.810005, y: 5.19, z: -9.638051}
+  m_LocalPosition: {x: 2.38, y: 5.19, z: -9.638051}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7945989854665336629}
@@ -43,7 +115,7 @@ Camera:
   m_GameObject: {fileID: 7945989854312112282}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.5479708, g: 0.68090767, b: 0.8867924, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -150,6 +222,8 @@ GameObject:
   - component: {fileID: 7945989854665336628}
   - component: {fileID: 7945989854665336625}
   - component: {fileID: 7945989854665336624}
+  - component: {fileID: 721065585}
+  - component: {fileID: 721065586}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -172,6 +246,7 @@ Transform:
   - {fileID: 7945989854312112257}
   - {fileID: 7945989855342532508}
   - {fileID: 7945989854891776812}
+  - {fileID: 1579544604}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -235,17 +310,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamina: 0
-  xSpeed: 5
-  ySpeed: 5
+  xSpeed: 4
+  ySpeed: 4
   isMoving: 0
-  hasWood: 0
-  hasStick: 0
-  hasFish: 0
-  hasCanoe: 0
-  canPickUp: 0
   canoe: {fileID: 0}
   canoeTarget: {fileID: 7945989855342532509}
   putDownTarget: {fileID: 7945989854891776813}
+  canPickUp: 0
+  torch: {fileID: 1579544603}
 --- !u!114 &7945989854665336625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +342,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1dbce62ed2b9346b30add514fd7205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &721065585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945989854665334986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1cb90888698024291fc4cb482c160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tools:
+  - bare
+  - axe
+  - rod
+  - torch
+  hasWood: 0
+  hasFish: 0
+  hasStick: 0
+--- !u!114 &721065586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945989854665334986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329d95c1e3099344d8c6c07bcc4e2f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction: {fileID: 0}
 --- !u!1 &7945989854786786216
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +451,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.1, y: 3.8}
+  m_Size: {x: 3, y: 4.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
