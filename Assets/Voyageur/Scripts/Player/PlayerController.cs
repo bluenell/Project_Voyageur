@@ -86,12 +86,15 @@ public class PlayerController : MonoBehaviour
 		#region FlipCharacter
 		if (moveX < 0f)
 		{
-			sprite.flipX = true;
+			anim.SetBool("facingRight", false);
+			//sprite.flipX = true;
 			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 		}
 		if (moveX > 0f)
 		{
-			sprite.flipX = false;
+			anim.SetBool("facingRight", true);
+
+			//sprite.flipX = false;
 			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 		}
 
@@ -171,6 +174,7 @@ public class PlayerController : MonoBehaviour
 				currentInventoryIndex = 0;
 			}
 			Debug.Log(inventory.tools[currentInventoryIndex]);
+			anim.SetInteger("inventoryIndex", currentInventoryIndex);
 		}
 
 		if (Input.GetButtonDown("InventoryLeft"))
@@ -181,7 +185,9 @@ public class PlayerController : MonoBehaviour
 			}
 
 			currentInventoryIndex--;
+			anim.SetInteger("inventoryIndex", currentInventoryIndex);
 			Debug.Log(inventory.tools[currentInventoryIndex]);
+
 		}
 	}
 
