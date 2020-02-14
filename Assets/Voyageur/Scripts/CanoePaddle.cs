@@ -19,8 +19,13 @@ public class CanoePaddle : MonoBehaviour
 	public float maxSpeed;
 	public float brakingMultiplier;
 
-	float counter;
+	public float speed;
 
+	float tempTime = 0;
+
+	float counter = 6;
+	int countMax = 3;
+	bool canPaddle;
 
 	// Start is called before the first frame update
 	void Start()
@@ -32,91 +37,46 @@ public class CanoePaddle : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetAxis("Horizontal")>0)
-		{
-			anim.SetBool("isStopping", false);
-			anim.SetBool("isPaddling", true);
-		}
+		transform.Translate(new Vector2(river.riverCurrent * Time.deltaTime, 0));
 
-		else if(Input.GetAxis("Horizontal") < 0)
-		{
-			anim.SetBool("isStopping", true);
-			anim.SetBool("isPaddling", false);
-		}
-		else
-		{
-			anim.SetBool("isStopping", false);
-			anim.SetBool("isPaddling", false);
-		}
+		
 
 
-		Paddle();
+		if (Input.GetButtonDown("Button B"))
+		{
+			counter = Time.time - tempTime;
+			if (counter < 1.2)
+			{
+				return;
+			}
+			tempTime = Time.time;
+			Paddle();
+		}
+
+		//Float();
 	}
+
+	
 
 	void Paddle()
 	{
-		float xDir = Input.GetAxis("Horizontal");
+		speed = maxSpeed;
 
+		rb.AddForce(new Vector2(150f,0));
+		Debug.Log(counter);
 
-		if (xDir < 0)
-		{
-			xDir = 0;
-			brakingMultiplier = 3f;
-		}
-		else
-		{
-			brakingMultiplier = 1f;
-		}
-
-		movement = new Vector2(xDir, 0);
-
-		if (xDir <= 0)
-		{
-			momementum -= ((momementum.normalized * decelerationRate * Time.deltaTime * friction) * brakingMultiplier);
-			if (momementum.magnitude < stopValue)
-			{
-				momementum = new Vector2();
-				Float();
-			}
-		}
-
-		if (xDir > 0)
-		{
-			counter += Time.deltaTime;
-			Debug.Log(counter);
-
-			if (counter >= 3)
-			{
-				momementum = new Vector2();
-				counter = 0;
-			}
-
-			momementum += movement;
-
-			if (momementum.magnitude > (maxSpeed * Time.deltaTime))
-			{
-				momementum = momementum.normalized * (maxSpeed * Time.deltaTime);
-			}
-
-		}
-		
-		
-
-		
-		transform.Translate(momementum);
 	}
-
 	void Float()
 	{
-		rb.velocity = new Vector2(river.riverCurrent, 0);
+		
 
 	}
 
-	private void OnCollisionEnter2D(Collision2D collision)
+	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.tag == "River")
 		{
-			Debug.Log("River");
+			//Debug.Log("River");
 			river = collision.gameObject.GetComponent<River>();
 		}
 	}

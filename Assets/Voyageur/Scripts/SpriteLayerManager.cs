@@ -20,16 +20,49 @@ public class SpriteLayerManager : MonoBehaviour
 		if (other.gameObject.tag == "TriggerTop")
 		{
 			//Debug.Log(gameObject.name + " has collided with top door mat");
-			transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 1;
+
+			if (other.gameObject.transform.parent.name == "1")
+			{
+				transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 10;
+			}
+			if (other.gameObject.transform.parent.name == "2")
+			{
+				transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 4;
+			}
+			if (other.gameObject.transform.parent.name == "3")
+			{
+				transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 1;
+			}
+			if (other.gameObject.transform.parent.name == "4")
+			{
+				transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 1;
+			}
+
 		}
 
 		if (other.gameObject.tag=="TriggerBottom")
 		{
 			//Debug.Log(gameObject.name + " has collided with bottom door mat");
 
-			transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 4;
-
+			if (other.gameObject.transform.parent.name == "1")
+			{
+				transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 13;
+			}
+			if (other.gameObject.transform.parent.name == "2")
+			{
+				transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 10;
+			}
+			if (other.gameObject.transform.parent.name == "3")
+			{
+				transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 4;
+			}
+			if (other.gameObject.transform.parent.name == "4")
+			{
+				transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 4;
+			}
 		}
+
+	
 	}
 
 
