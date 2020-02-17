@@ -9,6 +9,7 @@ public class MontyStateActions : MonoBehaviour
 	GameObject player;
 	GameObject followTarget;
 	BoxCollider2D followTargetCollider;
+	Rigidbody2D rb;
 
 	bool targetFound;
 	Vector2 target;
@@ -21,6 +22,7 @@ public class MontyStateActions : MonoBehaviour
 		player = GameObject.Find("Player");
 		followTarget = player.transform.GetChild(3).gameObject;
 		followTargetCollider = followTarget.GetComponent<BoxCollider2D>();
+		rb = GetComponent<Rigidbody2D>();
 	}
 
 	public void Canoe()
@@ -55,7 +57,7 @@ public class MontyStateActions : MonoBehaviour
 			targetFound = true;
 		}
 	   
-		transform.position = Vector2.MoveTowards(transform.position, target, stateVariables.montySpeed * Time.deltaTime);
+		transform.position = Vector2.MoveTowards(transform.position,target, stateVariables.montySpeed* Time.deltaTime);
 
 		if (transform.position.x == target.x && transform.position.y == target.y)
 		{
@@ -65,14 +67,7 @@ public class MontyStateActions : MonoBehaviour
 
 		if (stateVariables.desintationReached)
 		{
-			stuckTimer += Time.deltaTime;
-
-			if (stuckTimer > 3)
-			{
-				targetFound = false;
-			}
-
-			
+			targetFound = false;			
 		}
 
 		if (target.x < transform.position.x)

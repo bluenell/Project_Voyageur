@@ -81,16 +81,25 @@ public class MontyStateVariables : MonoBehaviour
 			Random.Range(bounds.min.y, bounds.max.y)
 			);
 
-		if (pathwayBounds.bounds.Contains(location))
+
+		if (CheckIfPointInCollider(location))
 		{
-			Debug.Log("Location Found: " + location);
+			Debug.DrawLine(transform.position, location,Color.green,100f);
+			
 			return location;
 		}
 		else
 		{
-			Debug.Log("Location out of bounds" + location);
+			Debug.DrawLine(transform.position, location, Color.red, 10f);
+			Debug.Log("Invalid Location:" + location);
 			return GetRandomPointInBounds(bounds);
 		}
+
+	}
+
+	public bool CheckIfPointInCollider(Vector2 location)
+	{
+		return pathwayBounds.OverlapPoint(location);
 
 	}
 
@@ -98,6 +107,7 @@ public class MontyStateVariables : MonoBehaviour
 	{
 		if (collision.gameObject.tag =="PathwayTriggerBounds")
 		{
+			Debug.Log(collision.gameObject.name);
 			pathwayBounds =  collision.gameObject.GetComponent<PolygonCollider2D>();
 		}
 	}
