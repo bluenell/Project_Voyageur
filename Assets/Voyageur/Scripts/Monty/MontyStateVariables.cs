@@ -9,8 +9,11 @@ public class MontyStateVariables : MonoBehaviour
 	[HideInInspector]
 	public bool playerMoving;
 
+	
+
 	[Header("Follow")]
 	public float distFromPlayer;
+	public bool desintationReached;
 	public float montySpeed;
 
 	
@@ -70,6 +73,25 @@ public class MontyStateVariables : MonoBehaviour
 		Gizmos.DrawWireSphere(transform.position, distanceToFollow);
 	}
 
+
+	public Vector2 GetRandomPointInBounds(Bounds bounds)
+	{
+		desintationReached = false;
+		Vector2 location;
+		location = new Vector2(
+			Random.Range(bounds.min.x, bounds.max.x),
+			Random.Range(bounds.min.y, bounds.max.y)
+			);
+
+		Debug.Log(location);
+
+		return location;
+
+	}
+
+		
+	
+	
 
 
 

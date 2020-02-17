@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class IndividualInteractions : MonoBehaviour
 {
+	public GameObject[] animals;
+
+
+
 	InteractionsManager manager;
 
 	private void Start()
@@ -82,7 +86,7 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Squirrel()
 	{
-		Debug.Log("Interation with Squirrel");
+		manager.interaction.gameObject.transform.GetChild(0).gameObject.SetActive(true);
 
 		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>() ;
 		
