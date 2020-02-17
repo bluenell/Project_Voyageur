@@ -48,16 +48,7 @@ public class MontyStateActions : MonoBehaviour
 		anim.SetBool("isMoving", true);
 		anim.SetBool("isSitting", false);
 
-		/*
-		if (player.transform.position.x < transform.position.x)
-		{
-			sprite.flipX = true;
-		}
-		if (player.transform.position.x > transform.position.x)
-		{
-			sprite.flipX = false;
-		}
-		*/
+		
 		if (targetFound == false)
 		{
 			target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
@@ -76,6 +67,16 @@ public class MontyStateActions : MonoBehaviour
 		{
 			targetFound = false;
 		}
+
+		if (target.x < transform.position.x)
+		{
+			sprite.flipX = true;
+		}
+		else
+		{
+			sprite.flipX = false;
+		}
+
 
 	
 
