@@ -12,6 +12,7 @@ TagManager:
   - Observation
   - Interaction
   - TriggerMiddle
+  - PathwayTriggerBounds
   layers:
   - Default
   - TransparentFX

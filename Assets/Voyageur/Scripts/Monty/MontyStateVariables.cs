@@ -7,15 +7,13 @@ public class MontyStateVariables : MonoBehaviour
 	[HideInInspector]
 	public bool playerFlipped;
 	[HideInInspector]
-	public bool playerMoving;
-
-	
+	public bool playerMoving;	
 
 	[Header("Follow")]
 	public float distFromPlayer;
 	public bool desintationReached;
 	public float montySpeed;
-
+	PolygonCollider2D pathwayBounds;
 	
 	[Header("Idle")]
 	public float distanceToFollow;
@@ -83,15 +81,30 @@ public class MontyStateVariables : MonoBehaviour
 			Random.Range(bounds.min.y, bounds.max.y)
 			);
 
-		Debug.Log(location);
-
-		return location;
+		if (pathwayBounds.bounds.Contains(location))
+		{
+			Debug.Log("Location Found: " + location);
+			return location;
+		}
+		else
+		{
+			Debug.Log("Location out of bounds" + location);
+			return GetRandomPointInBounds(bounds);
+		}
 
 	}
 
-		
-	
-	
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag =="PathwayTriggerBounds")
+		{
+			pathwayBounds =  collision.gameObject.GetComponent<PolygonCollider2D>();
+		}
+	}
+
+
+
+
 
 
 
