@@ -12,6 +12,7 @@ public class MontyStateActions : MonoBehaviour
 
 	bool targetFound;
 	Vector2 target;
+	float stuckTimer;
 
 	private void Start()
 	{
@@ -48,7 +49,6 @@ public class MontyStateActions : MonoBehaviour
 		anim.SetBool("isMoving", true);
 		anim.SetBool("isSitting", false);
 
-		
 		if (targetFound == false)
 		{
 			target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
@@ -65,7 +65,14 @@ public class MontyStateActions : MonoBehaviour
 
 		if (stateVariables.desintationReached)
 		{
-			targetFound = false;
+			stuckTimer += Time.deltaTime;
+
+			if (stuckTimer > 3)
+			{
+				targetFound = false;
+			}
+
+			
 		}
 
 		if (target.x < transform.position.x)
