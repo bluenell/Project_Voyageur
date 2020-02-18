@@ -575,13 +575,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.41945267, y: 2.8468552}
-      - {x: -1.1545391, y: 2.839672}
-      - {x: -4.1819744, y: 2.8036423}
-      - {x: -1.9435196, y: 1.8839531}
-      - {x: -0.7399845, y: 1.5443878}
-      - {x: 1.4835701, y: 1.6529503}
-      - {x: 0.5755844, y: 2.1480217}
+    - - {x: 0.74772453, y: 2.5226402}
+      - {x: -5.1708317, y: 2.1876297}
+      - {x: -3.3337097, y: 1.3822823}
+      - {x: 1.9374733, y: 1.7177925}
 --- !u!1 &375399000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,12 +1166,12 @@ PrefabInstance:
     - target: {fileID: 7945989854665336629, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.08
+      value: 18.89
       objectReference: {fileID: 0}
     - target: {fileID: 7945989854665336629, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -36.96
+      value: -33.17
       objectReference: {fileID: 0}
     - target: {fileID: 7945989854665336629, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -3732,15 +3729,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.5379791, y: 2.0965843}
-      - {x: -1.1045399, y: 2.1340942}
-      - {x: -3.0498848, y: 1.930893}
-      - {x: -3.4860039, y: 1.6996269}
-      - {x: -3.4414463, y: 1.3273697}
-      - {x: -3.3195724, y: 0.84012604}
-      - {x: -0.14521408, y: 0.7803612}
-      - {x: 1.1604347, y: 0.80887985}
-      - {x: 0.86974525, y: 1.763691}
+    - - {x: -3.832779, y: 2.7833862}
+      - {x: -3.7026443, y: 0.18605042}
+      - {x: 1.6951618, y: 0.62903976}
+      - {x: 1.5419216, y: 2.981802}
 --- !u!1 &2118315537
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,15 +3777,20 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 680615614644107790, guid: 7623248776c539749835c98c33870583,
+        type: 3}
+      propertyPath: montySpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 680615614644107791, guid: 7623248776c539749835c98c33870583,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43.52
+      value: 20.300001
       objectReference: {fileID: 0}
     - target: {fileID: 680615614644107791, guid: 7623248776c539749835c98c33870583,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -36.43
+      value: -32.539997
       objectReference: {fileID: 0}
     - target: {fileID: 680615614644107791, guid: 7623248776c539749835c98c33870583,
         type: 3}

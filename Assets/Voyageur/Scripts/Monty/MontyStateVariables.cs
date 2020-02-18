@@ -84,14 +84,14 @@ public class MontyStateVariables : MonoBehaviour
 
 		if (CheckIfPointInCollider(location))
 		{
-			Debug.DrawLine(transform.position, location,Color.green,100f);
+			//Debug.DrawLine(transform.position, location,Color.green,100f);
 			
 			return location;
 		}
 		else
 		{
-			Debug.DrawLine(transform.position, location, Color.red, 10f);
-			Debug.Log("Invalid Location:" + location);
+			//Debug.DrawLine(transform.position, location, Color.red, 10f);
+			//Debug.Log("Invalid Location:" + location);
 			return GetRandomPointInBounds(bounds);
 		}
 
@@ -102,6 +102,9 @@ public class MontyStateVariables : MonoBehaviour
 		return pathwayBounds.OverlapPoint(location);
 
 	}
+
+
+
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{

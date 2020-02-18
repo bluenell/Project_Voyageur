@@ -46,12 +46,11 @@ public class MontyStateActions : MonoBehaviour
 		SpriteRenderer sprite;
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 		
-		//StartCoroutine(stateVariables.DelayAnimation());
 		//Debug.Log("Monty is following");
 		anim.SetBool("isMoving", true);
 		anim.SetBool("isSitting", false);
 
-		if (targetFound == false)
+		if (!targetFound)
 		{
 			target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
 			targetFound = true;
@@ -79,10 +78,19 @@ public class MontyStateActions : MonoBehaviour
 			sprite.flipX = false;
 		}
 
+		if (targetFound && (transform.position.x != target.x && transform.position.y != target.y))
+		{
 
-	
+			stuckTimer += Time.deltaTime;
+			Debug.Log(stuckTimer);
 
-
+			if (stuckTimer >= 3)
+			{
+				Debug.Log("Monty Stuck");
+				target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
+				stuckTimer = 0;
+			}
+		}
 
 	}
 
