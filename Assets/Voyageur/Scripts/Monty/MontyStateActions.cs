@@ -25,23 +25,7 @@ public class MontyStateActions : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	public void Canoe()
-	{
-		//Debug.Log("Monty in Canoe");
-	}
-
-	public void CanoeFish()
-	{
-		//Debug.Log("Monty Fishing");
-	}
-
-	public void Idle()
-	{
-	   	//Debug.Log("Monty is Idle");
-		anim.SetBool("isMoving", false);
-	}
-
-	public void Follow()
+	public void Roam()
 	{
 		SpriteRenderer sprite;
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
@@ -61,7 +45,7 @@ public class MontyStateActions : MonoBehaviour
 		if (transform.position.x == target.x && transform.position.y == target.y)
 		{
 			stateVariables.desintationReached = true;
-			Debug.Log("Destination Reached");
+			//Debug.Log("Destination Reached");
 		}
 
 		if (stateVariables.desintationReached)
@@ -82,7 +66,7 @@ public class MontyStateActions : MonoBehaviour
 		{
 
 			stuckTimer += Time.deltaTime;
-			Debug.Log(stuckTimer);
+			//Debug.Log(stuckTimer);
 
 			if (stuckTimer >= 3)
 			{
@@ -97,14 +81,35 @@ public class MontyStateActions : MonoBehaviour
 	public void Sit()
 	{
 		anim.SetBool("isSitting", true);
-
-		//Debug.Log("Monty is sitting");
+		Debug.Log("Monty is sitting");
 	}
 	public void Fetch()
 	{
 		//Debug.Log("Monty is playing fetch");
+
+	}
+
+	public void Wait()
+	{
+		Debug.Log("Waiting");
+		anim.SetBool("isMoving", false);
+		anim.SetBool("isSitting", false);
+	}
+
+	public void MoveTowards()
+	{
+		Debug.Log("Moving Towards");
+		transform.position = Vector2.MoveTowards(transform.position, player.transform.position, stateVariables.montySpeed * Time.deltaTime);		
+	}
+
+	public void Follow()
+	{
+		transform.position = Vector2.MoveTowards(transform.position, player.transform.position, stateVariables.montySpeed * Time.deltaTime);
 	}
 
 
-
+	public void Canoe()
+	{
+		Debug.Log("monty is in the canoe");
+	}
 }

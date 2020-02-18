@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 	public float xSpeed, ySpeed;
 	public bool isMoving;
 
+	public float armsReach;
+
 	[Header("Canoe")]
 	public GameObject canoe;
 	public GameObject canoeTarget;
@@ -37,12 +39,6 @@ public class PlayerController : MonoBehaviour
 	int currentInventoryIndex;
 
 	#endregion
-
-
-	void Awake()
-	{
-
-	}
 
 	// Start is called before the first frame update
 	void Start()
@@ -189,6 +185,12 @@ public class PlayerController : MonoBehaviour
 			Debug.Log(inventory.tools[currentInventoryIndex]);
 
 		}
+	}
+
+
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.DrawWireSphere(transform.position, armsReach);
 	}
 
 }

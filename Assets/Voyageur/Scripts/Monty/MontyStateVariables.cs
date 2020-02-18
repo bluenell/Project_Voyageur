@@ -9,16 +9,14 @@ public class MontyStateVariables : MonoBehaviour
 	[HideInInspector]
 	public bool playerMoving;	
 
-	[Header("Follow")]
 	public float distFromPlayer;
 	public bool desintationReached;
 	public float montySpeed;
 	PolygonCollider2D pathwayBounds;
 	
-	[Header("Idle")]
 	public float distanceToFollow;
 
-	[Header("Sit")]
+
 	public int sitWaitTime;
 	public Vector2 randomWaitRange;
 
@@ -110,7 +108,7 @@ public class MontyStateVariables : MonoBehaviour
 	{
 		if (collision.gameObject.tag =="PathwayTriggerBounds")
 		{
-			Debug.Log(collision.gameObject.name);
+			//Debug.Log(collision.gameObject.name);
 			pathwayBounds =  collision.gameObject.GetComponent<PolygonCollider2D>();
 		}
 	}
