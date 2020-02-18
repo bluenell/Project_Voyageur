@@ -12,6 +12,12 @@ public class SpriteLayerManager : MonoBehaviour
 	private void Start()
 	{
 		manager = GameObject.Find("LayerManager").GetComponent<PlayerDogLayerManager>();
+		
+	}
+
+	private void Update()
+	{
+		
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -35,6 +41,8 @@ public class SpriteLayerManager : MonoBehaviour
 			}
 			if (other.gameObject.transform.parent.name == "4")
 			{
+
+				Debug.Log("Top 4");
 				transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 1;
 			}
 
@@ -54,15 +62,19 @@ public class SpriteLayerManager : MonoBehaviour
 			}
 			if (other.gameObject.transform.parent.name == "3")
 			{
+				Debug.Log("Bottom 3");
 				transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 4;
 			}
 			if (other.gameObject.transform.parent.name == "4")
 			{
+				Debug.Log("Bottom 4");
 				transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 4;
 			}
+
+
+
 		}
 
-	
 	}
 
 
