@@ -19,10 +19,10 @@ public class MontyStateManager : MonoBehaviour
 
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		//When to switch to follow
-		if (true)
+		if (stateVariables.distanceToFollow <= stateVariables.distFromPlayer)
 		{
 			counter = 0;
 			currentState = "follow";

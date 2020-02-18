@@ -36,7 +36,7 @@ public class MontyStateVariables : MonoBehaviour
 		
 	}
 
-	float CalculateDistance()
+	public float CalculateDistance()
 	{
 		distFromPlayer = Vector2.Distance(transform.position, player.transform.position);
 		return distFromPlayer;
