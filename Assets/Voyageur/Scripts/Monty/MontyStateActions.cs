@@ -7,66 +7,129 @@ public class MontyStateActions : MonoBehaviour
 	Animator anim;
 	MontyStateVariables stateVariables;
 	GameObject player;
+	GameObject followTarget;
+	BoxCollider2D followTargetCollider;
+	Rigidbody2D rb;
+	SpriteRenderer sprite;
+	PlayerController playerController;
 
 
-	private void Start()
+	bool targetFound;
+	Vector2 target;
+	float stuckTimer;
+
+	private void Awake()
 	{
+		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 		stateVariables = GetComponent<MontyStateVariables>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
 		player = GameObject.Find("Player");
+		followTarget = player.transform.GetChild(3).gameObject;
+		followTargetCollider = followTarget.GetComponent<BoxCollider2D>();
+		rb = GetComponent<Rigidbody2D>();
+		playerController = player.GetComponent<PlayerController>();
 	}
 
-	public void Canoe()
-	{
-		//Debug.Log("Monty in Canoe");
-	}
-
-	public void CanoeFish()
-	{
-		//Debug.Log("Monty Fishing");
-	}
-
-	public void Idle()
-	{
-	   	//Debug.Log("Monty is Idle");
-		anim.SetBool("isMoving", false);
-	}
-
-	public void Follow()
-	{
-		SpriteRenderer sprite;
-		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
-
-
-		//StartCoroutine(stateVariables.DelayAnimation());
+	public void Roam()
+	{				
 		//Debug.Log("Monty is following");
 		anim.SetBool("isMoving", true);
 		anim.SetBool("isSitting", false);
 
-		if (player.transform.position.x < transform.position.x)
+		if (!targetFound)
+		{
+			target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
+			targetFound = true;
+		}
+	   
+		transform.position = Vector2.MoveTowards(transform.position,target, stateVariables.montySpeed* Time.deltaTime);
+
+		if (transform.position.x == target.x && transform.position.y == target.y)
+		{
+			stateVariables.desintationReached = true;
+			//Debug.Log("Destination Reached");
+		}
+
+		if (stateVariables.desintationReached)
+		{
+			targetFound = false;			
+		}
+
+		if (target.x < transform.position.x)
 		{
 			sprite.flipX = true;
 		}
-		if (player.transform.position.x > transform.position.x)
+		else
 		{
 			sprite.flipX = false;
 		}
 
+		if (targetFound && (transform.position.x != target.x && transform.position.y != target.y))
+		{
 
-		transform.position = Vector2.MoveTowards(transform.position, player.transform.position, stateVariables.montySpeed * Time.deltaTime);
+			stuckTimer += Time.deltaTime;
+			//Debug.Log(stuckTimer);
+
+			if (stuckTimer >= 3)
+			{
+				//Debug.Log("Monty Stuck");
+				target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
+				stuckTimer = 0;
+			}
+		}
+
 	}
-
 	public void Sit()
 	{
 		anim.SetBool("isSitting", true);
-
-		//Debug.Log("Monty is sitting");
+		Debug.Log("Monty is sitting");
 	}
 	public void Fetch()
 	{
 		//Debug.Log("Monty is playing fetch");
+
+	}
+
+	public void Wait()
+	{
+		//Debug.Log("Waiting");
+		anim.SetBool("isMoving", false);
+		anim.SetBool("isSitting", false);
+	}
+
+	public void MoveTowards()
+	{
+		//Debug.Log("Moving Towards");
+		transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach,0,0), stateVariables.montySpeed * Time.deltaTime);
+		if (player.transform.position.x < transform.position.x)
+		{
+			sprite.flipX = true;
+		}
+		else
+		{
+			sprite.flipX = false;
+		}
+	}
+
+	public void Follow()
+	{
+		anim.SetBool("isMoving", true);
+		anim.SetBool("isSitting", false);
+		if (playerController.facingRight)
+		{
+			transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach, 0, 0), stateVariables.montySpeed * Time.deltaTime);
+		}
+		else
+		{
+			sprite.flipX = true;
+			transform.position = Vector2.MoveTowards(transform.position, player.transform.position + new Vector3(playerController.armsReach, 0, 0), stateVariables.montySpeed * Time.deltaTime);
+		}
+		
 	}
 
 
-
+	public void Canoe()
+	{
+		Debug.Log("monty is in the canoe");
+	}
 }

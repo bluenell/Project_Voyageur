@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
 	public float stamina;
 	public float xSpeed, ySpeed;
 	public bool isMoving;
+	public bool facingRight;
+
+	public float armsReach;
 
 	[Header("Canoe")]
 	public GameObject canoe;
@@ -37,12 +40,6 @@ public class PlayerController : MonoBehaviour
 	int currentInventoryIndex;
 
 	#endregion
-
-
-	void Awake()
-	{
-
-	}
 
 	// Start is called before the first frame update
 	void Start()
@@ -86,12 +83,14 @@ public class PlayerController : MonoBehaviour
 		#region FlipCharacter
 		if (moveX < 0f)
 		{
+			facingRight = false;
 			anim.SetBool("facingRight", false);
 			//sprite.flipX = true;
 			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 		}
 		if (moveX > 0f)
 		{
+			facingRight = true;
 			anim.SetBool("facingRight", true);
 
 			//sprite.flipX = false;
@@ -189,6 +188,12 @@ public class PlayerController : MonoBehaviour
 			Debug.Log(inventory.tools[currentInventoryIndex]);
 
 		}
+	}
+
+
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.DrawWireSphere(transform.position, armsReach);
 	}
 
 }

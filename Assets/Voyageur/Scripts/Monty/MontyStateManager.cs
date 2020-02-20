@@ -7,79 +7,121 @@ public class MontyStateManager : MonoBehaviour
 	string currentState;
 	float counter;
 	int rand;
+	bool movingToPlayer;
+	bool sitting;
 
 	MontyStateActions stateActions;
 	MontyStateVariables stateVariables;
+	PlayerController playerController;
 
 
-	private void Start()
+	private void Awake()
 	{
 		stateActions = GetComponent<MontyStateActions>();
 		stateVariables = GetComponent<MontyStateVariables>();
+		playerController = GameObject.Find("Player").GetComponent<PlayerController>();
 
+	}
+
+	private void FixedUpdate()
+	{
+		if (!movingToPlayer && stateVariables.distFromPlayer >= playerController.armsReach)
+		{
+			movingToPlayer = false;
+			currentState = "roam";
+			SwitchState();
+		}
 	}
 
 	private void Update()
 	{
-		//When to switch to follow
-		if ((stateVariables.playerMoving && stateVariables.distFromPlayer >= stateVariables.distanceToFollow) || stateVariables.distFromPlayer >= stateVariables.distanceToFollow)
+		Debug.Log(currentState);
+
+		if (Input.GetButtonDown("Button A"))
 		{
-			counter = 0;
-			currentState = "follow";
-			SwitchState();
-			counter = 0;
-			rand = (int)Random.Range(stateVariables.randomWaitRange.x, stateVariables.randomWaitRange.y);
+			movingToPlayer = true;
 		}
 
-		//when to switch to idle
-		if (!stateVariables.playerMoving && counter < rand)
+		if (movingToPlayer)
 		{
-			currentState = "idle";
+
+			currentState = "move towards";
 			SwitchState();
-			
-			counter += Time.deltaTime;
-			
-			//when to switch to sit
-			if (counter >= stateVariables.sitWaitTime)
+
+			if (stateVariables.distFromPlayer <= playerController.armsReach)
 			{
-				currentState = "sit";
+				movingToPlayer = false;
+				currentState = "wait";
 				SwitchState();
 
 			}
-
+			
 		}
 
 
-		void SwitchState()
+		if (currentState == "wait")
 		{
-			switch (currentState)
+			counter += Time.deltaTime;
+
+			if (counter >= stateVariables.sitWaitTime)
 			{
-				case "canoe":
-					stateActions.Canoe();
-					break;
-
-				case "canoe fish":
-					stateActions.CanoeFish();
-					break;
-
-				case "follow":
-					stateActions.Follow();
-					break;
-
-
-				case "idle":
-					stateActions.Idle();
-					break;
-
-				case "sit":
-					stateActions.Sit();
-					break;
-
-				case "fetch":
-					stateActions.Fetch();
-					break;
-
+				counter = 0;
+				sitting = true;
+				currentState = "sit";
+				SwitchState();
 			}
+
+		}
+
+		if (Input.GetButton("Button A") && currentState != "move towards")
+		{
+			movingToPlayer = true;
+			currentState = "follow";
+			SwitchState();
+		}
+
+	}
+
+	void SwitchState()
+	{
+		switch (currentState)
+		{
+			case "roam":
+				stateActions.Roam();
+				break;
+
+			case "sit":
+				stateActions.Sit();
+				break;
+
+			case "fetch":
+				stateActions.Fetch();
+				break;
+
+			case "wait":
+				stateActions.Wait();
+				break;
+
+			case "move towards":
+				stateActions.MoveTowards();
+				break;
+
+			case "follow":
+				stateActions.Follow();
+				break;
+
+			case "canoe":
+				stateActions.Canoe();
+				break;
+
+			default:
+				stateActions.Roam();
+				break;
+
+
+
+
 		}
 	}
 }
+

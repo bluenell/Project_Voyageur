@@ -7,17 +7,16 @@ public class MontyStateVariables : MonoBehaviour
 	[HideInInspector]
 	public bool playerFlipped;
 	[HideInInspector]
-	public bool playerMoving;
+	public bool playerMoving;	
 
-	[Header("Follow")]
 	public float distFromPlayer;
+	public bool desintationReached;
 	public float montySpeed;
-
+	PolygonCollider2D pathwayBounds;
 	
-	[Header("Idle")]
 	public float distanceToFollow;
 
-	[Header("Sit")]
+
 	public int sitWaitTime;
 	public Vector2 randomWaitRange;
 
@@ -35,7 +34,7 @@ public class MontyStateVariables : MonoBehaviour
 		
 	}
 
-	float CalculateDistance()
+	public float CalculateDistance()
 	{
 		distFromPlayer = Vector2.Distance(transform.position, player.transform.position);
 		return distFromPlayer;
@@ -69,6 +68,53 @@ public class MontyStateVariables : MonoBehaviour
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, distanceToFollow);
 	}
+
+
+	public Vector2 GetRandomPointInBounds(Bounds bounds)
+	{
+		desintationReached = false;
+		Vector2 location;
+		location = new Vector2(
+			Random.Range(bounds.min.x, bounds.max.x),
+			Random.Range(bounds.min.y, bounds.max.y)
+			);
+
+
+		if (CheckIfPointInCollider(location))
+		{
+			Debug.DrawLine(transform.position, location,Color.green,20f);
+			
+			return location;
+		}
+		else
+		{
+			Debug.DrawLine(transform.position, location, Color.red, 0.1f);
+			//Debug.Log("Invalid Location:" + location);
+			return GetRandomPointInBounds(bounds);
+		}
+
+	}
+
+	public bool CheckIfPointInCollider(Vector2 location)
+	{
+		return pathwayBounds.OverlapPoint(location);
+
+	}
+
+
+
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag =="PathwayTriggerBounds")
+		{
+			//Debug.Log(collision.gameObject.name);
+			pathwayBounds =  collision.gameObject.GetComponent<PolygonCollider2D>();
+		}
+	}
+
+
+
 
 
 
