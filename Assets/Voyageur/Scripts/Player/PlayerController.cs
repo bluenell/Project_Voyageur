@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 	public float stamina;
 	public float xSpeed, ySpeed;
 	public bool isMoving;
+	public bool facingRight;
 
 	public float armsReach;
 
@@ -82,12 +83,14 @@ public class PlayerController : MonoBehaviour
 		#region FlipCharacter
 		if (moveX < 0f)
 		{
+			facingRight = false;
 			anim.SetBool("facingRight", false);
 			//sprite.flipX = true;
 			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 		}
 		if (moveX > 0f)
 		{
+			facingRight = true;
 			anim.SetBool("facingRight", true);
 
 			//sprite.flipX = false;

@@ -27,6 +27,7 @@ public class MontyStateManager : MonoBehaviour
 	{
 		if (!movingToPlayer && stateVariables.distFromPlayer >= playerController.armsReach)
 		{
+			movingToPlayer = false;
 			currentState = "roam";
 			SwitchState();
 		}
@@ -34,6 +35,8 @@ public class MontyStateManager : MonoBehaviour
 
 	private void Update()
 	{
+		Debug.Log(currentState);
+
 		if (Input.GetButtonDown("Button A"))
 		{
 			movingToPlayer = true;
@@ -41,16 +44,20 @@ public class MontyStateManager : MonoBehaviour
 
 		if (movingToPlayer)
 		{
+
 			currentState = "move towards";
 			SwitchState();
+
+			if (stateVariables.distFromPlayer <= playerController.armsReach)
+			{
+				movingToPlayer = false;
+				currentState = "wait";
+				SwitchState();
+
+			}
+			
 		}
 
-		if (stateVariables.distFromPlayer <= playerController.armsReach && !sitting)
-		{
-			movingToPlayer = false;
-			currentState = "wait";
-			SwitchState();
-		}
 
 		if (currentState == "wait")
 		{
@@ -64,6 +71,13 @@ public class MontyStateManager : MonoBehaviour
 				SwitchState();
 			}
 
+		}
+
+		if (Input.GetButton("Button A") && currentState != "move towards")
+		{
+			movingToPlayer = true;
+			currentState = "follow";
+			SwitchState();
 		}
 
 	}

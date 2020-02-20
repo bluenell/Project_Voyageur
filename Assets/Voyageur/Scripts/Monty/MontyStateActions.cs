@@ -10,26 +10,28 @@ public class MontyStateActions : MonoBehaviour
 	GameObject followTarget;
 	BoxCollider2D followTargetCollider;
 	Rigidbody2D rb;
+	SpriteRenderer sprite;
+	PlayerController playerController;
+
 
 	bool targetFound;
 	Vector2 target;
 	float stuckTimer;
 
-	private void Start()
+	private void Awake()
 	{
+		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 		stateVariables = GetComponent<MontyStateVariables>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
 		player = GameObject.Find("Player");
 		followTarget = player.transform.GetChild(3).gameObject;
 		followTargetCollider = followTarget.GetComponent<BoxCollider2D>();
 		rb = GetComponent<Rigidbody2D>();
+		playerController = player.GetComponent<PlayerController>();
 	}
 
 	public void Roam()
-	{
-		SpriteRenderer sprite;
-		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
-		
+	{				
 		//Debug.Log("Monty is following");
 		anim.SetBool("isMoving", true);
 		anim.SetBool("isSitting", false);
@@ -70,14 +72,13 @@ public class MontyStateActions : MonoBehaviour
 
 			if (stuckTimer >= 3)
 			{
-				Debug.Log("Monty Stuck");
+				//Debug.Log("Monty Stuck");
 				target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
 				stuckTimer = 0;
 			}
 		}
 
 	}
-
 	public void Sit()
 	{
 		anim.SetBool("isSitting", true);
@@ -91,20 +92,39 @@ public class MontyStateActions : MonoBehaviour
 
 	public void Wait()
 	{
-		Debug.Log("Waiting");
+		//Debug.Log("Waiting");
 		anim.SetBool("isMoving", false);
 		anim.SetBool("isSitting", false);
 	}
 
 	public void MoveTowards()
 	{
-		Debug.Log("Moving Towards");
-		transform.position = Vector2.MoveTowards(transform.position, player.transform.position, stateVariables.montySpeed * Time.deltaTime);		
+		//Debug.Log("Moving Towards");
+		transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach,0,0), stateVariables.montySpeed * Time.deltaTime);
+		if (player.transform.position.x < transform.position.x)
+		{
+			sprite.flipX = true;
+		}
+		else
+		{
+			sprite.flipX = false;
+		}
 	}
 
 	public void Follow()
 	{
-		transform.position = Vector2.MoveTowards(transform.position, player.transform.position, stateVariables.montySpeed * Time.deltaTime);
+		anim.SetBool("isMoving", true);
+		anim.SetBool("isSitting", false);
+		if (playerController.facingRight)
+		{
+			transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach, 0, 0), stateVariables.montySpeed * Time.deltaTime);
+		}
+		else
+		{
+			sprite.flipX = true;
+			transform.position = Vector2.MoveTowards(transform.position, player.transform.position + new Vector3(playerController.armsReach, 0, 0), stateVariables.montySpeed * Time.deltaTime);
+		}
+		
 	}
 
 

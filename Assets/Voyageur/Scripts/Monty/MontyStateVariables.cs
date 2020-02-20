@@ -82,13 +82,13 @@ public class MontyStateVariables : MonoBehaviour
 
 		if (CheckIfPointInCollider(location))
 		{
-			//Debug.DrawLine(transform.position, location,Color.green,100f);
+			Debug.DrawLine(transform.position, location,Color.green,20f);
 			
 			return location;
 		}
 		else
 		{
-			//Debug.DrawLine(transform.position, location, Color.red, 10f);
+			Debug.DrawLine(transform.position, location, Color.red, 0.1f);
 			//Debug.Log("Invalid Location:" + location);
 			return GetRandomPointInBounds(bounds);
 		}
