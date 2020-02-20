@@ -12,6 +12,8 @@ TagManager:
   - Observation
   - Interaction
   - TriggerMiddle
+  - PathwayTriggerBounds
+  - Monty
   layers:
   - Default
   - TransparentFX
@@ -25,11 +27,11 @@ TagManager:
   - Land
   - River
   - BackgroundStuff
-  - 
-  - TriggerTop
-  - TriggerBottom
+  - LayerTriggers
   - 
   - 
+  - PostFX
+  - IgnoreLayering
   - 
   - 
   - 
