@@ -96,6 +96,13 @@ public class IndividualInteractions : MonoBehaviour
 
 	}
 
+	public void BlueJay()
+	{
+		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>();
+
+		anim.SetTrigger("Play");
+	}
+
 
 	public void Fetch()
 	{
