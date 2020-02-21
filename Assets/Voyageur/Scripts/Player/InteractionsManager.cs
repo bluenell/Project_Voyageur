@@ -35,6 +35,11 @@ public class InteractionsManager : MonoBehaviour
 						indivInteractions.Fetch();
 						interaction.MarkAsComplete();
 						break;
+
+					case "BlueJay":
+						indivInteractions.BlueJay();
+						interaction.MarkAsComplete();
+						break;
 				}
 			}
 		}
