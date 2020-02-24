@@ -5,16 +5,19 @@ using UnityEngine;
 public class CanoePaddle : MonoBehaviour
 {
 
-
 	Rigidbody2D rb;
 	River river;
 	Animator anim;
 
 	Vector2 movement;
-	//Vector2 momementum = new Vector2();
+	Vector2 momementum = new Vector2();
 
 	[Header("Canoe Speed Variables")]
-	public float paddleForce;
+	public float decelerationRate;
+	public float friction;
+	public float stopValue;
+	public float maxSpeed;
+	public float brakingMultiplier;
 
 	public float speed;
 
@@ -23,42 +26,23 @@ public class CanoePaddle : MonoBehaviour
 	float counter = 6;
 	int countMax = 3;
 	bool canPaddle;
-	bool beached;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		beached = false;
-		canPaddle = true;
 		rb = GetComponent<Rigidbody2D>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
 	void Update()
-	{		
-		if (beached)
-		{
-			BeachCanoe();
-		}
-		else
-		{
-			Paddle();
-		}
+	{
+		transform.Translate(new Vector2(river.riverCurrent * Time.deltaTime, 0));
 
 		
-	}
 
 
-	void Paddle()
-	{ 
-		if (!beached)
-		{
-			movement = new Vector2(river.riverCurrent * Time.deltaTime, 0);
-			transform.Translate(movement);
-		}
-
-		if (Input.GetButton("Button B") && canPaddle)
+		if (Input.GetButtonDown("Button B"))
 		{
 			counter = Time.time - tempTime;
 			if (counter < 1.2)
@@ -66,44 +50,27 @@ public class CanoePaddle : MonoBehaviour
 				return;
 			}
 			tempTime = Time.time;
-
-			anim.SetTrigger("Paddle");
-
-			StartCoroutine(AddPaddleForce());
-		}
-	}
-
-
-	IEnumerator AddPaddleForce()
-	{
-		yield return new WaitForSeconds(0.6f);
-		rb.AddForce(new Vector2(paddleForce, 0));
-	}
-
-	void DisableMovement()
-	{
-		beached = true;
-		canPaddle = false;
-	}
-
-	void BeachCanoe()
-	{
-		//Debug.Log("Beach Canoe");
-		DisableMovement();
-		beached = true;
-
-
-		//Debug.Log("Tes");
-
-		if (Input.GetButtonDown("Button B") || Input.GetKeyDown(KeyCode.Space))
-		{
-			//Debug.Log("Beach Animation");
-			anim.SetTrigger("Beach");
+			Paddle();
 		}
 
+		//Float();
 	}
 
+	
 
+	void Paddle()
+	{
+		speed = maxSpeed;
+
+		rb.AddForce(new Vector2(150f,0));
+		Debug.Log(counter);
+
+	}
+	void Float()
+	{
+		
+
+	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
@@ -113,20 +80,5 @@ public class CanoePaddle : MonoBehaviour
 			river = collision.gameObject.GetComponent<River>();
 		}
 	}
-
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.gameObject.tag == "BeachPoint")
-		{
-			beached = true;
-		}
-
-		if (collision.gameObject.tag == "BeachDisableInput")
-		{
-			canPaddle = false;
-		}
-	}
-
-
 
 }
