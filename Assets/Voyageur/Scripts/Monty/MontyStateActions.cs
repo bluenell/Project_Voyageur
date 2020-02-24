@@ -24,7 +24,7 @@ public class MontyStateActions : MonoBehaviour
 		stateVariables = GetComponent<MontyStateVariables>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
 		player = GameObject.Find("Player");
-		followTarget = player.transform.GetChild(3).gameObject;
+		followTarget = player.transform.GetChild(2).gameObject;
 		followTargetCollider = followTarget.GetComponent<BoxCollider2D>();
 		rb = GetComponent<Rigidbody2D>();
 		playerController = player.GetComponent<PlayerController>();
