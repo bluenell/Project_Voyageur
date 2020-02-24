@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2673512795948150370, guid: 5cb32acd30fe7cd458705c9f4069a576,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -112,15 +112,15 @@ GameObject:
   m_Component:
   - component: {fileID: 680615614644107791}
   - component: {fileID: 680615614644107788}
-  - component: {fileID: 680615614644107789}
   - component: {fileID: 680615614644107787}
   - component: {fileID: 680615614644107784}
   - component: {fileID: 680615614644107785}
   - component: {fileID: 680615614644107790}
+  - component: {fileID: 1785632228}
   m_Layer: 0
   m_Name: Monty
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -160,32 +160,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &680615614644107789
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680615614644107826}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.062446594, y: 0.14352798}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.0407753, y: 0.27514648}
-  m_EdgeRadius: 0
 --- !u!114 &680615614644107787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +191,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680615614644107826}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cd052133eb51f34586c79b7a0500303, type: 3}
   m_Name: 
@@ -229,7 +203,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680615614644107826}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8427fa690329ca45ab7d4fcb4480906, type: 3}
   m_Name: 
@@ -237,7 +211,34 @@ MonoBehaviour:
   playerFlipped: 0
   playerMoving: 0
   distFromPlayer: 0
-  montySpeed: 5
-  distanceToFollow: 3.94
+  desintationReached: 0
+  montySpeed: 7
+  distanceToFollow: 1.5
   sitWaitTime: 5
   randomWaitRange: {x: 2, y: 9}
+--- !u!61 &1785632228
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680615614644107826}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.052223206}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.854947, y: 0.11695862}
+  m_EdgeRadius: 0
