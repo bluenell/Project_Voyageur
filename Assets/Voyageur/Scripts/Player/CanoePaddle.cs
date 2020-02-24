@@ -5,6 +5,7 @@ using UnityEngine;
 public class CanoePaddle : MonoBehaviour
 {
 
+
 	Rigidbody2D rb;
 	River river;
 	Animator anim;
@@ -102,6 +103,8 @@ public class CanoePaddle : MonoBehaviour
 
 	}
 
+
+
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.tag == "River")
@@ -123,5 +126,7 @@ public class CanoePaddle : MonoBehaviour
 			canPaddle = false;
 		}
 	}
+
+
 
 }

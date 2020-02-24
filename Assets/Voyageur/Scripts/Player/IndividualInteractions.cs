@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class IndividualInteractions : MonoBehaviour
 {
-	public GameObject[] animals;
-
-
-
 	InteractionsManager manager;
 
 	private void Start()

@@ -8,25 +8,29 @@ public class TransitionHandler : MonoBehaviour
 	CanoePaddle paddleScript;
 	PlayerController playerController;
 
-	GameObject player;
-	GameObject canoe;
+	public GameObject player;
+	public GameObject canoe;
+	public GameObject canoeAIO;
+	public GameObject monty;
+	public GameObject layerManager;
+	public GameObject interactionsManager;
 
 	private void Awake()
 	{
-		player = GameObject.Find("Player");
 		playerController = player.GetComponent<PlayerController>();
-
-		canoe = GameObject.Find("Canoe");
-		paddleScript = canoe.GetComponent<CanoePaddle>();
+		paddleScript = canoeAIO.GetComponent<CanoePaddle>();
 	}
 
 
 	public void Beach()
 	{
-		//hide canoe all in one
-		//show player
-		//show monty
-		//canoe object
+		canoeAIO.SetActive(false);
+		canoe.SetActive(true);
+		player.SetActive(true);
+		monty.SetActive(true);
+		layerManager.SetActive(true);
+		interactionsManager.SetActive(true);
+
 	}
 
 	public void Launch()
