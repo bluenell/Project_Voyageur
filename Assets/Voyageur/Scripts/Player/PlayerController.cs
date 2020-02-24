@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
 			{
 				currentInventoryIndex = 0;
 			}
-			Debug.Log(inventory.tools[currentInventoryIndex]);
+			//Debug.Log(inventory.tools[currentInventoryIndex]);
 			anim.SetInteger("inventoryIndex", currentInventoryIndex);
 		}
 
@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
 
 			currentInventoryIndex--;
 			anim.SetInteger("inventoryIndex", currentInventoryIndex);
-			Debug.Log(inventory.tools[currentInventoryIndex]);
+			//Debug.Log(inventory.tools[currentInventoryIndex]);
 
 		}
 	}
