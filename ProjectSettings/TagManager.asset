@@ -15,6 +15,7 @@ TagManager:
   - PathwayTriggerBounds
   - Monty
   - BeachPoint
+  - BeachDisableInput
   layers:
   - Default
   - TransparentFX

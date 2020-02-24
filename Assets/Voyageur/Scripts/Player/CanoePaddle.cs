@@ -10,14 +10,10 @@ public class CanoePaddle : MonoBehaviour
 	Animator anim;
 
 	Vector2 movement;
-	Vector2 momementum = new Vector2();
+	//Vector2 momementum = new Vector2();
 
 	[Header("Canoe Speed Variables")]
-	public float decelerationRate;
-	public float friction;
-	public float stopValue;
-	public float maxSpeed;
-	public float brakingMultiplier;
+	public float paddleForce;
 
 	public float speed;
 
@@ -39,14 +35,29 @@ public class CanoePaddle : MonoBehaviour
 
 	// Update is called once per frame
 	void Update()
-	{
+	{		
+		if (beached)
+		{
+			BeachCanoe();
+		}
+		else
+		{
+			Paddle();
+		}
+
+		
+	}
+
+
+	void Paddle()
+	{ 
 		if (!beached)
 		{
 			movement = new Vector2(river.riverCurrent * Time.deltaTime, 0);
 			transform.Translate(movement);
-		}		
-		
-		if (Input.GetButtonDown("Button B") && canPaddle)
+		}
+
+		if (Input.GetButton("Button B") && canPaddle)
 		{
 			counter = Time.time - tempTime;
 			if (counter < 1.2)
@@ -54,34 +65,41 @@ public class CanoePaddle : MonoBehaviour
 				return;
 			}
 			tempTime = Time.time;
-			Paddle();
+
+			anim.SetTrigger("Paddle");
+
+			StartCoroutine(AddPaddleForce());
 		}
-
-		//Float();
 	}
 
-	
 
-	void Paddle()
+	IEnumerator AddPaddleForce()
 	{
-		anim.SetTrigger("Paddle");
-		speed = maxSpeed;
-
-		rb.AddForce(new Vector2(150f,0));
-		Debug.Log(counter);
-
+		yield return new WaitForSeconds(0.6f);
+		rb.AddForce(new Vector2(paddleForce, 0));
 	}
+
 	void DisableMovement()
 	{
 		beached = true;
 		canPaddle = false;
-
 	}
 
-	void DockCanoe()
+	void BeachCanoe()
 	{
-		Debug.Log("Dock Canoe");
+		//Debug.Log("Beach Canoe");
 		DisableMovement();
+		beached = true;
+
+
+		//Debug.Log("Tes");
+
+		if (Input.GetButtonDown("Button B") || Input.GetKeyDown(KeyCode.Space))
+		{
+			//Debug.Log("Beach Animation");
+			anim.SetTrigger("Beach");
+		}
+
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -97,7 +115,12 @@ public class CanoePaddle : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "BeachPoint")
 		{
-			DockCanoe();
+			beached = true;
+		}
+
+		if (collision.gameObject.tag == "BeachDisableInput")
+		{
+			canPaddle = false;
 		}
 	}
 
