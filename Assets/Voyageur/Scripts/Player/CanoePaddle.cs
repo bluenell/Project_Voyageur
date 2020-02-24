@@ -26,10 +26,13 @@ public class CanoePaddle : MonoBehaviour
 	float counter = 6;
 	int countMax = 3;
 	bool canPaddle;
+	bool beached;
 
 	// Start is called before the first frame update
 	void Start()
 	{
+		beached = false;
+		canPaddle = true;
 		rb = GetComponent<Rigidbody2D>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
 	}
@@ -37,12 +40,13 @@ public class CanoePaddle : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		transform.Translate(new Vector2(river.riverCurrent * Time.deltaTime, 0));
-
+		if (!beached)
+		{
+			movement = new Vector2(river.riverCurrent * Time.deltaTime, 0);
+			transform.Translate(movement);
+		}		
 		
-
-
-		if (Input.GetButtonDown("Button B"))
+		if (Input.GetButtonDown("Button B") && canPaddle)
 		{
 			counter = Time.time - tempTime;
 			if (counter < 1.2)
@@ -60,16 +64,24 @@ public class CanoePaddle : MonoBehaviour
 
 	void Paddle()
 	{
+		anim.SetTrigger("Paddle");
 		speed = maxSpeed;
 
 		rb.AddForce(new Vector2(150f,0));
 		Debug.Log(counter);
 
 	}
-	void Float()
+	void DisableMovement()
 	{
-		
+		beached = true;
+		canPaddle = false;
 
+	}
+
+	void DockCanoe()
+	{
+		Debug.Log("Dock Canoe");
+		DisableMovement();
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -78,6 +90,14 @@ public class CanoePaddle : MonoBehaviour
 		{
 			//Debug.Log("River");
 			river = collision.gameObject.GetComponent<River>();
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag == "BeachPoint")
+		{
+			DockCanoe();
 		}
 	}
 
