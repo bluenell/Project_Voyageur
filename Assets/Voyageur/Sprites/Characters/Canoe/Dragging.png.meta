@@ -1,0 +1,727 @@
+fileFormatVersion: 2
+guid: 8b37d65a8dfcf284ca079d6a7904a27c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1944280321630780789
+    second: Dragging_0
+  - first:
+      213: -2699616722670757186
+    second: Dragging_1
+  - first:
+      213: 503538093812889956
+    second: Dragging_2
+  - first:
+      213: -1575556835205533418
+    second: Dragging_3
+  - first:
+      213: -786112535572259934
+    second: Dragging_4
+  - first:
+      213: -8752691234364881652
+    second: Dragging_5
+  - first:
+      213: -6229170825364879807
+    second: Dragging_6
+  - first:
+      213: 7153164523851812107
+    second: Dragging_7
+  - first:
+      213: -4014285947263527250
+    second: Dragging_8
+  - first:
+      213: 4292645952911784148
+    second: Dragging_9
+  - first:
+      213: -6505035674616186315
+    second: Dragging_10
+  - first:
+      213: 8298249147118831466
+    second: Dragging_11
+  - first:
+      213: 440706575253007363
+    second: Dragging_12
+  - first:
+      213: -5194919305108095435
+    second: Dragging_13
+  - first:
+      213: 1992343906546836635
+    second: Dragging_14
+  - first:
+      213: 3153898601666010477
+    second: Dragging_15
+  - first:
+      213: -7567071727111239900
+    second: Dragging_16
+  - first:
+      213: -1851535633550934274
+    second: Dragging_17
+  - first:
+      213: 6609572764610784400
+    second: Dragging_18
+  - first:
+      213: 232870864828505652
+    second: Dragging_19
+  - first:
+      213: -8886734975550841845
+    second: Dragging_20
+  - first:
+      213: -7322380125404647507
+    second: Dragging_21
+  - first:
+      213: 7815160497434932347
+    second: Dragging_22
+  - first:
+      213: -2460788571651222106
+    second: Dragging_23
+  - first:
+      213: -3931729457342819547
+    second: Dragging_24
+  - first:
+      213: -3090088600669976663
+    second: Dragging_25
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dragging_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2120
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57db59ab6a87bfa10800000000000000
+      internalID: 1944280321630780789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_1
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 2120
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba5187d4e8098ad0800000000000000
+      internalID: -2699616722670757186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_2
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 2120
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469389c7a3decf600800000000000000
+      internalID: 503538093812889956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_3
+      rect:
+        serializedVersion: 2
+        x: 4380
+        y: 2120
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611b222f76f722ae0800000000000000
+      internalID: -1575556835205533418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_4
+      rect:
+        serializedVersion: 2
+        x: 5840
+        y: 2120
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2abdbbb50da2715f0800000000000000
+      internalID: -786112535572259934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_5
+      rect:
+        serializedVersion: 2
+        x: 7300
+        y: 2120
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c05810332b1388680800000000000000
+      internalID: -8752691234364881652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1590
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14646ec432a8d89a0800000000000000
+      internalID: -6229170825364879807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_7
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1590
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d0d104c35254360800000000000000
+      internalID: 7153164523851812107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_8
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 1590
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea6d38613346a48c0800000000000000
+      internalID: -4014285947263527250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_9
+      rect:
+        serializedVersion: 2
+        x: 4380
+        y: 1590
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d833d130ca829b30800000000000000
+      internalID: 4292645952911784148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_10
+      rect:
+        serializedVersion: 2
+        x: 5840
+        y: 1590
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a3243e48879b5a0800000000000000
+      internalID: -6505035674616186315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_11
+      rect:
+        serializedVersion: 2
+        x: 7300
+        y: 1590
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67c4bf12ad492370800000000000000
+      internalID: 8298249147118831466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1060
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c62249b44bd1600800000000000000
+      internalID: 440706575253007363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_13
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1060
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e76367a60f7e7b0800000000000000
+      internalID: -5194919305108095435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_14
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 1060
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9463242a3a36ab10800000000000000
+      internalID: 1992343906546836635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_15
+      rect:
+        serializedVersion: 2
+        x: 4380
+        y: 1060
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d57e17116e4cb20800000000000000
+      internalID: 3153898601666010477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_16
+      rect:
+        serializedVersion: 2
+        x: 5840
+        y: 1060
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42702a33b5c5cf690800000000000000
+      internalID: -7567071727111239900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_17
+      rect:
+        serializedVersion: 2
+        x: 7300
+        y: 1060
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efef731b6260e46e0800000000000000
+      internalID: -1851535633550934274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 530
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ce8bf096be9bb50800000000000000
+      internalID: 6609572764610784400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_19
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 530
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e14a851d25b3300800000000000000
+      internalID: 232870864828505652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_20
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 530
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c9049af99fba480800000000000000
+      internalID: -8886734975550841845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_21
+      rect:
+        serializedVersion: 2
+        x: 4380
+        y: 530
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf20e2521ea16a90800000000000000
+      internalID: -7322380125404647507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_22
+      rect:
+        serializedVersion: 2
+        x: 5840
+        y: 530
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b743640e017057c60800000000000000
+      internalID: 7815160497434932347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_23
+      rect:
+        serializedVersion: 2
+        x: 7300
+        y: 530
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a55367f4d589ddd0800000000000000
+      internalID: -2460788571651222106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5235426c3e0bf69c0800000000000000
+      internalID: -3931729457342819547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragging_25
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 0
+        width: 1460
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a705982acccd15d0800000000000000
+      internalID: -3090088600669976663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
