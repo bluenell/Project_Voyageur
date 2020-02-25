@@ -16,6 +16,7 @@ TagManager:
   - Monty
   - BeachPoint
   - BeachDisableInput
+  - CanoePickUpRange
   layers:
   - Default
   - TransparentFX
