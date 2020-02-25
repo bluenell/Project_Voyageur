@@ -5588,9 +5588,10 @@ MonoBehaviour:
   isMoving: 0
   facingRight: 0
   armsReach: 2
-  canoe: {fileID: 0}
+  canoe: {fileID: 1736142001}
   pickUpTarget: {fileID: 806108267}
   canPickUp: 0
+  hasCanoe: 0
   torch: {fileID: 2122833017}
 --- !u!4 &7945989855208360791
 Transform:

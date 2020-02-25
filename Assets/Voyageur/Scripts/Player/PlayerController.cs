@@ -138,15 +138,23 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe()
 	{
-		if (Input.GetButtonDown("Button B"))
+		if (Input.GetButtonDown("Button B") || (Input.GetKeyDown(KeyCode.Space)))
 		{
 			if (hasCanoe)
 			{
-				//put down
+				hasCanoe = false;
+				anim.SetTrigger("PutDown");
+				canoe.transform.SetParent(null);
+				canoe.SetActive(true);
 			}
 			else
 			{
-				//pick up
+				hasCanoe = true;
+				canoe.SetActive(false);
+				canoe.transform.SetParent(transform);
+				transform.position = pickUpTarget.transform.position;
+				anim.SetTrigger("PickUp");
+				anim.SetBool("isCarrying", true);
 			}
 		}
 	}
