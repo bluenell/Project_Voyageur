@@ -17,9 +17,8 @@ public class PlayerController : MonoBehaviour
 
 	[Header("Canoe")]
 	public GameObject canoe;
-	public GameObject canoeTarget;
-	public GameObject putDownTarget;
-	public bool canPickUp;
+	public GameObject pickUpTarget;
+	public bool canPickUp, hasCanoe;
 
 	[Header("Items)")]
 
@@ -65,6 +64,7 @@ public class PlayerController : MonoBehaviour
 	{
 		CycleInventory();
 		UseItem();
+		HandleCanoe();
 	}
 
 
@@ -112,10 +112,6 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 	//Detects input and what interacted with
-	void Interact()
-	{
-
-	}
 
 	void UseItem()
 	{
@@ -138,29 +134,22 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	/*
-	//Handles the picking up/placing down the canoe
+
+
 	void HandleCanoe()
 	{
-		if (Input.GetButtonDown("Joystick X") && canPickUp)
+		if (Input.GetButtonDown("Button B"))
 		{
-			canoe.transform.position = canoeTarget.transform.position;
-			canoe.transform.SetParent(canoeTarget.transform);
-			hasCanoe = true;
-			canPickUp = false;
-
+			if (hasCanoe)
+			{
+				//put down
+			}
+			else
+			{
+				//pick up
+			}
 		}
-		*/
-
-	/*
-	if (Input.GetButtonDown("Joystick X") && hasCanoe)
-	{
-		canoe.transform.position = putDownTarget.transform.position;
-		canoe.transform.SetParent(null);
-		hasCanoe = false;
-		canPickUp = true;
 	}
-	*/
 
 	void CycleInventory()
 	{
@@ -194,6 +183,15 @@ public class PlayerController : MonoBehaviour
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.DrawWireSphere(transform.position, armsReach);
+	}
+
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "CanoePickUpRange") ;
+		{
+			canPickUp = true;
+		}
 	}
 
 }
