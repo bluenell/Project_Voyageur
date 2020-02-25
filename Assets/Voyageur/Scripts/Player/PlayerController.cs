@@ -18,15 +18,13 @@ public class PlayerController : MonoBehaviour
 	[Header("Canoe")]
 	public GameObject canoe;
 	public GameObject pickUpTarget;
-	public bool canPickUp, hasCanoe;
+	public bool canPickUp, hasCanoe, inRangeOfCanoe;
 
 	[Header("Items)")]
 
 	public GameObject torch;
 
 	#endregion
-
-
 
 	#region Private Variables
 
@@ -138,24 +136,26 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe()
 	{
-		if (Input.GetButtonDown("Button B") || (Input.GetKeyDown(KeyCode.Space)))
+		if (Input.GetButtonDown("Button B") && inRangeOfCanoe)
 		{
-			if (hasCanoe)
-			{
-				hasCanoe = false;
-				anim.SetTrigger("PutDown");
-				canoe.transform.SetParent(null);
-				canoe.SetActive(true);
-			}
-			else
-			{
-				hasCanoe = true;
-				canoe.SetActive(false);
-				canoe.transform.SetParent(transform);
-				transform.position = pickUpTarget.transform.position;
-				anim.SetTrigger("PickUp");
-				anim.SetBool("isCarrying", true);
-			}
+			//pick up canoe
+			transform.position = pickUpTarget.transform.position;
+			canoe.SetActive(false);
+			canoe.transform.SetParent(transform);
+			anim.SetTrigger("PickUp");
+			anim.SetBool("isCarrying", true);
+			hasCanoe = true;
+
+
+		}
+		else if(Input.GetButtonDown("Button B") && hasCanoe)
+		{
+			StartCoroutine(RevealCanoe());
+			canoe.transform.SetParent(null);
+			anim.SetTrigger("PutDown");
+			anim.SetBool("isCarrying", false);
+			hasCanoe = false;
+
 		}
 	}
 
@@ -196,10 +196,26 @@ public class PlayerController : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "CanoePickUpRange") ;
+		if (other.gameObject.tag == "CanoePickUpRange") 
 		{
 			canPickUp = true;
+			inRangeOfCanoe = true;
 		}
+	}
+
+	private void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "CanoePickUpRange") 
+		{
+			canPickUp = false;
+			inRangeOfCanoe = false;
+		}
+	}
+
+	IEnumerator RevealCanoe()
+	{
+		yield return new WaitForSeconds(0.8f);
+		canoe.SetActive(true);
 	}
 
 }
