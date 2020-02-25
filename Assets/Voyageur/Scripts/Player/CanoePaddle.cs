@@ -124,6 +124,7 @@ public class CanoePaddle : MonoBehaviour
 		if (collision.gameObject.tag == "BeachDisableInput")
 		{
 			canPaddle = false;
+			anim.SetBool("isPreaching", true);
 		}
 	}
 
