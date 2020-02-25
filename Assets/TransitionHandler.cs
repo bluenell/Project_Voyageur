@@ -15,6 +15,9 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject layerManager;
 	public GameObject interactionsManager;
 
+	public GameObject canoeCam;
+	public GameObject playerCam;
+
 	private void Awake()
 	{
 		playerController = player.GetComponent<PlayerController>();
@@ -30,6 +33,8 @@ public class TransitionHandler : MonoBehaviour
 		monty.SetActive(true);
 		layerManager.SetActive(true);
 		interactionsManager.SetActive(true);
+		canoeCam.SetActive(false);
+		playerCam.SetActive(true);
 
 	}
 

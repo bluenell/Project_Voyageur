@@ -58,7 +58,7 @@ public class CanoePaddle : MonoBehaviour
 			transform.Translate(movement);
 		}
 
-		if (Input.GetButton("Button B") && canPaddle)
+		if (Input.GetButtonDown("Button B") && canPaddle)
 		{
 			counter = Time.time - tempTime;
 			if (counter < 1.2)
@@ -95,7 +95,7 @@ public class CanoePaddle : MonoBehaviour
 
 		//Debug.Log("Tes");
 
-		if (Input.GetButtonDown("Button B") || Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetAxis("Horizontal") > 0)
 		{
 			//Debug.Log("Beach Animation");
 			anim.SetTrigger("Beach");
