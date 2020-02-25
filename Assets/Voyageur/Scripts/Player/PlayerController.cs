@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
 	[Header("Canoe")]
 	public GameObject canoe;
 	public GameObject pickUpTarget;
-	public bool canPickUp, hasCanoe, inRangeOfCanoe;
+	public bool canPickUp, hasCanoe, inRangeOfCanoe, inCanoeZone;
+	Transform canoePutDownTarget;
 
 	[Header("Items)")]
 
@@ -47,6 +48,7 @@ public class PlayerController : MonoBehaviour
 		inventory = GetComponent<PlayerInventory>();
 		nightCycle = GameObject.Find("Global Light (Sun)").GetComponent<DayNightCycleManager>();
 
+		inCanoeZone = false;
 
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
@@ -148,10 +150,11 @@ public class PlayerController : MonoBehaviour
 
 
 		}
-		else if(Input.GetButtonDown("Button B") && hasCanoe)
+		else if(Input.GetButtonDown("Button B") && hasCanoe && inCanoeZone)
 		{
 			StartCoroutine(RevealCanoe());
 			canoe.transform.SetParent(null);
+			canoe.transform.position = canoePutDownTarget.transform.position;
 			anim.SetTrigger("PutDown");
 			anim.SetBool("isCarrying", false);
 			hasCanoe = false;
@@ -201,6 +204,13 @@ public class PlayerController : MonoBehaviour
 			canPickUp = true;
 			inRangeOfCanoe = true;
 		}
+
+		if (other.gameObject.tag == "PutDownZone")
+		{
+			inCanoeZone = true;
+			canoePutDownTarget = other.gameObject.transform.GetChild(0).transform;
+		}
+
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
@@ -209,6 +219,10 @@ public class PlayerController : MonoBehaviour
 		{
 			canPickUp = false;
 			inRangeOfCanoe = false;
+		}
+		if (other.gameObject.tag == "PutDownZone")
+		{
+			inCanoeZone = false;
 		}
 	}
 
