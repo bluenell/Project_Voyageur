@@ -17,9 +17,10 @@ public class PlayerController : MonoBehaviour
 
 	[Header("Canoe")]
 	public GameObject canoe;
-	public GameObject pickUpTarget;
-	bool canPickUp, hasCanoe, inRangeOfCanoe, inCanoeZone, targetFound;
+
+	bool hasCanoe, inRangeOfCanoe, inCanoeZone, canoeTargetFound, parkingSpaceFound;
 	Transform canoePutDownTarget;
+	Transform canoePickUpTarget;
 
 	[Header("Items)")]
 
@@ -52,6 +53,8 @@ public class PlayerController : MonoBehaviour
 		nightCycle = GameObject.Find("Global Light (Sun)").GetComponent<DayNightCycleManager>();
 
 		inCanoeZone = false;
+		hasCanoe = false;
+		inRangeOfCanoe = false;
 
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
@@ -90,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
 		float yPos = transform.position.y;
 
-		if (!targetFound)
+		if (!canoeTargetFound || !parkingSpaceFound)
 		{
 			if (moveX < 0f)
 			{
@@ -151,18 +154,18 @@ public class PlayerController : MonoBehaviour
 	void HandleCanoe()
 	{
 
-		if (Input.GetButtonDown("Button B") && inRangeOfCanoe)
+		if (Input.GetButtonDown("Button B") && inRangeOfCanoe && !hasCanoe)
 		{
-			targetFound = true; 
+			canoeTargetFound = true; 
 		}
 
-		if (targetFound)
+		if (canoeTargetFound)
 		{
 			DisablePlayerInput();
-			transform.position = Vector2.MoveTowards(transform.position, pickUpTarget.transform.position, defaultXSpeed * Time.deltaTime);
+			transform.position = Vector2.MoveTowards(transform.position, canoePickUpTarget.transform.position, defaultXSpeed * Time.deltaTime);
 			anim.SetBool("isMoving", true);
 
-			if (transform.position.x > pickUpTarget.transform.position.x)
+			if (transform.position.x > canoePickUpTarget.transform.position.x)
 			{
 				sprite.flipX = false;
 			}
@@ -172,7 +175,7 @@ public class PlayerController : MonoBehaviour
 			}
 
 
-			if (transform.position == pickUpTarget.transform.position)
+			if (transform.position == canoePickUpTarget.transform.position)
 			{
 				Debug.Log("At Location");
 				canoe.SetActive(false);
@@ -180,16 +183,64 @@ public class PlayerController : MonoBehaviour
 				anim.SetTrigger("PickUp");
 				anim.SetBool("isCarrying", true);
 				hasCanoe = true;
-				targetFound = false;
+				canoeTargetFound = false;
 				anim.SetBool("isMoving", false);
 				EnablePlayerInput();
 			}
 
 		}
+
+		if (Input.GetButtonDown("Button B") && hasCanoe && inCanoeZone)
+		{
+			parkingSpaceFound = true;
+		}
+
+		if (parkingSpaceFound)
+		{
+			DisablePlayerInput();
+			transform.position = Vector2.MoveTowards(transform.position, canoePutDownTarget.transform.position, defaultXSpeed * Time.deltaTime);
+			anim.SetBool("isMoving", true);
+
+			if (transform.position.x > canoePutDownTarget.transform.position.x)
+			{
+				sprite.flipX = false;
+			}
+			else
+			{
+				sprite.flipX = true;
+			}
+
+
+			if (transform.position == canoePutDownTarget.transform.position)
+			{
+				Debug.Log("At Location");
+				StartCoroutine(RevealCanoe());
+				canoe.transform.SetParent(null);
+				anim.SetTrigger("PutDown");
+				anim.SetBool("isCarrying", false);
+				hasCanoe = false;
+				parkingSpaceFound = false;
+				anim.SetBool("isMoving", false);
+				EnablePlayerInput();
+				
+			}
+		}
 		
+	} 
+
+	void DisablePlayerInput()
+	{
+		xSpeed = 0;
+		ySpeed = 0;
+	}
+
+	void EnablePlayerInput()
+	{
+		xSpeed = defaultXSpeed;
+		ySpeed = defaultYSpeed;
 
 	}
-	
+
 
 	void CycleInventory()
 	{
@@ -230,8 +281,8 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.gameObject.tag == "CanoePickUpRange") 
 		{
-			canPickUp = true;
 			inRangeOfCanoe = true;
+			canoePickUpTarget = other.gameObject.transform.GetChild(0).transform;
 		}
 
 		if (other.gameObject.tag == "PutDownZone")
@@ -246,7 +297,6 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.gameObject.tag == "CanoePickUpRange") 
 		{
-			canPickUp = false;
 			inRangeOfCanoe = false;
 		}
 		if (other.gameObject.tag == "PutDownZone")
@@ -261,18 +311,7 @@ public class PlayerController : MonoBehaviour
 		canoe.SetActive(true);
 	}
 
-	void DisablePlayerInput()
-	{
-		xSpeed = 0;
-		ySpeed = 0;
-	}
-
-	void EnablePlayerInput()
-	{
-		xSpeed = defaultXSpeed;
-		ySpeed = defaultYSpeed;
-
-	}
+	
 
 
 
