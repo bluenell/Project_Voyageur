@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 	[Header("Canoe")]
 	public GameObject canoe;
 	public GameObject pickUpTarget;
-	public bool canPickUp, hasCanoe, inRangeOfCanoe, inCanoeZone;
+	bool canPickUp, hasCanoe, inRangeOfCanoe, inCanoeZone, targetFound;
 	Transform canoePutDownTarget;
 
 	[Header("Items)")]
@@ -134,33 +134,34 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-
-
 	void HandleCanoe()
 	{
+
 		if (Input.GetButtonDown("Button B") && inRangeOfCanoe)
 		{
-			//pick up canoe
-			transform.position = pickUpTarget.transform.position;
-			canoe.SetActive(false);
-			canoe.transform.SetParent(transform);
-			anim.SetTrigger("PickUp");
-			anim.SetBool("isCarrying", true);
-			hasCanoe = true;
-
-
+			targetFound = true; 
 		}
-		else if(Input.GetButtonDown("Button B") && hasCanoe && inCanoeZone)
+
+		if (targetFound)
 		{
-			StartCoroutine(RevealCanoe());
-			canoe.transform.SetParent(null);
-			canoe.transform.position = canoePutDownTarget.transform.position;
-			anim.SetTrigger("PutDown");
-			anim.SetBool("isCarrying", false);
-			hasCanoe = false;
+			transform.position = Vector2.MoveTowards(transform.position, pickUpTarget.transform.position, xSpeed * Time.deltaTime);
+
+			if (transform.position == pickUpTarget.transform.position)
+			{
+				Debug.Log("At Location");
+				canoe.SetActive(false);
+				canoe.transform.SetParent(transform);
+				anim.SetTrigger("PickUp");
+				anim.SetBool("isCarrying", true);
+				hasCanoe = true;
+				targetFound = false;
+			}
 
 		}
+		
+
 	}
+	
 
 	void CycleInventory()
 	{
@@ -231,6 +232,8 @@ public class PlayerController : MonoBehaviour
 		yield return new WaitForSeconds(0.8f);
 		canoe.SetActive(true);
 	}
+
+
 
 }
 
