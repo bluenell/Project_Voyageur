@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 	#region Public Variables
 	[Header("Player Stats")]
 	public float stamina;
-	public float xSpeed, ySpeed;
+	public float defaultXSpeed, defaultYSpeed;
 	public bool isMoving;
 	public bool facingRight;
 
@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
 	PlayerInventory inventory;
 	DayNightCycleManager nightCycle;
 
+	float xSpeed, ySpeed;
+	
+
 	int currentInventoryIndex;
 
 	#endregion
@@ -52,6 +55,11 @@ public class PlayerController : MonoBehaviour
 
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
+
+		xSpeed = defaultXSpeed;
+		ySpeed = defaultYSpeed;
+		
+
 	}
 
 	// Update is called once per frame
@@ -77,25 +85,31 @@ public class PlayerController : MonoBehaviour
 		//Debug.Log("X Input " + moveX + " Y Input " + moveY);
 
 		rb.velocity = new Vector2(moveX * xSpeed, moveY * ySpeed);
+		
+		
 
 		float yPos = transform.position.y;
 
-		#region FlipCharacter
-		if (moveX < 0f)
+		if (!targetFound)
 		{
-			facingRight = false;
-			anim.SetBool("facingRight", false);
-			//sprite.flipX = true;
-			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
-		}
-		if (moveX > 0f)
-		{
-			facingRight = true;
-			anim.SetBool("facingRight", true);
+			if (moveX < 0f)
+			{
+				facingRight = false;
+				anim.SetBool("facingRight", false);
+				//sprite.flipX = true;
+				torch.transform.rotation = Quaternion.Euler(0, 0, 90);
+			}
+			if (moveX > 0f)
+			{
+				facingRight = true;
+				anim.SetBool("facingRight", true);
 
-			//sprite.flipX = false;
-			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
+				//sprite.flipX = false;
+				torch.transform.rotation = Quaternion.Euler(0, 0, -90);
+			}
 		}
+		#region FlipCharacter
+		
 
 		#endregion
 
@@ -144,7 +158,19 @@ public class PlayerController : MonoBehaviour
 
 		if (targetFound)
 		{
-			transform.position = Vector2.MoveTowards(transform.position, pickUpTarget.transform.position, xSpeed * Time.deltaTime);
+			DisablePlayerInput();
+			transform.position = Vector2.MoveTowards(transform.position, pickUpTarget.transform.position, defaultXSpeed * Time.deltaTime);
+			anim.SetBool("isMoving", true);
+
+			if (transform.position.x > pickUpTarget.transform.position.x)
+			{
+				sprite.flipX = false;
+			}
+			else
+			{
+				sprite.flipX = true;
+			}
+
 
 			if (transform.position == pickUpTarget.transform.position)
 			{
@@ -155,6 +181,8 @@ public class PlayerController : MonoBehaviour
 				anim.SetBool("isCarrying", true);
 				hasCanoe = true;
 				targetFound = false;
+				anim.SetBool("isMoving", false);
+				EnablePlayerInput();
 			}
 
 		}
@@ -231,6 +259,19 @@ public class PlayerController : MonoBehaviour
 	{
 		yield return new WaitForSeconds(0.8f);
 		canoe.SetActive(true);
+	}
+
+	void DisablePlayerInput()
+	{
+		xSpeed = 0;
+		ySpeed = 0;
+	}
+
+	void EnablePlayerInput()
+	{
+		xSpeed = defaultXSpeed;
+		ySpeed = defaultYSpeed;
+
 	}
 
 

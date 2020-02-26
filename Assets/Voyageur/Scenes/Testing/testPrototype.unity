@@ -5242,8 +5242,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamina: 0
-  xSpeed: 4
-  ySpeed: 4
+  defaultXSpeed: 5
+  defaultYSpeed: 5
   isMoving: 0
   facingRight: 0
   armsReach: 2
