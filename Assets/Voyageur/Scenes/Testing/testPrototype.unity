@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 99561022}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: putDownTarget
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -647,7 +647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 225296121}
   - component: {fileID: 225296120}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Beach
   m_TagString: PutDownZone
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264901186}
   - component: {fileID: 264901187}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: sign (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1558,7 +1558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410352227}
   - component: {fileID: 410352228}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2031,7 +2031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 563304988}
   - component: {fileID: 563304989}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pick Up Range
   m_TagString: CanoePickUpRange
   m_Icon: {fileID: 0}
@@ -2725,7 +2725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 806108268}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pick Up Target
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
@@ -2974,7 +2974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 874849128}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: putDownTarget
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -2989,7 +2989,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874849127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.22, y: 0.13, z: 0}
+  m_LocalPosition: {x: 1.22, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2117760467}
@@ -4285,7 +4285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1519758253}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: putDownTarget
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -4383,7 +4383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1662917313}
   - component: {fileID: 1662917314}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: sign (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4630,7 +4630,7 @@ GameObject:
   - component: {fileID: 1687866149}
   - component: {fileID: 1687866150}
   - component: {fileID: 1687866151}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CanoeSingle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4733,7 +4733,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1736142003}
   - component: {fileID: 1736142002}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CanoeGFX
   m_TagString: Canoe
   m_Icon: {fileID: 0}
@@ -5243,7 +5243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2053130798}
   - component: {fileID: 2053130799}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Far Beach
   m_TagString: PutDownZone
   m_Icon: {fileID: 0}
@@ -5258,7 +5258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053130797}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 121.34, y: 6.29, z: 6.4453125}
+  m_LocalPosition: {x: 121.34, y: 6.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1519758253}
@@ -5418,7 +5418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2117760467}
   - component: {fileID: 2117760468}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Fetch
   m_TagString: PutDownZone
   m_Icon: {fileID: 0}
@@ -5433,7 +5433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117760466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52.37, y: -2.79, z: 6.4453125}
+  m_LocalPosition: {x: 52.37, y: -2.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 874849128}
@@ -5683,6 +5683,7 @@ MonoBehaviour:
   stamina: 0
   defaultXSpeed: 5
   defaultYSpeed: 5
+  canoeWalkSpeed: 3
   isMoving: 0
   facingRight: 0
   armsReach: 2
@@ -5721,6 +5722,7 @@ GameObject:
   - component: {fileID: 7945989855208360786}
   - component: {fileID: 173586963}
   - component: {fileID: 173586960}
+  - component: {fileID: 7945989855208361129}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5728,6 +5730,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7945989855208361129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945989855208361128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d785bc3c44cd642b15407603e2accd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &7945989855330090952
 SpriteRenderer:
   m_ObjectHideFlags: 0

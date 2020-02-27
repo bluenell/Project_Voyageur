@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 	[Header("Player Stats")]
 	public float stamina;
 	public float defaultXSpeed, defaultYSpeed;
+	public float canoeWalkSpeed;
 	public bool isMoving;
 	public bool facingRight;
 
@@ -60,8 +61,6 @@ public class PlayerController : MonoBehaviour
 
 		xSpeed = defaultXSpeed;
 		ySpeed = defaultYSpeed;
-		
-
 	}
 
 	// Update is called once per frame
@@ -86,8 +85,14 @@ public class PlayerController : MonoBehaviour
 
 		//Debug.Log("X Input " + moveX + " Y Input " + moveY);
 
-		rb.velocity = new Vector2(moveX * xSpeed, moveY * ySpeed);
-		
+		if (hasCanoe)
+		{
+			rb.velocity = new Vector2(moveX * canoeWalkSpeed, moveY * canoeWalkSpeed);
+		}
+		else
+		{
+			rb.velocity = new Vector2(moveX * defaultXSpeed, moveY * defaultYSpeed);
+		}
 		
 
 		float yPos = transform.position.y;
@@ -199,7 +204,7 @@ public class PlayerController : MonoBehaviour
 		if (parkingSpaceFound)
 		{
 			DisablePlayerInput();
-			transform.position = Vector2.MoveTowards(transform.position, canoePutDownTarget.transform.position, defaultXSpeed * Time.deltaTime);
+			transform.position = Vector2.MoveTowards(transform.position, canoePutDownTarget.transform.position, canoeWalkSpeed * Time.deltaTime);
 			anim.SetBool("isMoving", true);
 
 			if (transform.position.x > canoePutDownTarget.transform.position.x)
@@ -308,10 +313,12 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.tag == "CanoePickUpRange") 
 		{
 			inRangeOfCanoe = false;
+			canoePickUpTarget = null;
 		}
 		if (other.gameObject.tag == "PutDownZone")
 		{
 			inCanoeZone = false;
+			canoePutDownTarget = null;
 		}
 	}
 
