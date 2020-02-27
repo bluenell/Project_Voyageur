@@ -18,6 +18,9 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject canoeCam;
 	public GameObject playerCam;
 
+	public GameObject pathwayCollider;
+
+
 	private void Awake()
 	{
 		playerController = player.GetComponent<PlayerController>();
@@ -35,6 +38,7 @@ public class TransitionHandler : MonoBehaviour
 		interactionsManager.SetActive(true);
 		canoeCam.SetActive(false);
 		playerCam.SetActive(true);
+		pathwayCollider.SetActive(true);
 
 	}
 
@@ -44,6 +48,7 @@ public class TransitionHandler : MonoBehaviour
 		//hide monty
 		//hide canoe object
 		//show canoe all in one at the new location
+		pathwayCollider.SetActive(false);
 	}
 
 }

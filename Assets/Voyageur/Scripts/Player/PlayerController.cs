@@ -18,9 +18,10 @@ public class PlayerController : MonoBehaviour
 	[Header("Canoe")]
 	public GameObject canoe;
 
-	bool hasCanoe, inRangeOfCanoe, inCanoeZone, canoeTargetFound, parkingSpaceFound;
+	public bool hasCanoe, inRangeOfCanoe, inCanoeZone, canoeTargetFound, parkingSpaceFound;
 	Transform canoePutDownTarget;
 	Transform canoePickUpTarget;
+	Transform playerTarget;
 
 	[Header("Items)")]
 
@@ -51,6 +52,9 @@ public class PlayerController : MonoBehaviour
 		anim = transform.GetChild(0).GetComponent<Animator>();
 		inventory = GetComponent<PlayerInventory>();
 		nightCycle = GameObject.Find("Global Light (Sun)").GetComponent<DayNightCycleManager>();
+
+		canoePickUpTarget = canoe.transform.GetChild(0).transform;
+
 
 		inCanoeZone = false;
 		hasCanoe = false;
@@ -232,7 +236,7 @@ public class PlayerController : MonoBehaviour
 				anim.SetBool("isMoving", false);
 				canoe.transform.SetParent(null);
 				canoe.transform.position = canoePutDownTarget.transform.position;
-				transform.position = canoePutDownTarget.transform.position;
+				transform.position = playerTarget.transform.position;
 				EnablePlayerInput();
 				
 			}
@@ -297,13 +301,15 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.tag == "CanoePickUpRange") 
 		{
 			inRangeOfCanoe = true;
-			canoePickUpTarget = other.gameObject.transform.GetChild(0).transform;
+			//canoePickUpTarget = other.gameObject.transform.GetChild(0).transform;
+			
 		}
 
 		if (other.gameObject.tag == "PutDownZone")
 		{
 			inCanoeZone = true;
 			canoePutDownTarget = other.gameObject.transform.GetChild(0).transform;
+			playerTarget = other.gameObject.transform.GetChild(1).transform;
 		}
 
 	}
@@ -313,7 +319,6 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.tag == "CanoePickUpRange") 
 		{
 			inRangeOfCanoe = false;
-			canoePickUpTarget = null;
 		}
 		if (other.gameObject.tag == "PutDownZone")
 		{
