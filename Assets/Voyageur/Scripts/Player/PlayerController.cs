@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 	[Header("Player Stats")]
 	public float stamina;
 	public float defaultXSpeed, defaultYSpeed;
-	public float canoeWalkSpeed;
+	public float defaultCanoeWalkSpeed;
 	public bool isMoving;
 	public bool facingRight;
 
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 	DayNightCycleManager nightCycle;
 	BoxCollider2D parkingCollider;
 
-	float xSpeed, ySpeed;
+	float xSpeed, ySpeed, canoeWalkSpeed;
 	
 
 	int currentInventoryIndex;
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else
 		{
-			rb.velocity = new Vector2(moveX * defaultXSpeed, moveY * defaultYSpeed);
+			rb.velocity = new Vector2(moveX * xSpeed, moveY * defaultYSpeed);
 		}
 		
 
@@ -193,10 +193,11 @@ public class PlayerController : MonoBehaviour
 			if (transform.position == canoePickUpTarget.transform.position)
 			{
 				Debug.Log("At Canoe");
-				canoe.SetActive(false);
+				
 				canoe.transform.SetParent(transform);
 				anim.SetTrigger("PickUp");
 				anim.SetBool("isCarrying", true);
+				canoe.SetActive(false);
 				hasCanoe = true;
 				canoeTargetFound = false;
 				anim.SetBool("isMoving", false);
@@ -216,7 +217,7 @@ public class PlayerController : MonoBehaviour
 			DisablePlayerInput();
 			targetY = new Vector2(transform.position.x, currentParkingZone.position.y);
 			Debug.DrawLine(transform.position, targetY);
-			transform.position = Vector2.MoveTowards(transform.position, targetY, canoeWalkSpeed * Time.deltaTime);
+			transform.position = Vector2.MoveTowards(transform.position, targetY, defaultCanoeWalkSpeed * Time.deltaTime);
 
 
 			anim.SetBool("isMoving", true);
@@ -258,6 +259,7 @@ public class PlayerController : MonoBehaviour
 	{
 		xSpeed = 0;
 		ySpeed = 0;
+		canoeWalkSpeed = 0;
 		
 	}
 
@@ -265,6 +267,7 @@ public class PlayerController : MonoBehaviour
 	{
 		xSpeed = defaultXSpeed;
 		ySpeed = defaultYSpeed;
+		canoeWalkSpeed = defaultCanoeWalkSpeed;
 
 	}
 
