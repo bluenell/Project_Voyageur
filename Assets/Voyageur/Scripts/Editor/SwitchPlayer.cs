@@ -14,10 +14,6 @@ public class SwitchPlayer : Editor
 	public static GameObject playerCam;
 
 
-
-
-
-
 	[MenuItem("Testing/Switch to Player")]
 	static void SwitchToPlayer()
 	{

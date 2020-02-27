@@ -18,6 +18,7 @@ TagManager:
   - BeachDisableInput
   - CanoePickUpRange
   - PutDownZone
+  - ParkingSpot
   layers:
   - Default
   - TransparentFX

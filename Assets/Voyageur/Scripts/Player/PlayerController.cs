@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 	public bool isMoving;
 	public bool facingRight;
 
+
+
 	public float armsReach;
 
 	[Header("Canoe")]
@@ -21,7 +23,10 @@ public class PlayerController : MonoBehaviour
 	public bool hasCanoe, inRangeOfCanoe, inCanoeZone, canoeTargetFound, parkingSpaceFound;
 	Transform canoePutDownTarget;
 	Transform canoePickUpTarget;
+	public Transform currentParkingZone;
 	Transform playerTarget;
+	public float parkingSpaceDetectionRadius;
+	Vector2 targetY;
 
 	[Header("Items)")]
 
@@ -36,6 +41,7 @@ public class PlayerController : MonoBehaviour
 	Animator anim;
 	PlayerInventory inventory;
 	DayNightCycleManager nightCycle;
+	BoxCollider2D parkingCollider;
 
 	float xSpeed, ySpeed;
 	
@@ -208,10 +214,14 @@ public class PlayerController : MonoBehaviour
 		if (parkingSpaceFound)
 		{
 			DisablePlayerInput();
-			transform.position = Vector2.MoveTowards(transform.position, canoePutDownTarget.transform.position, canoeWalkSpeed * Time.deltaTime);
+			targetY = new Vector2(transform.position.x, currentParkingZone.position.y);
+			Debug.DrawLine(transform.position, targetY);
+			transform.position = Vector2.MoveTowards(transform.position, targetY, canoeWalkSpeed * Time.deltaTime);
+
+
 			anim.SetBool("isMoving", true);
 
-			if (transform.position.x > canoePutDownTarget.transform.position.x)
+			if (transform.position.x > currentParkingZone.transform.position.x)
 			{
 				facingRight = false;
 				anim.SetBool("facingRight", false);
@@ -223,7 +233,7 @@ public class PlayerController : MonoBehaviour
 			}
 
 
-			if (transform.position == canoePutDownTarget.transform.position)
+			if (transform.position.y == currentParkingZone.transform.position.y)
 			{
 				Debug.Log("At Parking Space");
 				StartCoroutine(RevealCanoe());				
@@ -235,8 +245,8 @@ public class PlayerController : MonoBehaviour
 				parkingSpaceFound = false;
 				anim.SetBool("isMoving", false);
 				canoe.transform.SetParent(null);
-				canoe.transform.position = canoePutDownTarget.transform.position;
-				transform.position = playerTarget.transform.position;
+				canoe.transform.position = new Vector2(transform.position.x,canoePutDownTarget.transform.position.y);
+				transform.position = new Vector2(transform.position.x,playerTarget.transform.position.y);
 				EnablePlayerInput();
 				
 			}
@@ -310,6 +320,7 @@ public class PlayerController : MonoBehaviour
 			inCanoeZone = true;
 			canoePutDownTarget = other.gameObject.transform.GetChild(0).transform;
 			playerTarget = other.gameObject.transform.GetChild(1).transform;
+			currentParkingZone = other.gameObject.transform.GetChild(0).transform;
 		}
 
 	}
@@ -324,6 +335,8 @@ public class PlayerController : MonoBehaviour
 		{
 			inCanoeZone = false;
 			canoePutDownTarget = null;
+			currentParkingZone = null;
+
 		}
 	}
 
