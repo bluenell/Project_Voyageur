@@ -4,8 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
-{
-
+{ 
 	#region Public Variables
 	[Header("Player Stats")]
 	public float stamina;
@@ -142,8 +141,6 @@ public class PlayerController : MonoBehaviour
 			{
 				torch.SetActive(false);
 			}
-
-			
 		}		
 		else
 		{
@@ -153,7 +150,6 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe()
 	{
-
 		if (Input.GetButtonDown("Button B") && inRangeOfCanoe && !hasCanoe)
 		{
 			canoeTargetFound = true; 
@@ -165,19 +161,23 @@ public class PlayerController : MonoBehaviour
 			transform.position = Vector2.MoveTowards(transform.position, canoePickUpTarget.transform.position, defaultXSpeed * Time.deltaTime);
 			anim.SetBool("isMoving", true);
 
+		
 			if (transform.position.x > canoePickUpTarget.transform.position.x)
 			{
-				sprite.flipX = false;
+				facingRight = false;
+				anim.SetBool("facingRight", false);
 			}
 			else
 			{
-				sprite.flipX = true;
+				facingRight = true;
+				anim.SetBool("facingRight", true);
 			}
+			
 
 
 			if (transform.position == canoePickUpTarget.transform.position)
 			{
-				Debug.Log("At Location");
+				Debug.Log("At Canoe");
 				canoe.SetActive(false);
 				canoe.transform.SetParent(transform);
 				anim.SetTrigger("PickUp");
@@ -192,6 +192,7 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button B") && hasCanoe && inCanoeZone)
 		{
+
 			parkingSpaceFound = true;
 		}
 
@@ -203,24 +204,30 @@ public class PlayerController : MonoBehaviour
 
 			if (transform.position.x > canoePutDownTarget.transform.position.x)
 			{
-				sprite.flipX = false;
+				facingRight = false;
+				anim.SetBool("facingRight", false);
 			}
 			else
 			{
-				sprite.flipX = true;
+				facingRight = true;
+				anim.SetBool("facingRight", true);
 			}
 
 
 			if (transform.position == canoePutDownTarget.transform.position)
 			{
-				Debug.Log("At Location");
-				StartCoroutine(RevealCanoe());
-				canoe.transform.SetParent(null);
+				Debug.Log("At Parking Space");
+				StartCoroutine(RevealCanoe());				
+
 				anim.SetTrigger("PutDown");
 				anim.SetBool("isCarrying", false);
+
 				hasCanoe = false;
 				parkingSpaceFound = false;
 				anim.SetBool("isMoving", false);
+				canoe.transform.SetParent(null);
+				canoe.transform.position = canoePutDownTarget.transform.position;
+				transform.position = canoePutDownTarget.transform.position;
 				EnablePlayerInput();
 				
 			}
@@ -232,6 +239,7 @@ public class PlayerController : MonoBehaviour
 	{
 		xSpeed = 0;
 		ySpeed = 0;
+		
 	}
 
 	void EnablePlayerInput()
@@ -244,29 +252,31 @@ public class PlayerController : MonoBehaviour
 
 	void CycleInventory()
 	{
-		if (Input.GetButtonDown("InventoryRight"))
+		if (!hasCanoe)
 		{
-			currentInventoryIndex++;
-
-			if (currentInventoryIndex == inventory.tools.Count)
+			if (Input.GetButtonDown("InventoryRight"))
 			{
-				currentInventoryIndex = 0;
-			}
-			//Debug.Log(inventory.tools[currentInventoryIndex]);
-			anim.SetInteger("inventoryIndex", currentInventoryIndex);
-		}
+				currentInventoryIndex++;
 
-		if (Input.GetButtonDown("InventoryLeft"))
-		{
-			if (currentInventoryIndex == 0)
-			{
-				currentInventoryIndex = inventory.tools.Count;
+				if (currentInventoryIndex == inventory.tools.Count)
+				{
+					currentInventoryIndex = 0;
+				}
+				//Debug.Log(inventory.tools[currentInventoryIndex]);
+				anim.SetInteger("inventoryIndex", currentInventoryIndex);
 			}
 
-			currentInventoryIndex--;
-			anim.SetInteger("inventoryIndex", currentInventoryIndex);
-			//Debug.Log(inventory.tools[currentInventoryIndex]);
+			if (Input.GetButtonDown("InventoryLeft"))
+			{
+				if (currentInventoryIndex == 0)
+				{
+					currentInventoryIndex = inventory.tools.Count;
+				}
 
+				currentInventoryIndex--;
+				anim.SetInteger("inventoryIndex", currentInventoryIndex);
+				//Debug.Log(inventory.tools[currentInventoryIndex]);
+			}
 		}
 	}
 
