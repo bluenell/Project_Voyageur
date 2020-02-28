@@ -192,7 +192,8 @@ public class PlayerController : MonoBehaviour
 				hasCanoe = true;
 				canoeTargetFound = false;
 				anim.SetBool("isMoving", false);
-				EnablePlayerInput();
+				StartCoroutine(EnablePlayerInput());
+				
 			}
 
 		}
@@ -239,7 +240,7 @@ public class PlayerController : MonoBehaviour
 				canoe.transform.SetParent(null);
 				canoe.transform.position = new Vector2(transform.position.x,canoePutDownTarget.transform.position.y);
 				transform.position = new Vector2(transform.position.x,playerTarget.transform.position.y);
-				EnablePlayerInput();
+				StartCoroutine(EnablePlayerInput());
 				
 			}
 		}
@@ -254,13 +255,21 @@ public class PlayerController : MonoBehaviour
 		
 	}
 
-	void EnablePlayerInput()
+	IEnumerator RevealCanoe()
 	{
+		yield return new WaitForSeconds(0.8f);
+		canoe.SetActive(true);
+	}
+
+	IEnumerator EnablePlayerInput()
+	{
+		yield return new WaitForSeconds(0.8f);
 		xSpeed = defaultXSpeed;
 		ySpeed = defaultYSpeed;
 		canoeWalkSpeed = defaultCanoeWalkSpeed;
 
 	}
+
 
 
 	void CycleInventory()
@@ -334,17 +343,13 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	IEnumerator RevealCanoe()
-	{
-		yield return new WaitForSeconds(0.8f);
-		canoe.SetActive(true);
-	}
+	
+}
 
 	
 
 
 
-}
 
 		
 
