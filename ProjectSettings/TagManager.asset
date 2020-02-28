@@ -16,6 +16,9 @@ TagManager:
   - Monty
   - BeachPoint
   - BeachDisableInput
+  - CanoePickUpRange
+  - PutDownZone
+  - ParkingSpot
   layers:
   - Default
   - TransparentFX

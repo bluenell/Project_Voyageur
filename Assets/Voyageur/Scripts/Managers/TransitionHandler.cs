@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEditor;
 public class TransitionHandler : MonoBehaviour
 {
 
@@ -17,6 +17,9 @@ public class TransitionHandler : MonoBehaviour
 
 	public GameObject canoeCam;
 	public GameObject playerCam;
+
+	public GameObject pathwayCollider;
+
 
 	private void Awake()
 	{
@@ -35,6 +38,7 @@ public class TransitionHandler : MonoBehaviour
 		interactionsManager.SetActive(true);
 		canoeCam.SetActive(false);
 		playerCam.SetActive(true);
+		pathwayCollider.SetActive(true);
 
 	}
 
@@ -44,6 +48,7 @@ public class TransitionHandler : MonoBehaviour
 		//hide monty
 		//hide canoe object
 		//show canoe all in one at the new location
+		pathwayCollider.SetActive(false);
 	}
 
 }

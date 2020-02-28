@@ -4,41 +4,45 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
-{
-
-	#region Public Variables
-	[Header("Player Stats")]
+{ 
+	#region Player Variables
+	[Header("Player")]
 	public float stamina;
-	public float xSpeed, ySpeed;
+	public float defaultXSpeed, defaultYSpeed;
 	public bool isMoving;
 	public bool facingRight;
-
 	public float armsReach;
-
-	[Header("Canoe")]
-	public GameObject canoe;
-	public GameObject canoeTarget;
-	public GameObject putDownTarget;
-	public bool canPickUp;
-
-	[Header("Items)")]
-
-	public GameObject torch;
+	float xSpeed, ySpeed;
 
 	#endregion
 
+	#region Canoe Variables
+	[Header("Canoe")]
+	public GameObject canoe;
+	public float defaultCanoeWalkSpeed;
+	float canoeWalkSpeed;
+	bool hasCanoe, inRangeOfCanoe, inCanoeZone, canoeTargetFound, parkingSpaceFound, movementStopped;
+	Transform canoePutDownTarget;
+	Transform canoePickUpTarget;
+	Transform currentParkingZone;
+	Transform playerTarget;
+	Vector2 targetY;
+	#endregion
 
+	#region Inventory
+	[Header("Items)")]
+	public GameObject torch;
+	PlayerInventory inventory;
+	int currentInventoryIndex;
+	#endregion
 
-	#region Private Variables
-
+	#region Components
 	Rigidbody2D rb;
 	SpriteRenderer sprite;
 	Animator anim;
-	PlayerInventory inventory;
+
 	DayNightCycleManager nightCycle;
-
-	int currentInventoryIndex;
-
+	BoxCollider2D parkingCollider;
 	#endregion
 
 	// Start is called before the first frame update
@@ -50,9 +54,18 @@ public class PlayerController : MonoBehaviour
 		inventory = GetComponent<PlayerInventory>();
 		nightCycle = GameObject.Find("Global Light (Sun)").GetComponent<DayNightCycleManager>();
 
+		canoePickUpTarget = canoe.transform.GetChild(0).transform;
+
+
+		inCanoeZone = false;
+		hasCanoe = false;
+		inRangeOfCanoe = false;
 
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
+
+		xSpeed = defaultXSpeed;
+		ySpeed = defaultYSpeed;
 	}
 
 	// Update is called once per frame
@@ -65,6 +78,18 @@ public class PlayerController : MonoBehaviour
 	{
 		CycleInventory();
 		UseItem();
+		HandleCanoe();
+
+		if (movementStopped)
+		{
+			DisablePlayerInput();
+		}
+		else
+		{
+			EnablePlayerInput(0.0f);
+		}
+
+
 	}
 
 
@@ -76,28 +101,36 @@ public class PlayerController : MonoBehaviour
 
 		//Debug.Log("X Input " + moveX + " Y Input " + moveY);
 
-		rb.velocity = new Vector2(moveX * xSpeed, moveY * ySpeed);
+		if (hasCanoe)
+		{
+			rb.velocity = new Vector2(moveX * canoeWalkSpeed, moveY * canoeWalkSpeed);
+		}
+		else
+		{
+			rb.velocity = new Vector2(moveX * xSpeed, moveY * defaultYSpeed);
+		}
+		
 
 		float yPos = transform.position.y;
 
-		#region FlipCharacter
-		if (moveX < 0f)
+		if (!canoeTargetFound || !parkingSpaceFound)
 		{
-			facingRight = false;
-			anim.SetBool("facingRight", false);
-			//sprite.flipX = true;
-			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
-		}
-		if (moveX > 0f)
-		{
-			facingRight = true;
-			anim.SetBool("facingRight", true);
+			if (moveX < 0f)
+			{
+				facingRight = false;
+				anim.SetBool("facingRight", false);
+				//sprite.flipX = true;
+				torch.transform.rotation = Quaternion.Euler(0, 0, 90);
+			}
+			if (moveX > 0f)
+			{
+				facingRight = true;
+				anim.SetBool("facingRight", true);
 
-			//sprite.flipX = false;
-			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
+				//sprite.flipX = false;
+				torch.transform.rotation = Quaternion.Euler(0, 0, -90);
+			}
 		}
-
-		#endregion
 
 		if (moveX != 0 || moveY != 0)
 		{
@@ -112,10 +145,6 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 	//Detects input and what interacted with
-	void Interact()
-	{
-
-	}
 
 	void UseItem()
 	{
@@ -129,8 +158,6 @@ public class PlayerController : MonoBehaviour
 			{
 				torch.SetActive(false);
 			}
-
-			
 		}		
 		else
 		{
@@ -138,55 +165,163 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	/*
-	//Handles the picking up/placing down the canoe
 	void HandleCanoe()
 	{
-		if (Input.GetButtonDown("Joystick X") && canPickUp)
+		float moveX = Input.GetAxis("Horizontal");
+		float moveY = Input.GetAxis("Vertical");
+
+
+		if (Input.GetButtonDown("Button B") && inRangeOfCanoe && !hasCanoe)
 		{
-			canoe.transform.position = canoeTarget.transform.position;
-			canoe.transform.SetParent(canoeTarget.transform);
-			hasCanoe = true;
-			canPickUp = false;
+			canoeTargetFound = true;
+			movementStopped = true;
+			xSpeed = 0;
+			ySpeed = 0;
+			canoeWalkSpeed = 0;
+		}
+
+		if (canoeTargetFound)
+		{
+			
+			transform.position = Vector2.MoveTowards(transform.position, canoePickUpTarget.transform.position, defaultXSpeed * Time.deltaTime);
+			anim.SetBool("isMoving", true);
+
+		
+			if (transform.position.x > canoePickUpTarget.transform.position.x)
+			{
+				facingRight = false;
+				anim.SetBool("facingRight", false);
+			}
+			else
+			{
+				facingRight = true;
+				anim.SetBool("facingRight", true);
+			}
+
+			if (transform.position == canoePickUpTarget.transform.position)
+			{
+				StartCoroutine(EnablePlayerInput(0.8f));
+				Debug.Log("At Canoe");
+				
+				canoe.transform.SetParent(transform);
+				anim.SetTrigger("PickUp");
+				anim.SetBool("isCarrying", true);
+				canoe.SetActive(false);
+				hasCanoe = true;
+				canoeTargetFound = false;
+				anim.SetBool("isMoving", false);
+				movementStopped = false;
+				
+			}
 
 		}
-		*/
 
-	/*
-	if (Input.GetButtonDown("Joystick X") && hasCanoe)
+		if (Input.GetButtonDown("Button B") && hasCanoe && inCanoeZone)
+		{
+
+			parkingSpaceFound = true;
+			movementStopped = true;
+
+		}
+
+
+
+		if (parkingSpaceFound)
+		{
+			
+			targetY = new Vector2(transform.position.x, currentParkingZone.position.y);
+			Debug.DrawLine(transform.position, targetY);
+			transform.position = Vector2.MoveTowards(transform.position, targetY, defaultCanoeWalkSpeed * Time.deltaTime);
+
+
+			anim.SetBool("isMoving", true);
+
+			if (transform.position.x > currentParkingZone.transform.position.x)
+			{
+				facingRight = false;
+				anim.SetBool("facingRight", false);
+			}
+			else
+			{
+				facingRight = true;
+				anim.SetBool("facingRight", true);
+			}
+
+
+			if (transform.position.y == currentParkingZone.transform.position.y)
+			{
+				StartCoroutine(EnablePlayerInput(0.8f));
+				Debug.Log("At Parking Space");
+				StartCoroutine(RevealCanoe(0.8f));				
+
+				anim.SetTrigger("PutDown");
+				anim.SetBool("isCarrying", false);
+
+				hasCanoe = false;
+				parkingSpaceFound = false;
+				anim.SetBool("isMoving", false);
+				canoe.transform.SetParent(null);
+				canoe.transform.position = new Vector2(transform.position.x,canoePutDownTarget.transform.position.y);
+				transform.position = new Vector2(transform.position.x,playerTarget.transform.position.y);
+				movementStopped = false;
+				
+			}
+		}
+		
+	} 
+
+	void DisablePlayerInput()
 	{
-		canoe.transform.position = putDownTarget.transform.position;
-		canoe.transform.SetParent(null);
-		hasCanoe = false;
-		canPickUp = true;
+		xSpeed = 0;
+		ySpeed = 0;
+		canoeWalkSpeed = 0;
+		
 	}
-	*/
+
+	IEnumerator RevealCanoe(float time)
+	{
+		yield return new WaitForSeconds(time);
+		canoe.SetActive(true);
+	}
+
+	IEnumerator EnablePlayerInput(float time)
+	{
+		yield return new WaitForSeconds(time);
+		xSpeed = defaultXSpeed;
+		ySpeed = defaultYSpeed;
+		canoeWalkSpeed = defaultCanoeWalkSpeed;
+
+	}
+
+
 
 	void CycleInventory()
 	{
-		if (Input.GetButtonDown("InventoryRight"))
+		if (!hasCanoe)
 		{
-			currentInventoryIndex++;
-
-			if (currentInventoryIndex == inventory.tools.Count)
+			if (Input.GetButtonDown("InventoryRight"))
 			{
-				currentInventoryIndex = 0;
-			}
-			//Debug.Log(inventory.tools[currentInventoryIndex]);
-			anim.SetInteger("inventoryIndex", currentInventoryIndex);
-		}
+				currentInventoryIndex++;
 
-		if (Input.GetButtonDown("InventoryLeft"))
-		{
-			if (currentInventoryIndex == 0)
-			{
-				currentInventoryIndex = inventory.tools.Count;
+				if (currentInventoryIndex == inventory.tools.Count)
+				{
+					currentInventoryIndex = 0;
+				}
+				//Debug.Log(inventory.tools[currentInventoryIndex]);
+				anim.SetInteger("inventoryIndex", currentInventoryIndex);
 			}
 
-			currentInventoryIndex--;
-			anim.SetInteger("inventoryIndex", currentInventoryIndex);
-			//Debug.Log(inventory.tools[currentInventoryIndex]);
+			if (Input.GetButtonDown("InventoryLeft"))
+			{
+				if (currentInventoryIndex == 0)
+				{
+					currentInventoryIndex = inventory.tools.Count;
+				}
 
+				currentInventoryIndex--;
+				anim.SetInteger("inventoryIndex", currentInventoryIndex);
+				//Debug.Log(inventory.tools[currentInventoryIndex]);
+			}
 		}
 	}
 
@@ -196,7 +331,48 @@ public class PlayerController : MonoBehaviour
 		Gizmos.DrawWireSphere(transform.position, armsReach);
 	}
 
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "CanoePickUpRange") 
+		{
+			inRangeOfCanoe = true;
+			//canoePickUpTarget = other.gameObject.transform.GetChild(0).transform;
+			
+		}
+
+		if (other.gameObject.tag == "PutDownZone")
+		{
+			inCanoeZone = true;
+			canoePutDownTarget = other.gameObject.transform.GetChild(0).transform;
+			playerTarget = other.gameObject.transform.GetChild(1).transform;
+			currentParkingZone = other.gameObject.transform.GetChild(0).transform;
+		}
+
+	}
+
+	private void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "CanoePickUpRange") 
+		{
+			inRangeOfCanoe = false;
+		}
+		if (other.gameObject.tag == "PutDownZone")
+		{
+			inCanoeZone = false;
+			canoePutDownTarget = null;
+			currentParkingZone = null;
+
+		}
+	}
+
+	
 }
+
+	
+
+
+
 
 		
 
