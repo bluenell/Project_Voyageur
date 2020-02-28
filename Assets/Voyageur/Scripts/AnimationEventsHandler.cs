@@ -18,5 +18,9 @@ public class AnimationEventsHandler : MonoBehaviour
 		TransitionHandler.Beach();
 	}
 
+	public void DestroySprite()
+	{
+		GameObject.Destroy(gameObject);
+	}
 
 }
