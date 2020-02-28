@@ -5,49 +5,44 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 { 
-	#region Public Variables
-	[Header("Player Stats")]
+	#region Player Variables
+	[Header("Player")]
 	public float stamina;
 	public float defaultXSpeed, defaultYSpeed;
-	public float defaultCanoeWalkSpeed;
 	public bool isMoving;
 	public bool facingRight;
-
-
-
 	public float armsReach;
-
-	[Header("Canoe")]
-	public GameObject canoe;
-
-	public bool hasCanoe, inRangeOfCanoe, inCanoeZone, canoeTargetFound, parkingSpaceFound;
-	Transform canoePutDownTarget;
-	Transform canoePickUpTarget;
-	public Transform currentParkingZone;
-	Transform playerTarget;
-	public float parkingSpaceDetectionRadius;
-	Vector2 targetY;
-
-	[Header("Items)")]
-
-	public GameObject torch;
+	float xSpeed, ySpeed;
 
 	#endregion
 
-	#region Private Variables
+	#region Canoe Variables
+	[Header("Canoe")]
+	public GameObject canoe;
+	public float defaultCanoeWalkSpeed;
+	float canoeWalkSpeed;
+	bool hasCanoe, inRangeOfCanoe, inCanoeZone, canoeTargetFound, parkingSpaceFound;
+	Transform canoePutDownTarget;
+	Transform canoePickUpTarget;
+	Transform currentParkingZone;
+	Transform playerTarget;
+	Vector2 targetY;
+	#endregion
 
+	#region Inventory
+	[Header("Items)")]
+	public GameObject torch;
+	PlayerInventory inventory;
+	int currentInventoryIndex;
+	#endregion
+
+	#region Components
 	Rigidbody2D rb;
 	SpriteRenderer sprite;
 	Animator anim;
-	PlayerInventory inventory;
+
 	DayNightCycleManager nightCycle;
 	BoxCollider2D parkingCollider;
-
-	float xSpeed, ySpeed, canoeWalkSpeed;
-	
-
-	int currentInventoryIndex;
-
 	#endregion
 
 	// Start is called before the first frame update
@@ -125,10 +120,6 @@ public class PlayerController : MonoBehaviour
 				torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 			}
 		}
-		#region FlipCharacter
-		
-
-		#endregion
 
 		if (moveX != 0 || moveY != 0)
 		{
