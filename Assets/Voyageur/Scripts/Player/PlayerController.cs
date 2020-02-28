@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 	public GameObject canoe;
 	public float defaultCanoeWalkSpeed;
 	float canoeWalkSpeed;
-	bool hasCanoe, inRangeOfCanoe, inCanoeZone, canoeTargetFound, parkingSpaceFound;
+	bool hasCanoe, inRangeOfCanoe, inCanoeZone, canoeTargetFound, parkingSpaceFound, movementStopped;
 	Transform canoePutDownTarget;
 	Transform canoePickUpTarget;
 	Transform currentParkingZone;
@@ -79,6 +79,17 @@ public class PlayerController : MonoBehaviour
 		CycleInventory();
 		UseItem();
 		HandleCanoe();
+
+		if (movementStopped)
+		{
+			DisablePlayerInput();
+		}
+		else
+		{
+			EnablePlayerInput(0.0f);
+		}
+
+
 	}
 
 
@@ -156,14 +167,22 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe()
 	{
+		float moveX = Input.GetAxis("Horizontal");
+		float moveY = Input.GetAxis("Vertical");
+
+
 		if (Input.GetButtonDown("Button B") && inRangeOfCanoe && !hasCanoe)
 		{
-			canoeTargetFound = true; 
+			canoeTargetFound = true;
+			movementStopped = true;
+			xSpeed = 0;
+			ySpeed = 0;
+			canoeWalkSpeed = 0;
 		}
 
 		if (canoeTargetFound)
 		{
-			DisablePlayerInput();
+			
 			transform.position = Vector2.MoveTowards(transform.position, canoePickUpTarget.transform.position, defaultXSpeed * Time.deltaTime);
 			anim.SetBool("isMoving", true);
 
@@ -178,11 +197,10 @@ public class PlayerController : MonoBehaviour
 				facingRight = true;
 				anim.SetBool("facingRight", true);
 			}
-			
-
 
 			if (transform.position == canoePickUpTarget.transform.position)
 			{
+				StartCoroutine(EnablePlayerInput(0.8f));
 				Debug.Log("At Canoe");
 				
 				canoe.transform.SetParent(transform);
@@ -192,7 +210,7 @@ public class PlayerController : MonoBehaviour
 				hasCanoe = true;
 				canoeTargetFound = false;
 				anim.SetBool("isMoving", false);
-				StartCoroutine(EnablePlayerInput());
+				movementStopped = false;
 				
 			}
 
@@ -202,11 +220,15 @@ public class PlayerController : MonoBehaviour
 		{
 
 			parkingSpaceFound = true;
+			movementStopped = true;
+
 		}
+
+
 
 		if (parkingSpaceFound)
 		{
-			DisablePlayerInput();
+			
 			targetY = new Vector2(transform.position.x, currentParkingZone.position.y);
 			Debug.DrawLine(transform.position, targetY);
 			transform.position = Vector2.MoveTowards(transform.position, targetY, defaultCanoeWalkSpeed * Time.deltaTime);
@@ -228,8 +250,9 @@ public class PlayerController : MonoBehaviour
 
 			if (transform.position.y == currentParkingZone.transform.position.y)
 			{
+				StartCoroutine(EnablePlayerInput(0.8f));
 				Debug.Log("At Parking Space");
-				StartCoroutine(RevealCanoe());				
+				StartCoroutine(RevealCanoe(0.8f));				
 
 				anim.SetTrigger("PutDown");
 				anim.SetBool("isCarrying", false);
@@ -240,7 +263,7 @@ public class PlayerController : MonoBehaviour
 				canoe.transform.SetParent(null);
 				canoe.transform.position = new Vector2(transform.position.x,canoePutDownTarget.transform.position.y);
 				transform.position = new Vector2(transform.position.x,playerTarget.transform.position.y);
-				StartCoroutine(EnablePlayerInput());
+				movementStopped = false;
 				
 			}
 		}
@@ -255,15 +278,15 @@ public class PlayerController : MonoBehaviour
 		
 	}
 
-	IEnumerator RevealCanoe()
+	IEnumerator RevealCanoe(float time)
 	{
-		yield return new WaitForSeconds(0.8f);
+		yield return new WaitForSeconds(time);
 		canoe.SetActive(true);
 	}
 
-	IEnumerator EnablePlayerInput()
+	IEnumerator EnablePlayerInput(float time)
 	{
-		yield return new WaitForSeconds(0.8f);
+		yield return new WaitForSeconds(time);
 		xSpeed = defaultXSpeed;
 		ySpeed = defaultYSpeed;
 		canoeWalkSpeed = defaultCanoeWalkSpeed;
