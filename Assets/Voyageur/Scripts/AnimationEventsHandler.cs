@@ -21,7 +21,6 @@ public class AnimationEventsHandler : MonoBehaviour
 	public void DestroySprite()
 	{
 		GameObject.Destroy(gameObject);
-
 	}
 
 }
