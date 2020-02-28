@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 	[Header("Items)")]
 	public GameObject torch;
 	PlayerInventory inventory;
-	int currentInventoryIndex;
+	public int currentInventoryIndex;
 	#endregion
 
 	#region Components
@@ -270,7 +270,7 @@ public class PlayerController : MonoBehaviour
 		
 	} 
 
-	void DisablePlayerInput()
+	public void DisablePlayerInput()
 	{
 		xSpeed = 0;
 		ySpeed = 0;
@@ -284,7 +284,7 @@ public class PlayerController : MonoBehaviour
 		canoe.SetActive(true);
 	}
 
-	IEnumerator EnablePlayerInput(float time)
+	public IEnumerator EnablePlayerInput(float time)
 	{
 		yield return new WaitForSeconds(time);
 		xSpeed = defaultXSpeed;

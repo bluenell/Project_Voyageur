@@ -40,6 +40,13 @@ public class InteractionsManager : MonoBehaviour
 						indivInteractions.BlueJay();
 						interaction.MarkAsComplete();
 						break;
+
+					case "TreeChop1":
+						Debug.Log("Tree");
+						indivInteractions.Chop();
+						interaction.MarkAsComplete();
+						break;
+
 				}
 			}
 		}
