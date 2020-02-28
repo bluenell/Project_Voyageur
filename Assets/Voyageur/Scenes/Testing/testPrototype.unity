@@ -903,7 +903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.652618, y: -0.22400093, z: -10}
+  m_LocalPosition: {x: 11.647743, y: -0.22400093, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -2892,6 +2892,7 @@ GameObject:
   - component: {fileID: 964835086}
   - component: {fileID: 964835088}
   - component: {fileID: 964835087}
+  - component: {fileID: 964835089}
   m_Layer: 12
   m_Name: blue jay
   m_TagString: Untagged
@@ -2983,6 +2984,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &964835089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964835085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313a8b66a881d7740b5e110f15bfe1e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &983178864
 GameObject:
   m_ObjectHideFlags: 0
@@ -4189,7 +4202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.652618, y: -0.22400093, z: -10}
+  m_LocalPosition: {x: 11.647743, y: -0.22400093, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
