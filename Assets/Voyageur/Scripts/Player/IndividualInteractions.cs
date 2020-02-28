@@ -10,6 +10,10 @@ public class IndividualInteractions : MonoBehaviour
 	Animator playerAnimator;
 	GameObject player;
 
+	public bool xPressed;
+	bool movingTowards = false;
+
+
 	private void Start()
 	{
 		player = GameObject.Find("Player");
@@ -17,7 +21,17 @@ public class IndividualInteractions : MonoBehaviour
 		playerController = player.GetComponent<PlayerController>();
 		spritesManager = GameObject.Find("ExtraSpritesManager").GetComponent<AdditionalSpritesManager>();
 		playerAnimator = player.transform.GetChild(0).GetComponent<Animator>();
+	}
 
+
+	private void Update()
+	{
+
+		if (Input.GetButtonDown("Button X") || (Input.GetKeyDown(KeyCode.Space)))
+		{
+			xPressed = true;
+		}
+		
 	}
 
 	Animator anim;
@@ -57,40 +71,49 @@ public class IndividualInteractions : MonoBehaviour
 	public void Chop()
 	{
 		int chopCounter = 0;
-		Vector3 walkTarget = manager.interaction.transform.GetChild(2).transform.position;
-		bool movingTowards = false;
+		GameObject walkTarget = manager.interaction.transform.GetChild(2).gameObject;
+		
 
-		if (Input.GetButtonDown("Button A") && playerController.currentInventoryIndex == 1)
+		if (xPressed && playerController.currentInventoryIndex == 1)
 		{
+			xPressed = false;
+			Debug.Log("Sup");
 			playerController.DisablePlayerInput();
-			movingTowards = true;
+			movingTowards = true;			
+		}
+		else if (xPressed && playerController.currentInventoryIndex != 1)
+		{
+			xPressed = false;
 		}
 
 		if (movingTowards)
 		{
-			player.transform.position = Vector2.MoveTowards(player.transform.position, walkTarget, playerController.defaultXSpeed * Time.deltaTime);
-
+			player.transform.position = Vector2.MoveTowards(player.transform.position, walkTarget.transform.position, playerController.defaultXSpeed* Time.deltaTime);
 		}
 
-		if (player.transform.position == walkTarget)
+		if (player.transform.position == walkTarget.transform.position)
 		{
+			movingTowards = false;
+			Debug.Log("At Target");
+			
 			chopCounter++;
 			manager.interaction.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[chopCounter - 1];
 			playerAnimator.SetInteger("chopCounter", chopCounter);
 
-			do
+			if (xPressed && chopCounter <= 3)
 			{
-				if (Input.GetButtonDown("Button X"))
-				{
-					chopCounter++;
-					manager.interaction.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[chopCounter - 1];
-					playerAnimator.SetInteger("chopCounter", chopCounter);
+				chopCounter++;
+				manager.interaction.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[chopCounter - 1];
+				playerAnimator.SetInteger("chopCounter", chopCounter);
+				xPressed = false;
+			}
 
-				}
-			} while (chopCounter <= 3);
-
-			manager.interaction.transform.GetChild(1).gameObject.SetActive(true);
-			StartCoroutine(playerController.EnablePlayerInput(0.5f));
+			if (chopCounter >3)
+			{
+				manager.interaction.transform.GetChild(1).gameObject.SetActive(true);
+				StartCoroutine(playerController.EnablePlayerInput(0.5f));
+			}
+			
 		}
 	}
 
@@ -147,5 +170,11 @@ public class IndividualInteractions : MonoBehaviour
 
 
 
+
+	void GetInput()
+	{
+		
+
+	}
 
 }

@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else
 		{
-			rb.velocity = new Vector2(moveX * xSpeed, moveY * defaultYSpeed);
+			rb.velocity = new Vector2(moveX * xSpeed, moveY * ySpeed);
 		}
 		
 
