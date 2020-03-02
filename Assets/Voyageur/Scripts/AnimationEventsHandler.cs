@@ -7,10 +7,14 @@ public class AnimationEventsHandler : MonoBehaviour
 	TransitionHandler TransitionHandler;
 	PlayerSoundManager playerSoundManager;
 
+	GameObject player;
+
 
 	private void Awake()
 	{
+		player = GameObject.Find("Player");
 		TransitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>();
+
 		
 	}
 	public void Transition()
@@ -26,7 +30,7 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	public void FootStepsPlayer()
 	{
-		playerSoundManager.PlayFootsteps();
+		player.GetComponent<PlayerSoundManager>().PlayFootsteps();
 	}
 
 }

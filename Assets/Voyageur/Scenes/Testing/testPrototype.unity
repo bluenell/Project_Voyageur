@@ -6303,7 +6303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ea68ffc3c30fe42bcfdecfe3016bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepsEvent: 
+  footstepsEvent: event:/Character/Footstep
 --- !u!212 &7945989855330090952
 SpriteRenderer:
   m_ObjectHideFlags: 0
