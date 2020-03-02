@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7597540755380411286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Rapids_River3D
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Rapids_River3D
+  guid: c6d3e1f103a1794999e81e70f05b8abc
+  Banks:
+  - {fileID: 1401290501144234693}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 61440
 --- !u!114 &-6865649244067341413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,11 +59,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637187560416686353
+  lastModified: 637187569275384318
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 864
+    Value: 908
   Exists: 1
 --- !u!114 &-3263409429870182122
 MonoBehaviour:
@@ -79,7 +102,7 @@ MonoBehaviour:
   Path: event:/Character/Footstep
   guid: b1a371b01643c04c9f97b26496e451a9
   Banks:
-  - {fileID: 5886567491734307924}
+  - {fileID: 1401290501144234693}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -124,7 +147,7 @@ MonoBehaviour:
   Path: event:/Ambience/Gentle_River3D
   guid: 798d8ff73c89ec4382bfa39c14b360a3
   Banks:
-  - {fileID: 5886567491734307924}
+  - {fileID: 1401290501144234693}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -146,17 +169,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -4259741419574987108}
-  - {fileID: 5886567491734307924}
+  - {fileID: 1401290501144234693}
   EditorEvents:
   - {fileID: -1020494970394267013}
   - {fileID: 5076369093478829923}
   - {fileID: -1515595206256035808}
+  - {fileID: -7597540755380411286}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 5886567491734307924}
+  - {fileID: 1401290501144234693}
   StringsBanks:
   - {fileID: -4259741419574987108}
-  stringsBankWriteTime: 637187560416686353
+  stringsBankWriteTime: 637187569275384318
   cacheVersion: 3
 --- !u!114 &438749730561508559
 MonoBehaviour:
@@ -180,6 +204,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 120384
+--- !u!114 &1401290501144234693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637187569275593777
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &4709525742126272069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +273,7 @@ MonoBehaviour:
   Path: event:/Ambience/Bird_song3D
   guid: 9b6d0da39bf49042abdca60abe89e2dd
   Banks:
-  - {fileID: 5886567491734307924}
+  - {fileID: 1401290501144234693}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -274,7 +316,7 @@ MonoBehaviour:
   lastModified: 637187560416915749
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &6048820612554839258
 MonoBehaviour:
   m_ObjectHideFlags: 0
