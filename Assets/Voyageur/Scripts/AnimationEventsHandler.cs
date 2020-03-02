@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimationEventsHandler : MonoBehaviour
 {
 	TransitionHandler TransitionHandler;
+	PlayerSoundManager playerSoundManager;
 
 
 	private void Awake()
@@ -25,7 +26,7 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	public void FootStepsPlayer()
 	{
-
+		playerSoundManager.PlayFootsteps();
 	}
 
 }
