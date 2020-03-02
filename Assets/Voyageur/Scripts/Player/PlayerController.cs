@@ -173,6 +173,9 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button B") && inRangeOfCanoe && !hasCanoe)
 		{
+			currentInventoryIndex = 0;
+			anim.SetInteger("inventoryIndex", 0);
+
 			canoeTargetFound = true;
 			movementStopped = true;
 			xSpeed = 0;
