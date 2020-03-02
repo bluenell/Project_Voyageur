@@ -26,7 +26,6 @@ public class IndividualInteractions : MonoBehaviour
 
 	private void Update()
 	{
-
 		if (Input.GetButtonDown("Button X") || (Input.GetKeyDown(KeyCode.Space)))
 		{
 			xPressed = true;
@@ -154,7 +153,7 @@ public class IndividualInteractions : MonoBehaviour
 		
 		anim.SetTrigger("Play");
 
-
+		//I wish that bill wasn't recording right now because it's awkward
 
 	}
 

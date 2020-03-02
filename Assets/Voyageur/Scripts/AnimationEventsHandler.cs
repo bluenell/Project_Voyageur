@@ -12,7 +12,6 @@ public class AnimationEventsHandler : MonoBehaviour
 		TransitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>();
 		
 	}
-
 	public void Transition()
 	{
 		TransitionHandler.Beach();
@@ -21,6 +20,12 @@ public class AnimationEventsHandler : MonoBehaviour
 	public void DestroySprite()
 	{
 		GameObject.Destroy(gameObject);
+	}
+
+
+	public void FootStepsPlayer()
+	{
+
 	}
 
 }
