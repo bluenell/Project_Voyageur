@@ -70,12 +70,14 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Chop()
 	{
+		bool chopping;
 		int chopCounter = 0;
 		GameObject walkTarget = manager.interaction.transform.GetChild(2).gameObject;
 		
 
 		if (xPressed && playerController.currentInventoryIndex == 1)
 		{
+			chopping = true;
 			xPressed = false;
 			Debug.Log("Sup");
 			playerController.DisablePlayerInput();
@@ -90,23 +92,29 @@ public class IndividualInteractions : MonoBehaviour
 		{
 			player.transform.position = Vector2.MoveTowards(player.transform.position, walkTarget.transform.position, playerController.defaultXSpeed* Time.deltaTime);
 		}
+		
 
 		if (player.transform.position == walkTarget.transform.position)
 		{
 			movingTowards = false;
 			Debug.Log("At Target");
-			
 			chopCounter++;
 			manager.interaction.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[chopCounter - 1];
 			playerAnimator.SetInteger("chopCounter", chopCounter);
 
-			if (xPressed && chopCounter <= 3)
-			{
-				chopCounter++;
-				manager.interaction.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[chopCounter - 1];
-				playerAnimator.SetInteger("chopCounter", chopCounter);
-				xPressed = false;
+			for (int i = 0; i < 4; i++)
+			{		
+
+				if (xPressed && chopCounter <= 3)
+				{
+					chopCounter++;
+					manager.interaction.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[chopCounter - 1];
+					playerAnimator.SetInteger("chopCounter", chopCounter);
+					xPressed = false;
+				}
 			}
+
+			
 
 			if (chopCounter >3)
 			{
