@@ -6381,6 +6381,7 @@ MonoBehaviour:
   defaultCanoeWalkSpeed: 3
   torch: {fileID: 2122833017}
   currentInventoryIndex: 0
+  switchRate: 2
 --- !u!4 &7945989855208360791
 Transform:
   m_ObjectHideFlags: 0

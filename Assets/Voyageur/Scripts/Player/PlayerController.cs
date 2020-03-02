@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
 	public GameObject torch;
 	PlayerInventory inventory;
 	public int currentInventoryIndex;
+	public float switchRate = 2f;
+	float nextSwitchTime = 0f;
 	#endregion
 
 	#region Components
@@ -76,8 +78,6 @@ public class PlayerController : MonoBehaviour
 
 	private void Update()
 	{
-		CycleInventory();
-		UseItem();
 		HandleCanoe();
 
 		if (movementStopped)
@@ -88,7 +88,24 @@ public class PlayerController : MonoBehaviour
 		{
 			EnablePlayerInput(0.0f);
 		}
+		if (Time.time >= nextSwitchTime)
+		{
+			if (Input.GetButtonDown("InventoryLeft"))
+			{
+				CycleInventory("left");
+				nextSwitchTime = Time.time + 1f / switchRate;
+			}
+			if (Input.GetButtonDown("InventoryRight"))
+			{
 
+				CycleInventory("right");
+				nextSwitchTime = Time.time + 1f / switchRate;
+
+			}
+		}
+		
+
+		UseItem();
 
 	}
 
@@ -298,34 +315,33 @@ public class PlayerController : MonoBehaviour
 
 
 
-	void CycleInventory()
+	void CycleInventory(string dir)
 	{
-		if (!hasCanoe)
+
+		if (dir == "right")
 		{
-			if (Input.GetButtonDown("InventoryRight"))
+			currentInventoryIndex++;
+			if (currentInventoryIndex == inventory.tools.Count)
 			{
-				currentInventoryIndex++;
-
-				if (currentInventoryIndex == inventory.tools.Count)
-				{
-					currentInventoryIndex = 0;
-				}
-				//Debug.Log(inventory.tools[currentInventoryIndex]);
-				anim.SetInteger("inventoryIndex", currentInventoryIndex);
+				currentInventoryIndex = 0;
 			}
-
-			if (Input.GetButtonDown("InventoryLeft"))
-			{
-				if (currentInventoryIndex == 0)
-				{
-					currentInventoryIndex = inventory.tools.Count;
-				}
-
-				currentInventoryIndex--;
-				anim.SetInteger("inventoryIndex", currentInventoryIndex);
-				//Debug.Log(inventory.tools[currentInventoryIndex]);
-			}
+			
+			//Debug.Log(inventory.tools[currentInventoryIndex]);
+			anim.SetInteger("inventoryIndex", currentInventoryIndex);
 		}
+		else if (dir == "left")
+		{
+			if (currentInventoryIndex == 0)
+			{
+				currentInventoryIndex = inventory.tools.Count;
+			}
+			currentInventoryIndex--;
+			anim.SetInteger("inventoryIndex", currentInventoryIndex);
+			//Debug.Log(inventory.tools[currentInventoryIndex]);
+		}
+
+
+
 	}
 
 
