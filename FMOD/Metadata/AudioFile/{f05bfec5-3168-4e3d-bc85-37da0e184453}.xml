@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{f05bfec5-3168-4e3d-bc85-37da0e184453}">
+		<property name="assetPath">
+			<value>river_water.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>43.200000000000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d7f640d3-ee20-44a0-82cf-a9a7bf109b2a}</destination>
+		</relationship>
+	</object>
+</objects>
