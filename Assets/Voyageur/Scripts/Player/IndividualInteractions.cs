@@ -111,13 +111,12 @@ public class IndividualInteractions : MonoBehaviour
 				}
 			}
 
-
 			treeMain.SetActive(false);
 			manager.interaction.transform.GetChild(3).gameObject.SetActive(false);
 			manager.interaction.transform.GetChild(1).gameObject.SetActive(true);
 			StartCoroutine(playerController.EnablePlayerInput(0.5f));
-
-
+			playerAnimator.SetInteger("chopCounter", 3);
+			manager.interaction.gameObject.GetComponent<Interaction>().MarkAsComplete();
 		}
 	}
 

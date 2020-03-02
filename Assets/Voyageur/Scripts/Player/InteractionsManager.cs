@@ -54,14 +54,19 @@ public class InteractionsManager : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Interaction")
 		{
-			switch (interaction.interactionName)
+			if (!interaction.complete)
 			{
-				case "TreeChop1":
-					Debug.Log("Tree");
-					indivInteractions.Chop();
-					//interaction.MarkAsComplete();
-					break;
+				switch (interaction.interactionName)
+				{
+
+					case "TreeChop1":
+						Debug.Log("Tree");
+						indivInteractions.Chop();
+						break;
+				}
 			}
+
+			
    			
 		}
 	}
