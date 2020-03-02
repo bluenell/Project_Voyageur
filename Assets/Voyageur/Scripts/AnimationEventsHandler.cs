@@ -13,8 +13,7 @@ public class AnimationEventsHandler : MonoBehaviour
 	private void Awake()
 	{
 		player = GameObject.Find("Player");
-		TransitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>();
-
+		TransitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>(); 
 		
 	}
 	public void Transition()
@@ -38,5 +37,7 @@ public class AnimationEventsHandler : MonoBehaviour
 		GameObject canoeAIO = GameObject.Find("Canoe AIO");
 		canoeAIO.GetComponent<PlayerSoundManager>().Paddle();
 	}
+
+
 
 }

@@ -19,7 +19,7 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject playerCam;
 
 	public GameObject pathwayCollider;
-
+	public GameObject spritesManager;
 
 	private void Awake()
 	{
@@ -39,6 +39,7 @@ public class TransitionHandler : MonoBehaviour
 		canoeCam.SetActive(false);
 		playerCam.SetActive(true);
 		pathwayCollider.SetActive(true);
+		spritesManager.SetActive(true);
 
 	}
 

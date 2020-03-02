@@ -4,24 +4,41 @@ using UnityEngine;
 
 public class PlayerSoundManager : MonoBehaviour
 {
-	[FMODUnity.EventRef]
-	public string footstepsEvent = "";
+
+	[Header("Volume Settings")]
+	[Range(0, 2)]
+	public float paddleVolume;
+
+	[Range(0, 2)]
+	public float footStepsVolume;
+
+	[Range(0, 2)]
+	public float footStepsInWaterVolume;
 
 	[FMODUnity.EventRef]
-	public string paddleEvent = "";
+	public string[] soundEvents;
+
 
 	FMOD.Studio.EventInstance playerState;
 
 	public void PlayFootsteps()
 	{
-		playerState = FMODUnity.RuntimeManager.CreateInstance(footstepsEvent);
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[0]);
+		playerState.setVolume(footStepsVolume);
 		playerState.start();
 	}
 
 	public void Paddle()
 	{
-		playerState = FMODUnity.RuntimeManager.CreateInstance(paddleEvent);
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[1]);
+		playerState.setVolume(paddleVolume);
 		playerState.start();
 	}
 
+	public void PlayFootstepsInWater()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[2]);
+		playerState.setVolume(footStepsInWaterVolume);
+		playerState.start();
+	}
 }

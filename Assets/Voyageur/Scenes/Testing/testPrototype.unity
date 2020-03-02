@@ -313,9 +313,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 69.37
-  OverrideMaxDistance: 80.67489
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &55416659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,8 +1616,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ea68ffc3c30fe42bcfdecfe3016bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepsEvent: event:/Character/Footstep
-  paddleEvent: event:/Character/Paddling
+  paddleVolume: 1
+  footStepsVolume: 0
+  footStepsInWaterVolume: 0
+  soundEvents:
+  - event:/Character/Footstep
+  - event:/Character/Paddling
+  - 
 --- !u!114 &375399006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2487,6 +2492,7 @@ MonoBehaviour:
   canoeCam: {fileID: 632327417}
   playerCam: {fileID: 1560287161}
   pathwayCollider: {fileID: 1048041304}
+  spritesManager: {fileID: 391840399}
 --- !u!4 &632780869
 Transform:
   m_ObjectHideFlags: 0
@@ -3688,7 +3694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1048041305
 Transform:
   m_ObjectHideFlags: 0
@@ -6442,8 +6448,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ea68ffc3c30fe42bcfdecfe3016bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepsEvent: event:/Character/Footstep
-  paddleEvent: 
+  paddleVolume: 0
+  footStepsVolume: 0
+  footStepsInWaterVolume: 0
+  soundEvents:
+  - event:/Character/Footstep
+  - event:/Character/Paddling
+  - event:/Character/Footstep
 --- !u!212 &7945989855330090952
 SpriteRenderer:
   m_ObjectHideFlags: 0
