@@ -7,7 +7,7 @@ public class InteractionsManager : MonoBehaviour
 
 	public Interaction interaction;
 	IndividualInteractions indivInteractions;
-	
+
 
 	private void Start()
 	{
@@ -20,7 +20,6 @@ public class InteractionsManager : MonoBehaviour
 		{
 			//Debug.Log("Interact");
 			interaction = collision.gameObject.GetComponent<Interaction>();
-
 
 			if (!interaction.complete)
 			{
@@ -40,19 +39,35 @@ public class InteractionsManager : MonoBehaviour
 						indivInteractions.BlueJay();
 						interaction.MarkAsComplete();
 						break;
+
+					
+
 				}
+
+				
 			}
 		}
 
-
-
-		
-
 	}
 
+	private void OnTriggerStay2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag == "Interaction")
+		{
+			if (!interaction.complete)
+			{
+				switch (interaction.interactionName)
+				{
 
+					case "TreeChop1":
+						Debug.Log("Tree");
+						indivInteractions.Chop();
+						break;
+				}
+			}
 
-	
-
-
+			
+   			
+		}
+	}
 }
