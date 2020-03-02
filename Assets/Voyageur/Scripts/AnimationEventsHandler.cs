@@ -33,4 +33,10 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<PlayerSoundManager>().PlayFootsteps();
 	}
 
+	public void PaddleSounds()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().Paddle();
+	}
+
 }
