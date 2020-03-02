@@ -73,6 +73,7 @@ public class IndividualInteractions : MonoBehaviour
 		bool chopping;
 		int chopCounter = 0;
 		GameObject walkTarget = manager.interaction.transform.GetChild(2).gameObject;
+		GameObject treeMain = manager.interaction.transform.GetChild(0).gameObject;
 		
 
 		if (xPressed && playerController.currentInventoryIndex == 1)
@@ -92,36 +93,31 @@ public class IndividualInteractions : MonoBehaviour
 		{
 			player.transform.position = Vector2.MoveTowards(player.transform.position, walkTarget.transform.position, playerController.defaultXSpeed* Time.deltaTime);
 		}
-		
+
 
 		if (player.transform.position == walkTarget.transform.position)
 		{
 			movingTowards = false;
 			Debug.Log("At Target");
-			chopCounter++;
-			manager.interaction.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[chopCounter - 1];
-			playerAnimator.SetInteger("chopCounter", chopCounter);
+			treeMain.GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[0];
+			playerAnimator.SetInteger("chopCounter", 1);
 
-			for (int i = 0; i < 4; i++)
-			{		
-
-				if (xPressed && chopCounter <= 3)
+			for (int i = 1; i < 4; i++)
+			{
+				if (Input.GetButtonDown("Button X"))
 				{
-					chopCounter++;
-					manager.interaction.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[chopCounter - 1];
-					playerAnimator.SetInteger("chopCounter", chopCounter);
-					xPressed = false;
+					treeMain.GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[i];
+					playerAnimator.SetInteger("chopCounter", i + 1);
 				}
 			}
 
-			
 
-			if (chopCounter >3)
-			{
-				manager.interaction.transform.GetChild(1).gameObject.SetActive(true);
-				StartCoroutine(playerController.EnablePlayerInput(0.5f));
-			}
-			
+			treeMain.SetActive(false);
+			manager.interaction.transform.GetChild(3).gameObject.SetActive(false);
+			manager.interaction.transform.GetChild(1).gameObject.SetActive(true);
+			StartCoroutine(playerController.EnablePlayerInput(0.5f));
+
+
 		}
 	}
 
