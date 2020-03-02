@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{e83138ea-89d0-4ceb-b4f0-93d69e253ab6}">
+	<object class="AudioFile" id="{a5ec34a1-dd8e-471c-9508-2a36a1967612}">
 		<property name="assetPath">
-			<value>Step_07.mp3</value>
+			<value>wind_Ambience .mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.216</value>
+			<value>48.456000000000003</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{d7f640d3-ee20-44a0-82cf-a9a7bf109b2a}</destination>
