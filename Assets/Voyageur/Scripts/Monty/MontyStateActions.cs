@@ -35,7 +35,7 @@ public class MontyStateActions : MonoBehaviour
 	public void Roam()
 	{				
 		//Debug.Log("Monty is following");
-		anim.SetBool("isMoving", true);
+		anim.SetBool("isRunning", true);
 		anim.SetBool("isSitting", false);
 
 		if (!targetFound)
@@ -103,14 +103,14 @@ public class MontyStateActions : MonoBehaviour
 		if (fetchTargetFound)
 		{
 			transform.position = Vector2.MoveTowards(transform.position, fetchWalkTarget, stateVariables.montySpeed * Time.deltaTime);
-			anim.SetBool("isMoving", true);
+			anim.SetBool("isRunning", true);
 			anim.SetBool("isSitting", false);
 		}
 
 		if (transform.position.x == fetchWalkTarget.x && transform.position.y == fetchWalkTarget.y)
 		{
 			Debug.Log("at fetch location");
-			anim.SetBool("isMoving", false);
+			anim.SetBool("isRunning", false);
 			anim.SetBool("isSitting", true);
 			sprite.flipX = true;
 			//spawn stick
