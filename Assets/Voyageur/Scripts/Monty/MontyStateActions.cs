@@ -18,7 +18,10 @@ public class MontyStateActions : MonoBehaviour
 	Vector2 target;
 	float stuckTimer;
 
-	private void Awake()
+	bool fetchTargetFound;
+	Vector2 fetchWalkTarget;
+
+	private void Start()
 	{
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 		stateVariables = GetComponent<MontyStateVariables>();
@@ -29,7 +32,6 @@ public class MontyStateActions : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		playerController = player.GetComponent<PlayerController>();
 	}
-
 	public void Roam()
 	{				
 		//Debug.Log("Monty is following");
@@ -86,7 +88,34 @@ public class MontyStateActions : MonoBehaviour
 	}
 	public void Fetch()
 	{
-		//Debug.Log("Monty is playing fetch");
+		
+		fetchWalkTarget = stateVariables.GetFetchStartingPoint();
+
+		if (fetchWalkTarget != null)
+		{
+			fetchTargetFound = true;
+		}
+		else
+		{
+			fetchTargetFound = false;
+		}
+
+		if (fetchTargetFound)
+		{
+			transform.position = Vector2.MoveTowards(transform.position, fetchWalkTarget, stateVariables.montySpeed * Time.deltaTime);
+			anim.SetBool("isMoving", true);
+			anim.SetBool("isSitting", false);
+		}
+
+		if (transform.position.x == fetchWalkTarget.x && transform.position.y == fetchWalkTarget.y)
+		{
+			Debug.Log("at fetch location");
+			anim.SetBool("isMoving", false);
+			anim.SetBool("isSitting", true);
+			sprite.flipX = true;
+			//spawn stick
+
+		}
 
 	}
 
@@ -126,7 +155,6 @@ public class MontyStateActions : MonoBehaviour
 		}
 		
 	}
-
 
 	public void Canoe()
 	{

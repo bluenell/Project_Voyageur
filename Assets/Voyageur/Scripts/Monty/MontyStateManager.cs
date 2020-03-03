@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class MontyStateManager : MonoBehaviour
 {
-	string currentState;
+	public string currentState;
 	float counter;
 	int rand;
 	bool movingToPlayer;
 	bool sitting;
+	public bool inFetch = true;
 
 	MontyStateActions stateActions;
 	MontyStateVariables stateVariables;
 	PlayerController playerController;
 
 
-	private void Awake()
+	private void Start()
 	{
 		stateActions = GetComponent<MontyStateActions>();
 		stateVariables = GetComponent<MontyStateVariables>();
@@ -25,64 +26,72 @@ public class MontyStateManager : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (!movingToPlayer && stateVariables.distFromPlayer >= playerController.armsReach)
+		if (!inFetch)
 		{
-			movingToPlayer = false;
-			currentState = "roam";
-			SwitchState();
+			if (!movingToPlayer && stateVariables.distFromPlayer >= playerController.armsReach)
+			{
+				movingToPlayer = false;
+				currentState = "roam";
+				SwitchState();
+			}
 		}
 	}
 
 	private void Update()
 	{
-		Debug.Log(currentState);
-
-		if (Input.GetButtonDown("Button A"))
+		if (!inFetch)
 		{
-			movingToPlayer = true;
-		}
-
-		if (movingToPlayer)
-		{
-
-			currentState = "move towards";
-			SwitchState();
-
-			if (stateVariables.distFromPlayer <= playerController.armsReach)
+			if (Input.GetButtonDown("Button A"))
 			{
-				movingToPlayer = false;
-				currentState = "wait";
-				SwitchState();
-
-			}
-			
-		}
-
-
-		if (currentState == "wait")
-		{
-			counter += Time.deltaTime;
-
-			if (counter >= stateVariables.sitWaitTime)
-			{
-				counter = 0;
-				sitting = true;
-				currentState = "sit";
-				SwitchState();
+				movingToPlayer = true;
 			}
 
-		}
+			if (movingToPlayer)
+			{
 
-		if (Input.GetButton("Button A") && currentState != "move towards")
+				currentState = "move towards";
+				SwitchState();
+
+				if (stateVariables.distFromPlayer <= playerController.armsReach)
+				{
+					movingToPlayer = false;
+					currentState = "wait";
+					SwitchState();
+
+				}
+
+			}
+
+			if (currentState == "wait")
+			{
+				counter += Time.deltaTime;
+
+				if (counter >= stateVariables.sitWaitTime)
+				{
+					counter = 0;
+					sitting = true;
+					currentState = "sit";
+					SwitchState();
+				}
+
+			}
+
+			if (Input.GetButton("Button A") && currentState != "move towards")
+			{
+				movingToPlayer = true;
+				currentState = "follow";
+				SwitchState();
+			}
+		}
+		else
 		{
-			movingToPlayer = true;
-			currentState = "follow";
+			currentState = "fetch";
 			SwitchState();
 		}
-
 	}
 
-	void SwitchState()
+
+	public void SwitchState()
 	{
 		switch (currentState)
 		{
@@ -117,10 +126,6 @@ public class MontyStateManager : MonoBehaviour
 			default:
 				stateActions.Roam();
 				break;
-
-
-
-
 		}
 	}
 }

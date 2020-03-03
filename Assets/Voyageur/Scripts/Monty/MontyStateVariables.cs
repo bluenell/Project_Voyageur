@@ -21,10 +21,15 @@ public class MontyStateVariables : MonoBehaviour
 	public Vector2 randomWaitRange;
 
 	GameObject player;
+	InteractionsManager interactionsManager;
+
+
+
 
 	private void Start()
 	{
 		player = GameObject.Find("Player");
+		interactionsManager = player.GetComponent<InteractionsManager>();
 	}
 	private void Update()
 	{
@@ -101,6 +106,13 @@ public class MontyStateVariables : MonoBehaviour
 
 	}
 
+	public Vector3 GetFetchStartingPoint()
+	{
+		Vector3 target = interactionsManager.interaction.gameObject.transform.GetChild(0).transform.position;
+
+
+		return target;
+	}
 
 
 

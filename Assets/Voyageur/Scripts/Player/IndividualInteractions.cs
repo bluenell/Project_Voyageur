@@ -9,6 +9,7 @@ public class IndividualInteractions : MonoBehaviour
 	AdditionalSpritesManager spritesManager;
 	Animator playerAnimator;
 	GameObject player;
+	MontyStateManager montyStateManager;
 
 	public bool xPressed;
 	bool movingTowards = false;
@@ -21,6 +22,7 @@ public class IndividualInteractions : MonoBehaviour
 		playerController = player.GetComponent<PlayerController>();
 		spritesManager = GameObject.Find("ExtraSpritesManager").GetComponent<AdditionalSpritesManager>();
 		playerAnimator = player.transform.GetChild(0).GetComponent<Animator>();
+		montyStateManager = GameObject.Find("Monty").GetComponent<MontyStateManager>();
 	}
 
 
@@ -168,16 +170,9 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Fetch()
 	{
-		Debug.Log("Interation with Fetch");
+		montyStateManager.currentState = "fetch";
+		montyStateManager.SwitchState();
 	}
 
-
-
-
-	void GetInput()
-	{
-		
-
-	}
 
 }

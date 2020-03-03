@@ -56,7 +56,6 @@ public class PlayerController : MonoBehaviour
 	PlayerSoundManager playerSoundManager;
 	#endregion
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -79,8 +78,6 @@ public class PlayerController : MonoBehaviour
 		xSpeed = defaultXSpeed;
 		ySpeed = defaultYSpeed;
 	}
-
-	// Update is called once per frame
 	void FixedUpdate()
 	{
 		Move();
@@ -355,12 +352,10 @@ public class PlayerController : MonoBehaviour
 
 	}
 
-
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.DrawWireSphere(transform.position, armsReach);
 	}
-
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
