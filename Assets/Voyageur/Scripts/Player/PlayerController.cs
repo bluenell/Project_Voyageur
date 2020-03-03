@@ -32,8 +32,18 @@ public class PlayerController : MonoBehaviour
 	#region Inventory
 	[Header("Items)")]
 	public GameObject torch;
+	bool torchOn = false;
+
+	Vector3 rightTorchTransform = new Vector3(0.608f, 1.642f,0);
+	Vector3 leftTorchTransform = new Vector3(-0.608f,1.642f,0);
+	Quaternion leftTorchRot;
+	Quaternion rightTorchRot;
+
+
 	PlayerInventory inventory;
 	public int currentInventoryIndex;
+	public float switchRate = 2f;
+	float nextSwitchTime = 0f;
 	#endregion
 
 	#region Components
@@ -43,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
 	DayNightCycleManager nightCycle;
 	BoxCollider2D parkingCollider;
+	PlayerSoundManager playerSoundManager;
 	#endregion
 
 	// Start is called before the first frame update
@@ -53,6 +64,7 @@ public class PlayerController : MonoBehaviour
 		anim = transform.GetChild(0).GetComponent<Animator>();
 		inventory = GetComponent<PlayerInventory>();
 		nightCycle = GameObject.Find("Global Light (Sun)").GetComponent<DayNightCycleManager>();
+		playerSoundManager = GetComponent<PlayerSoundManager>();
 
 		canoePickUpTarget = canoe.transform.GetChild(0).transform;
 
@@ -76,8 +88,6 @@ public class PlayerController : MonoBehaviour
 
 	private void Update()
 	{
-		CycleInventory();
-		UseItem();
 		HandleCanoe();
 
 		if (movementStopped)
@@ -88,7 +98,24 @@ public class PlayerController : MonoBehaviour
 		{
 			EnablePlayerInput(0.0f);
 		}
+		if (Time.time >= nextSwitchTime)
+		{
+			if (Input.GetButtonDown("InventoryLeft"))
+			{
+				CycleInventory("left");
+				nextSwitchTime = Time.time + 1f / switchRate;
+			}
+			if (Input.GetButtonDown("InventoryRight"))
+			{
 
+				CycleInventory("right");
+				nextSwitchTime = Time.time + 1f / switchRate;
+
+			}
+		}
+		
+
+		UseItem();
 
 	}
 
@@ -121,6 +148,7 @@ public class PlayerController : MonoBehaviour
 				anim.SetBool("facingRight", false);
 				//sprite.flipX = true;
 				torch.transform.rotation = Quaternion.Euler(0, 0, 90);
+				torch.transform.localPosition = leftTorchTransform;
 			}
 			if (moveX > 0f)
 			{
@@ -129,6 +157,7 @@ public class PlayerController : MonoBehaviour
 
 				//sprite.flipX = false;
 				torch.transform.rotation = Quaternion.Euler(0, 0, -90);
+				torch.transform.localPosition = rightTorchTransform;
 			}
 		}
 
@@ -148,20 +177,21 @@ public class PlayerController : MonoBehaviour
 
 	void UseItem()
 	{
-		if ((nightCycle.colourArrayIndex >= 0 && nightCycle.colourArrayIndex <= 9) || (nightCycle.colourArrayIndex >= 18 && nightCycle.colourArrayIndex <= 23))
+		if (Input.GetButtonDown("Button X") && currentInventoryIndex == 3)
 		{
-			if (currentInventoryIndex == 3)
+			if (torchOn)
 			{
-				torch.SetActive(true);
+				torchOn = false;
+				torch.gameObject.SetActive(false);
+				playerSoundManager.PlayTorchClickOff();
 			}
 			else
 			{
-				torch.SetActive(false);
+				torchOn = true;
+				torch.gameObject.SetActive(true);
+				playerSoundManager.PlayTorchClickOn();
+
 			}
-		}		
-		else
-		{
-			torch.SetActive(false);
 		}
 	}
 
@@ -173,6 +203,9 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button B") && inRangeOfCanoe && !hasCanoe)
 		{
+			currentInventoryIndex = 0;
+			anim.SetInteger("inventoryIndex", 0);
+
 			canoeTargetFound = true;
 			movementStopped = true;
 			xSpeed = 0;
@@ -293,36 +326,33 @@ public class PlayerController : MonoBehaviour
 
 	}
 
-
-
-	void CycleInventory()
+	void CycleInventory(string dir)
 	{
-		if (!hasCanoe)
+
+		if (dir == "right")
 		{
-			if (Input.GetButtonDown("InventoryRight"))
+			currentInventoryIndex++;
+			if (currentInventoryIndex == inventory.tools.Count)
 			{
-				currentInventoryIndex++;
-
-				if (currentInventoryIndex == inventory.tools.Count)
-				{
-					currentInventoryIndex = 0;
-				}
-				//Debug.Log(inventory.tools[currentInventoryIndex]);
-				anim.SetInteger("inventoryIndex", currentInventoryIndex);
+				currentInventoryIndex = 0;
 			}
-
-			if (Input.GetButtonDown("InventoryLeft"))
-			{
-				if (currentInventoryIndex == 0)
-				{
-					currentInventoryIndex = inventory.tools.Count;
-				}
-
-				currentInventoryIndex--;
-				anim.SetInteger("inventoryIndex", currentInventoryIndex);
-				//Debug.Log(inventory.tools[currentInventoryIndex]);
-			}
+			
+			//Debug.Log(inventory.tools[currentInventoryIndex]);
+			anim.SetInteger("inventoryIndex", currentInventoryIndex);
 		}
+		else if (dir == "left")
+		{
+			if (currentInventoryIndex == 0)
+			{
+				currentInventoryIndex = inventory.tools.Count;
+			}
+			currentInventoryIndex--;
+			anim.SetInteger("inventoryIndex", currentInventoryIndex);
+			//Debug.Log(inventory.tools[currentInventoryIndex]);
+		}
+
+
+
 	}
 
 

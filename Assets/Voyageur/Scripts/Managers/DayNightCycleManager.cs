@@ -31,6 +31,7 @@ public class DayNightCycleManager : MonoBehaviour
     {
 		camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		globalLight = GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
+		colourArrayIndex = 6;
 		globalLight.color = colours[colourArrayIndex];
 		
     }

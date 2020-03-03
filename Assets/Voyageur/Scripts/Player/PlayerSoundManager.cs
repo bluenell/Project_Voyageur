@@ -15,6 +15,9 @@ public class PlayerSoundManager : MonoBehaviour
 	[Range(0, 2)]
 	public float footStepsInWaterVolume;
 
+	[Range(0, 10)]
+	public float torchClickVolume;
+
 	[FMODUnity.EventRef]
 	public string[] soundEvents;
 
@@ -39,6 +42,19 @@ public class PlayerSoundManager : MonoBehaviour
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[2]);
 		playerState.setVolume(footStepsInWaterVolume);
+		playerState.start();
+	}
+
+	public void PlayTorchClickOn()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[3]);
+		playerState.setVolume(torchClickVolume);
+		playerState.start();
+	}
+	public void PlayTorchClickOff()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[4]);
+		playerState.setVolume(torchClickVolume);
 		playerState.start();
 	}
 }

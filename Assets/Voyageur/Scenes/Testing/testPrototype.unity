@@ -259,9 +259,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 11.402554
-  OverrideMaxDistance: 48.460762
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &45011665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,7 +1115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -89.59393, y: -1.4671154, z: -3.904688}
+  m_LocalPosition: {x: -42.558445, y: -1.4671154, z: -3.904688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -1472,7 +1472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356616035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.79, y: -2.5, z: 0}
+  m_LocalPosition: {x: 7.27, y: -1.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1506420034}
@@ -1583,7 +1583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375399000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -98.6, y: -5.7015553, z: 6.4453125}
+  m_LocalPosition: {x: -51.56, y: -5.7015553, z: 6.4453125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468340914}
@@ -1617,12 +1617,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddleVolume: 1
-  footStepsVolume: 0
-  footStepsInWaterVolume: 0
+  footStepsVolume: 1.544
+  footStepsInWaterVolume: 0.291
+  torchClickVolume: 0
   soundEvents:
   - event:/Character/Footstep
   - event:/Character/Paddling
-  - 
+  - event:/Character/Exit_Canoe
+  - event:/Character/Torch_ON
+  - event:/Character/Torch_OFF
 --- !u!114 &375399006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1652,7 +1655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &391840400
 Transform:
   m_ObjectHideFlags: 0
@@ -2447,7 +2450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632327417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -89.59393, y: -1.4671154, z: -3.904688}
+  m_LocalPosition: {x: -42.558445, y: -1.4671154, z: -3.904688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1675404983}
@@ -3175,9 +3178,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 18
-  OverrideMaxDistance: 32
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &868373576
 Transform:
   m_ObjectHideFlags: 0
@@ -3646,7 +3649,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006615581}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bbd33761f0ba8a4f8723b16b405c752, type: 3}
   m_Name: 
@@ -3912,9 +3915,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 18
-  OverrideMaxDistance: 32
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1143799220
 GameObject:
   m_ObjectHideFlags: 0
@@ -4227,9 +4230,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 18
-  OverrideMaxDistance: 32
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1363975760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,7 +4364,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 12
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 7cf9998db713d694f89098456a8fa1b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4400,7 +4403,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.08506966}
+  m_Offset: {x: 0.055927277, y: 0.204916}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4411,7 +4414,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 2.3298607}
+  m_Size: {x: 2.7695847, y: 2.090168}
   m_EdgeRadius: 0
 --- !u!1 &1402630301
 GameObject:
@@ -4497,8 +4500,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1455612872
 GameObject:
   m_ObjectHideFlags: 0
@@ -4905,7 +4908,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 76.91908, y: 5.3980007, z: -10}
+  m_LocalPosition: {x: 74.69801, y: 3.948, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -6206,7 +6209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2122833022
 Transform:
   m_ObjectHideFlags: 0
@@ -6214,8 +6217,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122833017}
-  m_LocalRotation: {x: -0, y: -0, z: -0.70199937, w: 0.7121776}
-  m_LocalPosition: {x: 0.29999924, y: 2.0499992, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.608, y: 1.642, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7945989855208360791}
@@ -6381,6 +6384,7 @@ MonoBehaviour:
   defaultCanoeWalkSpeed: 3
   torch: {fileID: 2122833017}
   currentInventoryIndex: 0
+  switchRate: 2
 --- !u!4 &7945989855208360791
 Transform:
   m_ObjectHideFlags: 0
@@ -6389,7 +6393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7945989855208361128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 74.8, y: -1.56, z: 0}
+  m_LocalPosition: {x: 72.58, y: -3.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7945989855330090953}
@@ -6451,10 +6455,13 @@ MonoBehaviour:
   paddleVolume: 0
   footStepsVolume: 0
   footStepsInWaterVolume: 0
+  torchClickVolume: 0.2
   soundEvents:
   - event:/Character/Footstep
   - event:/Character/Paddling
   - event:/Character/Footstep
+  - event:/Character/Torch_ON
+  - event:/Character/Torch_OFF
 --- !u!212 &7945989855330090952
 SpriteRenderer:
   m_ObjectHideFlags: 0

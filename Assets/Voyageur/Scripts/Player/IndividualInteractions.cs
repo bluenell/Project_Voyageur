@@ -85,6 +85,7 @@ public class IndividualInteractions : MonoBehaviour
 		}
 		else if (xPressed && playerController.currentInventoryIndex != 1)
 		{
+
 			xPressed = false;
 		}
 
