@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9086566056874274968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Torch_ON
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Torch_ON
+  guid: b553e15a09befb408aee9614b6eadbc7
+  Banks:
+  - {fileID: 1351622495728034361}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 264
 --- !u!114 &-7597540755380411286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +38,7 @@ MonoBehaviour:
   Path: event:/Ambience/Rapids_River3D
   guid: c6d3e1f103a1794999e81e70f05b8abc
   Banks:
-  - {fileID: -3725006584741000068}
+  - {fileID: 1351622495728034361}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -79,6 +102,29 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-4754823576921004703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Torch_OFF
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Torch_OFF
+  guid: aa2ec7f77d35c343bc7c162fd19a1d24
+  Banks:
+  - {fileID: 1351622495728034361}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 216
 --- !u!114 &-4750889168466828392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,11 +157,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637188290880852635
+  lastModified: 637188304167063558
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1168
+    Value: 1122
   Exists: 1
 --- !u!114 &-3725006584741000068
 MonoBehaviour:
@@ -134,7 +180,7 @@ MonoBehaviour:
   lastModified: 637188290881111945
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3263409429870182122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,8 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Character/Torch
   guid: 49758bc59ad99142b6b4c239fd464b97
-  Banks:
-  - {fileID: -3725006584741000068}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -215,7 +260,7 @@ MonoBehaviour:
   Path: event:/Character/Exit_Canoe
   guid: 7f064ab7d5ce6040a88679f4b1b53c0d
   Banks:
-  - {fileID: -3725006584741000068}
+  - {fileID: 1351622495728034361}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -238,7 +283,7 @@ MonoBehaviour:
   Path: event:/Character/Footstep
   guid: b1a371b01643c04c9f97b26496e451a9
   Banks:
-  - {fileID: -3725006584741000068}
+  - {fileID: 1351622495728034361}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -283,7 +328,7 @@ MonoBehaviour:
   Path: event:/Ambience/Gentle_River3D
   guid: 798d8ff73c89ec4382bfa39c14b360a3
   Banks:
-  - {fileID: -3725006584741000068}
+  - {fileID: 1351622495728034361}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -305,7 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -4259741419574987108}
-  - {fileID: -3725006584741000068}
+  - {fileID: 1351622495728034361}
   EditorEvents:
   - {fileID: -1020494970394267013}
   - {fileID: 5076369093478829923}
@@ -313,14 +358,15 @@ MonoBehaviour:
   - {fileID: -7597540755380411286}
   - {fileID: 4157056326651303985}
   - {fileID: 5860409259319014696}
-  - {fileID: -3134494328406634414}
   - {fileID: -2091840372723097037}
+  - {fileID: -4754823576921004703}
+  - {fileID: -9086566056874274968}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -3725006584741000068}
+  - {fileID: 1351622495728034361}
   StringsBanks:
   - {fileID: -4259741419574987108}
-  stringsBankWriteTime: 637188290880852635
+  stringsBankWriteTime: 637188304167063558
   cacheVersion: 3
 --- !u!114 &438749730561508559
 MonoBehaviour:
@@ -344,6 +390,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 120384
+--- !u!114 &1351622495728034361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637188304167312901
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1401290501144234693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +459,7 @@ MonoBehaviour:
   Path: event:/Ambience/Wind2D
   guid: bd10e01fb8083c4fa66b23e1f351e6dd
   Banks:
-  - {fileID: -3725006584741000068}
+  - {fileID: 1351622495728034361}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -454,7 +518,7 @@ MonoBehaviour:
   Path: event:/Ambience/Bird_song3D
   guid: 9b6d0da39bf49042abdca60abe89e2dd
   Banks:
-  - {fileID: -3725006584741000068}
+  - {fileID: 1351622495728034361}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -513,7 +577,7 @@ MonoBehaviour:
   Path: event:/Character/Paddling
   guid: 744af2135479a2478cb649cf426c4c77
   Banks:
-  - {fileID: -3725006584741000068}
+  - {fileID: 1351622495728034361}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
