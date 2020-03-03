@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{dfa85b81-509e-45a8-b5e2-10512a97ea55}">
+	<object class="AudioFile" id="{9839ec15-a868-4eaf-aa6e-108f71155eb2}">
 		<property name="assetPath">
-			<value>ExitCanoe.mp3</value>
+			<value>Axe_chop_1.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>48</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>3.8399999999999999</value>
+			<value>0.44408163265306122</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{d7f640d3-ee20-44a0-82cf-a9a7bf109b2a}</destination>
