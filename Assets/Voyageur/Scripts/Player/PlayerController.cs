@@ -32,6 +32,14 @@ public class PlayerController : MonoBehaviour
 	#region Inventory
 	[Header("Items)")]
 	public GameObject torch;
+	bool torchOn = false;
+
+	Vector3 rightTorchTransform = new Vector3(0.608f, 1.642f,0);
+	Vector3 leftTorchTransform = new Vector3(-0.608f,1.642f,0);
+	Quaternion leftTorchRot;
+	Quaternion rightTorchRot;
+
+
 	PlayerInventory inventory;
 	public int currentInventoryIndex;
 	public float switchRate = 2f;
@@ -138,6 +146,7 @@ public class PlayerController : MonoBehaviour
 				anim.SetBool("facingRight", false);
 				//sprite.flipX = true;
 				torch.transform.rotation = Quaternion.Euler(0, 0, 90);
+				torch.transform.localPosition = leftTorchTransform;
 			}
 			if (moveX > 0f)
 			{
@@ -146,6 +155,7 @@ public class PlayerController : MonoBehaviour
 
 				//sprite.flipX = false;
 				torch.transform.rotation = Quaternion.Euler(0, 0, -90);
+				torch.transform.localPosition = rightTorchTransform;
 			}
 		}
 
@@ -165,20 +175,18 @@ public class PlayerController : MonoBehaviour
 
 	void UseItem()
 	{
-		if ((nightCycle.colourArrayIndex >= 0 && nightCycle.colourArrayIndex <= 9) || (nightCycle.colourArrayIndex >= 18 && nightCycle.colourArrayIndex <= 23))
+		if (Input.GetButtonDown("Button X") && currentInventoryIndex == 3)
 		{
-			if (currentInventoryIndex == 3)
+			if (torchOn)
 			{
-				torch.SetActive(true);
+				torchOn = false;
+				torch.gameObject.SetActive(false);
 			}
 			else
 			{
-				torch.SetActive(false);
+				torchOn = true;
+				torch.gameObject.SetActive(true);
 			}
-		}		
-		else
-		{
-			torch.SetActive(false);
 		}
 	}
 
@@ -312,8 +320,6 @@ public class PlayerController : MonoBehaviour
 		canoeWalkSpeed = defaultCanoeWalkSpeed;
 
 	}
-
-
 
 	void CycleInventory(string dir)
 	{
