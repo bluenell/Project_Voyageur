@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{533f9627-b36d-4537-8337-1d0f5fc8da34}">
+	<object class="AudioFile" id="{5cfb7df7-b84e-43e8-ac9a-9e7001697faa}">
 		<property name="assetPath">
-			<value>Whistle_01.mp3</value>
+			<value>Switching.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>0.312</value>
+			<value>0.47999999999999998</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{d7f640d3-ee20-44a0-82cf-a9a7bf109b2a}</destination>
