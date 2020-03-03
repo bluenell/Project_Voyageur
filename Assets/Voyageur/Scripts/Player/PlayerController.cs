@@ -183,13 +183,13 @@ public class PlayerController : MonoBehaviour
 			{
 				torchOn = false;
 				torch.gameObject.SetActive(false);
-				playerSoundManager.PlayTorchClick();
+				playerSoundManager.PlayTorchClickOff();
 			}
 			else
 			{
 				torchOn = true;
 				torch.gameObject.SetActive(true);
-				playerSoundManager.PlayTorchClick();
+				playerSoundManager.PlayTorchClickOn();
 
 			}
 		}

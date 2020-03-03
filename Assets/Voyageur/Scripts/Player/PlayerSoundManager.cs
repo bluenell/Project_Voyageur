@@ -45,9 +45,15 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState.start();
 	}
 
-	public void PlayTorchClick()
+	public void PlayTorchClickOn()
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[3]);
+		playerState.setVolume(torchClickVolume);
+		playerState.start();
+	}
+	public void PlayTorchClickOff()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[4]);
 		playerState.setVolume(torchClickVolume);
 		playerState.start();
 	}
