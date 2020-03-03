@@ -259,9 +259,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 11.402554
-  OverrideMaxDistance: 48.460762
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &45011665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,7 +1527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &375399001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1583,7 +1583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375399000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -98.6, y: -5.7015553, z: 6.4453125}
+  m_LocalPosition: {x: -51.56, y: -5.7015553, z: 6.4453125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468340914}
@@ -1619,10 +1619,12 @@ MonoBehaviour:
   paddleVolume: 1
   footStepsVolume: 0
   footStepsInWaterVolume: 0
+  torchClickVolume: 0
   soundEvents:
   - event:/Character/Footstep
   - event:/Character/Paddling
-  - 
+  - event:/Character/Exit_Canoe
+  - event:/Character/Torch
 --- !u!114 &375399006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3175,9 +3177,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 18
-  OverrideMaxDistance: 32
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &868373576
 Transform:
   m_ObjectHideFlags: 0
@@ -3646,7 +3648,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006615581}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bbd33761f0ba8a4f8723b16b405c752, type: 3}
   m_Name: 
@@ -3912,9 +3914,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 18
-  OverrideMaxDistance: 32
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1143799220
 GameObject:
   m_ObjectHideFlags: 0
@@ -4227,9 +4229,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 18
-  OverrideMaxDistance: 32
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1363975760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4497,8 +4499,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1455612872
 GameObject:
   m_ObjectHideFlags: 0
@@ -5094,7 +5096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1687866149
 Transform:
   m_ObjectHideFlags: 0
@@ -6452,10 +6454,12 @@ MonoBehaviour:
   paddleVolume: 0
   footStepsVolume: 0
   footStepsInWaterVolume: 0
+  torchClickVolume: 10
   soundEvents:
   - event:/Character/Footstep
   - event:/Character/Paddling
   - event:/Character/Footstep
+  - event:/Character/Torch
 --- !u!212 &7945989855330090952
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
 	DayNightCycleManager nightCycle;
 	BoxCollider2D parkingCollider;
+	PlayerSoundManager playerSoundManager;
 	#endregion
 
 	// Start is called before the first frame update
@@ -63,6 +64,7 @@ public class PlayerController : MonoBehaviour
 		anim = transform.GetChild(0).GetComponent<Animator>();
 		inventory = GetComponent<PlayerInventory>();
 		nightCycle = GameObject.Find("Global Light (Sun)").GetComponent<DayNightCycleManager>();
+		playerSoundManager = GetComponent<PlayerSoundManager>();
 
 		canoePickUpTarget = canoe.transform.GetChild(0).transform;
 
@@ -181,11 +183,14 @@ public class PlayerController : MonoBehaviour
 			{
 				torchOn = false;
 				torch.gameObject.SetActive(false);
+				playerSoundManager.PlayTorchClick();
 			}
 			else
 			{
 				torchOn = true;
 				torch.gameObject.SetActive(true);
+				playerSoundManager.PlayTorchClick();
+
 			}
 		}
 	}
