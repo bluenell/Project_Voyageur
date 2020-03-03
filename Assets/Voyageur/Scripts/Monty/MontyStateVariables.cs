@@ -16,7 +16,6 @@ public class MontyStateVariables : MonoBehaviour
 	
 	public float distanceToFollow;
 
-
 	public int sitWaitTime;
 	public Vector2 randomWaitRange;
 
@@ -24,6 +23,7 @@ public class MontyStateVariables : MonoBehaviour
 	InteractionsManager interactionsManager;
 
 
+	public float throwForce;
 
 
 	private void Start()
@@ -112,6 +112,11 @@ public class MontyStateVariables : MonoBehaviour
 
 
 		return target;
+	}
+
+	public GameObject GetFetchStick()
+	{
+		return interactionsManager.interaction.gameObject.transform.GetChild(1).gameObject;
 	}
 
 

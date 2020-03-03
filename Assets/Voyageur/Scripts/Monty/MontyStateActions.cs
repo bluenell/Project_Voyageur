@@ -20,6 +20,7 @@ public class MontyStateActions : MonoBehaviour
 
 	bool fetchTargetFound;
 	Vector2 fetchWalkTarget;
+	bool canThrowStick;
 
 	private void Start()
 	{
@@ -88,8 +89,14 @@ public class MontyStateActions : MonoBehaviour
 	}
 	public void Fetch()
 	{
-		
+
+		GameObject stick = stateVariables.GetFetchStick();
 		fetchWalkTarget = stateVariables.GetFetchStartingPoint();
+		Rigidbody2D stickRb = stick.GetComponent<Rigidbody2D>();
+		Stick stickRange = stick.GetComponent<Stick>();
+
+
+		stick.SetActive(false);
 
 		if (fetchWalkTarget != null)
 		{
@@ -113,9 +120,24 @@ public class MontyStateActions : MonoBehaviour
 			anim.SetBool("isRunning", false);
 			anim.SetBool("isSitting", true);
 			sprite.flipX = true;
-			//spawn stick
+			stick.SetActive(true);
+			canThrowStick = true;
+
+			float dist = Vector2.Distance(player.transform.position, stick.transform.position);
+
+			if (canThrowStick && dist <= stickRange.range)
+			{
+				if (Input.GetButtonDown("Button A"))
+				{
+					stickRb.gravityScale = 1;
+					stickRb.AddForce(new Vector2(stateVariables.throwForce, stateVariables.throwForce/2) * Time.deltaTime, ForceMode2D.Impulse);
+				}
+			}
 
 		}
+
+		
+
 
 	}
 
