@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LaunchTest : MonoBehaviour
 {
-	public Rigidbody ball;
+	public Rigidbody2D ball;
 	public Transform goal;
 
 	public float h = 4.06f;
@@ -12,12 +12,12 @@ public class LaunchTest : MonoBehaviour
 
 	private void Start()
 	{
-		ball.useGravity = false;
+		ball.gravityScale = 0;
 	}
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetButtonDown("Button A"))
 		{
 			Launch();
 		}
@@ -26,7 +26,7 @@ public class LaunchTest : MonoBehaviour
 	void Launch()
 	{
 		Physics.gravity = Vector3.up * g;
-		ball.useGravity = true;
+		ball.gravityScale = 1;
 		ball.velocity = CalculateLaunchVelocity();
 		Debug.Log(CalculateLaunchVelocity());
 	}
