@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 	public bool facingRight;
 	public float armsReach;
 	float xSpeed, ySpeed;
+	bool movementDisabled;
 
 	#endregion
 
@@ -34,10 +35,6 @@ public class PlayerController : MonoBehaviour
 	MontyStateVariables montyStateVariables;
 	MontyStateActions montyStateActions;
 	GameObject montyObj;
-
-
-
-
 
     #endregion
 
@@ -194,6 +191,9 @@ public class PlayerController : MonoBehaviour
 			anim.SetBool("isMoving", false);
 
 		}
+
+		
+
 	}
 	//Detects input and what interacted with
 
@@ -329,10 +329,11 @@ public class PlayerController : MonoBehaviour
 		//checking if monty has the stick and the player is within range of picking it up
 		if (montyStateVariables.montyHasStick && montyStateVariables.GetPlayerDistanceFromStick() <= montyStateVariables.GetFetchStick().GetComponent<Stick>().range)
 		{
+			montyStateVariables.GetFetchStick().gameObject.SetActive(false);
 			Debug.Log("Pick Up Stick");
-
+			DisablePlayerInput();
 			currentInventoryIndex = 0;
-			//play pick up animation followed by getting ready to throw animation
+			anim.SetTrigger("pickUpStick");
 
 			//setting the position of the stick object to around the players arm height (can easily be changed by moving the target object in the scene)
 			montyStateVariables.GetFetchStick().transform.position = transform.GetChild(3).transform.position;
@@ -341,13 +342,18 @@ public class PlayerController : MonoBehaviour
 		}
 		else if (montyStateVariables.playerHasStick)
 		{
+			anim.SetTrigger("throwStick");
 			Debug.Log("Throw Stick");
-			montyStateVariables.stickThrown = true;
-			montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().gravityScale = 1;
-			montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity = montyStateVariables.CalculateThrowVelocity();
 						
 		}
+	}
 
+	public void ThrowStick()
+	{
+		montyStateVariables.GetFetchStick().gameObject.SetActive(true);
+		montyStateVariables.stickThrown = true;
+		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().gravityScale = 1;
+		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity = montyStateVariables.CalculateThrowVelocity();
 	}
 
 
@@ -356,6 +362,7 @@ public class PlayerController : MonoBehaviour
 		xSpeed = 0;
 		ySpeed = 0;
 		canoeWalkSpeed = 0;
+		movementDisabled = true;
 		
 	}
 
@@ -371,6 +378,7 @@ public class PlayerController : MonoBehaviour
 		xSpeed = defaultXSpeed;
 		ySpeed = defaultYSpeed;
 		canoeWalkSpeed = defaultCanoeWalkSpeed;
+		movementDisabled = false;
 
 	}
 

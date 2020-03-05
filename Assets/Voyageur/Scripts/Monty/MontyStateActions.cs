@@ -95,8 +95,21 @@ public class MontyStateActions : MonoBehaviour
 	}
 	public void Fetch()
 	{
-		transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint(), stateVariables.montySpeed*Time.deltaTime);
-		anim.SetBool("isRunning", true);
+		if (!stateVariables.stickThrown)
+		{
+			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint(), stateVariables.montySpeed*Time.deltaTime);
+			anim.SetBool("isRunning", true);
+			sprite.flipX = false;
+
+		}
+		else
+		{
+			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, stateVariables.montySpeed * Time.deltaTime);
+			anim.SetBool("isRunning", true);
+			sprite.flipX = false;
+
+		}
+
 
 		if (transform.position.x == stateVariables.GetFetchStartingPoint().x && transform.position.y == stateVariables.GetFetchStartingPoint().y)
 		{
@@ -112,12 +125,13 @@ public class MontyStateActions : MonoBehaviour
 			{
 				stateVariables.montyHasStick = false;
 			}
+		}
 
-			if (stateVariables.stickThrown)
-			{
-				//play throw animation
-			}
-
+		if (transform.position.x == stateVariables.GetThrowTarget().position.x && transform.position.y == stateVariables.GetThrowTarget().position.y)
+		{
+			Debug.Log("At thrown stick");
+			anim.SetBool("isRunning", false);
+			sprite.flipX = true;
 		}
 
 	}

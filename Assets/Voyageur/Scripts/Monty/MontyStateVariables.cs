@@ -134,7 +134,7 @@ public class MontyStateVariables : MonoBehaviour
 		}
 	}
 
-	Transform GetThrowTarget()
+	public Transform GetThrowTarget()
 	{
 		
 		return interactionsManager.interaction.gameObject.transform.GetChild(2).transform;
