@@ -34,6 +34,15 @@ public class Stick : MonoBehaviour
 				rb.gravityScale = 0;
 			}
 		}
+
+		if (transform.position.x == stateVariables.GetFetchStartingPoint().x && transform.position.y == stateVariables.GetFetchStartingPoint().y)
+		{
+			Debug.Log("hit ground");
+			hitGround = true;
+
+			rb.velocity = new Vector3();
+			rb.gravityScale = 0;
+		}
 		
 	}
 
