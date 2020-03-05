@@ -340,7 +340,9 @@ public class PlayerController : MonoBehaviour
 		else if (montyStateVariables.playerHasStick)
 		{
 			Debug.Log("Throw Stick");
-
+			montyStateVariables.stickThrown = true;
+			montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().gravityScale = 1;
+			montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity = montyStateVariables.CalculateThrowVelocity();
 						
 		}
 
