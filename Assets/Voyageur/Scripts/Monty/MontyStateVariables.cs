@@ -26,8 +26,9 @@ public class MontyStateVariables : MonoBehaviour
 	Transform stickThrowTarget;
 	public float throwHeight;
 	public float throwGravity;
-	public bool montyHasStick;
-	public bool playerHasStick;
+	public bool montyHasStick = false;
+	public bool playerHasStick = false;
+	public bool stickThrown = false;
 
 	private void Start()
 	{
@@ -116,11 +117,7 @@ public class MontyStateVariables : MonoBehaviour
 
 	public Vector3 GetFetchStartingPoint()
 	{
-
-		
-
-		 return interactionsManager.interaction.gameObject.transform.GetChild(0).transform.position;
-		
+		return interactionsManager.interaction.gameObject.transform.GetChild(0).transform.position;
 	}
 
 	public Transform GetFetchStick()

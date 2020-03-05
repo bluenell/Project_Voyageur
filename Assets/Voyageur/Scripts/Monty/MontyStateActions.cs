@@ -108,6 +108,16 @@ public class MontyStateActions : MonoBehaviour
 
 			stateVariables.montyHasStick = true;
 
+			if (stateVariables.playerHasStick)
+			{
+				stateVariables.montyHasStick = false;
+			}
+
+			if (stateVariables.stickThrown)
+			{
+				//play throw animation
+			}
+
 		}
 
 	}

@@ -326,10 +326,24 @@ public class PlayerController : MonoBehaviour
 
 	void HandleMonty()
 	{
+		//checking if monty has the stick and the player is within range of picking it up
 		if (montyStateVariables.montyHasStick && montyStateVariables.GetPlayerDistanceFromStick() <= montyStateVariables.GetFetchStick().GetComponent<Stick>().range)
 		{
 			Debug.Log("Pick Up Stick");
+			//play pick up animation followed by getting ready to throw animation
+
+			//setting the position of the stick object to around the players arm height (can easily be changed by moving the target object in the scene)
+			montyStateVariables.GetFetchStick().transform.position = transform.GetChild(3).transform.position;
+			montyStateVariables.playerHasStick = true;
+			montyStateVariables.montyHasStick = false;
 		}
+		else if (montyStateVariables.playerHasStick)
+		{
+			Debug.Log("Throw Stick");
+
+						
+		}
+
 	}
 
 
