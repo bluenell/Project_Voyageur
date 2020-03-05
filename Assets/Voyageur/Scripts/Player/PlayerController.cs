@@ -29,8 +29,20 @@ public class PlayerController : MonoBehaviour
 	Vector2 targetY;
 	#endregion
 
-	#region Inventory
-	[Header("Items)")]
+	#region Monty Variables
+	MontyStateManager montyStateManager;
+	MontyStateVariables montyStateVariables;
+	MontyStateActions montyStateActions;
+	GameObject montyObj;
+
+
+
+
+
+    #endregion
+
+    #region Inventory
+    [Header("Items)")]
 	public GameObject torch;
 	bool torchOn = false;
 
@@ -66,6 +78,11 @@ public class PlayerController : MonoBehaviour
 		playerSoundManager = GetComponent<PlayerSoundManager>();
 
 		canoePickUpTarget = canoe.transform.GetChild(0).transform;
+
+		montyObj = GameObject.Find("Monty");
+		montyStateActions = montyObj.GetComponent<MontyStateActions>();
+		montyStateManager = montyObj.GetComponent<MontyStateManager>();
+		montyStateVariables = montyObj.GetComponent<MontyStateVariables>();
 
 
 		inCanoeZone = false;
@@ -114,6 +131,11 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetButtonDown("Button X"))
 		{
 			UseItem();
+		}
+
+		if (Input.GetButtonDown("Button A"))
+		{
+			HandleMonty();
 		}
 		
 
@@ -177,7 +199,7 @@ public class PlayerController : MonoBehaviour
 
 	void UseItem()
 	{
-		if (Input.GetButtonDown("Button X") && currentInventoryIndex == 3)
+		if (currentInventoryIndex == 3)
 		{
 			if (torchOn)
 			{
@@ -190,7 +212,6 @@ public class PlayerController : MonoBehaviour
 				torchOn = true;
 				torch.gameObject.SetActive(true);
 				playerSoundManager.PlayTorchClickOn();
-
 			}
 		}
 	}
@@ -302,6 +323,15 @@ public class PlayerController : MonoBehaviour
 		}
 		
 	} 
+
+	void HandleMonty()
+	{
+		if (montyStateVariables.montyHasStick && montyStateVariables.GetPlayerDistanceFromStick() <= montyStateVariables.GetFetchStick().GetComponent<Stick>().range)
+		{
+			Debug.Log("Pick Up Stick");
+		}
+	}
+
 
 	public void DisablePlayerInput()
 	{

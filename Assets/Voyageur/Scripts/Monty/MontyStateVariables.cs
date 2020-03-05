@@ -116,6 +116,9 @@ public class MontyStateVariables : MonoBehaviour
 
 	public Vector3 GetFetchStartingPoint()
 	{
+
+		
+
 		 return interactionsManager.interaction.gameObject.transform.GetChild(0).transform.position;
 		
 	}

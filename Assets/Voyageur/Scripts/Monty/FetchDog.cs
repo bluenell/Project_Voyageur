@@ -39,8 +39,6 @@ public class FetchDog : MonoBehaviour
 			playerController.DisablePlayerInput();
 			ThrowStick();
 		}
-		
-
 	}
 
 	void ThrowStick()

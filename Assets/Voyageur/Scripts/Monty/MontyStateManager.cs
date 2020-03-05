@@ -9,7 +9,7 @@ public class MontyStateManager : MonoBehaviour
 	int rand;
 	bool movingToPlayer;
 	bool sitting;
-	public bool inFetch = true;
+	public bool inFetch;
 
 	MontyStateActions stateActions;
 	MontyStateVariables stateVariables;
@@ -21,7 +21,6 @@ public class MontyStateManager : MonoBehaviour
 		stateActions = GetComponent<MontyStateActions>();
 		stateVariables = GetComponent<MontyStateVariables>();
 		playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-
 	}
 
 	private void FixedUpdate()

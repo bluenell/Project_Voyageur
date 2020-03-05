@@ -37,11 +37,7 @@ public class MontyStateActions : MonoBehaviour
 		playerController = player.GetComponent<PlayerController>();
 	}
 
-	private void FixedUpdate()
-	{
-		
-
-	}
+	
 
 
 	public void Roam()
@@ -99,38 +95,21 @@ public class MontyStateActions : MonoBehaviour
 	}
 	public void Fetch()
 	{
-		Transform stick = stateVariables.GetFetchStick();
-		fetchWalkTarget = stateVariables.GetFetchStartingPoint();
-		Stick stickRange = stick.GetComponent<Stick>();
-		stickRb = stick.GetComponent<Rigidbody2D>();
+		transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint(), stateVariables.montySpeed*Time.deltaTime);
+		anim.SetBool("isRunning", true);
 
-		stick.gameObject.SetActive(false);
-
-		if (fetchWalkTarget != null)
+		if (transform.position.x == stateVariables.GetFetchStartingPoint().x && transform.position.y == stateVariables.GetFetchStartingPoint().y)
 		{
-			fetchTargetFound = true;
-		}
-		else
-		{
-			fetchTargetFound = false;
-		}
-
-		if (fetchTargetFound)
-		{
-			transform.position = Vector2.MoveTowards(transform.position, fetchWalkTarget, stateVariables.montySpeed * Time.deltaTime);
-			anim.SetBool("isRunning", true);
-			anim.SetBool("isSitting", false);
-		}
-
-		if (transform.position.x == fetchWalkTarget.x && transform.position.y == fetchWalkTarget.y)
-		{
-			Debug.Log("at fetch location");
+			//Resetting animator and facing in the correct spot
+			Debug.Log("Monty at stick");
 			anim.SetBool("isRunning", false);
 			anim.SetBool("isSitting", true);
 			sprite.flipX = true;
-			stick.gameObject.SetActive(true);
+
 			stateVariables.montyHasStick = true;
+
 		}
+
 	}
 	
 	public void Wait()
