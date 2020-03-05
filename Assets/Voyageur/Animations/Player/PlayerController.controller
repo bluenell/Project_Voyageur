@@ -1901,6 +1901,32 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &585561352456838847
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: throwStick
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: b215f24da4333e24081110b3789b08c9, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &748653360889916657
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2125,16 +2151,22 @@ AnimatorStateMachine:
     m_Position: {x: 1850, y: -600, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7945085375852804190}
-    m_Position: {x: 1885, y: -535, z: 0}
+    m_Position: {x: 1190, y: -1420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4436753995225928730}
-    m_Position: {x: 1920, y: -470, z: 0}
+    m_Position: {x: 1180, y: -1370, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7507902371609625303}
-    m_Position: {x: 1955, y: -405, z: 0}
+    m_Position: {x: 1190, y: -1320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4186007768861923094}
-    m_Position: {x: 1990, y: -340, z: 0}
+    m_Position: {x: 1190, y: -1240, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 4876964657115311673}
+    m_Position: {x: 1225, y: -1175, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 585561352456838847}
+    m_Position: {x: 1260, y: -1110, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -2811,6 +2843,32 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &4876964657115311673
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pickUpStick
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: e21db58546168b647a45db950733732f, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &4953002804404508948
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
