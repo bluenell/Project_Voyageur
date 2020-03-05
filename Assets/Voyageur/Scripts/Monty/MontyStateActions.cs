@@ -21,7 +21,8 @@ public class MontyStateActions : MonoBehaviour
 	bool fetchTargetFound;
 	Vector2 fetchWalkTarget;
 	bool canThrowStick;
-
+	public bool hasStick = false;
+	Rigidbody2D stickRb;
 	private void Start()
 	{
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
@@ -33,6 +34,16 @@ public class MontyStateActions : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		playerController = player.GetComponent<PlayerController>();
 	}
+
+	private void Update()
+	{
+		if (hasStick)
+		{
+			ThrowStick();
+		}
+	}
+
+
 	public void Roam()
 	{				
 		//Debug.Log("Monty is following");
@@ -80,7 +91,6 @@ public class MontyStateActions : MonoBehaviour
 				stuckTimer = 0;
 			}
 		}
-
 	}
 	public void Sit()
 	{
@@ -89,12 +99,10 @@ public class MontyStateActions : MonoBehaviour
 	}
 	public void Fetch()
 	{
-
 		GameObject stick = stateVariables.GetFetchStick();
 		fetchWalkTarget = stateVariables.GetFetchStartingPoint();
-		Rigidbody2D stickRb = stick.GetComponent<Rigidbody2D>();
 		Stick stickRange = stick.GetComponent<Stick>();
-
+		stickRb = stick.GetComponent<Rigidbody2D>();
 
 		stick.SetActive(false);
 
@@ -127,18 +135,33 @@ public class MontyStateActions : MonoBehaviour
 
 			if (canThrowStick && dist <= stickRange.range)
 			{
-				if (Input.GetButtonDown("Button A"))
+				if (Input.GetButtonDown("Button A")&& !hasStick)
 				{
-					stickRb.gravityScale = 1;
-					stickRb.AddForce(new Vector2(stateVariables.throwForce, stateVariables.throwForce/2) * Time.deltaTime, ForceMode2D.Impulse);
+					stick.transform.position = playerController.gameObject.transform.GetChild(3).transform.position;
+					hasStick = true;
 				}
 			}
+		}	
+	}
+
+	void ThrowStick()
+	{
+		playerController.DisablePlayerInput();
+
+		if (Input.GetButtonDown("Button X"))
+		{
+			
+			stickRb.AddForce(new Vector2(1, 0.5f) * stateVariables.throwForce * Time.deltaTime, ForceMode2D.Force);
+			stickRb.gravityScale = 1;
 
 		}
-
 		
+	}
 
-
+	public void ReleaseStick()
+	{
+		rb.gravityScale = 1;
+		stickRb.AddForce(Vector2.right * stateVariables.throwForce * Time.deltaTime, ForceMode2D.Impulse);
 	}
 
 	public void Wait()
