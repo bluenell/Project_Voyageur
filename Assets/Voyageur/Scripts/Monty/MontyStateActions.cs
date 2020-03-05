@@ -20,8 +20,10 @@ public class MontyStateActions : MonoBehaviour
 
 	bool fetchTargetFound;
 	Vector2 fetchWalkTarget;
-	bool canThrowStick;
-	public bool hasStick = false;
+	bool montyHasStick;
+	public bool playerHasStick = false;
+	bool playerCanPickUpStick = false;
+	bool pickedUp = false;
 	Rigidbody2D stickRb;
 	private void Start()
 	{
@@ -35,12 +37,10 @@ public class MontyStateActions : MonoBehaviour
 		playerController = player.GetComponent<PlayerController>();
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
-		if (hasStick)
-		{
-			ThrowStick();
-		}
+		
+
 	}
 
 
@@ -99,12 +99,12 @@ public class MontyStateActions : MonoBehaviour
 	}
 	public void Fetch()
 	{
-		GameObject stick = stateVariables.GetFetchStick();
+		Transform stick = stateVariables.GetFetchStick();
 		fetchWalkTarget = stateVariables.GetFetchStartingPoint();
 		Stick stickRange = stick.GetComponent<Stick>();
 		stickRb = stick.GetComponent<Rigidbody2D>();
 
-		stick.SetActive(false);
+		stick.gameObject.SetActive(false);
 
 		if (fetchWalkTarget != null)
 		{
@@ -128,42 +128,11 @@ public class MontyStateActions : MonoBehaviour
 			anim.SetBool("isRunning", false);
 			anim.SetBool("isSitting", true);
 			sprite.flipX = true;
-			stick.SetActive(true);
-			canThrowStick = true;
-
-			float dist = Vector2.Distance(player.transform.position, stick.transform.position);
-
-			if (canThrowStick && dist <= stickRange.range)
-			{
-				if (Input.GetButtonDown("Button A")&& !hasStick)
-				{
-					stick.transform.position = playerController.gameObject.transform.GetChild(3).transform.position;
-					hasStick = true;
-				}
-			}
-		}	
-	}
-
-	void ThrowStick()
-	{
-		playerController.DisablePlayerInput();
-
-		if (Input.GetButtonDown("Button X"))
-		{
-			
-			stickRb.AddForce(new Vector2(1, 0.5f) * stateVariables.throwForce * Time.deltaTime, ForceMode2D.Force);
-			stickRb.gravityScale = 1;
-
+			stick.gameObject.SetActive(true);
+			stateVariables.montyHasStick = true;
 		}
-		
 	}
-
-	public void ReleaseStick()
-	{
-		rb.gravityScale = 1;
-		stickRb.AddForce(Vector2.right * stateVariables.throwForce * Time.deltaTime, ForceMode2D.Impulse);
-	}
-
+	
 	public void Wait()
 	{
 		//Debug.Log("Waiting");

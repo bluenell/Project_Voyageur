@@ -110,9 +110,12 @@ public class PlayerController : MonoBehaviour
 
 			}
 		}
-		
 
-		UseItem();
+		if (Input.GetButtonDown("Button X"))
+		{
+			UseItem();
+		}
+		
 
 	}
 

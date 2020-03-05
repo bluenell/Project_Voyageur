@@ -22,9 +22,12 @@ public class MontyStateVariables : MonoBehaviour
 	GameObject player;
 	InteractionsManager interactionsManager;
 
-
-	public float throwForce;
-
+	Rigidbody2D stickRb;
+	Transform stickThrowTarget;
+	public float throwHeight;
+	public float throwGravity;
+	public bool montyHasStick;
+	public bool playerHasStick;
 
 	private void Start()
 	{
@@ -43,6 +46,11 @@ public class MontyStateVariables : MonoBehaviour
 	{
 		distFromPlayer = Vector2.Distance(transform.position, player.transform.position);
 		return distFromPlayer;
+	}
+
+	public float GetPlayerDistanceFromStick()
+	{
+		return Vector2.Distance(player.transform.position, GetFetchStick().transform.position);
 	}
 	bool GetPlayerMoving()
 	{
@@ -108,18 +116,14 @@ public class MontyStateVariables : MonoBehaviour
 
 	public Vector3 GetFetchStartingPoint()
 	{
-		Vector3 target = interactionsManager.interaction.gameObject.transform.GetChild(0).transform.position;
-
-
-		return target;
+		 return interactionsManager.interaction.gameObject.transform.GetChild(0).transform.position;
+		
 	}
 
-	public GameObject GetFetchStick()
+	public Transform GetFetchStick()
 	{
-		return interactionsManager.interaction.gameObject.transform.GetChild(1).gameObject;
+		return interactionsManager.interaction.gameObject.transform.GetChild(1);
 	}
-
-
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -130,11 +134,26 @@ public class MontyStateVariables : MonoBehaviour
 		}
 	}
 
+	Transform GetThrowTarget()
+	{
+		
+		return interactionsManager.interaction.gameObject.transform.GetChild(2).transform;
+	}
 
+	
+	public Vector2 CalculateThrowVelocity()
+	{
 
+		float displacementY = GetThrowTarget().position.y - GetFetchStick().position.y;
+		Vector2 displacementX = new Vector2(GetThrowTarget().position.x - GetFetchStick().position.x, 0);
 
+		Vector2 velocityY = Vector2.up * Mathf.Sqrt(-2 * (throwGravity * throwHeight));
+		Vector2 velocityX = displacementX / (Mathf.Sqrt(-2 * throwHeight / throwGravity) + Mathf.Sqrt(2 * (displacementY - throwHeight) / throwGravity));
 
+		return velocityX + velocityY;
+	}
+	
 
-
+	
 
 }
