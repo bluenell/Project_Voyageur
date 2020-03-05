@@ -95,21 +95,29 @@ public class MontyStateActions : MonoBehaviour
 	}
 	public void Fetch()
 	{
-		if (!stateVariables.stickThrown)
+		if (!stateVariables.stickThrown || stateVariables.montyReturningStick)
 		{
 			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint(), stateVariables.montySpeed*Time.deltaTime);
+			anim.SetBool("isSitting", false);
 			anim.SetBool("isRunning", true);
-			sprite.flipX = false;
 
+			if (stateVariables.montyReturningStick)
+			{
+				sprite.flipX = true;
+			}
+			else
+			{
+				sprite.flipX = false;
+			}
 		}
-		else
+		else if (stateVariables.stickThrown)
 		{
-			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, stateVariables.montySpeed * Time.deltaTime);
+			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, (stateVariables.montySpeed +2) * Time.deltaTime);
+			anim.SetBool("isSitting", false);
 			anim.SetBool("isRunning", true);
 			sprite.flipX = false;
 
 		}
-
 
 		if (transform.position.x == stateVariables.GetFetchStartingPoint().x && transform.position.y == stateVariables.GetFetchStartingPoint().y)
 		{
@@ -119,7 +127,11 @@ public class MontyStateActions : MonoBehaviour
 			anim.SetBool("isSitting", true);
 			sprite.flipX = true;
 
+			stateVariables.stickThrown = false;
 			stateVariables.montyHasStick = true;
+			stateVariables.montyReturningStick = false;
+
+			stateVariables.GetFetchStick().gameObject.SetActive(true);
 
 			if (stateVariables.playerHasStick)
 			{
@@ -132,7 +144,11 @@ public class MontyStateActions : MonoBehaviour
 			Debug.Log("At thrown stick");
 			anim.SetBool("isRunning", false);
 			sprite.flipX = true;
+			stateVariables.montyReturningStick = true;
+			stateVariables.GetFetchStick().position = stateVariables.GetStickSpawnLocation().position;
+			stateVariables.GetFetchStick().gameObject.SetActive(false);
 		}
+
 
 	}
 	

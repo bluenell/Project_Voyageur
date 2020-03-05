@@ -29,6 +29,7 @@ public class MontyStateVariables : MonoBehaviour
 	public bool montyHasStick = false;
 	public bool playerHasStick = false;
 	public bool stickThrown = false;
+	public bool montyReturningStick = false;
 
 	private void Start()
 	{
@@ -137,9 +138,13 @@ public class MontyStateVariables : MonoBehaviour
 	public Transform GetThrowTarget()
 	{
 		
-		return interactionsManager.interaction.gameObject.transform.GetChild(2).transform;
+		return interactionsManager.interaction.gameObject.transform.GetChild(2);
 	}
 	
+	public Transform GetStickSpawnLocation()
+	{
+		return interactionsManager.interaction.gameObject.transform.GetChild(3);
+	}
 	public Vector2 CalculateThrowVelocity()
 	{
 
