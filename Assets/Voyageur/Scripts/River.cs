@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class River : MonoBehaviour
 {
-	public int index;
+	public int riverIndex;
 	public float riverCurrent;
 }
