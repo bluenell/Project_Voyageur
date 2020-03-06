@@ -112,7 +112,7 @@ public class MontyStateActions : MonoBehaviour
 		}
 		else if (stateVariables.stickThrown)
 		{
-			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, (stateVariables.montySpeed +2) * Time.deltaTime);
+			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, stateVariables.montySpeed * Time.deltaTime);
 			anim.SetBool("isSitting", false);
 			anim.SetBool("isRunning", true);
 			sprite.flipX = false;
@@ -129,13 +129,17 @@ public class MontyStateActions : MonoBehaviour
 
 			stateVariables.stickThrown = false;
 			stateVariables.montyHasStick = true;
-			stateVariables.montyReturningStick = false;
-
-			stateVariables.GetFetchStick().gameObject.SetActive(true);
+			stateVariables.montyReturningStick = false;			
 
 			if (stateVariables.playerHasStick)
 			{
 				stateVariables.montyHasStick = false;
+				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+			}
+			else
+			{
+				montyHasStick = true;
+				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
 			}
 		}
 
@@ -146,7 +150,7 @@ public class MontyStateActions : MonoBehaviour
 			sprite.flipX = true;
 			stateVariables.montyReturningStick = true;
 			stateVariables.GetFetchStick().position = stateVariables.GetStickSpawnLocation().position;
-			stateVariables.GetFetchStick().gameObject.SetActive(false);
+			stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 		}
 
 

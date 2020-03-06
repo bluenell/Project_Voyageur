@@ -329,10 +329,10 @@ public class PlayerController : MonoBehaviour
 		//checking if monty has the stick and the player is within range of picking it up
 		if (montyStateVariables.montyHasStick && montyStateVariables.GetPlayerDistanceFromStick() <= montyStateVariables.GetFetchStick().GetComponent<Stick>().range)
 		{
-			montyStateVariables.GetFetchStick().gameObject.SetActive(false);
-			Debug.Log("Pick Up Stick");
+			montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 			DisablePlayerInput();
 			currentInventoryIndex = 0;
+			anim.SetInteger("inventoryIndex", currentInventoryIndex);
 			anim.SetTrigger("pickUpStick");
 
 			//setting the position of the stick object to around the players arm height (can easily be changed by moving the target object in the scene)
@@ -343,6 +343,8 @@ public class PlayerController : MonoBehaviour
 		else if (montyStateVariables.playerHasStick)
 		{
 			anim.SetTrigger("throwStick");
+			montyStateVariables.playerHasStick = false;
+			montyStateVariables.montyHasStick = false;
 			Debug.Log("Throw Stick");
 						
 		}
@@ -350,7 +352,7 @@ public class PlayerController : MonoBehaviour
 
 	public void ThrowStick()
 	{
-		montyStateVariables.GetFetchStick().gameObject.SetActive(true);
+		montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
 		montyStateVariables.stickThrown = true;
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().gravityScale = 1;
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity = montyStateVariables.CalculateThrowVelocity();

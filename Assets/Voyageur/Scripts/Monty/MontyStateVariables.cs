@@ -85,6 +85,8 @@ public class MontyStateVariables : MonoBehaviour
 	}
 
 
+	#region Pathfinding
+
 	public Vector2 GetRandomPointInBounds(Bounds bounds)
 	{
 		desintationReached = false;
@@ -115,6 +117,19 @@ public class MontyStateVariables : MonoBehaviour
 		return pathwayBounds.OverlapPoint(location);
 
 	}
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag == "PathwayTriggerBounds")
+		{
+			//Debug.Log(collision.gameObject.name);
+			pathwayBounds = collision.gameObject.GetComponent<PolygonCollider2D>();
+		}
+	}
+
+	#endregion
+
+
+	#region Fetch
 
 	public Vector3 GetFetchStartingPoint()
 	{
@@ -126,25 +141,18 @@ public class MontyStateVariables : MonoBehaviour
 		return interactionsManager.interaction.gameObject.transform.GetChild(1);
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.gameObject.tag =="PathwayTriggerBounds")
-		{
-			//Debug.Log(collision.gameObject.name);
-			pathwayBounds =  collision.gameObject.GetComponent<PolygonCollider2D>();
-		}
-	}
-
 	public Transform GetThrowTarget()
 	{
-		
+
 		return interactionsManager.interaction.gameObject.transform.GetChild(2);
 	}
-	
+
 	public Transform GetStickSpawnLocation()
 	{
 		return interactionsManager.interaction.gameObject.transform.GetChild(3);
 	}
+
+	
 	public Vector2 CalculateThrowVelocity()
 	{
 
@@ -156,8 +164,7 @@ public class MontyStateVariables : MonoBehaviour
 
 		return velocityX + velocityY;
 	}
-	
+	#endregion
 
-	
 
 }
