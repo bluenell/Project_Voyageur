@@ -35,7 +35,6 @@ public class MontyStateManager : MonoBehaviour
 			}
 		}
 	}
-
 	private void Update()
 	{
 		if (!inFetch)

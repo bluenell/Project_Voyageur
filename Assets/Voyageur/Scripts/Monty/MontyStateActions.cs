@@ -100,6 +100,7 @@ public class MontyStateActions : MonoBehaviour
 			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint(), stateVariables.montySpeed*Time.deltaTime);
 			anim.SetBool("isSitting", false);
 			anim.SetBool("isRunning", true);
+			stateVariables.montyHasStick = false;
 
 			if (stateVariables.montyReturningStick)
 			{
@@ -140,6 +141,7 @@ public class MontyStateActions : MonoBehaviour
 			{
 				montyHasStick = true;
 				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+				playerController.EnablePlayerInput(0f);
 			}
 		}
 

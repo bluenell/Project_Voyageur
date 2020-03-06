@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
 		{
 			EnablePlayerInput(0.0f);
 		}
+
 		if (Time.time >= nextSwitchTime)
 		{
 			if (Input.GetButtonDown("InventoryLeft"))
@@ -343,8 +344,7 @@ public class PlayerController : MonoBehaviour
 		else if (montyStateVariables.playerHasStick)
 		{
 			anim.SetTrigger("throwStick");
-			montyStateVariables.playerHasStick = false;
-			montyStateVariables.montyHasStick = false;
+			
 			Debug.Log("Throw Stick");
 						
 		}
@@ -353,6 +353,8 @@ public class PlayerController : MonoBehaviour
 	public void ThrowStick()
 	{
 		montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+		montyStateVariables.playerHasStick = false;
+		montyStateVariables.montyHasStick = false;
 		montyStateVariables.stickThrown = true;
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().gravityScale = 1;
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity = montyStateVariables.CalculateThrowVelocity();
