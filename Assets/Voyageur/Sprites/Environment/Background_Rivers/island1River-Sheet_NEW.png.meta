@@ -1,7 +1,61 @@
 fileFormatVersion: 2
 guid: 8fe04c83ebc9cca458f3bffa85ee448d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6368551823664573612
+    second: island1River-Sheet_NEW_0
+  - first:
+      213: -5087134091006595249
+    second: island1River-Sheet_NEW_1
+  - first:
+      213: -4840644189800754527
+    second: island1River-Sheet_NEW_2
+  - first:
+      213: -9033811961764636352
+    second: island1River-Sheet_NEW_3
+  - first:
+      213: -5191842235118627287
+    second: island1River-Sheet_NEW_4
+  - first:
+      213: -5523763004551870337
+    second: island1River-Sheet_NEW_5
+  - first:
+      213: -1895130084766975059
+    second: island1River-Sheet_NEW_6
+  - first:
+      213: 39362723662318917
+    second: island1River-Sheet_NEW_7
+  - first:
+      213: 5481371503950898218
+    second: island1River-Sheet_NEW_8
+  - first:
+      213: 4473252468135263958
+    second: island1River-Sheet_NEW_0
+  - first:
+      213: -490849511183748734
+    second: island1River-Sheet_NEW_1
+  - first:
+      213: -2354294522992424283
+    second: island1River-Sheet_NEW_2
+  - first:
+      213: 2748261183789281577
+    second: island1River-Sheet_NEW_3
+  - first:
+      213: -1071545064026232535
+    second: island1River-Sheet_NEW_4
+  - first:
+      213: -3739805942838942441
+    second: island1River-Sheet_NEW_5
+  - first:
+      213: 6259437122362491980
+    second: island1River-Sheet_NEW_6
+  - first:
+      213: -5296744367728017098
+    second: island1River-Sheet_NEW_7
+  - first:
+      213: -3373164754748503838
+    second: island1River-Sheet_NEW_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +85,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,12 +94,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -60,10 +114,22 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -72,7 +138,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: island1River-Sheet_NEW_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 487
+        width: 1827
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de77d16b6f241e30800000000000000
+      internalID: 4473252468135263958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: island1River-Sheet_NEW_1
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 487
+        width: 1827
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281f7bf58f62039f0800000000000000
+      internalID: -490849511183748734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: island1River-Sheet_NEW_2
+      rect:
+        serializedVersion: 2
+        x: 3654
+        y: 487
+        width: 1827
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa836cda9dd35fd0800000000000000
+      internalID: -2354294522992424283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: island1River-Sheet_NEW_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 248
+        width: 1827
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92131c95cf8c32620800000000000000
+      internalID: 2748261183789281577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: island1River-Sheet_NEW_4
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 248
+        width: 1827
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 929a4e9017b1121f0800000000000000
+      internalID: -1071545064026232535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: island1River-Sheet_NEW_5
+      rect:
+        serializedVersion: 2
+        x: 3654
+        y: 248
+        width: 1827
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 715a0303f4a891cc0800000000000000
+      internalID: -3739805942838942441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: island1River-Sheet_NEW_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 1827
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c444f4c16ecfdd650800000000000000
+      internalID: 6259437122362491980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: island1River-Sheet_NEW_7
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 9
+        width: 1827
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63145879f0f2e76b0800000000000000
+      internalID: -5296744367728017098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: island1River-Sheet_NEW_8
+      rect:
+        serializedVersion: 2
+        x: 3654
+        y: 9
+        width: 1827
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e80950078c1031d0800000000000000
+      internalID: -3373164754748503838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
