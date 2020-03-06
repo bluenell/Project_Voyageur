@@ -328,6 +328,7 @@ public class PlayerController : MonoBehaviour
 
 	void CycleInventory(string dir)
 	{
+		playerSoundManager.PlayToolSwitch();
 
 		if (dir == "right")
 		{

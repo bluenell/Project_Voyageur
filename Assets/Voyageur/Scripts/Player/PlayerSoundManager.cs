@@ -65,6 +65,13 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState.start();
 	}
 
+	public void PlayToolSwitch()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[7]);
+		playerState.setVolume(torchClickVolume);
+		playerState.start();
+	}
+
 	public void PlayDragCanoe()
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[5]);
