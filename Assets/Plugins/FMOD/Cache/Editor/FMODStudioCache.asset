@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9149693586310377372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Bird_song3D_00
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Bird_song3D_00
+  guid: 9b6d0da39bf49042abdca60abe89e2dd
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 120384
 --- !u!114 &-9086566056874274968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +38,7 @@ MonoBehaviour:
   Path: event:/Character/Torch_ON
   guid: b553e15a09befb408aee9614b6eadbc7
   Banks:
-  - {fileID: 1351622495728034361}
+  - {fileID: 4982112350486863261}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -23,6 +46,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 264
+--- !u!114 &-8624610396162656095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Switch_Item
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Switch_Item
+  guid: c57caef268059a41b31de831c6225b34
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 400
 --- !u!114 &-7597540755380411286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,7 +84,7 @@ MonoBehaviour:
   Path: event:/Ambience/Rapids_River3D
   guid: c6d3e1f103a1794999e81e70f05b8abc
   Banks:
-  - {fileID: 1351622495728034361}
+  - {fileID: 4982112350486863261}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -85,6 +131,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 120384
+--- !u!114 &-6858351074499104927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/island1_chop_3
+  m_EditorClassIdentifier: 
+  Path: event:/Character/island1_chop_3
+  guid: b88b69aa2e94e043a026a18e520b49bb
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 888
+--- !u!114 &-5079562999355408544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/island1_chop_1
+  m_EditorClassIdentifier: 
+  Path: event:/Character/island1_chop_1
+  guid: 294fa9ccd4e42f488efc92003555d4f2
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 444
 --- !u!114 &-4930033604541965015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +209,7 @@ MonoBehaviour:
   Path: event:/Character/Torch_OFF
   guid: aa2ec7f77d35c343bc7c162fd19a1d24
   Banks:
-  - {fileID: 1351622495728034361}
+  - {fileID: 4982112350486863261}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -157,11 +249,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637188304167063558
+  lastModified: 637190989330734437
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1122
+    Value: 1616
   Exists: 1
 --- !u!114 &-3725006584741000068
 MonoBehaviour:
@@ -245,6 +337,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 264
+--- !u!114 &-2356124362746864506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Animals/Squirrel
+  m_EditorClassIdentifier: 
+  Path: event:/Animals/Squirrel
+  guid: e146041356a84b4c9cc9e8154aa3a160
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1344
 --- !u!114 &-2091840372723097037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +375,7 @@ MonoBehaviour:
   Path: event:/Character/Exit_Canoe
   guid: 7f064ab7d5ce6040a88679f4b1b53c0d
   Banks:
-  - {fileID: 1351622495728034361}
+  - {fileID: 4982112350486863261}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -283,7 +398,7 @@ MonoBehaviour:
   Path: event:/Character/Footstep
   guid: b1a371b01643c04c9f97b26496e451a9
   Banks:
-  - {fileID: 1351622495728034361}
+  - {fileID: 4982112350486863261}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -328,7 +443,7 @@ MonoBehaviour:
   Path: event:/Ambience/Gentle_River3D
   guid: 798d8ff73c89ec4382bfa39c14b360a3
   Banks:
-  - {fileID: 1351622495728034361}
+  - {fileID: 4982112350486863261}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -336,6 +451,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 43200
+--- !u!114 &-542748775874688603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Bird_song3D_01
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Bird_song3D_01
+  guid: d615ccc9f106ce4d8d588a86846d2aa3
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 108312
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,10 +488,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -4259741419574987108}
-  - {fileID: 1351622495728034361}
+  - {fileID: 4982112350486863261}
   EditorEvents:
   - {fileID: -1020494970394267013}
-  - {fileID: 5076369093478829923}
   - {fileID: -1515595206256035808}
   - {fileID: -7597540755380411286}
   - {fileID: 4157056326651303985}
@@ -361,12 +498,24 @@ MonoBehaviour:
   - {fileID: -2091840372723097037}
   - {fileID: -4754823576921004703}
   - {fileID: -9086566056874274968}
+  - {fileID: -5079562999355408544}
+  - {fileID: 3854826632143934085}
+  - {fileID: 4064840417314729746}
+  - {fileID: -9149693586310377372}
+  - {fileID: 6191782805665794573}
+  - {fileID: 6908947414323450589}
+  - {fileID: -6858351074499104927}
+  - {fileID: -8624610396162656095}
+  - {fileID: 8056612278843100731}
+  - {fileID: -542748775874688603}
+  - {fileID: -2356124362746864506}
+  - {fileID: 6851662451809756722}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 1351622495728034361}
+  - {fileID: 4982112350486863261}
   StringsBanks:
   - {fileID: -4259741419574987108}
-  stringsBankWriteTime: 637188304167063558
+  stringsBankWriteTime: 637190989330734437
   cacheVersion: 3
 --- !u!114 &438749730561508559
 MonoBehaviour:
@@ -407,7 +556,7 @@ MonoBehaviour:
   lastModified: 637188304167312901
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &1401290501144234693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +593,52 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3854826632143934085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Drag_Canoe
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Drag_Canoe
+  guid: 388df2d3fa0da442a6cecbaa6ff23dfd
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1992
+--- !u!114 &4064840417314729746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Whistle
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Whistle
+  guid: 3b3188aefe96974fa8a87fcd4faadde8
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1280
 --- !u!114 &4157056326651303985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +654,7 @@ MonoBehaviour:
   Path: event:/Ambience/Wind2D
   guid: bd10e01fb8083c4fa66b23e1f351e6dd
   Banks:
-  - {fileID: 1351622495728034361}
+  - {fileID: 4982112350486863261}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -503,6 +698,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &4982112350486863261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190989331243080
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &5076369093478829923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,8 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Ambience/Bird_song3D
   guid: 9b6d0da39bf49042abdca60abe89e2dd
-  Banks:
-  - {fileID: 1351622495728034361}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -577,7 +789,7 @@ MonoBehaviour:
   Path: event:/Character/Paddling
   guid: 744af2135479a2478cb649cf426c4c77
   Banks:
-  - {fileID: 1351622495728034361}
+  - {fileID: 4982112350486863261}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -621,6 +833,75 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &6191782805665794573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Sharpen_Axe
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Sharpen_Axe
+  guid: 9c60152b2c7f174f85a13b0e4ed4689f
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 864
+--- !u!114 &6851662451809756722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Forest_Wind3D
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Forest_Wind3D
+  guid: f28162f37e2b774299e52fd2ce78b98d
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 52268
+--- !u!114 &6908947414323450589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/island1_chop_2
+  m_EditorClassIdentifier: 
+  Path: event:/Character/island1_chop_2
+  guid: b79cd3b95ec15d4f9c88082159aad74c
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 444
 --- !u!114 &7740858734907604516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +938,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &8056612278843100731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Animals/BlueJay
+  m_EditorClassIdentifier: 
+  Path: event:/Animals/BlueJay
+  guid: c7759008db3bb246bb276b37b0ef6f36
+  Banks:
+  - {fileID: 4982112350486863261}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2246
 --- !u!114 &8808488370570474001
 MonoBehaviour:
   m_ObjectHideFlags: 0
