@@ -1115,7 +1115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -109.077896, y: -1.4671154, z: -3.904688}
+  m_LocalPosition: {x: 11.572849, y: -0.38199806, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -1527,7 +1527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &375399001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1627,6 +1627,7 @@ MonoBehaviour:
   - event:/Character/Torch_ON
   - event:/Character/Torch_OFF
   - event:/Character/Drag_Canoe
+  - event:/Character/Whistle
 --- !u!114 &375399006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2516,7 +2517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &632327418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3621,7 +3622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &993772924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3808,7 +3809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1048041305
 Transform:
   m_ObjectHideFlags: 0
@@ -4975,7 +4976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1560287162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5208,7 +5209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1687866149
 Transform:
   m_ObjectHideFlags: 0
@@ -6226,7 +6227,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2099149885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6592,7 +6593,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &7945989855208361129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6628,6 +6629,8 @@ MonoBehaviour:
   - event:/Character/Footstep
   - event:/Character/Torch_ON
   - event:/Character/Torch_OFF
+  - event:/Character/Drag_Canoe
+  - event:/Character/Whistle
 --- !u!212 &7945989855330090952
 SpriteRenderer:
   m_ObjectHideFlags: 0
