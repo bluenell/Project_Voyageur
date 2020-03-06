@@ -144,9 +144,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 487
-        width: 1827
-        height: 239
+        y: 484
+        width: 1830
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,10 +164,10 @@ TextureImporter:
       name: island1River-Sheet_NEW_1
       rect:
         serializedVersion: 2
-        x: 1827
-        y: 487
-        width: 1827
-        height: 239
+        x: 1830
+        y: 484
+        width: 1830
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,10 +185,10 @@ TextureImporter:
       name: island1River-Sheet_NEW_2
       rect:
         serializedVersion: 2
-        x: 3654
-        y: 487
-        width: 1827
-        height: 239
+        x: 3660
+        y: 484
+        width: 1830
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,9 +207,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 248
-        width: 1827
-        height: 239
+        y: 242
+        width: 1830
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +227,10 @@ TextureImporter:
       name: island1River-Sheet_NEW_4
       rect:
         serializedVersion: 2
-        x: 1827
-        y: 248
-        width: 1827
-        height: 239
+        x: 1830
+        y: 242
+        width: 1830
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,10 +248,10 @@ TextureImporter:
       name: island1River-Sheet_NEW_5
       rect:
         serializedVersion: 2
-        x: 3654
-        y: 248
-        width: 1827
-        height: 239
+        x: 3660
+        y: 242
+        width: 1830
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,9 +270,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 9
-        width: 1827
-        height: 239
+        y: 0
+        width: 1830
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,48 +282,6 @@ TextureImporter:
       bones: []
       spriteID: c444f4c16ecfdd650800000000000000
       internalID: 6259437122362491980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: island1River-Sheet_NEW_7
-      rect:
-        serializedVersion: 2
-        x: 1827
-        y: 9
-        width: 1827
-        height: 239
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63145879f0f2e76b0800000000000000
-      internalID: -5296744367728017098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: island1River-Sheet_NEW_8
-      rect:
-        serializedVersion: 2
-        x: 3654
-        y: 9
-        width: 1827
-        height: 239
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e80950078c1031d0800000000000000
-      internalID: -3373164754748503838
       vertices: []
       indices: 
       edges: []
