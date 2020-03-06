@@ -163,6 +163,7 @@ public class IndividualInteractions : MonoBehaviour
 		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>();
 
 		anim.SetTrigger("Play");
+		manager.interaction.gameObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
 	}
 
 
