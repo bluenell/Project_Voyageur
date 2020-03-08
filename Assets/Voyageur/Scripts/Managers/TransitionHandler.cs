@@ -7,6 +7,7 @@ public class TransitionHandler : MonoBehaviour
 
 	CanoePaddle paddleScript;
 	PlayerController playerController;
+	CameraHandler cameraHandler;
 
 	public GameObject player;
 	public GameObject canoe;
@@ -15,8 +16,6 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject layerManager;
 	public GameObject interactionsManager;
 
-	public GameObject canoeCam;
-	public GameObject playerCam;
 
 	public GameObject pathwayCollider;
 	public GameObject spritesManager;
@@ -25,6 +24,7 @@ public class TransitionHandler : MonoBehaviour
 	{
 		playerController = player.GetComponent<PlayerController>();
 		paddleScript = canoeAIO.GetComponent<CanoePaddle>();
+		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
 	}
 
 
@@ -36,8 +36,7 @@ public class TransitionHandler : MonoBehaviour
 		monty.SetActive(true);
 		layerManager.SetActive(true);
 		interactionsManager.SetActive(true);
-		canoeCam.SetActive(false);
-		playerCam.SetActive(true);
+		cameraHandler.SwitchToPlayer();
 		pathwayCollider.SetActive(true);
 		spritesManager.SetActive(true);
 
@@ -50,6 +49,7 @@ public class TransitionHandler : MonoBehaviour
 		//hide canoe object
 		//show canoe all in one at the new location
 		pathwayCollider.SetActive(false);
+		cameraHandler.SwitchToCanoe();
 	}
 
 }

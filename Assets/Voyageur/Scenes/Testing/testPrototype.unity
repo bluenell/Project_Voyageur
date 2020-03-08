@@ -980,7 +980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.8190536, y: -0.042001724, z: -10}
+  m_LocalPosition: {x: 17.976822, y: 0.40040207, z: -10.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -1690,7 +1690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &499398571
 Transform:
   m_ObjectHideFlags: 0
@@ -1699,7 +1699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499398570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.331112, y: -1.9255581, z: -10.35}
+  m_LocalPosition: {x: 17.976822, y: 0.40040207, z: -10.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 685523815}
@@ -1752,7 +1752,7 @@ GameObject:
   - component: {fileID: 540702285}
   - component: {fileID: 540702286}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Camera Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1779,11 +1779,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540702284}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25b87c535dfb6f24591895d6e8eb3fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeCamera: {fileID: 0}
   playerCam: {fileID: 1560287161}
   canoeCam: {fileID: 632327417}
   montyCam: {fileID: 499398570}
@@ -2124,7 +2125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632327417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -108.71095, y: -1.4671154, z: -10.35}
+  m_LocalPosition: {x: -108.69403, y: -1.4671154, z: -10.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1675404983}
@@ -2166,8 +2167,6 @@ MonoBehaviour:
   monty: {fileID: 287140831}
   layerManager: {fileID: 993772923}
   interactionsManager: {fileID: 2099149884}
-  canoeCam: {fileID: 632327417}
-  playerCam: {fileID: 1560287161}
   pathwayCollider: {fileID: 1048041304}
   spritesManager: {fileID: 391840399}
 --- !u!4 &632780869
@@ -2253,8 +2252,8 @@ MonoBehaviour:
   m_XDamping: 0.74
   m_YDamping: 0.22
   m_ZDamping: 1
-  m_ScreenX: 0.245
-  m_ScreenY: 0.71300006
+  m_ScreenX: 0.51
+  m_ScreenY: 0.83
   m_CameraDistance: 10.35
   m_DeadZoneWidth: 0.264
   m_DeadZoneHeight: 0.099
@@ -2263,7 +2262,7 @@ MonoBehaviour:
   m_SoftZoneWidth: 0.655
   m_SoftZoneHeight: 0.28303507
   m_BiasX: 0
-  m_BiasY: -0.00000032387658
+  m_BiasY: 0
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 0
@@ -4468,7 +4467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1560287162
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class MontyStateActions : MonoBehaviour
 	Rigidbody2D rb;
 	SpriteRenderer sprite;
 	PlayerController playerController;
+	CameraHandler cameraHandler;
 
 
 	bool targetFound;
@@ -28,6 +29,7 @@ public class MontyStateActions : MonoBehaviour
 		followTargetCollider = followTarget.GetComponent<BoxCollider2D>();
 		rb = GetComponent<Rigidbody2D>();
 		playerController = player.GetComponent<PlayerController>();
+		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
 	}
 
 	
@@ -108,6 +110,7 @@ public class MontyStateActions : MonoBehaviour
 		//checking if the stick has been thrown (when to move monty towards the stick after being thrown)
 		else if (stateVariables.stickThrown)
 		{
+			cameraHandler.SwitchToMonty();
 			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, stateVariables.montySpeed * Time.deltaTime);
 			anim.SetBool("isSitting", false);
 			anim.SetBool("isRunning", true);
@@ -118,6 +121,7 @@ public class MontyStateActions : MonoBehaviour
 		//checking if monty is at the starting point
 		if (transform.position.x == stateVariables.GetFetchStartingPoint().x && transform.position.y == stateVariables.GetFetchStartingPoint().y)
 		{
+			cameraHandler.SwitchToPlayer();
 			//Resetting animator and facing in the correct spot
 			Debug.Log("Monty at stick");
 			anim.SetBool("isRunning", false);
@@ -158,10 +162,17 @@ public class MontyStateActions : MonoBehaviour
 		{
 			Debug.Log("At thrown stick");
 			anim.SetBool("isRunning", false);
-			sprite.flipX = true;
-			stateVariables.montyReturningStick = true;
-			stateVariables.GetFetchStick().position = stateVariables.GetStickSpawnLocation().position;
-			stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+			StartCoroutine(WaitForTime(2));
+
+			if (stateVariables.waitedAtStick)
+			{
+				stateVariables.waitedAtStick = false;
+				sprite.flipX = true;
+				stateVariables.montyReturningStick = true;
+				stateVariables.GetFetchStick().position = stateVariables.GetStickSpawnLocation().position;
+				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+			}
+			
 		}
 	}
 	
@@ -208,5 +219,12 @@ public class MontyStateActions : MonoBehaviour
 	public void Canoe()
 	{
 		Debug.Log("monty is in the canoe");
+	}
+
+
+	IEnumerator WaitForTime(int time)
+	{
+		yield return new WaitForSeconds(time);
+		stateVariables.waitedAtStick = true;
 	}
 }

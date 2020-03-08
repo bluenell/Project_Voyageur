@@ -42,6 +42,8 @@ public class MontyStateVariables : MonoBehaviour
 	public bool montyReturningStick = false;
 	[HideInInspector]
 	public int throwCount;
+	[HideInInspector]
+	public bool waitedAtStick = false;
 
 
 	private void Start()

@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
 	DayNightCycleManager nightCycle;
 	BoxCollider2D parkingCollider;
 	PlayerSoundManager playerSoundManager;
+	CameraHandler cameraHandler;
 	#endregion
 
 	void Start()
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
 		inventory = GetComponent<PlayerInventory>();
 		nightCycle = GameObject.Find("Global Light (Sun)").GetComponent<DayNightCycleManager>();
 		playerSoundManager = GetComponent<PlayerSoundManager>();
+		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
 
 		canoePickUpTarget = canoe.transform.GetChild(0).transform;
 
@@ -359,6 +361,8 @@ public class PlayerController : MonoBehaviour
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().gravityScale = 1;
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity = montyStateVariables.CalculateThrowVelocity();
 		//montyStateVariables.GetFetchStick().transform.rotation = Quaternion.LookRotation(new Vector3(0,0, montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity.x + montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity.y));
+
+
 	}		
 
 	public void DisablePlayerInput()
@@ -439,6 +443,7 @@ public class PlayerController : MonoBehaviour
 			montyStateManager.inFetch = false;
 			montyStateManager.currentState = "roam";
 			montyStateManager.SwitchState();
+			
 
 
 		}
