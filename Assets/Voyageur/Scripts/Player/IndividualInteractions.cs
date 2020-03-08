@@ -170,6 +170,8 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Fetch()
 	{
+		Debug.Log("enter fetch");
+		montyStateManager.inFetch = true;
 		montyStateManager.currentState = "fetch";
 		montyStateManager.SwitchState();
 	}

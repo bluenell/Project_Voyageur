@@ -88,6 +88,7 @@ public class MontyStateActions : MonoBehaviour
 	}
 	public void Fetch()
 	{
+		//checking if the stick hasn't been thrown yet, or monty is bringing the stick back (when to move monty to the start point)
 		if (!stateVariables.stickThrown || stateVariables.montyReturningStick)
 		{
 			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint(), stateVariables.montySpeed*Time.deltaTime);
@@ -104,6 +105,7 @@ public class MontyStateActions : MonoBehaviour
 				sprite.flipX = false;
 			}
 		}
+		//checking if the stick has been thrown (when to move monty towards the stick after being thrown)
 		else if (stateVariables.stickThrown)
 		{
 			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, stateVariables.montySpeed * Time.deltaTime);
@@ -113,6 +115,7 @@ public class MontyStateActions : MonoBehaviour
 
 		}
 
+		//checking if monty is at the starting point
 		if (transform.position.x == stateVariables.GetFetchStartingPoint().x && transform.position.y == stateVariables.GetFetchStartingPoint().y)
 		{
 			//Resetting animator and facing in the correct spot
@@ -150,6 +153,7 @@ public class MontyStateActions : MonoBehaviour
 			}
 		}
 
+		//checking if monty is at the stick after being thrown
 		if (transform.position.x == stateVariables.GetThrowTarget().position.x && transform.position.y == stateVariables.GetThrowTarget().position.y)
 		{
 			Debug.Log("At thrown stick");
@@ -159,14 +163,13 @@ public class MontyStateActions : MonoBehaviour
 			stateVariables.GetFetchStick().position = stateVariables.GetStickSpawnLocation().position;
 			stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 		}
-
-
 	}
 	
 	public void Wait()
 	{
 		//Debug.Log("Waiting");
-		anim.SetBool("isMoving", false);
+		anim.SetBool("isRunning", false);
+		anim.SetBool("isWalking", false);
 		anim.SetBool("isSitting", false);
 	}
 
@@ -186,8 +189,10 @@ public class MontyStateActions : MonoBehaviour
 
 	public void Follow()
 	{
-		anim.SetBool("isMoving", true);
+		anim.SetBool("isRunning", false);
 		anim.SetBool("isSitting", false);
+		anim.SetBool("isWalking", true);
+
 		if (playerController.facingRight)
 		{
 			transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach, 0, 0), stateVariables.montySpeed * Time.deltaTime);

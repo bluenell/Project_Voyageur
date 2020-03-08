@@ -101,15 +101,6 @@ public class PlayerController : MonoBehaviour
 	{
 		HandleCanoe();
 
-		if (movementStopped)
-		{
-			DisablePlayerInput();
-		}
-		else
-		{
-			EnablePlayerInput(0.0f);
-		}
-
 		if (Time.time >= nextSwitchTime)
 		{
 			if (Input.GetButtonDown("InventoryLeft"))
@@ -143,8 +134,8 @@ public class PlayerController : MonoBehaviour
 	//Controls the player movment when not holding the canoe
 	void Move()
 	{
-		float moveX = Input.GetAxis("Horizontal");
-		float moveY = Input.GetAxis("Vertical");
+		float moveX = Input.GetAxisRaw("Horizontal");
+		float moveY = Input.GetAxisRaw("Vertical");
 
 		//Debug.Log("X Input " + moveX + " Y Input " + moveY);
 
@@ -229,7 +220,7 @@ public class PlayerController : MonoBehaviour
 			anim.SetInteger("inventoryIndex", 0);
 
 			canoeTargetFound = true;
-			movementStopped = true;
+			StartCoroutine(EnablePlayerInput(0));
 			xSpeed = 0;
 			ySpeed = 0;
 			canoeWalkSpeed = 0;
@@ -265,7 +256,7 @@ public class PlayerController : MonoBehaviour
 				hasCanoe = true;
 				canoeTargetFound = false;
 				anim.SetBool("isMoving", false);
-				movementStopped = false;
+				StartCoroutine(EnablePlayerInput(0));
 				
 			}
 
@@ -276,7 +267,7 @@ public class PlayerController : MonoBehaviour
 
 			parkingSpaceFound = true;
 			parkingSpaceFound = true;
-			movementStopped = true;
+			DisablePlayerInput();
 
 		}
 
@@ -319,7 +310,7 @@ public class PlayerController : MonoBehaviour
 				canoe.transform.SetParent(null);
 				canoe.transform.position = new Vector2(transform.position.x,canoePutDownTarget.transform.position.y);
 				transform.position = new Vector2(transform.position.x,playerTarget.transform.position.y);
-				movementStopped = false;
+				StartCoroutine(EnablePlayerInput(0));
 				
 			}
 		}
@@ -328,36 +319,39 @@ public class PlayerController : MonoBehaviour
 
 	void HandleMonty()
 	{
-		//checking if monty has the stick and the player is within range of picking it up
-		if (montyStateVariables.montyHasStick && montyStateVariables.GetPlayerDistanceFromStick() <= montyStateVariables.GetFetchStick().GetComponent<Stick>().range)
+		if (montyStateManager.inFetch)
 		{
-			montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-			movementStopped = true;
-			currentInventoryIndex = 0;
-			anim.SetInteger("inventoryIndex", currentInventoryIndex);
-			anim.SetTrigger("pickUpStick");
+			//checking if monty has the stick and the player is within range of picking it up
+			if (montyStateVariables.montyHasStick && montyStateVariables.GetPlayerDistanceFromStick() <= montyStateVariables.GetFetchStick().GetComponent<Stick>().range)
+			{
+				montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+				DisablePlayerInput();
+				currentInventoryIndex = 0;
+				anim.SetInteger("inventoryIndex", currentInventoryIndex);
+				anim.SetTrigger("pickUpStick");
 
-			//setting the position of the stick object to around the players arm height (can easily be changed by moving the target object in the scene)
-			montyStateVariables.GetFetchStick().transform.position = transform.GetChild(3).transform.position;
-			montyStateVariables.playerHasStick = true;
-			montyStateVariables.montyHasStick = false;
+				//setting the position of the stick object to around the players arm height (can easily be changed by moving the target object in the scene)
+				montyStateVariables.GetFetchStick().transform.position = transform.GetChild(3).transform.position;
+				montyStateVariables.playerHasStick = true;
+				montyStateVariables.montyHasStick = false;
 
-			montyStateVariables.GetFetchZoneExits(4).SetActive(true);
-			montyStateVariables.GetFetchZoneExits(5).SetActive(true);
+				montyStateVariables.GetFetchZoneExits(4).SetActive(true);
+				montyStateVariables.GetFetchZoneExits(5).SetActive(true);
 
+			}
+			else if (montyStateVariables.playerHasStick)
+			{
+				anim.SetTrigger("throwStick");
+				Debug.Log("Throw Stick");
+
+			}
 		}
-		else if (montyStateVariables.playerHasStick)
-		{
-			anim.SetTrigger("throwStick");			
-			Debug.Log("Throw Stick");
-						
-		}
+		
 	}
 
 	public void ThrowStick()
 	{
 		montyStateVariables.throwCount++;
-
 		montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
 		montyStateVariables.playerHasStick = false;
 		montyStateVariables.montyHasStick = false;
@@ -442,11 +436,11 @@ public class PlayerController : MonoBehaviour
 
 		if (other.gameObject.tag == "FetchZoneExit")
 		{
+			montyStateManager.inFetch = false;
 			montyStateManager.currentState = "roam";
 			montyStateManager.SwitchState();
 
-			montyStateVariables.GetFetchZoneExits(4).SetActive(true);
-			montyStateVariables.GetFetchZoneExits(5).SetActive(true);
+
 		}
 	}
 
