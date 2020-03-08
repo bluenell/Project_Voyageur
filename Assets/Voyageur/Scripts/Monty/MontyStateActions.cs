@@ -130,7 +130,18 @@ public class MontyStateActions : MonoBehaviour
 
 			stateVariables.stickThrown = false;
 			stateVariables.montyHasStick = true;
-			stateVariables.montyReturningStick = false;			
+			stateVariables.montyReturningStick = false;
+
+			if (stateVariables.throwCount == 0 && stateVariables.playerHasStick)
+			{
+				Debug.Log("Disable input"); 
+				playerController.DisablePlayerInput();				
+			}
+			else
+			{
+				Debug.Log("enable input");
+				StartCoroutine(playerController.EnablePlayerInput(0));
+			}
 
 			if (stateVariables.playerHasStick)
 			{
@@ -141,7 +152,7 @@ public class MontyStateActions : MonoBehaviour
 			{
 				montyHasStick = true;
 				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
-				playerController.EnablePlayerInput(0f);
+
 			}
 		}
 

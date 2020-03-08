@@ -30,6 +30,8 @@ public class MontyStateVariables : MonoBehaviour
 	public bool playerHasStick = false;
 	public bool stickThrown = false;
 	public bool montyReturningStick = false;
+	public int throwCount;
+
 
 	private void Start()
 	{

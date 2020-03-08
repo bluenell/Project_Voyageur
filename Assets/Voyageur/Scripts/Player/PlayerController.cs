@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 	public bool facingRight;
 	public float armsReach;
 	float xSpeed, ySpeed;
-	bool movementDisabled;
+	public bool movementDisabled;
 
 	#endregion
 
@@ -275,6 +275,7 @@ public class PlayerController : MonoBehaviour
 		{
 
 			parkingSpaceFound = true;
+			parkingSpaceFound = true;
 			movementStopped = true;
 
 		}
@@ -331,7 +332,7 @@ public class PlayerController : MonoBehaviour
 		if (montyStateVariables.montyHasStick && montyStateVariables.GetPlayerDistanceFromStick() <= montyStateVariables.GetFetchStick().GetComponent<Stick>().range)
 		{
 			montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-			DisablePlayerInput();
+			movementStopped = true;
 			currentInventoryIndex = 0;
 			anim.SetInteger("inventoryIndex", currentInventoryIndex);
 			anim.SetTrigger("pickUpStick");
@@ -343,8 +344,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else if (montyStateVariables.playerHasStick)
 		{
-			anim.SetTrigger("throwStick");
-			
+			anim.SetTrigger("throwStick");			
 			Debug.Log("Throw Stick");
 						
 		}
@@ -352,14 +352,16 @@ public class PlayerController : MonoBehaviour
 
 	public void ThrowStick()
 	{
+		montyStateVariables.throwCount++;
+
 		montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
 		montyStateVariables.playerHasStick = false;
 		montyStateVariables.montyHasStick = false;
 		montyStateVariables.stickThrown = true;
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().gravityScale = 1;
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity = montyStateVariables.CalculateThrowVelocity();
-	}
-
+		//montyStateVariables.GetFetchStick().transform.rotation = Quaternion.LookRotation(new Vector3(0,0, montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity.x + montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity.y));
+	}		
 
 	public void DisablePlayerInput()
 	{
@@ -410,9 +412,6 @@ public class PlayerController : MonoBehaviour
 			anim.SetInteger("inventoryIndex", currentInventoryIndex);
 			//Debug.Log(inventory.tools[currentInventoryIndex]);
 		}
-
-
-
 	}
 
 	private void OnDrawGizmosSelected()
@@ -436,7 +435,6 @@ public class PlayerController : MonoBehaviour
 			playerTarget = other.gameObject.transform.GetChild(1).transform;
 			currentParkingZone = other.gameObject.transform.GetChild(0).transform;
 		}
-
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
