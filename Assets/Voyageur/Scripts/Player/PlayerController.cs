@@ -341,6 +341,10 @@ public class PlayerController : MonoBehaviour
 			montyStateVariables.GetFetchStick().transform.position = transform.GetChild(3).transform.position;
 			montyStateVariables.playerHasStick = true;
 			montyStateVariables.montyHasStick = false;
+
+			montyStateVariables.GetFetchZoneExits(4).SetActive(true);
+			montyStateVariables.GetFetchZoneExits(5).SetActive(true);
+
 		}
 		else if (montyStateVariables.playerHasStick)
 		{
@@ -435,6 +439,15 @@ public class PlayerController : MonoBehaviour
 			playerTarget = other.gameObject.transform.GetChild(1).transform;
 			currentParkingZone = other.gameObject.transform.GetChild(0).transform;
 		}
+
+		if (other.gameObject.tag == "FetchZoneExit")
+		{
+			montyStateManager.currentState = "roam";
+			montyStateManager.SwitchState();
+
+			montyStateVariables.GetFetchZoneExits(4).SetActive(true);
+			montyStateVariables.GetFetchZoneExits(5).SetActive(true);
+		}
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
@@ -448,11 +461,8 @@ public class PlayerController : MonoBehaviour
 			inCanoeZone = false;
 			canoePutDownTarget = null;
 			currentParkingZone = null;
-
 		}
-	}
-
-	
+	}	
 }
 
 	

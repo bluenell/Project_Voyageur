@@ -19,6 +19,7 @@ TagManager:
   - CanoePickUpRange
   - PutDownZone
   - ParkingSpot
+  - FetchZoneExit
   layers:
   - Default
   - TransparentFX

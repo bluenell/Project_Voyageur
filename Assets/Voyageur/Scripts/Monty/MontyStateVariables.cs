@@ -154,6 +154,11 @@ public class MontyStateVariables : MonoBehaviour
 		return interactionsManager.interaction.gameObject.transform.GetChild(3);
 	}
 
+	public GameObject GetFetchZoneExits(int childIndex)
+	{
+		return interactionsManager.interaction.gameObject.transform.GetChild(childIndex).gameObject;
+	}
+
 	
 	public Vector2 CalculateThrowVelocity()
 	{

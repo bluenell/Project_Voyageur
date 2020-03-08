@@ -31,6 +31,7 @@ public class InteractionsManager : MonoBehaviour
 
 					case "Fetch":
 						indivInteractions.Fetch();
+						interaction.MarkAsComplete();
 						break;
 
 					case "BlueJay":
