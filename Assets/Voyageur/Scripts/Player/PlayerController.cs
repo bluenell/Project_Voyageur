@@ -360,8 +360,7 @@ public class PlayerController : MonoBehaviour
 		montyStateVariables.stickThrown = true;
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().gravityScale = 1;
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity = montyStateVariables.CalculateThrowVelocity();
-		//montyStateVariables.GetFetchStick().transform.rotation = Quaternion.LookRotation(new Vector3(0,0, montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity.x + montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity.y));
-
+		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().freezeRotation = false;
 
 	}		
 

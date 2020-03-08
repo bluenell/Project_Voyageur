@@ -29,6 +29,7 @@ public class Stick : MonoBehaviour
 		{
 			if (stateVariables.stickThrown)
 			{
+				rb.AddTorque(-rb.velocity.x/2);
 				if (transform.position.y <= stateVariables.GetThrowTarget().position.y)
 				{
 					Debug.Log("hit ground");
@@ -36,6 +37,8 @@ public class Stick : MonoBehaviour
 
 					rb.velocity = new Vector3();
 					rb.gravityScale = 0;
+					rb.angularVelocity = 0;
+					rb.freezeRotation = true;
 				}
 			}
 
@@ -44,8 +47,11 @@ public class Stick : MonoBehaviour
 				Debug.Log("hit ground");
 				hitGround = true;
 
-				rb.velocity = new Vector3();
+				rb.velocity = Vector3.zero;
 				rb.gravityScale = 0;
+				rb.angularVelocity = 0;
+				rb.freezeRotation = true;
+
 			}
 		}
 		
