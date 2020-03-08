@@ -18,13 +18,6 @@ public class MontyStateActions : MonoBehaviour
 	Vector2 target;
 	float stuckTimer;
 
-	bool fetchTargetFound;
-	Vector2 fetchWalkTarget;
-	bool montyHasStick;
-	public bool playerHasStick = false;
-	bool playerCanPickUpStick = false;
-	bool pickedUp = false;
-	Rigidbody2D stickRb;
 	private void Start()
 	{
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
@@ -150,7 +143,8 @@ public class MontyStateActions : MonoBehaviour
 			}
 			else
 			{
-				montyHasStick = true;
+				stateVariables.montyHasStick = true;
+
 				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
 
 			}

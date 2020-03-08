@@ -9,11 +9,16 @@ public class MontyStateVariables : MonoBehaviour
 	[HideInInspector]
 	public bool playerMoving;	
 
+	[HideInInspector ]
 	public float distFromPlayer;
+	[HideInInspector]
 	public bool desintationReached;
+
+	[Header("Generic Variables")]
 	public float montySpeed;
 	PolygonCollider2D pathwayBounds;
 	
+
 	public float distanceToFollow;
 
 	public int sitWaitTime;
@@ -24,12 +29,18 @@ public class MontyStateVariables : MonoBehaviour
 
 	Rigidbody2D stickRb;
 	Transform stickThrowTarget;
+	[Header("Fetch Variables")]
 	public float throwHeight;
 	public float throwGravity;
+	[HideInInspector]
 	public bool montyHasStick = false;
+	[HideInInspector]
 	public bool playerHasStick = false;
+	[HideInInspector]
 	public bool stickThrown = false;
+	[HideInInspector]
 	public bool montyReturningStick = false;
+	[HideInInspector]
 	public int throwCount;
 
 
