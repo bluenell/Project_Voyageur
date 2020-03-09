@@ -132,7 +132,7 @@ public class MontyStateActions : MonoBehaviour
 			stateVariables.montyHasStick = true;
 			stateVariables.montyReturningStick = false;
 
-			if (stateVariables.throwCount == 0 && stateVariables.playerHasStick)
+			if (stateVariables.playerHasStick)
 			{
 				Debug.Log("Disable input"); 
 				playerController.DisablePlayerInput();				
