@@ -337,8 +337,7 @@ public class PlayerController : MonoBehaviour
 				montyStateVariables.playerHasStick = true;
 				montyStateVariables.montyHasStick = false;
 
-				montyStateVariables.GetFetchZoneExits(4).SetActive(true);
-				montyStateVariables.GetFetchZoneExits(5).SetActive(true);
+
 
 			}
 			else if (montyStateVariables.playerHasStick)
@@ -442,9 +441,12 @@ public class PlayerController : MonoBehaviour
 			montyStateManager.inFetch = false;
 			montyStateManager.currentState = "roam";
 			montyStateManager.SwitchState();
-			
+		}
 
-
+		if (other.gameObject.tag == "FetchZoneSpawner")
+		{
+			montyStateVariables.GetFetchZoneExits(4).SetActive(true);
+			montyStateVariables.GetFetchZoneExits(5).SetActive(true);
 		}
 	}
 

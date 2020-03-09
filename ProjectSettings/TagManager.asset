@@ -20,6 +20,7 @@ TagManager:
   - PutDownZone
   - ParkingSpot
   - FetchZoneExit
+  - FetchZoneSpawner
   layers:
   - Default
   - TransparentFX
