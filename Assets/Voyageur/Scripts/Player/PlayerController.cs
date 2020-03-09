@@ -107,12 +107,13 @@ public class PlayerController : MonoBehaviour
 		{
 			if (Input.GetButtonDown("InventoryLeft"))
 			{
+				playerSoundManager.PlayItemSwitch();
 				CycleInventory("left");
 				nextSwitchTime = Time.time + 1f / switchRate;
 			}
 			if (Input.GetButtonDown("InventoryRight"))
 			{
-
+				playerSoundManager.PlayItemSwitch();
 				CycleInventory("right");
 				nextSwitchTime = Time.time + 1f / switchRate;
 

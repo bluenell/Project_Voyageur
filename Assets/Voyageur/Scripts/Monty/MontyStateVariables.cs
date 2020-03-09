@@ -15,7 +15,8 @@ public class MontyStateVariables : MonoBehaviour
 	public bool desintationReached;
 
 	[Header("Generic Variables")]
-	public float montySpeed;
+	public float walkSpeed;
+	public float runSpeed;
 	PolygonCollider2D pathwayBounds;
 	
 

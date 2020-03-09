@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerGroup" id="{906197a7-a874-4ee0-9f5f-f120741f3f80}">
+		<property name="volume">
+			<value>-16</value>
+		</property>
+		<property name="name">
+			<value>Wind-Leaves</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{5f3c3864-8c0e-4e17-93bd-e8c73cc529e6}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{2b4e0e44-89cb-4095-a67f-7e80d6788c1f}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{ca897c49-ae81-4fea-a0f3-dc591e8b1597}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{5f3c3864-8c0e-4e17-93bd-e8c73cc529e6}">
+		<relationship name="effects">
+			<destination>{abe249cb-909d-4113-a574-87b42c25029d}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{2b4e0e44-89cb-4095-a67f-7e80d6788c1f}" />
+	<object class="MixerBusFader" id="{abe249cb-909d-4113-a574-87b42c25029d}" />
+</objects>

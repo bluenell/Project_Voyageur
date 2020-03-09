@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{a30d6d9b-f49b-4290-abdc-a60abe89e2dd}">
 		<property name="name">
-			<value>Bird_song3D</value>
+			<value>Bird_song3D_00</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -53,7 +53,7 @@
 			<destination>{f4aecde3-f5cd-4c3b-8692-9035da9028d7}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{472cd08c-9bb4-4f39-b61b-bf2b0833407b}</destination>
+			<destination>{c35297ec-6824-4226-9fa0-0e71fd0be3b4}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{4ad58eac-7c1e-4df3-b179-bfb1e3ce6a0c}" />

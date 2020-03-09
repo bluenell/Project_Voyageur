@@ -5,7 +5,6 @@ using UnityEngine;
 public class AnimationEventsHandler : MonoBehaviour
 {
 	TransitionHandler TransitionHandler;
-	PlayerSoundManager playerSoundManager;
 
 	GameObject player;
 
@@ -46,13 +45,25 @@ public class AnimationEventsHandler : MonoBehaviour
 	public void FootstepsInWater()
 	{
 		GameObject canoeAIO = GameObject.Find("Canoe AIO");
-		canoeAIO.GetComponent<PlayerSoundManager>().PlayFootstepsInWater();
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayExitCanoe();
 	}
 
 	public void FootStepsCanoe()
 	{
 		GameObject canoeAIO = GameObject.Find("Canoe AIO");
 		canoeAIO.GetComponent<PlayerSoundManager>().PlayFootsteps();
+	}
+
+	public void DragCanoe()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayDragCanoe();
+	}
+
+	public void MontyFootSteps()
+	{
+		GameObject monty = GameObject.Find("Monty");
+		monty.GetComponent<MontySoundManager>().PlayFootsteps();
 	}
 
 
