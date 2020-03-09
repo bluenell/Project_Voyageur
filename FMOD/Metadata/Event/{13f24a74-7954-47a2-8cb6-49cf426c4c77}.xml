@@ -53,7 +53,7 @@
 			<destination>{fd34f8ef-f055-4bbb-af9e-ef7230bf4cf4}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{472cd08c-9bb4-4f39-b61b-bf2b0833407b}</destination>
+			<destination>{b72c54d0-d57b-4eff-a66a-f9bd1d0168e3}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{e4dc77e2-ad2d-461c-b7b4-1e2714b5fd12}" />
@@ -141,7 +141,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>26</value>
+			<value>14.5</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{cdfce476-f083-4089-8195-3a6152ef1298}">
