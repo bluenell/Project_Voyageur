@@ -46,13 +46,19 @@ public class AnimationEventsHandler : MonoBehaviour
 	public void FootstepsInWater()
 	{
 		GameObject canoeAIO = GameObject.Find("Canoe AIO");
-		canoeAIO.GetComponent<PlayerSoundManager>().PlayFootstepsInWater();
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayExitCanoe();
 	}
 
 	public void FootStepsCanoe()
 	{
 		GameObject canoeAIO = GameObject.Find("Canoe AIO");
 		canoeAIO.GetComponent<PlayerSoundManager>().PlayFootsteps();
+	}
+
+	public void DragCanoe()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayDragCanoe();
 	}
 
 

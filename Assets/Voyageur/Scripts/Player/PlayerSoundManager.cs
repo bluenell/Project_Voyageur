@@ -38,13 +38,6 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState.start();
 	}
 
-	public void PlayFootstepsInWater()
-	{
-		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[2]);
-		playerState.setVolume(footStepsInWaterVolume);
-		playerState.start();
-	}
-
 	public void PlayTorchClickOn()
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[3]);
@@ -53,8 +46,28 @@ public class PlayerSoundManager : MonoBehaviour
 	}
 	public void PlayTorchClickOff()
 	{
-		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[4]);
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[8]);
 		playerState.setVolume(torchClickVolume);
+		playerState.start();
+	}
+
+	public void PlayExitCanoe()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[2]);
+		playerState.setVolume(footStepsInWaterVolume);
+		playerState.start();
+	}
+
+	public void PlayDragCanoe()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[4]);
+		playerState.setVolume(footStepsInWaterVolume);
+		playerState.start();
+	}
+
+	public void PlayItemSwitch()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[6]);
 		playerState.start();
 	}
 }
