@@ -163,7 +163,7 @@ public class IndividualInteractions : MonoBehaviour
 	public void BlueJay()
 	{
 		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>();
-
+		manager.interaction.gameObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
 		anim.SetTrigger("Play");
 	}
 
