@@ -11,4 +11,12 @@ public class IgnoreCollision : MonoBehaviour
 			Physics2D.IgnoreLayerCollision(12, 16);
 		}
 	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.layer == 13)
+		{
+			Physics2D.IgnoreLayerCollision(13, 16);
+		}
+	}
 }

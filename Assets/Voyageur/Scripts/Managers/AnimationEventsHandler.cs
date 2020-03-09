@@ -26,6 +26,11 @@ public class AnimationEventsHandler : MonoBehaviour
 		GameObject.Destroy(gameObject);
 	}
 
+	public void ThrowStick()
+	{
+		player.GetComponent<PlayerController>().ThrowStick();
+	}
+
 
 	public void FootStepsPlayer()
 	{

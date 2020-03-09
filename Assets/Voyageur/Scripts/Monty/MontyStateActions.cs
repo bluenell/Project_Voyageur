@@ -12,13 +12,14 @@ public class MontyStateActions : MonoBehaviour
 	Rigidbody2D rb;
 	SpriteRenderer sprite;
 	PlayerController playerController;
+	CameraHandler cameraHandler;
 
 
 	bool targetFound;
 	Vector2 target;
 	float stuckTimer;
 
-	private void Awake()
+	private void Start()
 	{
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 		stateVariables = GetComponent<MontyStateVariables>();
@@ -28,12 +29,16 @@ public class MontyStateActions : MonoBehaviour
 		followTargetCollider = followTarget.GetComponent<BoxCollider2D>();
 		rb = GetComponent<Rigidbody2D>();
 		playerController = player.GetComponent<PlayerController>();
+		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
 	}
+
+	
+
 
 	public void Roam()
 	{				
 		//Debug.Log("Monty is following");
-		anim.SetBool("isMoving", true);
+		anim.SetBool("isRunning", true);
 		anim.SetBool("isSitting", false);
 
 		if (!targetFound)
@@ -77,7 +82,6 @@ public class MontyStateActions : MonoBehaviour
 				stuckTimer = 0;
 			}
 		}
-
 	}
 	public void Sit()
 	{
@@ -86,14 +90,97 @@ public class MontyStateActions : MonoBehaviour
 	}
 	public void Fetch()
 	{
-		//Debug.Log("Monty is playing fetch");
+		//checking if the stick hasn't been thrown yet, or monty is bringing the stick back (when to move monty to the start point)
+		if (!stateVariables.stickThrown || stateVariables.montyReturningStick)
+		{
+			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint(), stateVariables.montySpeed*Time.deltaTime);
+			anim.SetBool("isSitting", false);
+			anim.SetBool("isRunning", true);
+			stateVariables.montyHasStick = false;
 
+			if (stateVariables.montyReturningStick)
+			{
+				sprite.flipX = true;
+			}
+			else
+			{
+				sprite.flipX = false;
+			}
+		}
+		//checking if the stick has been thrown (when to move monty towards the stick after being thrown)
+		else if (stateVariables.stickThrown)
+		{
+			cameraHandler.SwitchToMonty();
+			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, stateVariables.montySpeed * Time.deltaTime);
+			anim.SetBool("isSitting", false);
+			anim.SetBool("isRunning", true);
+			sprite.flipX = false;
+
+		}
+
+		//checking if monty is at the starting point
+		if (transform.position.x == stateVariables.GetFetchStartingPoint().x && transform.position.y == stateVariables.GetFetchStartingPoint().y)
+		{
+			cameraHandler.SwitchToPlayer();
+			//Resetting animator and facing in the correct spot
+			Debug.Log("Monty at stick");
+			anim.SetBool("isRunning", false);
+			anim.SetBool("isSitting", true);
+			sprite.flipX = true;
+
+			stateVariables.stickThrown = false;
+			stateVariables.montyHasStick = true;
+			stateVariables.montyReturningStick = false;
+
+			if (stateVariables.playerHasStick)
+			{
+				Debug.Log("Disable input"); 
+				playerController.DisablePlayerInput();				
+			}
+			else
+			{
+				Debug.Log("enable input");
+				StartCoroutine(playerController.EnablePlayerInput(0));
+			}
+
+			if (stateVariables.playerHasStick)
+			{
+				stateVariables.montyHasStick = false;
+				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+			}
+			else
+			{
+				stateVariables.montyHasStick = true;
+
+				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+
+			}
+		}
+
+		//checking if monty is at the stick after being thrown
+		if (transform.position.x == stateVariables.GetThrowTarget().position.x && transform.position.y == stateVariables.GetThrowTarget().position.y)
+		{
+			Debug.Log("At thrown stick");
+			anim.SetBool("isRunning", false);
+			StartCoroutine(WaitForTime(2));
+
+			if (stateVariables.waitedAtStick)
+			{
+				stateVariables.waitedAtStick = false;
+				sprite.flipX = true;
+				stateVariables.montyReturningStick = true;
+				stateVariables.GetFetchStick().position = stateVariables.GetStickSpawnLocation().position;
+				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+			}
+			
+		}
 	}
-
+	
 	public void Wait()
 	{
 		//Debug.Log("Waiting");
-		anim.SetBool("isMoving", false);
+		anim.SetBool("isRunning", false);
+		anim.SetBool("isWalking", false);
 		anim.SetBool("isSitting", false);
 	}
 
@@ -113,8 +200,10 @@ public class MontyStateActions : MonoBehaviour
 
 	public void Follow()
 	{
-		anim.SetBool("isMoving", true);
+		anim.SetBool("isRunning", false);
 		anim.SetBool("isSitting", false);
+		anim.SetBool("isWalking", true);
+
 		if (playerController.facingRight)
 		{
 			transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach, 0, 0), stateVariables.montySpeed * Time.deltaTime);
@@ -127,9 +216,15 @@ public class MontyStateActions : MonoBehaviour
 		
 	}
 
-
 	public void Canoe()
 	{
 		Debug.Log("monty is in the canoe");
+	}
+
+
+	IEnumerator WaitForTime(int time)
+	{
+		yield return new WaitForSeconds(time);
+		stateVariables.waitedAtStick = true;
 	}
 }

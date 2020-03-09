@@ -19,6 +19,8 @@ TagManager:
   - CanoePickUpRange
   - PutDownZone
   - ParkingSpot
+  - FetchZoneExit
+  - FetchZoneSpawner
   layers:
   - Default
   - TransparentFX
@@ -33,7 +35,7 @@ TagManager:
   - River
   - BackgroundStuff
   - LayerTriggers
-  - 
+  - Player
   - 
   - PostFX
   - IgnoreLayering

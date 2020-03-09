@@ -44,9 +44,7 @@ public class CanoePaddle : MonoBehaviour
 		else
 		{
 			Paddle();
-		}
-
-		
+		}		
 	}
 
 

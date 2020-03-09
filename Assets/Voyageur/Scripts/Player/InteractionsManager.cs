@@ -20,7 +20,6 @@ public class InteractionsManager : MonoBehaviour
 		{
 			//Debug.Log("Interact");
 			interaction = collision.gameObject.GetComponent<Interaction>();
-
 			if (!interaction.complete)
 			{
 				switch (interaction.interactionName)
@@ -39,15 +38,9 @@ public class InteractionsManager : MonoBehaviour
 						indivInteractions.BlueJay();
 						interaction.MarkAsComplete();
 						break;
-
-					
-
 				}
-
-				
 			}
 		}
-
 	}
 
 	private void OnTriggerStay2D(Collider2D collision)
@@ -65,9 +58,6 @@ public class InteractionsManager : MonoBehaviour
 						break;
 				}
 			}
-
-			
-   			
 		}
 	}
 }
