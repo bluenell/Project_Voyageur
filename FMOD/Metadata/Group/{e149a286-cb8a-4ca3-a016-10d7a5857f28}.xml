@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
 	<object class="MixerGroup" id="{e149a286-cb8a-4ca3-a016-10d7a5857f28}">
+		<property name="volume">
+			<value>4</value>
+		</property>
 		<property name="name">
-			<value>Water</value>
+			<value>River</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{24d5933d-932b-44a1-9ddf-eeea6d73284e}</destination>

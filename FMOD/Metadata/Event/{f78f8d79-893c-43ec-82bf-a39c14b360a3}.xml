@@ -93,7 +93,10 @@
 	<object class="MixerBusPanner" id="{03cb1651-64a1-46e8-90f8-c2a9c8a736a8}" />
 	<object class="SingleSound" id="{b8fec8c0-d117-4bb4-ac17-34d4c8831561}">
 		<property name="length">
-			<value>43.200000000000003</value>
+			<value>52.574552080183757</value>
+		</property>
+		<property name="pitch">
+			<value>-3.4000001</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{f05bfec5-3168-4e3d-bc85-37da0e184453}</destination>
@@ -101,7 +104,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{d5d9681f-99bd-4fcf-8953-6e749f180599}">
 		<property name="volume">
-			<value>-31</value>
+			<value>-15</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -121,7 +124,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>43.200000000000003</value>
+			<value>52.574552080183757</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{ebe322aa-51a4-4945-b343-b41dd7017606}</destination>
@@ -141,10 +144,43 @@
 	<object class="MixerBusEffectChain" id="{bd3aa038-ad6c-4bb2-928b-07399ca24baf}">
 		<relationship name="effects">
 			<destination>{931ab0f8-8568-4045-b0c9-0d1ac5807753}</destination>
+			<destination>{62e1c547-0e05-41e9-9fd4-3f55eca9f803}</destination>
+			<destination>{c1230555-abe5-47e0-b995-97c149c178dc}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{cf524e11-58b2-430a-9d80-5bab40303d45}" />
 	<object class="MixerBusFader" id="{e2d0e79a-9d46-47d5-86dc-66473f2f2833}" />
 	<object class="SpatialiserEffect" id="{c62c5961-cd7f-42ee-b237-73689e924a93}" />
 	<object class="MixerBusFader" id="{931ab0f8-8568-4045-b0c9-0d1ac5807753}" />
+	<object class="SFXReverbEffect" id="{62e1c547-0e05-41e9-9fd4-3f55eca9f803}">
+		<property name="decayTime">
+			<value>100</value>
+		</property>
+		<property name="earlyDelay">
+			<value>0</value>
+		</property>
+		<property name="diffusion">
+			<value>59.5</value>
+		</property>
+		<property name="lowShelfFrequency">
+			<value>390</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-9</value>
+		</property>
+		<property name="highCut">
+			<value>6000</value>
+		</property>
+		<property name="wetLevel">
+			<value>-80</value>
+		</property>
+		<property name="dryLevel">
+			<value>-11.5</value>
+		</property>
+	</object>
+	<object class="ThreeEQEffect" id="{c1230555-abe5-47e0-b995-97c149c178dc}">
+		<property name="highGain">
+			<value>-3.5</value>
+		</property>
+	</object>
 </objects>

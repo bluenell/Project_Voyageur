@@ -5,7 +5,6 @@ using UnityEngine;
 public class AnimationEventsHandler : MonoBehaviour
 {
 	TransitionHandler TransitionHandler;
-	PlayerSoundManager playerSoundManager;
 
 	GameObject player;
 
@@ -59,6 +58,12 @@ public class AnimationEventsHandler : MonoBehaviour
 	{
 		GameObject canoeAIO = GameObject.Find("Canoe AIO");
 		canoeAIO.GetComponent<PlayerSoundManager>().PlayDragCanoe();
+	}
+
+	public void MontyFootSteps()
+	{
+		GameObject monty = GameObject.Find("Monty");
+		monty.GetComponent<MontySoundManager>().PlayFootsteps();
 	}
 
 

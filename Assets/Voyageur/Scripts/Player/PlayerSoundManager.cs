@@ -70,4 +70,10 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[6]);
 		playerState.start();
 	}
+
+	public void PlayWhistle()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[7]);
+		playerState.start();
+	}
 }

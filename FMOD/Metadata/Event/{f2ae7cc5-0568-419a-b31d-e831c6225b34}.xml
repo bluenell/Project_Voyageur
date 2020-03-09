@@ -92,6 +92,9 @@
 		<property name="length">
 			<value>0.40000000000000002</value>
 		</property>
+		<property name="volume">
+			<value>-7</value>
+		</property>
 		<property name="pitch">
 			<value>-2.60000014</value>
 		</property>
@@ -130,9 +133,6 @@
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
 		</property>
-		<property name="amount">
-			<value>12</value>
-		</property>
 	</object>
 	<object class="RandomizerModulator" id="{bcb6e9c7-3f43-46c3-b23d-c6f1dcdb1d4c}">
 		<property name="nameOfPropertyBeingModulated">
@@ -148,6 +148,9 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{bb5917d1-bb93-4d7b-a02b-5beecab99c71}">
+		<property name="volume">
+			<value>-14</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{277d3289-6595-4608-b2b1-23cc02a32c43}</destination>
 		</relationship>

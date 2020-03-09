@@ -14,6 +14,7 @@ public class MontyStateManager : MonoBehaviour
 	MontyStateActions stateActions;
 	MontyStateVariables stateVariables;
 	PlayerController playerController;
+	PlayerSoundManager playerSoundManager;
 
 
 	private void Start()
@@ -21,6 +22,7 @@ public class MontyStateManager : MonoBehaviour
 		stateActions = GetComponent<MontyStateActions>();
 		stateVariables = GetComponent<MontyStateVariables>();
 		playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+		playerSoundManager = GameObject.Find("Player").GetComponent<PlayerSoundManager>();
 	}
 
 	private void FixedUpdate()
@@ -41,6 +43,7 @@ public class MontyStateManager : MonoBehaviour
 		{
 			if (Input.GetButtonDown("Button A"))
 			{
+				playerSoundManager.PlayWhistle();
 				movingToPlayer = true;
 			}
 
