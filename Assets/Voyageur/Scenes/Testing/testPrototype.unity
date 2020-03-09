@@ -6210,6 +6210,16 @@ PrefabInstance:
       propertyPath: throwHeight
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3625638086280105393, guid: 7623248776c539749835c98c33870583,
+        type: 3}
+      propertyPath: runSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625638086280105393, guid: 7623248776c539749835c98c33870583,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3625638086280105398, guid: 7623248776c539749835c98c33870583,
         type: 3}
       propertyPath: inFetch
