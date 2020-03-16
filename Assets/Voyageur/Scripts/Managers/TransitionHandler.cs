@@ -20,7 +20,8 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject pathwayCollider;
 	public GameObject spritesManager;
 
-	public GameObject[] spawnPoints;
+	public GameObject[] playerSpawnPoints;
+	public GameObject[] canoeSpawnPoints;
 
 	int currentIsland = 0;
 
@@ -34,9 +35,9 @@ public class TransitionHandler : MonoBehaviour
 
 	public void Beach()
 	{
-		canoe.transform.position = spawnPoints[currentIsland].transform.GetChild(0).transform.position;
-		player.transform.position = spawnPoints[currentIsland].transform.GetChild(1).transform.position;
-		monty.transform.position = spawnPoints[currentIsland].transform.GetChild(2).transform.position;
+		canoe.transform.position = playerSpawnPoints[currentIsland].transform.GetChild(0).transform.position;
+		player.transform.position = playerSpawnPoints[currentIsland].transform.GetChild(1).transform.position;
+		monty.transform.position = playerSpawnPoints[currentIsland].transform.GetChild(2).transform.position;
 
 
 		canoeAIO.SetActive(false);
@@ -49,19 +50,26 @@ public class TransitionHandler : MonoBehaviour
 		pathwayCollider.SetActive(true);
 		spritesManager.SetActive(true);
 
-
-
-		//currentIsland++;
+		currentIsland++;
 	}
 
 	public void Launch()
 	{
-		//hide player
+		canoeAIO.transform.position = canoeSpawnPoints[0].transform.GetChild(currentIsland).transform.position;
+		canoeAIO.SetActive(true);
+		canoe.SetActive(false);
+		player.SetActive(false);
+		monty.SetActive(false);
+		layerManager.SetActive(false);
+		interactionsManager.SetActive(false);
+		pathwayCollider.SetActive(false);
+		spritesManager.SetActive(true);
+
 		//hide monty
 		//hide canoe object
 		//show canoe all in one at the new location
-		pathwayCollider.SetActive(false);
 		cameraHandler.SwitchToCanoe();
+
 	}
 
 }
