@@ -41,7 +41,6 @@ public class MontyStateManager : MonoBehaviour
 	{
 		if (!inFetch)
 		{			
-
 			if (stateVariables.movingTowardsPlayer)
 			{
 				currentState = "move towards";
@@ -54,7 +53,6 @@ public class MontyStateManager : MonoBehaviour
 					SwitchState();
 
 				}
-
 			}
 
 			if (currentState == "wait")
@@ -71,7 +69,7 @@ public class MontyStateManager : MonoBehaviour
 
 			}
 
-			if (Input.GetButton("Button A") && currentState != "move towards")
+			if (Input.GetButton("Button X") && currentState != "move towards")
 			{
 				movingToPlayer = true;
 				currentState = "follow";

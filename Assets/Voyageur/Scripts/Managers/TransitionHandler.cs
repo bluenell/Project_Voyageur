@@ -20,6 +20,10 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject pathwayCollider;
 	public GameObject spritesManager;
 
+	public GameObject[] spawnPoints;
+
+	int currentIsland = 0;
+
 	private void Awake()
 	{
 		playerController = player.GetComponent<PlayerController>();
@@ -30,6 +34,11 @@ public class TransitionHandler : MonoBehaviour
 
 	public void Beach()
 	{
+		canoe.transform.position = spawnPoints[currentIsland].transform.GetChild(0).transform.position;
+		player.transform.position = spawnPoints[currentIsland].transform.GetChild(1).transform.position;
+		monty.transform.position = spawnPoints[currentIsland].transform.GetChild(2).transform.position;
+
+
 		canoeAIO.SetActive(false);
 		canoe.SetActive(true);
 		player.SetActive(true);
@@ -40,6 +49,9 @@ public class TransitionHandler : MonoBehaviour
 		pathwayCollider.SetActive(true);
 		spritesManager.SetActive(true);
 
+
+
+		//currentIsland++;
 	}
 
 	public void Launch()
