@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 	Transform playerTarget;
 	Vector2 targetY;
 
-	public bool canLaunch;
+	public bool canLaunch = false;
 
 	#endregion
 
@@ -129,7 +129,8 @@ public class PlayerController : MonoBehaviour
 		{
 			HandleMonty();
 		}
-		if (Input.GetButtonDown("Button A" )&& canLaunch)
+
+		if (Input.GetButtonDown("Button A" ) && inRangeOfCanoe)
 		{
 			HandleCanoe();
 		}
@@ -227,7 +228,6 @@ public class PlayerController : MonoBehaviour
 
 		if (!canLaunch)
 		{
-
 			if (inRangeOfCanoe && !hasCanoe)
 			{
 				currentInventoryIndex = 0;
