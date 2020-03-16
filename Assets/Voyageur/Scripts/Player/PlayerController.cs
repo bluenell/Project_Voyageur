@@ -494,6 +494,11 @@ public class PlayerController : MonoBehaviour
 			canoePutDownTarget = null;
 			currentParkingZone = null;
 		}
+		if (other.gameObject.tag == "LaunchingZone")
+		{
+			canLaunch = false;
+
+		}
 	}	
 }
 

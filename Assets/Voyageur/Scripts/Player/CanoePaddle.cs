@@ -20,8 +20,8 @@ public class CanoePaddle : MonoBehaviour
 
 	float counter = 6;
 	int countMax = 3;
-	bool canPaddle;
-	bool beached;
+	public bool canPaddle;
+	public bool beached;
 	bool stickReset;
 
 
@@ -44,11 +44,8 @@ public class CanoePaddle : MonoBehaviour
 		}
 		else
 		{
-			if (!beached)
-			{
 				movement = new Vector2(river.riverCurrent * Time.deltaTime, 0);
 				transform.Translate(movement);
-			}
 
 			if (Time.time > nextPaddleTime)
 			{
@@ -58,7 +55,7 @@ public class CanoePaddle : MonoBehaviour
 					Paddle();
 					nextPaddleTime = Time.time + 1f / paddleRate;
 				}
-			}
+			}		
 		}
 
 		if (Input.GetAxis("Horizontal") == 0)

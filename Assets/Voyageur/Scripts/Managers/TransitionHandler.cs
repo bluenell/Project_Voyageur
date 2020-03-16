@@ -57,6 +57,8 @@ public class TransitionHandler : MonoBehaviour
 	{
 		canoeAIO.transform.position = canoeSpawnPoints[0].transform.GetChild(currentIsland).transform.position;
 		canoeAIO.SetActive(true);
+		canoeAIO.GetComponent<CanoePaddle>().beached = false;
+		canoeAIO.GetComponent<CanoePaddle>().canPaddle = true;
 		canoe.SetActive(false);
 		player.SetActive(false);
 		monty.SetActive(false);
@@ -64,6 +66,7 @@ public class TransitionHandler : MonoBehaviour
 		interactionsManager.SetActive(false);
 		pathwayCollider.SetActive(false);
 		spritesManager.SetActive(true);
+
 
 		//hide monty
 		//hide canoe object
