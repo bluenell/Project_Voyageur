@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
 	PlayerInventory inventory;
 	public int currentInventoryIndex;
+
 	public float switchRate = 2f;
 	float nextSwitchTime = 0f;
 	#endregion
@@ -120,12 +121,20 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if (Input.GetButtonDown("Button X"))
+		if (Input.GetButtonDown("Button A"))
 		{
-			UseItem();
+			if (currentInventoryIndex != 0)
+			{
+				UseItem();
+			}
+			else
+			{
+				HandleCanoe();
+			}
+			
 		}
 
-		if (Input.GetButtonDown("Button A"))
+		if (Input.GetButtonDown("Button X"))
 		{
 			HandleMonty();
 		}

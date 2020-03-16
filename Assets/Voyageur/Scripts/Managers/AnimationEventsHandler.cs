@@ -66,6 +66,11 @@ public class AnimationEventsHandler : MonoBehaviour
 		monty.GetComponent<MontySoundManager>().PlayFootsteps();
 	}
 
+	public void Paddle()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<CanoePaddle>().AddPaddleForce();
+	}
 
 
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CanoePaddle : MonoBehaviour
 {
-
-
 	Rigidbody2D rb;
 	River river;
 	Animator anim;
@@ -15,8 +13,8 @@ public class CanoePaddle : MonoBehaviour
 
 	[Header("Canoe Speed Variables")]
 	public float paddleForce;
-
-	public float speed;
+	public float paddleRate;
+	public float nextPaddleTime;
 
 	float tempTime = 0;
 
@@ -24,6 +22,9 @@ public class CanoePaddle : MonoBehaviour
 	int countMax = 3;
 	bool canPaddle;
 	bool beached;
+	bool stickReset;
+
+
 
 	// Start is called before the first frame update
 	void Start()
@@ -43,38 +44,41 @@ public class CanoePaddle : MonoBehaviour
 		}
 		else
 		{
-			Paddle();
-		}		
+			if (!beached)
+			{
+				movement = new Vector2(river.riverCurrent * Time.deltaTime, 0);
+				transform.Translate(movement);
+			}
+
+			if (Time.time > nextPaddleTime)
+			{
+				if (Input.GetAxis("Horizontal") > 0 && stickReset)
+				{
+					stickReset = false;
+					Paddle();
+					nextPaddleTime = Time.time + 1f / paddleRate;
+				}
+			}
+		}
+
+		if (Input.GetAxis("Horizontal") == 0)
+		{
+			stickReset = true;
+		}
 	}
 
 
 	void Paddle()
-	{ 
-		if (!beached)
+	{
+		if (canPaddle)
 		{
-			movement = new Vector2(river.riverCurrent * Time.deltaTime, 0);
-			transform.Translate(movement);
-		}
-
-		if (Input.GetButtonDown("Button B") && canPaddle)
-		{
-			counter = Time.time - tempTime;
-			if (counter < 1.2)
-			{
-				return;
-			}
-			tempTime = Time.time;
-
 			anim.SetTrigger("Paddle");
-
-			StartCoroutine(AddPaddleForce());
 		}
 	}
 
 
-	IEnumerator AddPaddleForce()
+	public void AddPaddleForce()
 	{
-		yield return new WaitForSeconds(0.6f);
 		rb.AddForce(new Vector2(paddleForce, 0));
 	}
 
