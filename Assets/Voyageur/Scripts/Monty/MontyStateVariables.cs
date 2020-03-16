@@ -18,6 +18,7 @@ public class MontyStateVariables : MonoBehaviour
 	public float walkSpeed;
 	public float runSpeed;
 	PolygonCollider2D pathwayBounds;
+	public bool movingTowardsPlayer;
 	
 
 	public float distanceToFollow;

@@ -102,7 +102,6 @@ public class PlayerController : MonoBehaviour
 
 	private void Update()
 	{
-		HandleCanoe();
 
 		if (Time.time >= nextSwitchTime)
 		{
@@ -121,22 +120,14 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if (Input.GetButtonDown("Button A"))
+		if (Input.GetButtonDown("Button A") && !montyStateManager.inFetch)
 		{
-			if (currentInventoryIndex != 0)
-			{
-				UseItem();
-			}
-			else
-			{
-				HandleCanoe();
-			}
-			
+			HandleMonty();
 		}
 
 		if (Input.GetButtonDown("Button X"))
 		{
-			HandleMonty();
+			WhistleMonty();
 		}
 		
 
@@ -225,8 +216,7 @@ public class PlayerController : MonoBehaviour
 		float moveX = Input.GetAxis("Horizontal");
 		float moveY = Input.GetAxis("Vertical");
 
-
-		if (Input.GetButtonDown("Button B") && inRangeOfCanoe && !hasCanoe)
+		if (inRangeOfCanoe && !hasCanoe)
 		{
 			currentInventoryIndex = 0;
 			anim.SetInteger("inventoryIndex", 0);
@@ -274,7 +264,7 @@ public class PlayerController : MonoBehaviour
 
 		}
 
-		if (Input.GetButtonDown("Button B") && hasCanoe && inCanoeZone)
+		if(hasCanoe && inCanoeZone)
 		{
 
 			parkingSpaceFound = true;
@@ -356,8 +346,16 @@ public class PlayerController : MonoBehaviour
 				Debug.Log("Throw Stick");
 
 			}
+		}		
+	}
+
+	void WhistleMonty()
+	{
+		if (!montyStateManager.inFetch)
+		{
+			playerSoundManager.PlayWhistle();
+			montyStateVariables.movingTowardsPlayer = true;
 		}
-		
 	}
 
 	public void ThrowStick()

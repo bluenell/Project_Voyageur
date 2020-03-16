@@ -190,19 +190,19 @@ public class MontyStateActions : MonoBehaviour
 
 	public void MoveTowards()
 	{
-		anim.SetBool("isSitting", false);
-		anim.SetBool("isWalking", false);
-		anim.SetBool("isRunning", true);
-		//Debug.Log("Moving Towards");
-		transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach,0,0), stateVariables.runSpeed * Time.deltaTime);
-		if (player.transform.position.x < transform.position.x)
-		{
-			sprite.flipX = true;
-		}
-		else
-		{
-			sprite.flipX = false;
-		}
+			anim.SetBool("isSitting", false);
+			anim.SetBool("isWalking", false);
+			anim.SetBool("isRunning", true);
+			//Debug.Log("Moving Towards");
+			transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach, 0, 0), stateVariables.runSpeed * Time.deltaTime);
+			if (player.transform.position.x < transform.position.x)
+			{
+				sprite.flipX = true;
+			}
+			else
+			{
+				sprite.flipX = false;
+			}
 	}
 
 	public void Follow()

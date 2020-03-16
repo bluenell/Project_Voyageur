@@ -40,22 +40,16 @@ public class MontyStateManager : MonoBehaviour
 	private void Update()
 	{
 		if (!inFetch)
-		{
-			if (Input.GetButtonDown("Button A"))
-			{
-				playerSoundManager.PlayWhistle();
-				movingToPlayer = true;
-			}
+		{			
 
-			if (movingToPlayer)
+			if (stateVariables.movingTowardsPlayer)
 			{
-
 				currentState = "move towards";
 				SwitchState();
 
 				if (stateVariables.distFromPlayer <= playerController.armsReach)
 				{
-					movingToPlayer = false;
+					stateVariables.movingTowardsPlayer = false;
 					currentState = "wait";
 					SwitchState();
 
