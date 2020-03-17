@@ -22,22 +22,26 @@ public class PlayerController : MonoBehaviour
 	public GameObject canoe;
 	public float defaultCanoeWalkSpeed;
 	float canoeWalkSpeed;
-	Transform canoePutDownTarget;
-	Transform canoePickUpTarget;
-	Transform currentParkingZone;
-	Transform playerTarget;
-	Transform targetY;
+
+
+	Transform pickUpTarget;
+	Transform putDownTarget;
+	Transform launchingTarget;
 
 
 	public bool inRangeOfCanoe;
 	public bool inRangeParkingSpace;
 	public bool inRangeOfLaunchingZone;
 
+	public bool targetFound;
+
 	public bool canPickUp;
 	public bool canPutDown;
 	public bool canLaunch;
 
 	public bool carryingCanoe;
+
+	public string canoeHandleType;
 	
 
 	#endregion
@@ -91,7 +95,7 @@ public class PlayerController : MonoBehaviour
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
 		transitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>();
 
-		canoePickUpTarget = canoe.transform.GetChild(0).transform;
+		pickUpTarget = canoe.transform.GetChild(0).transform;
 
 		montyObj = GameObject.Find("Monty");
 		montyStateActions = montyObj.GetComponent<MontyStateActions>();
@@ -136,17 +140,31 @@ public class PlayerController : MonoBehaviour
 		{
 			if (carryingCanoe && inRangeOfLaunchingZone)
 			{
-				HandleCanoe("launch");
+				targetFound = true;
+				canoeHandleType = "launch";
 			}
 			else if (carryingCanoe && inRangeParkingSpace)
 			{
-				HandleCanoe("putdown");
+				targetFound = true;
+				canoeHandleType = "putdown";
 			}
 			else if (!carryingCanoe && inRangeOfCanoe)
 			{
-				HandleCanoe("pickup");
+				targetFound = true;
+				canoeHandleType = "pickup";
+			}
+			else
+			{
+				targetFound = false;
+				canoeHandleType = "";
 			}
 		}
+
+		if (targetFound)
+		{
+			HandleCanoe(canoeHandleType);
+		}
+
 
 		if (Input.GetButtonDown("Button X"))
 		{
@@ -237,17 +255,36 @@ public class PlayerController : MonoBehaviour
 	{
 		if (type == "pickup")
 		{
-			Debug.Log(type);
-			carryingCanoe = true;
+			DisablePlayerInput();
+			MoveTowardsTarget(pickUpTarget);
+
+			if (CheckIfAtTarget(pickUpTarget))
+			{
+				Debug.Log("Picked Up");
+				targetFound = false;
+				carryingCanoe = true;
+
+				canoe.SetActive(false);
+				anim.SetTrigger("PickUp");
+				StartCoroutine(EnablePlayerInput(0.8f));
+			}	
+			
 		}
 		else if (type ==  "putdown")
 		{
-			Debug.Log(type);
-			carryingCanoe = false;
+			DisablePlayerInput();
+			MoveTowardsTarget(putDownTarget);
+
+			if (CheckIfAtTarget(putDownTarget))
+			{
+				Debug.Log("has been put down");
+				carryingCanoe = false;
+			}
+
+		
 		}
 		else if (type == "launch")
-		{
-			
+		{			
 			Debug.Log(type);
 			carryingCanoe = false;
 		}
@@ -356,14 +393,35 @@ public class PlayerController : MonoBehaviour
 
 	}
 
-	void LaunchCanoe()
-	{
-		Debug.Log("Launch canoe");
-	}
-
 	void MoveTowardsTarget(Transform target)
 	{
+		anim.SetBool("isMoving", true);
 		transform.position = Vector2.MoveTowards(transform.position, target.position, defaultXSpeed * Time.deltaTime);
+
+
+		if (transform.position.x > target.transform.position.x)
+		{
+			facingRight = false;
+			anim.SetBool("facingRight", facingRight);
+		}
+		else
+		{
+			facingRight = true;
+			anim.SetBool("facingRight", facingRight);
+		}
+
+	}
+
+	bool CheckIfAtTarget(Transform target)
+	{
+		if (transform.position == target.position)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	private void OnDrawGizmosSelected()
@@ -380,6 +438,7 @@ public class PlayerController : MonoBehaviour
 
 		if (other.gameObject.tag == "PutDownZone")
 		{
+			putDownTarget = other.gameObject.transform.GetChild(1).transform;
 			inRangeParkingSpace = true;
 
 		}
