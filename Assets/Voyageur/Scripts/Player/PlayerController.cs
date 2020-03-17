@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
-{ 
+{
 	#region Player Variables
 	[Header("Player")]
 	public float stamina;
@@ -27,9 +27,9 @@ public class PlayerController : MonoBehaviour
 	Transform canoePickUpTarget;
 	Transform currentParkingZone;
 	Transform playerTarget;
-	Vector2 targetY;
+	Transform targetY;
 
-	public bool canLaunch = false;
+	public bool canLaunch;
 
 	#endregion
 
@@ -39,15 +39,15 @@ public class PlayerController : MonoBehaviour
 	MontyStateActions montyStateActions;
 	GameObject montyObj;
 
-    #endregion
+	#endregion
 
-    #region Inventory
-    [Header("Items)")]
+	#region Inventory
+	[Header("Items)")]
 	public GameObject torch;
 	bool torchOn = false;
 
-	Vector3 rightTorchTransform = new Vector3(0.608f, 1.642f,0);
-	Vector3 leftTorchTransform = new Vector3(-0.608f,1.642f,0);
+	Vector3 rightTorchTransform = new Vector3(0.608f, 1.642f, 0);
+	Vector3 leftTorchTransform = new Vector3(-0.608f, 1.642f, 0);
 	Quaternion leftTorchRot;
 	Quaternion rightTorchRot;
 
@@ -93,6 +93,7 @@ public class PlayerController : MonoBehaviour
 		inCanoeZone = false;
 		hasCanoe = false;
 		inRangeOfCanoe = false;
+		canLaunch = false;
 
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
@@ -125,21 +126,28 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if (Input.GetButtonDown("Button A") && !montyStateManager.inFetch && !canLaunch)
+		if (Input.GetButtonDown("Button A"))
 		{
-			HandleMonty();
-		}
-
-		if (Input.GetButtonDown("Button A" ) && inRangeOfCanoe)
-		{
-			HandleCanoe();
+			if (hasCanoe && canLaunch)
+			{
+				LaunchCanoe();
+			}
+			else if (!hasCanoe && inRangeOfCanoe)
+			{
+				canoeTargetFound = true;
+			}
 		}
 
 		if (Input.GetButtonDown("Button X"))
 		{
 			WhistleMonty();
 		}
-		
+
+
+		if (canoeTargetFound)
+		{
+			HandleCanoe();
+		}
 
 	}
 
@@ -160,7 +168,7 @@ public class PlayerController : MonoBehaviour
 		{
 			rb.velocity = new Vector2(moveX * xSpeed, moveY * ySpeed);
 		}
-		
+
 
 		float yPos = transform.position.y;
 
@@ -197,7 +205,7 @@ public class PlayerController : MonoBehaviour
 
 		}
 
-		
+
 
 	}
 	//Detects input and what interacted with
@@ -223,119 +231,97 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe()
 	{
-		float moveX = Input.GetAxis("Horizontal");
-		float moveY = Input.GetAxis("Vertical");
+		currentInventoryIndex = 0;
+		anim.SetInteger("inventoryIndex", 0);
+		canoeTargetFound = true;
+		StartCoroutine(EnablePlayerInput(0));
+		xSpeed = 0;
+		ySpeed = 0;
+		canoeWalkSpeed = 0;
 
-		if (!canLaunch)
+
+		MoveTowardsTarget(canoePickUpTarget);
+		anim.SetBool("isMoving", true);
+
+
+		if (transform.position.x > canoePickUpTarget.transform.position.x)
 		{
-			if (inRangeOfCanoe && !hasCanoe)
-			{
-				currentInventoryIndex = 0;
-				anim.SetInteger("inventoryIndex", 0);
-
-				canoeTargetFound = true;
-				StartCoroutine(EnablePlayerInput(0));
-				xSpeed = 0;
-				ySpeed = 0;
-				canoeWalkSpeed = 0;
-			}
-
-			if (canoeTargetFound)
-			{
-
-				transform.position = Vector2.MoveTowards(transform.position, canoePickUpTarget.transform.position, defaultXSpeed * Time.deltaTime);
-				anim.SetBool("isMoving", true);
-
-
-				if (transform.position.x > canoePickUpTarget.transform.position.x)
-				{
-					facingRight = false;
-					anim.SetBool("facingRight", false);
-				}
-				else
-				{
-					facingRight = true;
-					anim.SetBool("facingRight", true);
-				}
-
-				if (transform.position == canoePickUpTarget.transform.position)
-				{
-					StartCoroutine(EnablePlayerInput(0.8f));
-					Debug.Log("At Canoe");
-
-					canoe.transform.SetParent(transform);
-					anim.SetTrigger("PickUp");
-					anim.SetBool("isCarrying", true);
-					canoe.SetActive(false);
-					hasCanoe = true;
-					canoeTargetFound = false;
-					anim.SetBool("isMoving", false);
-					StartCoroutine(EnablePlayerInput(0));
-
-				}
-
-			}
-
-
-			if (hasCanoe && inCanoeZone)
-			{
-
-				parkingSpaceFound = true;
-				parkingSpaceFound = true;
-				DisablePlayerInput();
-
-			}
-
-
-
-			if (parkingSpaceFound)
-			{
-
-				targetY = new Vector2(transform.position.x, currentParkingZone.position.y);
-				Debug.DrawLine(transform.position, targetY);
-				transform.position = Vector2.MoveTowards(transform.position, targetY, defaultCanoeWalkSpeed * Time.deltaTime);
-
-
-				anim.SetBool("isMoving", true);
-
-				if (transform.position.x > currentParkingZone.transform.position.x)
-				{
-					facingRight = false;
-					anim.SetBool("facingRight", false);
-				}
-				else
-				{
-					facingRight = true;
-					anim.SetBool("facingRight", true);
-				}
-
-
-				if (transform.position.y == currentParkingZone.transform.position.y)
-				{
-					StartCoroutine(EnablePlayerInput(0.8f));
-					Debug.Log("At Parking Space");
-					StartCoroutine(RevealCanoe(0.8f));
-
-					anim.SetTrigger("PutDown");
-					anim.SetBool("isCarrying", false);
-
-					hasCanoe = false;
-					parkingSpaceFound = false;
-					anim.SetBool("isMoving", false);
-					canoe.transform.SetParent(null);
-					canoe.transform.position = new Vector2(transform.position.x, canoePutDownTarget.transform.position.y);
-					transform.position = new Vector2(transform.position.x, playerTarget.transform.position.y);
-					StartCoroutine(EnablePlayerInput(0));
-
-				}
-			}
+			facingRight = false;
+			anim.SetBool("facingRight", false);
 		}
 		else
 		{
-			transitionHandler.Launch();
+			facingRight = true;
+			anim.SetBool("facingRight", true);
 		}
-		
-	} 
+
+		if (transform.position == canoePickUpTarget.transform.position)
+		{
+			StartCoroutine(EnablePlayerInput(0.8f));
+			Debug.Log("At Canoe");
+
+			canoe.transform.SetParent(transform);
+			anim.SetTrigger("PickUp");
+			anim.SetBool("isCarrying", true);
+			canoe.SetActive(false);
+			hasCanoe = true;
+			canoeTargetFound = false;
+			anim.SetBool("isMoving", false);
+			StartCoroutine(EnablePlayerInput(0));
+
+		}
+
+
+		if (hasCanoe && inCanoeZone)
+		{
+
+			parkingSpaceFound = true;
+			parkingSpaceFound = true;
+			DisablePlayerInput();
+
+		}
+
+		if (parkingSpaceFound)
+		{
+
+			targetY.position = new Vector2(transform.position.x, currentParkingZone.position.y);
+			Debug.DrawLine(transform.position, targetY.position);
+			MoveTowardsTarget(targetY);
+
+			anim.SetBool("isMoving", true);
+
+			if (transform.position.x > currentParkingZone.transform.position.x)
+			{
+				facingRight = false;
+				anim.SetBool("facingRight", false);
+			}
+			else
+			{
+				facingRight = true;
+				anim.SetBool("facingRight", true);
+			}
+
+
+			if (transform.position.y == currentParkingZone.transform.position.y)
+			{
+				StartCoroutine(EnablePlayerInput(0.8f));
+				Debug.Log("At Parking Space");
+				StartCoroutine(RevealCanoe(0.8f));
+
+				anim.SetTrigger("PutDown");
+				anim.SetBool("isCarrying", false);
+
+				hasCanoe = false;
+				parkingSpaceFound = false;
+				anim.SetBool("isMoving", false);
+				canoe.transform.SetParent(null);
+				canoe.transform.position = new Vector2(transform.position.x, canoePutDownTarget.transform.position.y);
+				transform.position = new Vector2(transform.position.x, playerTarget.transform.position.y);
+				StartCoroutine(EnablePlayerInput(0));
+
+			}
+		}
+	}
 
 	void HandleMonty()
 	{
@@ -364,7 +350,7 @@ public class PlayerController : MonoBehaviour
 				Debug.Log("Throw Stick");
 
 			}
-		}		
+		}
 	}
 
 	void WhistleMonty()
@@ -373,6 +359,32 @@ public class PlayerController : MonoBehaviour
 		{
 			playerSoundManager.PlayWhistle();
 			montyStateVariables.movingTowardsPlayer = true;
+		}
+	}
+
+	void CycleInventory(string dir)
+	{
+
+		if (dir == "right")
+		{
+			currentInventoryIndex++;
+			if (currentInventoryIndex == inventory.tools.Count)
+			{
+				currentInventoryIndex = 0;
+			}
+
+			//Debug.Log(inventory.tools[currentInventoryIndex]);
+			anim.SetInteger("inventoryIndex", currentInventoryIndex);
+		}
+		else if (dir == "left")
+		{
+			if (currentInventoryIndex == 0)
+			{
+				currentInventoryIndex = inventory.tools.Count;
+			}
+			currentInventoryIndex--;
+			anim.SetInteger("inventoryIndex", currentInventoryIndex);
+			//Debug.Log(inventory.tools[currentInventoryIndex]);
 		}
 	}
 
@@ -387,7 +399,7 @@ public class PlayerController : MonoBehaviour
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity = montyStateVariables.CalculateThrowVelocity();
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().freezeRotation = false;
 
-	}		
+	}
 
 	public void DisablePlayerInput()
 	{
@@ -395,7 +407,7 @@ public class PlayerController : MonoBehaviour
 		ySpeed = 0;
 		canoeWalkSpeed = 0;
 		movementDisabled = true;
-		
+
 	}
 
 	IEnumerator RevealCanoe(float time)
@@ -414,30 +426,14 @@ public class PlayerController : MonoBehaviour
 
 	}
 
-	void CycleInventory(string dir)
+	void LaunchCanoe()
 	{
+		Debug.Log("Launch canoe");
+	}
 
-		if (dir == "right")
-		{
-			currentInventoryIndex++;
-			if (currentInventoryIndex == inventory.tools.Count)
-			{
-				currentInventoryIndex = 0;
-			}
-			
-			//Debug.Log(inventory.tools[currentInventoryIndex]);
-			anim.SetInteger("inventoryIndex", currentInventoryIndex);
-		}
-		else if (dir == "left")
-		{
-			if (currentInventoryIndex == 0)
-			{
-				currentInventoryIndex = inventory.tools.Count;
-			}
-			currentInventoryIndex--;
-			anim.SetInteger("inventoryIndex", currentInventoryIndex);
-			//Debug.Log(inventory.tools[currentInventoryIndex]);
-		}
+	void MoveTowardsTarget(Transform target)
+	{
+		transform.position = Vector2.MoveTowards(transform.position, target.position, defaultXSpeed * Time.deltaTime);
 	}
 
 	private void OnDrawGizmosSelected()
@@ -447,11 +443,11 @@ public class PlayerController : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "CanoePickUpRange") 
+		if (other.gameObject.tag == "CanoePickUpRange")
 		{
 			inRangeOfCanoe = true;
 			//canoePickUpTarget = other.gameObject.transform.GetChild(0).transform;
-			
+
 		}
 
 		if (other.gameObject.tag == "PutDownZone")
@@ -484,7 +480,7 @@ public class PlayerController : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "CanoePickUpRange") 
+		if (other.gameObject.tag == "CanoePickUpRange")
 		{
 			inRangeOfCanoe = false;
 		}
@@ -499,7 +495,7 @@ public class PlayerController : MonoBehaviour
 			canLaunch = false;
 
 		}
-	}	
+	}
 }
 
 	
