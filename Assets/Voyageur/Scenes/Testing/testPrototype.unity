@@ -1320,7 +1320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -213.63252, y: -0.7765484, z: -10}
+  m_LocalPosition: {x: 541.72327, y: 9.593454, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -2221,7 +2221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 493751993}
   m_Layer: 0
-  m_Name: '- Spawn Points -'
+  m_Name: '- Spawn Points (0) -'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2853,9 +2853,10 @@ MonoBehaviour:
   spritesManager: {fileID: 391840399}
   playerSpawnPoints:
   - {fileID: 1330557925}
+  - {fileID: 493751992}
   canoeSpawnPoints:
   - {fileID: 1210163430}
-  - {fileID: 1210163430}
+  - {fileID: 493751992}
 --- !u!4 &632780869
 Transform:
   m_ObjectHideFlags: 0
@@ -3410,7 +3411,7 @@ GameObject:
   - component: {fileID: 778553551}
   m_Layer: 0
   m_Name: monty pathfinding
-  m_TagString: Untagged
+  m_TagString: PathwayTriggerBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3439,7 +3440,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3518,10 +3519,10 @@ PolygonCollider2D:
       - {x: 35.34288, y: 3.1853638}
       - {x: 36.20079, y: 2.2927628}
       - {x: 3.8245697, y: 2.4022064}
-      - {x: -5.0354767, y: 4.54253}
-      - {x: -16.487442, y: 5.2257996}
-      - {x: -20.092545, y: 4.4795685}
-      - {x: -19.49031, y: 2.984848}
+      - {x: -4.511917, y: 4.416836}
+      - {x: -10.829361, y: 4.9763336}
+      - {x: -14.032791, y: 4.912575}
+      - {x: -20.525589, y: 3.2685509}
       - {x: -27.863174, y: 2.0319443}
       - {x: -25.390335, y: 0.6365242}
       - {x: 49.624863, y: 0.3415413}
@@ -5211,8 +5212,7 @@ EdgeCollider2D:
   - {x: 59.584106, y: 3.6730914}
   - {x: 28.324524, y: 3.9863849}
   - {x: 19.382568, y: 6.4823947}
-  - {x: 7.5664673, y: 7.040775}
-  - {x: 2.6298218, y: 6.062755}
+  - {x: 10.003906, y: 6.6450076}
   - {x: 3.7091675, y: 4.641834}
   - {x: -5.3152466, y: 3.5353808}
   - {x: -2.5587158, y: 1.2764926}
@@ -5856,7 +5856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1330557926}
   m_Layer: 0
-  m_Name: '- Spawn Points - '
+  m_Name: '- Spawn Points (0) - '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7238,7 +7238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -213.63252, y: -0.7765484, z: -10}
+  m_LocalPosition: {x: 541.72327, y: 9.593454, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -9658,22 +9658,27 @@ PrefabInstance:
     - target: {fileID: 5589543232539467202, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: defaultXSpeed
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467202, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: defaultYSpeed
-      value: 5
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539467202, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: defaultCanoeWalkSpeed
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.4
+      value: 760.76
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.99
+      value: 9.379999
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -9816,12 +9821,12 @@ PrefabInstance:
     - target: {fileID: 3625638086280105392, guid: 7623248776c539749835c98c33870583,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.99
+      value: 749.37
       objectReference: {fileID: 0}
     - target: {fileID: 3625638086280105392, guid: 7623248776c539749835c98c33870583,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.51
+      value: 9.859999
       objectReference: {fileID: 0}
     - target: {fileID: 3625638086280105392, guid: 7623248776c539749835c98c33870583,
         type: 3}
@@ -9910,12 +9915,12 @@ PrefabInstance:
     - target: {fileID: 7643707581071067378, guid: 9a8f72a20b099f54d8e805cfd50a1e16,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.64
+      value: 759
       objectReference: {fileID: 0}
     - target: {fileID: 7643707581071067378, guid: 9a8f72a20b099f54d8e805cfd50a1e16,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.43
+      value: 10.8
       objectReference: {fileID: 0}
     - target: {fileID: 7643707581071067378, guid: 9a8f72a20b099f54d8e805cfd50a1e16,
         type: 3}
@@ -10007,7 +10012,7 @@ PrefabInstance:
     - target: {fileID: 9087984262083717162, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
       propertyPath: paddleForce
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}

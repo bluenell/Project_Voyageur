@@ -50,6 +50,7 @@ public class TransitionHandler : MonoBehaviour
 		pathwayCollider.SetActive(true);
 		spritesManager.SetActive(true);
 
+		Debug.Log(currentIsland);
 		currentIsland++;
 	}
 
