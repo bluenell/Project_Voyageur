@@ -23,6 +23,9 @@ public class IndividualInteractions : MonoBehaviour
 		spritesManager = GameObject.Find("ExtraSpritesManager").GetComponent<AdditionalSpritesManager>();
 		playerAnimator = player.transform.GetChild(0).GetComponent<Animator>();
 		montyStateManager = GameObject.Find("Monty").GetComponent<MontyStateManager>();
+
+		
+
 	}
 
 
