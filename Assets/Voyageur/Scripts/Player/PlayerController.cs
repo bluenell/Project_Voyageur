@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 	public bool canPutDown;
 	public bool canLaunch;
 
+
 	public bool carryingCanoe;
 
 	public string canoeHandleType;
@@ -141,17 +142,22 @@ public class PlayerController : MonoBehaviour
 			if (carryingCanoe && inRangeOfLaunchingZone)
 			{
 				targetFound = true;
-				canoeHandleType = "launch";
+				canoeHandleType = "beginLaunch";
 			}
 			else if (carryingCanoe && inRangeParkingSpace)
 			{
 				targetFound = true;
 				canoeHandleType = "putdown";
 			}
-			else if (!carryingCanoe && inRangeOfCanoe)
+			else if (!carryingCanoe && inRangeOfCanoe && !canLaunch)
 			{
 				targetFound = true;
 				canoeHandleType = "pickup";
+			}
+			else if (!carryingCanoe && inRangeOfCanoe && canLaunch)
+			{
+				targetFound = true;
+				canoeHandleType = "launch";
 			}
 			else
 			{
@@ -285,11 +291,9 @@ public class PlayerController : MonoBehaviour
 				StartCoroutine(RevealCanoe(0.8f));
 				StartCoroutine(EnablePlayerInput(0.8f));
 
-			}
-
-		
+			}		
 		}
-		else if (type == "launch")
+		else if (type == "beginLaunch")
 		{
 			DisablePlayerInput();
 			MoveTowardsTarget(putDownTarget);
@@ -305,10 +309,17 @@ public class PlayerController : MonoBehaviour
 
 				StartCoroutine(RevealCanoe(0.8f));
 				StartCoroutine(EnablePlayerInput(0.8f));
+				canLaunch = true;
 				Debug.Log("Launched");
-
-
 			}
+		}
+		else if (type == "launch")
+		{
+			canLaunch = false;
+			targetFound = false;
+			carryingCanoe = false;
+
+			transitionHandler.Launch();
 		}
 	}
 
