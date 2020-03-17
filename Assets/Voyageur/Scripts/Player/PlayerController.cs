@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
 	Transform pickUpTarget;
 	Transform putDownTarget;
-	Transform launchingTarget;
+	Transform spawnTarget;
 
 
 	public bool inRangeOfCanoe;
@@ -260,7 +260,6 @@ public class PlayerController : MonoBehaviour
 
 			if (CheckIfAtTarget(pickUpTarget))
 			{
-				Debug.Log("Picked Up");
 				targetFound = false;
 				carryingCanoe = true;
 
@@ -277,16 +276,39 @@ public class PlayerController : MonoBehaviour
 
 			if (CheckIfAtTarget(putDownTarget))
 			{
-				Debug.Log("has been put down");
+				targetFound = false;
 				carryingCanoe = false;
+
+				anim.SetTrigger("PutDown");
+				canoe.transform.position = spawnTarget.position;
+
+				StartCoroutine(RevealCanoe(0.8f));
+				StartCoroutine(EnablePlayerInput(0.8f));
+
 			}
 
 		
 		}
 		else if (type == "launch")
-		{			
-			Debug.Log(type);
-			carryingCanoe = false;
+		{
+			DisablePlayerInput();
+			MoveTowardsTarget(putDownTarget);
+
+			if (CheckIfAtTarget(putDownTarget))
+			{
+				targetFound = false;
+				carryingCanoe = false;
+
+				anim.SetTrigger("PutDown");
+
+				canoe.transform.position = spawnTarget.position;
+
+				StartCoroutine(RevealCanoe(0.8f));
+				StartCoroutine(EnablePlayerInput(0.8f));
+				Debug.Log("Launched");
+
+
+			}
 		}
 	}
 
@@ -439,6 +461,7 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.tag == "PutDownZone")
 		{
 			putDownTarget = other.gameObject.transform.GetChild(1).transform;
+			spawnTarget = other.gameObject.transform.GetChild(0).transform;
 			inRangeParkingSpace = true;
 
 		}
@@ -458,6 +481,8 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.tag == "LaunchingZone")
 		{
 			inRangeOfLaunchingZone = true;
+			putDownTarget = other.gameObject.transform.GetChild(1).transform;
+			spawnTarget = other.gameObject.transform.GetChild(0).transform;
 
 		}
 
