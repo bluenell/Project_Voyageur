@@ -262,9 +262,9 @@ public class PlayerController : MonoBehaviour
 		if (type == "pickup")
 		{
 			DisablePlayerInput();
-			MoveTowardsTarget(pickUpTarget);
+			MoveTowardsTarget(pickUpTarget, false);
 
-			if (CheckIfAtTarget(pickUpTarget))
+			if (CheckIfAtTarget(pickUpTarget, false))
 			{
 				targetFound = false;
 				carryingCanoe = true;
@@ -278,15 +278,15 @@ public class PlayerController : MonoBehaviour
 		else if (type ==  "putdown")
 		{
 			DisablePlayerInput();
-			MoveTowardsTarget(putDownTarget);
+			MoveTowardsTarget(putDownTarget, true);
 
-			if (CheckIfAtTarget(putDownTarget))
+			if (CheckIfAtTarget(putDownTarget, true))
 			{
 				targetFound = false;
 				carryingCanoe = false;
 
 				anim.SetTrigger("PutDown");
-				canoe.transform.position = spawnTarget.position;
+				canoe.transform.position = new Vector3(transform.position.x, putDownTarget.position.y, 0);
 
 				StartCoroutine(RevealCanoe(0.8f));
 				StartCoroutine(EnablePlayerInput(0.8f));
@@ -296,9 +296,9 @@ public class PlayerController : MonoBehaviour
 		else if (type == "beginLaunch")
 		{
 			DisablePlayerInput();
-			MoveTowardsTarget(putDownTarget);
+			MoveTowardsTarget(putDownTarget, false);
 
-			if (CheckIfAtTarget(putDownTarget))
+			if (CheckIfAtTarget(putDownTarget, false))
 			{
 				targetFound = false;
 				carryingCanoe = false;
@@ -426,10 +426,20 @@ public class PlayerController : MonoBehaviour
 
 	}
 
-	void MoveTowardsTarget(Transform target)
+	void MoveTowardsTarget(Transform target, bool onlyY)
 	{
+
 		anim.SetBool("isMoving", true);
-		transform.position = Vector2.MoveTowards(transform.position, target.position, defaultXSpeed * Time.deltaTime);
+
+		if (onlyY)
+		{
+			transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, target.position.y), defaultXSpeed * Time.deltaTime);
+		}
+		else
+		{
+			transform.position = Vector2.MoveTowards(transform.position, target.position, defaultXSpeed * Time.deltaTime);
+
+		}
 
 
 		if (transform.position.x > target.transform.position.x)
@@ -445,16 +455,31 @@ public class PlayerController : MonoBehaviour
 
 	}
 
-	bool CheckIfAtTarget(Transform target)
+	bool CheckIfAtTarget(Transform target, bool onlyY)
 	{
-		if (transform.position == target.position)
+		if (onlyY)
 		{
-			return true;
+			if (transform.position.y ==  target.position.y)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 		else
 		{
-			return false;
+			if (transform.position == target.position)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
+		
 	}
 
 	private void OnDrawGizmosSelected()
