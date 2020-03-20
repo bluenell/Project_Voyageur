@@ -133,7 +133,6 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-
 	void HandleInput()
 	{
 		if (Time.time >= nextSwitchTime)
@@ -223,6 +222,11 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetButtonDown("Button X") || Input.GetKeyDown(KeyCode.Q))
 		{
 			WhistleMonty();
+		}
+
+		if (Input.GetButtonDown("Button Select") || Input.GetKeyDown(KeyCode.Escape))
+		{
+			Debug.Log("Open Journal");
 		}
 
 	}
