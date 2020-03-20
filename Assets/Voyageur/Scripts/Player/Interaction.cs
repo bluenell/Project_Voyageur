@@ -6,6 +6,7 @@ public class Interaction : MonoBehaviour
 {
 	public string interactionName;
 	public bool complete;
+	public bool isInteractable;
 
 	public void MarkAsComplete()
 	{

@@ -13,7 +13,9 @@ public class IndividualInteractions : MonoBehaviour
 
 	public bool xPressed;
 	bool movingTowards = false;
+	public bool targetFound;
 
+	public int chopCount = 0;
 
 	private void Start()
 	{
@@ -29,14 +31,8 @@ public class IndividualInteractions : MonoBehaviour
 	}
 
 
-	private void Update()
-	{
-		if (Input.GetButtonDown("Button X") || (Input.GetKeyDown(KeyCode.Space)))
-		{
-			xPressed = true;
-		}
-		
-	}
+
+
 
 	Animator anim;
 
@@ -74,55 +70,29 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Chop()
 	{
-		bool chopping = false;
-		int chopCounter = 0;
-		GameObject walkTarget = manager.interaction.transform.GetChild(2).gameObject;
-		GameObject treeMain = manager.interaction.transform.GetChild(0).gameObject;
-		
-
-		if (xPressed && playerController.currentInventoryIndex == 1)
+		if (chopCount >2)
 		{
-			chopping = true;
-			xPressed = false;
-			Debug.Log("Sup");
+			manager.interaction.MarkAsComplete();
+
+		}
+		else
+		{
 			playerController.DisablePlayerInput();
-			movingTowards = true;			
-		}
-		else if (xPressed && playerController.currentInventoryIndex != 1)
-		{
-
-			xPressed = false;
-		}
-
-		if (movingTowards)
-		{
-			player.transform.position = Vector2.MoveTowards(player.transform.position, walkTarget.transform.position, playerController.defaultXSpeed* Time.deltaTime);
-		}
-
-
-		if (player.transform.position == walkTarget.transform.position)
-		{
-			movingTowards = false;
-			Debug.Log("At Target");
-			treeMain.GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[0];
-			playerAnimator.SetInteger("chopCounter", 1);
-
-			for (int i = 1; i < 4; i++)
+			if (playerController.CheckIfAtTarget(manager.interaction.transform.GetChild(0), false))
 			{
-				if (Input.GetButtonDown("Button X"))
-				{
-					treeMain.GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[i];
-					playerAnimator.SetInteger("chopCounter", i + 1);
-				}
+				targetFound = false;
+				playerController.usingAxe = false;
+				chopCount++;
+				playerAnimator.SetInteger("chopCounter", chopCount);				
+				Debug.Log(chopCount);
 			}
 
-			treeMain.SetActive(false);
-			manager.interaction.transform.GetChild(3).gameObject.SetActive(false);
-			manager.interaction.transform.GetChild(1).gameObject.SetActive(true);
-			StartCoroutine(playerController.EnablePlayerInput(0.5f));
-			playerAnimator.SetInteger("chopCounter", 3);
-			manager.interaction.gameObject.GetComponent<Interaction>().MarkAsComplete();
 		}
+
+		
+	
+
+		
 	}
 
 	void Collect()
@@ -174,7 +144,7 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Fetch()
 	{
-		Debug.Log("enter fetch");
+		//Debug.Log("enter fetch");
 		montyStateManager.inFetch = true;
 		montyStateManager.currentState = "fetch";
 		montyStateManager.SwitchState();

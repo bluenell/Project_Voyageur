@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
 	public string interactionType;
 	bool handlingCanoe = false;
 	bool playingFetch = false;
+	public bool usingAxe = false;
 
 	#endregion
 
@@ -86,6 +87,8 @@ public class PlayerController : MonoBehaviour
 	PlayerSoundManager playerSoundManager;
 	CameraHandler cameraHandler;
 	TransitionHandler transitionHandler;
+	InteractionsManager interactionsManager;
+	IndividualInteractions individualInteractions;
 	#endregion
 
 	void Start()
@@ -98,6 +101,8 @@ public class PlayerController : MonoBehaviour
 		playerSoundManager = GetComponent<PlayerSoundManager>();
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
 		transitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>();
+		interactionsManager = GetComponent<InteractionsManager>();
+		individualInteractions = GameObject.Find("Interactions Manager").GetComponent<IndividualInteractions>();
 
 		pickUpTarget = canoe.transform.GetChild(0).transform;
 
@@ -105,6 +110,8 @@ public class PlayerController : MonoBehaviour
 		montyStateActions = montyObj.GetComponent<MontyStateActions>();
 		montyStateManager = montyObj.GetComponent<MontyStateManager>();
 		montyStateVariables = montyObj.GetComponent<MontyStateVariables>();
+
+
 
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
@@ -131,6 +138,10 @@ public class PlayerController : MonoBehaviour
 		{
 			HandleMonty();
 		}
+		else if (usingAxe && !CheckIfAtTarget(interactionsManager.interaction.transform.GetChild(0), false) && !interactionsManager.interaction.complete)
+		{
+			MoveTowardsTarget(interactionsManager.interaction.transform.GetChild(0), false);
+		}
 	}
 
 	void HandleInput()
@@ -154,70 +165,83 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
 		{
-
-			if (carryingCanoe)
+			if (!usingAxe)
 			{
-				if (inRangeOfLaunchingZone)
+				if (carryingCanoe)
 				{
-					targetFound = true;
-					interactionType = "beginLaunch";
-				}
-				else if (inRangeParkingSpace)
-				{
+					if (inRangeOfLaunchingZone)
+					{
+						targetFound = true;
+						interactionType = "beginLaunch";
+					}
+					else if (inRangeParkingSpace)
+					{
 
-					targetFound = true;
-					interactionType = "putdown";
+						targetFound = true;
+						interactionType = "putdown";
+					}
 				}
-			}
-			else if (!carryingCanoe && montyStateManager.inFetch)
-			{
-				if (montyStateVariables.GetPlayerNearStick())
+				else if (!carryingCanoe && montyStateManager.inFetch)
 				{
-					playingFetch = true;
-					interactionType = "pickUpStick";
+					if (montyStateVariables.GetPlayerNearStick())
+					{
+						playingFetch = true;
+						interactionType = "pickUpStick";
+					}
+					else if (montyStateVariables.playerHasStick)
+					{
+						playingFetch = true;
+						interactionType = "throw";
+					}
+					else if (inRangeOfCanoe && !montyStateVariables.GetPlayerNearStick())
+					{
+						targetFound = true;
+						interactionType = "pickUpCanoe";
+					}
+					else
+					{
+						playingFetch = false;
+						interactionType = "";
+					}
+
 				}
-				else if (montyStateVariables.playerHasStick)
+				else if (!carryingCanoe && interactionsManager.inRange && !interactionsManager.interaction.complete)
 				{
-					playingFetch = true;
-					interactionType = "throw";
+					if (currentInventoryIndex == 1)
+					{
+						usingAxe = true;
+					}
 				}
-				else if (inRangeOfCanoe && !montyStateVariables.GetPlayerNearStick())
-				{
-					targetFound = true;
-					interactionType = "pickUpCanoe";
-				}
+
 				else
 				{
-					playingFetch = false;
-					interactionType = "";
+					if (!carryingCanoe && inRangeOfCanoe && !canLaunch)
+					{
+						targetFound = true;
+						interactionType = "pickUpCanoe";
+					}
+					else if (!carryingCanoe && inRangeOfCanoe && canLaunch)
+					{
+						targetFound = true;
+						interactionType = "launch";
+					}
+					else
+					{
+						targetFound = false;
+						interactionType = "";
+					}
 				}
-
 			}
 			else
 			{
-				if (!carryingCanoe && inRangeOfCanoe && !canLaunch)
-				{
-					targetFound = true;
-					interactionType = "pickUpCanoe";
-				}
-				else if (!carryingCanoe && inRangeOfCanoe && canLaunch)
-				{
-					targetFound = true;
-					interactionType = "launch";
-				}
-				else
-				{
-					targetFound = false;
-					interactionType = "";
-				}
+				playingFetch = false;
+				handlingCanoe = false;
+				
 			}
-		}
-		else
-		{
-			playingFetch = false;
-			handlingCanoe = false;
+
 
 		}
+			
 
 		if (Input.GetButtonDown("Button X") || Input.GetKeyDown(KeyCode.Q))
 		{
@@ -468,11 +492,12 @@ public class PlayerController : MonoBehaviour
 		xSpeed = defaultXSpeed;
 		ySpeed = defaultYSpeed;
 		canoeWalkSpeed = defaultCanoeWalkSpeed;
+		anim.SetBool("isMoving", true);
 		movementDisabled = false;
 
 	}
 
-	void MoveTowardsTarget(Transform target, bool onlyY)
+	public void MoveTowardsTarget(Transform target, bool onlyY)
 	{
 
 		anim.SetBool("isMoving", true);
@@ -501,7 +526,7 @@ public class PlayerController : MonoBehaviour
 
 	}
 
-	bool CheckIfAtTarget(Transform target, bool onlyY)
+	public bool CheckIfAtTarget(Transform target, bool onlyY)
 	{
 		if (onlyY)
 		{
@@ -518,6 +543,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if (transform.position == target.position)
 			{
+				anim.SetBool("isMoving", false);
 				return true;
 			}
 			else
