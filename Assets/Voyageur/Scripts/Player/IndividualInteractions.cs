@@ -74,7 +74,7 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Chop()
 	{
-		bool chopping;
+		bool chopping = false;
 		int chopCounter = 0;
 		GameObject walkTarget = manager.interaction.transform.GetChild(2).gameObject;
 		GameObject treeMain = manager.interaction.transform.GetChild(0).gameObject;

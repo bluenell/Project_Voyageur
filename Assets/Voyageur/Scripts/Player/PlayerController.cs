@@ -9,15 +9,19 @@ public class PlayerController : MonoBehaviour
 	[Header("Player")]
 	public float stamina;
 	public float defaultXSpeed, defaultYSpeed;
+	[HideInInspector]
 	public bool isMoving;
+	[HideInInspector]
 	public bool facingRight;
 	public float armsReach;
+
 	float xSpeed, ySpeed;
+	[HideInInspector]
 	public bool movementDisabled;
 
 	#endregion
 
-	#region Canoe Variables
+	#region Interaction Variables
 	[Header("Canoe")]
 	public GameObject canoe;
 	public float defaultCanoeWalkSpeed;
@@ -28,22 +32,21 @@ public class PlayerController : MonoBehaviour
 	Transform putDownTarget;
 	Transform spawnTarget;
 
+	bool inRangeOfCanoe;
+	bool inRangeParkingSpace;
+	bool inRangeOfLaunchingZone;
 
-	public bool inRangeOfCanoe;
-	public bool inRangeParkingSpace;
-	public bool inRangeOfLaunchingZone;
+	bool targetFound;
 
-	public bool targetFound;
+	bool canPickUp;
+	bool canPutDown;
+	bool canLaunch;
 
-	public bool canPickUp;
-	public bool canPutDown;
-	public bool canLaunch;
+	bool carryingCanoe;
 
-
-	public bool carryingCanoe;
-
-	public string canoeHandleType;
-	
+	public string interactionType;
+	bool handlingCanoe = false;
+	bool playingFetch = false;
 
 	#endregion
 
@@ -103,8 +106,6 @@ public class PlayerController : MonoBehaviour
 		montyStateManager = montyObj.GetComponent<MontyStateManager>();
 		montyStateVariables = montyObj.GetComponent<MontyStateVariables>();
 
-
-
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
 
@@ -112,23 +113,38 @@ public class PlayerController : MonoBehaviour
 		ySpeed = defaultYSpeed;
 		canoeWalkSpeed = defaultCanoeWalkSpeed;
 	}
-	void FixedUpdate()
+	private void FixedUpdate()
 	{
 		Move();
 	}
 
 	private void Update()
 	{
+	
+	HandleInput();
 
+		if (targetFound)
+		{
+			HandleCanoe(interactionType);
+		}
+		else if (playingFetch)
+		{
+			HandleMonty();
+		}
+	}
+
+
+	void HandleInput()
+	{
 		if (Time.time >= nextSwitchTime)
 		{
-			if (Input.GetButtonDown("InventoryLeft"))
+			if (Input.GetButtonDown("InventoryLeft") || Input.GetAxis("Mouse ScrollWheel") <0)
 			{
 				playerSoundManager.PlayItemSwitch();
 				CycleInventory("left");
 				nextSwitchTime = Time.time + 1f / switchRate;
 			}
-			if (Input.GetButtonDown("InventoryRight"))
+			if (Input.GetButtonDown("InventoryRight") || Input.GetAxis("Mouse ScrollWheel") > 0)
 			{
 				playerSoundManager.PlayItemSwitch();
 				CycleInventory("right");
@@ -137,51 +153,80 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if (Input.GetButtonDown("Button A"))
+		if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
 		{
-			if (carryingCanoe && inRangeOfLaunchingZone)
+
+			if (carryingCanoe)
 			{
-				targetFound = true;
-				canoeHandleType = "beginLaunch";
+				if (inRangeOfLaunchingZone)
+				{
+					targetFound = true;
+					interactionType = "beginLaunch";
+				}
+				else if (inRangeParkingSpace)
+				{
+
+					targetFound = true;
+					interactionType = "putdown";
+				}
 			}
-			else if (carryingCanoe && inRangeParkingSpace)
+			else if (!carryingCanoe && montyStateManager.inFetch)
 			{
-				targetFound = true;
-				canoeHandleType = "putdown";
-			}
-			else if (!carryingCanoe && inRangeOfCanoe && !canLaunch)
-			{
-				targetFound = true;
-				canoeHandleType = "pickup";
-			}
-			else if (!carryingCanoe && inRangeOfCanoe && canLaunch)
-			{
-				targetFound = true;
-				canoeHandleType = "launch";
+				if (montyStateVariables.GetPlayerNearStick())
+				{
+					playingFetch = true;
+					interactionType = "pickUpStick";
+				}
+				else if (montyStateVariables.playerHasStick)
+				{
+					playingFetch = true;
+					interactionType = "throw";
+				}
+				else if (inRangeOfCanoe && !montyStateVariables.GetPlayerNearStick())
+				{
+					targetFound = true;
+					interactionType = "pickUpCanoe";
+				}
+				else
+				{
+					playingFetch = false;
+					interactionType = "";
+				}
+
 			}
 			else
 			{
-				targetFound = false;
-				canoeHandleType = "";
+				if (!carryingCanoe && inRangeOfCanoe && !canLaunch)
+				{
+					targetFound = true;
+					interactionType = "pickUpCanoe";
+				}
+				else if (!carryingCanoe && inRangeOfCanoe && canLaunch)
+				{
+					targetFound = true;
+					interactionType = "launch";
+				}
+				else
+				{
+					targetFound = false;
+					interactionType = "";
+				}
 			}
 		}
-
-		if (targetFound)
+		else
 		{
-			HandleCanoe(canoeHandleType);
+			playingFetch = false;
+			handlingCanoe = false;
+
 		}
 
-
-		if (Input.GetButtonDown("Button X"))
+		if (Input.GetButtonDown("Button X") || Input.GetKeyDown(KeyCode.Q))
 		{
 			WhistleMonty();
 		}
 
-
 	}
 
-
-	//Controls the player movment when not holding the canoe
 	void Move()
 	{
 		float moveX = Input.GetAxisRaw("Horizontal");
@@ -236,7 +281,6 @@ public class PlayerController : MonoBehaviour
 
 
 	}
-	//Detects input and what interacted with
 
 	void UseItem()
 	{
@@ -259,7 +303,10 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe(string type)
 	{
-		if (type == "pickup")
+		currentInventoryIndex = 0;
+		anim.SetInteger("inventoryIndex", 0);
+
+		if (type == "pickUpCanoe")
 		{
 			DisablePlayerInput();
 			MoveTowardsTarget(pickUpTarget, false);
@@ -269,8 +316,9 @@ public class PlayerController : MonoBehaviour
 				targetFound = false;
 				carryingCanoe = true;
 
-				canoe.SetActive(false);
+				
 				anim.SetTrigger("PickUp");
+				canoe.SetActive(false);
 				StartCoroutine(EnablePlayerInput(0.8f));
 			}	
 			
@@ -325,10 +373,8 @@ public class PlayerController : MonoBehaviour
 
 	void HandleMonty()
 	{
-		if (montyStateManager.inFetch)
-		{
 			//checking if monty has the stick and the player is within range of picking it up
-			if (montyStateVariables.montyHasStick && montyStateVariables.GetPlayerDistanceFromStick() <= montyStateVariables.GetFetchStick().GetComponent<Stick>().range)
+			if (interactionType == "pickUpStick")
 			{
 				montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 				DisablePlayerInput();
@@ -340,17 +386,13 @@ public class PlayerController : MonoBehaviour
 				montyStateVariables.GetFetchStick().transform.position = transform.GetChild(3).transform.position;
 				montyStateVariables.playerHasStick = true;
 				montyStateVariables.montyHasStick = false;
-
-
-
-			}
-			else if (montyStateVariables.playerHasStick)
+			}	
+			else if (interactionType == "throw")
 			{
 				anim.SetTrigger("throwStick");
 				Debug.Log("Throw Stick");
 
 			}
-		}
 	}
 
 	void WhistleMonty()
@@ -503,6 +545,7 @@ public class PlayerController : MonoBehaviour
 		}
 		if (other.gameObject.tag == "FetchZoneExit")
 		{
+			playingFetch = false;
 			montyStateManager.inFetch = false;
 			montyStateManager.currentState = "roam";
 			montyStateManager.SwitchState();

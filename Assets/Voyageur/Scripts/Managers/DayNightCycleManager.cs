@@ -17,7 +17,6 @@ public class DayNightCycleManager : MonoBehaviour
 
 	public float timeScale = 0.8f; //how quickly it takes to transition from one hour to the next. A value of 1 is one change per second.
 	float lerpValue;
-	bool isChanging; //returns true when the cycle is changing. 
 
 	//public Text timeText;
 
@@ -53,16 +52,15 @@ public class DayNightCycleManager : MonoBehaviour
 		{
 			colourArrayIndex++;
 			globalLight.color = colours[colourArrayIndex % colours.Length];
-			isChanging = false;
 			lerpValue = 0f;
 		}
 		else
 		{
+			
 			lerpValue += timeScale * Time.deltaTime;
 			int firstColor = colourArrayIndex % colours.Length;
 			int secondColor = (colourArrayIndex + 1) % colours.Length;
 			globalLight.color = Color.Lerp(colours[firstColor], colours[secondColor], lerpValue);
-
 			camera.backgroundColor = Color.Lerp(colours[firstColor], colours[secondColor], lerpValue);
 
 		}

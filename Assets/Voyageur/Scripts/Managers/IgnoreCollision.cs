@@ -6,9 +6,9 @@ public class IgnoreCollision : MonoBehaviour
 {
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.gameObject.layer == 16)
+		if (collision.gameObject.layer == 12)
 		{
-			Physics2D.IgnoreLayerCollision(12, 16);
+			Physics2D.IgnoreLayerCollision(16, 12);
 		}
 	}
 

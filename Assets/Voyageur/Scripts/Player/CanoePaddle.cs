@@ -9,17 +9,12 @@ public class CanoePaddle : MonoBehaviour
 	Animator anim;
 
 	Vector2 movement;
-	//Vector2 momementum = new Vector2();
 
 	[Header("Canoe Speed Variables")]
 	public float paddleForce;
 	public float paddleRate;
 	public float nextPaddleTime;
 
-	float tempTime = 0;
-
-	float counter = 6;
-	int countMax = 3;
 	public bool canPaddle;
 	public bool beached;
 	bool stickReset;
