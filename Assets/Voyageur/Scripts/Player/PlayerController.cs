@@ -224,7 +224,7 @@ public class PlayerController : MonoBehaviour
 			WhistleMonty();
 		}
 
-		if (Input.GetButtonDown("Button Select") || Input.GetKeyDown(KeyCode.Escape))
+		if (Input.GetButtonDown("Button Select") || Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Button Start"))
 		{
 			Debug.Log("Open Journal");
 		}
