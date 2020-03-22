@@ -34,17 +34,16 @@ public class MontyStateVariables : MonoBehaviour
 	[Header("Fetch Variables")]
 	public float throwHeight;
 	public float throwGravity;
-	[HideInInspector]
 	public bool montyHasStick = false;
-	[HideInInspector]
+
 	public bool playerHasStick = false;
-	[HideInInspector]
+
 	public bool stickThrown = false;
-	[HideInInspector]
+
 	public bool montyReturningStick = false;
-	[HideInInspector]
+
 	public int throwCount;
-	[HideInInspector]
+
 	public bool waitedAtStick = false;
 
 

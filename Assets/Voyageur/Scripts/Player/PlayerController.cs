@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
 	bool carryingCanoe;
 
 	public string interactionType;
-	bool handlingCanoe = false;
 	bool playingFetch = false;
 	public bool usingAxe = false;
 
@@ -128,7 +127,8 @@ public class PlayerController : MonoBehaviour
 	private void Update()
 	{
 	
-	HandleInput();
+		HandleInput();
+
 
 		if (targetFound)
 		{
@@ -200,11 +200,13 @@ public class PlayerController : MonoBehaviour
 					}
 					else
 					{
+						targetFound = false;
 						playingFetch = false;
 						interactionType = "";
 					}
 
 				}
+
 				else if (!carryingCanoe && interactionsManager.inRange && !interactionsManager.interaction.complete)
 				{
 					if (currentInventoryIndex == 1)
@@ -213,14 +215,14 @@ public class PlayerController : MonoBehaviour
 					}
 				}
 
-				else
+				else if (!carryingCanoe)
 				{
-					if (!carryingCanoe && inRangeOfCanoe && !canLaunch)
+					if ( inRangeOfCanoe && !canLaunch)
 					{
 						targetFound = true;
 						interactionType = "pickUpCanoe";
 					}
-					else if (!carryingCanoe && inRangeOfCanoe && canLaunch)
+					else if (inRangeOfCanoe && canLaunch)
 					{
 						targetFound = true;
 						interactionType = "launch";
@@ -232,16 +234,14 @@ public class PlayerController : MonoBehaviour
 					}
 				}
 			}
-			else
-			{
-				playingFetch = false;
-				handlingCanoe = false;
-				
-			}
-
+		}
+		else
+		{
+			playingFetch = false;
+			targetFound = false;
 
 		}
-			
+
 
 		if (Input.GetButtonDown("Button X") || Input.GetKeyDown(KeyCode.Q))
 		{
@@ -354,16 +354,16 @@ public class PlayerController : MonoBehaviour
 		else if (type ==  "putdown")
 		{
 			DisablePlayerInput();
-			MoveTowardsTarget(putDownTarget, true);
+			MoveTowardsTarget(spawnTarget, true);
 
-			if (CheckIfAtTarget(putDownTarget, true))
+			if (CheckIfAtTarget(spawnTarget, true))
 			{
 				targetFound = false;
 				carryingCanoe = false;
 
 				anim.SetTrigger("PutDown");
-				canoe.transform.position = new Vector3(transform.position.x, putDownTarget.position.y, 0);
-
+				canoe.transform.position = new Vector3(transform.position.x, spawnTarget.position.y, 0);
+				transform.position = canoe.transform.GetChild(0).transform.position;
 				StartCoroutine(RevealCanoe(0.8f));
 				StartCoroutine(EnablePlayerInput(0.8f));
 
@@ -415,11 +415,10 @@ public class PlayerController : MonoBehaviour
 				montyStateVariables.playerHasStick = true;
 				montyStateVariables.montyHasStick = false;
 			}	
-			else if (interactionType == "throw")
+			if (interactionType == "throw")
 			{
 				anim.SetTrigger("throwStick");
 				Debug.Log("Throw Stick");
-
 			}
 	}
 
@@ -492,14 +491,12 @@ public class PlayerController : MonoBehaviour
 		xSpeed = defaultXSpeed;
 		ySpeed = defaultYSpeed;
 		canoeWalkSpeed = defaultCanoeWalkSpeed;
-		anim.SetBool("isMoving", true);
 		movementDisabled = false;
 
 	}
 
 	public void MoveTowardsTarget(Transform target, bool onlyY)
 	{
-
 		anim.SetBool("isMoving", true);
 
 		if (onlyY)
@@ -543,7 +540,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if (transform.position == target.position)
 			{
-				anim.SetBool("isMoving", false);
+				
 				return true;
 			}
 			else
