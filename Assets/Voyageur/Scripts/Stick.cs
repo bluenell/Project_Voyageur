@@ -42,7 +42,7 @@ public class Stick : MonoBehaviour
 				}
 			}
 
-			if (transform.position.x == stateVariables.GetFetchStartingPoint().x && transform.position.y == stateVariables.GetFetchStartingPoint().y)
+			if (transform.position == stateVariables.GetFetchStartingPoint().position)
 			{
 				Debug.Log("hit ground");
 				hitGround = true;

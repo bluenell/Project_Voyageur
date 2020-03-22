@@ -94,11 +94,13 @@ public class MontyStateActions : MonoBehaviour
 		//checking if the stick hasn't been thrown yet, or monty is bringing the stick back (when to move monty to the start point)
 		if (!stateVariables.stickThrown || stateVariables.montyReturningStick)
 		{
-			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint(), stateVariables.runSpeed*Time.deltaTime);
+			
+			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint().position, stateVariables.runSpeed*Time.deltaTime);
 			anim.SetBool("isWalking", false);
 			anim.SetBool("isSitting", false);
 			anim.SetBool("isRunning", true);
 			stateVariables.montyHasStick = false;
+			stateVariables.waitedAtStick = false;
 
 			if (stateVariables.montyReturningStick)
 			{
@@ -113,7 +115,7 @@ public class MontyStateActions : MonoBehaviour
 		else if (stateVariables.stickThrown)
 		{
 			cameraHandler.SwitchToMonty();
-			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, stateVariables.runSpeed * Time.deltaTime);
+			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, (stateVariables.runSpeed - 2) * Time.deltaTime);
 			anim.SetBool("isWalking", false);
 			anim.SetBool("isSitting", false);
 			anim.SetBool("isRunning", true);
@@ -122,7 +124,7 @@ public class MontyStateActions : MonoBehaviour
 		}
 
 		//checking if monty is at the starting point
-		if (transform.position.x == stateVariables.GetFetchStartingPoint().x && transform.position.y == stateVariables.GetFetchStartingPoint().y)
+		if (transform.position == stateVariables.GetFetchStartingPoint().position)
 		{
 			cameraHandler.SwitchToPlayer();
 			//Resetting animator and facing in the correct spot
@@ -162,21 +164,15 @@ public class MontyStateActions : MonoBehaviour
 		}
 
 		//checking if monty is at the stick after being thrown
-		if (transform.position.x == stateVariables.GetThrowTarget().position.x && transform.position.y == stateVariables.GetThrowTarget().position.y)
+		if (transform.position == stateVariables.GetThrowTarget().position)
 		{
 			Debug.Log("At thrown stick");
-			anim.SetBool("isRunning", false);
-			StartCoroutine(WaitForTime(2));
+			anim.SetBool("isRunning", false);			
 
-			if (stateVariables.waitedAtStick)
+			if (!stateVariables.waitedAtStick)
 			{
-				stateVariables.waitedAtStick = false;
-				sprite.flipX = true;
-				stateVariables.montyReturningStick = true;
-				stateVariables.GetFetchStick().position = stateVariables.GetStickSpawnLocation().position;
-				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-			}
-			
+				StartCoroutine(WaitForTime(2));
+			}			
 		}
 	}
 	
@@ -190,19 +186,19 @@ public class MontyStateActions : MonoBehaviour
 
 	public void MoveTowards()
 	{
-		anim.SetBool("isSitting", false);
-		anim.SetBool("isWalking", false);
-		anim.SetBool("isRunning", true);
-		//Debug.Log("Moving Towards");
-		transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach,0,0), stateVariables.runSpeed * Time.deltaTime);
-		if (player.transform.position.x < transform.position.x)
-		{
-			sprite.flipX = true;
-		}
-		else
-		{
-			sprite.flipX = false;
-		}
+			anim.SetBool("isSitting", false);
+			anim.SetBool("isWalking", false);
+			anim.SetBool("isRunning", true);
+			//Debug.Log("Moving Towards");
+			transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach, 0, 0), stateVariables.runSpeed * Time.deltaTime);
+			if (player.transform.position.x < transform.position.x)
+			{
+				sprite.flipX = true;
+			}
+			else
+			{
+				sprite.flipX = false;
+			}
 	}
 
 	public void Follow()
@@ -233,5 +229,9 @@ public class MontyStateActions : MonoBehaviour
 	{
 		yield return new WaitForSeconds(time);
 		stateVariables.waitedAtStick = true;
+		sprite.flipX = true;
+		stateVariables.montyReturningStick = true;
+		stateVariables.GetFetchStick().position = stateVariables.GetStickSpawnLocation().position;
+		stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 	}
 }

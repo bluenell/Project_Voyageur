@@ -84,7 +84,7 @@ GameObject:
   m_Layer: 13
   m_Name: stick holder
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -183,13 +183,13 @@ GameObject:
   - component: {fileID: 5589543232539467203}
   - component: {fileID: 5589543232539467201}
   - component: {fileID: 5589543232539467200}
-  - component: {fileID: 5589543232539467202}
   - component: {fileID: 5589543232539467207}
-  - component: {fileID: 2582770787796774023}
-  - component: {fileID: 2582770787796774020}
   - component: {fileID: 5589543232539466301}
+  - component: {fileID: 2582770787796774020}
   - component: {fileID: 5589543232539466302}
-  m_Layer: 13
+  - component: {fileID: 5589543232539467202}
+  - component: {fileID: 2582770787796774023}
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -203,7 +203,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5589543232539466300}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.7, y: -7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -261,6 +261,70 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7063673, y: 0.3079548}
   m_EdgeRadius: 0
+--- !u!114 &5589543232539467207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5589543232539466300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f034c1ac7a87b449ed6fad7badbade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5589543232539466301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5589543232539466300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
+--- !u!114 &2582770787796774020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5589543232539466300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329d95c1e3099344d8c6c07bcc4e2f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interaction: {fileID: 0}
+--- !u!114 &5589543232539466302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5589543232539466300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ea68ffc3c30fe42bcfdecfe3016bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddleVolume: 0
+  footStepsVolume: 1
+  footStepsInWaterVolume: 0.843
+  torchClickVolume: 0.2
+  soundEvents:
+  - event:/Character/Footstep
+  - event:/Character/Paddling
+  - event:/Character/Exit_Canoe
+  - event:/Character/Torch_ON
+  - event:/Character/Drag_Canoe
+  - event:/Character/island1_chop_3
+  - event:/Character/Switch_Item
+  - event:/Character/Whistle
+  - event:/Character/Torch_OFF
 --- !u!114 &5589543232539467202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,28 +338,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamina: 0
-  defaultXSpeed: 5
-  defaultYSpeed: 5
+  defaultXSpeed: 7
+  defaultYSpeed: 7
   isMoving: 0
   facingRight: 0
   armsReach: 2
+  movementDisabled: 0
   canoe: {fileID: 0}
-  defaultCanoeWalkSpeed: 3
+  defaultCanoeWalkSpeed: 7
   torch: {fileID: 2582770786376780525}
   currentInventoryIndex: 0
   switchRate: 2
---- !u!114 &5589543232539467207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5589543232539466300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f034c1ac7a87b449ed6fad7badbade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2582770787796774023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,54 +369,6 @@ MonoBehaviour:
   hasWood: 0
   hasFish: 0
   hasStick: 0
---- !u!114 &2582770787796774020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5589543232539466300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 329d95c1e3099344d8c6c07bcc4e2f94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: {fileID: 0}
---- !u!114 &5589543232539466301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5589543232539466300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: -1
---- !u!114 &5589543232539466302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5589543232539466300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ea68ffc3c30fe42bcfdecfe3016bac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paddleVolume: 0
-  footStepsVolume: 1
-  footStepsInWaterVolume: 0.5
-  torchClickVolume: 0.2
-  soundEvents:
-  - event:/Character/Footstep
-  - event:/Character/Paddling
-  - event:/Character/Footstep
-  - event:/Character/Torch_ON
-  - event:/Character/Torch_OFF
 --- !u!1 &5589543232795568478
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class MontyStateVariables : MonoBehaviour
 	public float walkSpeed;
 	public float runSpeed;
 	PolygonCollider2D pathwayBounds;
+	public bool movingTowardsPlayer;
 	
 
 	public float distanceToFollow;
@@ -33,17 +34,16 @@ public class MontyStateVariables : MonoBehaviour
 	[Header("Fetch Variables")]
 	public float throwHeight;
 	public float throwGravity;
-	[HideInInspector]
 	public bool montyHasStick = false;
-	[HideInInspector]
+
 	public bool playerHasStick = false;
-	[HideInInspector]
+
 	public bool stickThrown = false;
-	[HideInInspector]
+
 	public bool montyReturningStick = false;
-	[HideInInspector]
+
 	public int throwCount;
-	[HideInInspector]
+
 	public bool waitedAtStick = false;
 
 
@@ -115,13 +115,13 @@ public class MontyStateVariables : MonoBehaviour
 
 		if (CheckIfPointInCollider(location))
 		{
-			Debug.DrawLine(transform.position, location,Color.green,20f);
+			//Debug.DrawLine(transform.position, location,Color.green,20f);
 			
 			return location;
 		}
 		else
 		{
-			Debug.DrawLine(transform.position, location, Color.red, 0.1f);
+			//Debug.DrawLine(transform.position, location, Color.red, 0.1f);
 			//Debug.Log("Invalid Location:" + location);
 			return GetRandomPointInBounds(bounds);
 		}
@@ -147,9 +147,9 @@ public class MontyStateVariables : MonoBehaviour
 
 	#region Fetch
 
-	public Vector3 GetFetchStartingPoint()
+	public Transform GetFetchStartingPoint()
 	{
-		return interactionsManager.interaction.gameObject.transform.GetChild(0).transform.position;
+		return interactionsManager.interaction.gameObject.transform.GetChild(0).transform;
 	}
 
 	public Transform GetFetchStick()
@@ -161,6 +161,18 @@ public class MontyStateVariables : MonoBehaviour
 	{
 
 		return interactionsManager.interaction.gameObject.transform.GetChild(2);
+	}
+
+	public bool GetPlayerNearStick()
+	{
+		if (Vector3.Distance(player.transform.position, GetFetchStick().position) <= GetFetchStick().GetComponent<Stick>().range)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	public Transform GetStickSpawnLocation()

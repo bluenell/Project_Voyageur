@@ -76,4 +76,10 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[7]);
 		playerState.start();
 	}
+
+	public void PlayTreeChop(int count)
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[count]);
+		playerState.start();
+	}
 }

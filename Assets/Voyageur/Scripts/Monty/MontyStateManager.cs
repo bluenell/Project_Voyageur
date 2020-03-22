@@ -40,27 +40,19 @@ public class MontyStateManager : MonoBehaviour
 	private void Update()
 	{
 		if (!inFetch)
-		{
-			if (Input.GetButtonDown("Button A"))
+		{			
+			if (stateVariables.movingTowardsPlayer)
 			{
-				playerSoundManager.PlayWhistle();
-				movingToPlayer = true;
-			}
-
-			if (movingToPlayer)
-			{
-
 				currentState = "move towards";
 				SwitchState();
 
 				if (stateVariables.distFromPlayer <= playerController.armsReach)
 				{
-					movingToPlayer = false;
+					stateVariables.movingTowardsPlayer = false;
 					currentState = "wait";
 					SwitchState();
 
 				}
-
 			}
 
 			if (currentState == "wait")
@@ -77,7 +69,7 @@ public class MontyStateManager : MonoBehaviour
 
 			}
 
-			if (Input.GetButton("Button A") && currentState != "move towards")
+			if (Input.GetButton("Button X") && currentState != "move towards")
 			{
 				movingToPlayer = true;
 				currentState = "follow";

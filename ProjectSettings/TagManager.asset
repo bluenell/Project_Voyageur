@@ -21,6 +21,7 @@ TagManager:
   - ParkingSpot
   - FetchZoneExit
   - FetchZoneSpawner
+  - LaunchingZone
   layers:
   - Default
   - TransparentFX
