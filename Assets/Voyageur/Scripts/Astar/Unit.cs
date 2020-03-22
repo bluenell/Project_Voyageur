@@ -9,9 +9,12 @@ public class Unit : MonoBehaviour
     Vector3[] path;
     int targetIndex;
 
-    private void Start()
+    private void Update()
     {
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+
+            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        
+        
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSucessfull)
