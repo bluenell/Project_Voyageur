@@ -93,7 +93,6 @@ public class MyGrid : MonoBehaviour
 		{
 			Node playerNode = NodeFromWorldPoint(player.position);
 			Node seekerNode = NodeFromWorldPoint(seeker.position);
-
 			foreach (Node n in grid)
 			{
 				Gizmos.color = (n.walkable) ? Color.white : Color.red;

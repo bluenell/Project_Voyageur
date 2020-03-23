@@ -2,14 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public class PathfindingTest : MonoBehaviour
 {
-    float speed = 10;
+    MontyStateVariables variables;
+    public BoxCollider2D followTargetCollider;
+    public PolygonCollider2D pathwayBounds;
+
     Vector3[] path;
     int targetIndex;
 
-    public void Request(Vector3 target)
+    private void Start()
     {
+        variables = GetComponent<MontyStateVariables>();
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RequestPath();
+        }
+    }
+
+
+    void RequestPath()
+    {
+        Vector3 target = variables.GetRandomPointInBounds(pathwayBounds.bounds);
+
         PathRequestManager.RequestPath(transform.position, target, OnPathFound);
     }
 
@@ -31,7 +51,8 @@ public class Unit : MonoBehaviour
         {
             if (transform.position == currentWaypoint)
             {
-                Debug.Log("At waypoint:" + path[targetIndex]);
+                Debug.Log("At waypoint: " + path[targetIndex]);
+                variables.desintationReached = true;
                 targetIndex++;
                 if (targetIndex >= path.Length)
                 {
@@ -40,12 +61,10 @@ public class Unit : MonoBehaviour
                 currentWaypoint = path[targetIndex];
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, variables.walkSpeed * Time.deltaTime);
             yield return null;
         }
     }
-
-    /*
     public void OnDrawGizmos()
     {
         if (path != null)
@@ -66,7 +85,5 @@ public class Unit : MonoBehaviour
             }
         }
     }
-    */
-
 
 }

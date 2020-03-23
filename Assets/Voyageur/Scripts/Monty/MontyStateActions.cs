@@ -13,17 +13,14 @@ public class MontyStateActions : MonoBehaviour
 	SpriteRenderer sprite;
 	PlayerController playerController;
 	CameraHandler cameraHandler;
-	Unit pathfindingUnit;
-
 
 	bool targetFound;
 	Vector3 target;
 	float stuckTimer;
 
-	public Transform pathTarget;
 	Vector3[] path;
 	int targetIndex;
-
+	bool firstPathGenerated;
 
 	private void Start()
 	{
@@ -38,26 +35,27 @@ public class MontyStateActions : MonoBehaviour
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
 	}
 
-	
 
 
 	public void Roam()
-	{				
+	{
 		//Debug.Log("Monty is following");
 		anim.SetBool("isRunning", false);
 		anim.SetBool("isSitting", false);
 		anim.SetBool("isWalking", true);
 
-		if (!targetFound)
+		if (!firstPathGenerated)
 		{
 			target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
-			targetFound = true;
+			PathRequestManager.RequestPath(transform.position, target, OnPathFound);
+			firstPathGenerated = true;
 		}
-			PathRequestManager.RequestPath(transform.position, target, OnPathFound);	
+
+
 
 		if (stateVariables.desintationReached)
-		{
-			targetFound = false;			
+		{			
+			targetFound = false;
 		}
 
 		if (target.x < transform.position.x)
@@ -69,19 +67,6 @@ public class MontyStateActions : MonoBehaviour
 			sprite.flipX = false;
 		}
 
-		if (targetFound && (transform.position.x != target.x && transform.position.y != target.y))
-		{
-
-			stuckTimer += Time.deltaTime;
-			//Debug.Log(stuckTimer);
-
-			if (stuckTimer >= 3)
-			{
-				//Debug.Log("Monty Stuck");
-				target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
-				stuckTimer = 0;
-			}
-		}
 	}
 	public void Sit()
 	{
@@ -185,19 +170,19 @@ public class MontyStateActions : MonoBehaviour
 
 	public void MoveTowards()
 	{
-			anim.SetBool("isSitting", false);
-			anim.SetBool("isWalking", false);
-			anim.SetBool("isRunning", true);
-			//Debug.Log("Moving Towards");
-			transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach, 0, 0), stateVariables.runSpeed * Time.deltaTime);
-			if (player.transform.position.x < transform.position.x)
-			{
-				sprite.flipX = true;
-			}
-			else
-			{
-				sprite.flipX = false;
-			}
+		anim.SetBool("isSitting", false);
+		anim.SetBool("isWalking", false);
+		anim.SetBool("isRunning", true);
+		//Debug.Log("Moving Towards");
+		transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach, 0, 0), stateVariables.runSpeed * Time.deltaTime);
+		if (player.transform.position.x < transform.position.x)
+		{
+			sprite.flipX = true;
+		}
+		else
+		{
+			sprite.flipX = false;
+		}
 	}
 
 	public void Follow()
@@ -214,8 +199,7 @@ public class MontyStateActions : MonoBehaviour
 		{
 			sprite.flipX = true;
 			transform.position = Vector2.MoveTowards(transform.position, player.transform.position + new Vector3(playerController.armsReach, 0, 0), stateVariables.walkSpeed * Time.deltaTime);
-		}
-		
+		}	
 	}
 
 	public void Canoe()
@@ -240,9 +224,9 @@ public class MontyStateActions : MonoBehaviour
 		if (pathSucessfull)
 		{
 			path = newPath;
-			StopCoroutine(FollowPath());
+			
 			StartCoroutine(FollowPath());
-
+			StopCoroutine(FollowPath());
 		}
 	}
 
@@ -254,9 +238,13 @@ public class MontyStateActions : MonoBehaviour
 		{
 			if (transform.position == currentWaypoint)
 			{
+				//Debug.Log("At waypoint: " + path[targetIndex]);
 				targetIndex++;
 				if (targetIndex >= path.Length)
 				{
+					target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
+					PathRequestManager.RequestPath(transform.position, target, OnPathFound);
+					stateVariables.desintationReached = true;
 					yield break;
 				}
 				currentWaypoint = path[targetIndex];
@@ -266,6 +254,8 @@ public class MontyStateActions : MonoBehaviour
 			yield return null;
 		}
 	}
+
+
 
 	public void OnDrawGizmos()
 	{

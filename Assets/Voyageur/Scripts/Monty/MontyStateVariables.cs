@@ -19,7 +19,9 @@ public class MontyStateVariables : MonoBehaviour
 	public float runSpeed;
 	PolygonCollider2D pathwayBounds;
 	public bool movingTowardsPlayer;
-	
+
+	MyGrid grid;
+
 
 	public float distanceToFollow;
 
@@ -46,7 +48,6 @@ public class MontyStateVariables : MonoBehaviour
 
 	public bool waitedAtStick = false;
 
-	MyGrid grid;
 
 	private void Start()
 	{
@@ -133,8 +134,16 @@ public class MontyStateVariables : MonoBehaviour
 
 	public bool CheckIfPointInCollider(Vector2 location)
 	{
-		return pathwayBounds.OverlapPoint(location);
-
+		Node targetNode = grid.NodeFromWorldPoint(new Vector3(location.x, location.y, 0));
+		
+		if (targetNode.walkable)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{

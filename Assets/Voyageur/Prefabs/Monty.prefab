@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3625638086280105398}
   - component: {fileID: 3625638086280105393}
   - component: {fileID: 4261200102087385691}
+  - component: {fileID: 1409123599}
   m_Layer: 0
   m_Name: Monty
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3625638086280105357}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.33, y: -6.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -82,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fb3e971b1a93a4892d8da1d802f8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHasStick: 0
+  pathTarget: {fileID: 0}
 --- !u!114 &3625638086280105398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
-  inFetch: 1
+  inFetch: 0
 --- !u!114 &3625638086280105393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +114,9 @@ MonoBehaviour:
   playerMoving: 0
   distFromPlayer: 0
   desintationReached: 0
-  montySpeed: 17
+  walkSpeed: 0
+  runSpeed: 0
+  movingTowardsPlayer: 0
   distanceToFollow: 1.5
   sitWaitTime: 5
   randomWaitRange: {x: 2, y: 9}
@@ -122,6 +125,9 @@ MonoBehaviour:
   montyHasStick: 0
   playerHasStick: 0
   stickThrown: 0
+  montyReturningStick: 0
+  throwCount: 0
+  waitedAtStick: 0
 --- !u!61 &4261200102087385691
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,6 +154,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.854947, y: 0.11695862}
   m_EdgeRadius: 0
+--- !u!114 &1409123599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625638086280105357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611ca0c58f92e804b8fbded72a45417d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3625638087023016638
 GameObject:
   m_ObjectHideFlags: 0
