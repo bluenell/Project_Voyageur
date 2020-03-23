@@ -20,7 +20,9 @@ public class MontyStateActions : MonoBehaviour
 
 	Vector3[] path;
 	int targetIndex;
-	bool firstPathGenerated;
+	bool currentlyOnPath;
+	bool pathRequestedByPlayer = false;
+
 
 	private void Start()
 	{
@@ -33,41 +35,30 @@ public class MontyStateActions : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		playerController = player.GetComponent<PlayerController>();
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
+
 	}
-
-
-
 	public void Roam()
 	{
+		PathRequestManager.ClearRequests();
 		//Debug.Log("Monty is following");
 		anim.SetBool("isRunning", false);
 		anim.SetBool("isSitting", false);
 		anim.SetBool("isWalking", true);
 
-		if (!firstPathGenerated)
+		if (!currentlyOnPath && !pathRequestedByPlayer)
 		{
 			target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
 			PathRequestManager.RequestPath(transform.position, target, OnPathFound);
-			firstPathGenerated = true;
+			currentlyOnPath = true;
 		}
-
-
 
 		if (stateVariables.desintationReached)
-		{			
+		{
 			targetFound = false;
 		}
-
-		if (target.x < transform.position.x)
-		{
-			sprite.flipX = true;
-		}
-		else
-		{
-			sprite.flipX = false;
-		}
-
+		
 	}
+
 	public void Sit()
 	{
 		anim.SetBool("isSitting", true);
@@ -170,11 +161,16 @@ public class MontyStateActions : MonoBehaviour
 
 	public void MoveTowards()
 	{
+		pathRequestedByPlayer = true;
+		PathRequestManager.ClearRequests();
+
 		anim.SetBool("isSitting", false);
 		anim.SetBool("isWalking", false);
 		anim.SetBool("isRunning", true);
 		//Debug.Log("Moving Towards");
-		transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach, 0, 0), stateVariables.runSpeed * Time.deltaTime);
+
+		PathRequestManager.RequestPath(transform.position, player.transform.position, OnPathFound);
+
 		if (player.transform.position.x < transform.position.x)
 		{
 			sprite.flipX = true;
@@ -225,8 +221,9 @@ public class MontyStateActions : MonoBehaviour
 		{
 			path = newPath;
 			
-			StartCoroutine(FollowPath());
+			
 			StopCoroutine(FollowPath());
+			StartCoroutine(FollowPath());
 		}
 	}
 
@@ -242,15 +239,24 @@ public class MontyStateActions : MonoBehaviour
 				targetIndex++;
 				if (targetIndex >= path.Length)
 				{
-					target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
-					PathRequestManager.RequestPath(transform.position, target, OnPathFound);
-					stateVariables.desintationReached = true;
+					PathRequestManager.ClearRequests();
+					currentlyOnPath = false;
 					yield break;
 				}
 				currentWaypoint = path[targetIndex];
 			}
 
 			transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, stateVariables.walkSpeed * Time.deltaTime);
+
+			if (currentWaypoint.x < transform.position.x)
+			{
+				sprite.flipX = true;
+			}
+			else
+			{
+				sprite.flipX = false;
+			}
+
 			yield return null;
 		}
 	}

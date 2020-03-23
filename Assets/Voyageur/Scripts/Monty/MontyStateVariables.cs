@@ -135,7 +135,7 @@ public class MontyStateVariables : MonoBehaviour
 	public bool CheckIfPointInCollider(Vector2 location)
 	{
 		Node targetNode = grid.NodeFromWorldPoint(new Vector3(location.x, location.y, 0));
-		
+
 		if (targetNode.walkable)
 		{
 			return true;

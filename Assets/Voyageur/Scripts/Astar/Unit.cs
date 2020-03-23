@@ -35,6 +35,7 @@ public class Unit : MonoBehaviour
                 targetIndex++;
                 if (targetIndex >= path.Length)
                 {
+
                     yield break;
                 }
                 currentWaypoint = path[targetIndex];
@@ -45,7 +46,7 @@ public class Unit : MonoBehaviour
         }
     }
 
-    /*
+    
     public void OnDrawGizmos()
     {
         if (path != null)
@@ -66,7 +67,7 @@ public class Unit : MonoBehaviour
             }
         }
     }
-    */
+  
 
 
 }

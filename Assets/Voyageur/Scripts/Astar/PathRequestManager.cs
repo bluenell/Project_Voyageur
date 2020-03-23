@@ -20,10 +20,20 @@ public class PathRequestManager : MonoBehaviour
 		pathfinding = GetComponent<Pathfinding>();
 	}
 
+
+	public static void ClearRequests()
+	{
+		instance.pathRequestQueue.Clear();
+	}
+
+
 	public static void RequestPath(Vector3 pathStart, Vector3 pathEnd, Action<Vector3[], bool> callback)
 	{
+		
 		PathRequest newRequest = new PathRequest(pathStart, pathEnd, callback);
+
 		instance.pathRequestQueue.Enqueue(newRequest);
+		
 		instance.TryProcessNext();
 	}
 
@@ -38,7 +48,7 @@ public class PathRequestManager : MonoBehaviour
 	}
 
 	public void FinishedProcessingPath(Vector3[] path, bool success)
-	{
+	{instance.pathRequestQueue.Clear();
 		currentPathRequest.callback(path, success);
 		isProcessingPath = false;
 		TryProcessNext();
