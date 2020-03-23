@@ -46,11 +46,13 @@ public class MontyStateVariables : MonoBehaviour
 
 	public bool waitedAtStick = false;
 
+	MyGrid grid;
 
 	private void Start()
 	{
 		player = GameObject.Find("Player");
 		interactionsManager = player.GetComponent<InteractionsManager>();
+		grid = GameObject.Find("Pathfinding Manager").GetComponent<MyGrid>();
 	}
 	private void Update()
 	{
@@ -103,7 +105,7 @@ public class MontyStateVariables : MonoBehaviour
 
 	#region Pathfinding
 
-	public Vector2 GetRandomPointInBounds(Bounds bounds)
+	public Vector3 GetRandomPointInBounds(Bounds bounds)
 	{
 		desintationReached = false;
 		Vector2 location;
@@ -116,8 +118,9 @@ public class MontyStateVariables : MonoBehaviour
 		if (CheckIfPointInCollider(location))
 		{
 			//Debug.DrawLine(transform.position, location,Color.green,20f);
-			
-			return location;
+
+			return new Vector3(location.x, location.y, 0);
+
 		}
 		else
 		{

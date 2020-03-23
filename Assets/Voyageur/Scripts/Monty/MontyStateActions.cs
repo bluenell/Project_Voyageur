@@ -13,11 +13,17 @@ public class MontyStateActions : MonoBehaviour
 	SpriteRenderer sprite;
 	PlayerController playerController;
 	CameraHandler cameraHandler;
+	Unit pathfindingUnit;
 
 
 	bool targetFound;
-	Vector2 target;
+	Vector3 target;
 	float stuckTimer;
+
+	public Transform pathTarget;
+	Vector3[] path;
+	int targetIndex;
+
 
 	private void Start()
 	{
@@ -47,14 +53,7 @@ public class MontyStateActions : MonoBehaviour
 			target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
 			targetFound = true;
 		}
-	   
-		transform.position = Vector2.MoveTowards(transform.position,target, stateVariables.walkSpeed * Time.deltaTime);
-
-		if (transform.position.x == target.x && transform.position.y == target.y)
-		{
-			stateVariables.desintationReached = true;
-			//Debug.Log("Destination Reached");
-		}
+			PathRequestManager.RequestPath(transform.position, target, OnPathFound);	
 
 		if (stateVariables.desintationReached)
 		{
@@ -234,4 +233,59 @@ public class MontyStateActions : MonoBehaviour
 		stateVariables.GetFetchStick().position = stateVariables.GetStickSpawnLocation().position;
 		stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 	}
+
+
+	public void OnPathFound(Vector3[] newPath, bool pathSucessfull)
+	{
+		if (pathSucessfull)
+		{
+			path = newPath;
+			StopCoroutine(FollowPath());
+			StartCoroutine(FollowPath());
+
+		}
+	}
+
+	IEnumerator FollowPath()
+	{
+		Vector3 currentWaypoint = path[0];
+
+		while (true)
+		{
+			if (transform.position == currentWaypoint)
+			{
+				targetIndex++;
+				if (targetIndex >= path.Length)
+				{
+					yield break;
+				}
+				currentWaypoint = path[targetIndex];
+			}
+
+			transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, stateVariables.walkSpeed * Time.deltaTime);
+			yield return null;
+		}
+	}
+
+	public void OnDrawGizmos()
+	{
+		if (path != null)
+		{
+			for (int i = targetIndex; i < path.Length; i++)
+			{
+				Gizmos.color = Color.black;
+				Gizmos.DrawCube(path[i], Vector3.one);
+
+				if (i == targetIndex)
+				{
+					Gizmos.DrawLine(transform.position, path[i]);
+				}
+				else
+				{
+					Gizmos.DrawLine(path[i - 1], path[i]);
+				}
+			}
+		}
+	}
+
 }

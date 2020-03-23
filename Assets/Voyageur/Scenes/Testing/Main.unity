@@ -760,6 +760,113 @@ Transform:
   m_Father: {fileID: 1210163431}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &158991390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 158991391}
+  - component: {fileID: 158991392}
+  m_Layer: 0
+  m_Name: monty colider area
+  m_TagString: PathwayTriggerBounds
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &158991391
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158991390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -54.7, y: -36.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 282297283}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &158991392
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158991390}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.696453, y: 0.732975}
+      - {x: 3.3667145, y: -0.76101685}
+      - {x: 15.1652565, y: -0.8354225}
+      - {x: 19.022121, y: -0.76303864}
+      - {x: 25.475376, y: 0.44423676}
+      - {x: 38.762646, y: 2.994419}
+      - {x: 72.75441, y: 3.2006721}
+      - {x: 74.44624, y: 2.988346}
+      - {x: 87.750885, y: -2.6215591}
+      - {x: 97.70339, y: -2.4190674}
+      - {x: 106.24776, y: -2.8460808}
+      - {x: 107.18904, y: -2.0674095}
+      - {x: 106.89201, y: -0.49680328}
+      - {x: 104.17933, y: 0.16640472}
+      - {x: 97.888626, y: -0.92080307}
+      - {x: 89.40054, y: -0.7892723}
+      - {x: 81.31099, y: 1.339489}
+      - {x: 78.72977, y: 2.8270645}
+      - {x: 79.16667, y: 3.4730186}
+      - {x: 82.762474, y: 3.6995506}
+      - {x: 92.71731, y: 5.047653}
+      - {x: 96.83115, y: 5.992506}
+      - {x: 100.324234, y: 6.9360657}
+      - {x: 118.95015, y: 12.066061}
+      - {x: 114.246, y: 11.887817}
+      - {x: 96.05767, y: 7.9082546}
+      - {x: 83.31646, y: 9.882172}
+      - {x: 83.21159, y: 10.491344}
+      - {x: 85.445435, y: 10.534643}
+      - {x: 88.92118, y: 11.139591}
+      - {x: 92.86636, y: 11.406069}
+      - {x: 95.95492, y: 12.021685}
+      - {x: 99.00246, y: 12.490879}
+      - {x: 110.80372, y: 12.723909}
+      - {x: 115.29744, y: 12.976168}
+      - {x: 114.364456, y: 12.02597}
+      - {x: 118.92711, y: 12.15793}
+      - {x: 120.634735, y: 12.747227}
+      - {x: 122.595795, y: 12.789745}
+      - {x: 122.056046, y: 13.756874}
+      - {x: 97.703, y: 13.535881}
+      - {x: 83.42218, y: 11.372938}
+      - {x: 79.941315, y: 10.8171425}
+      - {x: 79.58685, y: 10.137972}
+      - {x: 83.995384, y: 8.885134}
+      - {x: 94.988945, y: 7.044342}
+      - {x: 94.06981, y: 6.4854717}
+      - {x: 79.60251, y: 5.0055637}
+      - {x: 72.87035, y: 4.398308}
+      - {x: 38.77682, y: 4.3624954}
+      - {x: 20.008549, y: 0.98145676}
 --- !u!1 &164177796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,6 +1432,7 @@ Transform:
   - {fileID: 55416660}
   - {fileID: 1279714470}
   - {fileID: 1048041305}
+  - {fileID: 158991391}
   m_Father: {fileID: 545550418}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1340,6 +1448,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3625638086564062802}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &287140839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287140831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611ca0c58f92e804b8fbded72a45417d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 7945989855208360791}
 --- !u!1 &288749952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,7 +1490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.767002, y: -0.97654533, z: -10}
+  m_LocalPosition: {x: 57.567005, y: 3.8034534, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -5004,7 +5125,7 @@ GameObject:
   - component: {fileID: 1048041305}
   - component: {fileID: 1048041306}
   m_Layer: 9
-  m_Name: outside collider (1)
+  m_Name: outside collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5743,7 +5864,7 @@ GameObject:
   - component: {fileID: 1279714471}
   m_Layer: 17
   m_Name: monty pathfinding area
-  m_TagString: PathwayTriggerBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5772,7 +5893,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -7418,7 +7539,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.767002, y: -0.97654533, z: -10}
+  m_LocalPosition: {x: 57.567005, y: 3.8034534, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -7666,7 +7787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660104194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.5, y: -29.7, z: 0}
+  m_LocalPosition: {x: 5.5, y: -30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293364548}
@@ -7700,8 +7821,9 @@ MonoBehaviour:
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 131072
-  gridWorldSize: {x: 140.6, y: 30}
+  gridWorldSize: {x: 140.6, y: 19.15}
   nodeRadius: 0.5
+  player: {fileID: 7945989855208360791}
 --- !u!114 &1660104198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9849,12 +9971,12 @@ PrefabInstance:
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 234.8
+      value: 276.6
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.19
+      value: 3.59
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -9995,6 +10117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: fetch interaction
       objectReference: {fileID: 0}
+    - target: {fileID: 3387274585326759745, guid: f767a762e49d0ff459287f49b5adcb9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3387274585326759746, guid: f767a762e49d0ff459287f49b5adcb9b,
         type: 3}
       propertyPath: isInteractable
@@ -10022,12 +10149,12 @@ PrefabInstance:
     - target: {fileID: 3625638086280105392, guid: 7623248776c539749835c98c33870583,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 229.78
+      value: 239.66
       objectReference: {fileID: 0}
     - target: {fileID: 3625638086280105392, guid: 7623248776c539749835c98c33870583,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.09
+      value: -0.71
       objectReference: {fileID: 0}
     - target: {fileID: 3625638086280105392, guid: 7623248776c539749835c98c33870583,
         type: 3}

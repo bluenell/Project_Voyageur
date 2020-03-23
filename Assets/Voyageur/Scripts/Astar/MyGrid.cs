@@ -13,6 +13,9 @@ public class MyGrid : MonoBehaviour
 	float nodeDiameter;
 	int gridSizeX, gridSizeY;
 
+	public Transform player;
+	public Transform seeker;
+
 	void Awake()
 	{
 		nodeDiameter = nodeRadius * 2;
@@ -88,9 +91,17 @@ public class MyGrid : MonoBehaviour
 		
 		if (grid != null && displayGridGizmos)
 		{
+			Node playerNode = NodeFromWorldPoint(player.position);
+			Node seekerNode = NodeFromWorldPoint(seeker.position);
+
 			foreach (Node n in grid)
 			{
-				Gizmos.color = (n.walkable) ? Color.green : Color.red;
+				Gizmos.color = (n.walkable) ? Color.white : Color.red;
+
+				if (playerNode == n)
+				{
+					Gizmos.color = Color.cyan;
+				}
 				Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
 
 			}
