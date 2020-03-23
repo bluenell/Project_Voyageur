@@ -11,10 +11,7 @@ public class Unit : MonoBehaviour
 
     public void Start()
     {
-
         PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
-
-
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSucessfull)
@@ -24,7 +21,6 @@ public class Unit : MonoBehaviour
             path = newPath;
             StopCoroutine(FollowPath());
             StartCoroutine(FollowPath());
-
         }
     }
 
@@ -36,6 +32,7 @@ public class Unit : MonoBehaviour
         {
             if (transform.position == currentWaypoint)
             {
+                Debug.Log("At waypoint:" + path[targetIndex]);
                 targetIndex++;
                 if (targetIndex >= path.Length)
                 {
@@ -49,6 +46,7 @@ public class Unit : MonoBehaviour
         }
     }
 
+    /*
     public void OnDrawGizmos()
     {
         if (path != null)
@@ -69,6 +67,7 @@ public class Unit : MonoBehaviour
             }
         }
     }
+    */
 
 
 }
