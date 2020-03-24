@@ -18,7 +18,9 @@ public class MontyStateVariables : MonoBehaviour
 	public float walkSpeed;
 	public float runSpeed;
 	PolygonCollider2D pathwayBounds;
+	CircleCollider2D rangeToIgnore;
 	public bool movingTowardsPlayer;
+	public bool callRequestMade;
 
 	MyGrid grid;
 
@@ -31,7 +33,10 @@ public class MontyStateVariables : MonoBehaviour
 	GameObject player;
 	InteractionsManager interactionsManager;
 
-	Rigidbody2D stickRb;
+
+    #region Fetch
+
+    Rigidbody2D stickRb;
 	Transform stickThrowTarget;
 	[Header("Fetch Variables")]
 	public float throwHeight;
@@ -48,12 +53,13 @@ public class MontyStateVariables : MonoBehaviour
 
 	public bool waitedAtStick = false;
 
-
+	#endregion
 	private void Start()
 	{
 		player = GameObject.Find("Player");
 		interactionsManager = player.GetComponent<InteractionsManager>();
 		grid = GameObject.Find("Pathfinding Manager").GetComponent<MyGrid>();
+		rangeToIgnore = transform.GetChild(1).GetComponent<CircleCollider2D>();
 	}
 	private void Update()
 	{
@@ -125,7 +131,7 @@ public class MontyStateVariables : MonoBehaviour
 		}
 		else
 		{
-			//Debug.DrawLine(transform.position, location, Color.red, 0.1f);
+			Debug.DrawLine(transform.position, location, Color.red, 0.1f);
 			//Debug.Log("Invalid Location:" + location);
 			return GetRandomPointInBounds(bounds);
 		}
@@ -136,7 +142,7 @@ public class MontyStateVariables : MonoBehaviour
 	{
 		Node targetNode = grid.NodeFromWorldPoint(new Vector3(location.x, location.y, 0));
 
-		if (targetNode.walkable)
+		if (targetNode.walkable && !rangeToIgnore.OverlapPoint(location))
 		{
 			return true;
 		}

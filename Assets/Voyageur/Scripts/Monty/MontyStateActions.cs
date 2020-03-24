@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MontyStateActions : MonoBehaviour
@@ -20,8 +19,8 @@ public class MontyStateActions : MonoBehaviour
 
 	Vector3[] path;
 	int targetIndex;
-	bool currentlyOnPath;
-	bool pathRequestedByPlayer = false;
+	public bool currentlyOnPath;
+	public bool pathRequestedByPlayer = false;
 
 
 	private void Start()
@@ -38,8 +37,7 @@ public class MontyStateActions : MonoBehaviour
 
 	}
 	public void Roam()
-	{
-		PathRequestManager.ClearRequests();
+	{ 
 		//Debug.Log("Monty is following");
 		anim.SetBool("isRunning", false);
 		anim.SetBool("isSitting", false);
@@ -52,11 +50,6 @@ public class MontyStateActions : MonoBehaviour
 			currentlyOnPath = true;
 		}
 
-		if (stateVariables.desintationReached)
-		{
-			targetFound = false;
-		}
-		
 	}
 
 	public void Sit()
@@ -66,11 +59,12 @@ public class MontyStateActions : MonoBehaviour
 	}
 	public void Fetch()
 	{
+		PathRequestManager.ClearRequests();
 		//checking if the stick hasn't been thrown yet, or monty is bringing the stick back (when to move monty to the start point)
 		if (!stateVariables.stickThrown || stateVariables.montyReturningStick)
 		{
-			
-			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint().position, stateVariables.runSpeed*Time.deltaTime);
+
+			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint().position, stateVariables.runSpeed * Time.deltaTime);
 			anim.SetBool("isWalking", false);
 			anim.SetBool("isSitting", false);
 			anim.SetBool("isRunning", true);
@@ -115,8 +109,8 @@ public class MontyStateActions : MonoBehaviour
 
 			if (stateVariables.playerHasStick)
 			{
-				Debug.Log("Disable input"); 
-				playerController.DisablePlayerInput();				
+				Debug.Log("Disable input");
+				playerController.DisablePlayerInput();
 			}
 			else
 			{
@@ -142,15 +136,15 @@ public class MontyStateActions : MonoBehaviour
 		if (transform.position == stateVariables.GetThrowTarget().position)
 		{
 			Debug.Log("At thrown stick");
-			anim.SetBool("isRunning", false);			
+			anim.SetBool("isRunning", false);
 
 			if (!stateVariables.waitedAtStick)
 			{
 				StartCoroutine(WaitForTime(2));
-			}			
+			}
 		}
 	}
-	
+
 	public void Wait()
 	{
 		//Debug.Log("Waiting");
@@ -161,23 +155,17 @@ public class MontyStateActions : MonoBehaviour
 
 	public void MoveTowards()
 	{
-		pathRequestedByPlayer = true;
-		PathRequestManager.ClearRequests();
-
 		anim.SetBool("isSitting", false);
 		anim.SetBool("isWalking", false);
 		anim.SetBool("isRunning", true);
 		//Debug.Log("Moving Towards");
 
-		PathRequestManager.RequestPath(transform.position, player.transform.position, OnPathFound);
+		if (stateVariables.callRequestMade)
+		{
+			PathRequestManager.ClearRequests();
+			PathRequestManager.RequestPath(transform.position, player.transform.position, OnPathFound);
+			stateVariables.callRequestMade = false;
 
-		if (player.transform.position.x < transform.position.x)
-		{
-			sprite.flipX = true;
-		}
-		else
-		{
-			sprite.flipX = false;
 		}
 	}
 
@@ -195,7 +183,7 @@ public class MontyStateActions : MonoBehaviour
 		{
 			sprite.flipX = true;
 			transform.position = Vector2.MoveTowards(transform.position, player.transform.position + new Vector3(playerController.armsReach, 0, 0), stateVariables.walkSpeed * Time.deltaTime);
-		}	
+		}
 	}
 
 	public void Canoe()
@@ -220,8 +208,7 @@ public class MontyStateActions : MonoBehaviour
 		if (pathSucessfull)
 		{
 			path = newPath;
-			
-			
+			targetIndex = 0;
 			StopCoroutine(FollowPath());
 			StartCoroutine(FollowPath());
 		}
@@ -235,7 +222,7 @@ public class MontyStateActions : MonoBehaviour
 		{
 			if (transform.position == currentWaypoint)
 			{
-				//Debug.Log("At waypoint: " + path[targetIndex]);
+				Debug.Log("At waypoint: " + path[targetIndex]);
 				targetIndex++;
 				if (targetIndex >= path.Length)
 				{
@@ -270,7 +257,7 @@ public class MontyStateActions : MonoBehaviour
 			for (int i = targetIndex; i < path.Length; i++)
 			{
 				Gizmos.color = Color.black;
-				Gizmos.DrawCube(path[i], Vector3.one);
+				Gizmos.DrawCube(path[i], (Vector3.one) / 2);
 
 				if (i == targetIndex)
 				{

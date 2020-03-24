@@ -5,10 +5,10 @@ using UnityEditor;
 public class TransitionHandler : MonoBehaviour
 {
 
-	CanoePaddle paddleScript;
-	PlayerController playerController;
-	CameraHandler cameraHandler;
 
+	public int currentIsland = 0;
+
+	[Header("Components")]
 	public GameObject player;
 	public GameObject canoe;
 	public GameObject canoeAIO;
@@ -16,14 +16,19 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject layerManager;
 	public GameObject interactionsManager;
 
+	CanoePaddle paddleScript;
+	PlayerController playerController;
+	CameraHandler cameraHandler;
+
 
 	public GameObject pathwayCollider;
 	public GameObject spritesManager;
 
+	[Header("Spawn Points")]
 	public GameObject[] playerSpawnPoints;
 	public GameObject[] canoeSpawnPoints;
 
-	int currentIsland = 0;
+	
 
 	private void Awake()
 	{

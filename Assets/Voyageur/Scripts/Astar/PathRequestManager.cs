@@ -48,7 +48,8 @@ public class PathRequestManager : MonoBehaviour
 	}
 
 	public void FinishedProcessingPath(Vector3[] path, bool success)
-	{instance.pathRequestQueue.Clear();
+	{
+		instance.pathRequestQueue.Clear();
 		currentPathRequest.callback(path, success);
 		isProcessingPath = false;
 		TryProcessNext();

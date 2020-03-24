@@ -428,6 +428,7 @@ public class PlayerController : MonoBehaviour
 		{
 			playerSoundManager.PlayWhistle();
 			montyStateVariables.movingTowardsPlayer = true;
+			montyStateVariables.callRequestMade = true;
 		}
 	}
 
