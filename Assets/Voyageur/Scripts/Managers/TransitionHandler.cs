@@ -21,7 +21,7 @@ public class TransitionHandler : MonoBehaviour
 	PlayerController playerController;
 	CameraHandler cameraHandler;
 	GameManager gm;
-
+	MontyStateVariables montyStateVariables;
 
 	public GameObject pathwayCollider;
 	public GameObject spritesManager;
@@ -38,6 +38,8 @@ public class TransitionHandler : MonoBehaviour
 		paddleScript = canoeAIO.GetComponent<CanoePaddle>();
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
 		gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+		montyStateVariables = monty.GetComponent<MontyStateVariables>();
+		montyStateVariables = monty.GetComponent<MontyStateVariables>();
 	}
 
 
@@ -56,17 +58,21 @@ public class TransitionHandler : MonoBehaviour
 		interactionsManager.SetActive(true);
 		cameraHandler.SwitchToPlayer();
 		pathwayCollider.SetActive(true);
+
 		spritesManager.SetActive(true);
 
+		montyStateVariables.grid.CreateGrid();
 
 
 	}
 
 	public void Launch()
 	{
+		// Increasing Current Island Count
 		gm.IncreaseIsland();
 		Debug.Log("Transitioning to island: " + gm.GetCurrentIsland());
 
+		// Enabling & Disabling Monty, Player, Canoe Single and their depencies
 		canoeAIO.transform.position = canoeSpawnPoints[0].transform.GetChild(currentIsland).transform.position;
 		canoeAIO.SetActive(true);
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
@@ -79,13 +85,19 @@ public class TransitionHandler : MonoBehaviour
 		pathwayCollider.SetActive(false);
 		spritesManager.SetActive(true);
 
+		//Setting all other pathfinding managers to inactive
 		for (int i = 0; i < pathfindingManagers.Length; i++)
 		{
 			pathfindingManagers[i].SetActive(false);
 		}
 
-
+		// Activating the next islands pathfinding and clearing any existing path requests
 		pathfindingManagers[gm.GetCurrentIsland()].SetActive(true);
+		PathRequestManager.ClearRequests();
+		monty.GetComponent<MontyStateActions>().StopAllCoroutines();
+		montyStateVariables.grid = pathfindingManagers[gm.GetCurrentIsland()].GetComponent<MyGrid>();
+		
+		
 
 		//hide monty
 		//hide canoe object

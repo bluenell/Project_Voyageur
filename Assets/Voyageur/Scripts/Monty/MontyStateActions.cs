@@ -187,7 +187,9 @@ public class MontyStateActions : MonoBehaviour
 	}
 
 
-	public void OnPathFound(Vector3[] newPath, bool pathSucessfull)
+    #region Pathfinding
+
+    public void OnPathFound(Vector3[] newPath, bool pathSucessfull)
 	{
 		if (pathSucessfull)
 		{
@@ -206,7 +208,7 @@ public class MontyStateActions : MonoBehaviour
 		{
 			if (transform.position == currentWaypoint)
 			{
-				Debug.Log("At waypoint: " + path[targetIndex]);
+				//Debug.Log("At waypoint: " + path[targetIndex]);
 				targetIndex++;
 				if (targetIndex >= path.Length)
 				{
@@ -261,4 +263,5 @@ public class MontyStateActions : MonoBehaviour
 		}
 	}
 
+    #endregion
 }

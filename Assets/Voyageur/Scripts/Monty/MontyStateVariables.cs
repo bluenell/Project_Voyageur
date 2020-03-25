@@ -22,7 +22,7 @@ public class MontyStateVariables : MonoBehaviour
 
 	[Header("Pathfinding")]
 	CircleCollider2D rangeToIgnore;
-	MyGrid grid;
+	public MyGrid grid;
 
 	public bool movingTowardsPlayer;
 	public bool callRequestMade;
