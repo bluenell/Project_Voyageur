@@ -32,9 +32,9 @@ public class PlayerController : MonoBehaviour
 	Transform putDownTarget;
 	Transform spawnTarget;
 
-	bool inRangeOfCanoe;
-	bool inRangeParkingSpace;
-	bool inRangeOfLaunchingZone;
+	public bool inRangeOfCanoe;
+	public bool inRangeParkingSpace;
+	public bool inRangeOfLaunchingZone;
 
 	bool targetFound;
 

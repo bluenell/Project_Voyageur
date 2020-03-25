@@ -15,10 +15,12 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject monty;
 	public GameObject layerManager;
 	public GameObject interactionsManager;
+	public GameObject[] pathfindingManagers;
 
 	CanoePaddle paddleScript;
 	PlayerController playerController;
 	CameraHandler cameraHandler;
+	GameManager gm;
 
 
 	public GameObject pathwayCollider;
@@ -35,6 +37,7 @@ public class TransitionHandler : MonoBehaviour
 		playerController = player.GetComponent<PlayerController>();
 		paddleScript = canoeAIO.GetComponent<CanoePaddle>();
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
+		gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
 	}
 
 
@@ -55,12 +58,15 @@ public class TransitionHandler : MonoBehaviour
 		pathwayCollider.SetActive(true);
 		spritesManager.SetActive(true);
 
-		Debug.Log(currentIsland);
-		currentIsland++;
+
+
 	}
 
 	public void Launch()
 	{
+		gm.IncreaseIsland();
+		Debug.Log("Transitioning to island: " + gm.GetCurrentIsland());
+
 		canoeAIO.transform.position = canoeSpawnPoints[0].transform.GetChild(currentIsland).transform.position;
 		canoeAIO.SetActive(true);
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
@@ -73,6 +79,12 @@ public class TransitionHandler : MonoBehaviour
 		pathwayCollider.SetActive(false);
 		spritesManager.SetActive(true);
 
+		for (int i = 0; i < pathfindingManagers.Length; i++)
+		{
+			pathfindingManagers[i].SetActive(false);
+		}
+
+		pathfindingManagers[gm.GetCurrentIsland()].SetActive(true);
 
 		//hide monty
 		//hide canoe object

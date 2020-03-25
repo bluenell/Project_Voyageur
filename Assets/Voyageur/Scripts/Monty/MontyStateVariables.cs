@@ -18,13 +18,12 @@ public class MontyStateVariables : MonoBehaviour
 	public float runSpeed;
 	public float distanceToFollow;
 
-
 	public bool movingTowardsPlayer;
 	public bool callRequestMade;
 
 	PolygonCollider2D pathwayBounds;
 	CircleCollider2D rangeToIgnore;
-	MyGrid grid;
+	public MyGrid grid;
 
 
 
@@ -33,11 +32,13 @@ public class MontyStateVariables : MonoBehaviour
 
 	GameObject player;
 	InteractionsManager interactionsManager;
+	GameManager gameManager;
+	public GameObject[] pathFindingManagers;
 
 
-    #region Fetch_Variables
+	#region Fetch_Variables
 
-    
+
 	[Header("Fetch Variables")]
 	Rigidbody2D stickRb;
 	Transform stickThrowTarget;
@@ -56,15 +57,15 @@ public class MontyStateVariables : MonoBehaviour
 	{
 		player = GameObject.Find("Player");
 		interactionsManager = player.GetComponent<InteractionsManager>();
-		grid = GameObject.Find("Pathfinding Manager").GetComponent<MyGrid>();
 		rangeToIgnore = transform.GetChild(1).GetComponent<CircleCollider2D>();
+		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 	}
 	private void Update()
 	{
 		distFromPlayer = CalculateDistance();
 		playerMoving = GetPlayerMoving();
 		playerFlipped = GetPlayerDirectionPositive();
-		
+		grid = pathFindingManagers[gameManager.GetCurrentIsland()].GetComponent<MyGrid>();
 	}
 
     #region Player_Calculations

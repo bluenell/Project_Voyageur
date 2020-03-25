@@ -7,6 +7,7 @@ public class MyGrid : MonoBehaviour
 	public bool displayGridGizmos;
 	public LayerMask unwalkableMask;
 	public Vector2 gridWorldSize;
+	public Vector2 gridOffset;
 	public float nodeRadius;
 	public TerrainType[] walkableRegions;
 	LayerMask walkableMask;
@@ -21,11 +22,14 @@ public class MyGrid : MonoBehaviour
 	int penaltyMin = int.MaxValue;
 	int penaltyMax = int.MinValue;
 
+	public GameObject player, monty;
+
+
 	void Awake()
 	{
 		nodeDiameter = nodeRadius * 2;
-		gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
-		gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
+		gridSizeX = Mathf.RoundToInt((gridWorldSize.x / nodeDiameter) + gridOffset.x);
+		gridSizeY = Mathf.RoundToInt((gridWorldSize.y / nodeDiameter) + gridOffset.y);
 
 		foreach (TerrainType region in walkableRegions)
 		{
@@ -159,13 +163,13 @@ public class MyGrid : MonoBehaviour
 
 	public Node NodeFromWorldPoint(Vector3 worldPosition)
 	{
-		float percentX = (worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
-		float percentY = (worldPosition.y + gridWorldSize.y / 2) / gridWorldSize.y;
+		float percentX = (worldPosition.x - transform.position.x) / gridWorldSize.x + 0.5f - (nodeRadius / gridWorldSize.x);
+		float percentY = (worldPosition.z - transform.position.z) / gridWorldSize.y + 0.5f - (nodeRadius / gridWorldSize.y);
 		percentX = Mathf.Clamp01(percentX);
 		percentY = Mathf.Clamp01(percentY);
 
-		int x = Mathf.RoundToInt((gridSizeX - 1) * percentX);
-		int y = Mathf.RoundToInt((gridSizeY - 1) * percentY);
+		int x = Mathf.FloorToInt(Mathf.Min(gridSizeX * percentX, gridSizeX-1));
+		int y = Mathf.FloorToInt(Mathf.Min(gridSizeY * percentY, gridSizeY - 1));
 		return grid[x, y];
 	}
 
@@ -177,6 +181,8 @@ public class MyGrid : MonoBehaviour
 		{
 			foreach (Node n in grid)
 			{
+				
+
 				Gizmos.color = Color.Lerp(Color.white, Color.black, Mathf.InverseLerp(penaltyMin, penaltyMax, n.movementPenalty));
 				Gizmos.color = (n.walkable) ? Gizmos.color : Color.red;
 
