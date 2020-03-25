@@ -8,7 +8,6 @@ public class MontyStateVariables : MonoBehaviour
 	public bool playerFlipped;
 	[HideInInspector]
 	public bool playerMoving;	
-
 	[HideInInspector ]
 	public float distFromPlayer;
 	[HideInInspector]
@@ -17,15 +16,17 @@ public class MontyStateVariables : MonoBehaviour
 	[Header("Generic Variables")]
 	public float walkSpeed;
 	public float runSpeed;
-	PolygonCollider2D pathwayBounds;
-	CircleCollider2D rangeToIgnore;
+	public float distanceToFollow;
+
+
 	public bool movingTowardsPlayer;
 	public bool callRequestMade;
 
+	PolygonCollider2D pathwayBounds;
+	CircleCollider2D rangeToIgnore;
 	MyGrid grid;
 
 
-	public float distanceToFollow;
 
 	public int sitWaitTime;
 	public Vector2 randomWaitRange;
@@ -34,26 +35,23 @@ public class MontyStateVariables : MonoBehaviour
 	InteractionsManager interactionsManager;
 
 
-    #region Fetch
+    #region Fetch_Variables
 
-    Rigidbody2D stickRb;
-	Transform stickThrowTarget;
+    
 	[Header("Fetch Variables")]
+	Rigidbody2D stickRb;
+	Transform stickThrowTarget;
 	public float throwHeight;
 	public float throwGravity;
 	public bool montyHasStick = false;
-
 	public bool playerHasStick = false;
-
 	public bool stickThrown = false;
-
 	public bool montyReturningStick = false;
-
 	public int throwCount;
-
 	public bool waitedAtStick = false;
 
 	#endregion
+
 	private void Start()
 	{
 		player = GameObject.Find("Player");
@@ -69,7 +67,9 @@ public class MontyStateVariables : MonoBehaviour
 		
 	}
 
-	public float CalculateDistance()
+    #region Player_Calculations
+
+    public float CalculateDistance()
 	{
 		distFromPlayer = Vector2.Distance(transform.position, player.transform.position);
 		return distFromPlayer;
@@ -103,12 +103,7 @@ public class MontyStateVariables : MonoBehaviour
 		}
 	}
 
-	private void OnDrawGizmosSelected()
-	{
-		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere(transform.position, distanceToFollow);
-	}
-
+    #endregion
 
 	#region Pathfinding
 
@@ -151,17 +146,8 @@ public class MontyStateVariables : MonoBehaviour
 			return false;
 		}
 	}
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.gameObject.tag == "PathwayTriggerBounds")
-		{
-			//Debug.Log(collision.gameObject.name);
-			pathwayBounds = collision.gameObject.GetComponent<PolygonCollider2D>();
-		}
-	}
 
 	#endregion
-
 
 	#region Fetch
 
@@ -217,5 +203,10 @@ public class MontyStateVariables : MonoBehaviour
 	}
 	#endregion
 
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position, distanceToFollow);
+	}
 
 }

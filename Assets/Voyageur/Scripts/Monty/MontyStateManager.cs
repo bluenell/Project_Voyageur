@@ -29,9 +29,9 @@ public class MontyStateManager : MonoBehaviour
 	{
 		if (!inFetch)
 		{
-			if (!movingToPlayer && stateVariables.distFromPlayer >= playerController.armsReach)
+			if (!stateVariables.movingTowardsPlayer && stateVariables.distFromPlayer >= playerController.armsReach)
 			{
-				movingToPlayer = false;
+				stateVariables.movingTowardsPlayer = false;
 				currentState = "roam";
 				SwitchState();
 			}
@@ -41,12 +41,12 @@ public class MontyStateManager : MonoBehaviour
 	{
 		if (!inFetch)
 		{			
-			if (stateVariables.movingTowardsPlayer)
+			if (stateVariables.callRequestMade)
 			{
 				currentState = "move towards";
 				SwitchState();
 
-				if (stateVariables.distFromPlayer <= playerController.armsReach)
+				if (stateVariables.desintationReached)
 				{
 					stateVariables.movingTowardsPlayer = false;
 					currentState = "wait";
@@ -67,13 +67,6 @@ public class MontyStateManager : MonoBehaviour
 					SwitchState();
 				}
 
-			}
-
-			if (Input.GetButton("Button X") && currentState != "move towards")
-			{
-				movingToPlayer = true;
-				currentState = "follow";
-				SwitchState();
 			}
 		}
 		else
@@ -106,10 +99,6 @@ public class MontyStateManager : MonoBehaviour
 
 			case "move towards":
 				stateActions.MoveTowards();
-				break;
-
-			case "follow":
-				stateActions.Follow();
 				break;
 
 			case "canoe":

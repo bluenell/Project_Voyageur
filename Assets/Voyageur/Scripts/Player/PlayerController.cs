@@ -430,6 +430,10 @@ public class PlayerController : MonoBehaviour
 			montyStateVariables.movingTowardsPlayer = true;
 			montyStateVariables.callRequestMade = true;
 		}
+		else
+		{
+			montyStateVariables.callRequestMade = false;
+		}
 	}
 
 	void CycleInventory(string dir)
