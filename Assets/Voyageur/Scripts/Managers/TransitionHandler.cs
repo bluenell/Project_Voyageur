@@ -84,6 +84,7 @@ public class TransitionHandler : MonoBehaviour
 			pathfindingManagers[i].SetActive(false);
 		}
 
+
 		pathfindingManagers[gm.GetCurrentIsland()].SetActive(true);
 
 		//hide monty

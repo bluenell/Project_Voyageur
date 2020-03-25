@@ -18,28 +18,26 @@ public class MontyStateVariables : MonoBehaviour
 	public float runSpeed;
 	public float distanceToFollow;
 
+
+
+	[Header("Pathfinding")]
+	CircleCollider2D rangeToIgnore;
+	MyGrid grid;
+
 	public bool movingTowardsPlayer;
 	public bool callRequestMade;
 
-	PolygonCollider2D pathwayBounds;
-	CircleCollider2D rangeToIgnore;
-	public MyGrid grid;
 
-
-
+	[Header("Waiting")]
 	public int sitWaitTime;
 	public Vector2 randomWaitRange;
 
 	GameObject player;
 	InteractionsManager interactionsManager;
 	GameManager gameManager;
-	public GameObject[] pathFindingManagers;
-
-
-	#region Fetch_Variables
-
 
 	[Header("Fetch Variables")]
+
 	Rigidbody2D stickRb;
 	Transform stickThrowTarget;
 	public float throwHeight;
@@ -48,10 +46,13 @@ public class MontyStateVariables : MonoBehaviour
 	public bool playerHasStick = false;
 	public bool stickThrown = false;
 	public bool montyReturningStick = false;
-	public int throwCount;
 	public bool waitedAtStick = false;
 
-	#endregion
+
+	private void Awake()
+	{
+
+	}
 
 	private void Start()
 	{
@@ -59,13 +60,15 @@ public class MontyStateVariables : MonoBehaviour
 		interactionsManager = player.GetComponent<InteractionsManager>();
 		rangeToIgnore = transform.GetChild(1).GetComponent<CircleCollider2D>();
 		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+		grid = GameObject.Find("Pathfinding Managers").transform.GetChild(0).GetComponent<MyGrid>();
+
 	}
 	private void Update()
 	{
 		distFromPlayer = CalculateDistance();
 		playerMoving = GetPlayerMoving();
 		playerFlipped = GetPlayerDirectionPositive();
-		grid = pathFindingManagers[gameManager.GetCurrentIsland()].GetComponent<MyGrid>();
+		//grid = pathFindingManagers[gameManager.GetCurrentIsland()].GetComponent<MyGrid>();
 	}
 
     #region Player_Calculations

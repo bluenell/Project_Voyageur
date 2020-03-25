@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    int currentIsland;
+    public int currentIsland;
 
     public void IncreaseIsland()
     {

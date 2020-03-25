@@ -47,6 +47,7 @@ public class MontyStateActions : MonoBehaviour
 
 		if (!currentlyOnPath && !stateVariables.callRequestMade)
 		{
+			anim.SetBool("isWalking", false);
 			target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
 			PathRequestManager.RequestPath(transform.position, target, OnPathFound);
 			currentlyOnPath = true;
