@@ -8,7 +8,7 @@ public class MyGrid : MonoBehaviour
 	public LayerMask unwalkableMask;
 	public Vector2 gridWorldSize;
 	public Vector2 gridOffset;
-	public float nodeRadius;
+	public float nodeRadius = 0.25f;
 	public TerrainType[] walkableRegions;
 	LayerMask walkableMask;
 
