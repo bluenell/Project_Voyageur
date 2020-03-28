@@ -61,8 +61,6 @@ public class TransitionHandler : MonoBehaviour
 
 		spritesManager.SetActive(true);
 
-		montyStateVariables.grid.CreateGrid();
-
 
 	}
 
@@ -90,13 +88,6 @@ public class TransitionHandler : MonoBehaviour
 		{
 			pathfindingManagers[i].SetActive(false);
 		}
-
-		// Activating the next islands pathfinding and clearing any existing path requests
-		pathfindingManagers[gm.GetCurrentIsland()].SetActive(true);
-		PathRequestManager.ClearRequests();
-		monty.GetComponent<MontyStateActions>().StopAllCoroutines();
-		montyStateVariables.grid = pathfindingManagers[gm.GetCurrentIsland()].GetComponent<MyGrid>();
-		
 		
 
 		//hide monty

@@ -22,7 +22,7 @@ public class MontyStateVariables : MonoBehaviour
 
 	[Header("Pathfinding")]
 	CircleCollider2D rangeToIgnore;
-	public MyGrid grid;
+	MyGrid grid;
 
 	public bool movingTowardsPlayer;
 	public bool callRequestMade;
@@ -60,7 +60,7 @@ public class MontyStateVariables : MonoBehaviour
 		interactionsManager = player.GetComponent<InteractionsManager>();
 		rangeToIgnore = transform.GetChild(1).GetComponent<CircleCollider2D>();
 		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-		grid = GameObject.Find("Pathfinding Managers").transform.GetChild(0).GetComponent<MyGrid>();
+		grid = GameObject.Find("Pathfinding Manager").GetComponent<MyGrid>();
 
 	}
 	private void Update()
@@ -120,13 +120,10 @@ public class MontyStateVariables : MonoBehaviour
 			Random.Range(bounds.min.y, bounds.max.y)
 			);
 
-
 		if (CheckIfPointInCollider(location))
 		{
-			//Debug.DrawLine(transform.position, location,Color.green,20f);
-
+			//Debug.DrawLine(transform.position, location,color.green,20f);
 			return new Vector3(location.x, location.y, 0);
-
 		}
 		else
 		{

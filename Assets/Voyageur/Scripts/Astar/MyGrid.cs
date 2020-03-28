@@ -12,6 +12,8 @@ public class MyGrid : MonoBehaviour
 	public TerrainType[] walkableRegions;
 	LayerMask walkableMask;
 
+	public bool invertGrid;
+
 	Dictionary<int, int> walkableRegionsDictionary = new Dictionary<int, int>();
 
 	Node[,] grid;
@@ -50,6 +52,8 @@ public class MyGrid : MonoBehaviour
 
 	public void CreateGrid()
 	{
+		bool walkable;
+
 		grid = new Node[gridSizeX, gridSizeY];
 		Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2 - Vector3.up * gridWorldSize.y / 2;
 
@@ -58,7 +62,16 @@ public class MyGrid : MonoBehaviour
 			for (int y = 0; y < gridSizeY; y++)
 			{
 				Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.up * (y * nodeDiameter + nodeRadius);
-				bool walkable = !(Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask));
+
+				if (invertGrid)
+				{
+					walkable = (Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask));
+				}
+				else
+				{
+					walkable  = !(Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask));
+				}
+				
 
 				int movementPenalty = 0;
 
@@ -163,13 +176,16 @@ public class MyGrid : MonoBehaviour
 
 	public Node NodeFromWorldPoint(Vector3 worldPosition)
 	{
+
 		float percentX = (worldPosition.x - transform.position.x) / gridWorldSize.x + 0.5f - (nodeRadius / gridWorldSize.x);
-		float percentY = (worldPosition.z - transform.position.z) / gridWorldSize.y + 0.5f - (nodeRadius / gridWorldSize.y);
+		float percentY = (worldPosition.y - transform.position.y) / gridWorldSize.y + 0.5f - (nodeRadius / gridWorldSize.y);
+
 		percentX = Mathf.Clamp01(percentX);
 		percentY = Mathf.Clamp01(percentY);
 
-		int x = Mathf.FloorToInt(Mathf.Min(gridSizeX * percentX, gridSizeX-1));
+		int x = Mathf.FloorToInt(Mathf.Min(gridSizeX * percentX, gridSizeX - 1));
 		int y = Mathf.FloorToInt(Mathf.Min(gridSizeY * percentY, gridSizeY - 1));
+
 		return grid[x, y];
 	}
 
@@ -180,8 +196,7 @@ public class MyGrid : MonoBehaviour
 		if (grid != null && displayGridGizmos)
 		{
 			foreach (Node n in grid)
-			{
-				
+			{			
 
 				Gizmos.color = Color.Lerp(Color.white, Color.black, Mathf.InverseLerp(penaltyMin, penaltyMax, n.movementPenalty));
 				Gizmos.color = (n.walkable) ? Gizmos.color : Color.red;
