@@ -7,9 +7,12 @@ public class MyGrid : MonoBehaviour
 	public bool displayGridGizmos;
 	public LayerMask unwalkableMask;
 	public Vector2 gridWorldSize;
+	public Vector2 gridOffset;
 	public float nodeRadius;
 	public TerrainType[] walkableRegions;
 	LayerMask walkableMask;
+
+	public bool invertGrid;
 
 	Dictionary<int, int> walkableRegionsDictionary = new Dictionary<int, int>();
 
@@ -21,11 +24,14 @@ public class MyGrid : MonoBehaviour
 	int penaltyMin = int.MaxValue;
 	int penaltyMax = int.MinValue;
 
+	public GameObject player, monty;
+
+
 	void Awake()
 	{
 		nodeDiameter = nodeRadius * 2;
-		gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
-		gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
+		gridSizeX = Mathf.RoundToInt((gridWorldSize.x / nodeDiameter) + gridOffset.x);
+		gridSizeY = Mathf.RoundToInt((gridWorldSize.y / nodeDiameter) + gridOffset.y);
 
 		foreach (TerrainType region in walkableRegions)
 		{
@@ -44,8 +50,10 @@ public class MyGrid : MonoBehaviour
 		}
 	}
 
-	void CreateGrid()
+	public void CreateGrid()
 	{
+		bool walkable;
+
 		grid = new Node[gridSizeX, gridSizeY];
 		Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2 - Vector3.up * gridWorldSize.y / 2;
 
@@ -54,7 +62,16 @@ public class MyGrid : MonoBehaviour
 			for (int y = 0; y < gridSizeY; y++)
 			{
 				Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.up * (y * nodeDiameter + nodeRadius);
-				bool walkable = !(Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask));
+
+				if (invertGrid)
+				{
+					walkable = (Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask));
+				}
+				else
+				{
+					walkable  = !(Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask));
+				}
+				
 
 				int movementPenalty = 0;
 
@@ -159,13 +176,16 @@ public class MyGrid : MonoBehaviour
 
 	public Node NodeFromWorldPoint(Vector3 worldPosition)
 	{
-		float percentX = (worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
-		float percentY = (worldPosition.y + gridWorldSize.y / 2) / gridWorldSize.y;
+
+		float percentX = (worldPosition.x - transform.position.x) / gridWorldSize.x + 0.5f - (nodeRadius / gridWorldSize.x);
+		float percentY = (worldPosition.y - transform.position.y) / gridWorldSize.y + 0.5f - (nodeRadius / gridWorldSize.y);
+
 		percentX = Mathf.Clamp01(percentX);
 		percentY = Mathf.Clamp01(percentY);
 
-		int x = Mathf.RoundToInt((gridSizeX - 1) * percentX);
-		int y = Mathf.RoundToInt((gridSizeY - 1) * percentY);
+		int x = Mathf.FloorToInt(Mathf.Min(gridSizeX * percentX, gridSizeX - 1));
+		int y = Mathf.FloorToInt(Mathf.Min(gridSizeY * percentY, gridSizeY - 1));
+
 		return grid[x, y];
 	}
 
@@ -176,7 +196,8 @@ public class MyGrid : MonoBehaviour
 		if (grid != null && displayGridGizmos)
 		{
 			foreach (Node n in grid)
-			{
+			{			
+
 				Gizmos.color = Color.Lerp(Color.white, Color.black, Mathf.InverseLerp(penaltyMin, penaltyMax, n.movementPenalty));
 				Gizmos.color = (n.walkable) ? Gizmos.color : Color.red;
 

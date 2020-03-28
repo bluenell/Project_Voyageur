@@ -15,11 +15,13 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject monty;
 	public GameObject layerManager;
 	public GameObject interactionsManager;
+	public GameObject[] pathfindingManagers;
 
 	CanoePaddle paddleScript;
 	PlayerController playerController;
 	CameraHandler cameraHandler;
-
+	GameManager gm;
+	MontyStateVariables montyStateVariables;
 
 	public GameObject pathwayCollider;
 	public GameObject spritesManager;
@@ -35,6 +37,9 @@ public class TransitionHandler : MonoBehaviour
 		playerController = player.GetComponent<PlayerController>();
 		paddleScript = canoeAIO.GetComponent<CanoePaddle>();
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
+		gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+		montyStateVariables = monty.GetComponent<MontyStateVariables>();
+		montyStateVariables = monty.GetComponent<MontyStateVariables>();
 	}
 
 
@@ -53,14 +58,19 @@ public class TransitionHandler : MonoBehaviour
 		interactionsManager.SetActive(true);
 		cameraHandler.SwitchToPlayer();
 		pathwayCollider.SetActive(true);
+
 		spritesManager.SetActive(true);
 
-		Debug.Log(currentIsland);
-		currentIsland++;
+
 	}
 
 	public void Launch()
 	{
+		// Increasing Current Island Count
+		gm.IncreaseIsland();
+		Debug.Log("Transitioning to island: " + gm.GetCurrentIsland());
+
+		// Enabling & Disabling Monty, Player, Canoe Single and their depencies
 		canoeAIO.transform.position = canoeSpawnPoints[0].transform.GetChild(currentIsland).transform.position;
 		canoeAIO.SetActive(true);
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
@@ -73,6 +83,12 @@ public class TransitionHandler : MonoBehaviour
 		pathwayCollider.SetActive(false);
 		spritesManager.SetActive(true);
 
+		//Setting all other pathfinding managers to inactive
+		for (int i = 0; i < pathfindingManagers.Length; i++)
+		{
+			pathfindingManagers[i].SetActive(false);
+		}
+		
 
 		//hide monty
 		//hide canoe object

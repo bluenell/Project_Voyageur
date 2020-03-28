@@ -19,26 +19,25 @@ public class MontyStateVariables : MonoBehaviour
 	public float distanceToFollow;
 
 
-	public bool movingTowardsPlayer;
-	public bool callRequestMade;
 
-	PolygonCollider2D pathwayBounds;
+	[Header("Pathfinding")]
 	CircleCollider2D rangeToIgnore;
 	MyGrid grid;
 
+	public bool movingTowardsPlayer;
+	public bool callRequestMade;
 
 
+	[Header("Waiting")]
 	public int sitWaitTime;
 	public Vector2 randomWaitRange;
 
 	GameObject player;
 	InteractionsManager interactionsManager;
+	GameManager gameManager;
 
-
-    #region Fetch_Variables
-
-    
 	[Header("Fetch Variables")]
+
 	Rigidbody2D stickRb;
 	Transform stickThrowTarget;
 	public float throwHeight;
@@ -47,24 +46,29 @@ public class MontyStateVariables : MonoBehaviour
 	public bool playerHasStick = false;
 	public bool stickThrown = false;
 	public bool montyReturningStick = false;
-	public int throwCount;
 	public bool waitedAtStick = false;
 
-	#endregion
+
+	private void Awake()
+	{
+
+	}
 
 	private void Start()
 	{
 		player = GameObject.Find("Player");
 		interactionsManager = player.GetComponent<InteractionsManager>();
-		grid = GameObject.Find("Pathfinding Manager").GetComponent<MyGrid>();
 		rangeToIgnore = transform.GetChild(1).GetComponent<CircleCollider2D>();
+		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+		grid = GameObject.Find("Pathfinding Manager").GetComponent<MyGrid>();
+
 	}
 	private void Update()
 	{
 		distFromPlayer = CalculateDistance();
 		playerMoving = GetPlayerMoving();
 		playerFlipped = GetPlayerDirectionPositive();
-		
+		//grid = pathFindingManagers[gameManager.GetCurrentIsland()].GetComponent<MyGrid>();
 	}
 
     #region Player_Calculations
@@ -116,13 +120,10 @@ public class MontyStateVariables : MonoBehaviour
 			Random.Range(bounds.min.y, bounds.max.y)
 			);
 
-
 		if (CheckIfPointInCollider(location))
 		{
-			//Debug.DrawLine(transform.position, location,Color.green,20f);
-
+			//Debug.DrawLine(transform.position, location,color.green,20f);
 			return new Vector3(location.x, location.y, 0);
-
 		}
 		else
 		{
