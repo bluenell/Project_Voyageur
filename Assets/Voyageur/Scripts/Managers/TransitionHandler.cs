@@ -30,6 +30,7 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject[] playerSpawnPoints;
 	public GameObject[] canoeSpawnPoints;
 
+
 	
 
 	private void Awake()
@@ -45,9 +46,9 @@ public class TransitionHandler : MonoBehaviour
 
 	public void Beach()
 	{
-		canoe.transform.position = playerSpawnPoints[currentIsland].transform.GetChild(0).transform.position;
-		player.transform.position = playerSpawnPoints[currentIsland].transform.GetChild(1).transform.position;
-		monty.transform.position = playerSpawnPoints[currentIsland].transform.GetChild(2).transform.position;
+		canoe.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(0).transform.position;
+		player.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(1).transform.position;
+		monty.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(2).transform.position;
 
 
 		canoeAIO.SetActive(false);
@@ -61,6 +62,8 @@ public class TransitionHandler : MonoBehaviour
 
 		spritesManager.SetActive(true);
 
+		montyStateVariables.grid.CreateGrid();
+
 
 	}
 
@@ -71,7 +74,7 @@ public class TransitionHandler : MonoBehaviour
 		Debug.Log("Transitioning to island: " + gm.GetCurrentIsland());
 
 		// Enabling & Disabling Monty, Player, Canoe Single and their depencies
-		canoeAIO.transform.position = canoeSpawnPoints[0].transform.GetChild(currentIsland).transform.position;
+		canoeAIO.transform.position = canoeSpawnPoints[gm.GetCurrentIsland()-1].transform.position;
 		canoeAIO.SetActive(true);
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
 		canoeAIO.GetComponent<CanoePaddle>().canPaddle = true;
@@ -88,6 +91,13 @@ public class TransitionHandler : MonoBehaviour
 		{
 			pathfindingManagers[i].SetActive(false);
 		}
+
+		// Activating the next islands pathfinding and clearing any existing path requests
+		pathfindingManagers[gm.GetCurrentIsland()].SetActive(true);
+		PathRequestManager.ClearRequests();
+		monty.GetComponent<MontyStateActions>().StopAllCoroutines();
+		montyStateVariables.grid = pathfindingManagers[gm.GetCurrentIsland()].GetComponent<MyGrid>();
+		
 		
 
 		//hide monty

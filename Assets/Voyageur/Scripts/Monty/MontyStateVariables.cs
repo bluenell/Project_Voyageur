@@ -22,7 +22,7 @@ public class MontyStateVariables : MonoBehaviour
 
 	[Header("Pathfinding")]
 	CircleCollider2D rangeToIgnore;
-	MyGrid grid;
+	public MyGrid grid;
 
 	public bool movingTowardsPlayer;
 	public bool callRequestMade;
@@ -49,10 +49,6 @@ public class MontyStateVariables : MonoBehaviour
 	public bool waitedAtStick = false;
 
 
-	private void Awake()
-	{
-
-	}
 
 	private void Start()
 	{
@@ -60,7 +56,7 @@ public class MontyStateVariables : MonoBehaviour
 		interactionsManager = player.GetComponent<InteractionsManager>();
 		rangeToIgnore = transform.GetChild(1).GetComponent<CircleCollider2D>();
 		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-		grid = GameObject.Find("Pathfinding Manager").GetComponent<MyGrid>();
+		grid = GameObject.Find("Pathfinding Grids").transform.GetChild(gameManager.GetCurrentIsland()).GetComponent<MyGrid>();
 
 	}
 	private void Update()

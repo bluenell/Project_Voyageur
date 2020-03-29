@@ -3,8 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System;
+
+
+[RequireComponent(typeof(MyGrid))]
+[RequireComponent(typeof(PathRequestManager))]
 public class Pathfinding : MonoBehaviour
 {
+
 
 	PathRequestManager requestManager;
 	MyGrid grid;
