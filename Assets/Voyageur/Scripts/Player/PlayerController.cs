@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
 	bool canPickUp;
 	bool canPutDown;
 	bool canLaunch;
+	public int pushCounter;
 
 	bool carryingCanoe;
 
@@ -331,6 +332,7 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe(string type)
 	{
+
 		currentInventoryIndex = 0;
 		anim.SetInteger("inventoryIndex", 0);
 
@@ -393,11 +395,30 @@ public class PlayerController : MonoBehaviour
 		}
 		else if (type == "launch")
 		{
-			canLaunch = false;
-			targetFound = false;
-			carryingCanoe = false;
+			DisablePlayerInput();
+			MoveTowardsTarget(pickUpTarget, false);
 
-			transitionHandler.Launch();
+			if (CheckIfAtTarget(pickUpTarget, false))
+			{
+				pushCounter++;
+				canoe.GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
+				anim.SetTrigger("pushCanoe");
+				
+
+				StartCoroutine(RevealCanoe(0.8f));
+				StartCoroutine(EnablePlayerInput(0.8f));
+
+				canLaunch = true;
+				targetFound = false;
+				carryingCanoe = false;
+
+				if (pushCounter >= 3)
+				{
+					transitionHandler.Launch();
+				}
+			}
+			
+			
 		}
 	}
 

@@ -23,7 +23,7 @@ public class TransitionHandler : MonoBehaviour
 	GameManager gm;
 	MontyStateVariables montyStateVariables;
 
-	public GameObject pathwayCollider;
+	public GameObject[] pathwayColliders;
 	public GameObject spritesManager;
 
 	[Header("Spawn Points")]
@@ -58,7 +58,7 @@ public class TransitionHandler : MonoBehaviour
 		layerManager.SetActive(true);
 		interactionsManager.SetActive(true);
 		cameraHandler.SwitchToPlayer();
-		pathwayCollider.SetActive(true);
+		pathwayColliders[0].SetActive(true);
 
 		spritesManager.SetActive(true);
 
@@ -83,7 +83,7 @@ public class TransitionHandler : MonoBehaviour
 		monty.SetActive(false);
 		layerManager.SetActive(false);
 		interactionsManager.SetActive(false);
-		pathwayCollider.SetActive(false);
+		pathwayColliders[0].SetActive(false);
 		spritesManager.SetActive(true);
 
 		//Setting all other pathfinding managers to inactive
