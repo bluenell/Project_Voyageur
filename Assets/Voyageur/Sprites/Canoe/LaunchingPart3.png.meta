@@ -1,7 +1,229 @@
 fileFormatVersion: 2
 guid: 148062ae428266a488dcbd067701871f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1326283944686357987
+    second: LaunchingPart3_0
+  - first:
+      213: 5791149197704745325
+    second: LaunchingPart3_1
+  - first:
+      213: 8538798531985032008
+    second: LaunchingPart3_2
+  - first:
+      213: 785140402240033232
+    second: LaunchingPart3_3
+  - first:
+      213: 40845279947377626
+    second: LaunchingPart3_4
+  - first:
+      213: -3131570543755253271
+    second: LaunchingPart3_5
+  - first:
+      213: -552210733512551982
+    second: LaunchingPart3_6
+  - first:
+      213: -2917218707422201238
+    second: LaunchingPart3_7
+  - first:
+      213: 6992724678310229774
+    second: LaunchingPart3_8
+  - first:
+      213: 2567149882197018101
+    second: LaunchingPart3_9
+  - first:
+      213: -150780343006607362
+    second: LaunchingPart3_10
+  - first:
+      213: -1952781897425387295
+    second: LaunchingPart3_11
+  - first:
+      213: -1203451476955723715
+    second: LaunchingPart3_12
+  - first:
+      213: -2766649757183915967
+    second: LaunchingPart3_13
+  - first:
+      213: -8661129439930115220
+    second: LaunchingPart3_14
+  - first:
+      213: -1108206094939515497
+    second: LaunchingPart3_15
+  - first:
+      213: 5499682293507717114
+    second: LaunchingPart3_16
+  - first:
+      213: 2418129706063541913
+    second: LaunchingPart3_17
+  - first:
+      213: 6835116903838622001
+    second: LaunchingPart3_18
+  - first:
+      213: 1726814924934561850
+    second: LaunchingPart3_19
+  - first:
+      213: -1613964599511779075
+    second: LaunchingPart3_20
+  - first:
+      213: -5829458902009989219
+    second: LaunchingPart3_21
+  - first:
+      213: 5131639311201433235
+    second: LaunchingPart3_22
+  - first:
+      213: 804716627342959043
+    second: LaunchingPart3_23
+  - first:
+      213: 5599669760360257193
+    second: LaunchingPart3_24
+  - first:
+      213: -3115427148877873706
+    second: LaunchingPart3_25
+  - first:
+      213: -7224280853402277299
+    second: LaunchingPart3_26
+  - first:
+      213: -6937246649938836308
+    second: LaunchingPart3_27
+  - first:
+      213: 2927327530388768074
+    second: LaunchingPart3_28
+  - first:
+      213: -6227875527656442160
+    second: LaunchingPart3_29
+  - first:
+      213: 606976371429276721
+    second: LaunchingPart3_30
+  - first:
+      213: 4835959508105743836
+    second: LaunchingPart3_31
+  - first:
+      213: -1336099918200617165
+    second: LaunchingPart3_32
+  - first:
+      213: -8560114064471112584
+    second: LaunchingPart3_33
+  - first:
+      213: 2402078055998426707
+    second: LaunchingPart3_34
+  - first:
+      213: -3843683503121106329
+    second: LaunchingPart3_35
+  - first:
+      213: 5702279445001445190
+    second: LaunchingPart3_36
+  - first:
+      213: -4011487480601033367
+    second: LaunchingPart3_37
+  - first:
+      213: -3279230299892500310
+    second: LaunchingPart3_38
+  - first:
+      213: 3798564087842397018
+    second: LaunchingPart3_39
+  - first:
+      213: 2250579820456118263
+    second: LaunchingPart3_40
+  - first:
+      213: -2395786745466655916
+    second: LaunchingPart3_41
+  - first:
+      213: 2332129159194390925
+    second: LaunchingPart3_42
+  - first:
+      213: -3797683899403456148
+    second: LaunchingPart3_43
+  - first:
+      213: 2332617984768262541
+    second: LaunchingPart3_44
+  - first:
+      213: -1955820735912903325
+    second: LaunchingPart3_45
+  - first:
+      213: -710775447047873942
+    second: LaunchingPart3_46
+  - first:
+      213: 2685945561712627236
+    second: LaunchingPart3_47
+  - first:
+      213: 1354889209119386179
+    second: LaunchingPart3_48
+  - first:
+      213: 5447212829372406093
+    second: LaunchingPart3_49
+  - first:
+      213: -2663086444845412782
+    second: LaunchingPart3_50
+  - first:
+      213: 3602339389829597017
+    second: LaunchingPart3_51
+  - first:
+      213: 3266183712837677023
+    second: LaunchingPart3_52
+  - first:
+      213: 8299751300743711893
+    second: LaunchingPart3_53
+  - first:
+      213: -6761046591178330776
+    second: LaunchingPart3_54
+  - first:
+      213: 7920694255111513639
+    second: LaunchingPart3_55
+  - first:
+      213: 1901113319500999780
+    second: LaunchingPart3_56
+  - first:
+      213: 1060143311408552370
+    second: LaunchingPart3_57
+  - first:
+      213: 2702275418607805297
+    second: LaunchingPart3_58
+  - first:
+      213: -3590265473735362133
+    second: LaunchingPart3_59
+  - first:
+      213: -189074580366662411
+    second: LaunchingPart3_60
+  - first:
+      213: -7391124993528758916
+    second: LaunchingPart3_61
+  - first:
+      213: -8274315471600222739
+    second: LaunchingPart3_62
+  - first:
+      213: 3951311794543676613
+    second: LaunchingPart3_63
+  - first:
+      213: -4481395931993470776
+    second: LaunchingPart3_64
+  - first:
+      213: -8426690110625444587
+    second: LaunchingPart3_65
+  - first:
+      213: -5699543675580095961
+    second: LaunchingPart3_66
+  - first:
+      213: 5556734282094781321
+    second: LaunchingPart3_67
+  - first:
+      213: 8753342313230802721
+    second: LaunchingPart3_68
+  - first:
+      213: -3415516439481172524
+    second: LaunchingPart3_69
+  - first:
+      213: -1526725821136602424
+    second: LaunchingPart3_70
+  - first:
+      213: -6524727958961166635
+    second: LaunchingPart3_71
+  - first:
+      213: -7676175156351747863
+    second: LaunchingPart3_72
+  - first:
+      213: 59537545778804945
+    second: LaunchingPart3_73
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +253,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,12 +262,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -60,10 +282,22 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

@@ -373,6 +373,8 @@ public class PlayerController : MonoBehaviour
 		{
 			DisablePlayerInput();
 			MoveTowardsTarget(putDownTarget, false);
+			currentInventoryIndex = 0;
+			anim.SetInteger("inventoryIndex", 0);
 
 			if (CheckIfAtTarget(putDownTarget, false))
 			{
