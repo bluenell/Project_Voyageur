@@ -5,39 +5,50 @@ using UnityEditor;
 public class TransitionHandler : MonoBehaviour
 {
 
-	CanoePaddle paddleScript;
-	PlayerController playerController;
-	CameraHandler cameraHandler;
 
+	public int currentIsland = 0;
+
+	[Header("Components")]
 	public GameObject player;
 	public GameObject canoe;
 	public GameObject canoeAIO;
 	public GameObject monty;
 	public GameObject layerManager;
 	public GameObject interactionsManager;
+	public GameObject[] pathfindingManagers;
 
+	CanoePaddle paddleScript;
+	PlayerController playerController;
+	CameraHandler cameraHandler;
+	GameManager gm;
+	MontyStateVariables montyStateVariables;
 
 	public GameObject pathwayCollider;
 	public GameObject spritesManager;
 
+	[Header("Spawn Points")]
 	public GameObject[] playerSpawnPoints;
 	public GameObject[] canoeSpawnPoints;
 
-	int currentIsland = 0;
+
+	
 
 	private void Awake()
 	{
 		playerController = player.GetComponent<PlayerController>();
 		paddleScript = canoeAIO.GetComponent<CanoePaddle>();
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
+		gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+		montyStateVariables = monty.GetComponent<MontyStateVariables>();
+		montyStateVariables = monty.GetComponent<MontyStateVariables>();
 	}
 
 
 	public void Beach()
 	{
-		canoe.transform.position = playerSpawnPoints[currentIsland].transform.GetChild(0).transform.position;
-		player.transform.position = playerSpawnPoints[currentIsland].transform.GetChild(1).transform.position;
-		monty.transform.position = playerSpawnPoints[currentIsland].transform.GetChild(2).transform.position;
+		canoe.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(0).transform.position;
+		player.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(1).transform.position;
+		monty.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(2).transform.position;
 
 
 		canoeAIO.SetActive(false);
@@ -48,15 +59,22 @@ public class TransitionHandler : MonoBehaviour
 		interactionsManager.SetActive(true);
 		cameraHandler.SwitchToPlayer();
 		pathwayCollider.SetActive(true);
+
 		spritesManager.SetActive(true);
 
-		Debug.Log(currentIsland);
-		currentIsland++;
+		montyStateVariables.grid.CreateGrid();
+
+
 	}
 
 	public void Launch()
 	{
-		canoeAIO.transform.position = canoeSpawnPoints[0].transform.GetChild(currentIsland).transform.position;
+		// Increasing Current Island Count
+		gm.IncreaseIsland();
+		Debug.Log("Transitioning to island: " + gm.GetCurrentIsland());
+
+		// Enabling & Disabling Monty, Player, Canoe Single and their depencies
+		canoeAIO.transform.position = canoeSpawnPoints[gm.GetCurrentIsland()-1].transform.position;
 		canoeAIO.SetActive(true);
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
 		canoeAIO.GetComponent<CanoePaddle>().canPaddle = true;
@@ -68,6 +86,19 @@ public class TransitionHandler : MonoBehaviour
 		pathwayCollider.SetActive(false);
 		spritesManager.SetActive(true);
 
+		//Setting all other pathfinding managers to inactive
+		for (int i = 0; i < pathfindingManagers.Length; i++)
+		{
+			pathfindingManagers[i].SetActive(false);
+		}
+
+		// Activating the next islands pathfinding and clearing any existing path requests
+		pathfindingManagers[gm.GetCurrentIsland()].SetActive(true);
+		PathRequestManager.ClearRequests();
+		monty.GetComponent<MontyStateActions>().StopAllCoroutines();
+		montyStateVariables.grid = pathfindingManagers[gm.GetCurrentIsland()].GetComponent<MyGrid>();
+		
+		
 
 		//hide monty
 		//hide canoe object

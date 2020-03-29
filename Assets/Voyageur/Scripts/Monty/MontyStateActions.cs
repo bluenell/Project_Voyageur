@@ -1,11 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MontyStateActions : MonoBehaviour
 {
 	Animator anim;
 	MontyStateVariables stateVariables;
+	MontyStateManager stateManager;
 	GameObject player;
 	GameObject followTarget;
 	BoxCollider2D followTargetCollider;
@@ -14,15 +14,20 @@ public class MontyStateActions : MonoBehaviour
 	PlayerController playerController;
 	CameraHandler cameraHandler;
 
-
 	bool targetFound;
-	Vector2 target;
+	Vector3 target;
 	float stuckTimer;
+
+	Vector3[] path;
+	int targetIndex;
+	public bool currentlyOnPath;
+
 
 	private void Start()
 	{
 		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 		stateVariables = GetComponent<MontyStateVariables>();
+		stateManager = GetComponent<MontyStateManager>();
 		anim = transform.GetChild(0).GetComponent<Animator>();
 		player = GameObject.Find("Player");
 		followTarget = player.transform.GetChild(2).gameObject;
@@ -32,58 +37,23 @@ public class MontyStateActions : MonoBehaviour
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
 	}
 
-	
-
 
 	public void Roam()
-	{				
+	{ 
 		//Debug.Log("Monty is following");
 		anim.SetBool("isRunning", false);
 		anim.SetBool("isSitting", false);
 		anim.SetBool("isWalking", true);
 
-		if (!targetFound)
+		if (!currentlyOnPath && !stateVariables.callRequestMade)
 		{
+			anim.SetBool("isWalking", false);
 			target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
-			targetFound = true;
-		}
-	   
-		transform.position = Vector2.MoveTowards(transform.position,target, stateVariables.walkSpeed * Time.deltaTime);
-
-		if (transform.position.x == target.x && transform.position.y == target.y)
-		{
-			stateVariables.desintationReached = true;
-			//Debug.Log("Destination Reached");
-		}
-
-		if (stateVariables.desintationReached)
-		{
-			targetFound = false;			
-		}
-
-		if (target.x < transform.position.x)
-		{
-			sprite.flipX = true;
-		}
-		else
-		{
-			sprite.flipX = false;
-		}
-
-		if (targetFound && (transform.position.x != target.x && transform.position.y != target.y))
-		{
-
-			stuckTimer += Time.deltaTime;
-			//Debug.Log(stuckTimer);
-
-			if (stuckTimer >= 3)
-			{
-				//Debug.Log("Monty Stuck");
-				target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
-				stuckTimer = 0;
-			}
+			PathRequestManager.RequestPath(transform.position, target, OnPathFound);
+			currentlyOnPath = true;
 		}
 	}
+
 	public void Sit()
 	{
 		anim.SetBool("isSitting", true);
@@ -91,11 +61,14 @@ public class MontyStateActions : MonoBehaviour
 	}
 	public void Fetch()
 	{
+		StopCoroutine(FollowPath());
+		PathRequestManager.ClearRequests();
+
 		//checking if the stick hasn't been thrown yet, or monty is bringing the stick back (when to move monty to the start point)
 		if (!stateVariables.stickThrown || stateVariables.montyReturningStick)
 		{
-			
-			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint().position, stateVariables.runSpeed*Time.deltaTime);
+
+			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint().position, stateVariables.runSpeed * Time.deltaTime);
 			anim.SetBool("isWalking", false);
 			anim.SetBool("isSitting", false);
 			anim.SetBool("isRunning", true);
@@ -140,8 +113,8 @@ public class MontyStateActions : MonoBehaviour
 
 			if (stateVariables.playerHasStick)
 			{
-				Debug.Log("Disable input"); 
-				playerController.DisablePlayerInput();				
+				Debug.Log("Disable input");
+				playerController.DisablePlayerInput();
 			}
 			else
 			{
@@ -157,9 +130,7 @@ public class MontyStateActions : MonoBehaviour
 			else
 			{
 				stateVariables.montyHasStick = true;
-
 				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
-
 			}
 		}
 
@@ -167,58 +138,38 @@ public class MontyStateActions : MonoBehaviour
 		if (transform.position == stateVariables.GetThrowTarget().position)
 		{
 			Debug.Log("At thrown stick");
-			anim.SetBool("isRunning", false);			
+			anim.SetBool("isRunning", false);
 
 			if (!stateVariables.waitedAtStick)
 			{
 				StartCoroutine(WaitForTime(2));
-			}			
+			}
 		}
 	}
-	
+
 	public void Wait()
 	{
-		//Debug.Log("Waiting");
+		currentlyOnPath = false;
 		anim.SetBool("isRunning", false);
 		anim.SetBool("isWalking", false);
 		anim.SetBool("isSitting", false);
+		PathRequestManager.ClearRequests();
 	}
 
 	public void MoveTowards()
 	{
-			anim.SetBool("isSitting", false);
-			anim.SetBool("isWalking", false);
-			anim.SetBool("isRunning", true);
-			//Debug.Log("Moving Towards");
-			transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach, 0, 0), stateVariables.runSpeed * Time.deltaTime);
-			if (player.transform.position.x < transform.position.x)
-			{
-				sprite.flipX = true;
-			}
-			else
-			{
-				sprite.flipX = false;
-			}
-	}
-
-	public void Follow()
-	{
-		anim.SetBool("isRunning", false);
 		anim.SetBool("isSitting", false);
-		anim.SetBool("isWalking", true);
+		anim.SetBool("isWalking", false);
+		anim.SetBool("isRunning", true);
 
-		if (playerController.facingRight)
+		if (stateVariables.callRequestMade)
 		{
-			transform.position = Vector2.MoveTowards(transform.position, player.transform.position - new Vector3(playerController.armsReach, 0, 0), stateVariables.walkSpeed * Time.deltaTime);
+			StopCoroutine(FollowPath());
+			PathRequestManager.ClearRequests();
+			stateVariables.callRequestMade = false;
+			PathRequestManager.RequestPath(transform.position, player.transform.position, OnPathFound);	
 		}
-		else
-		{
-			sprite.flipX = true;
-			transform.position = Vector2.MoveTowards(transform.position, player.transform.position + new Vector3(playerController.armsReach, 0, 0), stateVariables.walkSpeed * Time.deltaTime);
-		}
-		
 	}
-
 	public void Canoe()
 	{
 		Debug.Log("monty is in the canoe");
@@ -234,4 +185,83 @@ public class MontyStateActions : MonoBehaviour
 		stateVariables.GetFetchStick().position = stateVariables.GetStickSpawnLocation().position;
 		stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 	}
+
+
+    #region Pathfinding
+
+    public void OnPathFound(Vector3[] newPath, bool pathSucessfull)
+	{
+		if (pathSucessfull)
+		{
+			path = newPath;
+			targetIndex = 0;
+			StopCoroutine(FollowPath());
+			StartCoroutine(FollowPath());
+		}
+	}
+
+	IEnumerator FollowPath()
+	{
+		Vector3 currentWaypoint = path[0];
+
+		while (true)
+		{
+			if (transform.position == currentWaypoint)
+			{
+				//Debug.Log("At waypoint: " + path[targetIndex]);
+				targetIndex++;
+				if (targetIndex >= path.Length)
+				{
+					PathRequestManager.ClearRequests();
+					currentlyOnPath = false;
+					stateVariables.desintationReached = true;
+					yield break;
+				}
+				currentWaypoint = path[targetIndex];
+			}
+
+			transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, stateVariables.walkSpeed * Time.deltaTime);
+
+			if (currentWaypoint.x < transform.position.x)
+			{
+				sprite.flipX = true;
+			}
+			else
+			{
+				sprite.flipX = false;
+			}
+
+			yield return null;
+		}
+	}
+
+	public void OnDrawGizmos()
+	{
+		if (path != null)
+		{
+			for (int i = targetIndex; i < path.Length; i++)
+			{
+				if (stateManager.currentState == "roam")
+				{
+					Gizmos.color = Color.black;
+				}
+				else
+				{
+					Gizmos.color = Color.blue;
+				}
+				Gizmos.DrawCube(path[i], (Vector3.one) / 2);
+
+				if (i == targetIndex)
+				{
+					Gizmos.DrawLine(transform.position, path[i]);
+				}
+				else
+				{
+					Gizmos.DrawLine(path[i - 1], path[i]);
+				}
+			}
+		}
+	}
+
+    #endregion
 }

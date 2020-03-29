@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
 
 	private void Update()
 	{
-	
+
 		HandleInput();
 
 
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (Time.time >= nextSwitchTime)
 		{
-			if (Input.GetButtonDown("InventoryLeft") || Input.GetAxis("Mouse ScrollWheel") <0)
+			if (Input.GetButtonDown("InventoryLeft") || Input.GetAxis("Mouse ScrollWheel") < 0)
 			{
 				playerSoundManager.PlayItemSwitch();
 				CycleInventory("left");
@@ -217,7 +217,7 @@ public class PlayerController : MonoBehaviour
 
 				else if (!carryingCanoe)
 				{
-					if ( inRangeOfCanoe && !canLaunch)
+					if (inRangeOfCanoe && !canLaunch)
 					{
 						targetFound = true;
 						interactionType = "pickUpCanoe";
@@ -238,7 +238,7 @@ public class PlayerController : MonoBehaviour
 		else
 		{
 			playingFetch = false;
-			targetFound = false;
+			//targetFound = false;
 
 		}
 
@@ -292,7 +292,7 @@ public class PlayerController : MonoBehaviour
 			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 			torch.transform.localPosition = rightTorchTransform;
 		}
-		
+
 
 		if (moveX != 0 || moveY != 0)
 		{
@@ -344,14 +344,14 @@ public class PlayerController : MonoBehaviour
 				targetFound = false;
 				carryingCanoe = true;
 
-				
+
 				anim.SetTrigger("PickUp");
 				canoe.SetActive(false);
 				StartCoroutine(EnablePlayerInput(0.8f));
-			}	
-			
+			}
+
 		}
-		else if (type ==  "putdown")
+		else if (type == "putdown")
 		{
 			DisablePlayerInput();
 			MoveTowardsTarget(spawnTarget, true);
@@ -367,7 +367,7 @@ public class PlayerController : MonoBehaviour
 				StartCoroutine(RevealCanoe(0.8f));
 				StartCoroutine(EnablePlayerInput(0.8f));
 
-			}		
+			}
 		}
 		else if (type == "beginLaunch")
 		{
@@ -401,25 +401,25 @@ public class PlayerController : MonoBehaviour
 
 	void HandleMonty()
 	{
-			//checking if monty has the stick and the player is within range of picking it up
-			if (interactionType == "pickUpStick")
-			{
-				montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-				DisablePlayerInput();
-				currentInventoryIndex = 0;
-				anim.SetInteger("inventoryIndex", currentInventoryIndex);
-				anim.SetTrigger("pickUpStick");
+		//checking if monty has the stick and the player is within range of picking it up
+		if (interactionType == "pickUpStick")
+		{
+			montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+			DisablePlayerInput();
+			currentInventoryIndex = 0;
+			anim.SetInteger("inventoryIndex", currentInventoryIndex);
+			anim.SetTrigger("pickUpStick");
 
-				//setting the position of the stick object to around the players arm height (can easily be changed by moving the target object in the scene)
-				montyStateVariables.GetFetchStick().transform.position = transform.GetChild(3).transform.position;
-				montyStateVariables.playerHasStick = true;
-				montyStateVariables.montyHasStick = false;
-			}	
-			if (interactionType == "throw")
-			{
-				anim.SetTrigger("throwStick");
-				Debug.Log("Throw Stick");
-			}
+			//setting the position of the stick object to around the players arm height (can easily be changed by moving the target object in the scene)
+			montyStateVariables.GetFetchStick().transform.position = transform.GetChild(3).transform.position;
+			montyStateVariables.playerHasStick = true;
+			montyStateVariables.montyHasStick = false;
+		}
+		if (interactionType == "throw")
+		{
+			anim.SetTrigger("throwStick");
+			Debug.Log("Throw Stick");
+		}
 	}
 
 	void WhistleMonty()
@@ -459,7 +459,6 @@ public class PlayerController : MonoBehaviour
 
 	public void ThrowStick()
 	{
-		montyStateVariables.throwCount++;
 		montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
 		montyStateVariables.playerHasStick = false;
 		montyStateVariables.montyHasStick = false;
@@ -527,7 +526,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (onlyY)
 		{
-			if (transform.position.y ==  target.position.y)
+			if (transform.position.y == target.position.y)
 			{
 				return true;
 			}
@@ -540,7 +539,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if (transform.position == target.position)
 			{
-				
+
 				return true;
 			}
 			else
@@ -548,7 +547,7 @@ public class PlayerController : MonoBehaviour
 				return false;
 			}
 		}
-		
+
 	}
 
 	private void OnDrawGizmosSelected()
@@ -613,12 +612,12 @@ public class PlayerController : MonoBehaviour
 
 }
 
-	
 
 
 
 
-		
+
+
 
 
 

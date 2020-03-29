@@ -8,7 +8,6 @@ public class MontyStateVariables : MonoBehaviour
 	public bool playerFlipped;
 	[HideInInspector]
 	public bool playerMoving;	
-
 	[HideInInspector ]
 	public float distFromPlayer;
 	[HideInInspector]
@@ -17,50 +16,60 @@ public class MontyStateVariables : MonoBehaviour
 	[Header("Generic Variables")]
 	public float walkSpeed;
 	public float runSpeed;
-	PolygonCollider2D pathwayBounds;
-	public bool movingTowardsPlayer;
-	
-
 	public float distanceToFollow;
 
+
+
+	[Header("Pathfinding")]
+	CircleCollider2D rangeToIgnore;
+	public MyGrid grid;
+
+	public bool movingTowardsPlayer;
+	public bool callRequestMade;
+
+
+	[Header("Waiting")]
 	public int sitWaitTime;
 	public Vector2 randomWaitRange;
 
 	GameObject player;
 	InteractionsManager interactionsManager;
+	GameManager gameManager;
+
+	[Header("Fetch Variables")]
 
 	Rigidbody2D stickRb;
 	Transform stickThrowTarget;
-	[Header("Fetch Variables")]
 	public float throwHeight;
 	public float throwGravity;
 	public bool montyHasStick = false;
-
 	public bool playerHasStick = false;
-
 	public bool stickThrown = false;
-
 	public bool montyReturningStick = false;
-
-	public int throwCount;
-
 	public bool waitedAtStick = false;
+
 
 
 	private void Start()
 	{
 		player = GameObject.Find("Player");
 		interactionsManager = player.GetComponent<InteractionsManager>();
+		rangeToIgnore = transform.GetChild(1).GetComponent<CircleCollider2D>();
+		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+		grid = GameObject.Find("Pathfinding Grids").transform.GetChild(gameManager.GetCurrentIsland()).GetComponent<MyGrid>();
+
 	}
 	private void Update()
 	{
 		distFromPlayer = CalculateDistance();
 		playerMoving = GetPlayerMoving();
 		playerFlipped = GetPlayerDirectionPositive();
-		
+		//grid = pathFindingManagers[gameManager.GetCurrentIsland()].GetComponent<MyGrid>();
 	}
 
-	public float CalculateDistance()
+    #region Player_Calculations
+
+    public float CalculateDistance()
 	{
 		distFromPlayer = Vector2.Distance(transform.position, player.transform.position);
 		return distFromPlayer;
@@ -94,16 +103,11 @@ public class MontyStateVariables : MonoBehaviour
 		}
 	}
 
-	private void OnDrawGizmosSelected()
-	{
-		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere(transform.position, distanceToFollow);
-	}
-
+    #endregion
 
 	#region Pathfinding
 
-	public Vector2 GetRandomPointInBounds(Bounds bounds)
+	public Vector3 GetRandomPointInBounds(Bounds bounds)
 	{
 		desintationReached = false;
 		Vector2 location;
@@ -112,16 +116,14 @@ public class MontyStateVariables : MonoBehaviour
 			Random.Range(bounds.min.y, bounds.max.y)
 			);
 
-
 		if (CheckIfPointInCollider(location))
 		{
-			//Debug.DrawLine(transform.position, location,Color.green,20f);
-			
-			return location;
+			//Debug.DrawLine(transform.position, location,color.green,20f);
+			return new Vector3(location.x, location.y, 0);
 		}
 		else
 		{
-			//Debug.DrawLine(transform.position, location, Color.red, 0.1f);
+			Debug.DrawLine(transform.position, location, Color.red, 0.1f);
 			//Debug.Log("Invalid Location:" + location);
 			return GetRandomPointInBounds(bounds);
 		}
@@ -130,20 +132,19 @@ public class MontyStateVariables : MonoBehaviour
 
 	public bool CheckIfPointInCollider(Vector2 location)
 	{
-		return pathwayBounds.OverlapPoint(location);
+		Node targetNode = grid.NodeFromWorldPoint(new Vector3(location.x, location.y, 0));
 
-	}
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.gameObject.tag == "PathwayTriggerBounds")
+		if (targetNode.walkable && !rangeToIgnore.OverlapPoint(location))
 		{
-			//Debug.Log(collision.gameObject.name);
-			pathwayBounds = collision.gameObject.GetComponent<PolygonCollider2D>();
+			return true;
+		}
+		else
+		{
+			return false;
 		}
 	}
 
 	#endregion
-
 
 	#region Fetch
 
@@ -199,5 +200,10 @@ public class MontyStateVariables : MonoBehaviour
 	}
 	#endregion
 
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position, distanceToFollow);
+	}
 
 }
