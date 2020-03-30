@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
 	TransitionHandler transitionHandler;
 	InteractionsManager interactionsManager;
 	IndividualInteractions individualInteractions;
+	BoxCollider2D playerCollider;
 	#endregion
 
 	void Start()
@@ -103,6 +104,7 @@ public class PlayerController : MonoBehaviour
 		transitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>();
 		interactionsManager = GetComponent<InteractionsManager>();
 		individualInteractions = GameObject.Find("Interactions Manager").GetComponent<IndividualInteractions>();
+		playerCollider = GetComponent<BoxCollider2D>();
 
 		pickUpTarget = canoe.transform.GetChild(0).transform;
 
@@ -133,6 +135,7 @@ public class PlayerController : MonoBehaviour
 
 		if (targetFound)
 		{
+			playerCollider.enabled = false;
 			HandleCanoe(interactionType);
 		}
 		else if (playingFetch)
@@ -142,6 +145,10 @@ public class PlayerController : MonoBehaviour
 		else if (usingAxe && !CheckIfAtTarget(interactionsManager.interaction.transform.GetChild(0), false) && !interactionsManager.interaction.complete)
 		{
 			MoveTowardsTarget(interactionsManager.interaction.transform.GetChild(0), false);
+		}
+		else
+		{
+			playerCollider.enabled = true;
 		}
 	}
 
@@ -395,7 +402,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else if (type == "launch")
 		{
-			if (pushCounter >= 3)
+			if (pushCounter >= 2)
 			{
 				transitionHandler.PreLaunch();
 			}

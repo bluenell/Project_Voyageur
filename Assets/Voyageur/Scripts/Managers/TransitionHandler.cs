@@ -75,8 +75,9 @@ public class TransitionHandler : MonoBehaviour
 		canoe.SetActive(false);		
 
 		canoeAIO.GetComponent<CanoePaddle>().launched = true;
+		canoeAIO.GetComponent<Rigidbody2D>().simulated = false;
 
-
+		canoeAIO.transform.position = canoe.transform.position;
 	}
 
 	public void Launch()
@@ -90,6 +91,7 @@ public class TransitionHandler : MonoBehaviour
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
 		canoeAIO.GetComponent<CanoePaddle>().launched = false;
 		canoeAIO.GetComponent<CanoePaddle>().canPaddle = true;
+		canoeAIO.GetComponent<Rigidbody2D>().simulated = true;
 
 		layerManager.SetActive(false);
 		interactionsManager.SetActive(false);
