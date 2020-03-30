@@ -395,29 +395,34 @@ public class PlayerController : MonoBehaviour
 		}
 		else if (type == "launch")
 		{
-			DisablePlayerInput();
-			MoveTowardsTarget(pickUpTarget, false);
-
-			if (CheckIfAtTarget(pickUpTarget, false))
+			if (pushCounter >= 3)
 			{
-				pushCounter++;
-				canoe.GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
-				anim.SetTrigger("pushCanoe");
-				
+				transitionHandler.PreLaunch();
+			}
+			else
+			{
+				DisablePlayerInput();
+				MoveTowardsTarget(pickUpTarget, false);
 
-				StartCoroutine(RevealCanoe(0.8f));
-				StartCoroutine(EnablePlayerInput(0.8f));
-
-				canLaunch = true;
-				targetFound = false;
-				carryingCanoe = false;
-
-				if (pushCounter >= 3)
+				if (CheckIfAtTarget(pickUpTarget, false))
 				{
-					transitionHandler.Launch();
+					pushCounter++;
+					canoe.GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
+					anim.SetTrigger("pushCanoe");
+
+
+					StartCoroutine(RevealCanoe(0.8f));
+					StartCoroutine(EnablePlayerInput(0.8f));
+
+					canLaunch = true;
+					targetFound = false;
+					carryingCanoe = false;
 				}
 			}
+
 			
+			
+
 			
 		}
 	}

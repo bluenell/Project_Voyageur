@@ -67,6 +67,18 @@ public class TransitionHandler : MonoBehaviour
 
 	}
 
+	public void PreLaunch()
+	{
+		canoeAIO.SetActive(true);
+		player.SetActive(false);
+		monty.SetActive(false);
+		canoe.SetActive(false);		
+
+		canoeAIO.GetComponent<CanoePaddle>().launched = true;
+
+
+	}
+
 	public void Launch()
 	{
 		// Increasing Current Island Count
@@ -75,12 +87,10 @@ public class TransitionHandler : MonoBehaviour
 
 		// Enabling & Disabling Monty, Player, Canoe Single and their depencies
 		canoeAIO.transform.position = canoeSpawnPoints[gm.GetCurrentIsland()-1].transform.position;
-		canoeAIO.SetActive(true);
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
+		canoeAIO.GetComponent<CanoePaddle>().launched = false;
 		canoeAIO.GetComponent<CanoePaddle>().canPaddle = true;
-		canoe.SetActive(false);
-		player.SetActive(false);
-		monty.SetActive(false);
+
 		layerManager.SetActive(false);
 		interactionsManager.SetActive(false);
 		pathwayColliders[0].SetActive(false);
