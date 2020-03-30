@@ -1,0 +1,1015 @@
+fileFormatVersion: 2
+guid: c25f7ec1dd8b85a4f85c552dd3f98251
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2930478023620744256
+    second: Beaching_0
+  - first:
+      213: -2122581543777849110
+    second: Beaching_1
+  - first:
+      213: 9067458503966885851
+    second: Beaching_2
+  - first:
+      213: 4082999410321819634
+    second: Beaching_3
+  - first:
+      213: 5080623082965744079
+    second: Beaching_4
+  - first:
+      213: 3533083939640237946
+    second: Beaching_5
+  - first:
+      213: -5039595062765038143
+    second: Beaching_6
+  - first:
+      213: -8081215383407336603
+    second: Beaching_7
+  - first:
+      213: 2579252795131562664
+    second: Beaching_8
+  - first:
+      213: 2974784398201655086
+    second: Beaching_9
+  - first:
+      213: -4993652303973752118
+    second: Beaching_10
+  - first:
+      213: -6208336679893301378
+    second: Beaching_11
+  - first:
+      213: 1121280560881588325
+    second: Beaching_12
+  - first:
+      213: -8013331846027385541
+    second: Beaching_13
+  - first:
+      213: 2396858482562290688
+    second: Beaching_14
+  - first:
+      213: -1664508621342622828
+    second: Beaching_15
+  - first:
+      213: 8949637365984986770
+    second: Beaching_16
+  - first:
+      213: -2871730517408279873
+    second: Beaching_17
+  - first:
+      213: -4683346314872947423
+    second: Beaching_18
+  - first:
+      213: -3238515699408151898
+    second: Beaching_19
+  - first:
+      213: 268850500898761453
+    second: Beaching_20
+  - first:
+      213: 1663982914743221136
+    second: Beaching_21
+  - first:
+      213: -5008356780362569958
+    second: Beaching_22
+  - first:
+      213: 2629163559970754645
+    second: Beaching_23
+  - first:
+      213: -3326253473068617705
+    second: Beaching_24
+  - first:
+      213: 6230122219523562144
+    second: Beaching_25
+  - first:
+      213: -2528461094575936962
+    second: Beaching_26
+  - first:
+      213: 3028311303416538948
+    second: Beaching_27
+  - first:
+      213: -5499131055563304492
+    second: Beaching_28
+  - first:
+      213: -7997747276582301391
+    second: Beaching_29
+  - first:
+      213: -6912563266873548610
+    second: Beaching_30
+  - first:
+      213: -1161277865420216458
+    second: Beaching_31
+  - first:
+      213: -4732655653178182393
+    second: Beaching_32
+  - first:
+      213: -5578644824985757822
+    second: Beaching_33
+  - first:
+      213: 8696101683996582335
+    second: Beaching_34
+  - first:
+      213: -6711857316958498032
+    second: Beaching_35
+  - first:
+      213: -262271504569930209
+    second: Beaching_36
+  - first:
+      213: 1145606361480441257
+    second: Beaching_37
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Beaching_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 265
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb2ffb83c9d457d0800000000000000
+      internalID: -2930478023620744256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_1
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 265
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae03254f4531b82e0800000000000000
+      internalID: -2122581543777849110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_2
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 265
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd78a88c77516dd70800000000000000
+      internalID: 9067458503966885851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_3
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 265
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f78c5eb45ab9a830800000000000000
+      internalID: 4082999410321819634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_4
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 265
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9b2d196cff18640800000000000000
+      internalID: 5080623082965744079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_5
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 265
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7fd4efbf19080130800000000000000
+      internalID: 3533083939640237946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_6
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 265
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5d318cdf2cf0ab0800000000000000
+      internalID: -5039595062765038143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 212
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5636596cc61c9df80800000000000000
+      internalID: -8081215383407336603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_8
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 212
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aa00cf60c85bc320800000000000000
+      internalID: 2579252795131562664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_9
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 212
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f0f2a26ae884920800000000000000
+      internalID: 2974784398201655086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_10
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 212
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac265d1efabf2bab0800000000000000
+      internalID: -4993652303973752118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_11
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 212
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e778eecceae87d9a0800000000000000
+      internalID: -6208336679893301378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_12
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 212
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568d5e4bab69f8f00800000000000000
+      internalID: 1121280560881588325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_13
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 212
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35663a742deac090800000000000000
+      internalID: -8013331846027385541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004d10e371a534120800000000000000
+      internalID: 2396858482562290688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_15
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 159
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b3c435a3a76e8e0800000000000000
+      internalID: -1664508621342622828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_16
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 159
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296091464cf733c70800000000000000
+      internalID: 8949637365984986770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_17
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 159
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb21b3b3f409528d0800000000000000
+      internalID: -2871730517408279873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_18
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 159
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12dfcdd0759610fb0800000000000000
+      internalID: -4683346314872947423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_19
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 159
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa5049312b7e03d0800000000000000
+      internalID: -3238515699408151898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_20
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 159
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deaa1cb2b162bb300800000000000000
+      internalID: 268850500898761453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 106
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09bb69115a7a71710800000000000000
+      internalID: 1663982914743221136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_22
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 106
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17e11e2b0ebe7ab0800000000000000
+      internalID: -5008356780362569958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_23
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 106
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5505570f35aac7420800000000000000
+      internalID: 2629163559970754645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_24
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 106
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710f5d8e616c6d1d0800000000000000
+      internalID: -3326253473068617705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_25
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 106
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa58f96627d57650800000000000000
+      internalID: 6230122219523562144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_26
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 106
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ae765e70a19ecd0800000000000000
+      internalID: -2528461094575936962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_27
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 106
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4476175f519b60a20800000000000000
+      internalID: 3028311303416538948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 53
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d194dbc0792fa3b0800000000000000
+      internalID: -5499131055563304492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_29
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 53
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131d6ffc93b420190800000000000000
+      internalID: -7997747276582301391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_30
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 53
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb0a6964554a110a0800000000000000
+      internalID: -6912563266873548610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_31
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 53
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677aa122fef42efe0800000000000000
+      internalID: -1161277865420216458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_32
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 53
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705f11412ca325eb0800000000000000
+      internalID: -4732655653178182393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_33
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 53
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28717aea61ca492b0800000000000000
+      internalID: -5578644824985757822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_34
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 53
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1ea4d5862cea870800000000000000
+      internalID: 8696101683996582335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0131597c451bad2a0800000000000000
+      internalID: -6711857316958498032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_36
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ee667c4793c5cf0800000000000000
+      internalID: -262271504569930209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beaching_37
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad28748ae206ef00800000000000000
+      internalID: 1145606361480441257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
