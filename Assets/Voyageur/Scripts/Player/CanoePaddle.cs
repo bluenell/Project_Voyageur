@@ -17,6 +17,7 @@ public class CanoePaddle : MonoBehaviour
 
 	public bool canPaddle;
 	public bool beached;
+	public bool launched;
 	bool stickReset;
 
 
@@ -36,6 +37,10 @@ public class CanoePaddle : MonoBehaviour
 		if (beached)
 		{
 			BeachCanoe();
+		}
+		else if (launched)
+		{
+			LaunchCanoe();
 		}
 		else
 		{
@@ -95,6 +100,13 @@ public class CanoePaddle : MonoBehaviour
 			anim.SetTrigger("Beach");
 		}
 
+	}
+
+
+	void LaunchCanoe()
+	{
+		DisableMovement();
+		anim.SetTrigger("Launch");
 	}
 
 

@@ -35,8 +35,16 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<PlayerController>().ThrowStick();
 	}
 
+	public void Launch()
+	{
+		TransitionHandler.Launch();
+	}
 
-	public void FootStepsPlayer()
+
+
+    #region SoundFX
+
+    public void FootStepsPlayer()
 	{
 		player.GetComponent<PlayerSoundManager>().PlayFootsteps();
 	}
@@ -94,3 +102,5 @@ public class AnimationEventsHandler : MonoBehaviour
 	}
 
 }
+
+#endregion

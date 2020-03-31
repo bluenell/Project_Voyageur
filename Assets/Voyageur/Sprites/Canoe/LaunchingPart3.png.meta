@@ -1,0 +1,1438 @@
+fileFormatVersion: 2
+guid: 148062ae428266a488dcbd067701871f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1326283944686357987
+    second: LaunchingPart3_0
+  - first:
+      213: 5791149197704745325
+    second: LaunchingPart3_1
+  - first:
+      213: 8538798531985032008
+    second: LaunchingPart3_2
+  - first:
+      213: 785140402240033232
+    second: LaunchingPart3_3
+  - first:
+      213: 40845279947377626
+    second: LaunchingPart3_4
+  - first:
+      213: -3131570543755253271
+    second: LaunchingPart3_5
+  - first:
+      213: -552210733512551982
+    second: LaunchingPart3_6
+  - first:
+      213: -2917218707422201238
+    second: LaunchingPart3_7
+  - first:
+      213: 6992724678310229774
+    second: LaunchingPart3_8
+  - first:
+      213: 2567149882197018101
+    second: LaunchingPart3_9
+  - first:
+      213: -150780343006607362
+    second: LaunchingPart3_10
+  - first:
+      213: -1952781897425387295
+    second: LaunchingPart3_11
+  - first:
+      213: -1203451476955723715
+    second: LaunchingPart3_12
+  - first:
+      213: -2766649757183915967
+    second: LaunchingPart3_13
+  - first:
+      213: -8661129439930115220
+    second: LaunchingPart3_14
+  - first:
+      213: -1108206094939515497
+    second: LaunchingPart3_15
+  - first:
+      213: 5499682293507717114
+    second: LaunchingPart3_16
+  - first:
+      213: 2418129706063541913
+    second: LaunchingPart3_17
+  - first:
+      213: 6835116903838622001
+    second: LaunchingPart3_18
+  - first:
+      213: 1726814924934561850
+    second: LaunchingPart3_19
+  - first:
+      213: -1613964599511779075
+    second: LaunchingPart3_20
+  - first:
+      213: -5829458902009989219
+    second: LaunchingPart3_21
+  - first:
+      213: 5131639311201433235
+    second: LaunchingPart3_22
+  - first:
+      213: 804716627342959043
+    second: LaunchingPart3_23
+  - first:
+      213: 5599669760360257193
+    second: LaunchingPart3_24
+  - first:
+      213: -3115427148877873706
+    second: LaunchingPart3_25
+  - first:
+      213: -7224280853402277299
+    second: LaunchingPart3_26
+  - first:
+      213: -6937246649938836308
+    second: LaunchingPart3_27
+  - first:
+      213: 2927327530388768074
+    second: LaunchingPart3_28
+  - first:
+      213: -6227875527656442160
+    second: LaunchingPart3_29
+  - first:
+      213: 606976371429276721
+    second: LaunchingPart3_30
+  - first:
+      213: 4835959508105743836
+    second: LaunchingPart3_31
+  - first:
+      213: -1336099918200617165
+    second: LaunchingPart3_32
+  - first:
+      213: -8560114064471112584
+    second: LaunchingPart3_33
+  - first:
+      213: 2402078055998426707
+    second: LaunchingPart3_34
+  - first:
+      213: -3843683503121106329
+    second: LaunchingPart3_35
+  - first:
+      213: 5702279445001445190
+    second: LaunchingPart3_36
+  - first:
+      213: -4011487480601033367
+    second: LaunchingPart3_37
+  - first:
+      213: -3279230299892500310
+    second: LaunchingPart3_38
+  - first:
+      213: 3798564087842397018
+    second: LaunchingPart3_39
+  - first:
+      213: 2250579820456118263
+    second: LaunchingPart3_40
+  - first:
+      213: -2395786745466655916
+    second: LaunchingPart3_41
+  - first:
+      213: 2332129159194390925
+    second: LaunchingPart3_42
+  - first:
+      213: -3797683899403456148
+    second: LaunchingPart3_43
+  - first:
+      213: 2332617984768262541
+    second: LaunchingPart3_44
+  - first:
+      213: -1955820735912903325
+    second: LaunchingPart3_45
+  - first:
+      213: -710775447047873942
+    second: LaunchingPart3_46
+  - first:
+      213: 2685945561712627236
+    second: LaunchingPart3_47
+  - first:
+      213: 1354889209119386179
+    second: LaunchingPart3_48
+  - first:
+      213: 5447212829372406093
+    second: LaunchingPart3_49
+  - first:
+      213: -2663086444845412782
+    second: LaunchingPart3_50
+  - first:
+      213: 3602339389829597017
+    second: LaunchingPart3_51
+  - first:
+      213: 3266183712837677023
+    second: LaunchingPart3_52
+  - first:
+      213: 8299751300743711893
+    second: LaunchingPart3_53
+  - first:
+      213: -6761046591178330776
+    second: LaunchingPart3_54
+  - first:
+      213: 7920694255111513639
+    second: LaunchingPart3_55
+  - first:
+      213: 1901113319500999780
+    second: LaunchingPart3_56
+  - first:
+      213: 1060143311408552370
+    second: LaunchingPart3_57
+  - first:
+      213: 2702275418607805297
+    second: LaunchingPart3_58
+  - first:
+      213: -3590265473735362133
+    second: LaunchingPart3_59
+  - first:
+      213: -189074580366662411
+    second: LaunchingPart3_60
+  - first:
+      213: -7391124993528758916
+    second: LaunchingPart3_61
+  - first:
+      213: -8274315471600222739
+    second: LaunchingPart3_62
+  - first:
+      213: 3951311794543676613
+    second: LaunchingPart3_63
+  - first:
+      213: -4481395931993470776
+    second: LaunchingPart3_64
+  - first:
+      213: -8426690110625444587
+    second: LaunchingPart3_65
+  - first:
+      213: -5699543675580095961
+    second: LaunchingPart3_66
+  - first:
+      213: 5556734282094781321
+    second: LaunchingPart3_67
+  - first:
+      213: 8753342313230802721
+    second: LaunchingPart3_68
+  - first:
+      213: -3415516439481172524
+    second: LaunchingPart3_69
+  - first:
+      213: -1526725821136602424
+    second: LaunchingPart3_70
+  - first:
+      213: -6524727958961166635
+    second: LaunchingPart3_71
+  - first:
+      213: -7676175156351747863
+    second: LaunchingPart3_72
+  - first:
+      213: 59537545778804945
+    second: LaunchingPart3_73
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LaunchingPart3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed85528838e76210800000000000000
+      internalID: 1326283944686357987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_1
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61da72338b4e5050800000000000000
+      internalID: 5791149197704745325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_2
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843489b3608ef7670800000000000000
+      internalID: 8538798531985032008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_3
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d11356390165ea00800000000000000
+      internalID: 785140402240033232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_4
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adbc302d09c119000800000000000000
+      internalID: 40845279947377626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_5
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e92466ae2d6a84d0800000000000000
+      internalID: -3131570543755253271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_6
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d193db73472658f0800000000000000
+      internalID: -552210733512551982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_7
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ab9fbaa05f387d0800000000000000
+      internalID: -2917218707422201238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_8
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07f9cebb062b0160800000000000000
+      internalID: 6992724678310229774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_9
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f50a8d673950a320800000000000000
+      internalID: 2567149882197018101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_10
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7caffa31258edf0800000000000000
+      internalID: -150780343006607362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_11
+      rect:
+        serializedVersion: 2
+        x: 2222
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e08528e53356e4e0800000000000000
+      internalID: -1952781897425387295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_12
+      rect:
+        serializedVersion: 2
+        x: 2424
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3882a3024b7c4fe0800000000000000
+      internalID: -1203451476955723715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_13
+      rect:
+        serializedVersion: 2
+        x: 2626
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148c12544b2ea99d0800000000000000
+      internalID: -2766649757183915967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_14
+      rect:
+        serializedVersion: 2
+        x: 2828
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b994bb9ac7dc780800000000000000
+      internalID: -8661129439930115220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_15
+      rect:
+        serializedVersion: 2
+        x: 3030
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795153d9d6cde90f0800000000000000
+      internalID: -1108206094939515497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_16
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7780a48ebc25c40800000000000000
+      internalID: 5499682293507717114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_17
+      rect:
+        serializedVersion: 2
+        x: 3434
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996bcb6e72cee8120800000000000000
+      internalID: 2418129706063541913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_18
+      rect:
+        serializedVersion: 2
+        x: 3636
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131a19b2c963bde50800000000000000
+      internalID: 6835116903838622001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_19
+      rect:
+        serializedVersion: 2
+        x: 3838
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3041917601e6f710800000000000000
+      internalID: 1726814924934561850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_20
+      rect:
+        serializedVersion: 2
+        x: 4040
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df87b067fbb0a99e0800000000000000
+      internalID: -1613964599511779075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_21
+      rect:
+        serializedVersion: 2
+        x: 4242
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97b4f0b30a991fa0800000000000000
+      internalID: -5829458902009989219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_22
+      rect:
+        serializedVersion: 2
+        x: 4444
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3967793d3ce373740800000000000000
+      internalID: 5131639311201433235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_23
+      rect:
+        serializedVersion: 2
+        x: 4646
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c1a0ad428dea2b00800000000000000
+      internalID: 804716627342959043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_24
+      rect:
+        serializedVersion: 2
+        x: 4848
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a615cd8af506bd40800000000000000
+      internalID: 5599669760360257193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_25
+      rect:
+        serializedVersion: 2
+        x: 5050
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ddb68ba387c3c4d0800000000000000
+      internalID: -3115427148877873706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_26
+      rect:
+        serializedVersion: 2
+        x: 5252
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a2d47f6d23ebb90800000000000000
+      internalID: -7224280853402277299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_27
+      rect:
+        serializedVersion: 2
+        x: 5454
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca4802f4de2f9bf90800000000000000
+      internalID: -6937246649938836308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_28
+      rect:
+        serializedVersion: 2
+        x: 5656
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a454b0611e4ff9820800000000000000
+      internalID: 2927327530388768074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_29
+      rect:
+        serializedVersion: 2
+        x: 5858
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d670bc44342299a0800000000000000
+      internalID: -6227875527656442160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_30
+      rect:
+        serializedVersion: 2
+        x: 6060
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13cf81e3bc96c6800800000000000000
+      internalID: 606976371429276721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_31
+      rect:
+        serializedVersion: 2
+        x: 6262
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddc0d4fc87cc1340800000000000000
+      internalID: 4835959508105743836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_32
+      rect:
+        serializedVersion: 2
+        x: 6464
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337493f0438357de0800000000000000
+      internalID: -1336099918200617165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_33
+      rect:
+        serializedVersion: 2
+        x: 6666
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874cf5e9c9d543980800000000000000
+      internalID: -8560114064471112584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_34
+      rect:
+        serializedVersion: 2
+        x: 6868
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e0c82e345e55120800000000000000
+      internalID: 2402078055998426707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_35
+      rect:
+        serializedVersion: 2
+        x: 7070
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76aff67f73e78aac0800000000000000
+      internalID: -3843683503121106329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_36
+      rect:
+        serializedVersion: 2
+        x: 7272
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f925971f0922f40800000000000000
+      internalID: 5702279445001445190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_37
+      rect:
+        serializedVersion: 2
+        x: 7474
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96549d1e3655458c0800000000000000
+      internalID: -4011487480601033367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_38
+      rect:
+        serializedVersion: 2
+        x: 7676
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8b5369a65dd72d0800000000000000
+      internalID: -3279230299892500310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_39
+      rect:
+        serializedVersion: 2
+        x: 7878
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5bd66889e537b430800000000000000
+      internalID: 3798564087842397018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_40
+      rect:
+        serializedVersion: 2
+        x: 8080
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f703f03c6aab3f10800000000000000
+      internalID: 2250579820456118263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_41
+      rect:
+        serializedVersion: 2
+        x: 8282
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45beedef5a470ced0800000000000000
+      internalID: -2395786745466655916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_42
+      rect:
+        serializedVersion: 2
+        x: 8484
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d81bc183d136d5020800000000000000
+      internalID: 2332129159194390925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_43
+      rect:
+        serializedVersion: 2
+        x: 8686
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6136de4d9aeb4bc0800000000000000
+      internalID: -3797683899403456148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_44
+      rect:
+        serializedVersion: 2
+        x: 8888
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d81cccac2bf1f5020800000000000000
+      internalID: 2332617984768262541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_45
+      rect:
+        serializedVersion: 2
+        x: 9090
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d719f27678bd4e0800000000000000
+      internalID: -1955820735912903325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_46
+      rect:
+        serializedVersion: 2
+        x: 9292
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a54ab2f71d226f0800000000000000
+      internalID: -710775447047873942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_47
+      rect:
+        serializedVersion: 2
+        x: 9494
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e0be3f145664520800000000000000
+      internalID: 2685945561712627236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_48
+      rect:
+        serializedVersion: 2
+        x: 9696
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a2293ae888dc210800000000000000
+      internalID: 1354889209119386179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_49
+      rect:
+        serializedVersion: 2
+        x: 9898
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4951be2533689b40800000000000000
+      internalID: 5447212829372406093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_50
+      rect:
+        serializedVersion: 2
+        x: 10100
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ec4d0fcf0da0bd0800000000000000
+      internalID: -2663086444845412782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_51
+      rect:
+        serializedVersion: 2
+        x: 10302
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957c03bc6941ef130800000000000000
+      internalID: 3602339389829597017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaunchingPart3_52
+      rect:
+        serializedVersion: 2
+        x: 10504
+        y: 0
+        width: 202
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf2bd628c0d35d20800000000000000
+      internalID: 3266183712837677023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

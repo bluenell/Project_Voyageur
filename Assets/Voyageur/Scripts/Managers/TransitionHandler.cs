@@ -23,7 +23,7 @@ public class TransitionHandler : MonoBehaviour
 	GameManager gm;
 	MontyStateVariables montyStateVariables;
 
-	public GameObject pathwayCollider;
+	public GameObject[] pathwayColliders;
 	public GameObject spritesManager;
 
 	[Header("Spawn Points")]
@@ -46,10 +46,9 @@ public class TransitionHandler : MonoBehaviour
 
 	public void Beach()
 	{
-		canoe.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(0).transform.position;
-		player.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(1).transform.position;
-		monty.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(2).transform.position;
-
+		canoe.transform.position = playerSpawnPoints[gm.GetCurrentIsland()-1].transform.GetChild(0).transform.position;
+		player.transform.position = playerSpawnPoints[gm.GetCurrentIsland()-1].transform.GetChild(1).transform.position;
+		monty.transform.position = playerSpawnPoints[gm.GetCurrentIsland()-1].transform.GetChild(2).transform.position;
 
 		canoeAIO.SetActive(false);
 		canoe.SetActive(true);
@@ -58,13 +57,27 @@ public class TransitionHandler : MonoBehaviour
 		layerManager.SetActive(true);
 		interactionsManager.SetActive(true);
 		cameraHandler.SwitchToPlayer();
-		pathwayCollider.SetActive(true);
+		pathwayColliders[0].SetActive(true);
 
 		spritesManager.SetActive(true);
 
 		montyStateVariables.grid.CreateGrid();
 
 
+	}
+
+	public void PreLaunch()
+	{
+		canoeAIO.SetActive(true);
+		canoeAIO.GetComponent<CanoePaddle>().launched = true;
+		player.SetActive(false);
+		monty.SetActive(false);
+		canoe.SetActive(false);		
+
+
+		canoeAIO.GetComponent<Rigidbody2D>().simulated = false;
+
+		canoeAIO.transform.position = canoe.transform.position;
 	}
 
 	public void Launch()
@@ -75,15 +88,16 @@ public class TransitionHandler : MonoBehaviour
 
 		// Enabling & Disabling Monty, Player, Canoe Single and their depencies
 		canoeAIO.transform.position = canoeSpawnPoints[gm.GetCurrentIsland()-1].transform.position;
-		canoeAIO.SetActive(true);
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
+		canoeAIO.GetComponent<CanoePaddle>().launched = false;
+		player.GetComponent<PlayerController>().canLaunch = false;
+		player.GetComponent<PlayerController>().interactionType = "";
 		canoeAIO.GetComponent<CanoePaddle>().canPaddle = true;
-		canoe.SetActive(false);
-		player.SetActive(false);
-		monty.SetActive(false);
+		canoeAIO.GetComponent<Rigidbody2D>().simulated = true;
+
 		layerManager.SetActive(false);
 		interactionsManager.SetActive(false);
-		pathwayCollider.SetActive(false);
+		pathwayColliders[0].SetActive(false);
 		spritesManager.SetActive(true);
 
 		//Setting all other pathfinding managers to inactive

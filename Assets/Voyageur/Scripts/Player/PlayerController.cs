@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
 
 	bool canPickUp;
 	bool canPutDown;
-	bool canLaunch;
+	public bool canLaunch;
+	public int pushCounter;
 
 	bool carryingCanoe;
 
@@ -88,6 +89,7 @@ public class PlayerController : MonoBehaviour
 	TransitionHandler transitionHandler;
 	InteractionsManager interactionsManager;
 	IndividualInteractions individualInteractions;
+	BoxCollider2D playerCollider;
 	#endregion
 
 	void Start()
@@ -102,6 +104,7 @@ public class PlayerController : MonoBehaviour
 		transitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>();
 		interactionsManager = GetComponent<InteractionsManager>();
 		individualInteractions = GameObject.Find("Interactions Manager").GetComponent<IndividualInteractions>();
+		playerCollider = GetComponent<BoxCollider2D>();
 
 		pickUpTarget = canoe.transform.GetChild(0).transform;
 
@@ -132,6 +135,7 @@ public class PlayerController : MonoBehaviour
 
 		if (targetFound)
 		{
+			playerCollider.enabled = false;
 			HandleCanoe(interactionType);
 		}
 		else if (playingFetch)
@@ -141,6 +145,10 @@ public class PlayerController : MonoBehaviour
 		else if (usingAxe && !CheckIfAtTarget(interactionsManager.interaction.transform.GetChild(0), false) && !interactionsManager.interaction.complete)
 		{
 			MoveTowardsTarget(interactionsManager.interaction.transform.GetChild(0), false);
+		}
+		else
+		{
+			playerCollider.enabled = true;
 		}
 	}
 
@@ -331,6 +339,7 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe(string type)
 	{
+
 		currentInventoryIndex = 0;
 		anim.SetInteger("inventoryIndex", 0);
 
@@ -373,6 +382,8 @@ public class PlayerController : MonoBehaviour
 		{
 			DisablePlayerInput();
 			MoveTowardsTarget(putDownTarget, false);
+			currentInventoryIndex = 0;
+			anim.SetInteger("inventoryIndex", 0);
 
 			if (CheckIfAtTarget(putDownTarget, false))
 			{
@@ -391,11 +402,36 @@ public class PlayerController : MonoBehaviour
 		}
 		else if (type == "launch")
 		{
-			canLaunch = false;
-			targetFound = false;
-			carryingCanoe = false;
+			if (pushCounter >= 2)
+			{
+				pushCounter = 0;
+				transitionHandler.PreLaunch();
+			}
+			else
+			{
+				DisablePlayerInput();
+				MoveTowardsTarget(pickUpTarget, false);
 
-			transitionHandler.Launch();
+				if (CheckIfAtTarget(pickUpTarget, false))
+				{
+					pushCounter++;
+					canoe.transform.GetChild(0).GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
+					anim.SetTrigger("pushCanoe");
+
+
+					StartCoroutine(RevealCanoe(0.8f));
+					StartCoroutine(EnablePlayerInput(0.8f));
+
+					canLaunch = true;
+					targetFound = false;
+					carryingCanoe = false;
+				}
+			}
+
+			
+			
+
+			
 		}
 	}
 
