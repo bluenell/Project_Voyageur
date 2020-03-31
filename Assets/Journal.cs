@@ -23,76 +23,70 @@ public class Journal : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time >= nextSwitchTime)
+
+        if (Input.GetButtonDown("Button Start") || Input.GetButtonDown("Button Select") || Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetButtonDown("Button Start") || Input.GetButtonDown("Button Select") || Input.GetKeyDown(KeyCode.Escape))
+            if (paused)
             {
-                if (paused)
+                playerController.enabled = true;
+                journalUI.SetActive(false);
+                Time.timeScale = 1f;
+                paused = false;
+                // close the journal
+            }
+            else
+            {
+                playerController.enabled = false;
+                journalUI.SetActive(true);
+                Time.timeScale = 0f;
+                paused = true;
+
+                journalPages[pageIndex].SetActive(true);
+            }
+        }
+
+        if (paused)
+        {
+            if (Input.GetButtonDown("InventoryRight") || (Input.GetKeyDown(KeyCode.RightArrow)))
+            {
+                if (pageIndex == journalPages.Length -1)
                 {
-                    playerController.enabled = true;
-                    journalUI.SetActive(false);
-                    //Time.timeScale = 1f;
-                    paused = false;
-                    // close the journal
+                    pageIndex = journalPages.Length-1;
                 }
                 else
                 {
-                    playerController.enabled = false;
-                    journalUI.SetActive(true);
-                    //Time.timeScale = 0f;
-                    paused = true;
-
-                    journalPages[pageIndex].SetActive(true);
+                    pageIndex++;
                 }
+
+                for (int i = 0; i < journalPages.Length; i++)
+                {
+                    journalPages[i].SetActive(false);
+                }
+
+                journalPages[pageIndex].SetActive(true);
             }
-
-            if (paused)
+            if (Input.GetButtonDown("InventoryLeft") || (Input.GetKeyDown(KeyCode.LeftArrow)))
             {
-                if (Input.GetAxis("Horizontal") > 0)
+                if (pageIndex == 0)
                 {
-                    if (pageIndex >= journalPages.Length)
-                    {
-                        pageIndex = journalPages.Length - 1;
-                    }
-                    else
-                    {
-                        pageIndex++;
-                    }
-                   
-
-                    for (int i = 0; i < journalPages.Length; i++)
-                    {
-                        journalPages[i].SetActive(false);
-                    }                                  
-
-                    journalPages[pageIndex].SetActive(true);
-                    nextSwitchTime = Time.time + 1f / switchRate;
+                    pageIndex = 0;
                 }
-                if (Input.GetAxis("Horizontal") < 0)
+                else
                 {
-                    if (pageIndex == 0)
-                    {
-                        pageIndex = 0;
-                    }
-                    else
-                    {
-                        pageIndex--;
-                    }
-                    
-                    for (int i = 0; i < journalPages.Length; i++)
-                    {
-                        journalPages[i].SetActive(false);
-                    }
-
-                    journalPages[pageIndex].SetActive(true);
-                    nextSwitchTime = Time.time + 1f / switchRate;
-
+                    pageIndex--;
                 }
+
+                for (int i = 0; i < journalPages.Length; i++)
+                {
+                    journalPages[i].SetActive(false);
+                }
+
+                journalPages[pageIndex].SetActive(true);
 
             }
 
         }
-    }
 
+    }
 
 }
