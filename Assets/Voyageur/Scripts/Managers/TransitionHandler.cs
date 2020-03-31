@@ -46,10 +46,9 @@ public class TransitionHandler : MonoBehaviour
 
 	public void Beach()
 	{
-		canoe.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(0).transform.position;
-		player.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(1).transform.position;
-		monty.transform.position = playerSpawnPoints[gm.GetCurrentIsland()].transform.GetChild(2).transform.position;
-
+		canoe.transform.position = playerSpawnPoints[gm.GetCurrentIsland()-1].transform.GetChild(0).transform.position;
+		player.transform.position = playerSpawnPoints[gm.GetCurrentIsland()-1].transform.GetChild(1).transform.position;
+		monty.transform.position = playerSpawnPoints[gm.GetCurrentIsland()-1].transform.GetChild(2).transform.position;
 
 		canoeAIO.SetActive(false);
 		canoe.SetActive(true);
@@ -70,11 +69,12 @@ public class TransitionHandler : MonoBehaviour
 	public void PreLaunch()
 	{
 		canoeAIO.SetActive(true);
+		canoeAIO.GetComponent<CanoePaddle>().launched = true;
 		player.SetActive(false);
 		monty.SetActive(false);
 		canoe.SetActive(false);		
 
-		canoeAIO.GetComponent<CanoePaddle>().launched = true;
+
 		canoeAIO.GetComponent<Rigidbody2D>().simulated = false;
 
 		canoeAIO.transform.position = canoe.transform.position;
@@ -90,6 +90,8 @@ public class TransitionHandler : MonoBehaviour
 		canoeAIO.transform.position = canoeSpawnPoints[gm.GetCurrentIsland()-1].transform.position;
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
 		canoeAIO.GetComponent<CanoePaddle>().launched = false;
+		player.GetComponent<PlayerController>().canLaunch = false;
+		player.GetComponent<PlayerController>().interactionType = "";
 		canoeAIO.GetComponent<CanoePaddle>().canPaddle = true;
 		canoeAIO.GetComponent<Rigidbody2D>().simulated = true;
 

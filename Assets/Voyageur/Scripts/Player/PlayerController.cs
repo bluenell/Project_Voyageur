@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
 	bool canPickUp;
 	bool canPutDown;
-	bool canLaunch;
+	public bool canLaunch;
 	public int pushCounter;
 
 	bool carryingCanoe;
@@ -404,6 +404,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if (pushCounter >= 2)
 			{
+				pushCounter = 0;
 				transitionHandler.PreLaunch();
 			}
 			else
@@ -414,7 +415,7 @@ public class PlayerController : MonoBehaviour
 				if (CheckIfAtTarget(pickUpTarget, false))
 				{
 					pushCounter++;
-					canoe.GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
+					canoe.transform.GetChild(0).GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
 					anim.SetTrigger("pushCanoe");
 
 
