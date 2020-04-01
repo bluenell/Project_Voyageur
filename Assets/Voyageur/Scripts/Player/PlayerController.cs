@@ -466,7 +466,7 @@ public class PlayerController : MonoBehaviour
 			}
 
 			//Debug.Log(inventory.tools[currentInventoryIndex]);
-			anim.SetInteger("inventoryIndex", currentInventoryIndex);
+			anim.SetInteger("inventoryIndex", inventory.tools[currentInventoryIndex]);
 		}
 		else if (dir == "left")
 		{

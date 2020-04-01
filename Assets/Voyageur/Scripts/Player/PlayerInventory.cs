@@ -6,7 +6,7 @@ public class PlayerInventory : MonoBehaviour
 {
 
 	[Header("Tools")]
-	public List<string> tools;
+	public List<int> tools;
 
 	[Header("Items")]
 	public bool hasWood;

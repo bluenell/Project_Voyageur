@@ -3382,7 +3382,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &395080797
 Transform:
   m_ObjectHideFlags: 0
@@ -12626,7 +12626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1506420034
 Transform:
   m_ObjectHideFlags: 0
@@ -18216,6 +18216,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: tools.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: tools.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: hasFish
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: tools.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: tools.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: tools.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: tools.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: hasWood
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5589543232539466300, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_Name
