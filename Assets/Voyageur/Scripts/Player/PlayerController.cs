@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
 	[HideInInspector]
 	public bool facingRight;
 	public float armsReach;
-
 	float xSpeed, ySpeed;
 	[HideInInspector]
 	public bool movementDisabled;
@@ -90,6 +89,7 @@ public class PlayerController : MonoBehaviour
 	InteractionsManager interactionsManager;
 	IndividualInteractions individualInteractions;
 	BoxCollider2D playerCollider;
+	GameManager gm;
 	#endregion
 
 	void Start()
@@ -105,15 +105,13 @@ public class PlayerController : MonoBehaviour
 		interactionsManager = GetComponent<InteractionsManager>();
 		individualInteractions = GameObject.Find("Interactions Manager").GetComponent<IndividualInteractions>();
 		playerCollider = GetComponent<BoxCollider2D>();
-
+		gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
 		pickUpTarget = canoe.transform.GetChild(0).transform;
 
 		montyObj = GameObject.Find("Monty");
 		montyStateActions = montyObj.GetComponent<MontyStateActions>();
 		montyStateManager = montyObj.GetComponent<MontyStateManager>();
 		montyStateVariables = montyObj.GetComponent<MontyStateVariables>();
-
-
 
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
@@ -420,12 +418,7 @@ public class PlayerController : MonoBehaviour
 					targetFound = false;
 					carryingCanoe = false;
 				}
-			}
-
-			
-			
-
-			
+			}		
 		}
 	}
 

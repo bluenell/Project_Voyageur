@@ -138,7 +138,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3625638086280105357}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cd052133eb51f34586c79b7a0500303, type: 3}
   m_Name: 
@@ -164,6 +164,7 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 15
   distanceToFollow: 1.5
+  grid: {fileID: 0}
   movingTowardsPlayer: 0
   callRequestMade: 0
   sitWaitTime: 5

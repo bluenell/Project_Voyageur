@@ -7,18 +7,27 @@ public class Journal : MonoBehaviour
 {
     public GameObject journalUI;
     public GameObject[] journalPages;
+    public GameObject[] interactions;
     public PlayerController playerController;
 
     bool paused;
     int pageIndex;
+    int interactionIndex;
 
     float nextSwitchTime;
     float switchRate = 2f;
 
     private void Start()
     {
+        interactionIndex = 0;
         journalUI.SetActive(false);
         paused = false;
+
+        for (int i = 0; i < interactions.Length; i++)
+        {
+            interactions[i].SetActive(false);
+        }
+
     }
 
     private void Update()
@@ -86,6 +95,18 @@ public class Journal : MonoBehaviour
             }
 
         }
+
+    }
+
+    public void UpdateInteractionPages(string name, string desc, Sprite sprite)
+    {
+        interactions[interactionIndex].SetActive(true);
+        interactions[interactionIndex].GetComponent<Image>().sprite = sprite;
+
+        interactions[interactionIndex].transform.GetChild(0).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = name;
+        interactions[interactionIndex].transform.GetChild(0).transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = desc;
+
+        interactionIndex++;
 
     }
 
