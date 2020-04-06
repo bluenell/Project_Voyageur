@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Journal : MonoBehaviour
 {
-    public GameObject journalUI;
+    public GameObject journalUI; 
     public GameObject[] journalPages;
     public GameObject[] interactions;
     public PlayerController playerController;

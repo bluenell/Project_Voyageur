@@ -282,6 +282,7 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = true;
 			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 			torch.transform.localPosition = leftTorchTransform;
+			inventory.DisplayRod();
 		}
 		if (moveX > 0f)
 		{
@@ -291,6 +292,7 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = false;
 			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 			torch.transform.localPosition = rightTorchTransform;
+			inventory.DisplayAxe();
 		}
 
 
@@ -331,7 +333,6 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe(string type)
 	{
-
 		currentInventoryIndex = 0;
 		anim.SetInteger("inventoryIndex", 0);
 
@@ -456,7 +457,6 @@ public class PlayerController : MonoBehaviour
 
 	void CycleInventory(string dir)
 	{
-
 		if (dir == "right")
 		{
 			currentInventoryIndex++;
@@ -536,11 +536,13 @@ public class PlayerController : MonoBehaviour
 		{
 			facingRight = false;
 			anim.SetBool("facingRight", facingRight);
+			inventory.DisplayRod();
 		}
 		else
 		{
 			facingRight = true;
 			anim.SetBool("facingRight", facingRight);
+			inventory.DisplayAxe();
 		}
 
 	}
