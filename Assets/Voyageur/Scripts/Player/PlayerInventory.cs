@@ -8,6 +8,8 @@ public class PlayerInventory : MonoBehaviour
 	[Header("Tools")]
 	public List<int> tools;
 
+	public bool hasAxe, hasRod;
+
 	[Header("Items")]
 	public bool hasWood;
 	public bool hasFish; 

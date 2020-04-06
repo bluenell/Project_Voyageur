@@ -6,6 +6,7 @@ public class Item : MonoBehaviour
 {
     public new string name;
     public float radius;
+    public int itemId;
 
     private void OnDrawGizmosSelected()
     {

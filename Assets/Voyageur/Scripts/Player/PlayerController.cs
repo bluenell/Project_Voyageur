@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 	float xSpeed, ySpeed;
 	[HideInInspector]
 	public bool movementDisabled;
+	public float detectionRadius;
 
 	#endregion
 
@@ -62,6 +63,8 @@ public class PlayerController : MonoBehaviour
 	[Header("Items)")]
 	public GameObject torch;
 	bool torchOn = false;
+
+	public GameObject itemToPickUp;
 
 	Vector3 rightTorchTransform = new Vector3(0.608f, 1.642f, 0);
 	Vector3 leftTorchTransform = new Vector3(-0.608f, 1.642f, 0);
@@ -143,7 +146,6 @@ public class PlayerController : MonoBehaviour
 		{
 			axeAnim.SetBool("isCarrying", false);
 			rodAnim.SetBool("isCarrying", false);
-
 		}
 
 
@@ -165,6 +167,8 @@ public class PlayerController : MonoBehaviour
 			playerCollider.enabled = true;
 		}
 	}
+
+	
 
 	void HandleInput()
 	{
@@ -239,7 +243,25 @@ public class PlayerController : MonoBehaviour
 
 				else if (!carryingCanoe)
 				{
-					if (inRangeOfCanoe && !canLaunch)
+					if (itemToPickUp != null)
+					{
+						if (itemToPickUp.GetComponent<Item>().name == "Axe")
+						{
+							inventory.tools.Add(itemToPickUp.GetComponent<Item>().itemId);
+							inventory.tools.Sort();
+							inventory.hasAxe = true;
+							Destroy(itemToPickUp);
+						}
+
+						if (itemToPickUp.GetComponent<Item>().name == "Rod")
+						{
+							inventory.tools.Add(itemToPickUp.GetComponent<Item>().itemId);
+							inventory.tools.Sort();
+							inventory.hasRod = true;
+							Destroy(itemToPickUp);
+						}
+					}
+					else if (inRangeOfCanoe && !canLaunch)
 					{
 						targetFound = true;
 						interactionType = "pickUpCanoe";
@@ -298,7 +320,11 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = true;
 			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 			torch.transform.localPosition = leftTorchTransform;
-			inventory.DisplayRod();
+			if (inventory.hasRod)
+			{
+				inventory.DisplayRod();
+			}
+			
 		}
 		if (moveX > 0f)
 		{
@@ -308,7 +334,10 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = false;
 			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 			torch.transform.localPosition = rightTorchTransform;
-			inventory.DisplayAxe();
+			if (inventory.hasAxe)
+			{
+				inventory.DisplayAxe();
+			}
 		}
 
 
@@ -650,6 +679,11 @@ public class PlayerController : MonoBehaviour
 
 		}
 
+		if (other.gameObject.tag == "Item")
+		{
+			itemToPickUp = other.gameObject;
+		}
+
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
@@ -666,6 +700,11 @@ public class PlayerController : MonoBehaviour
 		{
 			inRangeOfLaunchingZone = false;
 
+		}
+
+		if (other.gameObject.tag == "Item")
+		{
+			itemToPickUp = null;
 		}
 	}
 
