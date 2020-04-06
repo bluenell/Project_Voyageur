@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
 
 	PlayerInventory inventory;
+	Animator axeAnim, rodAnim;
 	public int currentInventoryIndex;
 
 	public float switchRate = 2f;
@@ -119,6 +120,9 @@ public class PlayerController : MonoBehaviour
 		xSpeed = defaultXSpeed;
 		ySpeed = defaultYSpeed;
 		canoeWalkSpeed = defaultCanoeWalkSpeed;
+
+		axeAnim = inventory.axe.gameObject.GetComponent<Animator>();
+		rodAnim = inventory.rod.gameObject.GetComponent<Animator>();
 	}
 	private void FixedUpdate()
 	{
@@ -129,6 +133,18 @@ public class PlayerController : MonoBehaviour
 	{
 
 		HandleInput();
+
+		if (carryingCanoe)
+		{
+			axeAnim.SetBool("isCarrying", true);
+			rodAnim.SetBool("isCarrying", true);
+		}
+		else
+		{
+			axeAnim.SetBool("isCarrying", false);
+			rodAnim.SetBool("isCarrying", false);
+
+		}
 
 
 		if (targetFound)
@@ -282,6 +298,7 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = true;
 			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 			torch.transform.localPosition = leftTorchTransform;
+			inventory.DisplayRod();
 		}
 		if (moveX > 0f)
 		{
@@ -291,6 +308,7 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = false;
 			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 			torch.transform.localPosition = rightTorchTransform;
+			inventory.DisplayAxe();
 		}
 
 
@@ -298,11 +316,26 @@ public class PlayerController : MonoBehaviour
 		{
 			isMoving = true;
 			anim.SetBool("isMoving", true);
+
+			if (facingRight)
+			{
+				axeAnim.SetBool("isMoving", true);
+				rodAnim.SetBool("isMoving", false);
+			}
+			else
+			{
+				axeAnim.SetBool("isMoving", false) ;
+				rodAnim.SetBool("isMoving", true);
+			}
+
+			
 		}
 		else
 		{
 			isMoving = false;
 			anim.SetBool("isMoving", false);
+			axeAnim.SetBool("isMoving", false);
+			rodAnim.SetBool("isMoving", false);
 
 		}
 
@@ -331,7 +364,6 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe(string type)
 	{
-
 		currentInventoryIndex = 0;
 		anim.SetInteger("inventoryIndex", 0);
 
@@ -346,6 +378,7 @@ public class PlayerController : MonoBehaviour
 				carryingCanoe = true;
 
 
+				axeAnim.SetTrigger("pickUp");
 				anim.SetTrigger("PickUp");
 				canoe.SetActive(false);
 				StartCoroutine(EnablePlayerInput(0.8f));
@@ -362,6 +395,7 @@ public class PlayerController : MonoBehaviour
 				targetFound = false;
 				carryingCanoe = false;
 
+				axeAnim.SetTrigger("putDown");
 				anim.SetTrigger("PutDown");
 				canoe.transform.position = new Vector3(transform.position.x, spawnTarget.position.y, 0);
 				transform.position = canoe.transform.GetChild(0).transform.position;
@@ -408,6 +442,7 @@ public class PlayerController : MonoBehaviour
 				{
 					pushCounter++;
 					canoe.transform.GetChild(0).GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
+					axeAnim.SetTrigger("launch");
 					anim.SetTrigger("pushCanoe");
 
 
@@ -456,7 +491,6 @@ public class PlayerController : MonoBehaviour
 
 	void CycleInventory(string dir)
 	{
-
 		if (dir == "right")
 		{
 			currentInventoryIndex++;
@@ -536,11 +570,13 @@ public class PlayerController : MonoBehaviour
 		{
 			facingRight = false;
 			anim.SetBool("facingRight", facingRight);
+			inventory.DisplayRod();
 		}
 		else
 		{
 			facingRight = true;
 			anim.SetBool("facingRight", facingRight);
+			inventory.DisplayAxe();
 		}
 
 	}
