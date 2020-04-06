@@ -185,7 +185,6 @@ public class MontyStateVariables : MonoBehaviour
 	{
 		return interactionsManager.interaction.gameObject.transform.GetChild(childIndex).gameObject;
 	}
-
 	
 	public Vector2 CalculateThrowVelocity()
 	{

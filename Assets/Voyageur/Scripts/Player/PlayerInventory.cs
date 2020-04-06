@@ -13,7 +13,6 @@ public class PlayerInventory : MonoBehaviour
 	public bool hasFish; 
 	public bool hasStick;
 
-
 	public SpriteRenderer axe, rod;
 
 	public void DisplayAxe()
@@ -26,7 +25,6 @@ public class PlayerInventory : MonoBehaviour
 	{
 		axe.enabled = false;
 		rod.enabled = true;
-
 	}
 
 	public void HideAll()
@@ -34,5 +32,11 @@ public class PlayerInventory : MonoBehaviour
 		axe.enabled = false;
 		rod.enabled = false;
 	}
+
+	public void SortInventory()
+	{
+		tools.Sort();
+	}
+
 
 }

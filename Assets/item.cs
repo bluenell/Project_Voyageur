@@ -2,7 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class item : MonoBehaviour
+public class Item : MonoBehaviour
 {
     public new string name;
+    public float radius;
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, radius);
+    }
 }
