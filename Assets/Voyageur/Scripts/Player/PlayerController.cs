@@ -320,7 +320,7 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = true;
 			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 			torch.transform.localPosition = leftTorchTransform;
-			if (inventory.hasRod)
+			if (inventory.hasRod && currentInventoryIndex!= 2)
 			{
 				inventory.DisplayRod();
 			}
@@ -334,7 +334,7 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = false;
 			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 			torch.transform.localPosition = rightTorchTransform;
-			if (inventory.hasAxe)
+			if (inventory.hasAxe && currentInventoryIndex != 1)
 			{
 				inventory.DisplayAxe();
 			}
@@ -528,6 +528,8 @@ public class PlayerController : MonoBehaviour
 				currentInventoryIndex = 0;
 			}
 
+			
+
 			//Debug.Log(inventory.tools[currentInventoryIndex]);
 			anim.SetInteger("inventoryIndex", inventory.tools[currentInventoryIndex]);
 		}
@@ -541,6 +543,16 @@ public class PlayerController : MonoBehaviour
 			anim.SetInteger("inventoryIndex", currentInventoryIndex);
 			//Debug.Log(inventory.tools[currentInventoryIndex]);
 		}
+
+		if (currentInventoryIndex == 1)
+		{
+			inventory.HideAxe();
+		}
+		else if (currentInventoryIndex == 2)
+		{
+			inventory.HideRod();
+		}
+
 	}
 
 	public void ThrowStick()

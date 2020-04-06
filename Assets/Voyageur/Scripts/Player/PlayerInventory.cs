@@ -29,9 +29,12 @@ public class PlayerInventory : MonoBehaviour
 		rod.enabled = true;
 	}
 
-	public void HideAll()
+	public void HideAxe()
 	{
 		axe.enabled = false;
+	}
+	public void HideRod()
+	{
 		rod.enabled = false;
 	}
 
