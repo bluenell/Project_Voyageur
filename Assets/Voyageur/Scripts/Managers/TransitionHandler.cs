@@ -30,6 +30,7 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject[] playerSpawnPoints;
 	public GameObject[] canoeSpawnPoints;
 
+	public GameObject door;
 
 	
 
@@ -41,6 +42,17 @@ public class TransitionHandler : MonoBehaviour
 		gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
 		montyStateVariables = monty.GetComponent<MontyStateVariables>();
 		montyStateVariables = monty.GetComponent<MontyStateVariables>();
+	}
+
+
+	public void Door()
+	{
+		Destroy(door);
+		player.SetActive(true);
+		monty.SetActive(true);
+		layerManager.SetActive(true);
+		interactionsManager.SetActive(true);
+		cameraHandler.enabled = true;
 	}
 
 

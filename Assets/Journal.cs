@@ -8,7 +8,9 @@ public class Journal : MonoBehaviour
     public GameObject journalUI; 
     public GameObject[] journalPages;
     public GameObject[] interactions;
+    public GameObject[] lines;
     public PlayerController playerController;
+    PlayerInventory inventory;
 
     bool paused;
     int pageIndex;
@@ -19,6 +21,8 @@ public class Journal : MonoBehaviour
 
     private void Start()
     {
+        inventory = playerController.gameObject.GetComponent<PlayerInventory>();
+
         interactionIndex = 0;
         journalUI.SetActive(false);
         paused = false;
@@ -32,6 +36,16 @@ public class Journal : MonoBehaviour
 
     private void Update()
     {
+
+        if (inventory.hasAxe) 
+        {
+            lines[0].SetActive(true);
+        }
+        if (inventory.hasRod)
+        {
+            lines[1].SetActive(true);
+        }
+
 
         if (Input.GetButtonDown("Button Start") || Input.GetButtonDown("Button Select") || Input.GetKeyDown(KeyCode.Escape))
         {

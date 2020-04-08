@@ -7,7 +7,7 @@ public class PlayerDogLayerManager : MonoBehaviour
 	//on the empty
 
 
-	GameObject player, dog;
+	public GameObject player, dog;
 
 	SpriteRenderer playerSprite, dogSprite;
 

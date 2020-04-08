@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 	Transform pickUpTarget;
 	Transform putDownTarget;
 	Transform spawnTarget;
+	public Transform montyWalkTarget;
 
 	bool inRangeOfCanoe;
 	bool inRangeParkingSpace;
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
 	public GameObject torch;
 	bool torchOn = false;
 
-	public GameObject itemToPickUp;
+	GameObject itemToPickUp;
 
 	Vector3 rightTorchTransform = new Vector3(0.608f, 1.642f, 0);
 	Vector3 leftTorchTransform = new Vector3(-0.608f, 1.642f, 0);
@@ -134,7 +135,6 @@ public class PlayerController : MonoBehaviour
 
 	private void Update()
 	{
-
 		HandleInput();
 
 		if (carryingCanoe)
@@ -166,6 +166,10 @@ public class PlayerController : MonoBehaviour
 		{
 			playerCollider.enabled = true;
 		}
+
+		
+
+
 	}
 
 	
@@ -245,17 +249,17 @@ public class PlayerController : MonoBehaviour
 				{
 					if (itemToPickUp != null)
 					{
-						if (itemToPickUp.GetComponent<Item>().name == "Axe")
+						if (itemToPickUp.GetComponent<item>().name == "Axe")
 						{
-							inventory.tools.Add(itemToPickUp.GetComponent<Item>().itemId);
+							inventory.tools.Add(itemToPickUp.GetComponent<item>().itemId);
 							inventory.tools.Sort();
 							inventory.hasAxe = true;
 							Destroy(itemToPickUp);
 						}
 
-						if (itemToPickUp.GetComponent<Item>().name == "Rod")
+						if (itemToPickUp.GetComponent<item>().name == "Rod")
 						{
-							inventory.tools.Add(itemToPickUp.GetComponent<Item>().itemId);
+							inventory.tools.Add(itemToPickUp.GetComponent<item>().itemId);
 							inventory.tools.Sort();
 							inventory.hasRod = true;
 							Destroy(itemToPickUp);
@@ -266,7 +270,7 @@ public class PlayerController : MonoBehaviour
 						targetFound = true;
 						interactionType = "pickUpCanoe";
 					}
-					else if (inRangeOfCanoe && canLaunch)
+					else if (inRangeOfCanoe && canLaunch && inventory.hasRod && inventory.hasAxe)
 					{
 						targetFound = true;
 						interactionType = "launch";
@@ -309,10 +313,6 @@ public class PlayerController : MonoBehaviour
 			rb.velocity = new Vector2(moveX * xSpeed, moveY * ySpeed);
 		}
 
-
-		float yPos = transform.position.y;
-
-
 		if (moveX < 0f)
 		{
 			facingRight = false;
@@ -320,9 +320,14 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = true;
 			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 			torch.transform.localPosition = leftTorchTransform;
+
 			if (inventory.hasRod && currentInventoryIndex!= 2)
 			{
 				inventory.DisplayRod();
+			}
+			else
+			{
+				inventory.HideRod();
 			}
 			
 		}
@@ -334,9 +339,14 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = false;
 			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 			torch.transform.localPosition = rightTorchTransform;
+
 			if (inventory.hasAxe && currentInventoryIndex != 1)
 			{
 				inventory.DisplayAxe();
+			}
+			else
+			{
+				inventory.HideAxe();
 			}
 		}
 
@@ -355,9 +365,7 @@ public class PlayerController : MonoBehaviour
 			{
 				axeAnim.SetBool("isMoving", false) ;
 				rodAnim.SetBool("isMoving", true);
-			}
-
-			
+			}			
 		}
 		else
 		{
@@ -367,9 +375,6 @@ public class PlayerController : MonoBehaviour
 			rodAnim.SetBool("isMoving", false);
 
 		}
-
-
-
 	}
 
 	void UseItem()
@@ -412,7 +417,6 @@ public class PlayerController : MonoBehaviour
 				canoe.SetActive(false);
 				StartCoroutine(EnablePlayerInput(0.8f));
 			}
-
 		}
 		else if (type == "putdown")
 		{
@@ -430,7 +434,6 @@ public class PlayerController : MonoBehaviour
 				transform.position = canoe.transform.GetChild(0).transform.position;
 				StartCoroutine(RevealCanoe(0.8f));
 				StartCoroutine(EnablePlayerInput(0.8f));
-
 			}
 		}
 		else if (type == "beginLaunch")
@@ -457,6 +460,11 @@ public class PlayerController : MonoBehaviour
 		}
 		else if (type == "launch")
 		{
+			if (pushCounter>=1)
+			{
+				montyStateVariables.montyReadyToGetIn = true;
+			}
+
 			if (pushCounter >= 2)
 			{
 				pushCounter = 0;
@@ -526,9 +534,7 @@ public class PlayerController : MonoBehaviour
 			if (currentInventoryIndex == inventory.tools.Count)
 			{
 				currentInventoryIndex = 0;
-			}
-
-			
+			}			
 
 			//Debug.Log(inventory.tools[currentInventoryIndex]);
 			anim.SetInteger("inventoryIndex", inventory.tools[currentInventoryIndex]);
@@ -603,7 +609,6 @@ public class PlayerController : MonoBehaviour
 		else
 		{
 			transform.position = Vector2.MoveTowards(transform.position, target.position, defaultXSpeed * Time.deltaTime);
-
 		}
 
 
@@ -667,8 +672,8 @@ public class PlayerController : MonoBehaviour
 			putDownTarget = other.gameObject.transform.GetChild(1).transform;
 			spawnTarget = other.gameObject.transform.GetChild(0).transform;
 			inRangeParkingSpace = true;
-
 		}
+
 		if (other.gameObject.tag == "FetchZoneExit")
 		{
 			playingFetch = false;
@@ -688,14 +693,13 @@ public class PlayerController : MonoBehaviour
 			inRangeOfLaunchingZone = true;
 			putDownTarget = other.gameObject.transform.GetChild(1).transform;
 			spawnTarget = other.gameObject.transform.GetChild(0).transform;
-
+			montyWalkTarget = other.gameObject.transform.GetChild(2).transform;
 		}
 
 		if (other.gameObject.tag == "Item")
 		{
 			itemToPickUp = other.gameObject;
 		}
-
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
@@ -711,9 +715,7 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.tag == "LaunchingZone")
 		{
 			inRangeOfLaunchingZone = false;
-
 		}
-
 		if (other.gameObject.tag == "Item")
 		{
 			itemToPickUp = null;

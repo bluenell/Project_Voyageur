@@ -48,7 +48,9 @@ public class MontyStateVariables : MonoBehaviour
 	public bool montyReturningStick = false;
 	public bool waitedAtStick = false;
 
-
+	[Header("Launching")]
+	public bool montyReadyToGetIn;
+	public bool montyInCanoe;
 
 	private void Start()
 	{

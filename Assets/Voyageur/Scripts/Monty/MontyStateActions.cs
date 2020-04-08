@@ -59,6 +59,24 @@ public class MontyStateActions : MonoBehaviour
 		anim.SetBool("isSitting", true);
 		Debug.Log("Monty is sitting");
 	}
+
+	public void Launch()
+	{
+		if (stateVariables.montyReadyToGetIn)
+		{
+			anim.SetBool("isWalking", false);
+			anim.SetBool("isRunning", true);
+
+			transform.position = Vector3.MoveTowards(transform.position, playerController.montyWalkTarget.position, stateVariables.runSpeed * Time.deltaTime);
+
+
+			if (transform.position == playerController.montyWalkTarget.position)
+			{
+				Debug.Log("ready to jump");
+			}
+		}
+	}
+
 	public void Fetch()
 	{
 		StopCoroutine(FollowPath());

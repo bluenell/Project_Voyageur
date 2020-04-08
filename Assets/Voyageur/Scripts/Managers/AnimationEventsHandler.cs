@@ -6,7 +6,7 @@ public class AnimationEventsHandler : MonoBehaviour
 {
 	TransitionHandler TransitionHandler;
 
-	GameObject player;
+	public GameObject player;
 	public InteractionsManager interactionsManager;
 	public AdditionalSpritesManager spritesManager;
 	public IndividualInteractions individualInteractions;
@@ -16,7 +16,6 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	private void Awake()
 	{
-		player = GameObject.Find("Player");
 		TransitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>();
 		
 	}
@@ -38,6 +37,11 @@ public class AnimationEventsHandler : MonoBehaviour
 	public void Launch()
 	{
 		TransitionHandler.Launch();
+	}
+
+	public void Door()
+	{
+		TransitionHandler.Door();
 	}
 
 
