@@ -462,7 +462,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if (pushCounter>=1)
 			{
-				montyStateVariables.montyReadyToGetIn = true;
+				playerSoundManager.PlayWhistle();
 			}
 
 			if (pushCounter >= 2)

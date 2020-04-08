@@ -56,7 +56,7 @@ public class MontyStateVariables : MonoBehaviour
 	{
 		player = GameObject.Find("Player");
 		interactionsManager = player.GetComponent<InteractionsManager>();
-		rangeToIgnore = transform.GetChild(1).GetComponent<CircleCollider2D>();
+		rangeToIgnore = transform.GetChild(0).GetChild(1).GetComponent<CircleCollider2D>();
 		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 		grid = GameObject.Find("Pathfinding Grids").transform.GetChild(gameManager.GetCurrentIsland()).GetComponent<MyGrid>();
 
