@@ -149,12 +149,26 @@ public class PlayerController : MonoBehaviour
 		}
 
 
-		if (targetFound)
+		if (facingRight && inventory.hasAxe && currentInventoryIndex != 1)
 		{
-			playerCollider.enabled = false;
-			HandleCanoe(interactionType);
+			inventory.DisplayAxe();
 		}
-		else if (playingFetch)
+		else
+		{
+			inventory.HideAxe();
+		}
+
+		if (!facingRight && inventory.hasRod && currentInventoryIndex != 2)
+		{
+			inventory.DisplayRod();
+		}
+		else
+		{
+			inventory.HideRod();
+		}
+
+
+		if (playingFetch)
 		{
 			HandleMonty();
 		}
@@ -162,12 +176,20 @@ public class PlayerController : MonoBehaviour
 		{
 			MoveTowardsTarget(interactionsManager.interaction.transform.GetChild(0), false);
 		}
+
+
+
+
+		if (targetFound)
+		{
+			playerCollider.enabled = false;
+			HandleCanoe(interactionType);
+		}
 		else
 		{
 			playerCollider.enabled = true;
 		}
 
-		
 
 
 	}
@@ -320,15 +342,6 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = true;
 			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 			torch.transform.localPosition = leftTorchTransform;
-
-			if (inventory.hasRod && currentInventoryIndex!= 2)
-			{
-				inventory.DisplayRod();
-			}
-			else
-			{
-				inventory.HideRod();
-			}
 			
 		}
 		if (moveX > 0f)
@@ -340,16 +353,7 @@ public class PlayerController : MonoBehaviour
 			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 			torch.transform.localPosition = rightTorchTransform;
 
-			if (inventory.hasAxe && currentInventoryIndex != 1)
-			{
-				inventory.DisplayAxe();
-			}
-			else
-			{
-				inventory.HideAxe();
-			}
 		}
-
 
 		if (moveX != 0 || moveY != 0)
 		{
@@ -398,11 +402,14 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe(string type)
 	{
-		currentInventoryIndex = 0;
-		anim.SetInteger("inventoryIndex", 0);
+
+		
 
 		if (type == "pickUpCanoe")
 		{
+			currentInventoryIndex = 0;
+			anim.SetInteger("inventoryIndex", 0);
+
 			DisablePlayerInput();
 			MoveTowardsTarget(pickUpTarget, false);
 
@@ -420,6 +427,8 @@ public class PlayerController : MonoBehaviour
 		}
 		else if (type == "putdown")
 		{
+			currentInventoryIndex = 0;
+			anim.SetInteger("inventoryIndex", 0);
 			DisablePlayerInput();
 			MoveTowardsTarget(spawnTarget, true);
 
@@ -438,10 +447,12 @@ public class PlayerController : MonoBehaviour
 		}
 		else if (type == "beginLaunch")
 		{
-			DisablePlayerInput();
-			MoveTowardsTarget(putDownTarget, false);
 			currentInventoryIndex = 0;
 			anim.SetInteger("inventoryIndex", 0);
+			DisablePlayerInput();
+			MoveTowardsTarget(putDownTarget, false);
+			//currentInventoryIndex = 0;
+			//anim.SetInteger("inventoryIndex", 0);
 
 			if (CheckIfAtTarget(putDownTarget, false))
 			{
@@ -467,11 +478,14 @@ public class PlayerController : MonoBehaviour
 
 			if (pushCounter >= 2)
 			{
+				targetFound = false;
 				pushCounter = 0;
 				transitionHandler.PreLaunch();
 			}
 			else
 			{
+				currentInventoryIndex = 0;
+				anim.SetInteger("inventoryIndex", 0);
 				DisablePlayerInput();
 				MoveTowardsTarget(pickUpTarget, false);
 
@@ -546,19 +560,9 @@ public class PlayerController : MonoBehaviour
 				currentInventoryIndex = inventory.tools.Count;
 			}
 			currentInventoryIndex--;
-			anim.SetInteger("inventoryIndex", currentInventoryIndex);
+			anim.SetInteger("inventoryIndex", inventory.tools[currentInventoryIndex]);
 			//Debug.Log(inventory.tools[currentInventoryIndex]);
 		}
-
-		if (currentInventoryIndex == 1)
-		{
-			inventory.HideAxe();
-		}
-		else if (currentInventoryIndex == 2)
-		{
-			inventory.HideRod();
-		}
-
 	}
 
 	public void ThrowStick()

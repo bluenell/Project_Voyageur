@@ -66,7 +66,7 @@ public class MontyStateActions : MonoBehaviour
 
 	public void Launch()
 	{
-		if (stateVariables.montyReadyToGetIn && !stateVariables.montyInCanoe)
+		if (stateVariables.montyReadyToGetIn && !stateVariables.jumping)
 		{
 			transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = false;
 
@@ -74,16 +74,19 @@ public class MontyStateActions : MonoBehaviour
 			anim.SetBool("isRunning", true);			
 
 			transform.position = Vector3.MoveTowards(transform.position, playerController.montyWalkTarget.position, stateVariables.runSpeed * Time.deltaTime);
+						
+		}
 
-			if (transform.position == playerController.montyWalkTarget.position)
-			{
-				anim.SetTrigger("jump");
-				parentAnim.SetTrigger("jump");				
-			}
+		if (transform.position == playerController.montyWalkTarget.position)
+		{
+			stateVariables.jumping = true;
+			anim.SetTrigger("jump");
+			parentAnim.SetTrigger("jump");
 		}
 
 		if (stateVariables.montyInCanoe)
 		{
+			//transform.SetParent(GameObject.Find("Canoe Single").transform);
 			transform.position = canoeSeat.position;
 			sprite.flipX = true;
 			anim.SetBool("isRunning", false);

@@ -22,6 +22,7 @@ public class TransitionHandler : MonoBehaviour
 	CameraHandler cameraHandler;
 	GameManager gm;
 	MontyStateVariables montyStateVariables;
+	MontyStateManager montyStateManager;
 
 	public GameObject[] pathwayColliders;
 	public GameObject spritesManager;
@@ -32,6 +33,7 @@ public class TransitionHandler : MonoBehaviour
 
 	public GameObject door;
 
+	public GameObject journal;
 	
 
 	private void Awake()
@@ -41,7 +43,8 @@ public class TransitionHandler : MonoBehaviour
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
 		gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
 		montyStateVariables = monty.GetComponent<MontyStateVariables>();
-		montyStateVariables = monty.GetComponent<MontyStateVariables>();
+		montyStateManager = monty.GetComponent<MontyStateManager>();
+
 	}
 
 
@@ -53,6 +56,8 @@ public class TransitionHandler : MonoBehaviour
 		layerManager.SetActive(true);
 		interactionsManager.SetActive(true);
 		cameraHandler.enabled = true;
+		//journal.SetActive(true);
+
 	}
 
 
@@ -73,6 +78,9 @@ public class TransitionHandler : MonoBehaviour
 
 		spritesManager.SetActive(true);
 
+
+		montyStateManager.currentState = "roam";
+		montyStateManager.SwitchState();
 		montyStateVariables.grid.CreateGrid();
 
 
@@ -89,7 +97,7 @@ public class TransitionHandler : MonoBehaviour
 
 		canoeAIO.GetComponent<Rigidbody2D>().simulated = false;
 
-		canoeAIO.transform.position = canoe.transform.position;
+		canoeAIO.transform.position = canoe.transform.GetChild(0).transform.position;
 	}
 
 	public void Launch()

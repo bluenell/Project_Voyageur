@@ -51,6 +51,7 @@ public class MontyStateVariables : MonoBehaviour
 	[Header("Launching")]
 	public bool montyReadyToGetIn;
 	public bool montyInCanoe;
+	public bool jumping;
 
 	private void Start()
 	{

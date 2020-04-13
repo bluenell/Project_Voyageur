@@ -78,8 +78,7 @@ public class MontyStateManager : MonoBehaviour
 			SwitchState();
 		}
 	}
-
-
+	
 	public void SwitchState()
 	{
 		switch (currentState)
