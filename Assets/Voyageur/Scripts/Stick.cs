@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stick : MonoBehaviour
 {
 	public float range;
-	Rigidbody2D rb;
+	public Rigidbody2D rb;
 	MontyStateVariables stateVariables;
 	MontyStateManager stateManager;
 	public bool hitGround = false;
@@ -25,6 +25,7 @@ public class Stick : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+	
 		if (stateManager.currentState == "fetch")
 		{
 			if (stateVariables.stickThrown)

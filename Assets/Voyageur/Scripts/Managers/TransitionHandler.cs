@@ -34,7 +34,8 @@ public class TransitionHandler : MonoBehaviour
 	public GameObject door;
 
 	public GameObject journal;
-	
+
+	public GameObject[] interactions;
 
 	private void Awake()
 	{
@@ -58,6 +59,16 @@ public class TransitionHandler : MonoBehaviour
 		cameraHandler.enabled = true;
 		//journal.SetActive(true);
 
+
+
+		for (int i = 0; i < interactions.Length; i++)
+		{
+			interactions[i].SetActive(true);
+		}
+
+
+
+
 	}
 
 
@@ -79,10 +90,11 @@ public class TransitionHandler : MonoBehaviour
 		spritesManager.SetActive(true);
 
 
-		montyStateManager.currentState = "roam";
-		montyStateManager.SwitchState();
+		montyStateManager.inFetch = false;
+		montyStateManager.inTutorial = false;
 		montyStateVariables.grid.CreateGrid();
 
+		monty.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = player.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder - 1;
 
 	}
 

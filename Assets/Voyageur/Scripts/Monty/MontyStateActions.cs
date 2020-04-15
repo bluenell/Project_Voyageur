@@ -97,13 +97,16 @@ public class MontyStateActions : MonoBehaviour
 
 	public void Fetch()
 	{
-		StopCoroutine(FollowPath());
-		PathRequestManager.ClearRequests();
+		if (currentlyOnPath)
+		{
+			StopAllCoroutines();
+			PathRequestManager.ClearRequests();
+			currentlyOnPath = false;
+		}
 
 		//checking if the stick hasn't been thrown yet, or monty is bringing the stick back (when to move monty to the start point)
 		if (!stateVariables.stickThrown || stateVariables.montyReturningStick)
 		{
-
 			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint().position, stateVariables.runSpeed * Time.deltaTime);
 			anim.SetBool("isWalking", false);
 			anim.SetBool("isSitting", false);
@@ -214,7 +217,9 @@ public class MontyStateActions : MonoBehaviour
 
 	IEnumerator WaitForTime(int time)
 	{
+		Debug.Log("Waiting");
 		yield return new WaitForSeconds(time);
+
 		stateVariables.waitedAtStick = true;
 		sprite.flipX = true;
 		stateVariables.montyReturningStick = true;

@@ -476,7 +476,7 @@ public class PlayerController : MonoBehaviour
 				playerSoundManager.PlayWhistle();
 			}
 
-			if (pushCounter >= 2)
+			if (pushCounter >= 2 && montyStateVariables.montyInCanoe)
 			{
 				targetFound = false;
 				pushCounter = 0;
