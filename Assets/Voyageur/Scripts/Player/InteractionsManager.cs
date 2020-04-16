@@ -58,8 +58,16 @@ public class InteractionsManager : MonoBehaviour
 						}
 					}
 				}
-
-			
+				else if (playerController.usingRod)
+				{
+					if (playerController.currentInventoryIndex == 2)
+					{
+						if (interaction.interactionName == "Fishing")
+						{
+							indivInteractions.Fish();
+						}
+					}
+				}
 				
 			}
 		}

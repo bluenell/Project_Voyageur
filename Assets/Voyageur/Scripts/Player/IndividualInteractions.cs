@@ -45,6 +45,13 @@ public class IndividualInteractions : MonoBehaviour
 		//advance time to 06:00
 	}
 
+
+	public void Fish()
+	{
+		Debug.Log("Fishing here");
+	}
+
+
 	void Eat()
 	{
 		 //check fish
