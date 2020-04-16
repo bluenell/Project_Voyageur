@@ -6,17 +6,29 @@ public class AnimationEventsHandler : MonoBehaviour
 {
 	TransitionHandler TransitionHandler;
 
-	GameObject player;
+	public GameObject player;
 	public InteractionsManager interactionsManager;
 	public AdditionalSpritesManager spritesManager;
 	public IndividualInteractions individualInteractions;
 
 
 
+	public void ChangeSpriteLayer()
+	{
+		GetComponent<SpriteRenderer>().sortingOrder = GameObject.Find("CanoeGFX").GetComponent<SpriteRenderer>().sortingOrder - 1;
+	}
+	public void MontyInCanoe()
+	{
+		transform.GetComponentInParent<MontyStateVariables>().montyInCanoe = true;
+	}
+
+	public void SignalMontyToGetIn()
+	{
+		GameObject.Find("Monty").GetComponent<MontyStateVariables>().montyReadyToGetIn = true;
+	}
 
 	private void Awake()
 	{
-		player = GameObject.Find("Player");
 		TransitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>();
 		
 	}
@@ -38,6 +50,11 @@ public class AnimationEventsHandler : MonoBehaviour
 	public void Launch()
 	{
 		TransitionHandler.Launch();
+	}
+
+	public void Door()
+	{
+		TransitionHandler.Door();
 	}
 
 

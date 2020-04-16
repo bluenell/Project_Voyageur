@@ -6,6 +6,22 @@ public class GameManager : MonoBehaviour
 {
 
     public int currentIsland;
+    public bool inTutorial;
+
+    public GameObject player, monty;
+
+
+    private void Update()
+    {
+        if (inTutorial)
+        {
+            monty.GetComponent<MontyStateManager>().enabled = false;
+        }
+        else
+        {
+            monty.GetComponent<MontyStateManager>().enabled = true;
+        }
+    }
 
     public void IncreaseIsland()
     {

@@ -48,13 +48,16 @@ public class MontyStateVariables : MonoBehaviour
 	public bool montyReturningStick = false;
 	public bool waitedAtStick = false;
 
-
+	[Header("Launching")]
+	public bool montyReadyToGetIn;
+	public bool montyInCanoe;
+	public bool jumping;
 
 	private void Start()
 	{
 		player = GameObject.Find("Player");
 		interactionsManager = player.GetComponent<InteractionsManager>();
-		rangeToIgnore = transform.GetChild(1).GetComponent<CircleCollider2D>();
+		rangeToIgnore = transform.GetChild(0).GetChild(1).GetComponent<CircleCollider2D>();
 		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 		grid = GameObject.Find("Pathfinding Grids").transform.GetChild(gameManager.GetCurrentIsland()).GetComponent<MyGrid>();
 
@@ -185,7 +188,6 @@ public class MontyStateVariables : MonoBehaviour
 	{
 		return interactionsManager.interaction.gameObject.transform.GetChild(childIndex).gameObject;
 	}
-
 	
 	public Vector2 CalculateThrowVelocity()
 	{

@@ -57,11 +57,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3625638086280105392}
   - component: {fileID: 3625638086280105395}
-  - component: {fileID: 3625638086280105396}
-  - component: {fileID: 3625638086280105399}
-  - component: {fileID: 3625638086280105398}
-  - component: {fileID: 3625638086280105393}
   - component: {fileID: 1409123599}
+  - component: {fileID: 928187009}
   m_Layer: 0
   m_Name: Monty
   m_TagString: Untagged
@@ -106,75 +103,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3625638086280105396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3625638086280105357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f034c1ac7a87b449ed6fad7badbade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3625638086280105399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3625638086280105357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8fb3e971b1a93a4892d8da1d802f8ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentlyOnPath: 0
---- !u!114 &3625638086280105398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3625638086280105357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cd052133eb51f34586c79b7a0500303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 
-  inFetch: 0
---- !u!114 &3625638086280105393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3625638086280105357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8427fa690329ca45ab7d4fcb4480906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerFlipped: 0
-  playerMoving: 0
-  distFromPlayer: 0
-  desintationReached: 0
-  walkSpeed: 5
-  runSpeed: 15
-  distanceToFollow: 1.5
-  movingTowardsPlayer: 0
-  callRequestMade: 0
-  sitWaitTime: 5
-  randomWaitRange: {x: 2, y: 9}
-  throwHeight: 1
-  throwGravity: -9.81
-  montyHasStick: 0
-  playerHasStick: 0
-  stickThrown: 0
-  montyReturningStick: 0
-  waitedAtStick: 0
 --- !u!58 &1409123599
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -191,6 +119,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.17}
   serializedVersion: 2
   m_Radius: 0.33350402
+--- !u!95 &928187009
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625638086280105357}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 812fb27ab20e1484593a92fb0a746e80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3625638087023016638
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +149,7 @@ GameObject:
   - component: {fileID: 3625638087023016639}
   - component: {fileID: 3625638087023016637}
   - component: {fileID: 3625638087023016636}
+  - component: {fileID: 1295359407}
   m_Layer: 0
   m_Name: MontyGFX
   m_TagString: Untagged
@@ -293,3 +241,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1295359407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625638087023016638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313a8b66a881d7740b5e110f15bfe1e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  interactionsManager: {fileID: 0}
+  spritesManager: {fileID: 0}
+  individualInteractions: {fileID: 0}

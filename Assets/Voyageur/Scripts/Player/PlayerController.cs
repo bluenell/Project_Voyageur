@@ -14,10 +14,10 @@ public class PlayerController : MonoBehaviour
 	[HideInInspector]
 	public bool facingRight;
 	public float armsReach;
-
 	float xSpeed, ySpeed;
 	[HideInInspector]
 	public bool movementDisabled;
+	public float detectionRadius;
 
 	#endregion
 
@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 	Transform pickUpTarget;
 	Transform putDownTarget;
 	Transform spawnTarget;
+	public Transform montyWalkTarget;
 
 	bool inRangeOfCanoe;
 	bool inRangeParkingSpace;
@@ -64,6 +65,8 @@ public class PlayerController : MonoBehaviour
 	public GameObject torch;
 	bool torchOn = false;
 
+	GameObject itemToPickUp;
+
 	Vector3 rightTorchTransform = new Vector3(0.608f, 1.642f, 0);
 	Vector3 leftTorchTransform = new Vector3(-0.608f, 1.642f, 0);
 	Quaternion leftTorchRot;
@@ -71,6 +74,7 @@ public class PlayerController : MonoBehaviour
 
 
 	PlayerInventory inventory;
+	Animator axeAnim, rodAnim;
 	public int currentInventoryIndex;
 
 	public float switchRate = 2f;
@@ -90,6 +94,7 @@ public class PlayerController : MonoBehaviour
 	InteractionsManager interactionsManager;
 	IndividualInteractions individualInteractions;
 	BoxCollider2D playerCollider;
+	GameManager gm;
 	#endregion
 
 	void Start()
@@ -105,7 +110,7 @@ public class PlayerController : MonoBehaviour
 		interactionsManager = GetComponent<InteractionsManager>();
 		individualInteractions = GameObject.Find("Interactions Manager").GetComponent<IndividualInteractions>();
 		playerCollider = GetComponent<BoxCollider2D>();
-
+		gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
 		pickUpTarget = canoe.transform.GetChild(0).transform;
 
 		montyObj = GameObject.Find("Monty");
@@ -113,14 +118,15 @@ public class PlayerController : MonoBehaviour
 		montyStateManager = montyObj.GetComponent<MontyStateManager>();
 		montyStateVariables = montyObj.GetComponent<MontyStateVariables>();
 
-
-
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
 
 		xSpeed = defaultXSpeed;
 		ySpeed = defaultYSpeed;
 		canoeWalkSpeed = defaultCanoeWalkSpeed;
+
+		axeAnim = inventory.axe.gameObject.GetComponent<Animator>();
+		rodAnim = inventory.rod.gameObject.GetComponent<Animator>();
 	}
 	private void FixedUpdate()
 	{
@@ -129,16 +135,40 @@ public class PlayerController : MonoBehaviour
 
 	private void Update()
 	{
-
 		HandleInput();
 
-
-		if (targetFound)
+		if (carryingCanoe)
 		{
-			playerCollider.enabled = false;
-			HandleCanoe(interactionType);
+			axeAnim.SetBool("isCarrying", true);
+			rodAnim.SetBool("isCarrying", true);
 		}
-		else if (playingFetch)
+		else
+		{
+			axeAnim.SetBool("isCarrying", false);
+			rodAnim.SetBool("isCarrying", false);
+		}
+
+
+		if (facingRight && inventory.hasAxe && currentInventoryIndex != 1)
+		{
+			inventory.DisplayAxe();
+		}
+		else
+		{
+			inventory.HideAxe();
+		}
+
+		if (!facingRight && inventory.hasRod && currentInventoryIndex != 2)
+		{
+			inventory.DisplayRod();
+		}
+		else
+		{
+			inventory.HideRod();
+		}
+
+
+		if (playingFetch)
 		{
 			HandleMonty();
 		}
@@ -146,11 +176,25 @@ public class PlayerController : MonoBehaviour
 		{
 			MoveTowardsTarget(interactionsManager.interaction.transform.GetChild(0), false);
 		}
+
+
+
+
+		if (targetFound)
+		{
+			playerCollider.enabled = false;
+			HandleCanoe(interactionType);
+		}
 		else
 		{
 			playerCollider.enabled = true;
 		}
+
+
+
 	}
+
+	
 
 	void HandleInput()
 	{
@@ -225,12 +269,30 @@ public class PlayerController : MonoBehaviour
 
 				else if (!carryingCanoe)
 				{
-					if (inRangeOfCanoe && !canLaunch)
+					if (itemToPickUp != null)
+					{
+						if (itemToPickUp.GetComponent<item>().name == "Axe")
+						{
+							inventory.tools.Add(itemToPickUp.GetComponent<item>().itemId);
+							inventory.tools.Sort();
+							inventory.hasAxe = true;
+							Destroy(itemToPickUp);
+						}
+
+						if (itemToPickUp.GetComponent<item>().name == "Rod")
+						{
+							inventory.tools.Add(itemToPickUp.GetComponent<item>().itemId);
+							inventory.tools.Sort();
+							inventory.hasRod = true;
+							Destroy(itemToPickUp);
+						}
+					}
+					else if (inRangeOfCanoe && !canLaunch)
 					{
 						targetFound = true;
 						interactionType = "pickUpCanoe";
 					}
-					else if (inRangeOfCanoe && canLaunch)
+					else if (inRangeOfCanoe && canLaunch && inventory.hasRod && inventory.hasAxe)
 					{
 						targetFound = true;
 						interactionType = "launch";
@@ -273,10 +335,6 @@ public class PlayerController : MonoBehaviour
 			rb.velocity = new Vector2(moveX * xSpeed, moveY * ySpeed);
 		}
 
-
-		float yPos = transform.position.y;
-
-
 		if (moveX < 0f)
 		{
 			facingRight = false;
@@ -284,6 +342,7 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = true;
 			torch.transform.rotation = Quaternion.Euler(0, 0, 90);
 			torch.transform.localPosition = leftTorchTransform;
+			
 		}
 		if (moveX > 0f)
 		{
@@ -293,23 +352,33 @@ public class PlayerController : MonoBehaviour
 			//sprite.flipX = false;
 			torch.transform.rotation = Quaternion.Euler(0, 0, -90);
 			torch.transform.localPosition = rightTorchTransform;
-		}
 
+		}
 
 		if (moveX != 0 || moveY != 0)
 		{
 			isMoving = true;
 			anim.SetBool("isMoving", true);
+
+			if (facingRight)
+			{
+				axeAnim.SetBool("isMoving", true);
+				rodAnim.SetBool("isMoving", false);
+			}
+			else
+			{
+				axeAnim.SetBool("isMoving", false) ;
+				rodAnim.SetBool("isMoving", true);
+			}			
 		}
 		else
 		{
 			isMoving = false;
 			anim.SetBool("isMoving", false);
+			axeAnim.SetBool("isMoving", false);
+			rodAnim.SetBool("isMoving", false);
 
 		}
-
-
-
 	}
 
 	void UseItem()
@@ -334,11 +403,13 @@ public class PlayerController : MonoBehaviour
 	void HandleCanoe(string type)
 	{
 
-		currentInventoryIndex = 0;
-		anim.SetInteger("inventoryIndex", 0);
+		
 
 		if (type == "pickUpCanoe")
 		{
+			currentInventoryIndex = 0;
+			anim.SetInteger("inventoryIndex", 0);
+
 			DisablePlayerInput();
 			MoveTowardsTarget(pickUpTarget, false);
 
@@ -348,14 +419,16 @@ public class PlayerController : MonoBehaviour
 				carryingCanoe = true;
 
 
+				axeAnim.SetTrigger("pickUp");
 				anim.SetTrigger("PickUp");
 				canoe.SetActive(false);
 				StartCoroutine(EnablePlayerInput(0.8f));
 			}
-
 		}
 		else if (type == "putdown")
 		{
+			currentInventoryIndex = 0;
+			anim.SetInteger("inventoryIndex", 0);
 			DisablePlayerInput();
 			MoveTowardsTarget(spawnTarget, true);
 
@@ -364,20 +437,22 @@ public class PlayerController : MonoBehaviour
 				targetFound = false;
 				carryingCanoe = false;
 
+				axeAnim.SetTrigger("putDown");
 				anim.SetTrigger("PutDown");
 				canoe.transform.position = new Vector3(transform.position.x, spawnTarget.position.y, 0);
 				transform.position = canoe.transform.GetChild(0).transform.position;
 				StartCoroutine(RevealCanoe(0.8f));
 				StartCoroutine(EnablePlayerInput(0.8f));
-
 			}
 		}
 		else if (type == "beginLaunch")
 		{
-			DisablePlayerInput();
-			MoveTowardsTarget(putDownTarget, false);
 			currentInventoryIndex = 0;
 			anim.SetInteger("inventoryIndex", 0);
+			DisablePlayerInput();
+			MoveTowardsTarget(putDownTarget, false);
+			//currentInventoryIndex = 0;
+			//anim.SetInteger("inventoryIndex", 0);
 
 			if (CheckIfAtTarget(putDownTarget, false))
 			{
@@ -396,13 +471,21 @@ public class PlayerController : MonoBehaviour
 		}
 		else if (type == "launch")
 		{
-			if (pushCounter >= 2)
+			if (pushCounter>=1)
 			{
+				playerSoundManager.PlayWhistle();
+			}
+
+			if (pushCounter >= 2 && montyStateVariables.montyInCanoe)
+			{
+				targetFound = false;
 				pushCounter = 0;
 				transitionHandler.PreLaunch();
 			}
 			else
 			{
+				currentInventoryIndex = 0;
+				anim.SetInteger("inventoryIndex", 0);
 				DisablePlayerInput();
 				MoveTowardsTarget(pickUpTarget, false);
 
@@ -410,6 +493,7 @@ public class PlayerController : MonoBehaviour
 				{
 					pushCounter++;
 					canoe.transform.GetChild(0).GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
+					axeAnim.SetTrigger("launch");
 					anim.SetTrigger("pushCanoe");
 
 
@@ -420,12 +504,7 @@ public class PlayerController : MonoBehaviour
 					targetFound = false;
 					carryingCanoe = false;
 				}
-			}
-
-			
-			
-
-			
+			}		
 		}
 	}
 
@@ -463,17 +542,16 @@ public class PlayerController : MonoBehaviour
 
 	void CycleInventory(string dir)
 	{
-
 		if (dir == "right")
 		{
 			currentInventoryIndex++;
 			if (currentInventoryIndex == inventory.tools.Count)
 			{
 				currentInventoryIndex = 0;
-			}
+			}			
 
 			//Debug.Log(inventory.tools[currentInventoryIndex]);
-			anim.SetInteger("inventoryIndex", currentInventoryIndex);
+			anim.SetInteger("inventoryIndex", inventory.tools[currentInventoryIndex]);
 		}
 		else if (dir == "left")
 		{
@@ -482,7 +560,7 @@ public class PlayerController : MonoBehaviour
 				currentInventoryIndex = inventory.tools.Count;
 			}
 			currentInventoryIndex--;
-			anim.SetInteger("inventoryIndex", currentInventoryIndex);
+			anim.SetInteger("inventoryIndex", inventory.tools[currentInventoryIndex]);
 			//Debug.Log(inventory.tools[currentInventoryIndex]);
 		}
 	}
@@ -535,7 +613,6 @@ public class PlayerController : MonoBehaviour
 		else
 		{
 			transform.position = Vector2.MoveTowards(transform.position, target.position, defaultXSpeed * Time.deltaTime);
-
 		}
 
 
@@ -543,11 +620,13 @@ public class PlayerController : MonoBehaviour
 		{
 			facingRight = false;
 			anim.SetBool("facingRight", facingRight);
+			inventory.DisplayRod();
 		}
 		else
 		{
 			facingRight = true;
 			anim.SetBool("facingRight", facingRight);
+			inventory.DisplayAxe();
 		}
 
 	}
@@ -597,8 +676,8 @@ public class PlayerController : MonoBehaviour
 			putDownTarget = other.gameObject.transform.GetChild(1).transform;
 			spawnTarget = other.gameObject.transform.GetChild(0).transform;
 			inRangeParkingSpace = true;
-
 		}
+
 		if (other.gameObject.tag == "FetchZoneExit")
 		{
 			playingFetch = false;
@@ -618,9 +697,13 @@ public class PlayerController : MonoBehaviour
 			inRangeOfLaunchingZone = true;
 			putDownTarget = other.gameObject.transform.GetChild(1).transform;
 			spawnTarget = other.gameObject.transform.GetChild(0).transform;
-
+			montyWalkTarget = other.gameObject.transform.GetChild(2).transform;
 		}
 
+		if (other.gameObject.tag == "Item")
+		{
+			itemToPickUp = other.gameObject;
+		}
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
@@ -636,7 +719,10 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.tag == "LaunchingZone")
 		{
 			inRangeOfLaunchingZone = false;
-
+		}
+		if (other.gameObject.tag == "Item")
+		{
+			itemToPickUp = null;
 		}
 	}
 

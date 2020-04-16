@@ -7,7 +7,7 @@ public class PlayerDogLayerManager : MonoBehaviour
 	//on the empty
 
 
-	GameObject player, dog;
+	public GameObject player, dog;
 
 	SpriteRenderer playerSprite, dogSprite;
 
@@ -22,7 +22,7 @@ public class PlayerDogLayerManager : MonoBehaviour
 		dog = GameObject.Find("Monty");
 
 		playerSprite = player.transform.GetChild(0).GetComponent<SpriteRenderer>();
-		dogSprite = dog.transform.GetChild(0).GetComponent<SpriteRenderer>();
+		dogSprite = dog.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
 
 	}
 

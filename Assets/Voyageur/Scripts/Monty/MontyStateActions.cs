@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MontyStateActions : MonoBehaviour
 {
-	Animator anim;
+	Animator anim, parentAnim;
 	MontyStateVariables stateVariables;
 	MontyStateManager stateManager;
 	GameObject player;
@@ -13,6 +13,8 @@ public class MontyStateActions : MonoBehaviour
 	SpriteRenderer sprite;
 	PlayerController playerController;
 	CameraHandler cameraHandler;
+
+	Transform canoeSeat;
 
 	bool targetFound;
 	Vector3 target;
@@ -25,16 +27,18 @@ public class MontyStateActions : MonoBehaviour
 
 	private void Start()
 	{
-		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+		sprite = transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
 		stateVariables = GetComponent<MontyStateVariables>();
 		stateManager = GetComponent<MontyStateManager>();
-		anim = transform.GetChild(0).GetComponent<Animator>();
+		anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
+		parentAnim = transform.GetChild(0).GetComponent<Animator>();
 		player = GameObject.Find("Player");
 		followTarget = player.transform.GetChild(2).gameObject;
 		followTargetCollider = followTarget.GetComponent<BoxCollider2D>();
 		rb = GetComponent<Rigidbody2D>();
 		playerController = player.GetComponent<PlayerController>();
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
+		canoeSeat = GameObject.Find("Monty Seat").transform;
 	}
 
 
@@ -59,15 +63,50 @@ public class MontyStateActions : MonoBehaviour
 		anim.SetBool("isSitting", true);
 		Debug.Log("Monty is sitting");
 	}
+
+	public void Launch()
+	{
+		if (stateVariables.montyReadyToGetIn && !stateVariables.jumping)
+		{
+			transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = false;
+
+			anim.SetBool("isWalking", false);
+			anim.SetBool("isRunning", true);			
+
+			transform.position = Vector3.MoveTowards(transform.position, playerController.montyWalkTarget.position, stateVariables.runSpeed * Time.deltaTime);
+						
+		}
+
+		if (transform.position == playerController.montyWalkTarget.position)
+		{
+			stateVariables.jumping = true;
+			anim.SetTrigger("jump");
+			parentAnim.SetTrigger("jump");
+		}
+
+		if (stateVariables.montyInCanoe)
+		{
+			//transform.SetParent(GameObject.Find("Canoe Single").transform);
+			transform.position = canoeSeat.position;
+			sprite.flipX = true;
+			anim.SetBool("isRunning", false);
+			anim.SetBool("isSitting", true);
+		}
+
+	}
+
 	public void Fetch()
 	{
-		StopCoroutine(FollowPath());
-		PathRequestManager.ClearRequests();
+		if (currentlyOnPath)
+		{
+			StopAllCoroutines();
+			PathRequestManager.ClearRequests();
+			currentlyOnPath = false;
+		}
 
 		//checking if the stick hasn't been thrown yet, or monty is bringing the stick back (when to move monty to the start point)
 		if (!stateVariables.stickThrown || stateVariables.montyReturningStick)
 		{
-
 			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint().position, stateVariables.runSpeed * Time.deltaTime);
 			anim.SetBool("isWalking", false);
 			anim.SetBool("isSitting", false);
@@ -178,7 +217,9 @@ public class MontyStateActions : MonoBehaviour
 
 	IEnumerator WaitForTime(int time)
 	{
+		Debug.Log("Waiting");
 		yield return new WaitForSeconds(time);
+
 		stateVariables.waitedAtStick = true;
 		sprite.flipX = true;
 		stateVariables.montyReturningStick = true;

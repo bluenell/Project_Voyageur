@@ -10,6 +10,7 @@ public class MontyStateManager : MonoBehaviour
 	bool movingToPlayer;
 	bool sitting;
 	public bool inFetch;
+	public bool inTutorial;
 
 	MontyStateActions stateActions;
 	MontyStateVariables stateVariables;
@@ -23,11 +24,13 @@ public class MontyStateManager : MonoBehaviour
 		stateVariables = GetComponent<MontyStateVariables>();
 		playerController = GameObject.Find("Player").GetComponent<PlayerController>();
 		playerSoundManager = GameObject.Find("Player").GetComponent<PlayerSoundManager>();
+		inFetch = false;
+		inTutorial = true;
 	}
 
-	private void FixedUpdate()
+	private void Update()
 	{
-		if (!inFetch)
+		if (!inFetch && !inTutorial)
 		{
 			if (!stateVariables.movingTowardsPlayer && stateVariables.distFromPlayer >= playerController.armsReach)
 			{
@@ -35,12 +38,7 @@ public class MontyStateManager : MonoBehaviour
 				currentState = "roam";
 				SwitchState();
 			}
-		}
-	}
-	private void Update()
-	{
-		if (!inFetch)
-		{			
+
 			if (stateVariables.callRequestMade)
 			{
 				currentState = "move towards";
@@ -69,14 +67,18 @@ public class MontyStateManager : MonoBehaviour
 
 			}
 		}
-		else
+		else if (inFetch)
 		{
 			currentState = "fetch";
 			SwitchState();
 		}
+		else if (inTutorial)
+		{
+			currentState = "launch";
+			SwitchState();
+		}
 	}
-
-
+	
 	public void SwitchState()
 	{
 		switch (currentState)
@@ -91,6 +93,10 @@ public class MontyStateManager : MonoBehaviour
 
 			case "fetch":
 				stateActions.Fetch();
+				break;
+
+			case "launch":
+				stateActions.Launch();
 				break;
 
 			case "wait":
