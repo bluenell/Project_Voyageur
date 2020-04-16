@@ -4260,10 +4260,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.9009652, y: 0.7812834}
+    - - {x: -0.15368414, y: 0.7583566}
       - {x: -1.4076171, y: 0.7640476}
       - {x: -2.6520972, y: -1.4640875}
-      - {x: 0.0356431, y: -1.5254583}
+      - {x: -1.0190024, y: -1.502531}
 --- !u!1 &426153927
 GameObject:
   m_ObjectHideFlags: 0
@@ -19812,6 +19812,9 @@ MonoBehaviour:
   xPressed: 0
   targetFound: 0
   chopCount: 0
+  fishCatchTime: {x: 3, y: 5}
+  fishResponseTime: 0
+  fishBagTime: 0
 --- !u!4 &2099149886
 Transform:
   m_ObjectHideFlags: 0

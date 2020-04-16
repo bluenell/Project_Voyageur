@@ -15,7 +15,15 @@ public class IndividualInteractions : MonoBehaviour
 	bool movingTowards = false;
 	public bool targetFound;
 
+	[Header("Chopping")]
 	public int chopCount = 0;
+
+
+	[Header("Fishing")]
+	public Vector2 fishCatchTime;
+	public float fishResponseTime, fishBagTime;
+	float timer;
+	int buttonPresses;
 
 	private void Start()
 	{
@@ -24,13 +32,9 @@ public class IndividualInteractions : MonoBehaviour
 		playerController = player.GetComponent<PlayerController>();
 		spritesManager = GameObject.Find("ExtraSpritesManager").GetComponent<AdditionalSpritesManager>();
 		playerAnimator = player.transform.GetChild(0).GetComponent<Animator>();
-		montyStateManager = GameObject.Find("Monty").GetComponent<MontyStateManager>();
-
-		
+		montyStateManager = GameObject.Find("Monty").GetComponent<MontyStateManager>();	
 
 	}
-
-
 
 
 
@@ -48,7 +52,21 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Fish()
 	{
-		Debug.Log("Fishing here");
+		buttonPresses++;
+		playerAnimator.SetTrigger("cast");
+
+		timer += Time.deltaTime;
+		Debug.Log((int)timer);
+
+		if (timer >= Random.Range(fishCatchTime.x, fishCatchTime.y))
+		{
+			Debug.Log("Fish Bite");
+			timer = 0;
+		}
+
+
+
+
 	}
 
 
@@ -77,7 +95,7 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Chop()
 	{
-		if (chopCount >2)
+		if (buttonPresses >2)
 		{
 			manager.interaction.MarkAsComplete();
 
@@ -89,9 +107,9 @@ public class IndividualInteractions : MonoBehaviour
 			{
 				targetFound = false;
 				playerController.usingAxe = false;
-				chopCount++;
-				playerAnimator.SetInteger("chopCounter", chopCount);				
-				Debug.Log(chopCount);
+				buttonPresses++;
+				playerAnimator.SetInteger("chopCounter", buttonPresses);				
+				Debug.Log(buttonPresses);
 			}
 
 		}

@@ -62,7 +62,7 @@ public class MontyStateManager : MonoBehaviour
 					counter = 0;
 					sitting = true;
 					currentState = "sit";
-					SwitchState();
+					SwitchState(); 
 				}
 
 			}

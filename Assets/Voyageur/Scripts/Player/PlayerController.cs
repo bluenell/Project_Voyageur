@@ -177,13 +177,6 @@ public class PlayerController : MonoBehaviour
 		{
 			MoveTowardsTarget(interactionsManager.interaction.transform.GetChild(0), false);
 		}
-		else if (usingRod)
-		{
-
-		}
-
-
-
 
 		if (targetFound)
 		{
