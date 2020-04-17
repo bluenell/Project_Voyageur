@@ -196,23 +196,26 @@ public class PlayerController : MonoBehaviour
 
 	void HandleInput()
 	{
-		if (Time.time >= nextSwitchTime)
-		{
-			if (Input.GetButtonDown("InventoryLeft") || Input.GetAxis("Mouse ScrollWheel") < 0)
-			{
-				playerSoundManager.PlayItemSwitch();
-				CycleInventory("left");
-				nextSwitchTime = Time.time + 1f / switchRate;
-			}
-			if (Input.GetButtonDown("InventoryRight") || Input.GetAxis("Mouse ScrollWheel") > 0)
-			{
-				playerSoundManager.PlayItemSwitch();
-				CycleInventory("right");
-				nextSwitchTime = Time.time + 1f / switchRate;
 
+		if (!usingRod || !usingAxe)
+		{
+			if (Time.time >= nextSwitchTime)
+			{
+				if (Input.GetButtonDown("InventoryLeft") || Input.GetAxis("Mouse ScrollWheel") < 0)
+				{
+					playerSoundManager.PlayItemSwitch();
+					CycleInventory("left");
+					nextSwitchTime = Time.time + 1f / switchRate;
+				}
+				if (Input.GetButtonDown("InventoryRight") || Input.GetAxis("Mouse ScrollWheel") > 0)
+				{
+					playerSoundManager.PlayItemSwitch();
+					CycleInventory("right");
+					nextSwitchTime = Time.time + 1f / switchRate;
+
+				}
 			}
 		}
-
 		if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
 		{
 			if (!usingAxe || !usingRod)

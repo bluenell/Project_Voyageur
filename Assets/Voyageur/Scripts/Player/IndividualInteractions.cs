@@ -23,7 +23,10 @@ public class IndividualInteractions : MonoBehaviour
 	public Vector2 fishCatchTime;
 	public float fishResponseTime, fishBagTime;
 	float timer;
-	int buttonPresses;
+	int buttonPresses = 0;
+	bool fishBite;
+	bool catchSucces;
+	bool casting;
 
 	private void Start()
 	{
@@ -52,18 +55,60 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Fish()
 	{
-		buttonPresses++;
-		playerAnimator.SetTrigger("cast");
-
-		timer += Time.deltaTime;
-		Debug.Log((int)timer);
-
-		if (timer >= Random.Range(fishCatchTime.x, fishCatchTime.y))
+		if (!fishBite && !catchSucces)
 		{
-			Debug.Log("Fish Bite");
-			timer = 0;
-		}
+			playerAnimator.SetTrigger("cast");
 
+			timer += Time.deltaTime;
+
+			Debug.Log((int)timer);
+
+			if (timer >= Random.Range(fishCatchTime.x, fishCatchTime.y))
+			{
+				timer = 0;
+				fishBite = true;
+				Debug.Log("Bite");
+			}
+
+		}
+		else if (fishBite && !catchSucces)
+		{
+			timer += Time.deltaTime;
+			Debug.Log((int)timer);
+
+			if (timer < 2 && (Input.GetButtonDown("Button A")) || Input.GetKeyDown(KeyCode.E))
+			{			
+				Debug.Log("Caugt");
+				catchSucces = true;
+				timer = 0;
+
+			}
+			else
+			{
+				fishBite = false;
+				catchSucces = false;
+			}
+
+
+		}
+		else if (fishBite && catchSucces)
+		{
+			timer += Time.deltaTime;
+			Debug.Log((int)timer);
+
+			if (timer < 2 && (Input.GetButtonDown("Button A")) || Input.GetKeyDown(KeyCode.E)) 
+			{
+				Debug.Log("Fish bagged");
+			}
+			else
+			{
+				Debug.Log("Fish thrown away");
+			}
+
+			fishBite = false;
+			catchSucces = false;
+		}
+		
 
 
 
