@@ -21,11 +21,13 @@ public class IndividualInteractions : MonoBehaviour
 
 	[Header("Fishing")]
 	public Vector2 fishCatchTime;
+	int r;
+	bool generated;
 	public float fishResponseTime, fishBagTime;
 	float timer;
 	int buttonPresses = 0;
 	bool fishBite;
-	bool catchSucces;
+	bool catchSuccess;
 	bool casting;
 
 	private void Start()
@@ -55,58 +57,95 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Fish()
 	{
-		if (!fishBite && !catchSucces)
+		if (!fishBite && !catchSuccess)
 		{
+			if (!generated)
+			{
+				r = (int)Random.Range(fishCatchTime.x, fishCatchTime.y);
+				generated = true;
+			}
 			playerAnimator.SetTrigger("cast");
 
 			timer += Time.deltaTime;
 
-			Debug.Log((int)timer);
+			Debug.Log("Time til catch: " + (int)timer);
 
-			if (timer >= Random.Range(fishCatchTime.x, fishCatchTime.y))
+			if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E) && timer < r)
 			{
+				Debug.Log("Fail");
+				generated = false;
+				timer = 0;
+				playerAnimator.SetTrigger("fail");
+			}
+
+			if (timer >= r)
+			{
+				generated = false;
 				timer = 0;
 				fishBite = true;
 				Debug.Log("Bite");
 			}
 
 		}
-		else if (fishBite && !catchSucces)
+		else if (fishBite && !catchSuccess)
 		{
 			timer += Time.deltaTime;
-			Debug.Log((int)timer);
+			Debug.Log("Time to reel: " + (int)timer);
 
-			if (timer < 2 && (Input.GetButtonDown("Button A")) || Input.GetKeyDown(KeyCode.E))
-			{			
-				Debug.Log("Caugt");
-				catchSucces = true;
+			playerAnimator.SetTrigger("bite");
+
+			if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
+			{
+				if (timer < fishResponseTime)
+				{
+					playerAnimator.SetInteger("fishIndex", 1);
+					Debug.Log("Fish Caught");
+					timer = 0;
+					catchSuccess = true;
+				}
+				else
+				{
+					//playerAnimator.SetTrigger("fail");
+					Debug.Log("Fish lost");
+					timer = 0;
+					catchSuccess = false;
+					fishBite = false;
+				}
+			}
+			else if (timer > fishResponseTime)
+			{
+				Debug.Log("Fish lost");
+				timer = 0;
+				catchSuccess = false;
+				fishBite = false;
+			}
+		}
+		else if (fishBite && catchSuccess)
+		{
+			timer += Time.deltaTime;
+			Debug.Log("Time to bag: " + (int)timer);
+
+			if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
+			{
+				if (timer < fishBagTime)
+				{
+					Debug.Log("Fish bagged");
+					timer = 0;
+
+					fishBite = false;
+					catchSuccess = false;
+				}
+			}
+			else if (timer > fishResponseTime)
+			{
+				Debug.Log("Fish thrown");
 				timer = 0;
 
-			}
-			else
-			{
 				fishBite = false;
-				catchSucces = false;
+				catchSuccess = false;
 			}
 
-
-		}
-		else if (fishBite && catchSucces)
-		{
-			timer += Time.deltaTime;
-			Debug.Log((int)timer);
-
-			if (timer < 2 && (Input.GetButtonDown("Button A")) || Input.GetKeyDown(KeyCode.E)) 
-			{
-				Debug.Log("Fish bagged");
-			}
-			else
-			{
-				Debug.Log("Fish thrown away");
-			}
-
-			fishBite = false;
-			catchSucces = false;
+			
 		}
 		
 

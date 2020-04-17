@@ -3055,7 +3055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48.78207, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -48.779564, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -14818,7 +14818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48.78207, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -48.779564, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -19812,9 +19812,9 @@ MonoBehaviour:
   xPressed: 0
   targetFound: 0
   chopCount: 0
-  fishCatchTime: {x: 3, y: 5}
-  fishResponseTime: 0
-  fishBagTime: 0
+  fishCatchTime: {x: 3, y: 10}
+  fishResponseTime: 1
+  fishBagTime: 5
 --- !u!4 &2099149886
 Transform:
   m_ObjectHideFlags: 0
