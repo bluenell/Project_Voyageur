@@ -17,7 +17,6 @@ public class MontyStateManager : MonoBehaviour
 	PlayerController playerController;
 	PlayerSoundManager playerSoundManager;
 
-
 	private void Start()
 	{
 		stateActions = GetComponent<MontyStateActions>();
@@ -49,7 +48,6 @@ public class MontyStateManager : MonoBehaviour
 					stateVariables.movingTowardsPlayer = false;
 					currentState = "wait";
 					SwitchState();
-
 				}
 			}
 

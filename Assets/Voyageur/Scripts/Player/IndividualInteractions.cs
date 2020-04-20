@@ -10,6 +10,7 @@ public class IndividualInteractions : MonoBehaviour
 	Animator playerAnimator;
 	GameObject player;
 	MontyStateManager montyStateManager;
+	PlayerInventory inventory;
 
 	public bool xPressed;
 	bool movingTowards = false;
@@ -21,6 +22,7 @@ public class IndividualInteractions : MonoBehaviour
 
 	[Header("Fishing")]
 	public Vector2 fishCatchTime;
+	bool lineCast;
 	int r;
 	bool generated;
 	public float fishResponseTime, fishBagTime;
@@ -29,6 +31,7 @@ public class IndividualInteractions : MonoBehaviour
 	bool fishBite;
 	bool catchSuccess;
 	bool casting;
+	public string currentFishingState;
 
 	private void Start()
 	{
@@ -37,7 +40,8 @@ public class IndividualInteractions : MonoBehaviour
 		playerController = player.GetComponent<PlayerController>();
 		spritesManager = GameObject.Find("ExtraSpritesManager").GetComponent<AdditionalSpritesManager>();
 		playerAnimator = player.transform.GetChild(0).GetComponent<Animator>();
-		montyStateManager = GameObject.Find("Monty").GetComponent<MontyStateManager>();	
+		montyStateManager = GameObject.Find("Monty").GetComponent<MontyStateManager>();
+		inventory = player.GetComponent<PlayerInventory>();
 
 	}
 
@@ -59,99 +63,149 @@ public class IndividualInteractions : MonoBehaviour
 	{
 		if (!fishBite && !catchSuccess)
 		{
+
+			playerController.DisablePlayerInput();
+
+			currentFishingState = "casting line";
+
 			if (!generated)
 			{
 				r = (int)Random.Range(fishCatchTime.x, fishCatchTime.y);
 				generated = true;
 			}
-			playerAnimator.SetTrigger("cast");
+
+			if (!lineCast)
+			{
+				playerAnimator.SetTrigger("fishing_cast");
+				lineCast = true;
+			}
+
 
 			timer += Time.deltaTime;
 
-			Debug.Log("Time til catch: " + (int)timer);
-
-			if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E) && timer < r)
-			{
-				Debug.Log("Fail");
-				generated = false;
-				timer = 0;
-				playerAnimator.SetTrigger("fail");
-			}
+			//Debug.Log("Time til catch: " + (int)timer);
 
 			if (timer >= r)
 			{
 				generated = false;
 				timer = 0;
 				fishBite = true;
+
+
 				Debug.Log("Bite");
 			}
+
+			if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E) && timer < r)
+			{
+				Debug.Log("Fail");
+				generated = false;
+				timer = 0;
+				playerAnimator.SetTrigger("fishing_reset");
+			}
+
+
 
 		}
 		else if (fishBite && !catchSuccess)
 		{
+			currentFishingState = "fish bite";
 			timer += Time.deltaTime;
-			Debug.Log("Time to reel: " + (int)timer);
+			//Debug.Log("Time to reel: " + (int)timer);
 
-			playerAnimator.SetTrigger("bite");
+			playerAnimator.SetTrigger("fishing_bite");
 
-			if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
+			if (timer < fishResponseTime)
 			{
-				if (timer < fishResponseTime)
+				// IF THE PLAYER HAS CAUGHT THE FISH
+
+				if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
 				{
-					playerAnimator.SetInteger("fishIndex", 1);
+					currentFishingState = "reeling fish";
+					playerAnimator.SetInteger("fishing_randomIndex", Random.Range(1, 5));
 					Debug.Log("Fish Caught");
 					timer = 0;
 					catchSuccess = true;
+					lineCast = true;
+
 				}
-				else
+			}
+			else
+			{
+				// IF THE PLAYER PRESSED THE BUTTON BUT WAS TOO LATE
+
+				if (Input.GetButton("Button A") || Input.GetKeyDown(KeyCode.E))
 				{
-					//playerAnimator.SetTrigger("fail");
+					currentFishingState = "reeling no fish";
+					playerAnimator.SetTrigger("fishing_reset");
 					Debug.Log("Fish lost");
 					timer = 0;
+					playerController.usingRod = false;
+
+					manager.interaction = null;
+					lineCast = false;
+
 					catchSuccess = false;
 					fishBite = false;
-				}
-			}
-			else if (timer > fishResponseTime)
-			{
-				Debug.Log("Fish lost");
-				timer = 0;
-				catchSuccess = false;
-				fishBite = false;
-			}
-		}
-		else if (fishBite && catchSuccess)
-		{
-			timer += Time.deltaTime;
-			Debug.Log("Time to bag: " + (int)timer);
 
-			if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
-			{
-				if (timer < fishBagTime)
+				}
+
+				// IF THE PLAYER DIDN'T PRESS THE BUTTON
+				else
 				{
-					Debug.Log("Fish bagged");
+					currentFishingState = "fish lost";
+					//playerAnimator.SetTrigger("fishing_reset");
 					timer = 0;
-
-					fishBite = false;
+					playerController.usingRod = false;
 					catchSuccess = false;
+					fishBite = false;
 				}
 			}
-			else if (timer > fishResponseTime)
+
+		}
+
+		else if (catchSuccess)
+		{
+			currentFishingState = "deciding";
+			timer += Time.deltaTime;
+
+			if (timer > 0.3f && timer < fishBagTime)
 			{
-				Debug.Log("Fish thrown");
+				if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
+				{
+					timer = 0;
+					playerAnimator.SetTrigger("fishing_keep");
+					Debug.Log("Bag");
+					inventory.AddFish();
+					fishBite = false;
+					catchSuccess = false;
+					generated = false;
+					lineCast = false;
+					playerController.usingRod = false;
+					manager.interaction = null;
+
+					playerAnimator.SetInteger("fishing_randomIndex", 0);
+
+					StartCoroutine(playerController.EnablePlayerInput(0));
+
+				}
+			}
+
+			else if (timer > fishBagTime)
+			{
 				timer = 0;
+				playerAnimator.SetTrigger("fishing_reset");
+				playerController.usingRod = false;
+				manager.interaction = null;
 
 				fishBite = false;
 				catchSuccess = false;
+				generated = false;
+				lineCast = false;
+				StartCoroutine(playerController.EnablePlayerInput(0));
+
 			}
-
-			
 		}
-		
-
-
-
-	}
+	} 
 
 
 	void Eat()

@@ -197,7 +197,7 @@ public class PlayerController : MonoBehaviour
 	void HandleInput()
 	{
 
-		if (!usingRod || !usingAxe)
+		if (!usingRod && !usingAxe)
 		{
 			if (Time.time >= nextSwitchTime)
 			{
@@ -270,6 +270,7 @@ public class PlayerController : MonoBehaviour
 					{
 						usingRod = true;
 					}
+
 				}
 
 				else if (!carryingCanoe)
@@ -314,7 +315,6 @@ public class PlayerController : MonoBehaviour
 		{
 			playingFetch = false;
 			//targetFound = false;
-
 		}
 
 
