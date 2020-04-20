@@ -1,13 +1,13 @@
 [LOG] System::create                           : Header version = 2.00.08. Current version = 2.00.08.
-[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0x0.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20008 (108014), maxchannels=256, flags=0x00020000
-[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD Core Audio Output'
-[LOG] OutputCoreAudio::init                    : Output running 2 channels at 44100Hz sample rate.
-[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
-[WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
+[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x7fbf6f981008 isAsync 0 updatePeriod 0.02
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 000001F8449B9318 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,204 +18,10 @@
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fbf73543758
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fbf73543758
-[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0x7fbf71b83448 : node = 0x7fbf71b83600
-[LOG] SystemI::createSound                     : add node to async list : head = 0x7fbf71bc7548.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fbf71b83448
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5729120
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 40928
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fbf71b83710
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='wind_Ambience_V2 ', format=2, channels=2, frequency=48000, lengthbytes=639776, lengthpcm=2325888, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.119415.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fbf71b83448
-[LOG] SoundI::getSubSound                      : sound 0x7fbf71b83448.  Subsound index 0 / 1
-[LOG] SoundI::release                          : wind_Ambience_V2  (0x7fbf731f7ad8)
-[LOG] SoundI::release                          :     wind_Ambience_V2  (0x7fbf731ece98)
-[LOG] SoundI::release                          :     wind_Ambience_V2  (0x7fbf7312cf88)
-[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0x7fbf73156cb8 : node = 0x7fbf73173210
-[LOG] SystemI::createSound                     : add node to async list : head = 0x7fbf71bc7548.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fbf73156cb8
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5729120
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 40928
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fbf73173320
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='wind_rustle_Ambience', format=2, channels=2, frequency=48000, lengthbytes=710208, lengthpcm=2628864, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.932922.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fbf73156cb8
-[LOG] SoundI::getSubSound                      : sound 0x7fbf73156cb8.  Subsound index 0 / 1
-[LOG] SystemI::createSound                     : filename = FMOD/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0x7fbf71b84138 : node = 0x7fbf74ceece0
-[LOG] SystemI::createSound                     : add node to async list : head = 0x7fbf71bc7548.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fbf71b84138
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5729120
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 40928
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fbf74ceedf0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2500
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='wind_rustle_Ambience', format=2, channels=2, frequency=48000, lengthbytes=710208, lengthpcm=2628864, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.932922.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fbf71b84138
-[LOG] SoundI::getSubSound                      : sound 0x7fbf71b84138.  Subsound index 0 / 1
-[LOG] SoundI::release                          : wind_rustle_Ambience (0x7fbf731f5cf8)
-[LOG] SoundI::release                          :     wind_rustle_Ambience (0x7fbf71944b28)
-[LOG] SoundI::release                          :     wind_rustle_Ambience (0x7fbf7318f8e8)
-[LOG] SoundI::release                          : wind_rustle_Ambience (0x7fbf73156cb8)
-[LOG] SoundI::release                          :     wind_rustle_Ambience (0x7fbf74d32e58)
-[LOG] SoundI::release                          :     wind_rustle_Ambience (0x7fbf74e8f278)
-[LOG] SoundI::release                          : Bird_Ambience (0x7fbf731c17a8)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbf7194eb78)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbf71943d08)
-[LOG] SoundI::release                          : Bird_Ambience (0x7fbf731dc6f8)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbf7318b008)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbf71bb3f38)
-[LOG] SoundI::release                          : Bird_Ambience (0x7fbf71b55e98)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbf74ba27f8)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbf73553ae8)
-[LOG] SoundI::release                          : Bird_Ambience (0x7fbf731928d8)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbf71946cd8)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbf71946e68)
-[LOG] SoundI::release                          : Bird_Ambience (0x7fbf7318d1b8)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbf735c3aa8)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbf73543758)
-[LOG] SoundI::release                          : background_Birds (0x7fbf7317fea8)
-[LOG] SoundI::release                          :     background_Birds (0x7fbf71dbbca8)
-[LOG] SoundI::release                          :     background_Birds (0x7fbf71dbc448)
-[LOG] SoundI::release                          : background_Birds (0x7fbf731d88d8)
-[LOG] SoundI::release                          :     background_Birds (0x7fbf71b73098)
-[LOG] SoundI::release                          :     background_Birds (0x7fbf7312af28)
-[LOG] SoundI::release                          : background_Birds (0x7fbf7319c028)
-[LOG] SoundI::release                          :     background_Birds (0x7fbf719471b8)
-[LOG] SoundI::release                          :     background_Birds (0x7fbf73454068)
-[LOG] SoundI::release                          : rapid_water (0x7fbf71b69408)
-[LOG] SoundI::release                          :     rapid_water (0x7fbf71b6e6a8)
-[LOG] SoundI::release                          :     rapid_water (0x7fbf731ad3b8)
-[LOG] SoundI::release                          : rapid_water (0x7fbf71b87b98)
-[LOG] SoundI::release                          :     rapid_water (0x7fbf71956238)
-[LOG] SoundI::release                          :     rapid_water (0x7fbf74b8f618)
-[LOG] SoundI::release                          : wind_rustle_Ambience (0x7fbf71b84138)
-[LOG] SoundI::release                          :     wind_rustle_Ambience (0x7fbf74cfeab8)
-[LOG] SoundI::release                          :     wind_rustle_Ambience (0x7fbf74ce50e8)
-[LOG] SoundI::release                          : wind_Ambience_V2  (0x7fbf71b83448)
-[LOG] SoundI::release                          :     wind_Ambience_V2  (0x7fbf74e7b248)
-[LOG] SoundI::release                          :     wind_Ambience_V2  (0x7fbf74e709b8)
-[LOG] SoundI::release                          :  (0x7fbf7196d918)
-[LOG] SoundI::release                          :     openDoor (0x7fbf7196da88)
-[LOG] SoundI::release                          :  (0x7fbf74aca798)
-[LOG] SoundI::release                          :     Axe_chop_1 (0x7fbf74aca908)
-[LOG] SoundI::release                          :  (0x7fbf719f8dd8)
-[LOG] SoundI::release                          :     closeDoor (0x7fbf719f9408)
-[LOG] SoundI::release                          :  (0x7fbf719fbad8)
-[LOG] SoundI::release                          :     Drag_canoe (0x7fbf719faa88)
-[LOG] SoundI::release                          :  (0x7fbf719f0138)
-[LOG] SoundI::release                          :     Whistle_01 (0x7fbf719edbe8)
-[LOG] SoundI::release                          :  (0x7fbf7197f9c8)
-[LOG] SoundI::release                          :     Whistle_02 (0x7fbf7197fb38)
-[LOG] SoundI::release                          :  (0x7fbf719f0698)
-[LOG] SoundI::release                          :     Whistle_06 (0x7fbf719f0808)
-[LOG] SoundI::release                          :  (0x7fbf719f53e8)
-[LOG] SoundI::release                          :     Paddle_00-2 (0x7fbf719f4838)
-[LOG] SoundI::release                          :  (0x7fbf719f3d58)
-[LOG] SoundI::release                          :     Paddle_01-2 (0x7fbf719f3ec8)
-[LOG] SoundI::release                          :  (0x7fbf71980c88)
-[LOG] SoundI::release                          :     Paddle_03-2 (0x7fbf71980df8)
-[LOG] SoundI::release                          :  (0x7fbf719eef98)
-[LOG] SoundI::release                          :     pageTurn01 (0x7fbf719ef108)
-[LOG] SoundI::release                          :  (0x7fbf719fb378)
-[LOG] SoundI::release                          :     ExitCanoe (0x7fbf719fa158)
-[LOG] SoundI::release                          :  (0x7fbf719ecdd8)
-[LOG] SoundI::release                          :     Axe_Sharpen (0x7fbf719ee818)
-[LOG] SoundI::release                          :  (0x7fbf719807d8)
-[LOG] SoundI::release                          :     Torch_OFF (0x7fbf71980948)
-[LOG] SoundI::release                          :  (0x7fbf719eda08)
-[LOG] SoundI::release                          :     Step_00 (0x7fbf719ee098)
-[LOG] SoundI::release                          :  (0x7fbf719f6ed8)
-[LOG] SoundI::release                          :     Step_01 (0x7fbf719f7458)
-[LOG] SoundI::release                          :  (0x7fbf719fb208)
-[LOG] SoundI::release                          :     Step_02 (0x7fbf719f99d8)
-[LOG] SoundI::release                          :  (0x7fbf719f1c88)
-[LOG] SoundI::release                          :     Step_03 (0x7fbf719f35d8)
-[LOG] SoundI::release                          :  (0x7fbf719ff408)
-[LOG] SoundI::release                          :     Step_04 (0x7fbf719ffa38)
-[LOG] SoundI::release                          :  (0x7fbf719f2698)
-[LOG] SoundI::release                          :     Step_05 (0x7fbf719f2808)
-[LOG] SoundI::release                          :  (0x7fbf719fe3b8)
-[LOG] SoundI::release                          :     Step_06 (0x7fbf719fe988)
-[LOG] SoundI::release                          :  (0x7fbf71981138)
-[LOG] SoundI::release                          :     Step_08 (0x7fbf719812a8)
-[LOG] SoundI::release                          :  (0x7fbf719fc728)
-[LOG] SoundI::release                          :     Step_09 (0x7fbf719fcd58)
-[LOG] SoundI::release                          :  (0x7fbf719f1b18)
-[LOG] SoundI::release                          :     Step_10 (0x7fbf719f10f8)
-[LOG] SoundI::release                          :  (0x7fbf719fc428)
-[LOG] SoundI::release                          :     Step_11 (0x7fbf719fc598)
-[LOG] SoundI::release                          :  (0x7fbf71981f48)
-[LOG] SoundI::release                          :     Step_12 (0x7fbf719820b8)
-[LOG] SoundI::release                          :  (0x7fbf7197fe78)
-[LOG] SoundI::release                          :     Step_13 (0x7fbf7197ffe8)
-[LOG] SoundI::release                          :  (0x7fbf71980328)
-[LOG] SoundI::release                          :     Step_14 (0x7fbf71980498)
-[LOG] SoundI::release                          :  (0x7fbf719f4058)
-[LOG] SoundI::release                          :     Step_15 (0x7fbf719f3008)
-[LOG] SoundI::release                          :  (0x7fbf719ecf48)
-[LOG] SoundI::release                          :     Step_16 (0x7fbf719eafd8)
-[LOG] SoundI::release                          :  (0x7fbf719fe528)
-[LOG] SoundI::release                          :     Step_17 (0x7fbf719fda88)
-[LOG] SoundI::release                          :  (0x7fbf7493e838)
-[LOG] SoundI::release                          :     Step_18 (0x7fbf719efdf8)
-[LOG] SoundI::release                          :  (0x7fbf719fd558)
-[LOG] SoundI::release                          :     Step_19 (0x7fbf71993d18)
-[LOG] SoundI::release                          :  (0x7fbf71981a98)
-[LOG] SoundI::release                          :     Step_20 (0x7fbf71981c08)
-[LOG] SoundI::release                          :  (0x7fbf719945a8)
-[LOG] SoundI::release                          :     Step_21 (0x7fbf7199a128)
-[LOG] SoundI::release                          :  (0x7fbf719fb7d8)
-[LOG] SoundI::release                          :     Step_22 (0x7fbf719fb948)
-[LOG] SoundI::release                          :  (0x7fbf719f8ad8)
-[LOG] SoundI::release                          :     Torch_ON (0x7fbf719f8c48)
-[LOG] SoundI::release                          :  (0x7fbf719ed558)
-[LOG] SoundI::release                          :     Axe_chop_2 (0x7fbf719ed6c8)
-[LOG] SoundI::release                          :  (0x7fbf719815e8)
-[LOG] SoundI::release                          :     Axe_chop_3 (0x7fbf71981758)
-[LOG] SoundI::release                          :  (0x7fbf719ff108)
-[LOG] SoundI::release                          :     Switching_3 (0x7fbf719ff278)
-[LOG] SoundI::release                          :  (0x7fbf719f7ef8)
-[LOG] SoundI::release                          :     Switching_1 (0x7fbf719f6b98)
-[LOG] SoundI::release                          :  (0x7fbf719eaaa8)
-[LOG] SoundI::release                          :     Switching_2 (0x7fbf719ef678)
-[LOG] SoundI::release                          :  (0x7fbf719f7d88)
-[LOG] SoundI::release                          :     Blue Jay_flyOff (0x7fbf719f8358)
-[LOG] SoundI::release                          :  (0x7fbf719eb758)
-[LOG] SoundI::release                          :     Squirrel_Climb (0x7fbf719eb8c8)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
