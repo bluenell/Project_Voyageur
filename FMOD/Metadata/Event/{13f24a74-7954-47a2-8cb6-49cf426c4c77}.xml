@@ -93,7 +93,7 @@
 			<value>1.55</value>
 		</property>
 		<property name="pitch">
-			<value>5.5</value>
+			<value>1.20000005</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{bb46b80c-bfe9-411d-b025-638e36d5b481}</destination>
@@ -149,7 +149,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>13.5</value>
+			<value>5</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{6c694bf4-d453-41d6-9f7f-921aa377bb29}">
