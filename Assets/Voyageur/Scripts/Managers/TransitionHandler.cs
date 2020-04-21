@@ -85,7 +85,7 @@ public class TransitionHandler : MonoBehaviour
 		layerManager.SetActive(true);
 		interactionsManager.SetActive(true);
 		cameraHandler.SwitchToPlayer();
-		pathwayColliders[0].SetActive(true);
+		pathwayColliders[gm.GetCurrentIsland() - 1].SetActive(true);
 
 		spritesManager.SetActive(true);
 
@@ -130,7 +130,7 @@ public class TransitionHandler : MonoBehaviour
 
 		layerManager.SetActive(false);
 		interactionsManager.SetActive(false);
-		pathwayColliders[0].SetActive(false);
+		pathwayColliders[gm.GetCurrentIsland()-1].SetActive(false);
 		spritesManager.SetActive(true);
 
 		//Setting all other pathfinding managers to inactive
