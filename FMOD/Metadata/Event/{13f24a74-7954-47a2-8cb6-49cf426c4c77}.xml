@@ -90,7 +90,7 @@
 	<object class="MixerBusPanner" id="{fd34f8ef-f055-4bbb-af9e-ef7230bf4cf4}" />
 	<object class="MultiSound" id="{0adf47c6-bc4d-4a2b-9a18-36c5f1b98023}">
 		<property name="length">
-			<value>1.25</value>
+			<value>1.3800000000000001</value>
 		</property>
 		<property name="volume">
 			<value>6.5</value>
@@ -103,12 +103,15 @@
 			<destination>{72fe4c98-a55e-4978-bc76-56dde8655c27}</destination>
 		</relationship>
 		<relationship name="sounds">
-			<destination>{6c694bf4-d453-41d6-9f7f-921aa377bb29}</destination>
-			<destination>{3667b05c-ec57-48ca-834a-91faf089bb8d}</destination>
-			<destination>{c111dc66-d42b-4733-ad0a-84f4a83dc4fe}</destination>
+			<destination>{95a02b2b-e637-4c79-96c6-55f20d1fc437}</destination>
+			<destination>{28131359-b288-491a-a28b-09cbd93a22a9}</destination>
+			<destination>{b67c1abe-0e78-41a2-a517-210cafb7e533}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{24d92eeb-7285-4cf3-8423-1337c1743997}">
+		<property name="volume">
+			<value>8.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -152,28 +155,25 @@
 			<value>5</value>
 		</property>
 	</object>
-	<object class="SingleSound" id="{6c694bf4-d453-41d6-9f7f-921aa377bb29}">
+	<object class="SingleSound" id="{95a02b2b-e637-4c79-96c6-55f20d1fc437}">
 		<property name="volume">
-			<value>10</value>
+			<value>4</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{a09ee160-d25e-48c7-b1d7-ca3517f623fa}</destination>
+			<destination>{377b4fbb-ef70-46a9-9150-b5c0804d7a76}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{3667b05c-ec57-48ca-834a-91faf089bb8d}">
-		<property name="volume">
-			<value>10</value>
-		</property>
+	<object class="SingleSound" id="{28131359-b288-491a-a28b-09cbd93a22a9}">
 		<relationship name="audioFile">
-			<destination>{ad99735b-a941-4883-997d-255e3fa56bec}</destination>
+			<destination>{e1ac4355-6d90-446d-9887-e874396cd952}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{c111dc66-d42b-4733-ad0a-84f4a83dc4fe}">
+	<object class="SingleSound" id="{b67c1abe-0e78-41a2-a517-210cafb7e533}">
 		<property name="volume">
-			<value>10</value>
+			<value>6</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{a292f2e2-2e26-4945-8e9c-1ce4d8ed5707}</destination>
+			<destination>{35e11152-ba25-4acb-8d05-a205584552c6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{4200a530-e8ec-4c12-b3d4-23da8127f23a}">
