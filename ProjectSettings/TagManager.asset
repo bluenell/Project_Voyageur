@@ -23,6 +23,7 @@ TagManager:
   - FetchZoneSpawner
   - LaunchingZone
   - Item
+  - End
   layers:
   - Default
   - TransparentFX
