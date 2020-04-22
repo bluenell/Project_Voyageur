@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject player, monty;
     public Animator fade;
+    public bool paused;
 
     private void Update()
     {
@@ -45,6 +46,17 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(2);
+
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
 
     }
 

@@ -57,8 +57,9 @@ public class TransitionHandler : MonoBehaviour
 		layerManager.SetActive(true);
 		interactionsManager.SetActive(true);
 		cameraHandler.enabled = true;
-		//journal.SetActive(true);
-
+		journal.SetActive(true);
+		gm.paused = true;
+		gm.PauseGame();
 
 
 		for (int i = 0; i < interactions.Length; i++)
