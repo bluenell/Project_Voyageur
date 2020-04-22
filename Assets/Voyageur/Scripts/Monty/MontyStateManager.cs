@@ -33,6 +33,7 @@ public class MontyStateManager : MonoBehaviour
 
 	private void Update()
 	{
+		/*
 		timer += Time.deltaTime;
 
 		if (!generated)
@@ -48,6 +49,7 @@ public class MontyStateManager : MonoBehaviour
 			playerSoundManager.PlayBark();
 		}
 
+	*/
 		if (!inFetch && !inTutorial)
 		{
 			if (!stateVariables.movingTowardsPlayer && stateVariables.distFromPlayer >= playerController.armsReach)

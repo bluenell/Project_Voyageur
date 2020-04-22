@@ -147,6 +147,7 @@ public class PlayerController : MonoBehaviour
 		{
 			axeAnim.SetBool("isCarrying", false);
 			rodAnim.SetBool("isCarrying", false);
+
 		}
 
 
@@ -405,9 +406,6 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe(string type)
 	{
-
-		
-
 		if (type == "pickUpCanoe")
 		{
 			currentInventoryIndex = 0;
@@ -691,6 +689,8 @@ public class PlayerController : MonoBehaviour
 
 		if (other.gameObject.tag == "FetchZoneExit")
 		{
+			interactionsManager.interaction = null;
+			Debug.Log("exit fetch");
 			playingFetch = false;
 			montyStateManager.inFetch = false;
 			montyStateManager.currentState = "roam";

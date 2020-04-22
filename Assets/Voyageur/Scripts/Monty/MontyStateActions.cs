@@ -13,6 +13,8 @@ public class MontyStateActions : MonoBehaviour
 	SpriteRenderer sprite;
 	PlayerController playerController;
 	CameraHandler cameraHandler;
+	public Journal journal;
+	
 
 	Transform canoeSeat;
 
@@ -39,6 +41,7 @@ public class MontyStateActions : MonoBehaviour
 		playerController = player.GetComponent<PlayerController>();
 		cameraHandler = GameObject.Find("Camera Manager").GetComponent<CameraHandler>();
 		canoeSeat = GameObject.Find("Monty Seat").transform;
+		
 	}
 
 
@@ -86,6 +89,7 @@ public class MontyStateActions : MonoBehaviour
 
 		if (stateVariables.montyInCanoe)
 		{
+			journal.journalPages[2].SetActive(true);
 			//transform.SetParent(GameObject.Find("Canoe Single").transform);
 			transform.position = canoeSeat.position;
 			sprite.flipX = true;
