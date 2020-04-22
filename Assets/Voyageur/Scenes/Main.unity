@@ -3239,7 +3239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -286.25952, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -286.257, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -14412,6 +14412,60 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1531850918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531850919}
+  - component: {fileID: 1531850920}
+  m_Layer: 0
+  m_Name: leaves wind (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1531850919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531850918}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -282.8, y: -1.6200008, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1919731279}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1531850920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531850918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Ambience/Forest_Wind3D
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 9.03
+  OverrideMaxDistance: 35.365784
 --- !u!1 &1539433106
 GameObject:
   m_ObjectHideFlags: 0
@@ -14847,7 +14901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -286.25952, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -286.257, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -18419,6 +18473,7 @@ Transform:
   - {fileID: 432428948}
   - {fileID: 100675763}
   - {fileID: 85192103}
+  - {fileID: 1531850919}
   m_Father: {fileID: 1698561032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20776,6 +20831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: soundEvents.Array.data[15]
       value: event:/Character/Page_Turn
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
+        type: 3}
+      propertyPath: soundEvents.Array.data[1]
+      value: event:/Character/Canoe/Paddling
       objectReference: {fileID: 0}
     - target: {fileID: 9087984262083717165, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
