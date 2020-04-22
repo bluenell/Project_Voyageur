@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuControls : MonoBehaviour
 {
     public Animator a;
+    public GameObject music;
 
 
 
@@ -23,6 +24,7 @@ public class MenuControls : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(1);
+        Destroy(music);
         SceneManager.LoadScene(1);
 
     }

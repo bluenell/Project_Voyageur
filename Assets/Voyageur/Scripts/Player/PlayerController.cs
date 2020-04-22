@@ -318,7 +318,7 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button X") || Input.GetKeyDown(KeyCode.Q))
 		{
-			WhistleMonty();
+			//WhistleMonty();
 		}
 	}
 
@@ -520,7 +520,6 @@ public class PlayerController : MonoBehaviour
 		//checking if monty has the stick and the player is within range of picking it up
 		if (interactionType == "pickUpStick")
 		{
-			interactionsManager.interaction.MarkAsComplete();
 			montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 			DisablePlayerInput();
 			currentInventoryIndex = 0;
@@ -534,6 +533,7 @@ public class PlayerController : MonoBehaviour
 		}
 		if (interactionType == "throw")
 		{
+
 			anim.SetTrigger("throwStick");
 			Debug.Log("Throw Stick");
 		}
@@ -545,6 +545,8 @@ public class PlayerController : MonoBehaviour
 		{
 			playerSoundManager.PlayWhistle();
 			montyStateVariables.movingTowardsPlayer = true;
+			montyStateVariables.callRequestMade = true;
+
 		}
 	}
 
@@ -575,6 +577,7 @@ public class PlayerController : MonoBehaviour
 
 	public void ThrowStick()
 	{
+		playerSoundManager.PlayBark();
 		montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
 		montyStateVariables.playerHasStick = false;
 		montyStateVariables.montyHasStick = false;

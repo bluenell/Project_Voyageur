@@ -123,7 +123,7 @@ public class Journal : MonoBehaviour
 
     public void UpdateInteractionPages(string name, string desc, Sprite sprite)
     {
-        sounds.PlayPageTurn();
+        //sounds.PlayPageTurn();
         interactions[interactionIndex].SetActive(true);
         interactions[interactionIndex].GetComponent<Image>().sprite = sprite;
 

@@ -92,8 +92,7 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	public void MontyFootSteps()
 	{
-		GameObject monty = GameObject.Find("Monty");
-		monty.GetComponent<MontySoundManager>().PlayFootsteps();
+		player.GetComponent<PlayerSoundManager>().PlayMontyFootSteps();
 	}
 
 	public void Paddle()

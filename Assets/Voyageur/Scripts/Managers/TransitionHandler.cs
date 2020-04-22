@@ -105,6 +105,7 @@ public class TransitionHandler : MonoBehaviour
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
 		player.SetActive(false);
 		monty.SetActive(false);
+		canoe.transform.GetChild(0).GetComponent<Animator>().SetTrigger("return");
 		canoe.SetActive(false);		
 
 

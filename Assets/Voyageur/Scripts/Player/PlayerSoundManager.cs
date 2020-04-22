@@ -6,25 +6,41 @@ public class PlayerSoundManager : MonoBehaviour
 {
 
 	[Header("Volume Settings")]
-	[Range(0, 2)]
-	public float paddleVolume;
 
-	[Range(0, 2)]
-	public float footStepsVolume;
-
-	[Range(0, 2)]
-	public float footStepsInWaterVolume;
-
-	[Range(0, 10)]
-	public float torchClickVolume;
 
 	[FMODUnity.EventRef]
 	public string[] soundEvents;
 
 
+	Rigidbody2D montyRb;
+
+
 	FMOD.Studio.EventInstance playerState;
+	FMOD.Studio.EventInstance montyState;
+
+	void Start()
+	{
+		montyRb = GameObject.Find("MontyChild").GetComponent<Rigidbody2D>();
+	}
 
 
+	void Update()
+	{
+		montyState.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(montyRb.gameObject, montyRb));
+	}
+
+
+	public void PlayBark()
+	{
+		montyState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[18]);
+		montyState.start();
+	}
+
+	public void PlayMontyFootSteps()
+	{
+		montyState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[17]);
+		montyState.start();
+	}
 
 	public void PlayPickUpCanoe()
 	{
@@ -41,41 +57,35 @@ public class PlayerSoundManager : MonoBehaviour
 	public void PlayFootsteps()
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[0]);
-		playerState.setVolume(footStepsVolume);
 		playerState.start();
 	}
 
 	public void Paddle()
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[1]);
-		playerState.setVolume(paddleVolume);
 		playerState.start();
 	}
 
 	public void PlayTorchClickOn()
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[3]);
-		playerState.setVolume(torchClickVolume);
 		playerState.start();
 	}
 	public void PlayTorchClickOff()
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[8]);
-		playerState.setVolume(torchClickVolume);
 		playerState.start();
 	}
 
 	public void PlayExitCanoe()
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[2]);
-		playerState.setVolume(footStepsInWaterVolume);
 		playerState.start();
 	}
 
 	public void PlayDragCanoe()
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[4]);
-		playerState.setVolume(footStepsInWaterVolume);
 		playerState.start();
 	}
 

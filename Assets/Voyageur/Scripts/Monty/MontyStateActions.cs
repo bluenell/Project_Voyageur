@@ -205,8 +205,8 @@ public class MontyStateActions : MonoBehaviour
 		{
 			StopCoroutine(FollowPath());
 			PathRequestManager.ClearRequests();
-			stateVariables.callRequestMade = false;
-			PathRequestManager.RequestPath(transform.position, player.transform.position, OnPathFound);	
+			PathRequestManager.RequestPath(transform.position, (player.transform.position - new Vector3(1,1)), OnPathFound);
+			currentlyOnPath = true;
 		}
 	}
 	public void Canoe()
