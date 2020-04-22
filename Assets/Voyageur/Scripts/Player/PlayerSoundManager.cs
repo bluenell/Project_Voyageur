@@ -110,4 +110,17 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState.start();
 
 	}
+
+	public void PlayPageTurn()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[15]);
+		playerState.start();
+
+	}
+
+	public void PlayPushCanoe()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[16]);
+		playerState.start();
+	}
 }

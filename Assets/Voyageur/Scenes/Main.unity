@@ -3239,7 +3239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -286.25845, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -286.25952, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -4056,7 +4056,8 @@ MonoBehaviour:
   isInteractable: 0
   journalImage: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106, type: 3}
   journalName: Squirrel
-  journalDescription: I saw a lovely squirrel scatter up the tree to find some food
+  journalDescription: i went up a somewhat hidden path and noticed this squirrel
+    scurry up a tree to find some food
 --- !u!1 &399915037
 GameObject:
   m_ObjectHideFlags: 0
@@ -6773,6 +6774,7 @@ MonoBehaviour:
   - {fileID: 1605238637}
   - {fileID: 765763479}
   playerController: {fileID: 7945989855208361131}
+  sounds: {fileID: 0}
 --- !u!1 &685219945
 GameObject:
   m_ObjectHideFlags: 0
@@ -8167,8 +8169,8 @@ MonoBehaviour:
   isInteractable: 0
   journalImage: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106, type: 3}
   journalName: blue jay
-  journalDescription: i managed to capture this blue jay, i was very luck to not
-    startle it
+  journalDescription: i managed to capture this blue jay but he quickly flew away
+    when i got too close
 --- !u!61 &859166756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9892,7 +9894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1083681805
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13138,7 +13140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1461124298
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14845,7 +14847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -286.25845, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -286.25952, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -18317,7 +18319,7 @@ GameObject:
   - component: {fileID: 1907088166}
   - component: {fileID: 1907088165}
   m_Layer: 5
-  m_Name: Image
+  m_Name: paper clip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20360,7 +20362,7 @@ PrefabInstance:
     - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: soundEvents.Array.size
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -20391,6 +20393,16 @@ PrefabInstance:
         type: 3}
       propertyPath: soundEvents.Array.data[14]
       value: event:/island0/Open_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[15]
+      value: event:/Character/Page_Turn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[16]
+      value: event:/Character/Canoe/BeachCanoe
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467202, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -20590,8 +20602,14 @@ PrefabInstance:
     - target: {fileID: 6116965791367155483, guid: a693216344e2fbf41ac17dbbcd0fe94c,
         type: 3}
       propertyPath: journalDescription
-      value: playing fetch with monty
+      value: monty ran away and found a stick so of course i threw it for him
       objectReference: {fileID: 0}
+    - target: {fileID: 6116965791367155483, guid: a693216344e2fbf41ac17dbbcd0fe94c,
+        type: 3}
+      propertyPath: journalImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 6116965790547159670, guid: a693216344e2fbf41ac17dbbcd0fe94c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a693216344e2fbf41ac17dbbcd0fe94c, type: 3}
@@ -20727,7 +20745,7 @@ PrefabInstance:
     - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
       propertyPath: soundEvents.Array.size
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
@@ -20753,6 +20771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: soundEvents.Array.data[14]
       value: event:/island0/Open_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
+        type: 3}
+      propertyPath: soundEvents.Array.data[15]
+      value: event:/Character/Page_Turn
       objectReference: {fileID: 0}
     - target: {fileID: 9087984262083717165, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}

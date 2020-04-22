@@ -16,7 +16,7 @@ MonoBehaviour:
   guid: b553e15a09befb408aee9614b6eadbc7
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: event:/Character/Whistle
   guid: 3b3188aefe96974fa8a87fcd4faadde8
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: event:/Character/Canoe/PickUpCanoe
   guid: f2280ca1c625e54990d976da05240926
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -85,7 +85,7 @@ MonoBehaviour:
   Path: event:/Character/island1_chop_2
   guid: b79cd3b95ec15d4f9c88082159aad74c
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -108,7 +108,7 @@ MonoBehaviour:
   Path: event:/Character/Fishing/Cast_Rod
   guid: 1c41d3fba316234fa291d37777df5784
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -131,7 +131,7 @@ MonoBehaviour:
   Path: event:/Ambience/Forest_Wind3D
   guid: f28162f37e2b774299e52fd2ce78b98d
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   guid: c6d3e1f103a1794999e81e70f05b8abc
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   Path: event:/Character/Canoe/PutDownCanoe
   guid: 8ba9cf2d6bd3e648925d30e4569f206e
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -236,7 +236,7 @@ MonoBehaviour:
   Path: event:/Character/Sharpen_Axe
   guid: 9c60152b2c7f174f85a13b0e4ed4689f
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -299,7 +299,7 @@ MonoBehaviour:
   Path: event:/Animals/Squirrel
   guid: e146041356a84b4c9cc9e8154aa3a160
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -340,7 +340,7 @@ MonoBehaviour:
   Path: event:/Character/Fishing/Float_Splash
   guid: adcf387edd167b47a2182af2e2bfe187
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -399,7 +399,7 @@ MonoBehaviour:
   Path: event:/Character/Fishing/Reel_In_Fish
   guid: c981d9e6ab2c5d45b724e95197a65d29
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -422,7 +422,7 @@ MonoBehaviour:
   Path: event:/Character/Canoe/Exit_Canoe
   guid: 7f064ab7d5ce6040a88679f4b1b53c0d
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -499,7 +499,7 @@ MonoBehaviour:
   guid: aa2ec7f77d35c343bc7c162fd19a1d24
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637231477222297926
+  lastModified: 637231504948079733
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -614,7 +614,7 @@ MonoBehaviour:
   Path: event:/Character/Switch_Item
   guid: c57caef268059a41b31de831c6225b34
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -675,7 +675,7 @@ MonoBehaviour:
   lastModified: 637231477222127929
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3430837138057679765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,7 +827,7 @@ MonoBehaviour:
   Path: event:/Character/Canoe/Paddling
   guid: 744af2135479a2478cb649cf426c4c77
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -850,7 +850,7 @@ MonoBehaviour:
   Path: event:/Character/Page_Turn
   guid: 796b151a53b0cb41ad05a0b74b8b8827
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -933,7 +933,7 @@ MonoBehaviour:
   guid: b1a371b01643c04c9f97b26496e451a9
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -979,7 +979,7 @@ MonoBehaviour:
   guid: 798d8ff73c89ec4382bfa39c14b360a3
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -1020,7 +1020,7 @@ MonoBehaviour:
   Path: event:/Character/Fishing/Reel_In_NoFish
   guid: 0a15e7f9e6f72b42af0cb4010d2c3d0f
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   Path: event:/Character/Whistle2D
   guid: 54f30fec2fa4fe4f93ef4e092367d3f7
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -4259741419574987108}
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   EditorEvents:
   - {fileID: -1020494970394267013}
   - {fileID: 5076369093478829923}
@@ -1142,10 +1142,10 @@ MonoBehaviour:
   - {fileID: -8247500756815449701}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   StringsBanks:
   - {fileID: -4259741419574987108}
-  stringsBankWriteTime: 637231477222297926
+  stringsBankWriteTime: 637231504948079733
   cacheVersion: 3
 --- !u!114 &270965383595358240
 MonoBehaviour:
@@ -1292,7 +1292,7 @@ MonoBehaviour:
   Path: event:/Character/island1_chop_1
   guid: 294fa9ccd4e42f488efc92003555d4f2
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   Path: event:/Character/Fishing/Extend_Rod
   guid: 31ca1b00a97ad54ab7dd47176df06519
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1414,7 +1414,7 @@ MonoBehaviour:
   Path: event:/Character/Canoe/Drag_Canoe
   guid: 388df2d3fa0da442a6cecbaa6ff23dfd
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1438,7 +1438,7 @@ MonoBehaviour:
   guid: bd10e01fb8083c4fa66b23e1f351e6dd
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1542,7 +1542,7 @@ MonoBehaviour:
   Path: event:/Character/Fishing/Bite
   guid: d6a3a6e9edecd948bc57b1282f528173
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1750,7 +1750,7 @@ MonoBehaviour:
   Path: event:/Ambience/Bird_song3D_00
   guid: 9b6d0da39bf49042abdca60abe89e2dd
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -1773,7 +1773,7 @@ MonoBehaviour:
   Path: event:/Ambience/Bird_song3D_01
   guid: d615ccc9f106ce4d8d588a86846d2aa3
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -1796,7 +1796,7 @@ MonoBehaviour:
   Path: event:/island0/Open_Door
   guid: 0852b83475a8ae429f8377fd415d0755
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1837,7 +1837,7 @@ MonoBehaviour:
   Path: event:/island0/Close_Door
   guid: 36c2cd0fb3f3cf4dabc83667dbaf6c6b
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1896,7 +1896,7 @@ MonoBehaviour:
   Path: event:/Character/MontyFootsteps
   guid: 854d9b471422254eb1989683ec28922e
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1937,7 +1937,7 @@ MonoBehaviour:
   Path: event:/Character/island1_chop_3
   guid: b88b69aa2e94e043a026a18e520b49bb
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1960,7 +1960,7 @@ MonoBehaviour:
   Path: event:/Character/Canoe/BeachCanoe
   guid: bf1ab6110a9ff948b72569b9c95cb426
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1968,6 +1968,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1032
+--- !u!114 &8396595052388743094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637231505787323216
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &8492990878993795800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2055,7 +2073,7 @@ MonoBehaviour:
   Path: event:/Animals/BlueJay
   guid: c7759008db3bb246bb276b37b0ef6f36
   Banks:
-  - {fileID: -3621832395876845660}
+  - {fileID: 8396595052388743094}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 	bool canPutDown;
 	public bool canLaunch;
 	public int pushCounter;
+	bool whistled;
 
 	bool carryingCanoe;
 
@@ -273,6 +274,7 @@ public class PlayerController : MonoBehaviour
 					{
 						if (itemToPickUp.GetComponent<item>().name == "Axe")
 						{
+							playerSoundManager.PlayItemSwitch();
 							inventory.tools.Add(itemToPickUp.GetComponent<item>().itemId);
 							inventory.tools.Sort();
 							inventory.hasAxe = true;
@@ -281,6 +283,7 @@ public class PlayerController : MonoBehaviour
 
 						if (itemToPickUp.GetComponent<item>().name == "Rod")
 						{
+							playerSoundManager.PlayItemSwitch();
 							inventory.tools.Add(itemToPickUp.GetComponent<item>().itemId);
 							inventory.tools.Sort();
 							inventory.hasRod = true;
@@ -472,13 +475,18 @@ public class PlayerController : MonoBehaviour
 		{
 			if (pushCounter>=1)
 			{
-				playerSoundManager.PlayWhistle();
+				if (!whistled)
+				{
+					playerSoundManager.PlayWhistle();
+					whistled = true;
+				}
 			}
 
 			if (pushCounter >= 2 && montyStateVariables.montyInCanoe)
 			{
 				targetFound = false;
 				pushCounter = 0;
+				whistled = false;
 				transitionHandler.PreLaunch();
 			}
 			else
@@ -490,11 +498,11 @@ public class PlayerController : MonoBehaviour
 
 				if (CheckIfAtTarget(pickUpTarget, false))
 				{
+					playerSoundManager.PlayPushCanoe();
 					pushCounter++;
 					canoe.transform.GetChild(0).GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
 					axeAnim.SetTrigger("launch");
 					anim.SetTrigger("pushCanoe");
-
 
 					StartCoroutine(RevealCanoe(0.8f));
 					StartCoroutine(EnablePlayerInput(0.8f));
@@ -512,6 +520,7 @@ public class PlayerController : MonoBehaviour
 		//checking if monty has the stick and the player is within range of picking it up
 		if (interactionType == "pickUpStick")
 		{
+			interactionsManager.interaction.MarkAsComplete();
 			montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 			DisablePlayerInput();
 			currentInventoryIndex = 0;
