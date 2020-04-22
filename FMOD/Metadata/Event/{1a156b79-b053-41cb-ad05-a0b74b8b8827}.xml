@@ -167,8 +167,14 @@
 		<property name="diffusion">
 			<value>92</value>
 		</property>
+		<property name="lowShelfFrequency">
+			<value>56</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-30.5</value>
+		</property>
 		<property name="highCut">
-			<value>760</value>
+			<value>19200</value>
 		</property>
 		<property name="earlyLateMix">
 			<value>94</value>

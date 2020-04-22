@@ -418,7 +418,7 @@ public class PlayerController : MonoBehaviour
 				targetFound = false;
 				carryingCanoe = true;
 
-
+				playerSoundManager.PlayPickUpCanoe();
 				axeAnim.SetTrigger("pickUp");
 				anim.SetTrigger("PickUp");
 				canoe.SetActive(false);
@@ -436,7 +436,6 @@ public class PlayerController : MonoBehaviour
 			{
 				targetFound = false;
 				carryingCanoe = false;
-
 				axeAnim.SetTrigger("putDown");
 				anim.SetTrigger("PutDown");
 				canoe.transform.position = new Vector3(transform.position.x, spawnTarget.position.y, 0);

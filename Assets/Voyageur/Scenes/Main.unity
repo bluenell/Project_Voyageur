@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1158,7 +1158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &81130002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2333,6 +2333,7 @@ GameObject:
   - component: {fileID: 191282459}
   - component: {fileID: 191282458}
   - component: {fileID: 191282461}
+  - component: {fileID: 191282462}
   m_Layer: 0
   m_Name: DoorCharacterStart
   m_TagString: Untagged
@@ -2437,9 +2438,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  door: {fileID: 0}
   interactionsManager: {fileID: 0}
   spritesManager: {fileID: 0}
   individualInteractions: {fileID: 0}
+--- !u!114 &191282462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191282457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ea68ffc3c30fe42bcfdecfe3016bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddleVolume: 0
+  footStepsVolume: 1
+  footStepsInWaterVolume: 0.843
+  torchClickVolume: 0.2
+  soundEvents:
+  - event:/Character/Footstep
+  - event:/Character/Paddling
+  - event:/Character/Exit_Canoe
+  - event:/Character/Torch_ON
+  - event:/Character/Canoe/Drag_Canoe
+  - event:/Character/island1_chop_3
+  - event:/Character/Switch_Item
+  - event:/Character/Whistle2D
+  - event:/Character/Torch_OFF
+  - event:/Character/island1_chop_1
+  - event:/Character/island1_chop_2
+  - event:/Character/Canoe/PickUpCanoe
+  - event:/Character/Canoe/PutDownCanoe
+  - event:/island0/Close_Door
+  - event:/island0/Open_Door
 --- !u!1 &201706897
 GameObject:
   m_ObjectHideFlags: 3
@@ -3205,7 +3239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -286.2554, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -286.25845, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -9149,6 +9183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  door: {fileID: 0}
   interactionsManager: {fileID: 0}
   spritesManager: {fileID: 0}
   individualInteractions: {fileID: 0}
@@ -14810,7 +14845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -286.2554, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -286.25845, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -20324,8 +20359,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
+      propertyPath: soundEvents.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
       propertyPath: soundEvents.Array.data[7]
       value: event:/Character/Whistle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[4]
+      value: event:/Character/Canoe/Drag_Canoe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[11]
+      value: event:/Character/Canoe/PickUpCanoe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[12]
+      value: event:/Character/Canoe/PutDownCanoe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[13]
+      value: event:/island0/Close_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[14]
+      value: event:/island0/Open_Door
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467202, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -20658,6 +20723,36 @@ PrefabInstance:
         type: 3}
       propertyPath: paddleForce
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
+        type: 3}
+      propertyPath: soundEvents.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
+        type: 3}
+      propertyPath: soundEvents.Array.data[4]
+      value: event:/Character/Canoe/Drag_Canoe
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
+        type: 3}
+      propertyPath: soundEvents.Array.data[11]
+      value: event:/Character/Canoe/PickUpCanoe
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
+        type: 3}
+      propertyPath: soundEvents.Array.data[12]
+      value: event:/Character/Canoe/PutDownCanoe
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
+        type: 3}
+      propertyPath: soundEvents.Array.data[13]
+      value: event:/island0/Close_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
+        type: 3}
+      propertyPath: soundEvents.Array.data[14]
+      value: event:/island0/Open_Door
       objectReference: {fileID: 0}
     - target: {fileID: 9087984262083717165, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}

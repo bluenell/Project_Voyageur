@@ -24,6 +24,20 @@ public class PlayerSoundManager : MonoBehaviour
 
 	FMOD.Studio.EventInstance playerState;
 
+
+
+	public void PlayPickUpCanoe()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[11]);
+		playerState.start();
+	}
+	public void PlayPutDownCanoe()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[12]);
+		playerState.start();
+	}
+
+
 	public void PlayFootsteps()
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[0]);
@@ -81,5 +95,19 @@ public class PlayerSoundManager : MonoBehaviour
 	{
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[count]);
 		playerState.start();
+	}
+
+
+	public void PlayDoorShut()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[13]);
+		playerState.start();
+	}
+
+	public void PlayDoorOpen()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[14]);
+		playerState.start();
+
 	}
 }

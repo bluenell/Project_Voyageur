@@ -7,10 +7,10 @@ public class AnimationEventsHandler : MonoBehaviour
 	TransitionHandler TransitionHandler;
 
 	public GameObject player;
+	public GameObject door;
 	public InteractionsManager interactionsManager;
 	public AdditionalSpritesManager spritesManager;
 	public IndividualInteractions individualInteractions;
-
 
 
 	public void ChangeSpriteLayer()
@@ -116,6 +116,23 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(1).gameObject.SetActive(false);
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(2).gameObject.SetActive(true);
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(3).gameObject.SetActive(false);
+	}
+
+
+
+	public void OpenDoor()
+	{
+		door.GetComponent<PlayerSoundManager>().PlayDoorOpen();
+	}
+
+	public void CloseDoor()
+	{
+		door.GetComponent<PlayerSoundManager>().PlayDoorShut();
+	}
+
+	public void PutDownCanoe()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayPutDownCanoe();
 	}
 
 }
