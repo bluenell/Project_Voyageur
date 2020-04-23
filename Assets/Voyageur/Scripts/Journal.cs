@@ -10,7 +10,9 @@ public class Journal : MonoBehaviour
     public GameObject[] interactions;
     public GameObject[] lines;
     public PlayerController playerController;
+    public PlayerSoundManager sounds;
     PlayerInventory inventory;
+    GameManager gm;
 
     bool paused;
     int pageIndex;
@@ -21,11 +23,13 @@ public class Journal : MonoBehaviour
 
     private void Start()
     {
+        gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        sounds = playerController.gameObject.GetComponent<PlayerSoundManager>();
         inventory = playerController.gameObject.GetComponent<PlayerInventory>();
 
         interactionIndex = 0;
         journalUI.SetActive(false);
-        paused = false;
+        gm.paused = false;
 
         for (int i = 0; i < interactions.Length; i++)
         {
@@ -47,37 +51,42 @@ public class Journal : MonoBehaviour
         }
 
 
+
         if (Input.GetButtonDown("Button Start") || Input.GetButtonDown("Button Select") || Input.GetKeyDown(KeyCode.Escape))
         {
-            if (paused)
+            if (gm.paused)
             {
+                sounds.PlayPageTurn();
                 playerController.enabled = true;
                 journalUI.SetActive(false);
-                Time.timeScale = 1f;
-                paused = false;
+                gm.ResumeGame();
+                gm.paused = false;
                 // close the journal
             }
             else
             {
+                sounds.PlayPageTurn();
                 playerController.enabled = false;
                 journalUI.SetActive(true);
-                Time.timeScale = 0f;
-                paused = true;
+                gm.PauseGame();
+                gm.paused = true;
 
                 journalPages[pageIndex].SetActive(true);
             }
         }
 
-        if (paused)
+        if (gm.paused)
         {
             if (Input.GetButtonDown("InventoryRight") || (Input.GetKeyDown(KeyCode.RightArrow)))
             {
+               
                 if (pageIndex == journalPages.Length -1)
                 {
                     pageIndex = journalPages.Length-1;
                 }
                 else
                 {
+                    sounds.PlayPageTurn();
                     pageIndex++;
                 }
 
@@ -90,12 +99,14 @@ public class Journal : MonoBehaviour
             }
             if (Input.GetButtonDown("InventoryLeft") || (Input.GetKeyDown(KeyCode.LeftArrow)))
             {
+               
                 if (pageIndex == 0)
                 {
                     pageIndex = 0;
                 }
                 else
                 {
+                    sounds.PlayPageTurn();
                     pageIndex--;
                 }
 
@@ -114,6 +125,7 @@ public class Journal : MonoBehaviour
 
     public void UpdateInteractionPages(string name, string desc, Sprite sprite)
     {
+        //sounds.PlayPageTurn();
         interactions[interactionIndex].SetActive(true);
         interactions[interactionIndex].GetComponent<Image>().sprite = sprite;
 

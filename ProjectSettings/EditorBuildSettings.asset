@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Voyageur/Scenes/Testing/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Voyageur/Scenes/MainMenu.unity
+    guid: db3e44418373a4b48a52f39224fcce91
+  - enabled: 1
+    path: Assets/Voyageur/Scenes/Main.unity
+    guid: 5daa74a4e1f7d5a44ae5f9beaf12fc1d
+  - enabled: 1
+    path: Assets/Voyageur/Scenes/End.unity
+    guid: c05ebdda152135048b2364cced9feda6
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b08e58f3d3e9d904eaa9178525674e63,
       type: 2}

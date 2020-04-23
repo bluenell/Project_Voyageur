@@ -7,6 +7,7 @@ public class CanoePaddle : MonoBehaviour
 	Rigidbody2D rb;
 	River river;
 	Animator anim;
+	GameManager gm;
 
 	Vector2 movement;
 
@@ -25,6 +26,7 @@ public class CanoePaddle : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
 		beached = false;
 		canPaddle = true;
 		rb = GetComponent<Rigidbody2D>();
@@ -118,6 +120,7 @@ public class CanoePaddle : MonoBehaviour
 			//Debug.Log("River");
 			river = collision.gameObject.GetComponent<River>();
 		}
+
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -131,6 +134,11 @@ public class CanoePaddle : MonoBehaviour
 		{
 			canPaddle = false;
 			anim.SetBool("isPreaching", true);
+		}
+
+		if (collision.gameObject.tag == "End")
+		{
+			gm.Fade();
 		}
 	}
 

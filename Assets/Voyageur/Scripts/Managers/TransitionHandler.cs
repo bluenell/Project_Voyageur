@@ -57,8 +57,9 @@ public class TransitionHandler : MonoBehaviour
 		layerManager.SetActive(true);
 		interactionsManager.SetActive(true);
 		cameraHandler.enabled = true;
-		//journal.SetActive(true);
-
+		journal.SetActive(true);
+		gm.paused = true;
+		gm.PauseGame();
 
 
 		for (int i = 0; i < interactions.Length; i++)
@@ -85,7 +86,7 @@ public class TransitionHandler : MonoBehaviour
 		layerManager.SetActive(true);
 		interactionsManager.SetActive(true);
 		cameraHandler.SwitchToPlayer();
-		pathwayColliders[0].SetActive(true);
+		pathwayColliders[gm.GetCurrentIsland() - 1].SetActive(true);
 
 		spritesManager.SetActive(true);
 
@@ -102,8 +103,10 @@ public class TransitionHandler : MonoBehaviour
 	{
 		canoeAIO.SetActive(true);
 		canoeAIO.GetComponent<CanoePaddle>().launched = true;
+		canoeAIO.GetComponent<CanoePaddle>().beached = false;
 		player.SetActive(false);
 		monty.SetActive(false);
+		canoe.transform.GetChild(0).GetComponent<Animator>().SetTrigger("return");
 		canoe.SetActive(false);		
 
 
@@ -129,7 +132,7 @@ public class TransitionHandler : MonoBehaviour
 
 		layerManager.SetActive(false);
 		interactionsManager.SetActive(false);
-		pathwayColliders[0].SetActive(false);
+		pathwayColliders[gm.GetCurrentIsland()-1].SetActive(false);
 		spritesManager.SetActive(true);
 
 		//Setting all other pathfinding managers to inactive

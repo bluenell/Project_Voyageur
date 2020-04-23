@@ -40,7 +40,7 @@ public class InteractionsManager : MonoBehaviour
 				else if (interaction.interactionName == "Fetch")
 				{
 					indivInteractions.Fetch();
-					interaction.MarkAsComplete();
+					
 				}
 				else if (interaction.interactionName == "BlueJay")
 				{

@@ -12,24 +12,44 @@ public class MontyStateManager : MonoBehaviour
 	public bool inFetch;
 	public bool inTutorial;
 
+	float random;
+	float timer;
+	bool generated;
+
+
 	MontyStateActions stateActions;
 	MontyStateVariables stateVariables;
-	PlayerController playerController;
-	PlayerSoundManager playerSoundManager;
+	public PlayerController playerController;
+	public PlayerSoundManager playerSoundManager;
 
 
 	private void Start()
 	{
 		stateActions = GetComponent<MontyStateActions>();
 		stateVariables = GetComponent<MontyStateVariables>();
-		playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-		playerSoundManager = GameObject.Find("Player").GetComponent<PlayerSoundManager>();
 		inFetch = false;
 		inTutorial = true;
 	}
 
 	private void Update()
 	{
+		/*
+		timer += Time.deltaTime;
+
+		if (!generated)
+		{
+			random = Random.Range(5, 15);
+			generated = true;
+		}
+
+		if (timer >= random)
+		{
+			generated = false;
+			timer = 0;
+			playerSoundManager.PlayBark();
+		}
+
+	*/
 		if (!inFetch && !inTutorial)
 		{
 			if (!stateVariables.movingTowardsPlayer && stateVariables.distFromPlayer >= playerController.armsReach)

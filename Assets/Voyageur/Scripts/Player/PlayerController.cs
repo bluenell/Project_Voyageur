@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 	bool canPutDown;
 	public bool canLaunch;
 	public int pushCounter;
+	bool whistled;
 
 	bool carryingCanoe;
 
@@ -146,6 +147,7 @@ public class PlayerController : MonoBehaviour
 		{
 			axeAnim.SetBool("isCarrying", false);
 			rodAnim.SetBool("isCarrying", false);
+
 		}
 
 
@@ -273,6 +275,7 @@ public class PlayerController : MonoBehaviour
 					{
 						if (itemToPickUp.GetComponent<item>().name == "Axe")
 						{
+							playerSoundManager.PlayItemSwitch();
 							inventory.tools.Add(itemToPickUp.GetComponent<item>().itemId);
 							inventory.tools.Sort();
 							inventory.hasAxe = true;
@@ -281,6 +284,7 @@ public class PlayerController : MonoBehaviour
 
 						if (itemToPickUp.GetComponent<item>().name == "Rod")
 						{
+							playerSoundManager.PlayItemSwitch();
 							inventory.tools.Add(itemToPickUp.GetComponent<item>().itemId);
 							inventory.tools.Sort();
 							inventory.hasRod = true;
@@ -315,7 +319,7 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button X") || Input.GetKeyDown(KeyCode.Q))
 		{
-			WhistleMonty();
+			//WhistleMonty();
 		}
 	}
 
@@ -402,9 +406,6 @@ public class PlayerController : MonoBehaviour
 
 	void HandleCanoe(string type)
 	{
-
-		
-
 		if (type == "pickUpCanoe")
 		{
 			currentInventoryIndex = 0;
@@ -418,7 +419,7 @@ public class PlayerController : MonoBehaviour
 				targetFound = false;
 				carryingCanoe = true;
 
-
+				playerSoundManager.PlayPickUpCanoe();
 				axeAnim.SetTrigger("pickUp");
 				anim.SetTrigger("PickUp");
 				canoe.SetActive(false);
@@ -436,7 +437,6 @@ public class PlayerController : MonoBehaviour
 			{
 				targetFound = false;
 				carryingCanoe = false;
-
 				axeAnim.SetTrigger("putDown");
 				anim.SetTrigger("PutDown");
 				canoe.transform.position = new Vector3(transform.position.x, spawnTarget.position.y, 0);
@@ -473,13 +473,18 @@ public class PlayerController : MonoBehaviour
 		{
 			if (pushCounter>=1)
 			{
-				playerSoundManager.PlayWhistle();
+				if (!whistled)
+				{
+					playerSoundManager.PlayWhistle();
+					whistled = true;
+				}
 			}
 
 			if (pushCounter >= 2 && montyStateVariables.montyInCanoe)
 			{
 				targetFound = false;
 				pushCounter = 0;
+				whistled = false;
 				transitionHandler.PreLaunch();
 			}
 			else
@@ -491,11 +496,11 @@ public class PlayerController : MonoBehaviour
 
 				if (CheckIfAtTarget(pickUpTarget, false))
 				{
+					playerSoundManager.PlayPushCanoe();
 					pushCounter++;
 					canoe.transform.GetChild(0).GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
 					axeAnim.SetTrigger("launch");
 					anim.SetTrigger("pushCanoe");
-
 
 					StartCoroutine(RevealCanoe(0.8f));
 					StartCoroutine(EnablePlayerInput(0.8f));
@@ -526,6 +531,7 @@ public class PlayerController : MonoBehaviour
 		}
 		if (interactionType == "throw")
 		{
+
 			anim.SetTrigger("throwStick");
 			Debug.Log("Throw Stick");
 		}
@@ -537,6 +543,8 @@ public class PlayerController : MonoBehaviour
 		{
 			playerSoundManager.PlayWhistle();
 			montyStateVariables.movingTowardsPlayer = true;
+			montyStateVariables.callRequestMade = true;
+
 		}
 	}
 
@@ -567,6 +575,7 @@ public class PlayerController : MonoBehaviour
 
 	public void ThrowStick()
 	{
+		playerSoundManager.PlayBark();
 		montyStateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
 		montyStateVariables.playerHasStick = false;
 		montyStateVariables.montyHasStick = false;
@@ -680,6 +689,8 @@ public class PlayerController : MonoBehaviour
 
 		if (other.gameObject.tag == "FetchZoneExit")
 		{
+			interactionsManager.interaction = null;
+			Debug.Log("exit fetch");
 			playingFetch = false;
 			montyStateManager.inFetch = false;
 			montyStateManager.currentState = "roam";
