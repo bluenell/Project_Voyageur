@@ -13,7 +13,7 @@ public class MenuControls : MonoBehaviour
     public void PlayGame()
     {
         a.SetTrigger("play");
-        StartCoroutine(Delay());
+        StartCoroutine(Delay(1, 1));
     }
 
     public void QuitGame()
@@ -21,11 +21,23 @@ public class MenuControls : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator Delay()
+
+    public void MainMenu()
+    {
+        a.SetTrigger("play");
+        StartCoroutine(Delay(0, 1));
+    }
+
+    IEnumerator Delay(int sceneIndex, int time)
     {
         yield return new WaitForSeconds(1);
-        Destroy(music);
-        SceneManager.LoadScene(1);
+
+        if (music != null)
+        {
+            Destroy(music);
+        }
+
+        SceneManager.LoadScene(time);
 
     }
 }

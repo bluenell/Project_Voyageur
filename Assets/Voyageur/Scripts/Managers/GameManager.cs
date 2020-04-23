@@ -44,9 +44,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(2);
-
     }
 
     public void PauseGame()
