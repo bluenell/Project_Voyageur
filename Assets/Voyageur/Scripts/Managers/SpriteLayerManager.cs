@@ -18,7 +18,6 @@ public class SpriteLayerManager : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-
 		currentDoormat = other.GetComponent<Doormat>();
 		sprite.sortingOrder = currentDoormat.GetSortingOrder();
 	}
