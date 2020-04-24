@@ -27,7 +27,11 @@ public class PlayerSoundManager : MonoBehaviour
 	void Update()
 	{
 
-		montyState.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(montyRb.gameObject, montyRb));
+		if (montyRb.GetComponent<MontyStateManager>().currentState != "launch")
+		{
+			montyState.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(montyRb.gameObject, montyRb));
+
+		}
 	}
 
 
