@@ -821,8 +821,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 12.71
-  OverrideMaxDistance: 53.87
+  OverrideMinDistance: 9.03
+  OverrideMaxDistance: 35.365784
 --- !u!1 &34600928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,7 +3836,7 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 2.8
+  OverrideMinDistance: 9.03
   OverrideMaxDistance: 35.365784
 --- !u!1 &268903468
 GameObject:
@@ -4063,7 +4063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 474.70938, y: 12.32, z: -10}
+  m_LocalPosition: {x: 474.70966, y: 12.32, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -5786,8 +5786,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 1.79
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 9.03
+  OverrideMaxDistance: 35.365784
 --- !u!1 &458249231
 GameObject:
   m_ObjectHideFlags: 0
@@ -9434,11 +9434,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2135716961}
   - {fileID: 1047528022}
   - {fileID: 1683040513}
   - {fileID: 1764314087}
   - {fileID: 2143108078}
-  - {fileID: 489592866}
   - {fileID: 1575983974}
   - {fileID: 107501781}
   - {fileID: 1372587252}
@@ -9452,9 +9452,8 @@ Transform:
   - {fileID: 1227598283}
   - {fileID: 918240319}
   - {fileID: 803010323}
-  - {fileID: 231779595}
   m_Father: {fileID: 1919731279}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &765763479
 GameObject:
@@ -9581,8 +9580,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 1.8
-  OverrideMaxDistance: 19.9
+  OverrideMinDistance: 9.03
+  OverrideMaxDistance: 35.365784
 --- !u!1 &770105635
 GameObject:
   m_ObjectHideFlags: 0
@@ -10895,8 +10894,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 5.63
-  OverrideMaxDistance: 30.75
+  OverrideMinDistance: 9.03
+  OverrideMaxDistance: 35.365784
 --- !u!1 &873796509
 GameObject:
   m_ObjectHideFlags: 0
@@ -11969,8 +11968,8 @@ Transform:
   m_LocalPosition: {x: 87.9, y: 18.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2071272332}
-  m_RootOrder: 0
+  m_Father: {fileID: 1919731279}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &928349981
 MonoBehaviour:
@@ -12023,8 +12022,8 @@ Transform:
   m_LocalPosition: {x: 112.3, y: 19.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2071272332}
-  m_RootOrder: 1
+  m_Father: {fileID: 1919731279}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &936091494
 MonoBehaviour:
@@ -12047,8 +12046,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 3.32
-  OverrideMaxDistance: 27.18
+  OverrideMinDistance: 2.6
+  OverrideMaxDistance: 23.1
 --- !u!1 &938442076
 GameObject:
   m_ObjectHideFlags: 0
@@ -13293,7 +13292,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 734927851}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1047528023
 MonoBehaviour:
@@ -13908,8 +13907,8 @@ Transform:
   m_LocalPosition: {x: 378.1, y: 26.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2071272332}
-  m_RootOrder: 3
+  m_Father: {fileID: 1919731279}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1103724523
 MonoBehaviour:
@@ -13932,8 +13931,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 2.97
-  OverrideMaxDistance: 35.365784
+  OverrideMinDistance: 2.6
+  OverrideMaxDistance: 23.1
 --- !u!1 &1112769308
 GameObject:
   m_ObjectHideFlags: 0
@@ -16282,8 +16281,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 4.4
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 9.03
+  OverrideMaxDistance: 35.365784
 --- !u!1 &1345525987
 GameObject:
   m_ObjectHideFlags: 0
@@ -17654,7 +17653,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1919731279}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1454738668
 MonoBehaviour:
@@ -17677,8 +17676,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 9.03
-  OverrideMaxDistance: 35.365784
+  OverrideMinDistance: 2.6
+  OverrideMaxDistance: 23.1
 --- !u!1 &1455612872
 GameObject:
   m_ObjectHideFlags: 0
@@ -19967,7 +19966,7 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 4.34
+  OverrideMinDistance: 9.03
   OverrideMaxDistance: 35.365784
 --- !u!1 &1548463486
 GameObject:
@@ -20102,7 +20101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 474.70938, y: 12.32, z: -10}
+  m_LocalPosition: {x: 474.70966, y: 12.32, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -20161,8 +20160,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 3.15
-  OverrideMaxDistance: 24.29
+  OverrideMinDistance: 9.03
+  OverrideMaxDistance: 35.365784
 --- !u!1 &1568575955
 GameObject:
   m_ObjectHideFlags: 0
@@ -21505,7 +21504,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 734927851}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1683040514
 MonoBehaviour:
@@ -22528,7 +22527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1764314087
 Transform:
   m_ObjectHideFlags: 0
@@ -22541,7 +22540,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 734927851}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1764314088
 MonoBehaviour:
@@ -22563,9 +22562,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 4.8
-  OverrideMaxDistance: 16.92
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1765509448
 GameObject:
   m_ObjectHideFlags: 0
@@ -24613,9 +24612,11 @@ Transform:
   - {fileID: 1859620094}
   - {fileID: 1731983420}
   - {fileID: 563159851}
-  - {fileID: 2071272332}
   - {fileID: 734927851}
   - {fileID: 1454738667}
+  - {fileID: 928349980}
+  - {fileID: 936091493}
+  - {fileID: 1103724522}
   m_Father: {fileID: 1698561032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27038,8 +27039,8 @@ Transform:
   m_LocalPosition: {x: 416.3, y: 21.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2071272332}
-  m_RootOrder: 4
+  m_Father: {fileID: 734927851}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2135716962
 MonoBehaviour:
@@ -27093,7 +27094,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 734927851}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2143108079
 MonoBehaviour:
