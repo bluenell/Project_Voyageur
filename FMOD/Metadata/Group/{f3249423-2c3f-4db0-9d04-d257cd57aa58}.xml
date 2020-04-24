@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerGroup" id="{f3249423-2c3f-4db0-9d04-d257cd57aa58}">
+		<property name="name">
+			<value>Canoe</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{3f86ecc9-1672-44ce-81e0-b0e82924651b}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{45b4e910-abd0-4061-a945-c03d98e76be6}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{b72c54d0-d57b-4eff-a66a-f9bd1d0168e3}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{3f86ecc9-1672-44ce-81e0-b0e82924651b}">
+		<relationship name="effects">
+			<destination>{7d82db23-9a53-4bc9-b6f0-57a4cf8bfad3}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{45b4e910-abd0-4061-a945-c03d98e76be6}" />
+	<object class="MixerBusFader" id="{7d82db23-9a53-4bc9-b6f0-57a4cf8bfad3}" />
+</objects>

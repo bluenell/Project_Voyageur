@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerGroup" id="{47bf95c0-e7d1-4bea-ba1a-e9d7fa2f2353}">
+		<property name="name">
+			<value>Monty</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{94f3e79b-261c-49f9-a337-a051fb4158f7}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{aaa5b074-f08f-4b5a-ab1e-571f4556b92d}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{b72c54d0-d57b-4eff-a66a-f9bd1d0168e3}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{94f3e79b-261c-49f9-a337-a051fb4158f7}">
+		<relationship name="effects">
+			<destination>{8d4ddcaf-c424-4880-b7f6-130105f7fd34}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{aaa5b074-f08f-4b5a-ab1e-571f4556b92d}" />
+	<object class="MixerBusFader" id="{8d4ddcaf-c424-4880-b7f6-130105f7fd34}" />
+</objects>

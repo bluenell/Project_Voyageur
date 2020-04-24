@@ -53,7 +53,7 @@
 			<destination>{b3f7cdd2-3087-4d03-aa3e-204282e36644}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{472cd08c-9bb4-4f39-b61b-bf2b0833407b}</destination>
+			<destination>{edfe1d66-774c-460b-b36e-089609074f67}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{4c7d6aee-2afe-467d-8b63-d6aa3c83cf15}" />
@@ -90,10 +90,10 @@
 	<object class="MixerBusPanner" id="{b3f7cdd2-3087-4d03-aa3e-204282e36644}" />
 	<object class="SingleSound" id="{35ce40a4-e205-428d-9c97-6992fc1c595e}">
 		<property name="length">
-			<value>0.5485714285714286</value>
+			<value>0.47755916352031574</value>
 		</property>
 		<property name="pitch">
-			<value>1.20000005</value>
+			<value>2.4000001</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{3dde7be3-cade-411d-91cc-02911fbe0e9c}</destination>
@@ -130,7 +130,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>4</value>
+			<value>7</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{8bbc5a26-b612-4ad6-97b4-caff2d8c9d70}">
@@ -150,37 +150,43 @@
 	<object class="MixerBusFader" id="{395c2aac-d401-4a46-bd64-fa2ac80169b9}" />
 	<object class="SFXReverbEffect" id="{3fa5fcc2-07b3-4125-8e7d-db9fa3c1477c}">
 		<property name="decayTime">
-			<value>300</value>
+			<value>290</value>
 		</property>
 		<property name="earlyDelay">
-			<value>162</value>
+			<value>0</value>
 		</property>
 		<property name="lateDelay">
-			<value>12.5</value>
+			<value>15</value>
 		</property>
 		<property name="HFReference">
-			<value>4000</value>
+			<value>17000</value>
 		</property>
 		<property name="HFDecayRatio">
-			<value>20</value>
+			<value>91</value>
 		</property>
 		<property name="diffusion">
-			<value>92</value>
+			<value>89.5</value>
+		</property>
+		<property name="density">
+			<value>15</value>
 		</property>
 		<property name="lowShelfFrequency">
-			<value>56</value>
+			<value>410</value>
 		</property>
 		<property name="lowShelfGain">
-			<value>-30.5</value>
+			<value>-9.5</value>
 		</property>
 		<property name="highCut">
-			<value>19200</value>
+			<value>1670</value>
 		</property>
 		<property name="earlyLateMix">
-			<value>94</value>
+			<value>19</value>
 		</property>
 		<property name="wetLevel">
-			<value>-40</value>
+			<value>-34</value>
+		</property>
+		<property name="dryLevel">
+			<value>-8</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{e65e84bf-a9c9-4ff4-95a0-92b399222614}" />
