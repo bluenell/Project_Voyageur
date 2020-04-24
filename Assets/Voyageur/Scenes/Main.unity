@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2782,6 +2782,7 @@ MonoBehaviour:
   - event:/Character/Canoe/PutDownCanoe
   - event:/island0/Close_Door
   - event:/island0/Open_Door
+  montyRb: {fileID: 0}
 --- !u!1 &201706897
 GameObject:
   m_ObjectHideFlags: 3
@@ -3549,7 +3550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -286.257, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -286.25793, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -17483,7 +17484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -286.257, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -286.25793, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -17909,6 +17910,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586867351}
   m_CullTransparentMesh: 0
+--- !u!50 &1590928201 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3625638086280105395, guid: 7623248776c539749835c98c33870583,
+    type: 3}
+  m_PrefabInstance: {fileID: 911014839}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1605238637
 GameObject:
   m_ObjectHideFlags: 0
@@ -18540,7 +18547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1677314353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24046,6 +24053,11 @@ PrefabInstance:
       propertyPath: soundEvents.Array.data[18]
       value: event:/Character/Monty/MontyBark3D
       objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: montyRb
+      value: 
+      objectReference: {fileID: 1590928201}
     - target: {fileID: 5589543232539467202, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: canoe
@@ -24391,7 +24403,7 @@ PrefabInstance:
     - target: {fileID: 1538330121139767479, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.83
+      value: 2.79
       objectReference: {fileID: 0}
     - target: {fileID: 1538330121139767479, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
@@ -24473,6 +24485,11 @@ PrefabInstance:
       propertyPath: soundEvents.Array.data[2]
       value: event:/Character/Canoe/Exit_Canoe
       objectReference: {fileID: 0}
+    - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
+        type: 3}
+      propertyPath: montyRb
+      value: 
+      objectReference: {fileID: 1590928201}
     - target: {fileID: 9087984262083717165, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24541,17 +24558,17 @@ PrefabInstance:
     - target: {fileID: 9087984262083717167, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
       propertyPath: m_Offset.x
-      value: 4.014427
+      value: 0.86724854
       objectReference: {fileID: 0}
     - target: {fileID: 9087984262083717167, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
       propertyPath: m_Size.x
-      value: 8.181992
+      value: 8.240967
       objectReference: {fileID: 0}
     - target: {fileID: 9087984262260284100, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.02
+      value: 0.8700012
       objectReference: {fileID: 0}
     - target: {fileID: 9087984262260284101, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}

@@ -12,22 +12,21 @@ public class PlayerSoundManager : MonoBehaviour
 	public string[] soundEvents;
 
 
-	Rigidbody2D montyRb;
+	public Rigidbody2D montyRb;
 
 
 	FMOD.Studio.EventInstance playerState;
 	FMOD.Studio.EventInstance montyState;
 
-	void Start()
-	{
-		montyRb = GameObject.Find("MontyChild").GetComponent<Rigidbody2D>();
-	}
-
 
 	void Update()
 	{
 
-		montyState.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(montyRb.gameObject, montyRb));
+		if (montyRb.GetComponent<MontyStateManager>().currentState != "launch")
+		{
+			montyState.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(montyRb.gameObject, montyRb));
+
+		}
 	}
 
 
