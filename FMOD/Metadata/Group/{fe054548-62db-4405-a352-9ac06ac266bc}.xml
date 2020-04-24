@@ -5,7 +5,7 @@
 			<value>-17</value>
 		</property>
 		<property name="name">
-			<value>Chopping</value>
+			<value>Items</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{57c61ea1-6250-46d4-8cb5-2c7d20626797}</destination>
