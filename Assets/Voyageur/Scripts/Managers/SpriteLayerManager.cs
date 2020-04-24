@@ -5,23 +5,27 @@ using UnityEngine;
 public class SpriteLayerManager : MonoBehaviour
 {
 	//on whatever object the script is on
+	   
+	Doormat currentDoormat;
+	SpriteRenderer sprite;
 
-
-	PlayerDogLayerManager manager;
 
 	private void Start()
 	{
-		manager = GameObject.Find("LayerManager").GetComponent<PlayerDogLayerManager>();
-		
-	}
-
-	private void Update()
-	{
+		sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 		
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
+
+		currentDoormat = other.GetComponent<Doormat>();
+		sprite.sortingOrder = currentDoormat.GetSortingOrder();
+	}
+
+
+
+		/*
 
 		if (other.gameObject.tag == "TriggerTop")
 		{
@@ -74,8 +78,11 @@ public class SpriteLayerManager : MonoBehaviour
 
 
 		}
+		*/
 
-	}
+
+
+	
 
 
 
