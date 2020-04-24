@@ -24,8 +24,7 @@ public class MenuControls : MonoBehaviour
 
     public void MainMenu()
     {
-        a.SetTrigger("play");
-        StartCoroutine(Delay(0, 1));
+        StartCoroutine(Delay(0, 0));
     }
 
     IEnumerator Delay(int sceneIndex, int time)
