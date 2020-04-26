@@ -40,12 +40,16 @@ public class InteractionsManager : MonoBehaviour
 				else if (interaction.interactionName == "Fetch")
 				{
 					indivInteractions.Fetch();
-					
+
 				}
 				else if (interaction.interactionName == "BlueJay")
 				{
 					indivInteractions.BlueJay();
 					interaction.MarkAsComplete();
+				}
+				else if (interaction.interactionName == "Deer")
+				{
+					indivInteractions.Deer();
 				}
 
 				else if (playerController.usingAxe)
@@ -57,15 +61,10 @@ public class InteractionsManager : MonoBehaviour
 							indivInteractions.Chop();
 						}
 					}
-				}
-
-			
-				
+				}	
 			}
 		}
 	}
-
-
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
