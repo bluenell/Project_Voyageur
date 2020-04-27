@@ -93,7 +93,7 @@ public class IndividualInteractions : MonoBehaviour
 		{
 			Debug.Log("done");
 			chopCount = 0;
-			player.GetComponent<PlayerInventory>().hasWood = true;
+			player.GetComponent<PlayerInventory>().AddWood();
 			manager.interaction.MarkAsComplete();
 
 		}
