@@ -116,6 +116,15 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(2).gameObject.SetActive(true);
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(3).gameObject.SetActive(false);
 	}
+	public void ChoppingBlock()
+	{
+		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(1).gameObject.SetActive(true);
+		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(2).gameObject.SetActive(true);
+		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(3).gameObject.SetActive(true);
+		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(4).gameObject.SetActive(true);
+
+		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
+	}
 
 
 

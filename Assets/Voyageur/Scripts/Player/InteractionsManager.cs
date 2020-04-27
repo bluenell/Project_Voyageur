@@ -58,6 +58,11 @@ public class InteractionsManager : MonoBehaviour
 						{
 							indivInteractions.Chop();
 						}
+
+						if (interaction.interactionName == "CampWood")
+						{
+							indivInteractions.CampsiteChop();
+						}
 					}
 				}	
 			}
@@ -75,14 +80,21 @@ public class InteractionsManager : MonoBehaviour
 
 	}
 
+	/*
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Interaction")
 		{
 			inRange = false;
 			interaction = collision.gameObject.GetComponent<Interaction>();
-			interaction.CancelInteraction();
+
+			if (interaction.GetCanBeCancelled())
+			{
+				interaction.CancelInteraction();
+			}
 			interaction = null;
+
 		}
 	}
+	*/
 }

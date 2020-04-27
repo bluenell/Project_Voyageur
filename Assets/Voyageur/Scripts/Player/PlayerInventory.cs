@@ -11,8 +11,8 @@ public class PlayerInventory : MonoBehaviour
 	public bool hasAxe, hasRod;
 
 	[Header("Items")]
-	public bool hasWood;
-	public bool hasFish; 
+	int woodCount;
+	int fishCount;
 	public bool hasStick;
 
 	public SpriteRenderer axe, rod;
@@ -41,6 +41,17 @@ public class PlayerInventory : MonoBehaviour
 	public void SortInventory()
 	{
 		tools.Sort();
+	}
+
+
+	public int GetWoodCount()
+	{
+		return woodCount;
+	}
+
+	public void AddWood()
+	{
+		woodCount += 2;
 	}
 
 

@@ -68,6 +68,7 @@ public class IndividualInteractions : MonoBehaviour
 	{
 		if (chopCount >2)
 		{
+			chopCount = 0;
 			manager.interaction.MarkAsComplete();
 		}
 		else
@@ -82,22 +83,35 @@ public class IndividualInteractions : MonoBehaviour
 				Debug.Log(chopCount);
 			}
 
-		}
-
-		
-	
-
-		
+		}		
 	}
 
-	void Collect()
+	public void CampsiteChop()
 	{
-		//play animation
-		//play sound
-		//increase counter
-		//if counter = max, destroy object
-		//add to inventory
+		Debug.Log("Chopping");
+		if (chopCount > 3)
+		{
+			Debug.Log("done");
+			chopCount = 0;
+			player.GetComponent<PlayerInventory>().AddWood();
+			manager.interaction.MarkAsComplete();
 
+		}
+		else
+		{
+			playerController.DisablePlayerInput();
+			if (playerController.CheckIfAtTarget(manager.interaction.transform.GetChild(0), false))
+			{
+				manager.interaction.transform.GetChild(1).gameObject.SetActive(false);
+				manager.interaction.transform.GetChild(2).gameObject.SetActive(false);
+
+				targetFound = false;
+				playerController.usingAxe = false;
+				chopCount++;
+				playerAnimator.SetInteger("choppingBlockCounter", chopCount);
+				Debug.Log(chopCount);
+			}
+		}
 	}
 
 	void LightFire()

@@ -10,10 +10,17 @@ public class Interaction : MonoBehaviour
 
 
 	bool complete;
+
+	[SerializeField]
 	bool isInteractable;
+
 	bool cancelled;
 
+	[SerializeField]
+	bool canBeCancelled;
+
 	[Header("Journal")]
+	public bool hasJournalEntry;
 	public Journal journal;
 	public Sprite journalImage;
 	public string journalName;
@@ -33,7 +40,7 @@ public class Interaction : MonoBehaviour
 		//Debug.Log(name + " is complete");
 		complete = true;
 
-		if (!cancelled)
+		if (!cancelled && hasJournalEntry)
 		{
 			journal.UpdateInteractionPages(journalName, journalDescription, journalImage);
 		}
@@ -58,6 +65,11 @@ public class Interaction : MonoBehaviour
 	public bool GetCancelled()
 	{
 		return cancelled;
+	}
+
+	public bool GetCanBeCancelled()
+	{
+		return canBeCancelled;
 	}
 
 	
