@@ -21,7 +21,7 @@ public class InteractionsManager : MonoBehaviour
 	{
 		if (interaction != null)
 		{
-			if (interaction.isInteractable)
+			if (interaction.GetInteractable())
 			{
 				canInteract = true;
 			}
@@ -30,22 +30,24 @@ public class InteractionsManager : MonoBehaviour
 				canInteract = false;
 			}
 
-			if (!interaction.complete)
+			if (!interaction.GetComplete() && !interaction.GetCancelled())
 			{
 				if (interaction.interactionName == "Squirrel")
 				{
 					indivInteractions.Squirrel();
-					interaction.MarkAsComplete();
 				}
 				else if (interaction.interactionName == "Fetch")
 				{
 					indivInteractions.Fetch();
-					
+
 				}
 				else if (interaction.interactionName == "BlueJay")
 				{
 					indivInteractions.BlueJay();
-					interaction.MarkAsComplete();
+				}
+				else if (interaction.interactionName == "Deer")
+				{
+					indivInteractions.Deer();
 				}
 
 				else if (playerController.usingAxe)
@@ -57,15 +59,10 @@ public class InteractionsManager : MonoBehaviour
 							indivInteractions.Chop();
 						}
 					}
-				}
-
-			
-				
+				}	
 			}
 		}
 	}
-
-
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -76,5 +73,16 @@ public class InteractionsManager : MonoBehaviour
 			interaction = collision.gameObject.GetComponent<Interaction>();
 		}
 
+	}
+
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag == "Interaction")
+		{
+			inRange = false;
+			interaction = collision.gameObject.GetComponent<Interaction>();
+			interaction.CancelInteraction();
+			interaction = null;
+		}
 	}
 }

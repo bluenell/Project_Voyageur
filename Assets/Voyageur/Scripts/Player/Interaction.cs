@@ -6,13 +6,17 @@ using UnityEngine.UI;
 public class Interaction : MonoBehaviour
 {
 
-
 	public string interactionName;
-	public bool complete;
-	public bool isInteractable;
+
+
+	bool complete;
+	bool isInteractable;
+	bool cancelled;
+
+	[Header("Journal")]
+	public Journal journal;
 	public Sprite journalImage;
 	public string journalName;
-
 	[TextArea]
 	public string journalDescription;
 
@@ -24,15 +28,39 @@ public class Interaction : MonoBehaviour
 		}
 	}
 
-
 	public void MarkAsComplete()
 	{
 		//Debug.Log(name + " is complete");
 		complete = true;
 
-		GameObject.Find("Canvas").GetComponent<Journal>().UpdateInteractionPages(journalName, journalDescription, journalImage);
-
+		if (!cancelled)
+		{
+			journal.UpdateInteractionPages(journalName, journalDescription, journalImage);
+		}
 	}
+	public void CancelInteraction()
+	{
+		Debug.Log(interactionName + " cancelled");
+		cancelled = true;
+		complete = true;
+	}
+
+	public bool GetComplete()
+	{
+		return complete;
+	}
+
+	public bool GetInteractable()
+	{
+		return isInteractable;
+	}
+
+	public bool GetCancelled()
+	{
+		return cancelled;
+	}
+
+	
 
 
 
