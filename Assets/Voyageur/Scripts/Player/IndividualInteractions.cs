@@ -82,22 +82,12 @@ public class IndividualInteractions : MonoBehaviour
 				Debug.Log(chopCount);
 			}
 
-		}
-
-		
-	
-
-		
+		}		
 	}
 
-	void Collect()
+	public void CampsiteChop()
 	{
-		//play animation
-		//play sound
-		//increase counter
-		//if counter = max, destroy object
-		//add to inventory
-
+		Debug.Log("Campsite");
 	}
 
 	void LightFire()

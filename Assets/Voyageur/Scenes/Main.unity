@@ -3991,7 +3991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20471a47e9e3b194fb000051875dbe28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortingOrder: 7
+  sortingOrder: 8
 --- !u!114 &288158997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4063,7 +4063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 474.7074, y: 12.32, z: -10}
+  m_LocalPosition: {x: 471.9874, y: 12.35, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -5134,6 +5134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: Squirrel
+  isInteractable: 0
+  canBeCancelled: 0
   hasJournalEntry: 1
   journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: ce5a513c8ca2d7144b63c7c9162c563a, type: 3}
@@ -5717,7 +5719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &444732010
 Transform:
   m_ObjectHideFlags: 0
@@ -6520,6 +6522,70 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 685523815}
+--- !u!1 &518785780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 518785781}
+  - component: {fileID: 518785782}
+  m_Layer: 17
+  m_Name: Campfire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &518785781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518785780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -153.04, y: 10.99, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1161391414}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &518785782
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518785780}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.237259, y: 1.0890083}
+      - {x: 0.3249054, y: 1.5755692}
+      - {x: -1.2333015, y: 1.3008567}
+      - {x: -2.0920258, y: 0.20542908}
+      - {x: -1.7978973, y: -0.6779976}
+      - {x: 0.2494049, y: -0.92219543}
+      - {x: 1.9877472, y: -0.7572231}
+      - {x: 2.9011383, y: 0.14078522}
 --- !u!1 &535868246
 GameObject:
   m_ObjectHideFlags: 0
@@ -6919,6 +6985,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: Deer
+  isInteractable: 0
+  canBeCancelled: 1
   hasJournalEntry: 1
   journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: 0946220df180bd446a2bdd9974acde03, type: 3}
@@ -9563,7 +9631,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1325731604}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &741394140
 SpriteRenderer:
@@ -10211,6 +10279,36 @@ MonoBehaviour:
   OverrideAttenuation: 1
   OverrideMinDistance: 1.9
   OverrideMaxDistance: 31
+--- !u!1 &805532086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 805532087}
+  m_Layer: 12
+  m_Name: walk target
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &805532087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805532086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2, y: 0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1325731604}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &812826219
 GameObject:
   m_ObjectHideFlags: 0
@@ -10892,6 +10990,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: BlueJay
+  isInteractable: 0
+  canBeCancelled: 0
   hasJournalEntry: 1
   journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106, type: 3}
@@ -13930,7 +14030,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 63e2a70790cd41648ac4ef8b65d88391, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14758,6 +14858,7 @@ Transform:
   - {fileID: 2073849534}
   - {fileID: 1356563273}
   - {fileID: 666974196}
+  - {fileID: 518785781}
   m_Father: {fileID: 439273546}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16172,6 +16273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1325731604}
   - component: {fileID: 1325731605}
+  - component: {fileID: 1325731606}
   m_Layer: 12
   m_Name: campsite wood
   m_TagString: Interaction
@@ -16190,6 +16292,7 @@ Transform:
   m_LocalPosition: {x: -112.44, y: 0.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 805532087}
   - {fileID: 741394139}
   - {fileID: 2026494221}
   m_Father: {fileID: 1747388633}
@@ -16205,7 +16308,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -16220,13 +16323,30 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.04675293, y: 0.8831249}
-      - {x: -1.2783203, y: 0.96351296}
-      - {x: -0.84490967, y: -0.7856421}
-      - {x: 0.58778536, y: -0.80901694}
+    - - {x: -1.2783203, y: 0.96351296}
+      - {x: -1.222168, y: -0.8199343}
       - {x: 3.2694092, y: -0.81175417}
-      - {x: 3.0463867, y: 0.10504013}
-      - {x: 0.506897, y: 0.2622667}
+      - {x: 3.0806274, y: 0.94520336}
+--- !u!114 &1325731606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325731603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88680216d4039341bc41d0ac07f3a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionName: CampWood
+  isInteractable: 1
+  canBeCancelled: 0
+  hasJournalEntry: 0
+  journal: {fileID: 0}
+  journalImage: {fileID: 0}
+  journalName: 
+  journalDescription: 
 --- !u!1 &1326897362
 GameObject:
   m_ObjectHideFlags: 0
@@ -19129,6 +19249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: TreeChop1
+  isInteractable: 0
+  canBeCancelled: 0
   hasJournalEntry: 0
   journal: {fileID: 679066571}
   journalImage: {fileID: 0}
@@ -20476,7 +20598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 474.7074, y: 12.32, z: -10}
+  m_LocalPosition: {x: 471.9874, y: 12.35, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -23276,7 +23398,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 755695d095e8f9743b8f964590480412, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -26098,7 +26220,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1325731604}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2026494222
 SpriteRenderer:
@@ -28153,12 +28275,12 @@ PrefabInstance:
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 472.79
+      value: 470.07
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.02
+      value: 6.05
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -28229,12 +28351,12 @@ PrefabInstance:
     - target: {fileID: 5589543232795568476, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232795568477, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.84
+      value: 2.19
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232795568477, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}

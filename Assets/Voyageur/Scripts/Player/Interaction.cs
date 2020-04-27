@@ -10,8 +10,14 @@ public class Interaction : MonoBehaviour
 
 
 	bool complete;
+
+	[SerializeField]
 	bool isInteractable;
+
 	bool cancelled;
+
+	[SerializeField]
+	bool canBeCancelled;
 
 	[Header("Journal")]
 	public bool hasJournalEntry;
@@ -59,6 +65,11 @@ public class Interaction : MonoBehaviour
 	public bool GetCancelled()
 	{
 		return cancelled;
+	}
+
+	public bool GetCanBeCancelled()
+	{
+		return canBeCancelled;
 	}
 
 	
