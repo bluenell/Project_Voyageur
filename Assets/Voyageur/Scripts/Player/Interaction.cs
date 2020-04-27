@@ -14,6 +14,7 @@ public class Interaction : MonoBehaviour
 	bool cancelled;
 
 	[Header("Journal")]
+	public bool hasJournalEntry;
 	public Journal journal;
 	public Sprite journalImage;
 	public string journalName;
@@ -33,7 +34,7 @@ public class Interaction : MonoBehaviour
 		//Debug.Log(name + " is complete");
 		complete = true;
 
-		if (!cancelled)
+		if (!cancelled && hasJournalEntry)
 		{
 			journal.UpdateInteractionPages(journalName, journalDescription, journalImage);
 		}

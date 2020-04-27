@@ -5134,6 +5134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: Squirrel
+  hasJournalEntry: 1
   journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: ce5a513c8ca2d7144b63c7c9162c563a, type: 3}
   journalName: Squirrel
@@ -6918,6 +6919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: Deer
+  hasJournalEntry: 1
   journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: 0946220df180bd446a2bdd9974acde03, type: 3}
   journalName: Deer
@@ -10795,6 +10797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: BlueJay
+  hasJournalEntry: 1
   journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106, type: 3}
   journalName: blue jay
@@ -16064,6 +16067,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1325731603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325731604}
+  - component: {fileID: 1325731605}
+  m_Layer: 12
+  m_Name: campsite wood
+  m_TagString: Interaction
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1325731604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325731603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -112.44, y: 0.71, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1747388633}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1325731605
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325731603}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.04675293, y: 0.8831249}
+      - {x: -1.2783203, y: 0.96351296}
+      - {x: -0.84490967, y: -0.7856421}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 3.2694092, y: -0.81175417}
+      - {x: 3.0463867, y: 0.10504013}
+      - {x: 0.506897, y: 0.2622667}
 --- !u!1 &1326897362
 GameObject:
   m_ObjectHideFlags: 0
@@ -18966,6 +19032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: TreeChop1
+  hasJournalEntry: 0
   journal: {fileID: 679066571}
   journalImage: {fileID: 0}
   journalName: 
@@ -22563,6 +22630,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 563179122}
+  - {fileID: 1325731604}
   m_Father: {fileID: 1679597961}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28101,6 +28169,11 @@ PrefabInstance:
       propertyPath: journal
       value: 
       objectReference: {fileID: 679066571}
+    - target: {fileID: 6116965791367155483, guid: a693216344e2fbf41ac17dbbcd0fe94c,
+        type: 3}
+      propertyPath: hasJournalEntry
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6116965790547159670, guid: a693216344e2fbf41ac17dbbcd0fe94c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a693216344e2fbf41ac17dbbcd0fe94c, type: 3}
