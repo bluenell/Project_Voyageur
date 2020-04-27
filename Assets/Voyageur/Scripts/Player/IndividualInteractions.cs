@@ -28,14 +28,7 @@ public class IndividualInteractions : MonoBehaviour
 		spritesManager = GameObject.Find("ExtraSpritesManager").GetComponent<AdditionalSpritesManager>();
 		playerAnimator = player.transform.GetChild(0).GetComponent<Animator>();
 		montyStateManager = GameObject.Find("Monty").GetComponent<MontyStateManager>();
-
-		
-
 	}
-
-
-
-
 
 	Animator anim;
 
@@ -76,7 +69,6 @@ public class IndividualInteractions : MonoBehaviour
 		if (chopCount >2)
 		{
 			manager.interaction.MarkAsComplete();
-
 		}
 		else
 		{
@@ -132,8 +124,7 @@ public class IndividualInteractions : MonoBehaviour
 		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>() ;
 		
 		anim.SetTrigger("Play");
-
-		//I wish that bill wasn't recording right now because it's awkward
+		manager.interaction.MarkAsComplete();
 
 	}
 
@@ -142,12 +133,21 @@ public class IndividualInteractions : MonoBehaviour
 		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>();
 		manager.interaction.gameObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
 		anim.SetTrigger("Play");
+		manager.interaction.MarkAsComplete();
 	}
 
 
 	public void Deer()
 	{
 		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>();
+
+
+
+		if (manager.interaction.GetCancelled())
+		{
+			timer = 0;
+			manager.interaction.MarkAsComplete();
+		}
 
 		if (!animTriggered)
 		{
@@ -161,8 +161,8 @@ public class IndividualInteractions : MonoBehaviour
 		{
 			timer = 0;
 			anim.SetTrigger("reveal");
+			manager.interaction.MarkAsComplete();
 		}
-
 	}
 
 

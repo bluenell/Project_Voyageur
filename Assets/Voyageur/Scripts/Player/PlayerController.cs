@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
 		{
 			HandleMonty();
 		}
-		else if (usingAxe && !CheckIfAtTarget(interactionsManager.interaction.transform.GetChild(0), false) && !interactionsManager.interaction.complete)
+		else if (usingAxe && !CheckIfAtTarget(interactionsManager.interaction.transform.GetChild(0), false) && !interactionsManager.interaction.GetComplete())
 		{
 			MoveTowardsTarget(interactionsManager.interaction.transform.GetChild(0), false);
 		}
@@ -191,12 +191,7 @@ public class PlayerController : MonoBehaviour
 		{
 			playerCollider.enabled = true;
 		}
-
-
-
 	}
-
-	
 
 	void HandleInput()
 	{
@@ -261,7 +256,7 @@ public class PlayerController : MonoBehaviour
 
 				}
 
-				else if (!carryingCanoe && interactionsManager.inRange && !interactionsManager.interaction.complete)
+				else if (!carryingCanoe && interactionsManager.inRange && !interactionsManager.interaction.GetComplete())
 				{
 					if (currentInventoryIndex == 1)
 					{
