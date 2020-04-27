@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -406,7 +406,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63899101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.04932, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -286.34067, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 291970811}
@@ -1322,6 +1322,7 @@ MonoBehaviour:
   - event:/Character/Canoe/PutDownCanoe
   - event:/island0/Close_Door
   - event:/island0/Open_Door
+  montyRb: {fileID: 0}
 --- !u!114 &134959451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2932,7 +2933,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290707252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 355.5537, y: 24.2, z: 0}
+  m_LocalPosition: {x: 360.84, y: 24.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1666684844}
@@ -6189,7 +6190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536328149}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.04932, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -286.34067, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1557807662}
@@ -8300,8 +8301,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: Squirrel
-  complete: 0
   isInteractable: 0
+  canBeCancelled: 0
+  hasJournalEntry: 0
+  journal: {fileID: 0}
   journalImage: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106, type: 3}
   journalName: Squirrel
   journalDescription: i went up a somewhat hidden path and noticed this squirrel
@@ -11106,7 +11109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909394578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 356.2161, y: 23.740551, z: 0}
+  m_LocalPosition: {x: 360.84, y: 24.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1666684844}
@@ -12780,7 +12783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077937648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 364, y: 24.52, z: 0}
+  m_LocalPosition: {x: 360.88, y: 24.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1666684844}
@@ -17587,8 +17590,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: BlueJay
-  complete: 0
   isInteractable: 0
+  canBeCancelled: 0
+  hasJournalEntry: 0
+  journal: {fileID: 0}
   journalImage: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106, type: 3}
   journalName: blue jay
   journalDescription: i managed to capture this blue jay but he quickly flew away
@@ -19236,7 +19241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666684843}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 0, z: 0}
+  m_LocalPosition: {x: -5.43, y: 0.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1077937649}
@@ -20394,7 +20399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728917415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 628.3, y: -34.5, z: 0}
+  m_LocalPosition: {x: 631.369, y: -33.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 913345655}
@@ -25551,8 +25556,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionName: TreeChop1
-  complete: 0
   isInteractable: 1
+  canBeCancelled: 0
+  hasJournalEntry: 0
+  journal: {fileID: 0}
   journalImage: {fileID: 0}
   journalName: 
   journalDescription: 
