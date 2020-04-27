@@ -68,6 +68,7 @@ public class IndividualInteractions : MonoBehaviour
 	{
 		if (chopCount >2)
 		{
+			chopCount = 0;
 			manager.interaction.MarkAsComplete();
 		}
 		else
@@ -87,7 +88,31 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void CampsiteChop()
 	{
-		Debug.Log("Campsite");
+		if (chopCount >3)
+		{
+			chopCount = 0;
+			manager.interaction.MarkAsComplete();
+			StartCoroutine(playerController.EnablePlayerInput(0));
+		}
+		else
+		{
+			manager.interaction.transform.GetChild(1).gameObject.SetActive(false);
+			manager.interaction.transform.GetChild(2).gameObject.SetActive(false);
+
+			playerController.DisablePlayerInput();
+			if (playerController.CheckIfAtTarget(manager.interaction.transform.GetChild(0), false))
+			{
+				targetFound = false;
+				playerController.usingAxe = false;
+				chopCount++;
+				playerAnimator.SetInteger("choppingBlockCounter", chopCount);
+			}
+		}
+
+
+
+
+
 	}
 
 	void LightFire()
