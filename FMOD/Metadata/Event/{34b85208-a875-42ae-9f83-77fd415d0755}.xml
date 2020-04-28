@@ -93,6 +93,7 @@
 	<object class="MixerBusPanner" id="{b66c6a33-64b4-48e1-91ef-d0598a883f91}" />
 	<object class="SingleSound" id="{886d34e7-fd14-46e6-abc1-7bf11bae1381}">
 		<property name="length">
+<<<<<<< HEAD
 			<value>0.28999999999999998</value>
 		</property>
 		<property name="timelockedOffset">
@@ -100,6 +101,9 @@
 		</property>
 		<property name="pitch">
 			<value>-11</value>
+=======
+			<value>0.28734693877551021</value>
+>>>>>>> parent of 7361ff5... added latch sounds to island0 door
 		</property>
 		<relationship name="audioFile">
 			<destination>{63e8ea15-e406-4ade-ac0d-b0199b98b457}</destination>
