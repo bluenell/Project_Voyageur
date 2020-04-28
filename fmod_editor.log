@@ -29,161 +29,22 @@
 [LOG] SystemI::close                           : Closed.
 =======
 [LOG] System::create                           : Header version = 2.00.08. Current version = 2.00.08.
-[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0x0.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20008 (108014), maxchannels=256, flags=0x00020000
-[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD Core Audio Output'
-[LOG] OutputCoreAudio::init                    : Output running 2 channels at 44100Hz sample rate.
-[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
-[WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
+[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x7fbe4030e408 isAsync 0 updatePeriod 0.02
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 00000214B18421F8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fbe497104f8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fbe497104f8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fbe3f86e968
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fbe3f86e968
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fbe491964f8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fbe491964f8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fbe49202a18
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fbe49202a18
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fbe3f469038
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fbe3f469038
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fbe480bdf58
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fbe480bdf58
-[LOG] SoundI::release                          : Bird_Ambience (0x7fbe3f7ae818)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbe4973e078)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbe480a0218)
-[LOG] SoundI::release                          : Bird_Ambience (0x7fbe49803f28)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbe418b90a8)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbe491964f8)
-[LOG] SoundI::release                          : Bird_Ambience (0x7fbe3f7db928)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbe3f4aa188)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbe3f469038)
-[LOG] SoundI::release                          : Bird_Ambience (0x7fbe3f7d91b8)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbe459de978)
-[LOG] SoundI::release                          :     Bird_Ambience (0x7fbe497104f8)
-[LOG] SoundI::release                          : background_Birds (0x7fbe3f7bf568)
-[LOG] SoundI::release                          :     background_Birds (0x7fbe3f84be78)
-[LOG] SoundI::release                          :     background_Birds (0x7fbe3f84ed98)
-[LOG] SoundI::release                          : background_Birds (0x7fbe3f7e2548)
-[LOG] SoundI::release                          :     background_Birds (0x7fbe3f476fa8)
-[LOG] SoundI::release                          :     background_Birds (0x7fbe3f476dd8)
-[LOG] SoundI::release                          : background_Birds (0x7fbe459d5438)
-[LOG] SoundI::release                          :     background_Birds (0x7fbe48075518)
-[LOG] SoundI::release                          :     background_Birds (0x7fbe480bdf58)
-[LOG] SoundI::release                          : background_Birds (0x7fbe3f7f1558)
-[LOG] SoundI::release                          :     background_Birds (0x7fbe3f87b108)
-[LOG] SoundI::release                          :     background_Birds (0x7fbe3f86e968)
-[LOG] SoundI::release                          : rapid_water (0x7fbe3f7c7c68)
-[LOG] SoundI::release                          :     rapid_water (0x7fbe492185a8)
-[LOG] SoundI::release                          :     rapid_water (0x7fbe49202a18)
-[LOG] SoundI::release                          : rapid_water (0x7fbe3f7fb358)
-[LOG] SoundI::release                          :     rapid_water (0x7fbe482baf98)
-[LOG] SoundI::release                          :     rapid_water (0x7fbe47ed8a28)
-[LOG] SoundI::release                          : wind_rustle_Ambience (0x7fbe43c9a2a8)
-[LOG] SoundI::release                          :     wind_rustle_Ambience (0x7fbe493f0b78)
-[LOG] SoundI::release                          :     wind_rustle_Ambience (0x7fbe3f9498e8)
-[LOG] SoundI::release                          : wind_Ambience_V2  (0x7fbe459a7258)
-[LOG] SoundI::release                          :     wind_Ambience_V2  (0x7fbe480f86c8)
-[LOG] SoundI::release                          :     wind_Ambience_V2  (0x7fbe48071388)
-[LOG] SoundI::release                          :  (0x7fbe4939dfd8)
-[LOG] SoundI::release                          :     Axe_chop_1 (0x7fbe493303d8)
-[LOG] SoundI::release                          :  (0x7fbe493ee6d8)
-[LOG] SoundI::release                          :     Drag_canoe (0x7fbe4936e8e8)
-[LOG] SoundI::release                          :  (0x7fbe493bf968)
-[LOG] SoundI::release                          :     Whistle_01 (0x7fbe49312df8)
-[LOG] SoundI::release                          :  (0x7fbe49394b78)
-[LOG] SoundI::release                          :     Whistle_02 (0x7fbe49372ff8)
-[LOG] SoundI::release                          :  (0x7fbe493a0878)
-[LOG] SoundI::release                          :     Whistle_06 (0x7fbe49356bf8)
-[LOG] SoundI::release                          :  (0x7fbe4937e368)
-[LOG] SoundI::release                          :     Paddle_00-2 (0x7fbe49249418)
-[LOG] SoundI::release                          :  (0x7fbe492aa658)
-[LOG] SoundI::release                          :     Paddle_01-2 (0x7fbe493b0ed8)
-[LOG] SoundI::release                          :  (0x7fbe3f3eeb38)
-[LOG] SoundI::release                          :     Paddle_03-2 (0x7fbe3f3ae998)
-[LOG] SoundI::release                          :  (0x7fbe492aef08)
-[LOG] SoundI::release                          :     ExitCanoe (0x7fbe492619d8)
-[LOG] SoundI::release                          :  (0x7fbe49288ca8)
-[LOG] SoundI::release                          :     Step_23 (0x7fbe493a3ea8)
-[LOG] SoundI::release                          :  (0x7fbe4931b468)
-[LOG] SoundI::release                          :     Axe_Sharpen (0x7fbe493a3a28)
-[LOG] SoundI::release                          :  (0x7fbe46dc82d8)
-[LOG] SoundI::release                          :     Torch_OFF (0x7fbe46de3088)
-[LOG] SoundI::release                          :  (0x7fbe4938d7c8)
-[LOG] SoundI::release                          :     Step_00 (0x7fbe49348238)
-[LOG] SoundI::release                          :  (0x7fbe49332038)
-[LOG] SoundI::release                          :     Step_01 (0x7fbe46d67b28)
-[LOG] SoundI::release                          :  (0x7fbe492dd088)
-[LOG] SoundI::release                          :     Step_02 (0x7fbe493863f8)
-[LOG] SoundI::release                          :  (0x7fbe492abe58)
-[LOG] SoundI::release                          :     Step_03 (0x7fbe4939a038)
-[LOG] SoundI::release                          :  (0x7fbe493ce5b8)
-[LOG] SoundI::release                          :     Step_04 (0x7fbe4924da68)
-[LOG] SoundI::release                          :  (0x7fbe4931e788)
-[LOG] SoundI::release                          :     Step_05 (0x7fbe4937fd68)
-[LOG] SoundI::release                          :  (0x7fbe49306f98)
-[LOG] SoundI::release                          :     Step_06 (0x7fbe493589e8)
-[LOG] SoundI::release                          :  (0x7fbe49333308)
-[LOG] SoundI::release                          :     Step_08 (0x7fbe49333f68)
-[LOG] SoundI::release                          :  (0x7fbe4939af08)
-[LOG] SoundI::release                          :     Step_09 (0x7fbe492c1418)
-[LOG] SoundI::release                          :  (0x7fbe492a0ad8)
-[LOG] SoundI::release                          :     Step_10 (0x7fbe493bef38)
-[LOG] SoundI::release                          :  (0x7fbe49319d08)
-[LOG] SoundI::release                          :     Step_11 (0x7fbe493a23e8)
-[LOG] SoundI::release                          :  (0x7fbe493b4278)
-[LOG] SoundI::release                          :     Step_12 (0x7fbe49371188)
-[LOG] SoundI::release                          :  (0x7fbe49270588)
-[LOG] SoundI::release                          :     Step_13 (0x7fbe493e3918)
-[LOG] SoundI::release                          :  (0x7fbe492f9718)
-[LOG] SoundI::release                          :     Step_14 (0x7fbe46d8e9b8)
-[LOG] SoundI::release                          :  (0x7fbe4929a218)
-[LOG] SoundI::release                          :     Step_15 (0x7fbe492a5ca8)
-[LOG] SoundI::release                          :  (0x7fbe4936dbc8)
-[LOG] SoundI::release                          :     Step_16 (0x7fbe493fbde8)
-[LOG] SoundI::release                          :  (0x7fbe493c78f8)
-[LOG] SoundI::release                          :     Step_17 (0x7fbe4934e418)
-[LOG] SoundI::release                          :  (0x7fbe493d2b08)
-[LOG] SoundI::release                          :     Step_18 (0x7fbe4931af88)
-[LOG] SoundI::release                          :  (0x7fbe493eb0c8)
-[LOG] SoundI::release                          :     Step_19 (0x7fbe492b1148)
-[LOG] SoundI::release                          :  (0x7fbe493eb358)
-[LOG] SoundI::release                          :     Step_20 (0x7fbe493bfb48)
-[LOG] SoundI::release                          :  (0x7fbe49304e18)
-[LOG] SoundI::release                          :     Step_21 (0x7fbe49387238)
-[LOG] SoundI::release                          :  (0x7fbe49215f68)
-[LOG] SoundI::release                          :     Step_22 (0x7fbe4930fda8)
-[LOG] SoundI::release                          :  (0x7fbe493cca48)
-[LOG] SoundI::release                          :     Torch_ON (0x7fbe4935ef98)
-[LOG] SoundI::release                          :  (0x7fbe49373608)
-[LOG] SoundI::release                          :     Axe_chop_2 (0x7fbe4930cf78)
-[LOG] SoundI::release                          :  (0x7fbe493a43e8)
-[LOG] SoundI::release                          :     Axe_chop_3 (0x7fbe493f10f8)
-[LOG] SoundI::release                          :  (0x7fbe493a4aa8)
-[LOG] SoundI::release                          :     Switching_3 (0x7fbe49351318)
-[LOG] SoundI::release                          :  (0x7fbe43f2cd98)
-[LOG] SoundI::release                          :     Switching_1 (0x7fbe492ef9c8)
-[LOG] SoundI::release                          :  (0x7fbe493890c8)
-[LOG] SoundI::release                          :     Switching_2 (0x7fbe493d9208)
-[LOG] SoundI::release                          :  (0x7fbe493e4498)
-[LOG] SoundI::release                          :     Blue Jay_flyOff (0x7fbe4937bd28)
-[LOG] SoundI::release                          :  (0x7fbe49369038)
-[LOG] SoundI::release                          :     Squirrel_Climb (0x7fbe493cee08)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
->>>>>>> parent of 7361ff5... added latch sounds to island0 door
+[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
