@@ -64,7 +64,7 @@ public class InteractionsManager : MonoBehaviour
 							indivInteractions.CampsiteChop();
 						}
 					}
-				}	
+				}
 			}
 		}
 	}
@@ -80,21 +80,30 @@ public class InteractionsManager : MonoBehaviour
 
 	}
 
+
 	/*
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Interaction")
 		{
-			inRange = false;
 			interaction = collision.gameObject.GetComponent<Interaction>();
-
-			if (interaction.GetCanBeCancelled())
+			if (interaction.interactionName != "fetch")
 			{
-				interaction.CancelInteraction();
+				inRange = false;
+				if (interaction.GetCanBeCancelled())
+				{
+					interaction.CancelInteraction();
+				}
+				interaction = null;
 			}
-			interaction = null;
+			
+
+			
 
 		}
-	}
+
 	*/
 }
+	
+	
+

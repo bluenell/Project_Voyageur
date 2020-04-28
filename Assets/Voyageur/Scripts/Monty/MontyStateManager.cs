@@ -28,7 +28,6 @@ public class MontyStateManager : MonoBehaviour
 		stateActions = GetComponent<MontyStateActions>();
 		stateVariables = GetComponent<MontyStateVariables>();
 		inFetch = false;
-		inTutorial = true;
 	}
 
 	private void Update()

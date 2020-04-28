@@ -69,6 +69,7 @@ public class IndividualInteractions : MonoBehaviour
 		if (chopCount >2)
 		{
 			chopCount = 0;
+			Debug.Log("Chopped");
 			manager.interaction.MarkAsComplete();
 		}
 		else

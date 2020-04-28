@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2825,7 +2825,7 @@ GameObject:
   - component: {fileID: 189034964}
   m_Layer: 0
   m_Name: river02_TEST
-  m_TagString: Untagged
+  m_TagString: River
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2860,8 +2860,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -223.30922, y: -18.688318}
-  - {x: 164.75699, y: -20.478514}
+  - {x: -223.26286, y: -19.545755}
+  - {x: 164.9497, y: -19.4187}
 --- !u!212 &189034963
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4063,7 +4063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 478.1014, y: 14.79, z: -10}
+  m_LocalPosition: {x: -53.032585, y: -0.65999985, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -4878,7 +4878,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.474617, y: 0.61964226}
+  m_Offset: {x: 1.5228634, y: 0.43904257}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4889,7 +4889,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.512924, y: 1.6775856}
+  m_Size: {x: 9.228329, y: 2.038785}
   m_EdgeRadius: 0
 --- !u!1 &375399000 stripped
 GameObject:
@@ -5079,7 +5079,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &395080797
 Transform:
   m_ObjectHideFlags: 0
@@ -5133,7 +5133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88680216d4039341bc41d0ac07f3a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 7945989855208361129}
   interactionName: Squirrel
+  interactionCollider: {fileID: 395080798}
+  complete: 0
   isInteractable: 0
   canBeCancelled: 0
   hasJournalEntry: 1
@@ -5378,7 +5381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406976923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 463.07, y: 5.92, z: -0.890625}
+  m_LocalPosition: {x: -51.81, y: -6.78, z: -0.890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 928187008}
@@ -5402,7 +5405,7 @@ MonoBehaviour:
   distFromPlayer: 0
   desintationReached: 0
   walkSpeed: 5
-  runSpeed: 15
+  runSpeed: 10
   distanceToFollow: 1.5
   grid: {fileID: 0}
   movingTowardsPlayer: 0
@@ -6984,7 +6987,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88680216d4039341bc41d0ac07f3a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 7945989855208361129}
   interactionName: Deer
+  interactionCollider: {fileID: 563179124}
+  complete: 0
   isInteractable: 0
   canBeCancelled: 1
   hasJournalEntry: 1
@@ -8354,7 +8360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636956964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -279.07, y: -5.47, z: 0}
+  m_LocalPosition: {x: -46.24, y: -6.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1687866152}
@@ -10878,7 +10884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848381462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 355.93, y: 14.86, z: 0}
+  m_LocalPosition: {x: 358.81, y: 14.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1210163431}
@@ -10976,7 +10982,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &859166755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10989,7 +10995,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88680216d4039341bc41d0ac07f3a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 7945989855208361129}
   interactionName: BlueJay
+  interactionCollider: {fileID: 859166756}
+  complete: 0
   isInteractable: 0
   canBeCancelled: 0
   hasJournalEntry: 1
@@ -12045,7 +12054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921864818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.61, y: -6.92, z: 0}
+  m_LocalPosition: {x: 7.96, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 493751993}
@@ -12560,6 +12569,12 @@ MonoBehaviour:
 --- !u!1 &970999111 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6116965791367155482, guid: a693216344e2fbf41ac17dbbcd0fe94c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6116965789636463706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &970999113 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6116965791367155480, guid: a693216344e2fbf41ac17dbbcd0fe94c,
     type: 3}
   m_PrefabInstance: {fileID: 6116965789636463706}
   m_PrefabAsset: {fileID: 0}
@@ -15105,7 +15120,12 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 10.44072, y: -12.004669}
-      - {x: 13.920277, y: 11.265028}
+      - {x: 14.588703, y: 11.144283}
+      - {x: 13.32555, y: 15.602251}
+      - {x: 12.319126, y: 17.03305}
+      - {x: 8.6348915, y: 16.559805}
+      - {x: 13.033939, y: 15.159763}
+      - {x: 14.197483, y: 11.168968}
       - {x: 6.889454, y: 11.171951}
       - {x: -20.489132, y: 3.9431438}
       - {x: -34.806503, y: 2.1905403}
@@ -16370,7 +16390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325731603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -112.44, y: 0.71, z: 0}
+  m_LocalPosition: {x: -109.48, y: 1.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 805532087}
@@ -16422,7 +16442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88680216d4039341bc41d0ac07f3a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 7945989855208361129}
   interactionName: CampWood
+  interactionCollider: {fileID: 1325731605}
+  complete: 0
   isInteractable: 0
   canBeCancelled: 0
   hasJournalEntry: 0
@@ -17121,7 +17144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367077911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.09, y: -6.76, z: 0}
+  m_LocalPosition: {x: 6.16, y: -6.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 493751993}
@@ -19271,7 +19294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1506420034
 Transform:
   m_ObjectHideFlags: 0
@@ -19331,7 +19354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88680216d4039341bc41d0ac07f3a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 7945989855208361129}
   interactionName: TreeChop1
+  interactionCollider: {fileID: 1506420035}
+  complete: 0
   isInteractable: 0
   canBeCancelled: 0
   hasJournalEntry: 0
@@ -20681,7 +20707,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 478.1014, y: 14.79, z: -10}
+  m_LocalPosition: {x: -53.032585, y: -0.65999985, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -22096,7 +22122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677850236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.81, y: 0.62, z: 0}
+  m_LocalPosition: {x: 3.78, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1225302927}
@@ -23517,7 +23543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773024829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.19, y: -6.1, z: 0}
+  m_LocalPosition: {x: 10.66, y: -6.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 493751993}
@@ -28439,12 +28465,12 @@ PrefabInstance:
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 477.11
+      value: -54.95
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.49
+      value: -6.96
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -28515,17 +28541,17 @@ PrefabInstance:
     - target: {fileID: 5589543232795568476, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232795568477, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.19
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232795568477, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232795568478, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -28624,7 +28650,7 @@ PrefabInstance:
     - target: {fileID: 6116965791367155482, guid: a693216344e2fbf41ac17dbbcd0fe94c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6116965791367155483, guid: a693216344e2fbf41ac17dbbcd0fe94c,
         type: 3}
@@ -28652,6 +28678,16 @@ PrefabInstance:
       propertyPath: hasJournalEntry
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6116965791367155483, guid: a693216344e2fbf41ac17dbbcd0fe94c,
+        type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 7945989855208361129}
+    - target: {fileID: 6116965791367155483, guid: a693216344e2fbf41ac17dbbcd0fe94c,
+        type: 3}
+      propertyPath: interactionCollider
+      value: 
+      objectReference: {fileID: 970999113}
     m_RemovedComponents:
     - {fileID: 6116965790547159670, guid: a693216344e2fbf41ac17dbbcd0fe94c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a693216344e2fbf41ac17dbbcd0fe94c, type: 3}
@@ -28726,6 +28762,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanoeSingle
       objectReference: {fileID: 0}
+    - target: {fileID: 7643707581115019108, guid: 9a8f72a20b099f54d8e805cfd50a1e16,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 7643707582229125580, guid: 9a8f72a20b099f54d8e805cfd50a1e16,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 7643707582471045051, guid: 9a8f72a20b099f54d8e805cfd50a1e16,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7643707582471045051, guid: 9a8f72a20b099f54d8e805cfd50a1e16,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7643707582471045052, guid: 9a8f72a20b099f54d8e805cfd50a1e16,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a8f72a20b099f54d8e805cfd50a1e16, type: 3}
 --- !u!4 &7945989855208360791 stripped

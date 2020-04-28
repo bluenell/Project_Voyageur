@@ -12,7 +12,7 @@ public class PathRequestManager : MonoBehaviour
 	static PathRequestManager instance;
 	Pathfinding pathfinding;
 
-	bool isProcessingPath;
+	static bool isProcessingPath;
 
 	void Awake()
 	{
@@ -23,6 +23,7 @@ public class PathRequestManager : MonoBehaviour
 
 	public static void ClearRequests()
 	{
+		isProcessingPath = false;
 		instance.pathRequestQueue.Clear();
 	}
 
@@ -37,6 +38,7 @@ public class PathRequestManager : MonoBehaviour
 
 	void TryProcessNext()
 	{
+
 		if (!isProcessingPath && pathRequestQueue.Count > 0)
 		{
 			currentPathRequest = pathRequestQueue.Dequeue();

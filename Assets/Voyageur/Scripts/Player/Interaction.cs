@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class Interaction : MonoBehaviour
 {
 
+	public InteractionsManager manager;
+
 	public string interactionName;
+	public Collider2D interactionCollider;
 
-
+	[SerializeField]
 	bool complete;
 
 	[SerializeField]
@@ -39,6 +42,10 @@ public class Interaction : MonoBehaviour
 	{
 		//Debug.Log(name + " is complete");
 		complete = true;
+		manager.interaction = null;
+		manager.inRange = false;
+		interactionCollider.enabled = false;
+
 
 		if (!cancelled && hasJournalEntry)
 		{
