@@ -22,10 +22,11 @@ public class MontyStateActions : MonoBehaviour
 	Vector3 target;
 	float stuckTimer;
 
+
 	Vector3[] path;
 	int targetIndex;
 	public bool currentlyOnPath;
-
+	bool pathCancelled;
 
 	private void Start()
 	{
@@ -101,17 +102,20 @@ public class MontyStateActions : MonoBehaviour
 
 	public void Fetch()
 	{
-		if (currentlyOnPath)
+		if (!pathCancelled)
 		{
-			StopAllCoroutines();
+			PathRequestManager.RequestPath(transform.position, transform.position, OnPathFound);
 			PathRequestManager.ClearRequests();
-			currentlyOnPath = false;
+			StopAllCoroutines();
+			
+			pathCancelled = true;
 		}
-
+		
 		//checking if the stick hasn't been thrown yet, or monty is bringing the stick back (when to move monty to the start point)
 		if (!stateVariables.stickThrown || stateVariables.montyReturningStick)
 		{
-			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint().position, stateVariables.runSpeed * Time.deltaTime);
+			transform.position = Vector3.MoveTowards(transform.position, stateVariables.GetFetchStartingPoint().position, stateVariables.runSpeed * Time.deltaTime);
+			
 			anim.SetBool("isWalking", false);
 			anim.SetBool("isSitting", false);
 			anim.SetBool("isRunning", true);
@@ -130,8 +134,9 @@ public class MontyStateActions : MonoBehaviour
 		//checking if the stick has been thrown (when to move monty towards the stick after being thrown)
 		else if (stateVariables.stickThrown)
 		{
+			transform.position = Vector3.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, stateVariables.runSpeed * Time.deltaTime);
+
 			cameraHandler.SwitchToMonty();
-			transform.position = Vector2.MoveTowards(transform.position, stateVariables.GetThrowTarget().position, (stateVariables.runSpeed - 2) * Time.deltaTime);
 			anim.SetBool("isWalking", false);
 			anim.SetBool("isSitting", false);
 			anim.SetBool("isRunning", true);
@@ -144,7 +149,7 @@ public class MontyStateActions : MonoBehaviour
 		{
 			cameraHandler.SwitchToPlayer();
 			//Resetting animator and facing in the correct spot
-			Debug.Log("Monty at stick");
+			//Debug.Log("Monty at stick");
 			anim.SetBool("isWalking", false);
 			anim.SetBool("isRunning", false);
 			anim.SetBool("isSitting", true);
@@ -156,22 +161,15 @@ public class MontyStateActions : MonoBehaviour
 
 			if (stateVariables.playerHasStick)
 			{
-				Debug.Log("Disable input");
+				//Debug.Log("Disable input");
 				playerController.DisablePlayerInput();
-			}
-			else
-			{
-				Debug.Log("enable input");
-				StartCoroutine(playerController.EnablePlayerInput(0));
-			}
-
-			if (stateVariables.playerHasStick)
-			{
 				stateVariables.montyHasStick = false;
 				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 			}
 			else
 			{
+				//Debug.Log("enable input");
+				StartCoroutine(playerController.EnablePlayerInput(0));
 				stateVariables.montyHasStick = true;
 				stateVariables.GetFetchStick().transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
 			}
@@ -180,7 +178,7 @@ public class MontyStateActions : MonoBehaviour
 		//checking if monty is at the stick after being thrown
 		if (transform.position == stateVariables.GetThrowTarget().position)
 		{
-			Debug.Log("At thrown stick");
+			//Debug.Log("At thrown stick");
 			anim.SetBool("isRunning", false);
 
 			if (!stateVariables.waitedAtStick)

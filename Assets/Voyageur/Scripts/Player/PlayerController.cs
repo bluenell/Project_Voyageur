@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
 		individualInteractions = GameObject.Find("Interactions Manager").GetComponent<IndividualInteractions>();
 		playerCollider = GetComponent<BoxCollider2D>();
 		gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
-		pickUpTarget = canoe.transform.GetChild(0).transform;
+		pickUpTarget = canoe.transform.GetChild(0).GetChild(0);
 
 		montyObj = GameObject.Find("Monty");
 		montyStateActions = montyObj.GetComponent<MontyStateActions>();
@@ -178,10 +178,7 @@ public class PlayerController : MonoBehaviour
 		{
 			MoveTowardsTarget(interactionsManager.interaction.transform.GetChild(0), false);
 		}
-
-
-
-
+			   		 
 		if (targetFound)
 		{
 			playerCollider.enabled = false;
@@ -197,13 +194,13 @@ public class PlayerController : MonoBehaviour
 	{
 		if (Time.time >= nextSwitchTime)
 		{
-			if (Input.GetButtonDown("InventoryLeft") || Input.GetAxis("Mouse ScrollWheel") < 0)
+			if (Input.GetButtonDown("InventoryLeft"))
 			{
 				playerSoundManager.PlayItemSwitch();
 				CycleInventory("left");
 				nextSwitchTime = Time.time + 1f / switchRate;
 			}
-			if (Input.GetButtonDown("InventoryRight") || Input.GetAxis("Mouse ScrollWheel") > 0)
+			if (Input.GetButtonDown("InventoryRight") || Input.GetKeyDown(KeyCode.Tab))
 			{
 				playerSoundManager.PlayItemSwitch();
 				CycleInventory("right");
@@ -253,7 +250,6 @@ public class PlayerController : MonoBehaviour
 						playingFetch = false;
 						interactionType = "";
 					}
-
 				}
 
 				else if (!carryingCanoe && interactionsManager.inRange && !interactionsManager.interaction.GetComplete())
@@ -404,7 +400,7 @@ public class PlayerController : MonoBehaviour
 		if (type == "pickUpCanoe")
 		{
 			currentInventoryIndex = 0;
-			anim.SetInteger("inventoryIndex", 0);
+			anim.SetInteger("inventoryIndex", currentInventoryIndex);
 
 			DisablePlayerInput();
 			MoveTowardsTarget(pickUpTarget, false);
@@ -487,6 +483,7 @@ public class PlayerController : MonoBehaviour
 				currentInventoryIndex = 0;
 				anim.SetInteger("inventoryIndex", 0);
 				DisablePlayerInput();
+				montyStateManager.inTutorial = true;
 				MoveTowardsTarget(pickUpTarget, false);
 
 				if (CheckIfAtTarget(pickUpTarget, false))
@@ -684,12 +681,18 @@ public class PlayerController : MonoBehaviour
 
 		if (other.gameObject.tag == "FetchZoneExit")
 		{
-			interactionsManager.interaction = null;
+			interactionsManager.interaction.MarkAsComplete();
+			interactionsManager.inRange = false;
+
 			Debug.Log("exit fetch");
 			playingFetch = false;
 			montyStateManager.inFetch = false;
 			montyStateManager.currentState = "roam";
 			montyStateManager.SwitchState();
+			montyStateActions.currentlyOnPath = false;
+			Destroy(interactionsManager.interaction.gameObject);
+			interactionsManager.interaction = null;
+
 		}
 
 		if (other.gameObject.tag == "FetchZoneSpawner")
