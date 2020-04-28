@@ -2825,7 +2825,7 @@ GameObject:
   - component: {fileID: 189034964}
   m_Layer: 0
   m_Name: river02_TEST
-  m_TagString: Untagged
+  m_TagString: River
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2861,7 +2861,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -223.26286, y: -19.545755}
-  - {x: 164.75699, y: -20.478514}
+  - {x: 164.9497, y: -19.4187}
 --- !u!212 &189034963
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10884,7 +10884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848381462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 358.88, y: 15.37, z: 0}
+  m_LocalPosition: {x: 358.81, y: 14.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1210163431}
@@ -12054,7 +12054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921864818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.61, y: -6.92, z: 0}
+  m_LocalPosition: {x: 7.96, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 493751993}
@@ -15120,11 +15120,12 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 10.44072, y: -12.004669}
-      - {x: 17.480167, y: 11.452391}
-      - {x: 14.66547, y: 18.952797}
+      - {x: 14.588703, y: 11.144283}
+      - {x: 13.32555, y: 15.602251}
+      - {x: 12.319126, y: 17.03305}
       - {x: 8.6348915, y: 16.559805}
-      - {x: 12.9391365, y: 14.496147}
-      - {x: 13.960468, y: 11.097866}
+      - {x: 13.033939, y: 15.159763}
+      - {x: 14.197483, y: 11.168968}
       - {x: 6.889454, y: 11.171951}
       - {x: -20.489132, y: 3.9431438}
       - {x: -34.806503, y: 2.1905403}
@@ -17143,7 +17144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367077911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.09, y: -6.76, z: 0}
+  m_LocalPosition: {x: 6.16, y: -6.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 493751993}
@@ -23542,7 +23543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773024829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.19, y: -6.1, z: 0}
+  m_LocalPosition: {x: 10.66, y: -6.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 493751993}
