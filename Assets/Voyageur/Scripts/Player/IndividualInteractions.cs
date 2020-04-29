@@ -115,6 +115,23 @@ public class IndividualInteractions : MonoBehaviour
 		}
 	}
 
+
+	public void FallenBridge()
+	{
+		Debug.Log("Fallen Bridge");
+
+		playerController.DisablePlayerInput();
+		if (playerController.CheckIfAtTarget(manager.interaction.transform.GetChild(0), false))
+		{
+			playerAnimator.SetTrigger("fallTree");
+			targetFound = false;
+			playerController.usingAxe = false;		
+		}
+
+	}
+
+
+
 	void LightFire()
 	{
 		//check if wood

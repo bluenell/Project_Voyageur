@@ -117,9 +117,6 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(3).gameObject.SetActive(false);
 
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
-
-
-
 	}
 	public void ChoppingBlock()
 	{
@@ -131,7 +128,18 @@ public class AnimationEventsHandler : MonoBehaviour
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
 	}
 
+	public void FallTree()
+	{
+		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(2).gameObject.SetActive(false);
+		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
+		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
+	}
 
+	public void TriggerTreeFall()
+	{
+		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(1).GetComponent<Animator>().SetTrigger("fall");
+
+	}
 
 	public void OpenDoor()
 	{

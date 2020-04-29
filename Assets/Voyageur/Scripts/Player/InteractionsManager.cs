@@ -63,6 +63,11 @@ public class InteractionsManager : MonoBehaviour
 						{
 							indivInteractions.CampsiteChop();
 						}
+
+						if (interaction.interactionName == "FallenTree")
+						{
+							indivInteractions.FallenBridge();
+						}
 					}
 				}
 			}
