@@ -11,7 +11,7 @@ public class AnimationEventsHandler : MonoBehaviour
 	public InteractionsManager interactionsManager;
 	public AdditionalSpritesManager spritesManager;
 	public IndividualInteractions individualInteractions;
-
+	public MyGrid grid;
 
 	public void ChangeSpriteLayer()
 	{
@@ -133,6 +133,10 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(2).gameObject.SetActive(false);
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
+		grid.CreateGrid();
+
+
+
 	}
 
 	public void TriggerTreeFall()

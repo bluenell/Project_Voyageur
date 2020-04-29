@@ -123,6 +123,7 @@ public class IndividualInteractions : MonoBehaviour
 		playerController.DisablePlayerInput();
 		if (playerController.CheckIfAtTarget(manager.interaction.transform.GetChild(0), false))
 		{
+			playerController.facingRight = false;
 			playerAnimator.SetTrigger("fallTree");
 			targetFound = false;
 			playerController.usingAxe = false;		
