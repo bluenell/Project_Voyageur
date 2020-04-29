@@ -29,14 +29,14 @@ public class MenuControls : MonoBehaviour
 
     IEnumerator Delay(int sceneIndex, int time)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(time);
 
         if (music != null)
         {
             Destroy(music);
         }
 
-        SceneManager.LoadScene(time);
+        SceneManager.LoadScene(sceneIndex);
 
     }
 }
