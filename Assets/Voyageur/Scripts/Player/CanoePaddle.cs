@@ -135,6 +135,11 @@ public class CanoePaddle : MonoBehaviour
 			canPaddle = false;
 			anim.SetBool("isPreaching", true);
 		}
+
+		if (collision.gameObject.tag == "End")
+		{
+			gm.EndGame();
+		}
 	}
 
 

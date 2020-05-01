@@ -303,7 +303,7 @@ public class IndividualInteractions : MonoBehaviour
 
 		timer += Time.deltaTime;
 
-		if (timer >= 5)
+		if (timer >= 10)
 		{
 			timer = 0;
 			anim.SetTrigger("reveal");

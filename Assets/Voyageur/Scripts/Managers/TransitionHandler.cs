@@ -23,6 +23,7 @@ public class TransitionHandler : MonoBehaviour
 	GameManager gm;
 	MontyStateVariables montyStateVariables;
 	MontyStateManager montyStateManager;
+	MontyStateActions montyStateActions;
 
 	public GameObject[] pathwayColliders;
 	public GameObject spritesManager;
@@ -45,6 +46,7 @@ public class TransitionHandler : MonoBehaviour
 		gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
 		montyStateVariables = monty.GetComponent<MontyStateVariables>();
 		montyStateManager = monty.GetComponent<MontyStateManager>();
+		montyStateActions = monty.GetComponent<MontyStateActions>();
 
 	}
 
@@ -94,6 +96,7 @@ public class TransitionHandler : MonoBehaviour
 		montyStateManager.inFetch = false;
 		montyStateManager.inTutorial = false;
 		montyStateVariables.grid.CreateGrid();
+		montyStateActions.currentlyOnPath = false;
 
 		monty.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = player.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder - 1;
 
@@ -101,6 +104,7 @@ public class TransitionHandler : MonoBehaviour
 
 	public void PreLaunch()
 	{
+
 		canoeAIO.SetActive(true);
 		canoeAIO.GetComponent<CanoePaddle>().launched = true;
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
