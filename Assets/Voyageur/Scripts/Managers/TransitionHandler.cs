@@ -104,6 +104,7 @@ public class TransitionHandler : MonoBehaviour
 
 	public void PreLaunch()
 	{
+
 		canoeAIO.SetActive(true);
 		canoeAIO.GetComponent<CanoePaddle>().launched = true;
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;

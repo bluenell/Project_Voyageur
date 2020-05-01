@@ -42,6 +42,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+	public void EndGame()
+	{
+		StartCoroutine(Delay());
+	}
+
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(2);

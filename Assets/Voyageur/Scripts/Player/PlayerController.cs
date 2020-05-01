@@ -721,6 +721,11 @@ public class PlayerController : MonoBehaviour
 		{
 			itemToPickUp = other.gameObject;
 		}
+
+		if (other.gameObject.tag == "End")
+		{
+			gm.EndGame();
+		}
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
