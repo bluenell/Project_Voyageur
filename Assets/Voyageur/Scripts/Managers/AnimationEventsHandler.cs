@@ -13,6 +13,9 @@ public class AnimationEventsHandler : MonoBehaviour
 	public IndividualInteractions individualInteractions;
 	public MyGrid grid;
 
+
+	#region Functions
+
 	public void ChangeSpriteLayer()
 	{
 		GetComponent<SpriteRenderer>().sortingOrder = GameObject.Find("CanoeGFX").GetComponent<SpriteRenderer>().sortingOrder - 1;
@@ -56,45 +59,6 @@ public class AnimationEventsHandler : MonoBehaviour
 	{
 		TransitionHandler.Door();
 	}
-
-
-
-    #region SoundFX
-
-    public void FootStepsPlayer()
-	{
-		player.GetComponent<PlayerSoundManager>().PlayFootsteps();
-	}
-
-	public void PaddleSounds()
-	{
-		GameObject canoeAIO = GameObject.Find("Canoe AIO");
-		canoeAIO.GetComponent<PlayerSoundManager>().Paddle();
-	}
-
-	public void FootstepsInWater()
-	{
-		GameObject canoeAIO = GameObject.Find("Canoe AIO");
-		canoeAIO.GetComponent<PlayerSoundManager>().PlayExitCanoe();
-	}
-
-	public void FootStepsCanoe()
-	{
-		GameObject canoeAIO = GameObject.Find("Canoe AIO");
-		canoeAIO.GetComponent<PlayerSoundManager>().PlayFootsteps();
-	}
-
-	public void DragCanoe()
-	{
-		GameObject canoeAIO = GameObject.Find("Canoe AIO");
-		canoeAIO.GetComponent<PlayerSoundManager>().PlayDragCanoe();
-	}
-
-	public void MontyFootSteps()
-	{
-		player.GetComponent<PlayerSoundManager>().PlayMontyFootSteps();
-	}
-
 	public void Paddle()
 	{
 		GameObject canoeAIO = GameObject.Find("Canoe AIO");
@@ -139,11 +103,56 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	}
 
+	public void FinishFishing()
+	{
+		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
+	}
+
 	public void TriggerTreeFall()
 	{
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(1).GetComponent<Animator>().SetTrigger("fall");
 
 	}
+
+#endregion
+
+	#region SoundFX
+
+	public void FootStepsPlayer()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayFootsteps();
+	}
+
+	public void PaddleSounds()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().Paddle();
+	}
+
+	public void FootstepsInWater()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayExitCanoe();
+	}
+
+	public void FootStepsCanoe()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayFootsteps();
+	}
+
+	public void DragCanoe()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayDragCanoe();
+	}
+
+	public void MontyFootSteps()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayMontyFootSteps();
+	}
+
+	
 
 	public void OpenDoor()
 	{

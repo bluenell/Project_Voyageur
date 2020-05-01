@@ -16,6 +16,12 @@ public class IndividualInteractions : MonoBehaviour
 	public bool targetFound;
 
 	float timer;
+	public int fishStage;
+	public Vector2 randomWaitTime;
+	bool generated;
+	float random;
+	public bool fishing;
+	bool lineCast;
 
 	public int chopCount = 0;
 	bool animTriggered;
@@ -63,6 +69,114 @@ public class IndividualInteractions : MonoBehaviour
 		//play animation
 		//play sound
 	}
+
+	public void Fishing()
+	{
+		if (playerController.usingRod)
+		{
+			playerController.DisablePlayerInput();
+
+			if (fishStage == 0)
+			{
+				if (!lineCast)
+				{
+					playerAnimator.SetTrigger("fishing_cast");
+					lineCast = true;
+				}
+
+				Debug.Log("waiting for bite");
+
+				if (!generated)
+				{
+					random = Random.Range(randomWaitTime.x, randomWaitTime.y);
+					generated = true;
+				}
+				timer += Time.deltaTime;
+				if (timer >= random)
+				{
+					Debug.Log("Bite");
+					playerAnimator.SetTrigger("fishing_bite");
+					timer = 0;
+					generated = false;
+					fishStage = 1;
+				}
+				if(Input.GetKeyDown(KeyCode.E))
+				{
+					Debug.Log("reel too early");
+					playerAnimator.SetTrigger("fishing_fail");
+					playerController.usingRod = false;
+					timer = 0;
+					generated = false;
+					lineCast = false;
+					fishing = false;
+
+					fishStage = 0;
+					playerAnimator.SetInteger("fishing_randomIndex", 0);
+
+				}
+			}
+			else if (fishStage == 1)
+			{
+				timer += Time.deltaTime;
+
+				if (Input.GetKeyDown(KeyCode.E))
+				{
+					if (timer < 1f)
+					{
+						playerAnimator.SetInteger("fishing_randomIndex", Random.Range(1, 5));
+						Debug.Log("caught");
+						timer = 0;
+						fishStage = 2;
+					}
+				}
+				else if (timer > 1f)
+				{
+					Debug.Log("Didn't reel");
+					playerAnimator.SetTrigger("fishing_fail");
+					timer = 0;
+					generated = false;
+					lineCast = false;
+					fishing = false;
+					playerController.usingRod = false;
+					fishStage = 0;
+					playerAnimator.SetInteger("fishing_randomIndex", 0);
+				}
+
+			}
+			else if (fishStage == 2)
+			{
+				timer += Time.deltaTime;
+
+				if (timer <= 5f && Input.GetKeyDown(KeyCode.E))
+				{
+					playerAnimator.SetInteger("fishing_randomIndex", 0);
+					playerAnimator.SetTrigger("fishing_keep");
+					lineCast = false;
+					timer = 0;
+					generated = false;
+					fishing = false;
+					playerController.usingRod = false;
+					fishStage = 0;
+
+				}
+				else if (timer >= 5f)
+				{
+					playerAnimator.SetInteger("fishing_randomIndex", 0);
+					playerAnimator.SetTrigger("fishing_throw");
+					lineCast = false;
+					timer = 0;
+					generated = false;
+					fishing = false;
+					playerController.usingRod = false;
+					fishStage = 0;
+				}
+			}
+		}
+
+	}
+
+
+
 
 	public void Chop()
 	{
@@ -128,7 +242,6 @@ public class IndividualInteractions : MonoBehaviour
 			targetFound = false;
 			playerController.usingAxe = false;		
 		}
-
 	}
 
 

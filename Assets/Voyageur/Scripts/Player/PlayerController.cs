@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
 	public string interactionType;
 	bool playingFetch = false;
 	public bool usingAxe = false;
+	public bool usingRod = false;
+	public bool performingInteraction;
 
 	#endregion
 
@@ -178,6 +180,7 @@ public class PlayerController : MonoBehaviour
 		{
 			MoveTowardsTarget(interactionsManager.interaction.transform.GetChild(0), false);
 		}
+
 			   		 
 		if (targetFound)
 		{
@@ -211,7 +214,7 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
 		{
-			if (!usingAxe)
+			if (!usingAxe || !usingRod)
 			{
 				if (carryingCanoe)
 				{
@@ -254,12 +257,17 @@ public class PlayerController : MonoBehaviour
 
 				else if (!carryingCanoe && interactionsManager.inRange && !interactionsManager.interaction.GetComplete())
 				{
-					if (currentInventoryIndex == 1)
+					if (currentInventoryIndex == 1 && interactionsManager.interaction.requiredTool ==1)
 					{
 						usingAxe = true;
 					}
-				}
+					if (currentInventoryIndex == 2 && interactionsManager.interaction.requiredTool == 2)
+					{
+						usingRod = true;
 
+					}
+
+				}
 				else if (!carryingCanoe)
 				{
 					if (itemToPickUp != null)

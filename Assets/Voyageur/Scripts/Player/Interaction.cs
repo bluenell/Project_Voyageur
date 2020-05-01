@@ -16,6 +16,7 @@ public class Interaction : MonoBehaviour
 
 	[SerializeField]
 	bool isInteractable;
+	public int requiredTool;
 
 	bool cancelled;
 
