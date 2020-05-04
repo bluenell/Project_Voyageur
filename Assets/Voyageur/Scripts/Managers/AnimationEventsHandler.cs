@@ -80,6 +80,7 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(2).gameObject.SetActive(true);
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(3).gameObject.SetActive(false);
 
+		individualInteractions.chopCount = 0;
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
 	}
 	public void ChoppingBlock()
@@ -89,6 +90,8 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(3).gameObject.SetActive(true);
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(4).gameObject.SetActive(true);
 
+
+		individualInteractions.chopCount = 0;
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
 	}
 
@@ -97,6 +100,8 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(2).gameObject.SetActive(false);
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
+
+		individualInteractions.chopCount = 0;
 		grid.CreateGrid();
 
 
