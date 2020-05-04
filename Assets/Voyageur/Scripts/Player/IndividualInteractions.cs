@@ -113,7 +113,7 @@ public class IndividualInteractions : MonoBehaviour
 					generated = false;
 					fishStage = 1;
 				}
-				else if (Input.GetKeyDown(KeyCode.E) && timer < random)
+				else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A")) && timer < random)
 				{
 					playerAnimator.SetTrigger("fishing_fail");
 					Debug.Log("reel too early");
@@ -143,7 +143,7 @@ public class IndividualInteractions : MonoBehaviour
 			}
 			else if (fishStage == 2)
 			{
-				if (timer <= 5f && Input.GetKeyDown(KeyCode.E))
+				if (timer <= 5f && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A"))
 				{
 					playerAnimator.SetInteger("fishing_randomIndex", 0);
 					playerAnimator.SetTrigger("fishing_keep");
