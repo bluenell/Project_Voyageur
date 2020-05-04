@@ -28839,9 +28839,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xPressed: 0
   targetFound: 0
+  timer: 0
   fishStage: 0
   randomWaitTime: {x: 5, y: 11}
+  generated: 0
+  random: 0
   fishing: 0
+  lineCast: 0
+  firstPress: 0
   chopCount: 0
 --- !u!4 &2099149886
 Transform:

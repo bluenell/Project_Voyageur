@@ -20,6 +20,8 @@ public class Interaction : MonoBehaviour
 
 	bool cancelled;
 
+	public bool forceFaceRight;
+
 	[SerializeField]
 	bool canBeCancelled;
 

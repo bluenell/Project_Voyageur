@@ -110,6 +110,15 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	public void FinishFishing()
 	{
+
+		individualInteractions.lineCast = false;
+		individualInteractions.timer = 0;
+		individualInteractions.generated = false;
+		individualInteractions.fishing = false;
+		player.GetComponent<PlayerController>().usingRod = false;
+		individualInteractions.fishStage = 0;
+
+
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
 	}
 

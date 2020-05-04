@@ -133,7 +133,11 @@ public class PlayerController : MonoBehaviour
 	}
 	private void FixedUpdate()
 	{
-		Move();
+		if (!usingRod || !usingAxe)
+		{
+			Move();
+
+		}
 	}
 
 	private void Update()
@@ -214,7 +218,9 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
 		{
-			if (!usingAxe || !usingRod)
+
+
+			if (!usingAxe && !usingRod)
 			{
 				if (carryingCanoe)
 				{
@@ -261,10 +267,10 @@ public class PlayerController : MonoBehaviour
 					{
 						usingAxe = true;
 					}
-					if (currentInventoryIndex == 2 && interactionsManager.interaction.requiredTool == 2)
+					if (currentInventoryIndex == 2 && interactionsManager.interaction.requiredTool == 2 && !individualInteractions.fishing)
 					{
+						Debug.Log("Button Press");
 						usingRod = true;
-
 					}
 
 				}
@@ -312,7 +318,7 @@ public class PlayerController : MonoBehaviour
 		{
 			playingFetch = false;
 			//targetFound = false;
-
+			//usingRod = false;
 		}
 
 
