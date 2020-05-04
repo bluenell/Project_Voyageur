@@ -119,6 +119,7 @@ public class AnimationEventsHandler : MonoBehaviour
 		individualInteractions.fishStage = 0;
 
 
+		player.GetComponent<PlayerController>().RevertSprite();
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
 	}
 

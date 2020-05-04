@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 	public float defaultXSpeed, defaultYSpeed;
 	[HideInInspector]
 	public bool isMoving;
-	[HideInInspector]
+
 	public bool facingRight;
 	public float armsReach;
 	float xSpeed, ySpeed;
@@ -136,7 +136,6 @@ public class PlayerController : MonoBehaviour
 		if (!usingRod || !usingAxe)
 		{
 			Move();
-
 		}
 	}
 
@@ -195,6 +194,9 @@ public class PlayerController : MonoBehaviour
 		{
 			playerCollider.enabled = true;
 		}
+
+
+
 	}
 
 	void HandleInput()
@@ -218,8 +220,6 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
 		{
-
-
 			if (!usingAxe && !usingRod)
 			{
 				if (carryingCanoe)
@@ -266,11 +266,29 @@ public class PlayerController : MonoBehaviour
 					if (currentInventoryIndex == 1 && interactionsManager.interaction.requiredTool ==1)
 					{
 						usingAxe = true;
+
+
+						if (interactionsManager.interaction.forceFaceRight)
+						{
+							sprite.flipX = false;
+						}
+						else
+						{
+							sprite.flipX = true;
+						}
+
+
 					}
 					if (currentInventoryIndex == 2 && interactionsManager.interaction.requiredTool == 2 && !individualInteractions.fishing)
 					{
 						Debug.Log("Button Press");
 						usingRod = true;
+
+						if (interactionsManager.interaction.forceFaceRight && facingRight)
+						{
+							sprite.flipX = true;
+						}
+
 					}
 
 				}
@@ -518,6 +536,19 @@ public class PlayerController : MonoBehaviour
 			}		
 		}
 	}
+
+	public void RevertSprite()
+	{
+		if (interactionsManager.interaction.forceFaceRight && !facingRight)
+		{
+			sprite.flipX = true;
+		}
+		else if (interactionsManager.interaction.forceFaceRight && facingRight)
+		{
+			sprite.flipX = false;
+		}
+	}
+
 
 	void HandleMonty()
 	{

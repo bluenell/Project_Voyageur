@@ -62,6 +62,7 @@ public class Interaction : MonoBehaviour
 		complete = true;
 	}
 
+
 	public bool GetComplete()
 	{
 		return complete;
