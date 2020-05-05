@@ -12,8 +12,7 @@ public class MenuControls : MonoBehaviour
 
     public void PlayGame()
     {
-        a.SetTrigger("play");
-        StartCoroutine(Delay(1, 1));
+		SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
