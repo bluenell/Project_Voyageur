@@ -110,6 +110,16 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	public void FinishFishing()
 	{
+
+		individualInteractions.lineCast = false;
+		individualInteractions.timer = 0;
+		individualInteractions.generated = false;
+		individualInteractions.fishing = false;
+		player.GetComponent<PlayerController>().usingRod = false;
+		individualInteractions.fishStage = 0;
+
+
+		player.GetComponent<PlayerController>().RevertSprite();
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
 	}
 
@@ -119,9 +129,43 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	}
 
-#endregion
+	#endregion
 
 	#region SoundFX
+
+	public void PlayItemSwitch()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayItemSwitch();
+	}
+
+	public void PlayExtendRod()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayExtendRod();
+	}
+
+	public void PlayCastRod()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayCastRod();
+	}
+
+	public void PlayFloatSplash()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayFloatSplash();
+	}
+	public void PlayBite()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayBite();
+	}
+	public void PlayReelNoFish()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayReelNoFish();
+	}
+
+	public void PlayReelFish()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayReelFish();
+	}
+
 
 	public void FootStepsPlayer()
 	{

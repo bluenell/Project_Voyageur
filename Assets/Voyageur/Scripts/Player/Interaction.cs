@@ -20,6 +20,8 @@ public class Interaction : MonoBehaviour
 
 	bool cancelled;
 
+	public bool forceFaceRight;
+
 	[SerializeField]
 	bool canBeCancelled;
 
@@ -59,6 +61,7 @@ public class Interaction : MonoBehaviour
 		cancelled = true;
 		complete = true;
 	}
+
 
 	public bool GetComplete()
 	{

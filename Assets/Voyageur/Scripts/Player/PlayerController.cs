@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 	public float defaultXSpeed, defaultYSpeed;
 	[HideInInspector]
 	public bool isMoving;
-	[HideInInspector]
+
 	public bool facingRight;
 	public float armsReach;
 	float xSpeed, ySpeed;
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 	public GameObject torch;
 	bool torchOn = false;
 
-	GameObject itemToPickUp;
+	public GameObject itemToPickUp;
 
 	Vector3 rightTorchTransform = new Vector3(0.608f, 1.642f, 0);
 	Vector3 leftTorchTransform = new Vector3(-0.608f, 1.642f, 0);
@@ -133,7 +133,10 @@ public class PlayerController : MonoBehaviour
 	}
 	private void FixedUpdate()
 	{
-		Move();
+		if (!usingRod || !usingAxe)
+		{
+			Move();
+		}
 	}
 
 	private void Update()
@@ -191,6 +194,9 @@ public class PlayerController : MonoBehaviour
 		{
 			playerCollider.enabled = true;
 		}
+
+
+
 	}
 
 	void HandleInput()
@@ -257,14 +263,38 @@ public class PlayerController : MonoBehaviour
 
 				else if (!carryingCanoe && interactionsManager.inRange && !interactionsManager.interaction.GetComplete())
 				{
-					if (currentInventoryIndex == 1 && interactionsManager.interaction.requiredTool ==1)
+					if (currentInventoryIndex == 1 && interactionsManager.interaction.requiredTool ==1 && inventory.hasAxe)
 					{
 						usingAxe = true;
+
+
+						if (interactionsManager.interaction.forceFaceRight)
+						{
+							sprite.flipX = false;
+						}
+						else
+						{
+							sprite.flipX = true;
+						}
+
+
 					}
-					if (currentInventoryIndex == 2 && interactionsManager.interaction.requiredTool == 2)
+					if (currentInventoryIndex == 2 && interactionsManager.interaction.requiredTool == 2 && !individualInteractions.fishing && inventory.hasRod)
 					{
+						Debug.Log("Button Press");
 						usingRod = true;
 
+						if (interactionsManager.interaction.forceFaceRight && facingRight)
+						{
+							sprite.flipX = true;
+						}
+
+					}
+
+					if (currentInventoryIndex != 2 && canLaunch && inventory.hasAxe && inventory.hasRod)
+					{
+						targetFound = true;
+						interactionType = "launch";
 					}
 
 				}
@@ -312,7 +342,7 @@ public class PlayerController : MonoBehaviour
 		{
 			playingFetch = false;
 			//targetFound = false;
-
+			//usingRod = false;
 		}
 
 
@@ -512,6 +542,19 @@ public class PlayerController : MonoBehaviour
 			}		
 		}
 	}
+
+	public void RevertSprite()
+	{
+		if (interactionsManager.interaction.forceFaceRight && !facingRight)
+		{
+			sprite.flipX = true;
+		}
+		else if (interactionsManager.interaction.forceFaceRight && facingRight)
+		{
+			sprite.flipX = false;
+		}
+	}
+
 
 	void HandleMonty()
 	{

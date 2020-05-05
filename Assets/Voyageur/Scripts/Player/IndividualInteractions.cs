@@ -15,13 +15,14 @@ public class IndividualInteractions : MonoBehaviour
 	bool movingTowards = false;
 	public bool targetFound;
 
-	float timer;
+	public float timer;
 	public int fishStage;
 	public Vector2 randomWaitTime;
-	bool generated;
-	float random;
+	public bool generated;
+	public float random;
 	public bool fishing;
-	bool lineCast;
+	public bool lineCast;
+	public bool firstPress;
 
 	public int chopCount = 0;
 	bool animTriggered;
@@ -35,6 +36,16 @@ public class IndividualInteractions : MonoBehaviour
 		playerAnimator = player.transform.GetChild(0).GetComponent<Animator>();
 		montyStateManager = GameObject.Find("Monty").GetComponent<MontyStateManager>();
 	}
+
+
+	private void Update()
+	{
+		if (fishing)
+		{
+			timer += Time.deltaTime;
+		}
+	}
+
 
 	Animator anim;
 
@@ -72,6 +83,8 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Fishing()
 	{
+		fishing = true;
+
 		if (playerController.usingRod)
 		{
 			playerController.DisablePlayerInput();
@@ -91,7 +104,7 @@ public class IndividualInteractions : MonoBehaviour
 					random = Random.Range(randomWaitTime.x, randomWaitTime.y);
 					generated = true;
 				}
-				timer += Time.deltaTime;
+
 				if (timer >= random)
 				{
 					Debug.Log("Bite");
@@ -100,26 +113,17 @@ public class IndividualInteractions : MonoBehaviour
 					generated = false;
 					fishStage = 1;
 				}
-				if(Input.GetKeyDown(KeyCode.E))
+				else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A")) && timer < random)
 				{
-					Debug.Log("reel too early");
 					playerAnimator.SetTrigger("fishing_fail");
-					playerController.usingRod = false;
-					timer = 0;
-					generated = false;
-					lineCast = false;
-					fishing = false;
-
-					fishStage = 0;
-					playerAnimator.SetInteger("fishing_randomIndex", 0);
-
+					Debug.Log("reel too early");
 				}
+
 			}
 			else if (fishStage == 1)
 			{
-				timer += Time.deltaTime;
 
-				if (Input.GetKeyDown(KeyCode.E))
+				if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A"))
 				{
 					if (timer < 1f)
 					{
@@ -133,46 +137,27 @@ public class IndividualInteractions : MonoBehaviour
 				{
 					Debug.Log("Didn't reel");
 					playerAnimator.SetTrigger("fishing_fail");
-					timer = 0;
-					generated = false;
-					lineCast = false;
-					fishing = false;
-					playerController.usingRod = false;
-					fishStage = 0;
-					playerAnimator.SetInteger("fishing_randomIndex", 0);
+
 				}
 
 			}
 			else if (fishStage == 2)
 			{
-				timer += Time.deltaTime;
-
-				if (timer <= 5f && Input.GetKeyDown(KeyCode.E))
+				if (timer <= 5f && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A")))
 				{
 					playerAnimator.SetInteger("fishing_randomIndex", 0);
 					playerAnimator.SetTrigger("fishing_keep");
-					lineCast = false;
-					timer = 0;
-					generated = false;
-					fishing = false;
-					playerController.usingRod = false;
-					fishStage = 0;
+
 
 				}
 				else if (timer >= 5f)
 				{
 					playerAnimator.SetInteger("fishing_randomIndex", 0);
 					playerAnimator.SetTrigger("fishing_throw");
-					lineCast = false;
-					timer = 0;
-					generated = false;
-					fishing = false;
-					playerController.usingRod = false;
-					fishStage = 0;
+					
 				}
 			}
 		}
-
 	}
 
 
