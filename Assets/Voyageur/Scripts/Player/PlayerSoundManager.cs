@@ -129,4 +129,40 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[16]);
 		playerState.start();
 	}
+
+	public void PlayExtendRod()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[19]);
+		playerState.start();
+	}
+
+	public void PlayCastRod()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[20]);
+		playerState.start();
+	}
+
+	public void PlayFloatSplash()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[21]);
+		playerState.start();
+	}
+	public void PlayBite()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[22]);
+		playerState.start();
+	}
+	public void PlayReelNoFish ()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[23]);
+		playerState.start();
+	}
+
+	public void PlayReelFish()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[24]);
+		playerState.start();
+	}
+
+
 }
