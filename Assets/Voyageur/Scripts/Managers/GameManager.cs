@@ -13,7 +13,12 @@ public class GameManager : MonoBehaviour
     public Animator fade;
     public bool paused;
 
-    private void Update()
+	private void Start()
+	{
+		Cursor.visible = false;
+	}
+
+	private void Update()
     {
         if (inTutorial)
         {
