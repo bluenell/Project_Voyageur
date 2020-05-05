@@ -123,7 +123,7 @@ public class IndividualInteractions : MonoBehaviour
 			else if (fishStage == 1)
 			{
 
-				if (Input.GetKeyDown(KeyCode.E))
+				if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A"))
 				{
 					if (timer < 1f)
 					{
@@ -143,7 +143,7 @@ public class IndividualInteractions : MonoBehaviour
 			}
 			else if (fishStage == 2)
 			{
-				if (timer <= 5f && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A"))
+				if (timer <= 5f && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A")))
 				{
 					playerAnimator.SetInteger("fishing_randomIndex", 0);
 					playerAnimator.SetTrigger("fishing_keep");
