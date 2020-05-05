@@ -25,6 +25,7 @@ public class TransitionHandler : MonoBehaviour
 	MontyStateManager montyStateManager;
 	MontyStateActions montyStateActions;
 
+	public GameObject[] previousIslandColliders;
 	public GameObject[] pathwayColliders;
 	public GameObject spritesManager;
 
@@ -97,6 +98,7 @@ public class TransitionHandler : MonoBehaviour
 		montyStateManager.inTutorial = false;
 		montyStateVariables.grid.CreateGrid();
 		montyStateActions.currentlyOnPath = false;
+		canoe.transform.GetChild(0).GetComponent<Animator>().SetTrigger("return");
 
 		monty.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = player.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder - 1;
 
@@ -104,6 +106,8 @@ public class TransitionHandler : MonoBehaviour
 
 	public void PreLaunch()
 	{
+		previousIslandColliders[gm.GetCurrentIsland()].SetActive(false);
+
 		canoeAIO.SetActive(true);
 		canoeAIO.GetComponent<CanoePaddle>().launched = true;
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
@@ -125,7 +129,7 @@ public class TransitionHandler : MonoBehaviour
 		Debug.Log("Transitioning to island: " + gm.GetCurrentIsland());
 
 		// Enabling & Disabling Monty, Player, Canoe Single and their depencies
-		canoeAIO.transform.position = canoeSpawnPoints[gm.GetCurrentIsland()-1].transform.position;
+		//canoeAIO.transform.position = canoeSpawnPoints[gm.GetCurrentIsland()-1].transform.position;
 		canoeAIO.GetComponent<CanoePaddle>().beached = false;
 		canoeAIO.GetComponent<CanoePaddle>().launched = false;
 		player.GetComponent<PlayerController>().canLaunch = false;
