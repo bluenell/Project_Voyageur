@@ -98,6 +98,7 @@ public class TransitionHandler : MonoBehaviour
 		montyStateManager.inTutorial = false;
 		montyStateVariables.grid.CreateGrid();
 		montyStateActions.currentlyOnPath = false;
+		canoe.transform.GetChild(0).GetComponent<Animator>().SetTrigger("return");
 
 		monty.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = player.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder - 1;
 
