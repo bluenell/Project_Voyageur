@@ -469,7 +469,7 @@ public class PlayerController : MonoBehaviour
 				axeAnim.SetTrigger("putDown");
 				anim.SetTrigger("PutDown");
 				canoe.transform.position = new Vector3(transform.position.x, spawnTarget.position.y, 0);
-				transform.position = canoe.transform.GetChild(0).transform.position;
+				//transform.position = canoe.transform.GetChild(0).transform.position;
 				StartCoroutine(RevealCanoe(0.8f));
 				StartCoroutine(EnablePlayerInput(0.8f));
 			}
