@@ -62,6 +62,10 @@ public class Journal : MonoBehaviour
 				Cursor.visible = false;
 			}
 		}
+		else
+		{
+			Cursor.visible = false;
+		}
 
 
         if (Input.GetButtonDown("Button Start") || Input.GetButtonDown("Button Select") || Input.GetKeyDown(KeyCode.Escape))
