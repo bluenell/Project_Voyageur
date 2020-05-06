@@ -281,13 +281,11 @@ public class PlayerController : MonoBehaviour
 					}
 					if (currentInventoryIndex == 2 && interactionsManager.interaction.requiredTool == 2 && !individualInteractions.fishing && inventory.hasRod)
 					{
-						Debug.Log("Button Press");
-						usingRod = true;
-
-						if (interactionsManager.interaction.forceFaceRight && facingRight)
+						if ((interactionsManager.interaction.forceFaceRight && facingRight) || (!interactionsManager.interaction.forceFaceRight && !facingRight))
 						{
-							sprite.flipX = true;
-						}
+							usingRod = true;
+						}				
+
 
 					}
 

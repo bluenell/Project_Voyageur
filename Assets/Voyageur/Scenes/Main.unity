@@ -28986,7 +28986,7 @@ MonoBehaviour:
   complete: 0
   isInteractable: 0
   requiredTool: 2
-  forceFaceRight: 0
+  forceFaceRight: 1
   canBeCancelled: 0
   hasJournalEntry: 0
   journal: {fileID: 0}
@@ -29695,7 +29695,7 @@ MonoBehaviour:
   targetFound: 0
   timer: 0
   fishStage: 0
-  randomWaitTime: {x: 5, y: 11}
+  randomWaitTime: {x: 5, y: 20}
   generated: 0
   random: 0
   fishing: 0

@@ -11,19 +11,30 @@ public class IndividualInteractions : MonoBehaviour
 	GameObject player;
 	MontyStateManager montyStateManager;
 
-	public bool xPressed;
+	[Header("General")]
 	bool movingTowards = false;
 	public bool targetFound;
 
+	
+	[HideInInspector]
 	public float timer;
+	[HideInInspector]
 	public int fishStage;
+
+	[Header("Fishing")]
 	public Vector2 randomWaitTime;
+	[HideInInspector]
 	public bool generated;
+	[HideInInspector]
 	public float random;
+	[HideInInspector]
 	public bool fishing;
+	[HideInInspector]
 	public bool lineCast;
+	[HideInInspector]
 	public bool firstPress;
 
+	[HideInInspector]
 	public int chopCount = 0;
 	bool animTriggered;
 
