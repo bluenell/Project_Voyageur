@@ -8,6 +8,7 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	public GameObject player;
 	public GameObject door;
+	public GameObject logPile;
 	public InteractionsManager interactionsManager;
 	public AdditionalSpritesManager spritesManager;
 	public IndividualInteractions individualInteractions;
@@ -85,16 +86,45 @@ public class AnimationEventsHandler : MonoBehaviour
 	}
 	public void ChoppingBlock()
 	{
-		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(1).gameObject.SetActive(true);
-		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(2).gameObject.SetActive(true);
-		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(3).gameObject.SetActive(true);
-		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(4).gameObject.SetActive(true);
-
+		logPile.SetActive(true);
+		player.GetComponent<InteractionsManager>().interaction.gameObject.SetActive(false);
 
 		individualInteractions.chopCount = 0;
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
 		player.GetComponent<PlayerInventory>().AddWood();
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
+
+
+
+
+
+
+	}
+
+	public void SetHasLogs()
+	{
+		individualInteractions.hasLogs = true;
+	}
+
+	public void DeleteLogs()
+	{
+		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(4).gameObject.SetActive(false);
+		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(3).gameObject.SetActive(false);
+	}
+
+	public void LogPile()
+	{
+		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
+
+		player.GetComponent<PlayerController>().usingHands = false;
+		individualInteractions.hasLogs = false;
+		player.GetComponent<BoxCollider2D>().enabled = true;
+		player.GetComponent<PlayerController>().targetFound = false;
+
+		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
+
+
+
 	}
 
 	public void FallTree()

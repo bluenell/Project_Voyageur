@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 	bool inRangeParkingSpace;
 	bool inRangeOfLaunchingZone;
 
-	bool targetFound;
+	public bool targetFound;
 
 	bool canPickUp;
 	bool canPutDown;
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
 	public float switchRate = 2f;
 	float nextSwitchTime = 0f;
-	#endregion
+	#endregion 
 
 	#region Components
 	Rigidbody2D rb;
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
 	TransitionHandler transitionHandler;
 	InteractionsManager interactionsManager;
 	IndividualInteractions individualInteractions;
-	BoxCollider2D playerCollider;
+	public BoxCollider2D playerCollider;
 	GameManager gm;
 	#endregion
 
@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
 		{
 			HandleMonty();
 		}
-		else if ((usingAxe || usingHands) && !CheckIfAtTarget(interactionsManager.interaction.transform.GetChild(0), false) && !interactionsManager.interaction.GetComplete())
+		else if ((usingAxe || usingHands) && !CheckIfAtTarget(interactionsManager.interaction.transform.GetChild(0), false) && !interactionsManager.interaction.GetComplete() && !individualInteractions.hasLogs)
 		{
 			MoveTowardsTarget(interactionsManager.interaction.transform.GetChild(0), false);
 		}
@@ -295,6 +295,7 @@ public class PlayerController : MonoBehaviour
 						targetFound = true;
 						usingHands = true;
 					}
+
 
 					if (currentInventoryIndex != 2 && canLaunch && inventory.hasAxe && inventory.hasRod)
 					{
