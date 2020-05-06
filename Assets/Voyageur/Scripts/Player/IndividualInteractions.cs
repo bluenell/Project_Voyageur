@@ -203,10 +203,6 @@ public class IndividualInteractions : MonoBehaviour
 		if (chopCount > 3)
 		{
 			Debug.Log("done");
-			chopCount = 0;
-			player.GetComponent<PlayerInventory>().AddWood();
-			manager.interaction.MarkAsComplete();
-
 		}
 		else
 		{
@@ -222,6 +218,17 @@ public class IndividualInteractions : MonoBehaviour
 				playerAnimator.SetInteger("choppingBlockCounter", chopCount);
 				Debug.Log(chopCount);
 			}
+		}
+	}
+
+
+	public void LogPile()
+	{
+		playerController.DisablePlayerInput();
+
+		if (playerController.CheckIfAtTarget(manager.interaction.transform.GetChild(0), false))
+		{
+			Debug.Log("At logs");
 		}
 	}
 

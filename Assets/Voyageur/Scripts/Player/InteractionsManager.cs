@@ -80,6 +80,16 @@ public class InteractionsManager : MonoBehaviour
 						}
 					}
 				}
+				else if (playerController.usingHands)
+				{
+					if (playerController.currentInventoryIndex == 0)
+					{
+						if (interaction.interactionName == "LogPile")
+						{
+							indivInteractions.LogPile();
+						}
+					}
+				}
 			}
 		}
 	}
@@ -96,7 +106,7 @@ public class InteractionsManager : MonoBehaviour
 	}
 
 
-
+	/*
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Interaction")
@@ -117,6 +127,7 @@ public class InteractionsManager : MonoBehaviour
 
 		}
 	}
+	*/
 }
 	
 	

@@ -92,6 +92,8 @@ public class AnimationEventsHandler : MonoBehaviour
 
 
 		individualInteractions.chopCount = 0;
+		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
+		player.GetComponent<PlayerInventory>().AddWood();
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
 	}
 

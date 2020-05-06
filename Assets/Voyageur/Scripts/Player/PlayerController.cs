@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
 	bool playingFetch = false;
 	public bool usingAxe = false;
 	public bool usingRod = false;
+	public bool usingHands = false;
 	public bool performingInteraction;
 
 	#endregion
@@ -179,7 +180,7 @@ public class PlayerController : MonoBehaviour
 		{
 			HandleMonty();
 		}
-		else if (usingAxe && !CheckIfAtTarget(interactionsManager.interaction.transform.GetChild(0), false) && !interactionsManager.interaction.GetComplete())
+		else if ((usingAxe || usingHands) && !CheckIfAtTarget(interactionsManager.interaction.transform.GetChild(0), false) && !interactionsManager.interaction.GetComplete())
 		{
 			MoveTowardsTarget(interactionsManager.interaction.transform.GetChild(0), false);
 		}
@@ -287,6 +288,12 @@ public class PlayerController : MonoBehaviour
 						}				
 
 
+					}
+
+					if (currentInventoryIndex == 0 && interactionsManager.interaction.requiredTool == 0)
+					{
+						targetFound = true;
+						usingHands = true;
 					}
 
 					if (currentInventoryIndex != 2 && canLaunch && inventory.hasAxe && inventory.hasRod)
