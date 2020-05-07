@@ -29,6 +29,7 @@ public class IndividualInteractions : MonoBehaviour
 	public bool fishing;
 	public bool lineCast;
 	public bool firstPress;
+	public Fish[] fish;
 
 	[HideInInspector]
 	public int chopCount = 0;
