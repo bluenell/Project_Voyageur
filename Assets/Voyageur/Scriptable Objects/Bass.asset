@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   image: {fileID: 21300000, guid: c816116d203b92b4d8a3e6590b204945, type: 3}
-  fishName: Bass
+  fishName: bass
   fishSize: 86cm / 34in
-  fishDesc: 
-  timesCaught: 0
+  fishDesc: I really had to amp up my game trying to catch this one.
+  timesCaught: 1

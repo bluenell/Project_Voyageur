@@ -110,7 +110,7 @@ public class IndividualInteractions : MonoBehaviour
 					lineCast = true;
 				}
 
-				Debug.Log("waiting for bite");
+				//Debug.Log("waiting for bite");
 
 				if (!generated)
 				{
@@ -120,7 +120,7 @@ public class IndividualInteractions : MonoBehaviour
 
 				if (timer >= random)
 				{
-					Debug.Log("Bite");
+					//Debug.Log("Bite");
 					playerAnimator.SetTrigger("fishing_bite");
 					timer = 0;
 					generated = false;
@@ -129,7 +129,7 @@ public class IndividualInteractions : MonoBehaviour
 				else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A")) && timer < random)
 				{
 					playerAnimator.SetTrigger("fishing_fail");
-					Debug.Log("reel too early");
+					//Debug.Log("reel too early");
 				}
 
 			}
@@ -147,14 +147,14 @@ public class IndividualInteractions : MonoBehaviour
 
 						journal.UpdateFishPages(fish[randomFish - 1]);
 
-						Debug.Log("caught");
+						//Debug.Log("caught");
 						timer = 0;
 						fishStage = 2;
 					}
 				}
 				else if (timer > 1f)
 				{
-					Debug.Log("Didn't reel");
+					//Debug.Log("Didn't reel");
 					playerAnimator.SetTrigger("fishing_fail");
 
 				}

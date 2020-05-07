@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   image: {fileID: 21300000, guid: 5396621084b261a4789f3fe811af499f, type: 3}
-  fishName: Minnow
+  fishName: minnow
   fishSize: 5cm / 2in
-  fishDesc: 
-  timesCaught: 0
+  fishDesc: I caught a minnow
+  timesCaught: 1

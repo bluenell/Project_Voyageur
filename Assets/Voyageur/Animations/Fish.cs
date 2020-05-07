@@ -9,12 +9,14 @@ public class Fish : ScriptableObject
 	public Sprite image;
 	public string fishName;
 	public string fishSize;
+	[TextArea]
 	public string fishDesc;
 
 	public int timesCaught;
 
 	public void IncreaseTimesCaught()
 	{
+		Debug.Log("Increase");
 		timesCaught++;
 	}
 

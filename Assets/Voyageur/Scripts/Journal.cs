@@ -9,6 +9,7 @@ public class Journal : MonoBehaviour
     public GameObject[] journalPages;
     public GameObject[] interactions;
 	public GameObject[] fishes;
+	List<Fish> fishCaught;
     public GameObject[] lines;
     public PlayerController playerController;
     public PlayerSoundManager sounds;
@@ -25,6 +26,7 @@ public class Journal : MonoBehaviour
 
     private void Start()
     {
+		fishCaught = new List<Fish>();
         gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
         sounds = playerController.gameObject.GetComponent<PlayerSoundManager>();
         inventory = playerController.gameObject.GetComponent<PlayerInventory>();
@@ -148,6 +150,7 @@ public class Journal : MonoBehaviour
 
     public void UpdateInteractionPages(string name, string desc, Sprite sprite)
     {
+
 		
         //sounds.PlayPageTurn();
         interactions[interactionIndex].SetActive(true);
@@ -162,21 +165,38 @@ public class Journal : MonoBehaviour
 
 	public void UpdateFishPages(Fish fish)
 	{
-		fishes[fishIndex].SetActive(true);
-		fishes[fishIndex].GetComponent<Image>().sprite = fish.image;
 
-		fishes[fishIndex].transform.GetChild(0).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishName;
-		fishes[fishIndex].transform.GetChild(0).transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishDesc;
-		fishes[fishIndex].transform.GetChild(0).transform.GetChild(2).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishSize;
+		if (!CheckIfExists(fish))
+		{
+			fishCaught.Add(fish);
+			fishes[fishIndex].SetActive(true);
+			fishes[fishIndex].GetComponent<Image>().sprite = fish.image;
 
-		fishes[fishIndex].transform.GetChild(1).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.timesCaught.ToString();
+			fishes[fishIndex].transform.GetChild(0).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishName;
+			fishes[fishIndex].transform.GetChild(0).transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishDesc;
+			fishes[fishIndex].transform.GetChild(0).transform.GetChild(2).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishSize;
+			fishes[fishIndex].transform.GetChild(1).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.timesCaught.ToString();
+			fishIndex++;
+		}
+		else
+		{
+			fishes[fishIndex].transform.GetChild(1).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.timesCaught.ToString();
 
-		fishIndex++;
+		}
 
 
+	}
 
-
-
+	bool CheckIfExists(Fish fish)
+	{
+		if (fishCaught.Contains(fish))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 }
