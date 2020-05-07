@@ -4239,7 +4239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 471.17227, y: 12.75, z: -10}
+  m_LocalPosition: {x: 471.16788, y: 12.75, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -5556,7 +5556,7 @@ MonoBehaviour:
   forceFaceRight: 0
   canBeCancelled: 0
   hasJournalEntry: 1
-  journal: {fileID: 679066571}
+  journal: {fileID: 0}
   journalImage: {fileID: 21300000, guid: ce5a513c8ca2d7144b63c7c9162c563a, type: 3}
   journalName: Squirrel
   journalDescription: i went up a somewhat hidden path and noticed this squirrel
@@ -6223,8 +6223,8 @@ MonoBehaviour:
   logPile: {fileID: 0}
   interactionsManager: {fileID: 7945989855208361129}
   spritesManager: {fileID: 0}
-  individualInteractions: {fileID: 2099149885}
-  grid: {fileID: 159395052}
+  individualInteractions: {fileID: 0}
+  grid: {fileID: 0}
 --- !u!1 &442136713
 GameObject:
   m_ObjectHideFlags: 0
@@ -7743,7 +7743,7 @@ MonoBehaviour:
   forceFaceRight: 0
   canBeCancelled: 1
   hasJournalEntry: 1
-  journal: {fileID: 679066571}
+  journal: {fileID: 0}
   journalImage: {fileID: 21300000, guid: 0946220df180bd446a2bdd9974acde03, type: 3}
   journalName: Deer
   journalDescription: i noticed some rustling in the bush. i waited and a deer showed
@@ -11941,7 +11941,7 @@ MonoBehaviour:
   forceFaceRight: 0
   canBeCancelled: 0
   hasJournalEntry: 1
-  journal: {fileID: 679066571}
+  journal: {fileID: 0}
   journalImage: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106, type: 3}
   journalName: blue jay
   journalDescription: i managed to capture this blue jay but he quickly flew away
@@ -12532,11 +12532,11 @@ PrefabInstance:
     - target: {fileID: 1295359407, guid: 7623248776c539749835c98c33870583, type: 3}
       propertyPath: individualInteractions
       value: 
-      objectReference: {fileID: 2099149885}
+      objectReference: {fileID: 0}
     - target: {fileID: 1295359407, guid: 7623248776c539749835c98c33870583, type: 3}
       propertyPath: spritesManager
       value: 
-      objectReference: {fileID: 391840401}
+      objectReference: {fileID: 0}
     - target: {fileID: 1295359407, guid: 7623248776c539749835c98c33870583, type: 3}
       propertyPath: interactionsManager
       value: 
@@ -21106,7 +21106,7 @@ MonoBehaviour:
   forceFaceRight: 1
   canBeCancelled: 0
   hasJournalEntry: 0
-  journal: {fileID: 679066571}
+  journal: {fileID: 0}
   journalImage: {fileID: 0}
   journalName: 
   journalDescription: 
@@ -22518,7 +22518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 471.17227, y: 12.75, z: -10}
+  m_LocalPosition: {x: 471.16788, y: 12.75, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -31489,7 +31489,7 @@ PrefabInstance:
     - target: {fileID: 6116965791258048275, guid: a693216344e2fbf41ac17dbbcd0fe94c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6116965791258048275, guid: a693216344e2fbf41ac17dbbcd0fe94c,
         type: 3}
@@ -31536,7 +31536,7 @@ PrefabInstance:
         type: 3}
       propertyPath: journal
       value: 
-      objectReference: {fileID: 679066571}
+      objectReference: {fileID: 0}
     - target: {fileID: 6116965791367155483, guid: a693216344e2fbf41ac17dbbcd0fe94c,
         type: 3}
       propertyPath: hasJournalEntry
@@ -31968,12 +31968,12 @@ PrefabInstance:
         type: 3}
       propertyPath: spritesManager
       value: 
-      objectReference: {fileID: 391840401}
+      objectReference: {fileID: 0}
     - target: {fileID: 9087984262260284101, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
       propertyPath: individualInteractions
       value: 
-      objectReference: {fileID: 2099149885}
+      objectReference: {fileID: 0}
     - target: {fileID: 9087984262260284103, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
       propertyPath: m_Sprite
