@@ -8,6 +8,8 @@ public class Journal : MonoBehaviour
     public GameObject journalUI; 
     public GameObject[] journalPages;
     public GameObject[] interactions;
+	public GameObject[] fishes;
+	List<Fish> fishCaught;
     public GameObject[] lines;
     public PlayerController playerController;
     public PlayerSoundManager sounds;
@@ -17,17 +19,20 @@ public class Journal : MonoBehaviour
     bool paused;
     int pageIndex;
     int interactionIndex;
+	int fishIndex;
 
     float nextSwitchTime;
     float switchRate = 2f;
 
     private void Start()
     {
+		fishCaught = new List<Fish>();
         gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
         sounds = playerController.gameObject.GetComponent<PlayerSoundManager>();
         inventory = playerController.gameObject.GetComponent<PlayerInventory>();
 
         interactionIndex = 0;
+		fishIndex = 0;
         journalUI.SetActive(false);
         gm.paused = false;
 
@@ -36,11 +41,15 @@ public class Journal : MonoBehaviour
             interactions[i].SetActive(false);
         }
 
+		for (int i = 0; i < fishes.Length; i++)
+		{
+			fishes[i].SetActive(false);
+		}
+
     }
 
     private void Update()
     {
-
         if (inventory.hasAxe) 
         {
             lines[0].SetActive(true);
@@ -53,7 +62,7 @@ public class Journal : MonoBehaviour
 
 		if (gm.paused)
 		{
-			if (pageIndex == 4)
+			if (pageIndex == 6)
 			{
 				Cursor.visible = true;
 			}
@@ -141,6 +150,8 @@ public class Journal : MonoBehaviour
 
     public void UpdateInteractionPages(string name, string desc, Sprite sprite)
     {
+
+		
         //sounds.PlayPageTurn();
         interactions[interactionIndex].SetActive(true);
         interactions[interactionIndex].GetComponent<Image>().sprite = sprite;
@@ -151,5 +162,38 @@ public class Journal : MonoBehaviour
         interactionIndex++;
 
     }
+
+	public void UpdateFishPages(Fish fish)
+	{
+		if (!CheckIfExists(fish))
+		{
+			fishCaught.Add(fish);
+			fishes[fishIndex].SetActive(true);
+			fishes[fishIndex].GetComponent<Image>().sprite = fish.image;
+
+			fishes[fishIndex].transform.GetChild(0).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishName;
+			fishes[fishIndex].transform.GetChild(0).transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishDesc;
+			fishes[fishIndex].transform.GetChild(0).transform.GetChild(2).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishSize;
+			fishes[fishIndex].transform.GetChild(1).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.timesCaught.ToString();
+			fishIndex++;
+		}
+		else
+		{
+			fishes[fishIndex].transform.GetChild(1).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.timesCaught.ToString();
+
+		}
+	}
+
+	bool CheckIfExists(Fish fish)
+	{
+		if (fishCaught.Contains(fish))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 
 }
