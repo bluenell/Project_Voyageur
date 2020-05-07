@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69720c030a8e9ad44bc05b8282bcb295, type: 3}
   m_Name: Salmon
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  fishName: 
-  catchLocation: 
-  fishSize: 
+  id: 3
+  image: {fileID: 21300000, guid: 4c3497e34a4d55b41aee8312c6063f74, type: 3}
+  fishName: Salmon
+  fishSize: 71cm / 28in
+  fishDesc: 
+  timesCaught: 0

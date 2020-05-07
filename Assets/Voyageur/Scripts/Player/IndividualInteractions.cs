@@ -10,6 +10,7 @@ public class IndividualInteractions : MonoBehaviour
 	Animator playerAnimator;
 	GameObject player;
 	MontyStateManager montyStateManager;
+	public Journal journal;
 
 	[Header("General")]
 	bool movingTowards = false;
@@ -26,6 +27,7 @@ public class IndividualInteractions : MonoBehaviour
 	public Vector2 randomWaitTime;
 	public bool generated;
 	public float random;
+	public float randomFish;
 	public bool fishing;
 	public bool lineCast;
 	public bool firstPress;
@@ -138,7 +140,13 @@ public class IndividualInteractions : MonoBehaviour
 				{
 					if (timer < 1f)
 					{
-						playerAnimator.SetInteger("fishing_randomIndex", Random.Range(1, 5));
+						int randomFish = Random.Range(1, 5);
+						playerAnimator.SetInteger("fishing_randomIndex", randomFish);
+
+						fish[randomFish - 1].IncreaseTimesCaught();
+
+						journal.UpdateFishPages(fish[randomFish - 1]);
+
 						Debug.Log("caught");
 						timer = 0;
 						fishStage = 2;

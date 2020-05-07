@@ -4123,7 +4123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &225721516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6102,7 +6102,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1602839945}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -8523,7 +8523,7 @@ GameObject:
   - component: {fileID: 526262002}
   - component: {fileID: 526262001}
   m_Layer: 5
-  m_Name: 2
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11084,6 +11084,8 @@ MonoBehaviour:
   - {fileID: 1083681804}
   - {fileID: 225721515}
   - {fileID: 1514182421}
+  - {fileID: 49092241}
+  - {fileID: 1831802354}
   - {fileID: 1951872693}
   - {fileID: 458249231}
   interactions:
@@ -11095,6 +11097,11 @@ MonoBehaviour:
   - {fileID: 2119373454}
   - {fileID: 476682581}
   - {fileID: 574983764}
+  fishes:
+  - {fileID: 63002835}
+  - {fileID: 1747644307}
+  - {fileID: 2084616477}
+  - {fileID: 526261999}
   lines:
   - {fileID: 821223395}
   - {fileID: 1605238637}
@@ -20896,7 +20903,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 1306759416}
   m_TextComponent: {fileID: 1233653837}
   m_materialReferenceIndex: 1
@@ -26922,7 +26929,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 1602839946}
   m_TextComponent: {fileID: 538879158}
   m_materialReferenceIndex: 1
@@ -28455,7 +28462,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 1684300408}
   m_TextComponent: {fileID: 1356957243}
   m_materialReferenceIndex: 1
@@ -30156,7 +30163,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 1775097853}
   m_TextComponent: {fileID: 318672508}
   m_materialReferenceIndex: 1
@@ -34757,7 +34764,7 @@ GameObject:
   - component: {fileID: 2084616480}
   - component: {fileID: 2084616479}
   m_Layer: 5
-  m_Name: 1
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35020,6 +35027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a2ef4e51ea79343bae290cef0ca77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  journal: {fileID: 679066571}
   targetFound: 0
   timer: 0
   fishStage: 0
@@ -35027,9 +35035,16 @@ MonoBehaviour:
   randomWaitTime: {x: 5, y: 20}
   generated: 0
   random: 0
+  randomFish: 0
   fishing: 0
   lineCast: 0
   firstPress: 0
+  fish:
+  - {fileID: 11400000, guid: af301d6550484764cadda1537bb704a3, type: 2}
+  - {fileID: 11400000, guid: 95acb64f97e356d4cb50a18718cb7ff2, type: 2}
+  - {fileID: 11400000, guid: 9ec470d4af9ed344e9c617549122498e, type: 2}
+  - {fileID: 11400000, guid: edc176e3a19e04d4f976199e5a686cd5, type: 2}
+  - {fileID: 11400000, guid: 119f4647ab2a6ff479cc001e43dcebc0, type: 2}
   chopCount: 0
   hasLogs: 0
   pickedUp: 0
