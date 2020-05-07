@@ -20,6 +20,7 @@ public class IndividualInteractions : MonoBehaviour
 	public float timer;
 	[HideInInspector]
 	public int fishStage;
+	public int logStage;
 
 	[Header("Fishing")]
 	public Vector2 randomWaitTime;
@@ -38,6 +39,9 @@ public class IndividualInteractions : MonoBehaviour
 	public int chopCount = 0;
 	bool animTriggered;
 
+
+	public bool hasLogs;
+	public bool pickedUp;
 	private void Start()
 	{
 		player = GameObject.Find("Player");
@@ -203,10 +207,6 @@ public class IndividualInteractions : MonoBehaviour
 		if (chopCount > 3)
 		{
 			Debug.Log("done");
-			chopCount = 0;
-			player.GetComponent<PlayerInventory>().AddWood();
-			manager.interaction.MarkAsComplete();
-
 		}
 		else
 		{
@@ -223,6 +223,41 @@ public class IndividualInteractions : MonoBehaviour
 				Debug.Log(chopCount);
 			}
 		}
+	}
+
+
+	public void LogPile()
+	{
+		playerController.DisablePlayerInput();
+
+
+		if (playerController.CheckIfAtTarget(manager.interaction.transform.GetChild(0), false))
+		{
+			if (!pickedUp)
+			{
+				playerAnimator.SetTrigger("logs_PickUp");
+				pickedUp = true;
+			}
+
+		}
+
+
+		if (hasLogs)
+		{
+			playerController.facingRight = false;
+			playerAnimator.SetTrigger("logs_Walk");
+			playerController.MoveTowardsTarget(manager.interaction.transform.GetChild(1), false);
+			logStage = 2;
+		}
+
+
+		if (playerController.CheckIfAtTarget(manager.interaction.transform.GetChild(1), false))
+		{
+			playerAnimator.SetTrigger("logs_Drop");
+		}
+
+
+
 	}
 
 
