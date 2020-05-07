@@ -24,15 +24,10 @@ public class IndividualInteractions : MonoBehaviour
 
 	[Header("Fishing")]
 	public Vector2 randomWaitTime;
-	[HideInInspector]
 	public bool generated;
-	[HideInInspector]
 	public float random;
-	[HideInInspector]
 	public bool fishing;
-	[HideInInspector]
 	public bool lineCast;
-	[HideInInspector]
 	public bool firstPress;
 
 	[HideInInspector]
