@@ -165,7 +165,6 @@ public class Journal : MonoBehaviour
 
 	public void UpdateFishPages(Fish fish)
 	{
-
 		if (!CheckIfExists(fish))
 		{
 			fishCaught.Add(fish);
@@ -183,8 +182,6 @@ public class Journal : MonoBehaviour
 			fishes[fishIndex].transform.GetChild(1).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.timesCaught.ToString();
 
 		}
-
-
 	}
 
 	bool CheckIfExists(Fish fish)

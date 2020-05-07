@@ -48,6 +48,12 @@ public class IndividualInteractions : MonoBehaviour
 		spritesManager = GameObject.Find("ExtraSpritesManager").GetComponent<AdditionalSpritesManager>();
 		playerAnimator = player.transform.GetChild(0).GetComponent<Animator>();
 		montyStateManager = GameObject.Find("Monty").GetComponent<MontyStateManager>();
+
+		for (int i = 0; i < fish.Length; i++)
+		{
+			fish[i].timesCaught = 0;
+		}
+
 	}
 
 
