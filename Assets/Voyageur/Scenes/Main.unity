@@ -1769,7 +1769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &81130002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10732,7 +10732,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fishing is permitted anywhere along the route
+  m_text: Fishing is permitted anywhere along the route except for the water outside
+    the hut.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfdd42a121bc5e24197286b5bb547879, type: 2}
   m_sharedMaterial: {fileID: 9172503989111203976, guid: dfdd42a121bc5e24197286b5bb547879,
@@ -10802,12 +10803,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 627243063}
-    characterCount: 45
+    characterCount: 83
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 7
+    spaceCount: 13
+    wordCount: 14
     linkCount: 0
-    lineCount: 3
+    lineCount: 4
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -35549,7 +35550,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2060980281
 Transform:
   m_ObjectHideFlags: 0
