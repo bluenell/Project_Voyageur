@@ -6908,7 +6908,7 @@ MonoBehaviour:
   forceFaceRight: 0
   canBeCancelled: 0
   hasJournalEntry: 1
-  journal: {fileID: 0}
+  journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: ce5a513c8ca2d7144b63c7c9162c563a, type: 3}
   journalName: Squirrel
   journalDescription: i went up a somewhat hidden path and noticed this squirrel
@@ -9602,7 +9602,7 @@ MonoBehaviour:
   forceFaceRight: 0
   canBeCancelled: 1
   hasJournalEntry: 1
-  journal: {fileID: 0}
+  journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: 0946220df180bd446a2bdd9974acde03, type: 3}
   journalName: Deer
   journalDescription: i noticed some rustling in the bush. i waited and a deer showed
@@ -14781,7 +14781,7 @@ MonoBehaviour:
   forceFaceRight: 0
   canBeCancelled: 0
   hasJournalEntry: 1
-  journal: {fileID: 0}
+  journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106, type: 3}
   journalName: blue jay
   journalDescription: i managed to capture this blue jay but he quickly flew away
@@ -26017,7 +26017,7 @@ MonoBehaviour:
   forceFaceRight: 1
   canBeCancelled: 0
   hasJournalEntry: 0
-  journal: {fileID: 0}
+  journal: {fileID: 679066571}
   journalImage: {fileID: 0}
   journalName: 
   journalDescription: 
@@ -37809,7 +37809,7 @@ PrefabInstance:
         type: 3}
       propertyPath: journal
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 679066571}
     - target: {fileID: 6116965791367155483, guid: a693216344e2fbf41ac17dbbcd0fe94c,
         type: 3}
       propertyPath: hasJournalEntry

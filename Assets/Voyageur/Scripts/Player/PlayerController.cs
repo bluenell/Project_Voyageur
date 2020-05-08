@@ -304,8 +304,7 @@ public class PlayerController : MonoBehaviour
 						targetFound = true;
 						interactionType = "launch";
 					}
-
-					if (currentInventoryIndex != 2 && !carryingCanoe && inRangeOfCanoe)
+					else if (currentInventoryIndex != 2 && !carryingCanoe && inRangeOfCanoe)
 					{
 						targetFound = true;
 						interactionType = "pickUpCanoe";
