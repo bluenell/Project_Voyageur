@@ -305,6 +305,12 @@ public class PlayerController : MonoBehaviour
 						interactionType = "launch";
 					}
 
+					if (currentInventoryIndex != 2 && !carryingCanoe && inRangeOfCanoe)
+					{
+						targetFound = true;
+						interactionType = "pickUpCanoe";
+					}
+
 				}
 				else if (!carryingCanoe)
 				{

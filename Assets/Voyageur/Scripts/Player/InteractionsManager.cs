@@ -106,26 +106,28 @@ public class InteractionsManager : MonoBehaviour
 	}
 
 	
+	/*
+	
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Interaction")
 		{
 			interaction = collision.gameObject.GetComponent<Interaction>();
-			if (interaction.interactionName != "fetch" || interaction.requiredTool != 1) 
+
+			if (interaction.interactionName != "Fetch" || interaction.requiredTool != 1) 
 			{
 				inRange = false;
+
 				if (interaction.GetCanBeCancelled())
 				{
 					interaction.CancelInteraction();
 				}
 				interaction = null;
 			}
-
-
-
-
 		}
 	}
+
+	*/
 
 	
 }
