@@ -105,14 +105,13 @@ public class InteractionsManager : MonoBehaviour
 
 	}
 
-
-	/*
+	
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Interaction")
 		{
 			interaction = collision.gameObject.GetComponent<Interaction>();
-			if (interaction.interactionName != "fetch")
+			if (interaction.interactionName != "fetch" || interaction.requiredTool != 1) 
 			{
 				inRange = false;
 				if (interaction.GetCanBeCancelled())
@@ -127,7 +126,8 @@ public class InteractionsManager : MonoBehaviour
 
 		}
 	}
-	*/
+
+	
 }
 	
 	

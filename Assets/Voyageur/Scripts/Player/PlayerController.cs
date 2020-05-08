@@ -221,6 +221,8 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
 		{
+			Debug.Log("Button");
+
 			if (!usingAxe || !usingRod)
 			{
 				if (carryingCanoe)
