@@ -116,6 +116,7 @@ public class AnimationEventsHandler : MonoBehaviour
 	{
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
 
+		GameObject.Find("island02_B01").GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[3];
 		player.GetComponent<PlayerController>().usingHands = false;
 		individualInteractions.hasLogs = false;
 		player.GetComponent<BoxCollider2D>().enabled = true;

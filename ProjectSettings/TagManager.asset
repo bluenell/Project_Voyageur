@@ -46,7 +46,7 @@ TagManager:
   - Unwalkable
   - MuddyPath
   - MainPath
-  - 
+  - Ignore Fire
   - 
   - 
   - 
@@ -61,4 +61,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ignore Fire Light
+    uniqueID: 3187819053
     locked: 0

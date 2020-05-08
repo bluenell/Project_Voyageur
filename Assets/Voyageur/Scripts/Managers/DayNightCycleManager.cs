@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[ExecuteInEditMode]
 public class DayNightCycleManager : MonoBehaviour
 {
 	[Range(0, 24)]// Using a range puts a slider in the inspector, making adjustments really easy and visual
