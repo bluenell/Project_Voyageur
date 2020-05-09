@@ -32,25 +32,18 @@ public class Interaction : MonoBehaviour
 	public string journalName;
 	[TextArea]
 	public string journalDescription;
+	
 
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space)) 
-		{
-			MarkAsComplete();
-		}
-	}
 
 	public void MarkAsComplete()
 	{
-		//Debug.Log(name + " is complete");
+		Debug.Log(name + " is complete");
 		complete = true;
-		manager.interaction = null;
 		manager.inRange = false;
 		interactionCollider.enabled = false;
+		manager.interaction = null;
 
-
-		if (!cancelled && hasJournalEntry)
+		if (hasJournalEntry)
 		{
 			journal.UpdateInteractionPages(journalName, journalDescription, journalImage);
 		}

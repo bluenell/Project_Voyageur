@@ -270,17 +270,6 @@ public class PlayerController : MonoBehaviour
 					{
 						usingAxe = true;
 
-
-						if (interactionsManager.interaction.forceFaceRight)
-						{
-							sprite.flipX = false;
-						}
-						else
-						{
-							sprite.flipX = true;
-						}
-
-
 					}
 					if (currentInventoryIndex == 2 && interactionsManager.interaction.requiredTool == 2 && !individualInteractions.fishing && inventory.hasRod)
 					{
@@ -304,8 +293,7 @@ public class PlayerController : MonoBehaviour
 						targetFound = true;
 						interactionType = "launch";
 					}
-
-					if (currentInventoryIndex != 2 && !carryingCanoe && inRangeOfCanoe)
+					else if (currentInventoryIndex != 2 && !carryingCanoe && inRangeOfCanoe)
 					{
 						targetFound = true;
 						interactionType = "pickUpCanoe";
