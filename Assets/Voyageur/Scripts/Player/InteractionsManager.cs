@@ -103,10 +103,7 @@ public class InteractionsManager : MonoBehaviour
 			interaction = collision.gameObject.GetComponent<Interaction>();
 		}
 
-	}
-
-	
-	
+	}	
 	
 	private void OnTriggerExit2D(Collider2D collision)
 	{
