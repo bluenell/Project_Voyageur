@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
 	}
 	private void FixedUpdate()
 	{
-		if (!usingRod || !usingAxe)
+		if (!usingRod && !usingAxe)
 		{
 			Move();
 		}

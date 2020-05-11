@@ -103,10 +103,7 @@ public class InteractionsManager : MonoBehaviour
 			interaction = collision.gameObject.GetComponent<Interaction>();
 		}
 
-	}
-
-	
-	/*
+	}	
 	
 	private void OnTriggerExit2D(Collider2D collision)
 	{
@@ -114,20 +111,15 @@ public class InteractionsManager : MonoBehaviour
 		{
 			interaction = collision.gameObject.GetComponent<Interaction>();
 
-			if (interaction.interactionName != "Fetch" || interaction.requiredTool != 1) 
+			if (interaction.interactionName == "Fishing")
 			{
 				inRange = false;
-
-				if (interaction.GetCanBeCancelled())
-				{
-					interaction.CancelInteraction();
-				}
 				interaction = null;
 			}
 		}
 	}
 
-	*/
+	
 
 	
 }

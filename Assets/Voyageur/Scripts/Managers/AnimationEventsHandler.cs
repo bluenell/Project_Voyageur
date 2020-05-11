@@ -80,6 +80,7 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(1).gameObject.SetActive(false);
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(2).gameObject.SetActive(true);
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(3).gameObject.SetActive(false);
+		player.GetComponent<PlayerController>().usingAxe = false;
 
 		individualInteractions.chopCount = 0;
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
@@ -92,6 +93,7 @@ public class AnimationEventsHandler : MonoBehaviour
 		individualInteractions.chopCount = 0;
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
 		player.GetComponent<PlayerInventory>().AddWood();
+		player.GetComponent<PlayerController>().usingAxe = false;
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
 
 

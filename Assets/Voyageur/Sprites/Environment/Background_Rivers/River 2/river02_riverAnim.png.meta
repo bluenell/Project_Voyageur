@@ -111,9 +111,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2160
-        width: 4600
-        height: 1080
+        y: 1176
+        width: 3710
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: river02_riverAnim_1
       rect:
         serializedVersion: 2
-        x: 4600
-        y: 2160
-        width: 4600
-        height: 1080
+        x: 0
+        y: 980
+        width: 3710
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: river02_riverAnim_2
       rect:
         serializedVersion: 2
-        x: 9200
-        y: 2160
-        width: 4600
-        height: 1080
+        x: 0
+        y: 784
+        width: 3710
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,9 +174,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1080
-        width: 4600
-        height: 1080
+        y: 588
+        width: 3710
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: river02_riverAnim_4
       rect:
         serializedVersion: 2
-        x: 4600
-        y: 1080
-        width: 4600
-        height: 1080
+        x: 0
+        y: 392
+        width: 3710
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: river02_riverAnim_5
       rect:
         serializedVersion: 2
-        x: 9200
-        y: 1080
-        width: 4600
-        height: 1080
+        x: 0
+        y: 196
+        width: 3710
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,8 +238,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 4600
-        height: 1080
+        width: 3710
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
