@@ -138,9 +138,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2160
-        width: 3840
-        height: 1080
+        y: 560
+        width: 2630
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,8 +148,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f34aa4d1679cd7270800000000000000
-      internalID: 8249971601547371583
+      spriteID: 8f85d4ece5ecab760800000000000000
+      internalID: 7474513438158182648
       vertices: []
       indices: 
       edges: []
@@ -158,10 +158,10 @@ TextureImporter:
       name: island02_river_anim_1
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 2160
-        width: 3840
-        height: 1080
+        x: 2630
+        y: 560
+        width: 2630
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,8 +169,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4f30ba56f64f7ca0800000000000000
-      internalID: -6017012553246294194
+      spriteID: f7d1ed3574c72ec40800000000000000
+      internalID: 5540127137410719103
       vertices: []
       indices: 
       edges: []
@@ -179,10 +179,10 @@ TextureImporter:
       name: island02_river_anim_2
       rect:
         serializedVersion: 2
-        x: 7680
-        y: 2160
-        width: 3840
-        height: 1080
+        x: 5260
+        y: 560
+        width: 2630
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d26b41a1a020d2420800000000000000
-      internalID: 2606742001727878701
+      spriteID: ea6072986cb69fdf0800000000000000
+      internalID: -145967012464097618
       vertices: []
       indices: 
       edges: []
@@ -201,9 +201,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1080
-        width: 3840
-        height: 1080
+        y: 280
+        width: 2630
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,8 +211,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd317023257929770800000000000000
-      internalID: 8616115416395617243
+      spriteID: 9f04264d0183265c0800000000000000
+      internalID: -4223751855586262791
       vertices: []
       indices: 
       edges: []
@@ -221,10 +221,10 @@ TextureImporter:
       name: island02_river_anim_4
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 1080
-        width: 3840
-        height: 1080
+        x: 2630
+        y: 280
+        width: 2630
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,8 +232,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d977dd935b621480800000000000000
-      internalID: -8929957104247670316
+      spriteID: b6f35f44ce5450c30800000000000000
+      internalID: 4324939898230751083
       vertices: []
       indices: 
       edges: []
@@ -242,10 +242,10 @@ TextureImporter:
       name: island02_river_anim_5
       rect:
         serializedVersion: 2
-        x: 7680
-        y: 1080
-        width: 3840
-        height: 1080
+        x: 5260
+        y: 280
+        width: 2630
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,8 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a452927a648123c00800000000000000
-      internalID: 878791569021936970
+      spriteID: 48bb7ddcd69cbf110800000000000000
+      internalID: 1295850791241235332
       vertices: []
       indices: 
       edges: []
@@ -265,8 +265,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3840
-        height: 1080
+        width: 2630
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,29 +274,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 465a07468c144c360800000000000000
-      internalID: 7188943234124522852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: island02_river_anim_7
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 0
-        width: 3840
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c81d97969f2348170800000000000000
-      internalID: 8179718870009500044
+      spriteID: 2179e403c54e05620800000000000000
+      internalID: 2760957656176695058
       vertices: []
       indices: 
       edges: []
