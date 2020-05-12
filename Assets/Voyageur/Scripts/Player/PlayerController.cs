@@ -353,7 +353,7 @@ public class PlayerController : MonoBehaviour
 			//WhistleMonty();
 		}
 
-		if (Input.GetKey(KeyCode.LeftControl) && gm.GetCurrentIsland() != 0 && Input.GetKeyDown(KeyCode.R))
+		if (gm.GetCurrentIsland() != 0 && Input.GetKeyDown(KeyCode.R))
 		{
 			gm.HardReset();
 		}
