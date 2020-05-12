@@ -102,7 +102,7 @@ public class Journal : MonoBehaviour
 
         if (gm.paused)
         {
-            if (Input.GetButtonDown("InventoryRight") || (Input.GetKeyDown(KeyCode.RightArrow)))
+            if (Input.GetButtonDown("InventoryRight") || (Input.GetKeyDown(KeyCode.RightArrow)) || (Input.GetKeyDown(KeyCode.D)))
             {
                
                 if (pageIndex == journalPages.Length -1)
@@ -122,7 +122,7 @@ public class Journal : MonoBehaviour
 
                 journalPages[pageIndex].SetActive(true);
             }
-            if (Input.GetButtonDown("InventoryLeft") || (Input.GetKeyDown(KeyCode.LeftArrow)))
+            if (Input.GetButtonDown("InventoryLeft") || (Input.GetKeyDown(KeyCode.LeftArrow)) || (Input.GetKeyDown(KeyCode.A)))
             {
                
                 if (pageIndex == 0)
