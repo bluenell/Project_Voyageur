@@ -31,6 +31,7 @@ public class MontyStateActions : MonoBehaviour
 	private void Start()
 	{
 		sprite = transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
+		sprite.enabled = false;
 		stateVariables = GetComponent<MontyStateVariables>();
 		stateManager = GetComponent<MontyStateManager>();
 		anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
@@ -72,6 +73,7 @@ public class MontyStateActions : MonoBehaviour
 	{
 		if (stateVariables.montyReadyToGetIn && !stateVariables.jumping)
 		{
+			sprite.enabled = true;
 			transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = false;
 
 			anim.SetBool("isWalking", false);
