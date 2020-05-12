@@ -64,6 +64,12 @@ public class GameManager : MonoBehaviour
 		monty.GetComponent<MontyStateActions>().currentlyOnPath = false;
 		monty.GetComponent<MontyStateManager>().inFetch = false;
 
+		monty.GetComponent<MontyStateManager>().currentState = "roam";
+		monty.GetComponent<MontyStateManager>().SwitchState();
+
+
+
+
 
 	}
 
