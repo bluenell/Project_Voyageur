@@ -18,6 +18,9 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	#region Functions
 
+
+
+
 	public void ChangeSpriteLayer()
 	{
 		GetComponent<SpriteRenderer>().sortingOrder = GameObject.Find("CanoeGFX").GetComponent<SpriteRenderer>().sortingOrder - 1;

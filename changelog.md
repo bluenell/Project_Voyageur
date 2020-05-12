@@ -4,6 +4,8 @@ _12th May 2020_
 ### Added
 - Fire sprite & lighting for the campfire interaction
 
+### Fixed
+- The white screen bug no longer happens when pressing play from the journal
 
 # V3.0.1
 _11th May 2020_
