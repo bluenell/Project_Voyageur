@@ -352,6 +352,11 @@ public class PlayerController : MonoBehaviour
 		{
 			//WhistleMonty();
 		}
+
+		if (gm.GetCurrentIsland() != 0 && Input.GetKeyDown(KeyCode.R))
+		{
+			gm.HardReset();
+		}
 	}
 
 	void Move()

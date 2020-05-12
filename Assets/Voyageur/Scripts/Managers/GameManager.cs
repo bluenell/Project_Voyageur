@@ -9,8 +9,9 @@ public class GameManager : MonoBehaviour
     public int currentIsland;
     public bool inTutorial;
 
-    public GameObject player, monty;
+    public GameObject player, monty, canoe;
     public Animator fade;
+	public TransitionHandler transition;
     public bool paused;
 
 	private void Start()
@@ -47,6 +48,30 @@ public class GameManager : MonoBehaviour
         StartCoroutine(Delay());
 
     }
+
+
+	public void HardReset()
+	{
+		canoe.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(0).transform.position;
+		player.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(1).transform.position;
+		monty.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(2).transform.position;
+
+		player.GetComponent<PlayerController>().currentInventoryIndex = 0;
+		player.GetComponent<PlayerController>().usingAxe = false;
+		player.GetComponent<PlayerController>().usingRod = false;
+		player.GetComponent<PlayerController>().usingHands = false;
+
+		monty.GetComponent<MontyStateActions>().currentlyOnPath = false;
+		monty.GetComponent<MontyStateManager>().inFetch = false;
+
+		monty.GetComponent<MontyStateManager>().currentState = "roam";
+		monty.GetComponent<MontyStateManager>().SwitchState();
+
+
+
+
+
+	}
 
 	public void EndGame()
 	{
