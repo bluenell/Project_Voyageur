@@ -9,6 +9,7 @@ public class AnimationEventsHandler : MonoBehaviour
 	public GameObject player;
 	public GameObject door;
 	public GameObject logPile;
+	public GameObject fire;
 	public InteractionsManager interactionsManager;
 	public AdditionalSpritesManager spritesManager;
 	public IndividualInteractions individualInteractions;
@@ -114,19 +115,20 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(3).gameObject.SetActive(false);
 	}
 
-	public void LogPile()
+	public void StartFire()
+	{
+		fire.SetActive(true);		
+	}
+
+	public void FinishFire()
 	{
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
-
-		GameObject.Find("island02_B01").GetComponent<SpriteRenderer>().sprite = spritesManager.sprites[3];
 		player.GetComponent<PlayerController>().usingHands = false;
 		individualInteractions.hasLogs = false;
 		player.GetComponent<BoxCollider2D>().enabled = true;
 		player.GetComponent<PlayerController>().targetFound = false;
 
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
-
-
 
 	}
 
