@@ -219,7 +219,7 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E))
+		if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
 		{
 			Debug.Log("Button");
 
