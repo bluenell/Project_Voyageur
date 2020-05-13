@@ -21,10 +21,10 @@ public class MenuControls : MonoBehaviour
     }
 
 
-    public void MainMenu()
-    {
-        StartCoroutine(Delay(0, 0));
-    }
+	public void MainMenu()
+	{
+		StartCoroutine(Delay(0, 0));
+	}
 
     IEnumerator Delay(int sceneIndex, int time)
     {
