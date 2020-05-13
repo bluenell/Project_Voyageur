@@ -52,6 +52,9 @@ public class GameManager : MonoBehaviour
 
 	public void HardReset()
 	{
+
+		ResumeGame();
+
 		canoe.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(0).transform.position;
 		player.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(1).transform.position;
 		monty.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(2).transform.position;
@@ -87,11 +90,13 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
+		paused = true;
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1;
+		paused = false;
 
     }
 

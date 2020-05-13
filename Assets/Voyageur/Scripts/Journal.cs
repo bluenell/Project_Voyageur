@@ -48,6 +48,14 @@ public class Journal : MonoBehaviour
 
     }
 
+
+	public void HardReset()
+	{
+		journalUI.SetActive(false);
+		gm.HardReset();
+	}
+
+
     private void Update()
     {
         if (inventory.hasAxe) 
