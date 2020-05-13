@@ -169,6 +169,14 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	}
 
+
+	public void EnablePlayerMovement()
+	{
+
+		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
+
+	}
+
 	#endregion
 
 	#region SoundFX

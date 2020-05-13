@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -174,7 +175,8 @@ public class Journal : MonoBehaviour
 	public void UpdateFishPages(Fish fish)
 	{
 		if (!CheckIfExists(fish))
-		{
+		{     
+
 			fishCaught.Add(fish);
 			fishes[fishIndex].SetActive(true);
 			fishes[fishIndex].GetComponent<Image>().sprite = fish.image;
@@ -182,12 +184,14 @@ public class Journal : MonoBehaviour
 			fishes[fishIndex].transform.GetChild(0).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishName;
 			fishes[fishIndex].transform.GetChild(0).transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishDesc;
 			fishes[fishIndex].transform.GetChild(0).transform.GetChild(2).GetComponent<TMPro.TextMeshProUGUI>().text = fish.fishSize;
+
 			fishes[fishIndex].transform.GetChild(1).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.timesCaught.ToString();
 			fishIndex++;
 		}
 		else
-		{
-			fishes[fishIndex].transform.GetChild(1).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.timesCaught.ToString();
+		{   
+            int newIndex = GetIndexOfFishCaughtInList(fish);
+        	fishes[newIndex].transform.GetChild(1).transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = fish.timesCaught.ToString();
 
 		}
 	}
@@ -200,8 +204,13 @@ public class Journal : MonoBehaviour
 		}
 		else
 		{
-			return false;
+		    return false;
 		}
-	}
+    }
+
+    int GetIndexOfFishCaughtInList(Fish fish)
+    {        
+        return fishCaught.IndexOf(fish);
+    }
 
 }

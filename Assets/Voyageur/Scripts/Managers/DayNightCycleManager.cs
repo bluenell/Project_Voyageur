@@ -9,7 +9,7 @@ public class DayNightCycleManager : MonoBehaviour
 	[Range(0, 24)]// Using a range puts a slider in the inspector, making adjustments really easy and visual
 	public int colourArrayIndex; //stores the current index of the colour array (essentially is the time of day)
 
-	Camera camera;
+	Camera myCamera;
 
 	UnityEngine.Experimental.Rendering.Universal.Light2D globalLight; //The global light for the scene
 	public Color[] colours; //the array of colours for the cycle. Using the Color data type allows for easy and visual colour customisation
@@ -29,7 +29,7 @@ public class DayNightCycleManager : MonoBehaviour
  [ExecuteAlways]   
  void Start()
     {
-		camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+		myCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		globalLight = GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
 		colourArrayIndex = 6;
 		globalLight.color = colours[colourArrayIndex];
@@ -62,7 +62,7 @@ public class DayNightCycleManager : MonoBehaviour
 			int firstColor = colourArrayIndex % colours.Length;
 			int secondColor = (colourArrayIndex + 1) % colours.Length;
 			globalLight.color = Color.Lerp(colours[firstColor], colours[secondColor], lerpValue);
-			camera.backgroundColor = Color.Lerp(colours[firstColor], colours[secondColor], lerpValue);
+			myCamera.backgroundColor = Color.Lerp(colours[firstColor], colours[secondColor], lerpValue);
 
 		}
 

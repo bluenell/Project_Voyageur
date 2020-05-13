@@ -14,11 +14,6 @@ public class Fish : ScriptableObject
 
 	public int timesCaught;
 
-	public void IncreaseTimesCaught()
-	{
-		Debug.Log("Increase");
-		timesCaught++;
-	}
 
 
 

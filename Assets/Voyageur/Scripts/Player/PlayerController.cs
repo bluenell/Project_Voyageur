@@ -204,24 +204,28 @@ public class PlayerController : MonoBehaviour
 	{
 		if (Time.time >= nextSwitchTime)
 		{
-			if (Input.GetButtonDown("InventoryLeft"))
+			if (!usingAxe && !usingRod)
 			{
-				playerSoundManager.PlayItemSwitch();
-				CycleInventory("left");
-				nextSwitchTime = Time.time + 1f / switchRate;
-			}
-			if (Input.GetButtonDown("InventoryRight") || Input.GetKeyDown(KeyCode.Tab))
-			{
-				playerSoundManager.PlayItemSwitch();
-				CycleInventory("right");
-				nextSwitchTime = Time.time + 1f / switchRate;
+				if (Input.GetButtonDown("InventoryLeft"))
+				{
+					playerSoundManager.PlayItemSwitch();
+					CycleInventory("left");
+					nextSwitchTime = Time.time + 1f / switchRate;
+				}
+				if (Input.GetButtonDown("InventoryRight") || Input.GetKeyDown(KeyCode.Tab))
+				{
+					playerSoundManager.PlayItemSwitch();
+					CycleInventory("right");
+					nextSwitchTime = Time.time + 1f / switchRate;
 
+				}
 			}
+			
 		}
 
 		if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
 		{
-			Debug.Log("Button");
+			//Debug.Log("Button");
 
 			if (!usingAxe && !usingRod)
 			{
@@ -349,6 +353,8 @@ public class PlayerController : MonoBehaviour
 							
 							Debug.Log("take screenshot");
 							anim.SetTrigger("cannot");
+							DisablePlayerInput();
+							EnablePlayerInput(1f);
 
 							string date = System.DateTime.Now.ToString();
 							date = date.Replace("/", "-");
@@ -362,6 +368,8 @@ public class PlayerController : MonoBehaviour
 						else
 						{
 							anim.SetTrigger("cannot");
+							DisablePlayerInput();
+
 
 						}
 
@@ -373,9 +381,7 @@ public class PlayerController : MonoBehaviour
 		{
 			playingFetch = false;
 			//targetFound = false;
-			//usingRod = false;
-
-			
+			//usingRod = false;	
 
 		}
 

@@ -17,4 +17,4 @@ MonoBehaviour:
   fishName: trout
   fishSize: 51cm / 20in
   fishDesc: i caught a trout
-  timesCaught: 1
+  timesCaught: 0
