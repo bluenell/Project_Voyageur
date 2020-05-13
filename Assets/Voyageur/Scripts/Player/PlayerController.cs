@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour
 		{
 			Debug.Log("Button");
 
-			if (!usingAxe || !usingRod)
+			if (!usingAxe && !usingRod)
 			{
 				if (carryingCanoe)
 				{
@@ -266,7 +266,7 @@ public class PlayerController : MonoBehaviour
 
 				else if (!carryingCanoe && interactionsManager.inRange && !interactionsManager.interaction.GetComplete())
 				{
-					if (currentInventoryIndex == 1 && interactionsManager.interaction.requiredTool ==1 && inventory.hasAxe)
+					if (currentInventoryIndex == 1 && interactionsManager.interaction.requiredTool == 1 && inventory.hasAxe)
 					{
 						usingAxe = true;
 
@@ -276,7 +276,7 @@ public class PlayerController : MonoBehaviour
 						if ((interactionsManager.interaction.forceFaceRight && facingRight) || (!interactionsManager.interaction.forceFaceRight && !facingRight))
 						{
 							usingRod = true;
-						}				
+						}
 
 
 					}
@@ -336,6 +336,25 @@ public class PlayerController : MonoBehaviour
 					{
 						targetFound = false;
 						interactionType = "";
+
+	
+
+
+						if (currentInventoryIndex == 3)
+						{
+							UseItem();
+						}
+						else if (currentInventoryIndex == 4)
+						{
+							Debug.Log("take screenshot");
+							anim.SetTrigger("cannot");
+						}
+						else
+						{
+							anim.SetTrigger("cannot");
+
+						}
+
 					}
 				}
 			}
@@ -345,6 +364,9 @@ public class PlayerController : MonoBehaviour
 			playingFetch = false;
 			//targetFound = false;
 			//usingRod = false;
+
+			
+
 		}
 
 
