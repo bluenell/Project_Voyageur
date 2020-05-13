@@ -346,8 +346,18 @@ public class PlayerController : MonoBehaviour
 						}
 						else if (currentInventoryIndex == 4)
 						{
+							
 							Debug.Log("take screenshot");
 							anim.SetTrigger("cannot");
+
+							string date = System.DateTime.Now.ToString();
+							date = date.Replace("/", "-");
+							date = date.Replace(" ", "_");
+							date = date.Replace(":", "-");
+
+							ScreenCapture.CaptureScreenshot(Application.dataPath + "/Screenshots/Screenshot_" + date + ".png");
+							Debug.Log("Screenshot Saved");
+
 						}
 						else
 						{
@@ -374,6 +384,9 @@ public class PlayerController : MonoBehaviour
 		{
 			//WhistleMonty();
 		}
+
+			
+		
 	}
 
 	void Move()
