@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
 
 	public void HardReset()
 	{
+        PlayerController playerController = player.GetComponent<PlayerController>();
 
 		ResumeGame();
 
@@ -59,10 +60,14 @@ public class GameManager : MonoBehaviour
 		player.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(1).transform.position;
 		monty.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(2).transform.position;
 
-		player.GetComponent<PlayerController>().currentInventoryIndex = 0;
-		player.GetComponent<PlayerController>().usingAxe = false;
-		player.GetComponent<PlayerController>().usingRod = false;
-		player.GetComponent<PlayerController>().usingHands = false;
+		playerController.currentInventoryIndex = 0;
+		playerController.usingAxe = false;
+		playerController.usingRod = false;
+		playerController.usingHands = false;
+        playerController.interactionType = null;
+        playerController.isMoving = false;
+        
+        player.GetComponent<InteractionsManager>().interaction = null;
 
 		monty.GetComponent<MontyStateActions>().currentlyOnPath = false;
 		monty.GetComponent<MontyStateManager>().inFetch = false;

@@ -36591,7 +36591,6 @@ MonoBehaviour:
   randomFish: 0
   fishing: 0
   lineCast: 0
-  firstPress: 0
   failed: 0
   fish:
   - {fileID: 11400000, guid: af301d6550484764cadda1537bb704a3, type: 2}

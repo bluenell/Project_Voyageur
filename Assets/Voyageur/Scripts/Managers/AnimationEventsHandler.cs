@@ -99,12 +99,6 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<PlayerInventory>().AddWood();
 		player.GetComponent<PlayerController>().usingAxe = false;
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
-
-
-
-
-
-
 	}
 
 	public void SetHasLogs()

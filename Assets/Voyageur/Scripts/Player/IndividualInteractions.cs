@@ -13,7 +13,6 @@ public class IndividualInteractions : MonoBehaviour
 	public Journal journal;
 
 	[Header("General")]
-	bool movingTowards = false;
 	public bool targetFound;
 
 	
@@ -30,7 +29,6 @@ public class IndividualInteractions : MonoBehaviour
 	public float randomFish;
 	public bool fishing;
 	public bool lineCast;
-	public bool firstPress;
 	public bool failed;
 	public Fish[] fish;
 
