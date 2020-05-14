@@ -31,6 +31,7 @@ public class IndividualInteractions : MonoBehaviour
 	public bool fishing;
 	public bool lineCast;
 	public bool firstPress;
+	public bool failed;
 	public Fish[] fish;
 
 	[HideInInspector]
@@ -161,8 +162,9 @@ public class IndividualInteractions : MonoBehaviour
 						fishStage = 2;
 					}
 				}
-				else if (timer > 1f)
+				else if (timer > 1f && !failed)
 				{
+					failed = true;
 					Debug.Log("Didn't reel");
 					playerAnimator.SetTrigger("fishing_fail");
 

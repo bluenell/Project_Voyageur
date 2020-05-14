@@ -36592,6 +36592,7 @@ MonoBehaviour:
   fishing: 0
   lineCast: 0
   firstPress: 0
+  failed: 0
   fish:
   - {fileID: 11400000, guid: af301d6550484764cadda1537bb704a3, type: 2}
   - {fileID: 11400000, guid: 95acb64f97e356d4cb50a18718cb7ff2, type: 2}

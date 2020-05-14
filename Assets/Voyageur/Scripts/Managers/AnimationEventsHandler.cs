@@ -151,6 +151,7 @@ public class AnimationEventsHandler : MonoBehaviour
 	public void FinishFishing()
 	{
 
+		individualInteractions.failed = false;
 		individualInteractions.lineCast = false;
 		individualInteractions.timer = 0;
 		individualInteractions.generated = false;
