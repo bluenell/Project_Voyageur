@@ -15,28 +15,6 @@ public class PlayerInventory : MonoBehaviour
 	int fishCount;
 	public bool hasStick;
 
-	public SpriteRenderer axe, rod;
-
-	public void DisplayAxe()
-	{
-		axe.enabled = true;
-		rod.enabled = false;
-	}
-
-	public void DisplayRod()
-	{
-		axe.enabled = false;
-		rod.enabled = true;
-	}
-
-	public void HideAxe()
-	{
-		axe.enabled = false;
-	}
-	public void HideRod()
-	{
-		rod.enabled = false;
-	}
 
 	public void SortInventory()
 	{

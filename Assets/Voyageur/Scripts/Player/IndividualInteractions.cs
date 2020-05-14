@@ -13,7 +13,6 @@ public class IndividualInteractions : MonoBehaviour
 	public Journal journal;
 
 	[Header("General")]
-	bool movingTowards = false;
 	public bool targetFound;
 
 	
@@ -23,14 +22,14 @@ public class IndividualInteractions : MonoBehaviour
 	public int fishStage;
 	public int logStage;
 
-	[Header("Fishing")]
+	[Header("Fishing")]	
 	public Vector2 randomWaitTime;
 	public bool generated;
 	public float random;
 	public float randomFish;
 	public bool fishing;
 	public bool lineCast;
-	public bool firstPress;
+	public bool failed;
 	public Fish[] fish;
 
 	[HideInInspector]
@@ -55,8 +54,6 @@ public class IndividualInteractions : MonoBehaviour
 		}
 
 	}
-
-
 	private void Update()
 	{
 		if (fishing)
@@ -65,10 +62,9 @@ public class IndividualInteractions : MonoBehaviour
 		}
 	}
 
-
 	Animator anim;
 
-	#region InputInteractions
+#region InputInteractions
 	void Sleep()
 	{
 		//check time
@@ -102,21 +98,27 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Fishing()
 	{
+
+		// When this method is running, the player is fishing
 		fishing = true;
 
+		// Checking if the player has pressed the interact button with the rod out and in a suitable location
 		if (playerController.usingRod)
 		{
+			// Disabling movement so the player can't move around whilst fishing
 			playerController.DisablePlayerInput();
 
+			// Checking if the player is in the stage of the fishing minigame (waiting for a bite)
 			if (fishStage == 0)
 			{
+				// This check makes sure the "fishing_cast" trigger in the animator is deactivated
 				if (!lineCast)
 				{
 					playerAnimator.SetTrigger("fishing_cast");
 					lineCast = true;
 				}
 
-				Debug.Log("waiting for bite");
+				//Debug.Log("waiting for bite");
 
 				if (!generated)
 				{
@@ -126,7 +128,7 @@ public class IndividualInteractions : MonoBehaviour
 
 				if (timer >= random)
 				{
-					Debug.Log("Bite");
+					//Debug.Log("Bite");
 					playerAnimator.SetTrigger("fishing_bite");
 					timer = 0;
 					generated = false;
@@ -135,7 +137,7 @@ public class IndividualInteractions : MonoBehaviour
 				else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A")) && timer < random && timer > 1f)
 				{
 					playerAnimator.SetTrigger("fishing_fail");
-					Debug.Log("reel too early");
+					//Debug.Log("reel too early");
 				}
 
 			}
@@ -149,17 +151,18 @@ public class IndividualInteractions : MonoBehaviour
 						int randomFish = Random.Range(1, 5);
 						playerAnimator.SetInteger("fishing_randomIndex", randomFish);
 
-						fish[randomFish - 1].IncreaseTimesCaught();
+						fish[randomFish - 1].timesCaught++;
 
 						journal.UpdateFishPages(fish[randomFish - 1]);
 
-						Debug.Log("caught");
+						//Debug.Log("caught");
 						timer = 0;
 						fishStage = 2;
 					}
 				}
-				else if (timer > 1f)
+				else if (timer > 1f && !failed)
 				{
+					failed = true;
 					Debug.Log("Didn't reel");
 					playerAnimator.SetTrigger("fishing_fail");
 
@@ -184,8 +187,6 @@ public class IndividualInteractions : MonoBehaviour
 			}
 		}
 	}
-
-
 
 
 	public void Chop()
@@ -286,23 +287,23 @@ public class IndividualInteractions : MonoBehaviour
 	}
 
 
-
-	void LightFire()
-	{
-		//check if wood
-		//play animation
-		//play sound
-		//create fire object
-		
-	}
-
 	void InvestigateMine()
 	{
 		//play animation
 	}
 
+	public void Fetch()
+	{
+		//Debug.Log("enter fetch");
+		montyStateManager.inFetch = true;
+		montyStateManager.currentState = "fetch";
+		montyStateManager.SwitchState();
+	}
+
 	#endregion 
 
+
+#region Ambient Interactions
 	public void Squirrel()
 	{
 		manager.interaction.gameObject.transform.GetChild(0).gameObject.SetActive(true);
@@ -351,15 +352,9 @@ public class IndividualInteractions : MonoBehaviour
 			manager.interaction.MarkAsComplete();
 		}
 	}
+#endregion
 
-
-	public void Fetch()
-	{
-		//Debug.Log("enter fetch");
-		montyStateManager.inFetch = true;
-		montyStateManager.currentState = "fetch";
-		montyStateManager.SwitchState();
-	}
+	
 
 
 }

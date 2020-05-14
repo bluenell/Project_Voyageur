@@ -78,7 +78,6 @@ public class PlayerController : MonoBehaviour
 
 
 	PlayerInventory inventory;
-	Animator axeAnim, rodAnim;
 	public int currentInventoryIndex;
 
 	public float switchRate = 2f;
@@ -129,8 +128,6 @@ public class PlayerController : MonoBehaviour
 		ySpeed = defaultYSpeed;
 		canoeWalkSpeed = defaultCanoeWalkSpeed;
 
-		axeAnim = inventory.axe.gameObject.GetComponent<Animator>();
-		rodAnim = inventory.rod.gameObject.GetComponent<Animator>();
 	}
 	private void FixedUpdate()
 	{
@@ -143,37 +140,6 @@ public class PlayerController : MonoBehaviour
 	private void Update()
 	{
 		HandleInput();
-
-		if (carryingCanoe)
-		{
-			axeAnim.SetBool("isCarrying", true);
-			rodAnim.SetBool("isCarrying", true);
-		}
-		else
-		{
-			axeAnim.SetBool("isCarrying", false);
-			rodAnim.SetBool("isCarrying", false);
-
-		}
-
-
-		if (facingRight && inventory.hasAxe && currentInventoryIndex != 1)
-		{
-			inventory.DisplayAxe();
-		}
-		else
-		{
-			inventory.HideAxe();
-		}
-
-		if (!facingRight && inventory.hasRod && currentInventoryIndex != 2)
-		{
-			inventory.DisplayRod();
-		}
-		else
-		{
-			inventory.HideRod();
-		}
 
 
 		if (playingFetch)
@@ -204,24 +170,28 @@ public class PlayerController : MonoBehaviour
 	{
 		if (Time.time >= nextSwitchTime)
 		{
-			if (Input.GetButtonDown("InventoryLeft"))
+			if (!usingAxe && !usingRod)
 			{
-				playerSoundManager.PlayItemSwitch();
-				CycleInventory("left");
-				nextSwitchTime = Time.time + 1f / switchRate;
-			}
-			if (Input.GetButtonDown("InventoryRight") || Input.GetKeyDown(KeyCode.Tab))
-			{
-				playerSoundManager.PlayItemSwitch();
-				CycleInventory("right");
-				nextSwitchTime = Time.time + 1f / switchRate;
+				if (Input.GetButtonDown("InventoryLeft"))
+				{
+					playerSoundManager.PlayItemSwitch();
+					CycleInventory("left");
+					nextSwitchTime = Time.time + 1f / switchRate;
+				}
+				if (Input.GetButtonDown("InventoryRight") || Input.GetKeyDown(KeyCode.Tab))
+				{
+					playerSoundManager.PlayItemSwitch();
+					CycleInventory("right");
+					nextSwitchTime = Time.time + 1f / switchRate;
 
+				}
 			}
+			
 		}
 
 		if (Input.GetButtonDown("Button A") || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
 		{
-			Debug.Log("Button");
+			//Debug.Log("Button");
 
 			if (!usingAxe && !usingRod)
 			{
@@ -277,8 +247,6 @@ public class PlayerController : MonoBehaviour
 						{
 							usingRod = true;
 						}
-
-
 					}
 
 					if (currentInventoryIndex == 0 && interactionsManager.interaction.requiredTool == 0)
@@ -297,6 +265,37 @@ public class PlayerController : MonoBehaviour
 					{
 						targetFound = true;
 						interactionType = "pickUpCanoe";
+					}
+					else
+					{
+						if (currentInventoryIndex == 3)
+						{
+							UseItem();
+						}
+						else if (currentInventoryIndex == 4)
+						{
+							
+							Debug.Log("take screenshot");
+							anim.SetTrigger("cannot");
+							DisablePlayerInput();
+							EnablePlayerInput(1f);
+
+							string date = System.DateTime.Now.ToString();
+							date = date.Replace("/", "-");
+							date = date.Replace(" ", "_");
+							date = date.Replace(":", "-");
+
+							ScreenCapture.CaptureScreenshot(Application.dataPath + "/Screenshots/Screenshot_" + date + ".png");
+							Debug.Log("Screenshot Saved");
+
+						}
+						else
+						{
+							anim.SetTrigger("cannot");
+							DisablePlayerInput();
+
+
+						}
 					}
 
 				}
@@ -349,6 +348,8 @@ public class PlayerController : MonoBehaviour
 							
 							Debug.Log("take screenshot");
 							anim.SetTrigger("cannot");
+							DisablePlayerInput();
+							EnablePlayerInput(1f);
 
 							string date = System.DateTime.Now.ToString();
 							date = date.Replace("/", "-");
@@ -362,6 +363,8 @@ public class PlayerController : MonoBehaviour
 						else
 						{
 							anim.SetTrigger("cannot");
+							DisablePlayerInput();
+
 
 						}
 
@@ -373,9 +376,7 @@ public class PlayerController : MonoBehaviour
 		{
 			playingFetch = false;
 			//targetFound = false;
-			//usingRod = false;
-
-			
+			//usingRod = false;	
 
 		}
 
@@ -429,24 +430,13 @@ public class PlayerController : MonoBehaviour
 		{
 			isMoving = true;
 			anim.SetBool("isMoving", true);
-
-			if (facingRight)
-			{
-				axeAnim.SetBool("isMoving", true);
-				rodAnim.SetBool("isMoving", false);
-			}
-			else
-			{
-				axeAnim.SetBool("isMoving", false) ;
-				rodAnim.SetBool("isMoving", true);
-			}			
+		
 		}
 		else
 		{
 			isMoving = false;
 			anim.SetBool("isMoving", false);
-			axeAnim.SetBool("isMoving", false);
-			rodAnim.SetBool("isMoving", false);
+
 
 		}
 	}
@@ -486,7 +476,6 @@ public class PlayerController : MonoBehaviour
 				carryingCanoe = true;
 
 				playerSoundManager.PlayPickUpCanoe();
-				axeAnim.SetTrigger("pickUp");
 				anim.SetTrigger("PickUp");
 				canoe.SetActive(false);
 				StartCoroutine(EnablePlayerInput(0.8f));
@@ -503,7 +492,6 @@ public class PlayerController : MonoBehaviour
 			{
 				targetFound = false;
 				carryingCanoe = false;
-				axeAnim.SetTrigger("putDown");
 				anim.SetTrigger("PutDown");
 				canoe.transform.position = new Vector3(transform.position.x, spawnTarget.position.y, 0);
 				//transform.position = canoe.transform.GetChild(0).transform.position;
@@ -566,7 +554,7 @@ public class PlayerController : MonoBehaviour
 					playerSoundManager.PlayPushCanoe();
 					pushCounter++;
 					canoe.transform.GetChild(0).GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
-					axeAnim.SetTrigger("launch");
+
 					anim.SetTrigger("pushCanoe");
 
 					StartCoroutine(RevealCanoe(0.8f));
@@ -580,6 +568,9 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+/*
+	// This code is no longer necessary as a more efficient sprite swap
+
 	public void RevertSprite()
 	{
 		if (interactionsManager.interaction.forceFaceRight && !facingRight)
@@ -592,7 +583,7 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-
+*/
 	void HandleMonty()
 	{
 		//checking if monty has the stick and the player is within range of picking it up
@@ -709,13 +700,12 @@ public class PlayerController : MonoBehaviour
 		{
 			facingRight = false;
 			anim.SetBool("facingRight", facingRight);
-			inventory.DisplayRod();
 		}
 		else
 		{
 			facingRight = true;
 			anim.SetBool("facingRight", facingRight);
-			inventory.DisplayAxe();
+
 		}
 
 	}

@@ -99,12 +99,6 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<PlayerInventory>().AddWood();
 		player.GetComponent<PlayerController>().usingAxe = false;
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
-
-
-
-
-
-
 	}
 
 	public void SetHasLogs()
@@ -151,21 +145,32 @@ public class AnimationEventsHandler : MonoBehaviour
 	public void FinishFishing()
 	{
 
+		individualInteractions.failed = false;
 		individualInteractions.lineCast = false;
 		individualInteractions.timer = 0;
 		individualInteractions.generated = false;
+		individualInteractions.random = 0;
 		individualInteractions.fishing = false;
-		player.GetComponent<PlayerController>().usingRod = false;
 		individualInteractions.fishStage = 0;
+		player.GetComponent<PlayerController>().usingRod = false;
 
 
-		player.GetComponent<PlayerController>().RevertSprite();
+
+		//player.GetComponent<PlayerController>().RevertSprite();
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
 	}
 
 	public void TriggerTreeFall()
 	{
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(1).GetComponent<Animator>().SetTrigger("fall");
+
+	}
+
+
+	public void EnablePlayerMovement()
+	{
+
+		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
 
 	}
 
