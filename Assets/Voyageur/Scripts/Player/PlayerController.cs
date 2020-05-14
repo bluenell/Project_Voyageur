@@ -586,6 +586,7 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+/*
 	public void RevertSprite()
 	{
 		if (interactionsManager.interaction.forceFaceRight && !facingRight)
@@ -598,7 +599,7 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-
+*/
 	void HandleMonty()
 	{
 		//checking if monty has the stick and the player is within range of picking it up

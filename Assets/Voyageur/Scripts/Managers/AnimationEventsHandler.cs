@@ -154,12 +154,14 @@ public class AnimationEventsHandler : MonoBehaviour
 		individualInteractions.lineCast = false;
 		individualInteractions.timer = 0;
 		individualInteractions.generated = false;
+		individualInteractions.random = 0;
 		individualInteractions.fishing = false;
-		player.GetComponent<PlayerController>().usingRod = false;
 		individualInteractions.fishStage = 0;
+		player.GetComponent<PlayerController>().usingRod = false;
 
 
-		player.GetComponent<PlayerController>().RevertSprite();
+
+		//player.GetComponent<PlayerController>().RevertSprite();
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
 	}
 
