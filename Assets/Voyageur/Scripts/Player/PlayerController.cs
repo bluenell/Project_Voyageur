@@ -142,16 +142,6 @@ public class PlayerController : MonoBehaviour
 		HandleInput();
 
 
-		if (!facingRight && inventory.hasRod && currentInventoryIndex != 2)
-		{
-			inventory.DisplayRod();
-		}
-		else
-		{
-			inventory.HideRod();
-		}
-
-
 		if (playingFetch)
 		{
 			HandleMonty();
@@ -710,13 +700,12 @@ public class PlayerController : MonoBehaviour
 		{
 			facingRight = false;
 			anim.SetBool("facingRight", facingRight);
-			inventory.DisplayRod();
 		}
 		else
 		{
 			facingRight = true;
 			anim.SetBool("facingRight", facingRight);
-			inventory.DisplayAxe();
+
 		}
 
 	}
