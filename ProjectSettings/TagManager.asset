@@ -25,6 +25,7 @@ TagManager:
   - Item
   - End
   - Door mat
+  - Camera Trigger
   layers:
   - Default
   - TransparentFX

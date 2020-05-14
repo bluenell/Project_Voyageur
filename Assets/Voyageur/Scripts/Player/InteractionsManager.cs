@@ -49,6 +49,10 @@ public class InteractionsManager : MonoBehaviour
 				{
 					indivInteractions.Deer();
 				}
+				else if (interaction.interactionName == "Beaver")
+				{
+					indivInteractions.Beaver();
+				}
 
 				else if (playerController.usingAxe)
 				{
@@ -113,6 +117,19 @@ public class InteractionsManager : MonoBehaviour
 
 			if (interaction.interactionName == "Fishing")
 			{
+				inRange = false;
+				interaction = null;
+			}
+			else if (interaction.interactionName == "Deer")
+			{
+				interaction.CancelInteraction();
+				inRange = false;
+				interaction = null;
+				
+			}
+			else if	(interaction.interactionName == "Beaver")
+			{
+				interaction.CancelInteraction();
 				inRange = false;
 				interaction = null;
 			}

@@ -766,6 +766,12 @@ public class PlayerController : MonoBehaviour
 		{
 			gm.EndGame();
 		}
+
+		if(other.gameObject.tag == "Camera Trigger")
+		{
+			cameraHandler.SwitchToAlt();
+		}
+
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
@@ -785,6 +791,11 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.tag == "Item")
 		{
 			itemToPickUp = null;
+		}
+		if(other.gameObject.tag == "Camera Trigger")
+		{
+			Debug.Log("exit");
+			cameraHandler.SwitchToPlayer();
 		}
 	}
 

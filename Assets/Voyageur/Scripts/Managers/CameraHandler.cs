@@ -6,9 +6,13 @@ public class CameraHandler : MonoBehaviour
 {
 
 	public GameObject activeCamera;
-	public GameObject playerCam, canoeCam, montyCam;
+	public GameObject playerCam, canoeCam, montyCam, altPlayerCam;
 	MontyStateVariables montyStateVariables;
 	PlayerController playerController;
+
+
+
+	float screenY;
 
 	private void Start()
 	{
@@ -31,6 +35,7 @@ public class CameraHandler : MonoBehaviour
 		playerCam.SetActive(true);
 		canoeCam.SetActive(false);
 		montyCam.SetActive(false);
+		altPlayerCam.GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 0;
 
 		activeCamera = playerCam;
 	}
@@ -42,6 +47,12 @@ public class CameraHandler : MonoBehaviour
 		montyCam.SetActive(false);
 
 		activeCamera = canoeCam;
+	}
+
+	public void SwitchToAlt()
+	{
+		altPlayerCam.GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 2;
+		activeCamera = altPlayerCam;
 	}
 
 

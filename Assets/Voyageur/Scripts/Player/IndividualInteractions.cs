@@ -16,7 +16,7 @@ public class IndividualInteractions : MonoBehaviour
 	public bool targetFound;
 
 	
-	[HideInInspector]
+
 	public float timer;
 	[HideInInspector]
 	public int fishStage;
@@ -329,14 +329,6 @@ public class IndividualInteractions : MonoBehaviour
 	{
 		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>();
 
-
-
-		if (manager.interaction.GetCancelled())
-		{
-			timer = 0;
-			manager.interaction.MarkAsComplete();
-		}
-
 		if (!animTriggered)
 		{
 			anim.SetTrigger("rustle");
@@ -349,9 +341,35 @@ public class IndividualInteractions : MonoBehaviour
 		{
 			timer = 0;
 			anim.SetTrigger("reveal");
+			animTriggered = false;
 			manager.interaction.MarkAsComplete();
 		}
 	}
+
+
+	public void Beaver()
+	{
+		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>();
+
+		if (!animTriggered)
+		{
+			anim.SetTrigger("start");
+			animTriggered = true;
+		}
+
+		timer += Time.deltaTime;
+
+		if (timer >= 10)
+		{
+			timer = 0;
+			animTriggered = false;
+
+			anim.SetTrigger("reveal");
+			manager.interaction.MarkAsComplete();
+		}
+	
+	}
+
 #endregion
 
 	

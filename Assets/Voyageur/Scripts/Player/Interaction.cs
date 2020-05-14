@@ -42,6 +42,7 @@ public class Interaction : MonoBehaviour
 		manager.inRange = false;
 		interactionCollider.enabled = false;
 		manager.interaction = null;
+		
 
 		if (hasJournalEntry)
 		{
