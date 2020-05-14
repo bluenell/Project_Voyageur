@@ -329,14 +329,6 @@ public class IndividualInteractions : MonoBehaviour
 	{
 		anim = manager.interaction.gameObject.transform.GetChild(0).GetComponent<Animator>();
 
-
-
-		if (manager.interaction.GetCancelled())
-		{
-			timer = 0;
-			manager.interaction.MarkAsComplete();
-		}
-
 		if (!animTriggered)
 		{
 			anim.SetTrigger("rustle");
