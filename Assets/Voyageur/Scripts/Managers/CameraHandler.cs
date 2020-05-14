@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
-
 	public GameObject activeCamera;
 	public GameObject playerCam, canoeCam, montyCam, altPlayerCam;
 	MontyStateVariables montyStateVariables;
 	PlayerController playerController;
-
-
-
-	float screenY;
 
 	private void Start()
 	{
