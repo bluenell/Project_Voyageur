@@ -2950,7 +2950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143336666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.14178, y: -7.1499996, z: -10}
+  m_LocalPosition: {x: -287.1392, y: -7.1499996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556811341}
@@ -4892,7 +4892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.14178, y: -0.6699996, z: -10}
+  m_LocalPosition: {x: -287.1392, y: -0.6699996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -11051,6 +11051,7 @@ MonoBehaviour:
   previousIslandColliders:
   - {fileID: 1956873544}
   - {fileID: 1203655755}
+  - {fileID: 2073849533}
   pathwayColliders:
   - {fileID: 1758283794}
   - {fileID: 2073849533}
@@ -29089,7 +29090,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.14178, y: -0.6699996, z: -10}
+  m_LocalPosition: {x: -287.1392, y: -0.6699996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
