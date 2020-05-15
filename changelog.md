@@ -6,7 +6,9 @@ _15th May 2020_
 - Added beaver interaction
 - Small bee details around island 1
 - Controls images to the UI
+- Screenshot function to the camera
 - Additional splash screen images
+- Torch tool
 
 ### Changed
 - Changed layout of journal 

@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
 		player.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(1).transform.position;
 		monty.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(2).transform.position;
 
+        playerController.enabled = true;
 		playerController.currentInventoryIndex = 0;
 		playerController.usingAxe = false;
 		playerController.usingRod = false;
