@@ -1,3 +1,23 @@
+# V3.2.0
+_15th May 2020_
+
+### Added 
+- Cannot use animations to show visual feedback for an incorrect tool
+- Added beaver interaction
+- Small bee details around island 1
+- Controls images to the UI
+- Additional splash screen images
+
+### Changed
+- Changed layout of journal 
+
+### Depreciated
+- Removed tool sprites from backpack as were causing too many layering issues
+
+### Fixed
+- The fish caught counter increments each time you catch the same fish
+
+
 # V3.1.0
 _12th May 2020_
 
