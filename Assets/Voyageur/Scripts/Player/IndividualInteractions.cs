@@ -34,7 +34,7 @@ public class IndividualInteractions : MonoBehaviour
 
 	[HideInInspector]
 	public int chopCount = 0;
-	bool animTriggered;
+	public bool animTriggered;
 
 
 	public bool hasLogs;
@@ -287,9 +287,20 @@ public class IndividualInteractions : MonoBehaviour
 	}
 
 
-	void InvestigateMine()
+	public void Mine()
 	{
-		//play animation
+		
+		if(playerController.usingHands)
+		{
+			if (!animTriggered)
+			{
+				playerAnimator.SetTrigger("throw");
+				animTriggered = true;
+
+			}
+			playerController.DisablePlayerInput();
+
+		}
 	}
 
 	public void Fetch()
