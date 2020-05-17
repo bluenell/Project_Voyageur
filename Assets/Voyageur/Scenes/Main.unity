@@ -1446,7 +1446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &81130002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3137,7 +3137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143336666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.16965, y: -7.19, z: -10}
+  m_LocalPosition: {x: -287.1702, y: -7.19, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556811341}
@@ -4308,7 +4308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &225721516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5080,7 +5080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.16965, y: -0.71000004, z: -10}
+  m_LocalPosition: {x: -287.1702, y: -0.71000004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -7727,7 +7727,7 @@ MonoBehaviour:
   journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: c372f6381e0376b45a3d142b81654740, type: 3}
   journalName: beaver
-  journalDescription: i saw a beaver
+  journalDescription: this beaver looked like it was having a dam good time
 --- !u!61 &450954021
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9939,8 +9939,7 @@ MonoBehaviour:
   journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: 0946220df180bd446a2bdd9974acde03, type: 3}
   journalName: deer
-  journalDescription: i noticed some rustling in the bush. i waited and a deer showed
-    up
+  journalDescription: doe or doe not, there is no try
 --- !u!61 &563179124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11322,7 +11321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632327417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -214.08615, y: -1.1060004, z: -10.35}
+  m_LocalPosition: {x: -214.08862, y: -1.1060004, z: -10.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1675404983}
@@ -15736,8 +15735,7 @@ MonoBehaviour:
   journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106, type: 3}
   journalName: blue jay
-  journalDescription: i managed to capture this blue jay but he quickly flew away
-    when i got too close
+  journalDescription: i wonder what the 'j' stands for
 --- !u!61 &859166756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17805,7 +17803,7 @@ Transform:
   - {fileID: 1506420034}
   - {fileID: 1633254217}
   m_Father: {fileID: 1679597961}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &960799579
 GameObject:
@@ -27326,14 +27324,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470824600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -185, y: 3.2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -123.84566, y: 3.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 83279193}
   - {fileID: 136487977928785465}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1679597961}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1470824602
 BoxCollider2D:
@@ -27400,9 +27398,9 @@ MonoBehaviour:
   canBeCancelled: 0
   hasJournalEntry: 1
   journal: {fileID: 679066571}
-  journalImage: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106, type: 3}
+  journalImage: {fileID: 21300000, guid: 2351bdeb7715c2443992f7fbe1823aa4, type: 3}
   journalName: Geese
-  journalDescription: I saw some geese
+  journalDescription: '[untitled polaroid]'
 --- !u!1 &1476111181
 GameObject:
   m_ObjectHideFlags: 0
@@ -29876,7 +29874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.16965, y: -0.71000004, z: -10}
+  m_LocalPosition: {x: -287.1702, y: -0.71000004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -31650,6 +31648,7 @@ Transform:
   m_LocalPosition: {x: -61.154346, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1470824601}
   - {fileID: 1809741236}
   - {fileID: 950618087}
   - {fileID: 1747388633}
@@ -32609,7 +32608,7 @@ Transform:
   - {fileID: 450954019}
   - {fileID: 874454530}
   m_Father: {fileID: 1679597961}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1753534823
 GameObject:
@@ -34369,7 +34368,7 @@ Transform:
   - {fileID: 1753534827}
   - {fileID: 2060980281}
   m_Father: {fileID: 1679597961}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1824603115
 GameObject:
