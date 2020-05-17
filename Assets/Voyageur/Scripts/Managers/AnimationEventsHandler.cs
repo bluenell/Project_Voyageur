@@ -15,11 +15,23 @@ public class AnimationEventsHandler : MonoBehaviour
 	public IndividualInteractions individualInteractions;
 	public MyGrid grid;
 
+	public GameObject bats;
+
 
 	#region Functions
 
 
 
+	public void FinishMine()
+	{
+		bats.SetActive(true);
+		//individualInteractions.animTriggered = false;
+		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0f));
+		interactionsManager.interaction.MarkAsComplete();
+		player.GetComponent<PlayerController>().usingHands = false;
+		Debug.Log("Fin");
+
+	}
 
 	public void ChangeSpriteLayer()
 	{

@@ -92,6 +92,11 @@ public class InteractionsManager : MonoBehaviour
 						{
 							indivInteractions.LogPile();
 						}
+
+						if(interaction.interactionName == "Mine")
+						{
+							indivInteractions.Mine();
+						}
 					}
 				}
 			}
