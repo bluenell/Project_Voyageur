@@ -16010,11 +16010,11 @@ MonoBehaviour:
   requiredTool: 0
   forceFaceRight: 1
   canBeCancelled: 0
-  hasJournalEntry: 0
+  hasJournalEntry: 1
   journal: {fileID: 679066571}
   journalImage: {fileID: 21300000, guid: c372f6381e0376b45a3d142b81654740, type: 3}
-  journalName: beaver
-  journalDescription: i saw a beaver
+  journalName: mine
+  journalDescription: i saw a mine
 --- !u!61 &874454532
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27374,8 +27374,6 @@ MonoBehaviour:
   geese:
   - {fileID: 1631552705}
   - {fileID: 391114106}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1470824604
 MonoBehaviour:
   m_ObjectHideFlags: 0
