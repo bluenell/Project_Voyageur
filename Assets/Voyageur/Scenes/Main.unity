@@ -3137,7 +3137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143336666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.16998, y: -7.19, z: -10}
+  m_LocalPosition: {x: -287.16965, y: -7.19, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556811341}
@@ -5080,7 +5080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -214.08774, y: -1.1060004, z: -10.35}
+  m_LocalPosition: {x: -287.16965, y: -0.71000004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -5157,7 +5157,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.94
+  orthographic size: 9
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -11322,7 +11322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632327417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -214.08774, y: -1.1060004, z: -10.35}
+  m_LocalPosition: {x: -214.08615, y: -1.1060004, z: -10.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1675404983}
@@ -27311,6 +27311,7 @@ GameObject:
   - component: {fileID: 1470824601}
   - component: {fileID: 1470824602}
   - component: {fileID: 1470824603}
+  - component: {fileID: 1470824604}
   m_Layer: 0
   m_Name: Goose Interaction
   m_TagString: Untagged
@@ -27377,6 +27378,31 @@ MonoBehaviour:
   - {fileID: 391114106}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &1470824604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470824600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88680216d4039341bc41d0ac07f3a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 7945989855208361129}
+  interactionName: Geese
+  interactionCollider: {fileID: 1470824602}
+  complete: 0
+  isInteractable: 0
+  requiredTool: 0
+  forceFaceRight: 0
+  canBeCancelled: 0
+  hasJournalEntry: 1
+  journal: {fileID: 679066571}
+  journalImage: {fileID: 21300000, guid: ef1c1d8e513cf7349872154ae5739106, type: 3}
+  journalName: Geese
+  journalDescription: I saw some geese
 --- !u!1 &1476111181
 GameObject:
   m_ObjectHideFlags: 0
@@ -29850,7 +29876,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.16998, y: -0.71000004, z: -10}
+  m_LocalPosition: {x: -287.16965, y: -0.71000004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}

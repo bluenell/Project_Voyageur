@@ -14,7 +14,10 @@ public class Goose : MonoBehaviour
             for(int i =0; i < geese.Length; i++)
             {   
                 geese[i].SetActive(true);
-            }   
+            }  
+            
+            GetComponent<Interaction>().MarkAsComplete();
+ 
         }
     }
 
