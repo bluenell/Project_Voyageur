@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
 	MontyStateVariables montyStateVariables;
 	MontyStateActions montyStateActions;
 	GameObject montyObj;
+	public Animator montyAnim;
 
 	#endregion
 
@@ -209,6 +210,16 @@ public class PlayerController : MonoBehaviour
 						interactionType = "putdown";
 					}
 				}
+				else if (!carryingCanoe && montyStateVariables.distFromPlayer < montyStateVariables.distanceToFollow && montyStateManager.currentState == "sit")
+				{
+
+					anim.SetTrigger("pet");
+					montyAnim.SetTrigger("pet");
+					
+					DisablePlayerInput();						
+
+					
+				}
 				else if (!carryingCanoe && montyStateManager.inFetch)
 				{
 					if (montyStateVariables.GetPlayerNearStick())
@@ -353,7 +364,7 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button X") || Input.GetKeyDown(KeyCode.Q))
 		{
-			//WhistleMonty();
+			WhistleMonty();
 		}
 
 			
@@ -583,9 +594,7 @@ public class PlayerController : MonoBehaviour
 		if (!montyStateManager.inFetch)
 		{
 			playerSoundManager.PlayWhistle();
-			montyStateVariables.movingTowardsPlayer = true;
 			montyStateVariables.callRequestMade = true;
-
 		}
 	}
 

@@ -179,10 +179,10 @@ public class AnimationEventsHandler : MonoBehaviour
 	}
 
 
-	public void EnablePlayerMovement()
+	public void EnablePlayerMovement(float time)
 	{
 
-		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
+		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(time));
 
 	}
 

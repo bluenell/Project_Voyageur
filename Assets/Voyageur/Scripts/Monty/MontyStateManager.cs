@@ -15,6 +15,7 @@ public class MontyStateManager : MonoBehaviour
 	float random;
 	float timer;
 	bool generated;
+	float sitTimer;
 
 
 	MontyStateActions stateActions;
@@ -32,7 +33,7 @@ public class MontyStateManager : MonoBehaviour
 
 	private void Update()
 	{
-		/*
+		
 		timer += Time.deltaTime;
 
 		if (!generated)
@@ -48,42 +49,37 @@ public class MontyStateManager : MonoBehaviour
 			playerSoundManager.PlayBark();
 		}
 
-	*/
+	
 		if (!inFetch && !inTutorial)
 		{
-			if (!stateVariables.movingTowardsPlayer && stateVariables.distFromPlayer >= playerController.armsReach)
-			{
-				stateVariables.movingTowardsPlayer = false;
-				currentState = "roam";
-				SwitchState();
-			}
-
 			if (stateVariables.callRequestMade)
 			{
-				currentState = "move towards";
+				currentState = "move towards";				
 				SwitchState();
-
-				if (stateVariables.desintationReached)
-				{
-					stateVariables.movingTowardsPlayer = false;
-					currentState = "wait";
-					SwitchState();
-
-				}
 			}
 
-			if (currentState == "wait")
+			else if (currentState == "move towards" && stateVariables.desintationReached && !stateVariables.isSitting)
 			{
-				counter += Time.deltaTime;
+				currentState = "wait";
+				SwitchState();
+			}
 
-				if (counter >= stateVariables.sitWaitTime)
+			else if (currentState ==  "wait")
+			{
+				sitTimer += Time.deltaTime;
+
+				if (sitTimer > Random.Range(stateVariables.randomWaitRange.x, stateVariables.randomWaitRange.y))
 				{
-					counter = 0;
-					sitting = true;
+					stateVariables.isSitting = true;
 					currentState = "sit";
 					SwitchState();
 				}
 
+			}
+			else if (stateVariables.distFromPlayer >= stateVariables.distanceToFollow)
+			{
+				currentState = "roam";
+				SwitchState();
 			}
 		}
 		else if (inFetch)
@@ -95,6 +91,16 @@ public class MontyStateManager : MonoBehaviour
 		{
 			currentState = "launch";
 			SwitchState();
+		}
+
+		if (currentState != "sit")
+		{
+			stateVariables.isSitting = false;
+		}
+
+		if (currentState != "wait")
+		{
+			sitTimer = 0;
 		}
 	}
 	
