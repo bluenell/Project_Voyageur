@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 21d7ae2176c3b6f459a988800c940aad
+guid: 8c21332eba23f204fb75d5b460e05a36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3535885317725812356
-    second: MontyPet_0
+      213: 2626321614215571838
+    second: PetL_0
   - first:
-      213: -8174117703189783656
-    second: MontyPet_1
+      213: 52583228409784926
+    second: PetL_1
   - first:
-      213: -6474666477883470053
-    second: MontyPet_2
+      213: 1538635147810180314
+    second: PetL_2
   - first:
-      213: 1556316939695170929
-    second: MontyPet_3
+      213: -5720895173871639610
+    second: PetL_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MontyPet_0
+      name: PetL_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,20 +118,20 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c790f6699030eeec0800000000000000
-      internalID: -3535885317725812356
+      spriteID: e79ef31e791927420800000000000000
+      internalID: 2626321614215571838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MontyPet_1
+      name: PetL_1
       rect:
         serializedVersion: 2
         x: 50
@@ -139,20 +139,20 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89b142dd143bf8e80800000000000000
-      internalID: -8174117703189783656
+      spriteID: e5a228aea20dab000800000000000000
+      internalID: 52583228409784926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MontyPet_2
+      name: PetL_2
       rect:
         serializedVersion: 2
         x: 0
@@ -160,20 +160,20 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1f40a2842d5526a0800000000000000
-      internalID: -6474666477883470053
+      spriteID: adc0820d3845a5510800000000000000
+      internalID: 1538635147810180314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MontyPet_3
+      name: PetL_3
       rect:
         serializedVersion: 2
         x: 50
@@ -181,14 +181,14 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 175247cc206299510800000000000000
-      internalID: 1556316939695170929
+      spriteID: 6c36224662c4b90b0800000000000000
+      internalID: -5720895173871639610
       vertices: []
       indices: 
       edges: []
