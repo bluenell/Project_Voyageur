@@ -63,8 +63,7 @@ public class MontyStateActions : MonoBehaviour
 	}
 
 	public void Sit()
-	{
-		
+	{	
 		anim.SetBool("isWalking", false);
 		anim.SetBool("isRunning", false);
 		anim.SetBool("isSitting", true);
@@ -203,14 +202,20 @@ public class MontyStateActions : MonoBehaviour
 		anim.SetBool("isSitting", false);
 
 
+		if (transform.position.x > player.transform.position.x)
+		{
+			sprite.flipX = true;
+		}
+		else
+		{
+			sprite.flipX = false;
+		}
 
 
 	}
 
 	public void MoveTowards()
-	{
-
-
+	{		
 		if (!stateVariables.movingTowardsPlayer)
 		{
 			Debug.Log("Call Request");
@@ -284,7 +289,15 @@ public class MontyStateActions : MonoBehaviour
 					PathRequestManager.ClearRequests();
 					currentlyOnPath = false;
 					Debug.Log("Reached Destination");
+
+					if (stateManager.currentState == "move towards")
+					{
+						stateVariables.callRequestMade = false;
+						stateVariables.movingTowardsPlayer = false;
+					}
+
 					stateVariables.desintationReached = true;
+
 					yield break;
 				}
 				currentWaypoint = path[targetIndex];

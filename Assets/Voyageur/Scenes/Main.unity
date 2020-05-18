@@ -7085,7 +7085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406976923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -284.18, y: -6.58, z: -0.890625}
+  m_LocalPosition: {x: -280.56, y: -6.73, z: -0.890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 928187008}
@@ -7110,12 +7110,13 @@ MonoBehaviour:
   desintationReached: 0
   walkSpeed: 5
   runSpeed: 10
-  distanceToFollow: 1.5
+  distanceToFollow: 2.5
   grid: {fileID: 0}
   movingTowardsPlayer: 0
   callRequestMade: 0
   sitWaitTime: 5
   randomWaitRange: {x: 2, y: 9}
+  isSitting: 0
   throwHeight: 1
   throwGravity: -9.81
   montyHasStick: 0
@@ -18921,7 +18922,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010196435}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.43, y: 0, z: 0}
+  m_LocalPosition: {x: 1.77, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7945989855208360791}
@@ -26749,7 +26750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417961215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.15, y: 0, z: 0}
+  m_LocalPosition: {x: -1.91, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7945989855208360791}

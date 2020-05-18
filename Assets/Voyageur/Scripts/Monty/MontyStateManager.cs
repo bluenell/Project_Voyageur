@@ -54,34 +54,33 @@ public class MontyStateManager : MonoBehaviour
 		{
 			if (stateVariables.callRequestMade)
 			{
-				currentState = "move towards";
-				SwitchState();
-			}
-			else
-			{
-				currentState = "roam";
+				currentState = "move towards";				
 				SwitchState();
 			}
 
-			if (currentState == "move towards" && stateVariables.desintationReached && !sitting)
+			else if (currentState == "move towards" && stateVariables.desintationReached && !stateVariables.isSitting)
 			{
 				currentState = "wait";
 				SwitchState();
 			}
 
-			if (currentState ==  "wait")
+			else if (currentState ==  "wait")
 			{
 				sitTimer += Time.deltaTime;
 
 				if (sitTimer > Random.Range(stateVariables.randomWaitRange.x, stateVariables.randomWaitRange.y))
 				{
-					sitting = true;
+					stateVariables.isSitting = true;
 					currentState = "sit";
 					SwitchState();
 				}
-			}
 
-			
+			}
+			else if (stateVariables.distFromPlayer >= stateVariables.distanceToFollow)
+			{
+				currentState = "roam";
+				SwitchState();
+			}
 		}
 		else if (inFetch)
 		{
@@ -92,6 +91,16 @@ public class MontyStateManager : MonoBehaviour
 		{
 			currentState = "launch";
 			SwitchState();
+		}
+
+		if (currentState != "sit")
+		{
+			stateVariables.isSitting = false;
+		}
+
+		if (currentState != "wait")
+		{
+			sitTimer = 0;
 		}
 	}
 	

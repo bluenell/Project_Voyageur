@@ -31,6 +31,7 @@ public class MontyStateVariables : MonoBehaviour
 	[Header("Waiting")]
 	public int sitWaitTime;
 	public Vector2 randomWaitRange;
+	public bool isSitting;
 
 	GameObject player;
 	InteractionsManager interactionsManager;

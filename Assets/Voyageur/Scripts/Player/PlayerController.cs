@@ -584,7 +584,6 @@ public class PlayerController : MonoBehaviour
 		{
 			playerSoundManager.PlayWhistle();
 			montyStateVariables.callRequestMade = true;
-
 		}
 	}
 
