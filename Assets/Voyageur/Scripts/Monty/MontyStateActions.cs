@@ -31,7 +31,7 @@ public class MontyStateActions : MonoBehaviour
 	private void Start()
 	{
 		sprite = transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
-		sprite.enabled = false;
+		//sprite.enabled = false;
 		stateVariables = GetComponent<MontyStateVariables>();
 		stateManager = GetComponent<MontyStateManager>();
 		anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
