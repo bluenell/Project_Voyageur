@@ -67,6 +67,8 @@ public class MontyStateActions : MonoBehaviour
 		anim.SetBool("isWalking", false);
 		anim.SetBool("isRunning", false);
 		anim.SetBool("isSitting", true);
+
+
 	}
 
 	public void Launch()

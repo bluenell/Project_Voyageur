@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
 	MontyStateVariables montyStateVariables;
 	MontyStateActions montyStateActions;
 	GameObject montyObj;
+	public Animator montyAnim;
 
 	#endregion
 
@@ -211,7 +212,13 @@ public class PlayerController : MonoBehaviour
 				}
 				else if (!carryingCanoe && montyStateVariables.distFromPlayer < montyStateVariables.distanceToFollow && montyStateManager.currentState == "sit")
 				{
-					Debug.Log("Pet pet good boy");
+
+					anim.SetTrigger("pet");
+					montyAnim.SetTrigger("pet");
+					
+					DisablePlayerInput();						
+
+					
 				}
 				else if (!carryingCanoe && montyStateManager.inFetch)
 				{
