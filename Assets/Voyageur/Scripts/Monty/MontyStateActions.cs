@@ -22,7 +22,6 @@ public class MontyStateActions : MonoBehaviour
 	Vector3 target;
 	float stuckTimer;
 
-
 	Vector3[] path;
 	int targetIndex;
 	public bool currentlyOnPath;
@@ -65,8 +64,10 @@ public class MontyStateActions : MonoBehaviour
 
 	public void Sit()
 	{
+		
+		anim.SetBool("isWalking", false);
+		anim.SetBool("isRunning", false);
 		anim.SetBool("isSitting", true);
-		Debug.Log("Monty is sitting");
 	}
 
 	public void Launch()
@@ -193,32 +194,47 @@ public class MontyStateActions : MonoBehaviour
 	public void Wait()
 	{
 		currentlyOnPath = false;
+		PathRequestManager.ClearRequests();
+		stateVariables.callRequestMade = false;
+		stateVariables.movingTowardsPlayer = false;
+
 		anim.SetBool("isRunning", false);
 		anim.SetBool("isWalking", false);
 		anim.SetBool("isSitting", false);
-		PathRequestManager.ClearRequests();
+
+
+
+
 	}
 
 	public void MoveTowards()
 	{
-		Debug.Log("Call Request");
+
 
 		if (!stateVariables.movingTowardsPlayer)
 		{
+			Debug.Log("Call Request");
 			stateVariables.movingTowardsPlayer = true;
 			currentlyOnPath = false;
 			PathRequestManager.ClearRequests();
 			StopAllCoroutines();
 		}
 
-		if (!currentlyOnPath)
+		if (!currentlyOnPath && !stateVariables.desintationReached)
 		{
-			PathRequestManager.RequestPath(transform.position, player.transform.position, OnPathFound);
+			if (transform.position.x > player.transform.position.x)
+			{
+				// Right walk target
+				PathRequestManager.RequestPath(transform.position, player.transform.GetChild(4).transform.position, OnPathFound);
+			}
+			else
+			{
+				// Left walk target
+				PathRequestManager.RequestPath(transform.position, player.transform.GetChild(5).transform.position, OnPathFound);
+			}
+
 			currentlyOnPath = true;
-
 		}
-
-
 
 	}
 	public void Canoe()
@@ -267,6 +283,7 @@ public class MontyStateActions : MonoBehaviour
 				{
 					PathRequestManager.ClearRequests();
 					currentlyOnPath = false;
+					Debug.Log("Reached Destination");
 					stateVariables.desintationReached = true;
 					yield break;
 				}

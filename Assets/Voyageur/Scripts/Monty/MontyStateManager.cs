@@ -15,6 +15,7 @@ public class MontyStateManager : MonoBehaviour
 	float random;
 	float timer;
 	bool generated;
+	float sitTimer;
 
 
 	MontyStateActions stateActions;
@@ -62,20 +63,25 @@ public class MontyStateManager : MonoBehaviour
 				SwitchState();
 			}
 
-
-			if (currentState == "wait")
+			if (currentState == "move towards" && stateVariables.desintationReached && !sitting)
 			{
-				counter += Time.deltaTime;
+				currentState = "wait";
+				SwitchState();
+			}
 
-				if (counter >= stateVariables.sitWaitTime)
+			if (currentState ==  "wait")
+			{
+				sitTimer += Time.deltaTime;
+
+				if (sitTimer > Random.Range(stateVariables.randomWaitRange.x, stateVariables.randomWaitRange.y))
 				{
-					counter = 0;
 					sitting = true;
 					currentState = "sit";
 					SwitchState();
 				}
-
 			}
+
+			
 		}
 		else if (inFetch)
 		{
