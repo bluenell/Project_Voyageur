@@ -1,3 +1,20 @@
+# V4.0.0
+_22nd May 2020_
+
+### Added
+- Whistle Monty - monty can now be called and whistled to come to your location
+- Pet Monty, you can pet monty when he is sat down in front of you
+- Geese interaction
+
+### Changed
+- Made changes to the polaroid/fish descriptions
+
+# V3.2.1
+_15th May 2020_
+
+### Fixed
+- Journal not loading up on game load
+
 # V3.2.0
 _15th May 2020_
 
