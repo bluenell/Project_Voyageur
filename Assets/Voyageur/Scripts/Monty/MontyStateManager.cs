@@ -32,7 +32,7 @@ public class MontyStateManager : MonoBehaviour
 
 	private void Update()
 	{
-		/*
+		
 		timer += Time.deltaTime;
 
 		if (!generated)
@@ -48,29 +48,20 @@ public class MontyStateManager : MonoBehaviour
 			playerSoundManager.PlayBark();
 		}
 
-	*/
+	
 		if (!inFetch && !inTutorial)
 		{
-			if (!stateVariables.movingTowardsPlayer && stateVariables.distFromPlayer >= playerController.armsReach)
-			{
-				stateVariables.movingTowardsPlayer = false;
-				currentState = "roam";
-				SwitchState();
-			}
-
 			if (stateVariables.callRequestMade)
 			{
 				currentState = "move towards";
 				SwitchState();
-
-				if (stateVariables.desintationReached)
-				{
-					stateVariables.movingTowardsPlayer = false;
-					currentState = "wait";
-					SwitchState();
-
-				}
 			}
+			else
+			{
+				currentState = "roam";
+				SwitchState();
+			}
+
 
 			if (currentState == "wait")
 			{

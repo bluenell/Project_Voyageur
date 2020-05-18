@@ -201,17 +201,25 @@ public class MontyStateActions : MonoBehaviour
 
 	public void MoveTowards()
 	{
-		anim.SetBool("isSitting", false);
-		anim.SetBool("isWalking", false);
-		anim.SetBool("isRunning", true);
+		Debug.Log("Call Request");
 
-		if (stateVariables.callRequestMade)
+		if (!stateVariables.movingTowardsPlayer)
 		{
-			StopCoroutine(FollowPath());
+			stateVariables.movingTowardsPlayer = true;
+			currentlyOnPath = false;
 			PathRequestManager.ClearRequests();
-			PathRequestManager.RequestPath(transform.position, (player.transform.position - new Vector3(1,1)), OnPathFound);
-			currentlyOnPath = true;
+			StopAllCoroutines();
 		}
+
+		if (!currentlyOnPath)
+		{
+			PathRequestManager.RequestPath(transform.position, player.transform.position, OnPathFound);
+			currentlyOnPath = true;
+
+		}
+
+
+
 	}
 	public void Canoe()
 	{

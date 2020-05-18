@@ -353,7 +353,7 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Button X") || Input.GetKeyDown(KeyCode.Q))
 		{
-			//WhistleMonty();
+			WhistleMonty();
 		}
 
 			
@@ -583,7 +583,6 @@ public class PlayerController : MonoBehaviour
 		if (!montyStateManager.inFetch)
 		{
 			playerSoundManager.PlayWhistle();
-			montyStateVariables.movingTowardsPlayer = true;
 			montyStateVariables.callRequestMade = true;
 
 		}
