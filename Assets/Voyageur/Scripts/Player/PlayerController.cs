@@ -209,6 +209,10 @@ public class PlayerController : MonoBehaviour
 						interactionType = "putdown";
 					}
 				}
+				else if (!carryingCanoe && montyStateVariables.distFromPlayer < montyStateVariables.distanceToFollow && montyStateManager.currentState == "sit")
+				{
+					Debug.Log("Pet pet good boy");
+				}
 				else if (!carryingCanoe && montyStateManager.inFetch)
 				{
 					if (montyStateVariables.GetPlayerNearStick())
