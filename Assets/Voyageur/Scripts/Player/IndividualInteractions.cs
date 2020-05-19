@@ -65,36 +65,6 @@ public class IndividualInteractions : MonoBehaviour
 	Animator anim;
 
 #region InputInteractions
-	void Sleep()
-	{
-		//check time
-		//play animations
-		//play sounds
-		//advance time to 06:00
-	}
-
-	void Eat()
-	{
-		 //check fish
-		 //play animation
-		 //stamina = max
-	}
-
-	void Harmonica()
-	{
-		//play clip at index
-		//advance index
-		//play animation
-		//exit
-
-
-	}
-
-	void PetDog()
-	{
-		//play animation
-		//play sound
-	}
 
 	public void Fishing()
 	{
@@ -289,17 +259,11 @@ public class IndividualInteractions : MonoBehaviour
 
 	public void Mine()
 	{
-		
-		if(playerController.usingHands)
+		playerController.DisablePlayerInput();
+		if (playerController.CheckIfAtTarget(manager.interaction.transform.GetChild(0), false))
 		{
-			if (!animTriggered)
-			{
-				playerAnimator.SetTrigger("throw");
-				animTriggered = true;
-
-			}
-			playerController.DisablePlayerInput();
-
+			playerAnimator.SetTrigger("throw");
+			playerController.usingHands = false;
 		}
 	}
 

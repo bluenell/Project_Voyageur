@@ -223,8 +223,6 @@ public class MontyStateActions : MonoBehaviour
 		{
 			sprite.flipX = false;
 		}
-
-
 	}
 
 	public void MoveTowards()
