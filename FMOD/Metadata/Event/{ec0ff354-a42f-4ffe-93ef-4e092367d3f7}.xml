@@ -93,14 +93,13 @@
 			<value>0.5</value>
 		</property>
 		<property name="pitch">
-			<value>0.5</value>
+			<value>1.20000005</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{2450a5d3-448d-4115-bd60-e3ab5754371e}</destination>
 			<destination>{0ae04c12-fd3d-4a50-b695-79f7c988cda0}</destination>
 		</relationship>
 		<relationship name="sounds">
-			<destination>{eecaeabb-9fff-4932-8ef7-ffc6df8f109a}</destination>
 			<destination>{41a4a0b3-f92b-4367-9d25-cf3ec04d0b76}</destination>
 			<destination>{e2f299e8-61e6-4698-b60a-1cd3a62ac6a0}</destination>
 		</relationship>
@@ -142,16 +141,8 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>5.5</value>
+			<value>14</value>
 		</property>
-	</object>
-	<object class="SingleSound" id="{eecaeabb-9fff-4932-8ef7-ffc6df8f109a}">
-		<property name="volume">
-			<value>8.5</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{533f9627-b36d-4537-8337-1d0f5fc8da34}</destination>
-		</relationship>
 	</object>
 	<object class="SingleSound" id="{41a4a0b3-f92b-4367-9d25-cf3ec04d0b76}">
 		<relationship name="audioFile">
