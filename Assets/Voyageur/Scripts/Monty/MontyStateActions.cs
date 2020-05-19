@@ -21,6 +21,9 @@ public class MontyStateActions : MonoBehaviour
 	bool targetFound;
 	Vector3 target;
 	float stuckTimer;
+	int maxStuckTime;
+	bool checkingIfStuck;
+	float newSearchTimer;
 
 	Vector3[] path;
 	int targetIndex;
@@ -30,7 +33,7 @@ public class MontyStateActions : MonoBehaviour
 	private void Start()
 	{
 		sprite = transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
-		sprite.enabled = false;
+		//sprite.enabled = false;
 		stateVariables = GetComponent<MontyStateVariables>();
 		stateManager = GetComponent<MontyStateManager>();
 		anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
@@ -56,9 +59,16 @@ public class MontyStateActions : MonoBehaviour
 		if (!currentlyOnPath && !stateVariables.callRequestMade)
 		{
 			anim.SetBool("isWalking", false);
-			target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
-			PathRequestManager.RequestPath(transform.position, target, OnPathFound);
-			currentlyOnPath = true;
+
+			newSearchTimer += Time.deltaTime;
+
+			if (newSearchTimer >= stateVariables.newSearchTime)
+			{
+				newSearchTimer = 0;
+				target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
+				PathRequestManager.RequestPath(transform.position, target, OnPathFound);
+				currentlyOnPath = true;
+			}
 		}
 	}
 

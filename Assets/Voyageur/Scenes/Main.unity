@@ -7114,6 +7114,8 @@ MonoBehaviour:
   grid: {fileID: 0}
   movingTowardsPlayer: 0
   callRequestMade: 0
+  lastPosition: {x: 0, y: 0, z: 0}
+  newSearchTime: 2
   sitWaitTime: 5
   randomWaitRange: {x: 2, y: 9}
   isSitting: 0
@@ -7141,7 +7143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 
   inFetch: 0
-  inTutorial: 1
+  inTutorial: 0
   playerController: {fileID: 7945989855208361131}
   playerSoundManager: {fileID: 7945989855208361133}
 --- !u!114 &406976927
