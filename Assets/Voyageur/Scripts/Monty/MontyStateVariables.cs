@@ -10,7 +10,7 @@ public class MontyStateVariables : MonoBehaviour
 	public bool playerMoving;	
 	[HideInInspector ]
 	public float distFromPlayer;
-	[HideInInspector]
+
 	public bool desintationReached;
 
 	[Header("Generic Variables")]
@@ -29,7 +29,7 @@ public class MontyStateVariables : MonoBehaviour
 
 	public Vector3 lastPosition;
 
-	public int newSearchTime;
+	public Vector2 newSearchTime;
 
 	[Header("Waiting")]
 	public int sitWaitTime;

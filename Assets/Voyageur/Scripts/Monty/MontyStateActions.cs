@@ -59,10 +59,11 @@ public class MontyStateActions : MonoBehaviour
 		if (!currentlyOnPath && !stateVariables.callRequestMade)
 		{
 			anim.SetBool("isWalking", false);
+			stateVariables.desintationReached = false;
 
 			newSearchTimer += Time.deltaTime;
 
-			if (newSearchTimer >= stateVariables.newSearchTime)
+			if (newSearchTimer >= Random.Range(stateVariables.newSearchTime.x, stateVariables.newSearchTime.y))
 			{
 				newSearchTimer = 0;
 				target = stateVariables.GetRandomPointInBounds(followTargetCollider.bounds);
