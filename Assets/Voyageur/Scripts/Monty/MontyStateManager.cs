@@ -32,26 +32,24 @@ public class MontyStateManager : MonoBehaviour
 	}
 
 	private void Update()
-	{
-		
-		timer += Time.deltaTime;
-
-		if (!generated)
-		{
-			random = Random.Range(5, 15);
-			generated = true;
-		}
-
-		if (timer >= random)
-		{
-			generated = false;
-			timer = 0;
-			playerSoundManager.PlayBark();
-		}
-
-	
+	{	
 		if (!inFetch && !inTutorial)
 		{
+			timer += Time.deltaTime;
+
+			if (!generated)
+			{
+				random = Random.Range(5, 15);
+				generated = true;
+			}
+
+			if (timer >= random)
+			{
+				generated = false;
+				timer = 0;
+				playerSoundManager.PlayBark();
+			}
+
 			if (stateVariables.callRequestMade)
 			{
 				currentState = "move towards";				

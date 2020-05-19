@@ -10,7 +10,7 @@ public class MontyStateVariables : MonoBehaviour
 	public bool playerMoving;	
 	[HideInInspector ]
 	public float distFromPlayer;
-	[HideInInspector]
+
 	public bool desintationReached;
 
 	[Header("Generic Variables")]
@@ -27,6 +27,9 @@ public class MontyStateVariables : MonoBehaviour
 	public bool movingTowardsPlayer;
 	public bool callRequestMade;
 
+	public Vector3 lastPosition;
+
+	public Vector2 newSearchTime;
 
 	[Header("Waiting")]
 	public int sitWaitTime;
@@ -110,6 +113,20 @@ public class MontyStateVariables : MonoBehaviour
     #endregion
 
 	#region Pathfinding
+
+
+	public bool CheckIfStuck()
+	{
+		if (transform.position != lastPosition)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+
 
 	public Vector3 GetRandomPointInBounds(Bounds bounds)
 	{

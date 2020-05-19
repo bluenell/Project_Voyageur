@@ -4308,7 +4308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &225721516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7085,7 +7085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406976923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -293.28, y: -6.73, z: -0.890625}
+  m_LocalPosition: {x: -293.13, y: -6.56, z: -0.890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 928187008}
@@ -7110,10 +7110,12 @@ MonoBehaviour:
   desintationReached: 0
   walkSpeed: 5
   runSpeed: 10
-  distanceToFollow: 2.5
+  distanceToFollow: 1.97
   grid: {fileID: 0}
   movingTowardsPlayer: 0
   callRequestMade: 0
+  lastPosition: {x: 0, y: 0, z: 0}
+  newSearchTime: {x: 2, y: 5}
   sitWaitTime: 5
   randomWaitRange: {x: 2, y: 9}
   isSitting: 0
@@ -18922,7 +18924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010196435}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.77, y: -0.03, z: 0}
+  m_LocalPosition: {x: 2.07, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7945989855208360791}
@@ -26756,7 +26758,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417961215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.91, y: 0, z: 0}
+  m_LocalPosition: {x: -2.32, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7945989855208360791}
