@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{b903199f-bbe1-4aa8-b0c0-23769635d946}">
+		<property name="assetPath">
+			<value>CameraShutter.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.3771428571428572</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d7f640d3-ee20-44a0-82cf-a9a7bf109b2a}</destination>
+		</relationship>
+	</object>
+</objects>
