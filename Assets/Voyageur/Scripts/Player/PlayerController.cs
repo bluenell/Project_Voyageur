@@ -477,6 +477,7 @@ public class PlayerController : MonoBehaviour
 				carryingCanoe = false;
 				anim.SetTrigger("PutDown");
 				canoe.transform.position = new Vector3(transform.position.x, spawnTarget.position.y, 0);
+				canoe.transform.GetChild(0).transform.GetChild(1).GetComponent<SpriteRenderer>().sortingOrder = sprite.sortingOrder - 1;
 				//transform.position = canoe.transform.GetChild(0).transform.position;
 				StartCoroutine(RevealCanoe(0.8f));
 				StartCoroutine(EnablePlayerInput(0.8f));

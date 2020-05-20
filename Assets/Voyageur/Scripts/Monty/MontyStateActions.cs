@@ -255,9 +255,6 @@ public class MontyStateActions : MonoBehaviour
 			}
 
 
-			anim.SetBool("isWalking", true);
-			anim.SetBool("isSitting", false);
-			anim.SetBool("isRunning", false);
 			currentlyOnPath = true;
 		}
 
