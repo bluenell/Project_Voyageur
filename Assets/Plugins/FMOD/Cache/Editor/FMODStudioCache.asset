@@ -16,7 +16,7 @@ MonoBehaviour:
   guid: b553e15a09befb408aee9614b6eadbc7
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: event:/Character/Whistle
   guid: 3b3188aefe96974fa8a87fcd4faadde8
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -47,29 +47,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1280
---- !u!114 &-8247500756815449701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Canoe/PickUpCanoe
-  m_EditorClassIdentifier: 
-  Path: event:/Character/Canoe/PickUpCanoe
-  guid: f2280ca1c625e54990d976da05240926
-  Banks:
-  - {fileID: 967622568029502538}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 312
 --- !u!114 &-8161561939408132176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +62,7 @@ MonoBehaviour:
   Path: event:/Character/island1_chop_2
   guid: b79cd3b95ec15d4f9c88082159aad74c
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -131,7 +108,7 @@ MonoBehaviour:
   Path: event:/Ambience/Forest_Wind3D
   guid: f28162f37e2b774299e52fd2ce78b98d
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -155,7 +132,7 @@ MonoBehaviour:
   guid: c6d3e1f103a1794999e81e70f05b8abc
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -244,7 +221,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
---- !u!114 &-7277324335805669656
+--- !u!114 &-7287154990986016262
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,19 +231,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/CameraShutter
+  m_Name: event:/island2/BatSwarm3D
   m_EditorClassIdentifier: 
-  Path: event:/Character/CameraShutter
-  guid: f8ce3dc5bfc3d64eb7d90ec0b09f7418
+  Path: event:/island2/BatSwarm3D
+  guid: a7a6ace7689d1748bad3f02ceac8cbc6
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3960
+--- !u!114 &-7251626063240894055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/island0/Close_Door
+  m_EditorClassIdentifier: 
+  Path: event:/island0/Close_Door
+  guid: 36c2cd0fb3f3cf4dabc83667dbaf6c6b
+  Banks:
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 2377
+  Length: 590
 --- !u!114 &-7205448242356905873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +300,7 @@ MonoBehaviour:
   Path: event:/Character/Sharpen_Axe
   guid: 9c60152b2c7f174f85a13b0e4ed4689f
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -422,7 +422,7 @@ MonoBehaviour:
   Path: event:/Animals/Squirrel
   guid: e146041356a84b4c9cc9e8154aa3a160
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -448,25 +448,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &-6577190951434036634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637231571665781897
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &-6211170159207587915
+--- !u!114 &-6627220873565794827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,20 +458,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Fishing/Float_Splash
+  m_Name: event:/Character/StartingFire
   m_EditorClassIdentifier: 
-  Path: event:/Character/Fishing/Float_Splash
-  guid: adcf387edd167b47a2182af2e2bfe187
+  Path: event:/Character/StartingFire
+  guid: bf99b4657dfd684f8d97c58e02937e90
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 585
---- !u!114 &-5981496202261876844
+  Length: 1306
+--- !u!114 &-6228346972540760639
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -499,19 +481,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/island2/BatSwarm3D
+  m_Name: event:/Character/Page_Turn
   m_EditorClassIdentifier: 
-  Path: event:/island2/BatSwarm3D
-  guid: a7a6ace7689d1748bad3f02ceac8cbc6
+  Path: event:/Character/Page_Turn
+  guid: 796b151a53b0cb41ad05a0b74b8b8827
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 500
+--- !u!114 &-6226036222671151964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Animals/Beehive
+  m_EditorClassIdentifier: 
+  Path: event:/Animals/Beehive
+  guid: da69b0cec02dce4f8c7f5f7d32aec8ab
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3960
+  Length: 42070
 --- !u!114 &-5957283159424324541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +535,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-5898011591374138615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Canoe/Exit_Canoe
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Canoe/Exit_Canoe
+  guid: 7f064ab7d5ce6040a88679f4b1b53c0d
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3840
 --- !u!114 &-5876609179632056702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,7 +576,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &-5791464556081040673
+--- !u!114 &-5632818029158869762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,20 +586,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Fishing/Reel_In_Fish
+  m_Name: event:/Character/Canoe/BeachCanoe
   m_EditorClassIdentifier: 
-  Path: event:/Character/Fishing/Reel_In_Fish
-  guid: c981d9e6ab2c5d45b724e95197a65d29
+  Path: event:/Character/Canoe/BeachCanoe
+  guid: bf1ab6110a9ff948b72569b9c95cb426
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 840
---- !u!114 &-5676121158996009442
+  Length: 1032
+--- !u!114 &-5505411502375091405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -581,55 +609,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Canoe/Exit_Canoe
+  m_Name: event:/Character/Fishing/Bite
   m_EditorClassIdentifier: 
-  Path: event:/Character/Canoe/Exit_Canoe
-  guid: 7f064ab7d5ce6040a88679f4b1b53c0d
+  Path: event:/Character/Fishing/Bite
+  guid: d6a3a6e9edecd948bc57b1282f528173
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 3840
---- !u!114 &-5628764029577831973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637230713219578663
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &-5212367180636995987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637229938801404608
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
+  Length: 705
 --- !u!114 &-4930033604541965015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,6 +639,47 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-4906352060629550825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637255721140000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-4774102128904431926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/island2/ChopBlock_01
+  m_EditorClassIdentifier: 
+  Path: event:/island2/ChopBlock_01
+  guid: 4c2cab41f856da4eb4c4859aadc4f229
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 600
 --- !u!114 &-4754823576921004703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,7 +696,7 @@ MonoBehaviour:
   guid: aa2ec7f77d35c343bc7c162fd19a1d24
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -707,6 +740,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-4279586165576508027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Fishing/Cast_Rod
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Fishing/Cast_Rod
+  guid: 1c41d3fba316234fa291d37777df5784
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 653
 --- !u!114 &-4259741419574987108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,11 +777,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637255691163754548
+  lastModified: 637255721140000000
   LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 3384
+  FileSizes: []
   Exists: 1
 --- !u!114 &-4089969250145938741
 MonoBehaviour:
@@ -796,7 +850,7 @@ MonoBehaviour:
   Path: event:/Character/Switch_Item
   guid: c57caef268059a41b31de831c6225b34
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -804,6 +858,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 400
+--- !u!114 &-3787394509270596988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Music
+  guid: 42a715467fddc244aca209e6838bae39
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 135000
 --- !u!114 &-3725006584741000068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,7 +953,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &-3407422514107546113
+--- !u!114 &-3392152302153819170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -885,15 +962,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Animals/GeeseFlyOver3D
   m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637231529389619239
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
+  Path: event:/Animals/GeeseFlyOver3D
+  guid: 0178d5244a20474da5979c859c7d97f4
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5459
 --- !u!114 &-3263409429870182122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,6 +1076,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 264
+--- !u!114 &-3103047669614337043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Fishing/Reel_In_NoFish
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Fishing/Reel_In_NoFish
+  guid: 0a15e7f9e6f72b42af0cb4010d2c3d0f
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 705
+--- !u!114 &-3071358345244364692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/island2/Campfire
+  m_EditorClassIdentifier: 
+  Path: event:/island2/Campfire
+  guid: d38ba4758439794ea9431d7536758672
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 46400
 --- !u!114 &-3056013530295831037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,25 +1140,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &-3023077081743417392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637233437590000000
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &-2951626542128260022
+--- !u!114 &-2118082344919254304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1040,83 +1150,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Canoe/Paddling
+  m_Name: event:/Character/Canoe/PickUpCanoe
   m_EditorClassIdentifier: 
-  Path: event:/Character/Canoe/Paddling
-  guid: 744af2135479a2478cb649cf426c4c77
+  Path: event:/Character/Canoe/PickUpCanoe
+  guid: f2280ca1c625e54990d976da05240926
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1380
---- !u!114 &-2930265352751015311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Page_Turn
-  m_EditorClassIdentifier: 
-  Path: event:/Character/Page_Turn
-  guid: 796b151a53b0cb41ad05a0b74b8b8827
-  Banks:
-  - {fileID: 967622568029502538}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 500
---- !u!114 &-2177635229208987426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Animals/Dragonfly
-  m_EditorClassIdentifier: 
-  Path: event:/Animals/Dragonfly
-  guid: 66fc0c672f45704585a5dea6f3a2b999
-  Banks:
-  - {fileID: 967622568029502538}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2766
---- !u!114 &-2103792015945143256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637254957244382175
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
+  Length: 312
 --- !u!114 &-2091840372723097037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1140,25 +1186,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3840
---- !u!114 &-1975702974315781759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637230619135778116
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &-1675624008032632554
+--- !u!114 &-1527446248600161907
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1168,37 +1196,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/StartingFire
+  m_Name: event:/Character/Canoe/Paddling
   m_EditorClassIdentifier: 
-  Path: event:/Character/StartingFire
-  guid: bf99b4657dfd684f8d97c58e02937e90
+  Path: event:/Character/Canoe/Paddling
+  guid: 744af2135479a2478cb649cf426c4c77
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1306
---- !u!114 &-1603801189943939822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637215255989957401
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
+  Length: 1380
 --- !u!114 &-1515595206256035808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1215,7 +1225,7 @@ MonoBehaviour:
   guid: b1a371b01643c04c9f97b26496e451a9
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1245,6 +1255,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 120384
+--- !u!114 &-1249455736697509922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Canoe/PutDownCanoe
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Canoe/PutDownCanoe
+  guid: 8ba9cf2d6bd3e648925d30e4569f206e
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 249
 --- !u!114 &-1020494970394267013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1261,7 +1294,7 @@ MonoBehaviour:
   guid: 798d8ff73c89ec4382bfa39c14b360a3
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -1287,48 +1320,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &-822284247780318787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637254116665289241
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &-693463771011476097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/island2/DropWood
-  m_EditorClassIdentifier: 
-  Path: event:/island2/DropWood
-  guid: 6999420b592b99459c9cd356e0e4e825
-  Banks:
-  - {fileID: 967622568029502538}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 600
---- !u!114 &-596051099962997689
+--- !u!114 &-772885071847332501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1343,7 +1335,7 @@ MonoBehaviour:
   Path: event:/Character/Monty/MontyFootsteps3D
   guid: 854d9b471422254eb1989683ec28922e
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1351,29 +1343,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 168
---- !u!114 &-541864896523581180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Fishing/Reel_In_NoFish
-  m_EditorClassIdentifier: 
-  Path: event:/Character/Fishing/Reel_In_NoFish
-  guid: 0a15e7f9e6f72b42af0cb4010d2c3d0f
-  Banks:
-  - {fileID: 967622568029502538}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 705
 --- !u!114 &-344446179477231948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1465,7 +1434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -4259741419574987108}
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   EditorEvents:
   - {fileID: -1020494970394267013}
   - {fileID: 5076369093478829923}
@@ -1487,41 +1456,42 @@ MonoBehaviour:
   - {fileID: 6913326400364563984}
   - {fileID: -6704664957460662887}
   - {fileID: -8038413729108837066}
-  - {fileID: 7031586320479821875}
-  - {fileID: 7540037439043570270}
-  - {fileID: -2930265352751015311}
-  - {fileID: -541864896523581180}
-  - {fileID: -8068785983065410006}
-  - {fileID: 3366609722260944877}
-  - {fileID: -6211170159207587915}
-  - {fileID: -5791464556081040673}
-  - {fileID: 5103320360532424851}
-  - {fileID: -211140417141741079}
-  - {fileID: 3477455761795450123}
-  - {fileID: -2951626542128260022}
-  - {fileID: -5676121158996009442}
-  - {fileID: -7497900610106354849}
-  - {fileID: 8206515681404160963}
-  - {fileID: -8247500756815449701}
-  - {fileID: 661299123662423103}
-  - {fileID: 8402204083204960931}
-  - {fileID: -596051099962997689}
-  - {fileID: 3989302707449198466}
-  - {fileID: -2177635229208987426}
-  - {fileID: 6670863386308777948}
-  - {fileID: -6952179706608432712}
-  - {fileID: -693463771011476097}
-  - {fileID: 7776306033812655538}
-  - {fileID: -7277324335805669656}
-  - {fileID: -7450878203135421230}
-  - {fileID: -5981496202261876844}
-  - {fileID: -1675624008032632554}
+  - {fileID: -3392152302153819170}
+  - {fileID: 393100807420799623}
+  - {fileID: 603869701011035236}
+  - {fileID: -3103047669614337043}
+  - {fileID: -4279586165576508027}
+  - {fileID: 2686927170874705562}
+  - {fileID: -7251626063240894055}
+  - {fileID: 8105357341799367163}
+  - {fileID: -3787394509270596988}
+  - {fileID: -4774102128904431926}
+  - {fileID: 7011443879493689689}
+  - {fileID: 7127893400987823478}
+  - {fileID: 6252956778753711548}
+  - {fileID: 3604819924725506316}
+  - {fileID: -1527446248600161907}
+  - {fileID: -6228346972540760639}
+  - {fileID: -5898011591374138615}
+  - {fileID: -772885071847332501}
+  - {fileID: -1249455736697509922}
+  - {fileID: 5777181972049773605}
+  - {fileID: -7287154990986016262}
+  - {fileID: 4399247701159669621}
+  - {fileID: -5632818029158869762}
+  - {fileID: -6627220873565794827}
+  - {fileID: 3771094397850384124}
+  - {fileID: -3071358345244364692}
+  - {fileID: -5505411502375091405}
+  - {fileID: -6226036222671151964}
+  - {fileID: -2118082344919254304}
+  - {fileID: 9005281310265710802}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   StringsBanks:
   - {fileID: -4259741419574987108}
-  stringsBankWriteTime: 637255691163754548
+  stringsBankWriteTime: 637255721140000000
   cacheVersion: 3
 --- !u!114 &270965383595358240
 MonoBehaviour:
@@ -1559,6 +1529,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &393100807420799623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Monty/MontyBark3D
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Monty/MontyBark3D
+  guid: 07a0dfce9324694e83b285505eed64c2
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
 --- !u!114 &438749730561508559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,43 +1574,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 120384
---- !u!114 &516785742629259327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637233453119623122
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &598305899045449966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637254121790708672
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &661299123662423103
+--- !u!114 &603869701011035236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1627,37 +1584,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Monty/MontyBark3D
+  m_Name: event:/island0/Open_Door
   m_EditorClassIdentifier: 
-  Path: event:/Character/Monty/MontyBark3D
-  guid: 07a0dfce9324694e83b285505eed64c2
+  Path: event:/island0/Open_Door
+  guid: 0852b83475a8ae429f8377fd415d0755
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 400
---- !u!114 &967622568029502538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637255691164482599
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 370
 --- !u!114 &1351622495728034361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1745,7 +1684,7 @@ MonoBehaviour:
   Path: event:/Character/island1_chop_1
   guid: 294fa9ccd4e42f488efc92003555d4f2
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1753,6 +1692,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 444
+--- !u!114 &2686927170874705562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Fishing/Extend_Rod
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Fishing/Extend_Rod
+  guid: 31ca1b00a97ad54ab7dd47176df06519
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 417
 --- !u!114 &2736323984475838462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1829,7 +1791,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1992
---- !u!114 &3366609722260944877
+--- !u!114 &3604819924725506316
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1839,65 +1801,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Fishing/Extend_Rod
+  m_Name: event:/island2/ThrowStone3D
   m_EditorClassIdentifier: 
-  Path: event:/Character/Fishing/Extend_Rod
-  guid: 31ca1b00a97ad54ab7dd47176df06519
+  Path: event:/island2/ThrowStone3D
+  guid: 73280a519c35a844af216aaa2db94dda
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 417
---- !u!114 &3477455761795450123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Canoe/Drag_Canoe
-  m_EditorClassIdentifier: 
-  Path: event:/Character/Canoe/Drag_Canoe
-  guid: 388df2d3fa0da442a6cecbaa6ff23dfd
-  Banks:
-  - {fileID: 967622568029502538}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1992
---- !u!114 &3989302707449198466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/island2/Campfire
-  m_EditorClassIdentifier: 
-  Path: event:/island2/Campfire
-  guid: d38ba4758439794ea9431d7536758672
-  Banks:
-  - {fileID: 967622568029502538}
-  IsStream: 1
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 46400
+  Length: 1944
+--- !u!114 &3771094397850384124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Fishing/Reel_In_Fish
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Fishing/Reel_In_Fish
+  guid: c981d9e6ab2c5d45b724e95197a65d29
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 840
 --- !u!114 &4157056326651303985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1914,7 +1853,7 @@ MonoBehaviour:
   guid: bd10e01fb8083c4fa66b23e1f351e6dd
   Banks:
   - {fileID: -3430837138057679765}
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1944,6 +1883,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 360
+--- !u!114 &4399247701159669621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Fishing/Float_Splash
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Fishing/Float_Splash
+  guid: adcf387edd167b47a2182af2e2bfe187
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 585
 --- !u!114 &4709525742126272069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2098,6 +2060,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &5777181972049773605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/island2/ChopBlock_00
+  m_EditorClassIdentifier: 
+  Path: event:/island2/ChopBlock_00
+  guid: a03000acd028864c9c69914c2c95dd89
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 600
 --- !u!114 &5860409259319014696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2211,6 +2196,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &6252956778753711548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/island2/DropWood
+  m_EditorClassIdentifier: 
+  Path: event:/island2/DropWood
+  guid: 6999420b592b99459c9cd356e0e4e825
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 600
 --- !u!114 &6359910400982908612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2262,7 +2270,7 @@ MonoBehaviour:
   Path: event:/Ambience/Bird_song3D_00
   guid: 9b6d0da39bf49042abdca60abe89e2dd
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -2326,7 +2334,7 @@ MonoBehaviour:
   Path: event:/Ambience/Bird_song3D_01
   guid: d615ccc9f106ce4d8d588a86846d2aa3
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -2334,7 +2342,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 108312
---- !u!114 &7031586320479821875
+--- !u!114 &7011443879493689689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2344,19 +2352,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/island0/Open_Door
+  m_Name: event:/Character/Whistle2D
   m_EditorClassIdentifier: 
-  Path: event:/island0/Open_Door
-  guid: 0852b83475a8ae429f8377fd415d0755
+  Path: event:/Character/Whistle2D
+  guid: 54f30fec2fa4fe4f93ef4e092367d3f7
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 370
+  Length: 500
+--- !u!114 &7127893400987823478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Animals/Dragonfly
+  m_EditorClassIdentifier: 
+  Path: event:/Animals/Dragonfly
+  guid: 66fc0c672f45704585a5dea6f3a2b999
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2766
 --- !u!114 &7321376450391555950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2515,6 +2546,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &8105357341799367163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Canoe/Drag_Canoe
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Canoe/Drag_Canoe
+  guid: 388df2d3fa0da442a6cecbaa6ff23dfd
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1992
 --- !u!114 &8181855793210767662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2530,7 +2584,7 @@ MonoBehaviour:
   Path: event:/Character/island1_chop_3
   guid: b88b69aa2e94e043a026a18e520b49bb
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2692,7 +2746,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &8975377762176401455
+--- !u!114 &9005281310265710802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2701,15 +2755,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/CameraShutter
   m_EditorClassIdentifier: 
-  Path: FMOD/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637233251780000000
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
+  Path: event:/Character/CameraShutter
+  guid: f8ce3dc5bfc3d64eb7d90ec0b09f7418
+  Banks:
+  - {fileID: -4906352060629550825}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1306
 --- !u!114 &9087018009776539277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2725,7 +2784,7 @@ MonoBehaviour:
   Path: event:/Animals/BlueJay
   guid: c7759008db3bb246bb276b37b0ef6f36
   Banks:
-  - {fileID: 967622568029502538}
+  - {fileID: -4906352060629550825}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
