@@ -3137,7 +3137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143336666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.13882, y: -7.21, z: -10}
+  m_LocalPosition: {x: -282.0896, y: -7.21, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556811341}
@@ -5080,7 +5080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.13882, y: -0.73, z: -10}
+  m_LocalPosition: {x: -282.0896, y: -0.73, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -11326,7 +11326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632327417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -214.08217, y: -1.1060004, z: -10.35}
+  m_LocalPosition: {x: -214.07924, y: -1.1060004, z: -10.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1675404983}
@@ -29955,7 +29955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.13882, y: -0.73, z: -10}
+  m_LocalPosition: {x: -282.0896, y: -0.73, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -40165,12 +40165,12 @@ PrefabInstance:
     - target: {fileID: 5589543232539466300, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: soundEvents.Array.size
-      value: 25
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -40257,6 +40257,26 @@ PrefabInstance:
       propertyPath: soundEvents.Array.data[24]
       value: event:/Character/Fishing/Reel_In_NoFish
       objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[25]
+      value: event:/Character/CameraShutter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[26]
+      value: event:/island2/ChopBlock_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[27]
+      value: event:/island2/ChopBlock_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[28]
+      value: event:/island2/DropWood
+      objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467202, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: canoe
@@ -40275,7 +40295,7 @@ PrefabInstance:
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -289.06
+      value: -284.01
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
