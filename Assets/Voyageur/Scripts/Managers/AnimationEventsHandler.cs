@@ -16,6 +16,7 @@ public class AnimationEventsHandler : MonoBehaviour
 	public MyGrid grid;
 
 	public GameObject bats;
+	public GameObject batsAudio;
 
 
 	#region Functions
@@ -25,6 +26,7 @@ public class AnimationEventsHandler : MonoBehaviour
 	public void FinishMine()
 	{
 		bats.SetActive(true);
+		batsAudio.SetActive(true);
 		//individualInteractions.animTriggered = false;
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0f));
 		interactionsManager.interaction.MarkAsComplete();
@@ -189,6 +191,11 @@ public class AnimationEventsHandler : MonoBehaviour
 	#endregion
 
 	#region SoundFX
+
+	public void PlayRockThrow()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayRockThrow();
+	}
 
 	public void PlayCameraShutter()
 	{

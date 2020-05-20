@@ -192,4 +192,10 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState.start();
 	}
 
+	public void PlayRockThrow()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[30]);
+		playerState.start();
+	}
+
 }

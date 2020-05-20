@@ -3137,7 +3137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143336666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.1867, y: -7.21, z: -10}
+  m_LocalPosition: {x: 663.55786, y: 1.1600002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556811341}
@@ -3858,6 +3858,7 @@ MonoBehaviour:
   individualInteractions: {fileID: 2099149885}
   grid: {fileID: 0}
   bats: {fileID: 0}
+  batsAudio: {fileID: 0}
 --- !u!114 &191282462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5080,7 +5081,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.1867, y: -0.73, z: -10}
+  m_LocalPosition: {x: 663.55786, y: 7.6400003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -7560,6 +7561,7 @@ MonoBehaviour:
   individualInteractions: {fileID: 0}
   grid: {fileID: 0}
   bats: {fileID: 0}
+  batsAudio: {fileID: 0}
 --- !u!1 &442136713
 GameObject:
   m_ObjectHideFlags: 0
@@ -11326,7 +11328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632327417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -214.07231, y: -1.1060004, z: -10.35}
+  m_LocalPosition: {x: -214.09776, y: -1.1060004, z: -10.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1675404983}
@@ -13266,7 +13268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &722950329
 Transform:
   m_ObjectHideFlags: 0
@@ -13275,7 +13277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722950328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.96, y: 8.03, z: 0}
+  m_LocalPosition: {x: -0.2, y: 6.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 874454530}
@@ -13338,7 +13340,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 14
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15998,6 +16000,7 @@ Transform:
   m_Children:
   - {fileID: 696102025}
   - {fileID: 722950329}
+  - {fileID: 2086141725}
   m_Father: {fileID: 1747388633}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17971,6 +17974,7 @@ MonoBehaviour:
   individualInteractions: {fileID: 0}
   grid: {fileID: 0}
   bats: {fileID: 0}
+  batsAudio: {fileID: 0}
 --- !u!1 &970999111 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6116965791367155482, guid: a693216344e2fbf41ac17dbbcd0fe94c,
@@ -29955,7 +29959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.1867, y: -0.73, z: -10}
+  m_LocalPosition: {x: 663.55786, y: 7.6400003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -38519,6 +38523,80 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: -1.43, y: -3.29}
   m_UseGraphicAlpha: 1
+--- !u!1 &2086141724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2086141725}
+  - component: {fileID: 2086141726}
+  - component: {fileID: 2086141727}
+  m_Layer: 12
+  m_Name: bats audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2086141725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086141724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.46, y: -2.71, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 874454530}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2086141726
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086141724}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a00d64c567e34504bb436c7207b02d66, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2086141727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086141724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/island2/BatSwarm3D
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 4.0652237
+  OverrideMaxDistance: 11.793781
 --- !u!1 &2092883722
 GameObject:
   m_ObjectHideFlags: 0
@@ -40170,7 +40248,7 @@ PrefabInstance:
     - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: soundEvents.Array.size
-      value: 30
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -40282,6 +40360,11 @@ PrefabInstance:
       propertyPath: soundEvents.Array.data[29]
       value: event:/Character/Sharpen_Axe
       objectReference: {fileID: 0}
+    - target: {fileID: 5589543232539466302, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: soundEvents.Array.data[30]
+      value: event:/island2/ThrowStone3D
+      objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467202, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: canoe
@@ -40300,12 +40383,12 @@ PrefabInstance:
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -289.11
+      value: 661.64
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.03
+      value: 1.34
       objectReference: {fileID: 0}
     - target: {fileID: 5589543232539467203, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -40423,6 +40506,11 @@ PrefabInstance:
       propertyPath: bats
       value: 
       objectReference: {fileID: 722950328}
+    - target: {fileID: 5589543232795568479, guid: abfb46e0a85092c438b33e1b5ad61596,
+        type: 3}
+      propertyPath: batsAudio
+      value: 
+      objectReference: {fileID: 2086141724}
     - target: {fileID: 5803238741952494976, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: m_IsActive
