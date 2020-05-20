@@ -50,7 +50,7 @@ public class AnimationEventsHandler : MonoBehaviour
 	private void Awake()
 	{
 		TransitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>();
-		
+
 	}
 	public void Transition()
 	{
@@ -126,7 +126,7 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	public void StartFire()
 	{
-		fire.SetActive(true);		
+		fire.SetActive(true);
 	}
 
 	public void FinishFire()
@@ -189,6 +189,27 @@ public class AnimationEventsHandler : MonoBehaviour
 	#endregion
 
 	#region SoundFX
+
+	public void PlayCameraShutter()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayCameraShutter();
+	}
+	public void PlayLogChop1()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayChopWood1();
+	}
+
+	public void PlayChop2()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayChopWood2();
+	}
+
+	public void PlayDropLogs()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayDropWood();
+	}
+
+
 
 	public void PlayItemSwitch()
 	{

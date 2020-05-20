@@ -163,5 +163,28 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState.start();
 	}
 
+	public void PlayCameraShutter()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[25]);
+		playerState.start();
+	}
+	
+	public void PlayDropWood()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[28]);
+		playerState.start();
+	}
+
+	public void PlayChopWood1() 
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[26]);
+		playerState.start();
+	}
+	public void PlayChopWood2()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[27]);
+		playerState.start();
+	}
+
 
 }
