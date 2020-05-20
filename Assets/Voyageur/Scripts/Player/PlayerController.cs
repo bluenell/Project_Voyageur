@@ -249,6 +249,7 @@ public class PlayerController : MonoBehaviour
 				{
 					if (currentInventoryIndex == 1 && interactionsManager.interaction.requiredTool == 1 && inventory.hasAxe)
 					{
+						targetFound = true;
 						usingAxe = true;
 
 					}
@@ -256,6 +257,7 @@ public class PlayerController : MonoBehaviour
 					{
 						if ((interactionsManager.interaction.forceFaceRight && facingRight) || (!interactionsManager.interaction.forceFaceRight && !facingRight))
 						{
+							
 							usingRod = true;
 						}
 					}

@@ -249,6 +249,10 @@ public class MontyStateActions : MonoBehaviour
 				PathRequestManager.RequestPath(transform.position, player.transform.GetChild(5).transform.position, OnPathFound);
 			}
 
+
+			anim.SetBool("isWalking", true);
+			anim.SetBool("isSitting", false);
+			anim.SetBool("isRunning", false);
 			currentlyOnPath = true;
 		}
 
