@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{db6c7188-edd4-486d-91a8-09cf2095caf5}">
+		<property name="assetPath">
+			<value>ThrowStone.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.944</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d7f640d3-ee20-44a0-82cf-a9a7bf109b2a}</destination>
+		</relationship>
+	</object>
+</objects>
