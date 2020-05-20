@@ -3025,7 +3025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143336666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.11838, y: -7.1499996, z: -10}
+  m_LocalPosition: {x: -287.11917, y: -7.1499996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556811341}
@@ -5130,7 +5130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.11838, y: -0.6699996, z: -10}
+  m_LocalPosition: {x: -287.11917, y: -0.6699996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -6571,6 +6571,55 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9087984262450711158}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &375399001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375399000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ea68ffc3c30fe42bcfdecfe3016bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEvents:
+  - event:/Character/Footstep
+  - event:/Character/Canoe/Paddling
+  - event:/Character/Canoe/Exit_Canoe
+  - event:/Character/Torch_ON
+  - event:/Character/Canoe/Drag_Canoe
+  - event:/Character/island1_chop_3
+  - event:/Character/Switch_Item
+  - event:/Character/Whistle2D
+  - event:/Character/Torch_OFF
+  - event:/Character/island1_chop_1
+  - event:/Character/island1_chop_2
+  - event:/Character/Canoe/PickUpCanoe
+  - event:/Character/Canoe/PutDownCanoe
+  - event:/island0/Close_Door
+  - event:/island0/Open_Door
+  - event:/Character/Page_Turn
+  - event:/Character/Canoe/BeachCanoe
+  - event:/Character/Monty/MontyFootsteps3D
+  - event:/Character/Monty/MontyBark3D
+  - event:/Character/Fishing/Extend_Rod
+  - event:/Character/Fishing/Cast_Rod
+  - event:/Character/Fishing/Float_Splash
+  - event:/Character/Fishing/Bite
+  - event:/Character/Fishing/Reel_In_Fish
+  - event:/Character/Fishing/Reel_In_NoFish
+  - event:/Character/CameraShutter
+  - event:/island2/ChopBlock_00
+  - event:/island2/ChopBlock_01
+  - event:/island2/DropWood
+  - event:/Character/Sharpen_Axe
+  - event:/island2/ThrowStone3D
+  - event:/Character/StartingFire
+  - event:/Character/Canoe/Enter00
+  - event:/Character/Canoe/Enter01
+  - event:/Character/Canoe/Enter02
+  montyRb: {fileID: 1590928201}
 --- !u!4 &375399003 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9087984262083717165, guid: d07b2c61f1b45ba43877709fff2cdbed,
@@ -11273,7 +11322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632327417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -214.07553, y: -1.1060004, z: -10.35}
+  m_LocalPosition: {x: -258.8092, y: -1.1060004, z: -10.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1675404983}
@@ -30086,7 +30135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.11838, y: -0.6699996, z: -10}
+  m_LocalPosition: {x: -287.11917, y: -0.6699996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -41247,6 +41296,11 @@ PrefabInstance:
       propertyPath: paddleRate
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9087984262083717162, guid: d07b2c61f1b45ba43877709fff2cdbed,
+        type: 3}
+      propertyPath: beached
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
       propertyPath: soundEvents.Array.size
@@ -41315,7 +41369,7 @@ PrefabInstance:
     - target: {fileID: 9087984262083717165, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -223.1
+      value: -267.83
       objectReference: {fileID: 0}
     - target: {fileID: 9087984262083717165, guid: d07b2c61f1b45ba43877709fff2cdbed,
         type: 3}
@@ -41433,5 +41487,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9087984262083717163, guid: d07b2c61f1b45ba43877709fff2cdbed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d07b2c61f1b45ba43877709fff2cdbed, type: 3}

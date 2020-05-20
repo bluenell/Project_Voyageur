@@ -194,6 +194,27 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	#region SoundFX
 
+	public void PlayLaunchCanoe1()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayLaunchCanoe1();
+
+	}
+
+	public void PlayLaunchCanoe2()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayLaunchCanoe2();
+
+	}
+	public void PlayLaunchCanoe3()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayLaunchCanoe3();
+
+	}
+
+
 	public void PlayLightFire()
 	{
 		player.GetComponent<PlayerSoundManager>().PlayLightFire ();

@@ -204,4 +204,22 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState.start();
 	}
 
+	public void PlayLaunchCanoe1()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[32]);
+		playerState.start();
+	}
+
+	public void PlayLaunchCanoe2()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[33]);
+		playerState.start();
+	}
+	public void PlayLaunchCanoe3()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[34]);
+		playerState.start();
+	}
+
+
 }
