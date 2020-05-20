@@ -192,6 +192,11 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	#region SoundFX
 
+	public void PlayLightFire()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayLightFire ();
+	}
+
 	public void PlayRockThrow()
 	{
 		player.GetComponent<PlayerSoundManager>().PlayRockThrow();
