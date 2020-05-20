@@ -80,6 +80,9 @@
 		<property name="volume">
 			<value>-6.5</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{fc1f7e0b-7607-4d8a-af9c-954c01574034}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{a4d0b3a0-2ce8-445a-82d1-6aa9f29af6f5}</destination>
 		</relationship>
@@ -151,6 +154,14 @@
 		<relationship name="markerTrack">
 			<destination>{edd46d9c-d366-491e-93bb-b224701a6f69}</destination>
 		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{fc1f7e0b-7607-4d8a-af9c-954c01574034}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>15.5999994</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{a4d0b3a0-2ce8-445a-82d1-6aa9f29af6f5}">
 		<relationship name="effects">
