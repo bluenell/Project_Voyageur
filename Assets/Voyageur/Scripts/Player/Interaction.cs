@@ -7,6 +7,7 @@ public class Interaction : MonoBehaviour
 {
 
 	public InteractionsManager manager;
+	
 
 	public string interactionName;
 	public Collider2D interactionCollider;
@@ -32,19 +33,20 @@ public class Interaction : MonoBehaviour
 	public string journalName;
 	[TextArea]
 	public string journalDescription;
-	
-
 
 	public void MarkAsComplete()
 	{
+		// manager.GetComponent<PlayerSoundManager>().PlayCameraShutter();
 		Debug.Log(name + " is complete");
 		complete = true;
 		manager.inRange = false;
 		interactionCollider.enabled = false;
 		manager.interaction = null;		
 
+
+
 		if (hasJournalEntry)
-		{
+		{	
 			journal.UpdateInteractionPages(journalName, journalDescription, journalImage);
 		}
 	}

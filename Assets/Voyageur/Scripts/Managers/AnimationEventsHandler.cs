@@ -209,6 +209,11 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<PlayerSoundManager>().PlayDropWood();
 	}
 
+	public void PlaySharpenAxe()
+	{
+		player.GetComponent<PlayerSoundManager>().PlaySharpenAxe();
+
+	}
 
 
 	public void PlayItemSwitch()

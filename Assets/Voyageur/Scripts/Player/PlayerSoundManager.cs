@@ -186,5 +186,10 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState.start();
 	}
 
+	public void PlaySharpenAxe()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[29]);
+		playerState.start();
+	}
 
 }
