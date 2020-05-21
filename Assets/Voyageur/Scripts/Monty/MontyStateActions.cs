@@ -50,11 +50,13 @@ public class MontyStateActions : MonoBehaviour
 
 
 	public void Roam()
-	{ 
+	{
+		parentAnim.SetTrigger("reset");
 		//Debug.Log("Monty is following");
 		anim.SetBool("isRunning", false);
 		anim.SetBool("isSitting", false);
 		anim.SetBool("isWalking", true);
+
 
 		if (!currentlyOnPath && !stateVariables.callRequestMade)
 		{
@@ -105,9 +107,12 @@ public class MontyStateActions : MonoBehaviour
 
 		if (stateVariables.montyInCanoe)
 		{
-			journal.journalPages[2].SetActive(true);
+			//journal.journalPages[2].SetActive(true);
 			//transform.SetParent(GameObject.Find("Canoe Single").transform);
-			transform.position = canoeSeat.position;
+
+			//transform.position = canoeSeat.position;
+			//parentAnim.SetTrigger("reset");
+
 			sprite.flipX = true;
 			anim.SetBool("isRunning", false);
 			anim.SetBool("isSitting", true);
@@ -223,8 +228,6 @@ public class MontyStateActions : MonoBehaviour
 		{
 			sprite.flipX = false;
 		}
-
-
 	}
 
 	public void MoveTowards()
@@ -250,6 +253,7 @@ public class MontyStateActions : MonoBehaviour
 				// Left walk target
 				PathRequestManager.RequestPath(transform.position, player.transform.GetChild(5).transform.position, OnPathFound);
 			}
+
 
 			currentlyOnPath = true;
 		}

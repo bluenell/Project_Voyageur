@@ -16,6 +16,7 @@ public class AnimationEventsHandler : MonoBehaviour
 	public MyGrid grid;
 
 	public GameObject bats;
+	public GameObject batsAudio;
 
 
 	#region Functions
@@ -25,9 +26,11 @@ public class AnimationEventsHandler : MonoBehaviour
 	public void FinishMine()
 	{
 		bats.SetActive(true);
+		batsAudio.SetActive(true);
 		//individualInteractions.animTriggered = false;
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0f));
 		interactionsManager.interaction.MarkAsComplete();
+		player.GetComponent<PlayerController>().targetFound = false;
 		player.GetComponent<PlayerController>().usingHands = false;
 		Debug.Log("Fin");
 
@@ -50,7 +53,7 @@ public class AnimationEventsHandler : MonoBehaviour
 	private void Awake()
 	{
 		TransitionHandler = GameObject.Find("Transition Handler").GetComponent<TransitionHandler>();
-		
+
 	}
 	public void Transition()
 	{
@@ -97,7 +100,7 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(2).gameObject.SetActive(true);
 		player.GetComponent<InteractionsManager>().interaction.transform.GetChild(3).gameObject.SetActive(false);
 		player.GetComponent<PlayerController>().usingAxe = false;
-
+		player.GetComponent<PlayerController>().targetFound = false;
 		individualInteractions.chopCount = 0;
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
 	}
@@ -110,6 +113,7 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
 		player.GetComponent<PlayerInventory>().AddWood();
 		player.GetComponent<PlayerController>().usingAxe = false;
+		player.GetComponent<PlayerController>().targetFound = false;
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0));
 	}
 
@@ -126,7 +130,7 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	public void StartFire()
 	{
-		fire.SetActive(true);		
+		fire.SetActive(true);
 	}
 
 	public void FinishFire()
@@ -189,6 +193,63 @@ public class AnimationEventsHandler : MonoBehaviour
 	#endregion
 
 	#region SoundFX
+
+	public void PlayLaunchCanoe1()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayLaunchCanoe1();
+
+	}
+
+	public void PlayLaunchCanoe2()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayLaunchCanoe2();
+
+	}
+	public void PlayLaunchCanoe3()
+	{
+		GameObject canoeAIO = GameObject.Find("Canoe AIO");
+		canoeAIO.GetComponent<PlayerSoundManager>().PlayLaunchCanoe3();
+
+	}
+
+
+	public void PlayLightFire()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayLightFire ();
+	}
+
+	public void PlayRockThrow()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayRockThrow();
+	}
+
+	public void PlayCameraShutter()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayCameraShutter();
+	}
+	public void PlayLogChop1()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayChopWood1();
+	}
+
+	public void PlayChop2()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayChopWood2();
+	}
+
+	public void PlayDropLogs()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayDropWood();
+	}
+
+	public void PlaySharpenAxe()
+	{
+		player.GetComponent<PlayerSoundManager>().PlaySharpenAxe();
+
+	}
+
 
 	public void PlayItemSwitch()
 	{

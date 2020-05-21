@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
 		canoe.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(0).transform.position;
 		player.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(1).transform.position;
 		monty.transform.position = transition.playerSpawnPoints[GetCurrentIsland() - 1].transform.GetChild(2).transform.position;
+		player.transform.GetChild(0).GetComponent<Animator>().SetTrigger("hardreset");
+
 
         playerController.enabled = true;
 		playerController.currentInventoryIndex = 0;

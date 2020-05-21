@@ -163,5 +163,63 @@ public class PlayerSoundManager : MonoBehaviour
 		playerState.start();
 	}
 
+	public void PlayCameraShutter()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[25]);
+		playerState.start();
+	}
+	
+	public void PlayDropWood()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[28]);
+		playerState.start();
+	}
+
+	public void PlayChopWood1() 
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[26]);
+		playerState.start();
+	}
+	public void PlayChopWood2()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[27]);
+		playerState.start();
+	}
+
+	public void PlaySharpenAxe()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[29]);
+		playerState.start();
+	}
+
+	public void PlayRockThrow()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[30]);
+		playerState.start();
+	}
+
+	public void PlayLightFire()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[31]);
+		playerState.start();
+	}
+
+	public void PlayLaunchCanoe1()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[32]);
+		playerState.start();
+	}
+
+	public void PlayLaunchCanoe2()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[33]);
+		playerState.start();
+	}
+	public void PlayLaunchCanoe3()
+	{
+		playerState = FMODUnity.RuntimeManager.CreateInstance(soundEvents[34]);
+		playerState.start();
+	}
+
 
 }
