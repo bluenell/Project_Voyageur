@@ -272,6 +272,38 @@ public class PlayerController : MonoBehaviour
 						usingHands = true;
 					}
 
+					if (currentInventoryIndex != interactionsManager.interaction.requiredTool)
+					{
+						if (currentInventoryIndex == 3)
+						{
+							UseItem();
+						}
+						else if (currentInventoryIndex == 4)
+						{
+
+							Debug.Log("take screenshot");
+							anim.SetTrigger("cannot");
+							DisablePlayerInput();
+							EnablePlayerInput(1f);
+
+							string date = System.DateTime.Now.ToString();
+							date = date.Replace("/", "-");
+							date = date.Replace(" ", "_");
+							date = date.Replace(":", "-");
+
+							ScreenCapture.CaptureScreenshot(Application.dataPath + "/Screenshots/Screenshot_" + date + ".png");
+							Debug.Log("Screenshot Saved");
+
+						}
+						else
+						{
+							anim.SetTrigger("cannot");
+							DisablePlayerInput();
+
+
+						}
+					}
+
 
 					if (currentInventoryIndex != 2 && canLaunch && inventory.hasAxe && inventory.hasRod)
 					{
