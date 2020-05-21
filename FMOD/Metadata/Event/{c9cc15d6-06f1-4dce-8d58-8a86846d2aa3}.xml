@@ -75,6 +75,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{bfa4ab5a-70c0-4fe9-9b0f-531c0fd4dd8b}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{5b2bc06c-512a-4616-868f-7b6b56198db0}</destination>
 		</relationship>
@@ -136,7 +139,11 @@
 			<destination>{6679fe23-8afc-4e8b-a766-0fd676a9c790}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{7e822d7d-6fe7-49d2-b9cf-173d0d42299a}" />
+	<object class="MixerBusPanner" id="{7e822d7d-6fe7-49d2-b9cf-173d0d42299a}">
+		<property name="surroundLFELevel">
+			<value>-2.5</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{33d1945d-47f9-460b-b07c-7601e842e9d3}" />
 	<object class="RandomizerModulator" id="{77ea37f3-c3e9-4d67-bb6a-16ec3c3fa8b9}">
 		<property name="nameOfPropertyBeingModulated">
@@ -153,6 +160,16 @@
 	</object>
 	<object class="MixerBusPanner" id="{0521b257-180e-4251-a008-4d2e14626f7d}" />
 	<object class="MixerBusFader" id="{0ed8b8bf-14a1-4253-ab16-94324c727a6d}" />
-	<object class="SpatialiserEffect" id="{6679fe23-8afc-4e8b-a766-0fd676a9c790}" />
+	<object class="SpatialiserEffect" id="{6679fe23-8afc-4e8b-a766-0fd676a9c790}">
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>52</value>
+		</property>
+		<property name="minimumExtent">
+			<value>68</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{c2716720-475c-45ab-8745-1bb6affb5a3e}" />
 </objects>
