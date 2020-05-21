@@ -249,8 +249,12 @@ public class PlayerController : MonoBehaviour
 				{
 					if (currentInventoryIndex == 1 && interactionsManager.interaction.requiredTool == 1 && inventory.hasAxe)
 					{
-						targetFound = true;
-						usingAxe = true;
+						if ((interactionsManager.interaction.forceFaceRight && facingRight) || (!interactionsManager.interaction.forceFaceRight && !facingRight))
+						{
+							targetFound = true;
+							usingAxe = true;
+						}
+						
 
 					}
 					if (currentInventoryIndex == 2 && interactionsManager.interaction.requiredTool == 2 && !individualInteractions.fishing && inventory.hasRod)
@@ -266,6 +270,36 @@ public class PlayerController : MonoBehaviour
 					{
 						targetFound = true;
 						usingHands = true;
+					}
+
+					if (currentInventoryIndex != interactionsManager.interaction.requiredTool)
+					{
+						if (currentInventoryIndex == 3)
+						{
+							UseItem();
+						}
+						else if (currentInventoryIndex == 4)
+						{
+
+							Debug.Log("take screenshot");
+							anim.SetTrigger("cannot");
+							DisablePlayerInput();
+							EnablePlayerInput(1f);
+
+							string date = System.DateTime.Now.ToString();
+							date = date.Replace("/", "-");
+							date = date.Replace(" ", "_");
+							date = date.Replace(":", "-");
+
+							ScreenCapture.CaptureScreenshot(Application.dataPath + "/Screenshots/Screenshot_" + date + ".png");
+							Debug.Log("Screenshot Saved");
+
+						}
+						else
+						{
+							anim.SetTrigger("cannot");
+							DisablePlayerInput();
+						}
 					}
 
 
