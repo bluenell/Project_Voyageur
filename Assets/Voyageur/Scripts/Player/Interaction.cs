@@ -36,7 +36,7 @@ public class Interaction : MonoBehaviour
 
 	public void MarkAsComplete()
 	{
-		// manager.GetComponent<PlayerSoundManager>().PlayCameraShutter();
+		
 		Debug.Log(name + " is complete");
 		complete = true;
 		manager.inRange = false;
@@ -46,7 +46,8 @@ public class Interaction : MonoBehaviour
 
 
 		if (hasJournalEntry)
-		{	
+		{
+			manager.GetComponent<PlayerSoundManager>().PlayCameraShutter();
 			journal.UpdateInteractionPages(journalName, journalDescription, journalImage);
 		}
 	}

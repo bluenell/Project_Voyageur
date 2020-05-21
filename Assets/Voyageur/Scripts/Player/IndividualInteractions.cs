@@ -104,7 +104,7 @@ public class IndividualInteractions : MonoBehaviour
 					generated = false;
 					fishStage = 1;
 				}
-				else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A")) && timer < random && timer > 1f)
+				else if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Button A")) && timer < random && timer > 0.2f)
 				{
 					playerAnimator.SetTrigger("fishing_fail");
 					//Debug.Log("reel too early");
