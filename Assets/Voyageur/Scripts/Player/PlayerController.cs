@@ -299,8 +299,6 @@ public class PlayerController : MonoBehaviour
 						{
 							anim.SetTrigger("cannot");
 							DisablePlayerInput();
-
-
 						}
 					}
 
