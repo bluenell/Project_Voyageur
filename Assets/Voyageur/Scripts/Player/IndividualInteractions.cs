@@ -60,7 +60,7 @@ public class IndividualInteractions : MonoBehaviour
 		{
 			timer += Time.deltaTime;
 		}
-	}s
+	}
 
 	Animator anim;
 
