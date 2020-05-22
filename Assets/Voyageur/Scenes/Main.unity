@@ -24666,7 +24666,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -118.390045, y: -18.994215}
@@ -42458,17 +42458,17 @@ PrefabInstance:
     - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: tools.Array.size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: hasAxe
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: hasRod
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
@@ -42483,12 +42483,12 @@ PrefabInstance:
     - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: tools.Array.data[1]
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
       propertyPath: tools.Array.data[2]
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2582770787796774023, guid: abfb46e0a85092c438b33e1b5ad61596,
         type: 3}
