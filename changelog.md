@@ -4,10 +4,22 @@ _22nd May 2020_
 ### Added
 - Whistle Monty - monty can now be called and whistled to come to your location
 - Pet Monty, you can pet monty when he is sat down in front of you
-- Geese interaction
+- Geese interaction.
+- Abandoned mine interaction
+- Additional sounds to the interactions.
+- Small dragonfly ambient animations.
 
 ### Changed
 - Made changes to the polaroid/fish descriptions
+- Island 1 artwork at the launch beach
+- Interaction rules - player must stand still
+- Audio mixed
+- Added delay to monty's roam so it appears more realistic. 
+- Polaroid descriptions
+
+### Fixed
+- The cannot animations now play when in an interaction area too to tell the player it's the wrong tool
+- 
 
 # V3.2.1
 _15th May 2020_
