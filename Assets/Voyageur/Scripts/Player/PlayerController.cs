@@ -251,8 +251,8 @@ public class PlayerController : MonoBehaviour
 					{
 						if ((interactionsManager.interaction.forceFaceRight && facingRight) || (!interactionsManager.interaction.forceFaceRight && !facingRight))
 						{
-							targetFound = true;
 							usingAxe = true;
+							targetFound = true;
 						}
 						
 
@@ -268,8 +268,8 @@ public class PlayerController : MonoBehaviour
 
 					if (currentInventoryIndex == 0 && interactionsManager.interaction.requiredTool == 0)
 					{
-						targetFound = true;
 						usingHands = true;
+						targetFound = true;
 					}
 
 					if (currentInventoryIndex != interactionsManager.interaction.requiredTool)

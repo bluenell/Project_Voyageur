@@ -69,7 +69,9 @@ public class GameManager : MonoBehaviour
 		playerController.usingHands = false;
         playerController.interactionType = null;
         playerController.isMoving = false;
-        
+		StartCoroutine(playerController.EnablePlayerInput(0));
+		playerController.targetFound = false;
+
         player.GetComponent<InteractionsManager>().interaction = null;
 
 		monty.GetComponent<MontyStateActions>().currentlyOnPath = false;

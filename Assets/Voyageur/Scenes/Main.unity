@@ -2168,7 +2168,6 @@ GameObject:
   m_Component:
   - component: {fileID: 109304304}
   - component: {fileID: 109304305}
-  - component: {fileID: 109304306}
   m_Layer: 0
   m_Name: island02_B05
   m_TagString: Untagged
@@ -2240,19 +2239,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &109304306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109304303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &109624696
 GameObject:
   m_ObjectHideFlags: 0
@@ -3025,7 +3011,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143336666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.11725, y: -7.1699996, z: -10}
+  m_LocalPosition: {x: -287.12286, y: -7.1699996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556811341}
@@ -5140,7 +5126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288749952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.11725, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -287.12286, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 983178865}
@@ -8060,7 +8046,6 @@ GameObject:
   m_Component:
   - component: {fileID: 461304405}
   - component: {fileID: 461304406}
-  - component: {fileID: 461304407}
   m_Layer: 0
   m_Name: island1_terrain-A04
   m_TagString: Untagged
@@ -8132,19 +8117,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &461304407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461304404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &476682581
 GameObject:
   m_ObjectHideFlags: 0
@@ -9684,7 +9656,6 @@ GameObject:
   m_Component:
   - component: {fileID: 550591454}
   - component: {fileID: 550591453}
-  - component: {fileID: 550591455}
   m_Layer: 0
   m_Name: island1_terrain-A00
   m_TagString: Untagged
@@ -9756,19 +9727,6 @@ Transform:
   m_Father: {fileID: 730327342}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &550591455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 550591452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &556811340
 GameObject:
   m_ObjectHideFlags: 3
@@ -10167,7 +10125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 572067875}
   - component: {fileID: 572067876}
-  - component: {fileID: 572067877}
   m_Layer: 0
   m_Name: island1_terrain-A03
   m_TagString: Untagged
@@ -10239,19 +10196,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &572067877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 572067874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &574983764
 GameObject:
   m_ObjectHideFlags: 0
@@ -11065,7 +11009,6 @@ GameObject:
   m_Component:
   - component: {fileID: 622885517}
   - component: {fileID: 622885518}
-  - component: {fileID: 622885519}
   m_Layer: 0
   m_Name: island02_B09
   m_TagString: Untagged
@@ -11137,19 +11080,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &622885519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622885516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &627243061
 GameObject:
   m_ObjectHideFlags: 0
@@ -11439,7 +11369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632327417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -252.2148, y: -1.1060004, z: -10.35}
+  m_LocalPosition: {x: -252.24106, y: -1.1060004, z: -10.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1675404983}
@@ -17875,7 +17805,6 @@ GameObject:
   m_Component:
   - component: {fileID: 938442077}
   - component: {fileID: 938442078}
-  - component: {fileID: 938442079}
   m_Layer: 0
   m_Name: island02_B06
   m_TagString: Untagged
@@ -17947,19 +17876,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &938442079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938442076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &939661389
 GameObject:
   m_ObjectHideFlags: 0
@@ -20208,7 +20124,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1067821671}
   - component: {fileID: 1067821672}
-  - component: {fileID: 1067821673}
   m_Layer: 0
   m_Name: island1_terrain-A02
   m_TagString: Untagged
@@ -20280,19 +20195,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1067821673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067821670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &1071365989
 GameObject:
   m_ObjectHideFlags: 0
@@ -20546,7 +20448,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1084830845}
   - component: {fileID: 1084830846}
-  - component: {fileID: 1084830847}
   m_Layer: 0
   m_Name: island02_B01
   m_TagString: Untagged
@@ -20618,19 +20519,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1084830847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084830844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &1087941505
 GameObject:
   m_ObjectHideFlags: 0
@@ -21535,7 +21423,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1143799222}
   - component: {fileID: 1143799221}
-  - component: {fileID: 1143799223}
   m_Layer: 0
   m_Name: island1_terrain-A01
   m_TagString: Untagged
@@ -21607,19 +21494,6 @@ Transform:
   m_Father: {fileID: 730327342}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1143799223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143799220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &1156409620
 GameObject:
   m_ObjectHideFlags: 0
@@ -21796,7 +21670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1161391414
 Transform:
   m_ObjectHideFlags: 0
@@ -30320,7 +30194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560287161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -287.11725, y: -0.6899996, z: -10}
+  m_LocalPosition: {x: -287.12286, y: -0.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 201706898}
@@ -30558,7 +30432,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1575828908}
   - component: {fileID: 1575828909}
-  - component: {fileID: 1575828910}
   m_Layer: 0
   m_Name: island02_B07
   m_TagString: Untagged
@@ -30630,19 +30503,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1575828910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575828907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &1575983973
 GameObject:
   m_ObjectHideFlags: 0
@@ -31079,7 +30939,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1616159281}
   - component: {fileID: 1616159282}
-  - component: {fileID: 1616159283}
   m_Layer: 0
   m_Name: island02_B02 (1)
   m_TagString: Untagged
@@ -31151,19 +31010,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1616159283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616159280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &1631552705 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 257135889274856154, guid: 9e1a85280e6c72d4db0a515c5497e798,
@@ -33379,7 +33225,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1759245294}
   - component: {fileID: 1759245295}
-  - component: {fileID: 1759245296}
   m_Layer: 0
   m_Name: island02_B04
   m_TagString: Untagged
@@ -33437,8 +33282,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1107148243
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: 1ecb5f6244a0c4048aa61ee6e74cec7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -33451,19 +33296,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1759245296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759245293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &1764314086
 GameObject:
   m_ObjectHideFlags: 0
@@ -33684,7 +33516,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1765851096}
   - component: {fileID: 1765851097}
-  - component: {fileID: 1765851098}
   m_Layer: 0
   m_Name: island02_B00
   m_TagString: Untagged
@@ -33756,19 +33587,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1765851098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765851095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &1766724124
 GameObject:
   m_ObjectHideFlags: 0
@@ -36962,7 +36780,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1984158577}
   - component: {fileID: 1984158578}
-  - component: {fileID: 1984158579}
   m_Layer: 0
   m_Name: island02_B08
   m_TagString: Untagged
@@ -37034,19 +36851,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1984158579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984158576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &1985275531
 GameObject:
   m_ObjectHideFlags: 0
@@ -38045,7 +37849,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2034004230}
   - component: {fileID: 2034004231}
-  - component: {fileID: 2034004232}
   m_Layer: 0
   m_Name: island1_terrain-A05
   m_TagString: Untagged
@@ -38117,19 +37920,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2034004232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034004229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &2038238620
 GameObject:
   m_ObjectHideFlags: 0
@@ -40032,7 +39822,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2144325656}
   - component: {fileID: 2144325657}
-  - component: {fileID: 2144325658}
   m_Layer: 0
   m_Name: island02_B02
   m_TagString: Untagged
@@ -40104,19 +39893,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2144325658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144325655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1 &2145708475
 GameObject:
   m_ObjectHideFlags: 0
@@ -40127,7 +39903,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2145708476}
   - component: {fileID: 2145708477}
-  - component: {fileID: 2145708478}
   m_Layer: 0
   m_Name: island02_B03
   m_TagString: Untagged
@@ -40199,19 +39974,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2145708478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145708475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e6a72216bc1da43ba6c616fc3b8743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1062876551}
 --- !u!1001 &136487977928785464
 PrefabInstance:
   m_ObjectHideFlags: 0
