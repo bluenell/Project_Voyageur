@@ -81,6 +81,7 @@ public class TransitionHandler : MonoBehaviour
 		canoe.transform.position = playerSpawnPoints[gm.GetCurrentIsland()-1].transform.GetChild(0).transform.position;
 		player.transform.position = playerSpawnPoints[gm.GetCurrentIsland()-1].transform.GetChild(1).transform.position;
 		monty.transform.position = playerSpawnPoints[gm.GetCurrentIsland()-1].transform.GetChild(2).transform.position;
+		StartCoroutine(playerController.EnablePlayerInput(0f));
 
 		canoeAIO.SetActive(false);
 		canoe.SetActive(true);
