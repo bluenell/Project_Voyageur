@@ -26,6 +26,36 @@ TextureImporter:
   - first:
       213: 3416990568768307842
     second: BeaverBubbles_7
+  - first:
+      213: 8214906021079981448
+    second: BeaverBubbles_0
+  - first:
+      213: -5717037052339255425
+    second: BeaverBubbles_1
+  - first:
+      213: -5720732897558883907
+    second: BeaverBubbles_2
+  - first:
+      213: -4455331301801306200
+    second: BeaverBubbles_3
+  - first:
+      213: -7174740480241181877
+    second: BeaverBubbles_4
+  - first:
+      213: 6444969525614489630
+    second: BeaverBubbles_5
+  - first:
+      213: -7965265505788730862
+    second: BeaverBubbles_6
+  - first:
+      213: -8122991609635644765
+    second: BeaverBubbles_7
+  - first:
+      213: -4465611399236321412
+    second: BeaverBubbles_8
+  - first:
+      213: 3176636147578503339
+    second: BeaverBubbles_9
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -125,6 +155,27 @@ TextureImporter:
       name: BeaverBubbles_0
       rect:
         serializedVersion: 2
+        x: 0
+        y: 0
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d90b17085310270800000000000000
+      internalID: 8214906021079981448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeaverBubbles_1
+      rect:
+        serializedVersion: 2
         x: 114
         y: 0
         width: 114
@@ -136,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7396be18369fab60800000000000000
-      internalID: 7759585850760270718
+      spriteID: f77829f471109a0b0800000000000000
+      internalID: -5717037052339255425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBubbles_1
+      name: BeaverBubbles_2
       rect:
         serializedVersion: 2
         x: 228
@@ -157,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74254f9c442d812f0800000000000000
-      internalID: -1001819724202094009
+      spriteID: db19c1a4dbfdb90b0800000000000000
+      internalID: -5720732897558883907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBubbles_2
+      name: BeaverBubbles_3
       rect:
         serializedVersion: 2
         x: 342
@@ -178,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 209c46935b45c6890800000000000000
-      internalID: -7463497345131034366
+      spriteID: 8a7547f49cb7b22c0800000000000000
+      internalID: -4455331301801306200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBubbles_3
+      name: BeaverBubbles_4
       rect:
         serializedVersion: 2
         x: 456
@@ -199,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7de62641b98752c00800000000000000
-      internalID: 875238310050688727
+      spriteID: b4bdb9feb833e6c90800000000000000
+      internalID: -7174740480241181877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBubbles_4
+      name: BeaverBubbles_5
       rect:
         serializedVersion: 2
         x: 570
@@ -220,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7179a09270e2c6c0800000000000000
-      internalID: -4124487526060035715
+      spriteID: e10387af2a1217950800000000000000
+      internalID: 6444969525614489630
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBubbles_5
+      name: BeaverBubbles_6
       rect:
         serializedVersion: 2
         x: 684
@@ -241,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d998222901a2cfd0800000000000000
-      internalID: -2323117397169890855
+      spriteID: 2126ac96931b57190800000000000000
+      internalID: -7965265505788730862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBubbles_6
+      name: BeaverBubbles_7
       rect:
         serializedVersion: 2
         x: 798
@@ -262,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53ad93fead8019ae0800000000000000
-      internalID: -1544443460801930699
+      spriteID: 3aa50322b26554f80800000000000000
+      internalID: -8122991609635644765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverBubbles_7
+      name: BeaverBubbles_8
       rect:
         serializedVersion: 2
         x: 912
@@ -283,8 +334,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2828b4c71d69b6f20800000000000000
-      internalID: 3416990568768307842
+      spriteID: c7f759b9716f602c0800000000000000
+      internalID: -4465611399236321412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeaverBubbles_9
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 0
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba00515eebda51c20800000000000000
+      internalID: 3176636147578503339
       vertices: []
       indices: 
       edges: []

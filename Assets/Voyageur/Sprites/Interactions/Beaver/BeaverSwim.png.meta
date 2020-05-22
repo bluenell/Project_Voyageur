@@ -119,6 +119,129 @@ TextureImporter:
   - first:
       213: -1218248390271470421
     second: BeaverSwim_38
+  - first:
+      213: -8731255100478040645
+    second: BeaverSwim_0
+  - first:
+      213: 2842797401654504228
+    second: BeaverSwim_1
+  - first:
+      213: 7365734343722382307
+    second: BeaverSwim_2
+  - first:
+      213: 374598192787808166
+    second: BeaverSwim_3
+  - first:
+      213: -3596067579144614025
+    second: BeaverSwim_4
+  - first:
+      213: -2535514121566142060
+    second: BeaverSwim_5
+  - first:
+      213: 5582974655411367124
+    second: BeaverSwim_6
+  - first:
+      213: 1279414873304606222
+    second: BeaverSwim_7
+  - first:
+      213: 3020129501770778856
+    second: BeaverSwim_8
+  - first:
+      213: -1378879687473841717
+    second: BeaverSwim_9
+  - first:
+      213: 1168029625402694725
+    second: BeaverSwim_10
+  - first:
+      213: 3303250310872202243
+    second: BeaverSwim_11
+  - first:
+      213: -4562363145234148582
+    second: BeaverSwim_12
+  - first:
+      213: 7975531165040537674
+    second: BeaverSwim_13
+  - first:
+      213: -3929658344479781125
+    second: BeaverSwim_14
+  - first:
+      213: 8830163599337020264
+    second: BeaverSwim_15
+  - first:
+      213: 8481404232029575559
+    second: BeaverSwim_16
+  - first:
+      213: -8170760151693045510
+    second: BeaverSwim_17
+  - first:
+      213: -3804376544011458253
+    second: BeaverSwim_18
+  - first:
+      213: -4018080073894296513
+    second: BeaverSwim_19
+  - first:
+      213: 3050333159334046719
+    second: BeaverSwim_20
+  - first:
+      213: 7564226399447852421
+    second: BeaverSwim_21
+  - first:
+      213: -8903684909671476428
+    second: BeaverSwim_22
+  - first:
+      213: 7035981668995041036
+    second: BeaverSwim_23
+  - first:
+      213: 5396334552887509857
+    second: BeaverSwim_24
+  - first:
+      213: 697760490134740803
+    second: BeaverSwim_25
+  - first:
+      213: -3962996527769749014
+    second: BeaverSwim_26
+  - first:
+      213: -4257220490158425591
+    second: BeaverSwim_27
+  - first:
+      213: -4068842264170797413
+    second: BeaverSwim_28
+  - first:
+      213: 811441335074547378
+    second: BeaverSwim_29
+  - first:
+      213: -3141059680860412905
+    second: BeaverSwim_30
+  - first:
+      213: 6978308053930227861
+    second: BeaverSwim_31
+  - first:
+      213: 1865741691882351492
+    second: BeaverSwim_32
+  - first:
+      213: 2650993280173350891
+    second: BeaverSwim_33
+  - first:
+      213: -3417617485448909303
+    second: BeaverSwim_34
+  - first:
+      213: -8154867455642385875
+    second: BeaverSwim_35
+  - first:
+      213: -4085740146351738481
+    second: BeaverSwim_36
+  - first:
+      213: 3282706570567483099
+    second: BeaverSwim_37
+  - first:
+      213: -1825588814243369179
+    second: BeaverSwim_38
+  - first:
+      213: 3727954446690668009
+    second: BeaverSwim_39
+  - first:
+      213: 1090617595949538131
+    second: BeaverSwim_40
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -218,6 +341,27 @@ TextureImporter:
       name: BeaverSwim_0
       rect:
         serializedVersion: 2
+        x: 0
+        y: 0
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb550bc0fb954d680800000000000000
+      internalID: -8731255100478040645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeaverSwim_1
+      rect:
+        serializedVersion: 2
         x: 114
         y: 0
         width: 114
@@ -229,14 +373,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2571a9235232fe780800000000000000
-      internalID: -8651657716485712046
+      spriteID: 42b250ecc25a37720800000000000000
+      internalID: 2842797401654504228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_1
+      name: BeaverSwim_2
       rect:
         serializedVersion: 2
         x: 228
@@ -250,14 +394,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1bc96cced2b1e090800000000000000
-      internalID: -8006921992506062054
+      spriteID: 3e3b77b3c58583660800000000000000
+      internalID: 7365734343722382307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_2
+      name: BeaverSwim_3
       rect:
         serializedVersion: 2
         x: 342
@@ -271,14 +415,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52c0da2ac17a38720800000000000000
-      internalID: 2847303130858458149
+      spriteID: 6afde965217d23500800000000000000
+      internalID: 374598192787808166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_3
+      name: BeaverSwim_4
       rect:
         serializedVersion: 2
         x: 456
@@ -292,14 +436,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87bc11933a31e6490800000000000000
-      internalID: -7751236316899980424
+      spriteID: 77f49cce693381ec0800000000000000
+      internalID: -3596067579144614025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_4
+      name: BeaverSwim_5
       rect:
         serializedVersion: 2
         x: 570
@@ -313,14 +457,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b4c426296a361a80800000000000000
-      internalID: -8496539423701941067
+      spriteID: 4914015175b00dcd0800000000000000
+      internalID: -2535514121566142060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_5
+      name: BeaverSwim_6
       rect:
         serializedVersion: 2
         x: 684
@@ -334,14 +478,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b181dee925114a30800000000000000
-      internalID: 4197659597530562995
+      spriteID: 4dcadc58ed5ba7d40800000000000000
+      internalID: 5582974655411367124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_6
+      name: BeaverSwim_7
       rect:
         serializedVersion: 2
         x: 798
@@ -355,14 +499,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7c326d8efe003e30800000000000000
-      internalID: 4481098115690151039
+      spriteID: e062ca37c0561c110800000000000000
+      internalID: 1279414873304606222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_7
+      name: BeaverSwim_8
       rect:
         serializedVersion: 2
         x: 912
@@ -376,14 +520,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cec8291cdc577f7f0800000000000000
-      internalID: -578864500517466900
+      spriteID: 8e889b0d7c7a9e920800000000000000
+      internalID: 3020129501770778856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_8
+      name: BeaverSwim_9
       rect:
         serializedVersion: 2
         x: 1026
@@ -397,14 +541,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83cc355b6ca275120800000000000000
-      internalID: 2402435959159508024
+      spriteID: bc9be18da3c3ddce0800000000000000
+      internalID: -1378879687473841717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_9
+      name: BeaverSwim_10
       rect:
         serializedVersion: 2
         x: 1140
@@ -418,14 +562,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 525087c89f81e1870800000000000000
-      internalID: 8655382993935271205
+      spriteID: 54c924d71cca53010800000000000000
+      internalID: 1168029625402694725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_10
+      name: BeaverSwim_11
       rect:
         serializedVersion: 2
         x: 1254
@@ -439,14 +583,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d31e66e3e4543570800000000000000
-      internalID: 8445468539026805713
+      spriteID: 30c7cb708a087dd20800000000000000
+      internalID: 3303250310872202243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_11
+      name: BeaverSwim_12
       rect:
         serializedVersion: 2
         x: 1368
@@ -460,14 +604,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5997212fd9ee4b40800000000000000
-      internalID: 5426531745571248477
+      spriteID: a131cff44ea3fa0c0800000000000000
+      internalID: -4562363145234148582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_12
+      name: BeaverSwim_13
       rect:
         serializedVersion: 2
         x: 1482
@@ -481,14 +625,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20d387a4f084d4560800000000000000
-      internalID: 7299569801548545282
+      spriteID: a407c43a657ceae60800000000000000
+      internalID: 7975531165040537674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_13
+      name: BeaverSwim_14
       rect:
         serializedVersion: 2
         x: 1596
@@ -502,14 +646,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22aed47b20236dd00800000000000000
-      internalID: 997039354755803682
+      spriteID: bfe02a05e8c0779c0800000000000000
+      internalID: -3929658344479781125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_14
+      name: BeaverSwim_15
       rect:
         serializedVersion: 2
         x: 1710
@@ -523,14 +667,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15a5f1f807284e810800000000000000
-      internalID: 1793701971549444689
+      spriteID: 86b5117620b0b8a70800000000000000
+      internalID: 8830163599337020264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_15
+      name: BeaverSwim_16
       rect:
         serializedVersion: 2
         x: 1824
@@ -544,14 +688,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 564a548ff201daed0800000000000000
-      internalID: -2401245228103785371
+      spriteID: 7891e9e663004b570800000000000000
+      internalID: 8481404232029575559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_16
+      name: BeaverSwim_17
       rect:
         serializedVersion: 2
         x: 1938
@@ -565,14 +709,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f27ec1732c8861900800000000000000
-      internalID: 654861163558659887
+      spriteID: af05b6dbee0ab9e80800000000000000
+      internalID: -8170760151693045510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_17
+      name: BeaverSwim_18
       rect:
         serializedVersion: 2
         x: 2052
@@ -586,14 +730,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 156db3be9847e3920800000000000000
-      internalID: 2971940939817014865
+      spriteID: 3396e5e80b3243bc0800000000000000
+      internalID: -3804376544011458253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_18
+      name: BeaverSwim_19
       rect:
         serializedVersion: 2
         x: 2166
@@ -607,14 +751,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7b0cac6406fb96e0800000000000000
-      internalID: -1829598324732458115
+      spriteID: f3484742679ec38c0800000000000000
+      internalID: -4018080073894296513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_19
+      name: BeaverSwim_20
       rect:
         serializedVersion: 2
         x: 2280
@@ -628,14 +772,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6b7e813584f04f50800000000000000
-      internalID: 6863754685011884907
+      spriteID: ffb63b8d8d5f45a20800000000000000
+      internalID: 3050333159334046719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_20
+      name: BeaverSwim_21
       rect:
         serializedVersion: 2
         x: 2394
@@ -649,14 +793,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c25c1bb48c1fb6110800000000000000
-      internalID: 1255362763718509868
+      spriteID: 585a8b355d789f860800000000000000
+      internalID: 7564226399447852421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_21
+      name: BeaverSwim_22
       rect:
         serializedVersion: 2
         x: 2508
@@ -670,14 +814,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9ffad62156882af0800000000000000
-      internalID: -420938882056781925
+      spriteID: 43396079fb1cf6480800000000000000
+      internalID: -8903684909671476428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_22
+      name: BeaverSwim_23
       rect:
         serializedVersion: 2
         x: 2622
@@ -691,14 +835,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61fb9f62a3340d040800000000000000
-      internalID: 4670306730624270102
+      spriteID: c070c9abc04d4a160800000000000000
+      internalID: 7035981668995041036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_23
+      name: BeaverSwim_24
       rect:
         serializedVersion: 2
         x: 2736
@@ -712,14 +856,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 272f37ba01438af90800000000000000
-      internalID: -6942241579390995854
+      spriteID: 163c6025fa1a3ea40800000000000000
+      internalID: 5396334552887509857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_24
+      name: BeaverSwim_25
       rect:
         serializedVersion: 2
         x: 2850
@@ -733,14 +877,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2329a8f863996560800000000000000
-      internalID: 7307533949443056427
+      spriteID: 34f98c80871fea900800000000000000
+      internalID: 697760490134740803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_25
+      name: BeaverSwim_26
       rect:
         serializedVersion: 2
         x: 2964
@@ -754,14 +898,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83ec261f782ab6eb0800000000000000
-      internalID: -4725504679241134536
+      spriteID: ae97d24a7ab9009c0800000000000000
+      internalID: -3962996527769749014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_26
+      name: BeaverSwim_27
       rect:
         serializedVersion: 2
         x: 3078
@@ -775,14 +919,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 215414f8f48128420800000000000000
-      internalID: 2630691862322693394
+      spriteID: 90ab79915805be4c0800000000000000
+      internalID: -4257220490158425591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_27
+      name: BeaverSwim_28
       rect:
         serializedVersion: 2
         x: 3192
@@ -796,14 +940,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90815972e49264880800000000000000
-      internalID: -8627162620533336055
+      spriteID: b96e005b4819887c0800000000000000
+      internalID: -4068842264170797413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_28
+      name: BeaverSwim_29
       rect:
         serializedVersion: 2
         x: 3306
@@ -817,14 +961,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5528ab4dff667ed70800000000000000
-      internalID: 9072333223332840021
+      spriteID: 2b6ef255891d24b00800000000000000
+      internalID: 811441335074547378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_29
+      name: BeaverSwim_30
       rect:
         serializedVersion: 2
         x: 3420
@@ -838,14 +982,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21d4d314e326926a0800000000000000
-      internalID: -6473534969846346478
+      spriteID: 7146300ccd6b864d0800000000000000
+      internalID: -3141059680860412905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_30
+      name: BeaverSwim_31
       rect:
         serializedVersion: 2
         x: 3534
@@ -859,14 +1003,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ac5213d62f581470800000000000000
-      internalID: 8365540928195288226
+      spriteID: 59832cfc33ee7d060800000000000000
+      internalID: 6978308053930227861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_31
+      name: BeaverSwim_32
       rect:
         serializedVersion: 2
         x: 3648
@@ -880,14 +1024,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07e4f45d5d68e9f10800000000000000
-      internalID: 2278406714460950128
+      spriteID: 48ba8430f2274e910800000000000000
+      internalID: 1865741691882351492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_32
+      name: BeaverSwim_33
       rect:
         serializedVersion: 2
         x: 3762
@@ -901,14 +1045,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b3e4309ba8bd67f0800000000000000
-      internalID: -617634526881586256
+      spriteID: bef1eaeb7583ac420800000000000000
+      internalID: 2650993280173350891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_33
+      name: BeaverSwim_34
       rect:
         serializedVersion: 2
         x: 3876
@@ -922,14 +1066,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be5f02383a7a4a010800000000000000
-      internalID: 1199267721508877803
+      spriteID: 90e67a9110f2290d0800000000000000
+      internalID: -3417617485448909303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_34
+      name: BeaverSwim_35
       rect:
         serializedVersion: 2
         x: 3990
@@ -943,14 +1087,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 635d835936b581f50800000000000000
-      internalID: 6852327316307629366
+      spriteID: d22ca04614714de80800000000000000
+      internalID: -8154867455642385875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_35
+      name: BeaverSwim_36
       rect:
         serializedVersion: 2
         x: 4104
@@ -964,14 +1108,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3b6f4224181d3e20800000000000000
-      internalID: 3331845774078077757
+      spriteID: f81f62cebf88c47c0800000000000000
+      internalID: -4085740146351738481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_36
+      name: BeaverSwim_37
       rect:
         serializedVersion: 2
         x: 4218
@@ -985,14 +1129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 539fa5f4d73b17790800000000000000
-      internalID: -7534043350830483147
+      spriteID: bdef380cb348e8d20800000000000000
+      internalID: 3282706570567483099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_37
+      name: BeaverSwim_38
       rect:
         serializedVersion: 2
         x: 4332
@@ -1006,14 +1150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7161f8901c6bfe630800000000000000
-      internalID: 3958583537687270935
+      spriteID: 52fe81555a43aa6e0800000000000000
+      internalID: -1825588814243369179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeaverSwim_38
+      name: BeaverSwim_39
       rect:
         serializedVersion: 2
         x: 4446
@@ -1027,8 +1171,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba47da92b89e71fe0800000000000000
-      internalID: -1218248390271470421
+      spriteID: 9edc5d551da5cb330800000000000000
+      internalID: 3727954446690668009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeaverSwim_40
+      rect:
+        serializedVersion: 2
+        x: 4560
+        y: 0
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35bdc58dce6a22f00800000000000000
+      internalID: 1090617595949538131
       vertices: []
       indices: 
       edges: []

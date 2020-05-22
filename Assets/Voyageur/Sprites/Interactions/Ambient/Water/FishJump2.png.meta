@@ -35,6 +35,45 @@ TextureImporter:
   - first:
       213: 4867412986873314877
     second: FishJump2_10
+  - first:
+      213: -4002228495963580627
+    second: FishJump2_0
+  - first:
+      213: 6321404936184509996
+    second: FishJump2_1
+  - first:
+      213: 5163181821853483200
+    second: FishJump2_2
+  - first:
+      213: 3661507953142969944
+    second: FishJump2_3
+  - first:
+      213: 3478171685288067407
+    second: FishJump2_4
+  - first:
+      213: -3102476204052036620
+    second: FishJump2_5
+  - first:
+      213: 7652988887620459347
+    second: FishJump2_6
+  - first:
+      213: -4914341444037237118
+    second: FishJump2_7
+  - first:
+      213: -6592736662559942506
+    second: FishJump2_8
+  - first:
+      213: -7545881125504786824
+    second: FishJump2_9
+  - first:
+      213: 4566218257004799615
+    second: FishJump2_10
+  - first:
+      213: 5675488875332235800
+    second: FishJump2_11
+  - first:
+      213: -6751357872265509397
+    second: FishJump2_12
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -134,6 +173,27 @@ TextureImporter:
       name: FishJump2_0
       rect:
         serializedVersion: 2
+        x: 0
+        y: 0
+        width: 51
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27152c336a3578c0800000000000000
+      internalID: -4002228495963580627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishJump2_1
+      rect:
+        serializedVersion: 2
         x: 51
         y: 0
         width: 51
@@ -145,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82adcfde730ea2f60800000000000000
-      internalID: 8010461418052442664
+      spriteID: c26bda61c442ab750800000000000000
+      internalID: 6321404936184509996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump2_1
+      name: FishJump2_2
       rect:
         serializedVersion: 2
         x: 102
@@ -166,14 +226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 626b2e585c9eedfb0800000000000000
-      internalID: -4620999133071493594
+      spriteID: 0c0c452e28e47a740800000000000000
+      internalID: 5163181821853483200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump2_2
+      name: FishJump2_3
       rect:
         serializedVersion: 2
         x: 153
@@ -187,14 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05bc09d4fb5d948a0800000000000000
-      internalID: -6320285584420975792
+      spriteID: 856ba59751a40d230800000000000000
+      internalID: 3661507953142969944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump2_3
+      name: FishJump2_4
       rect:
         serializedVersion: 2
         x: 204
@@ -208,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58ba5b8cd125496e0800000000000000
-      internalID: -1831748860558070907
+      spriteID: f41ca6938b2f44030800000000000000
+      internalID: 3478171685288067407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump2_4
+      name: FishJump2_5
       rect:
         serializedVersion: 2
         x: 255
@@ -229,14 +289,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fef28e635218114d0800000000000000
-      internalID: -3165607066229788689
+      spriteID: 4f3406d745ac1f4d0800000000000000
+      internalID: -3102476204052036620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump2_5
+      name: FishJump2_6
       rect:
         serializedVersion: 2
         x: 306
@@ -250,14 +310,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd25b453ad7a89d20800000000000000
-      internalID: 3285560483805614813
+      spriteID: 35b11a498d0e43a60800000000000000
+      internalID: 7652988887620459347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump2_6
+      name: FishJump2_7
       rect:
         serializedVersion: 2
         x: 357
@@ -271,14 +331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a1aa5226eb0a1f20800000000000000
-      internalID: 3394038352223838628
+      spriteID: 2862e237e70cccbb0800000000000000
+      internalID: -4914341444037237118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump2_7
+      name: FishJump2_8
       rect:
         serializedVersion: 2
         x: 408
@@ -292,14 +352,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93550c7292c39bcc0800000000000000
-      internalID: -3694855871822539463
+      spriteID: 6989b6a6fe4e184a0800000000000000
+      internalID: -6592736662559942506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump2_8
+      name: FishJump2_9
       rect:
         serializedVersion: 2
         x: 459
@@ -313,14 +373,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21ec8ab9149f03950800000000000000
-      internalID: 6426910728437419538
+      spriteID: 87e56fc9815a74790800000000000000
+      internalID: -7545881125504786824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump2_9
+      name: FishJump2_10
       rect:
         serializedVersion: 2
         x: 510
@@ -334,14 +394,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65470c8bd7a9c0830800000000000000
-      internalID: 4038772830605702230
+      spriteID: f76aca7df477e5f30800000000000000
+      internalID: 4566218257004799615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump2_10
+      name: FishJump2_11
       rect:
         serializedVersion: 2
         x: 561
@@ -355,8 +415,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3ef4b9a2568c8340800000000000000
-      internalID: 4867412986873314877
+      spriteID: 812fbd4ef0363ce40800000000000000
+      internalID: 5675488875332235800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishJump2_12
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 0
+        width: 51
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5c31019cb5e42a0800000000000000
+      internalID: -6751357872265509397
       vertices: []
       indices: 
       edges: []

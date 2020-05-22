@@ -35,6 +35,45 @@ TextureImporter:
   - first:
       213: -5298396650962359903
     second: FishJump(51x21)_10
+  - first:
+      213: -490071693191332181
+    second: FishJump(51x21)_0
+  - first:
+      213: -851457340121163680
+    second: FishJump(51x21)_1
+  - first:
+      213: 8271698599092661670
+    second: FishJump(51x21)_2
+  - first:
+      213: -8098260192082569172
+    second: FishJump(51x21)_3
+  - first:
+      213: 4729945031402465557
+    second: FishJump(51x21)_4
+  - first:
+      213: 7240022768566139865
+    second: FishJump(51x21)_5
+  - first:
+      213: 5569197492779689911
+    second: FishJump(51x21)_6
+  - first:
+      213: 5641289177649383140
+    second: FishJump(51x21)_7
+  - first:
+      213: -7625789812487358658
+    second: FishJump(51x21)_8
+  - first:
+      213: 296047044161538167
+    second: FishJump(51x21)_9
+  - first:
+      213: 8830182299346214341
+    second: FishJump(51x21)_10
+  - first:
+      213: 6404011204601270618
+    second: FishJump(51x21)_11
+  - first:
+      213: 2404043791870244777
+    second: FishJump(51x21)_12
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -134,6 +173,27 @@ TextureImporter:
       name: FishJump(51x21)_0
       rect:
         serializedVersion: 2
+        x: 0
+        y: 0
+        width: 51
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae3bdc346ae239f0800000000000000
+      internalID: -490071693191332181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishJump(51x21)_1
+      rect:
+        serializedVersion: 2
         x: 51
         y: 0
         width: 51
@@ -145,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32254d0c7d0c008a0800000000000000
-      internalID: -6340856242452016605
+      spriteID: 068dda47f040f24f0800000000000000
+      internalID: -851457340121163680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump(51x21)_1
+      name: FishJump(51x21)_2
       rect:
         serializedVersion: 2
         x: 102
@@ -166,14 +226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cff084c79f5694280800000000000000
-      internalID: -9058597053272682500
+      spriteID: 6ada300fc0afac270800000000000000
+      internalID: 8271698599092661670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump(51x21)_2
+      name: FishJump(51x21)_3
       rect:
         serializedVersion: 2
         x: 153
@@ -187,14 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a86470af05dde530800000000000000
-      internalID: 3885996316583815331
+      spriteID: c285b3003433d9f80800000000000000
+      internalID: -8098260192082569172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump(51x21)_3
+      name: FishJump(51x21)_4
       rect:
         serializedVersion: 2
         x: 204
@@ -208,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b25f69b16207bfd30800000000000000
-      internalID: 4466286764441924907
+      spriteID: 5192edb12f324a140800000000000000
+      internalID: 4729945031402465557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump(51x21)_4
+      name: FishJump(51x21)_5
       rect:
         serializedVersion: 2
         x: 255
@@ -229,14 +289,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5434290dd873f990800000000000000
-      internalID: -7353400875829414818
+      spriteID: 9dbff16495ab97460800000000000000
+      internalID: 7240022768566139865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump(51x21)_5
+      name: FishJump(51x21)_6
       rect:
         serializedVersion: 2
         x: 306
@@ -250,14 +310,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6f97cabec3ba5930800000000000000
-      internalID: 4132813308544130927
+      spriteID: 7b72121ec93c94d40800000000000000
+      internalID: 5569197492779689911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump(51x21)_6
+      name: FishJump(51x21)_7
       rect:
         serializedVersion: 2
         x: 357
@@ -271,14 +331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59803e94721aeaf60800000000000000
-      internalID: 8047546774273067157
+      spriteID: 4e60c054e92e94e40800000000000000
+      internalID: 5641289177649383140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump(51x21)_7
+      name: FishJump(51x21)_8
       rect:
         serializedVersion: 2
         x: 408
@@ -292,14 +352,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf109443662591050800000000000000
-      internalID: 5771734996369342971
+      spriteID: e37f5e69190cb2690800000000000000
+      internalID: -7625789812487358658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump(51x21)_8
+      name: FishJump(51x21)_9
       rect:
         serializedVersion: 2
         x: 459
@@ -313,14 +373,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34d47237de8e786c0800000000000000
-      internalID: -4141085225807033021
+      spriteID: 7788d08d735cb1400800000000000000
+      internalID: 296047044161538167
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump(51x21)_9
+      name: FishJump(51x21)_10
       rect:
         serializedVersion: 2
         x: 510
@@ -334,14 +394,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a29d8aee2737e720800000000000000
-      internalID: 2875327561742520997
+      spriteID: 5cd1976540c1b8a70800000000000000
+      internalID: 8830182299346214341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FishJump(51x21)_10
+      name: FishJump(51x21)_11
       rect:
         serializedVersion: 2
         x: 561
@@ -355,8 +415,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a9e44c61505876b0800000000000000
-      internalID: -5298396650962359903
+      spriteID: a5151ebb24e9fd850800000000000000
+      internalID: 6404011204601270618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishJump(51x21)_12
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 0
+        width: 51
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a7b8ee6711ec5120800000000000000
+      internalID: 2404043791870244777
       vertices: []
       indices: 
       edges: []
