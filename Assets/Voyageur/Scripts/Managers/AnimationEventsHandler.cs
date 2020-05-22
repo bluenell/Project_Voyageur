@@ -29,6 +29,7 @@ public class AnimationEventsHandler : MonoBehaviour
 		batsAudio.SetActive(true);
 		//individualInteractions.animTriggered = false;
 		StartCoroutine(player.GetComponent<PlayerController>().EnablePlayerInput(0f));
+		player.GetComponent<PlayerController>().playerCollider.enabled = true;
 		interactionsManager.interaction.MarkAsComplete();
 		player.GetComponent<PlayerController>().targetFound = false;
 		player.GetComponent<PlayerController>().usingHands = false;
@@ -102,6 +103,7 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<PlayerController>().usingAxe = false;
 		player.GetComponent<PlayerController>().targetFound = false;
 		individualInteractions.chopCount = 0;
+		player.GetComponent<PlayerController>().playerCollider.enabled = true;
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
 	}
 	public void ChoppingBlock()
@@ -110,6 +112,7 @@ public class AnimationEventsHandler : MonoBehaviour
 		player.GetComponent<InteractionsManager>().interaction.gameObject.SetActive(false);
 
 		individualInteractions.chopCount = 0;
+		player.GetComponent<PlayerController>().playerCollider.enabled = true;
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
 		player.GetComponent<PlayerInventory>().AddWood();
 		player.GetComponent<PlayerController>().usingAxe = false;
@@ -135,6 +138,7 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	public void FinishFire()
 	{
+		player.GetComponent<PlayerController>().playerCollider.enabled = true;
 		player.GetComponent<InteractionsManager>().interaction.MarkAsComplete();
 		player.GetComponent<PlayerController>().usingHands = false;
 		individualInteractions.hasLogs = false;

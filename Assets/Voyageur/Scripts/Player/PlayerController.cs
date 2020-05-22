@@ -155,13 +155,9 @@ public class PlayerController : MonoBehaviour
 			   		 
 		if (targetFound)
 		{
-			playerCollider.enabled = false;
 			HandleCanoe(interactionType);
 		}
-		else
-		{
-			playerCollider.enabled = true;
-		}
+
 
 
 
@@ -252,7 +248,6 @@ public class PlayerController : MonoBehaviour
 						if ((interactionsManager.interaction.forceFaceRight && facingRight) || (!interactionsManager.interaction.forceFaceRight && !facingRight))
 						{
 							usingAxe = true;
-							targetFound = true;
 						}
 						
 
@@ -260,8 +255,7 @@ public class PlayerController : MonoBehaviour
 					if (currentInventoryIndex == 2 && interactionsManager.interaction.requiredTool == 2 && !individualInteractions.fishing && inventory.hasRod)
 					{
 						if ((interactionsManager.interaction.forceFaceRight && facingRight) || (!interactionsManager.interaction.forceFaceRight && !facingRight))
-						{
-							
+						{							
 							usingRod = true;
 						}
 					}
@@ -269,7 +263,7 @@ public class PlayerController : MonoBehaviour
 					if (currentInventoryIndex == 0 && interactionsManager.interaction.requiredTool == 0)
 					{
 						usingHands = true;
-						targetFound = true;
+					
 					}
 
 					if (currentInventoryIndex != interactionsManager.interaction.requiredTool)
@@ -489,6 +483,8 @@ public class PlayerController : MonoBehaviour
 
 			if (CheckIfAtTarget(pickUpTarget, false))
 			{
+				playerCollider.enabled = true;
+
 				targetFound = false;
 				carryingCanoe = true;
 
@@ -507,6 +503,7 @@ public class PlayerController : MonoBehaviour
 
 			if (CheckIfAtTarget(spawnTarget, true))
 			{
+				playerCollider.enabled = true;
 				targetFound = false;
 				carryingCanoe = false;
 				anim.SetTrigger("PutDown");
@@ -528,6 +525,7 @@ public class PlayerController : MonoBehaviour
 
 			if (CheckIfAtTarget(putDownTarget, false))
 			{
+				playerCollider.enabled = true;
 				targetFound = false;
 				carryingCanoe = false;
 
@@ -569,6 +567,7 @@ public class PlayerController : MonoBehaviour
 
 				if (CheckIfAtTarget(pickUpTarget, false))
 				{
+					playerCollider.enabled = true;
 					playerSoundManager.PlayPushCanoe();
 					pushCounter++;
 					canoe.transform.GetChild(0).GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
@@ -701,6 +700,7 @@ public class PlayerController : MonoBehaviour
 	public void MoveTowardsTarget(Transform target, bool onlyY)
 	{
 		anim.SetBool("isMoving", true);
+		playerCollider.enabled = false;
 
 		if (onlyY)
 		{

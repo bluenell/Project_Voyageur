@@ -8,6 +8,7 @@ _22nd May 2020_
 - Abandoned mine interaction
 - Additional sounds to the interactions.
 - Small dragonfly ambient animations.
+- Ambient fish animations on the river
 
 ### Changed
 - Made changes to the polaroid/fish descriptions
