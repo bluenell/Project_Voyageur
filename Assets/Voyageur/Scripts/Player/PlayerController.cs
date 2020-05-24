@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
 	MontyStateActions montyStateActions;
 	GameObject montyObj;
 	public Animator montyAnim;
+	bool firstPet;
 
 	#endregion
 
@@ -122,6 +123,7 @@ public class PlayerController : MonoBehaviour
 		montyStateManager = montyObj.GetComponent<MontyStateManager>();
 		montyStateVariables = montyObj.GetComponent<MontyStateVariables>();
 
+		firstPet = false;
 		//canoe = GameObject.Find("Canoe");
 		//canoeTarget = GameObject.Find("canoeTarget");
 
@@ -212,7 +214,13 @@ public class PlayerController : MonoBehaviour
 					anim.SetTrigger("pet");
 					montyAnim.SetTrigger("pet");
 					
-					DisablePlayerInput();						
+					DisablePlayerInput();
+
+					if (!firstPet)
+					{
+						montyStateManager.GetComponent<Interaction>().MarkAsComplete();
+						firstPet = true;
+					}
 
 					
 				}
