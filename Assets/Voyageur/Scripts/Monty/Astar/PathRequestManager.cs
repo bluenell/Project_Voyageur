@@ -30,7 +30,8 @@ public class PathRequestManager : MonoBehaviour
 
 	public static void RequestPath(Vector3 pathStart, Vector3 pathEnd, Action<Vector3[], bool> callback)
 	{
-		ClearRequests();
+		Debug.Log("new path requested");
+		//ClearRequests();
 		PathRequest newRequest = new PathRequest(pathStart, pathEnd, callback);
 		instance.pathRequestQueue.Enqueue(newRequest);		
 		instance.TryProcessNext();

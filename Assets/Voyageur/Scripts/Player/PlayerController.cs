@@ -544,7 +544,7 @@ public class PlayerController : MonoBehaviour
 				StartCoroutine(RevealCanoe(0.8f));
 				StartCoroutine(EnablePlayerInput(0.8f));
 				canLaunch = true;
-				Debug.Log("Launched");
+				//Debug.Log("Launched");
 			}
 		}
 		else if (type == "launch")

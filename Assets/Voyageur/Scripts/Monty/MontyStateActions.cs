@@ -234,26 +234,31 @@ public class MontyStateActions : MonoBehaviour
 	{		
 		if (!stateVariables.movingTowardsPlayer)
 		{
+			PathRequestManager.ClearRequests();
+			StopAllCoroutines();
 			Debug.Log("Call Request");
 			stateVariables.movingTowardsPlayer = true;
 			currentlyOnPath = false;
-			PathRequestManager.ClearRequests();
-			StopAllCoroutines();
+
 		}
 
 		if (!currentlyOnPath && !stateVariables.desintationReached)
 		{
+			Debug.Log("moving to new towards player");
+
 			if (transform.position.x > player.transform.position.x)
 			{
+				Debug.Log("Moving to the right target");
 				// Right walk target
 				PathRequestManager.RequestPath(transform.position, player.transform.GetChild(4).transform.position, OnPathFound);
 			}
 			else
 			{
+				Debug.Log("Moving to the left target");
+
 				// Left walk target
 				PathRequestManager.RequestPath(transform.position, player.transform.GetChild(5).transform.position, OnPathFound);
 			}
-
 
 			currentlyOnPath = true;
 		}
