@@ -234,12 +234,12 @@ public class MontyStateActions : MonoBehaviour
 	{		
 		if (!stateVariables.movingTowardsPlayer)
 		{
-			PathRequestManager.ClearRequests();
 			StopAllCoroutines();
+			PathRequestManager.ClearRequests();
 			Debug.Log("Call Request");
 			stateVariables.movingTowardsPlayer = true;
 			currentlyOnPath = false;
-
+			stateVariables.desintationReached = false;
 		}
 
 		if (!currentlyOnPath && !stateVariables.desintationReached)
@@ -364,6 +364,13 @@ public class MontyStateActions : MonoBehaviour
 				{
 					Gizmos.DrawLine(path[i - 1], path[i]);
 				}
+			}
+		}
+		else
+		{
+			if (stateManager.currentState == "roam" || stateManager.currentState == "move towards")
+			{
+				Debug.Log("couldn't draw path");
 			}
 		}
 	}
