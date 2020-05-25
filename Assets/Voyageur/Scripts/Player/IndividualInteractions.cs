@@ -118,7 +118,7 @@ public class IndividualInteractions : MonoBehaviour
 				{
 					if (timer < 1f)
 					{
-						int randomFish = Random.Range(1, 5);
+						int randomFish = Random.Range(1, 6);
 						playerAnimator.SetInteger("fishing_randomIndex", randomFish);
 
 						fish[randomFish - 1].timesCaught++;
