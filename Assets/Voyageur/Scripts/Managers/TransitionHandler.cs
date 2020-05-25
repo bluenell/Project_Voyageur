@@ -127,7 +127,7 @@ public class TransitionHandler : MonoBehaviour
 	{
 		// Increasing Current Island Count
 		gm.IncreaseIsland();
-		Debug.Log("Transitioning to island: " + gm.GetCurrentIsland());
+		//Debug.Log("Transitioning to island: " + gm.GetCurrentIsland());
 
 		// Enabling & Disabling Monty, Player, Canoe Single and their depencies
 		//canoeAIO.transform.position = canoeSpawnPoints[gm.GetCurrentIsland()-1].transform.position;

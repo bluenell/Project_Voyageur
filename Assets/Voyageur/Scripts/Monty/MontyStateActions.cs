@@ -234,26 +234,31 @@ public class MontyStateActions : MonoBehaviour
 	{		
 		if (!stateVariables.movingTowardsPlayer)
 		{
+			StopAllCoroutines();
+			PathRequestManager.ClearRequests();
 			Debug.Log("Call Request");
 			stateVariables.movingTowardsPlayer = true;
 			currentlyOnPath = false;
-			PathRequestManager.ClearRequests();
-			StopAllCoroutines();
+			stateVariables.desintationReached = false;
 		}
 
 		if (!currentlyOnPath && !stateVariables.desintationReached)
 		{
+			Debug.Log("moving to new towards player");
+
 			if (transform.position.x > player.transform.position.x)
 			{
+				Debug.Log("Moving to the right target");
 				// Right walk target
 				PathRequestManager.RequestPath(transform.position, player.transform.GetChild(4).transform.position, OnPathFound);
 			}
 			else
 			{
+				Debug.Log("Moving to the left target");
+
 				// Left walk target
 				PathRequestManager.RequestPath(transform.position, player.transform.GetChild(5).transform.position, OnPathFound);
 			}
-
 
 			currentlyOnPath = true;
 		}
@@ -359,6 +364,13 @@ public class MontyStateActions : MonoBehaviour
 				{
 					Gizmos.DrawLine(path[i - 1], path[i]);
 				}
+			}
+		}
+		else
+		{
+			if (stateManager.currentState == "roam" || stateManager.currentState == "move towards")
+			{
+				Debug.Log("couldn't draw path");
 			}
 		}
 	}

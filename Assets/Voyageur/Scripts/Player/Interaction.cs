@@ -37,13 +37,18 @@ public class Interaction : MonoBehaviour
 	public void MarkAsComplete()
 	{
 		
-		Debug.Log(name + " is complete");
-		complete = true;
-		manager.inRange = false;
-		interactionCollider.enabled = false;
-		manager.interaction = null;		
+		//Debug.Log(name + " is complete");
 
+		if (manager.interaction != null)
+		{
+			complete = true;
+			manager.inRange = false;
 
+			interactionCollider.enabled = false;
+
+			
+			manager.interaction = null;
+		}
 
 		if (hasJournalEntry)
 		{
