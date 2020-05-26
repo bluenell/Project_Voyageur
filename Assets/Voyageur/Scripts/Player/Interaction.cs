@@ -29,6 +29,7 @@ public class Interaction : MonoBehaviour
 	[Header("Journal")]
 	public bool hasJournalEntry;
 	public Journal journal;
+	public SummaryJournal summaryJournal;
 	public Sprite journalImage;
 	public string journalName;
 	[TextArea]
@@ -54,6 +55,7 @@ public class Interaction : MonoBehaviour
 		{
 			StartCoroutine(PlaySoundWithDelay(2f));
 			journal.UpdateInteractionPages(journalName, journalDescription, journalImage);
+			summaryJournal.UpdateInteractionPages(journalName, journalDescription, journalImage);
 		}
 	}
 	public void CancelInteraction()

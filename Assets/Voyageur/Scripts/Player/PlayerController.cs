@@ -100,6 +100,7 @@ public class PlayerController : MonoBehaviour
 	IndividualInteractions individualInteractions;
 	public BoxCollider2D playerCollider;
 	GameManager gm;
+	public SummaryJournal summaryJournal;
 	#endregion
 
 	void Start()
@@ -677,6 +678,7 @@ public class PlayerController : MonoBehaviour
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().gravityScale = 1;
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity = montyStateVariables.CalculateThrowVelocity();
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().freezeRotation = false;
+		summaryJournal.timesFetchPlayed++;
 
 	}
 
