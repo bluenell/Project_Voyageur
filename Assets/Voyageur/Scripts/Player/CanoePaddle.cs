@@ -98,6 +98,7 @@ public class CanoePaddle : MonoBehaviour
 
 		if (Input.GetAxis("Horizontal") > 0)
 		{
+			transform.GetChild(1).gameObject.SetActive(false);
 			//Debug.Log("Beach Animation");
 			anim.SetTrigger("Beach");
 		}

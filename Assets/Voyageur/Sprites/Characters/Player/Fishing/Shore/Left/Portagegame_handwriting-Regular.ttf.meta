@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 182a7714e97d78049bd6c52045551028
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Portagegame_handwriting
+  fontNames:
+  - Portagegame_handwriting
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 828ed17b5ae15ee4ab5ea8f3698d85e5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

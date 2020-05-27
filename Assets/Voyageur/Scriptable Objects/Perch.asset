@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 2
   image: {fileID: 21300000, guid: 5f91aeed1d883584fbeadd1053e4c0b8, type: 3}
   fishName: perch
-  fishSize: 19cm / 7.5cm
+  fishSize: 19cm / 7.5in
   fishDesc: this fish was just sitting around
-  timesCaught: 0
+  timesCaught: 1

@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
     public Animator fade;
 	public TransitionHandler transition;
     public bool paused;
+	public bool endGame;
+
+	public GameObject journal;
+	public GameObject summaryJournal;
 
 	private void Start()
 	{
@@ -88,7 +92,10 @@ public class GameManager : MonoBehaviour
 
 	public void EndGame()
 	{
-		StartCoroutine(Delay());
+		endGame = true;
+		journal.SetActive(false);
+		summaryJournal.SetActive(true);
+		PauseGame();
 	}
 
     IEnumerator Delay()

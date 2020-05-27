@@ -100,6 +100,7 @@ public class PlayerController : MonoBehaviour
 	IndividualInteractions individualInteractions;
 	public BoxCollider2D playerCollider;
 	GameManager gm;
+	public SummaryJournal summaryJournal;
 	#endregion
 
 	void Start()
@@ -270,11 +271,22 @@ public class PlayerController : MonoBehaviour
 
 					if (currentInventoryIndex == 0 && interactionsManager.interaction.requiredTool == 0)
 					{
-						usingHands = true;
-					
+						usingHands = true;					
 					}
 
-					if (currentInventoryIndex != interactionsManager.interaction.requiredTool)
+					
+
+					if (currentInventoryIndex != 2 && canLaunch && inventory.hasAxe && inventory.hasRod)
+					{
+						targetFound = true;
+						interactionType = "launch";
+					}
+					else if (currentInventoryIndex != 2 && !carryingCanoe && inRangeOfCanoe)
+					{
+						targetFound = true;
+						interactionType = "pickUpCanoe";
+					}
+					else if (currentInventoryIndex != interactionsManager.interaction.requiredTool && interactionsManager.interaction != null)
 					{
 						if (currentInventoryIndex == 3)
 						{
@@ -304,18 +316,6 @@ public class PlayerController : MonoBehaviour
 						}
 					}
 
-
-					if (currentInventoryIndex != 2 && canLaunch && inventory.hasAxe && inventory.hasRod)
-					{
-						targetFound = true;
-						interactionType = "launch";
-					}
-					else if (currentInventoryIndex != 2 && !carryingCanoe && inRangeOfCanoe)
-					{
-						targetFound = true;
-						interactionType = "pickUpCanoe";
-					}
-					
 
 				}
 				else if (!carryingCanoe)
@@ -354,8 +354,6 @@ public class PlayerController : MonoBehaviour
 					{
 						targetFound = false;
 						interactionType = "";
-
-	
 
 
 						if (currentInventoryIndex == 3)
@@ -677,6 +675,7 @@ public class PlayerController : MonoBehaviour
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().gravityScale = 1;
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().velocity = montyStateVariables.CalculateThrowVelocity();
 		montyStateVariables.GetFetchStick().GetComponent<Rigidbody2D>().freezeRotation = false;
+		summaryJournal.timesFetchPlayed++;
 
 	}
 

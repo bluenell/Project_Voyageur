@@ -11,6 +11,7 @@ public class IndividualInteractions : MonoBehaviour
 	GameObject player;
 	MontyStateManager montyStateManager;
 	public Journal journal;
+	public SummaryJournal summaryJournal;
 
 	[Header("General")]
 	public bool targetFound;
@@ -118,12 +119,15 @@ public class IndividualInteractions : MonoBehaviour
 				{
 					if (timer < 1f)
 					{
-						int randomFish = Random.Range(1, 5);
+						int randomFish = Random.Range(1, 6);
 						playerAnimator.SetInteger("fishing_randomIndex", randomFish);
 
 						fish[randomFish - 1].timesCaught++;
 
+
 						journal.UpdateFishPages(fish[randomFish - 1]);
+						summaryJournal.UpdateFishPages(fish[randomFish - 1]);
+
 
 						//Debug.Log("caught");
 						timer = 0;

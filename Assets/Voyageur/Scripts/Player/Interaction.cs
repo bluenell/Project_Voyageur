@@ -7,7 +7,7 @@ public class Interaction : MonoBehaviour
 {
 
 	public InteractionsManager manager;
-	
+
 
 	public string interactionName;
 	public Collider2D interactionCollider;
@@ -29,6 +29,7 @@ public class Interaction : MonoBehaviour
 	[Header("Journal")]
 	public bool hasJournalEntry;
 	public Journal journal;
+	public SummaryJournal summaryJournal;
 	public Sprite journalImage;
 	public string journalName;
 	[TextArea]
@@ -36,8 +37,8 @@ public class Interaction : MonoBehaviour
 
 	public void MarkAsComplete()
 	{
-		
-		//Debug.Log(name + " is complete");
+
+		Debug.Log(name + " is complete");
 
 		if (manager.interaction != null)
 		{
@@ -46,14 +47,15 @@ public class Interaction : MonoBehaviour
 
 			interactionCollider.enabled = false;
 
-			
+
 			manager.interaction = null;
 		}
 
 		if (hasJournalEntry)
 		{
-			manager.GetComponent<PlayerSoundManager>().PlayCameraShutter();
+			StartCoroutine(PlaySoundWithDelay(2f));
 			journal.UpdateInteractionPages(journalName, journalDescription, journalImage);
+			summaryJournal.UpdateInteractionPages(journalName, journalDescription, journalImage);
 		}
 	}
 	public void CancelInteraction()
@@ -84,8 +86,12 @@ public class Interaction : MonoBehaviour
 		return canBeCancelled;
 	}
 
-	
 
+	IEnumerator PlaySoundWithDelay(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		manager.GetComponent<PlayerSoundManager>().PlayCameraShutter();
+	}
 
 
 }
