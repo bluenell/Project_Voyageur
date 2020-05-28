@@ -574,7 +574,7 @@ public class PlayerController : MonoBehaviour
 				if (CheckIfAtTarget(pickUpTarget, false))
 				{
 					playerCollider.enabled = true;
-					playerSoundManager.PlayPushCanoe();
+					//playerSoundManager.PlayPushCanoe();
 					pushCounter++;
 					canoe.transform.GetChild(0).GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
 

@@ -46,6 +46,8 @@ public class AnimationEventsHandler : MonoBehaviour
 		transform.GetComponentInParent<MontyStateVariables>().montyInCanoe = true;
 	}
 
+
+
 	public void SignalMontyToGetIn()
 	{
 		GameObject.Find("Monty").GetComponent<MontyStateVariables>().montyReadyToGetIn = true;
@@ -198,6 +200,11 @@ public class AnimationEventsHandler : MonoBehaviour
 
 	#region SoundFX
 
+	public void PlayPushCanoe()
+	{
+		player.GetComponent<PlayerSoundManager>().PlayPushCanoe();
+	}
+	
 	public void PlayLaunchCanoe1()
 	{
 		GameObject canoeAIO = GameObject.Find("Canoe AIO");
