@@ -129,10 +129,10 @@
 	<object class="MixerBusPanner" id="{d36d8706-97fb-46da-b086-fbed4315f4b2}" />
 	<object class="ThreeEQEffect" id="{b16079f6-3fdc-476d-b41d-b1c2ccb6080c}">
 		<property name="lowGain">
-			<value>8</value>
+			<value>2.5</value>
 		</property>
 		<property name="midGain">
-			<value>-28.5</value>
+			<value>-2.5</value>
 		</property>
 		<property name="highGain">
 			<value>-3</value>
@@ -141,7 +141,10 @@
 			<value>4000</value>
 		</property>
 		<property name="highCrossover">
-			<value>13500</value>
+			<value>1950</value>
+		</property>
+		<property name="crossoverSlope">
+			<value>0</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{850b8621-b006-4dca-9a56-a6355e5417fb}" />

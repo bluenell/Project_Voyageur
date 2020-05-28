@@ -76,7 +76,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{deac0f85-ecf7-42a6-ba35-7189cb512b6e}">
 		<property name="volume">
-			<value>-18</value>
+			<value>-15</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{af8f1cc0-9368-4df6-9ced-15140fa53298}</destination>
@@ -161,7 +161,17 @@
 	</object>
 	<object class="MixerBusPanner" id="{cf524e11-58b2-430a-9d80-5bab40303d45}" />
 	<object class="MixerBusFader" id="{e2d0e79a-9d46-47d5-86dc-66473f2f2833}" />
-	<object class="SpatialiserEffect" id="{c62c5961-cd7f-42ee-b237-73689e924a93}" />
+	<object class="SpatialiserEffect" id="{c62c5961-cd7f-42ee-b237-73689e924a93}">
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>13</value>
+		</property>
+		<property name="minimumExtent">
+			<value>188</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{931ab0f8-8568-4045-b0c9-0d1ac5807753}" />
 	<object class="SFXReverbEffect" id="{62e1c547-0e05-41e9-9fd4-3f55eca9f803}">
 		<property name="decayTime">
