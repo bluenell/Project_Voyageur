@@ -93,6 +93,10 @@ public class TransitionHandler : MonoBehaviour
 		cameraHandler.SwitchToPlayer();
 		pathwayColliders[gm.GetCurrentIsland() - 1].SetActive(true);
 
+		montyStateVariables.montyReadyToGetIn = false;
+		montyStateVariables.montyInCanoe = false;
+		montyStateVariables.jumping = false;
+
 		spritesManager.SetActive(true);
 
 

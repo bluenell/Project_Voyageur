@@ -574,7 +574,7 @@ public class PlayerController : MonoBehaviour
 				if (CheckIfAtTarget(pickUpTarget, false))
 				{
 					playerCollider.enabled = true;
-					playerSoundManager.PlayPushCanoe();
+					//playerSoundManager.PlayPushCanoe();
 					pushCounter++;
 					canoe.transform.GetChild(0).GetComponent<Animator>().SetInteger("pushCounter", pushCounter);
 
@@ -648,7 +648,13 @@ public class PlayerController : MonoBehaviour
 			if (currentInventoryIndex == inventory.tools.Count)
 			{
 				currentInventoryIndex = 0;
-			}			
+			}
+
+			if (torchOn)
+			{
+				torchOn = false;
+				torch.gameObject.SetActive(false);
+			}
 
 			//Debug.Log(inventory.tools[currentInventoryIndex]);
 			anim.SetInteger("inventoryIndex", inventory.tools[currentInventoryIndex]);
@@ -659,9 +665,17 @@ public class PlayerController : MonoBehaviour
 			{
 				currentInventoryIndex = inventory.tools.Count;
 			}
+
+			if (torchOn)
+			{
+				torchOn = false;
+				torch.gameObject.SetActive(false);
+			}
 			currentInventoryIndex--;
 			anim.SetInteger("inventoryIndex", inventory.tools[currentInventoryIndex]);
 			//Debug.Log(inventory.tools[currentInventoryIndex]);
+
+
 		}
 	}
 
